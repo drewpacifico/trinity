@@ -1136,11 +1136,15 @@ Complete these tasks to establish effective work habits and systems:
 ☐ Schedule weekly business review time - Block one hour weekly to review your performance metrics, margin analysis, and improvement opportunities
 CHAPTER 4: TRUCK TYPES AND SPECIFICATIONS
 Module 4.1: Introduction to Equipment Knowledge
+
 Understanding truck and trailer types is fundamental to your success as a freight agent. You can't effectively match freight to equipment if you don't know what each trailer type can handle. You can't quote loads accurately if you don't understand equipment limitations. You can't communicate credibly with carriers if you use incorrect terminology or make unrealistic equipment requests.
-This chapter provides comprehensive information about the most common equipment types you'll encounter. Study this material thoroughly—equipment knowledge separates professional agents from amateurs who waste everyone's time by quoting inappropriate equipment or making impossible requests.
+
+[KEY TAKEAWAY] This chapter provides comprehensive information about the most common equipment types you'll encounter. Study this material thoroughly—equipment knowledge separates professional agents from amateurs who waste everyone's time by quoting inappropriate equipment or making impossible requests.
 Module 4.2: Dry Van Trailers
+
 Dry van trailers are the workhorses of the trucking industry. These are the standard enclosed trailers you see everywhere on highways—rectangular boxes protecting freight from weather while providing secure transport. Understanding dry vans is essential because they handle the majority of general freight shipments.
-Standard Dry Van Specifications
+
+**Standard Dry Van Specifications**
 Dimension
 Measurement
 Length
@@ -1156,13 +1160,20 @@ Weight Capacity
 Cube Capacity
 Approximately 4,000 cubic feet
 
-Critical Concept: Cubing Out vs. Weighing Out
+**Critical Concept: Cubing Out vs. Weighing Out**
+
 A trailer can exceed either its weight capacity OR its cube capacity, but not both simultaneously. Understanding which constraint applies to your freight determines whether you can fit everything in one trailer.
-Cubing out means filling all available space before reaching maximum weight. Light, bulky freight like furniture, potato chips, or pillows typically cubes out. You've used all the physical space but haven't reached weight limits.
-Weighing out means reaching maximum weight before filling all space. Dense, heavy freight like automotive parts, steel products, or bottled beverages typically weighs out. You can't load more because you've reached weight capacity, even though physical space remains.
-Example: You're shipping 26 pallets of furniture, each pallet 48"×40"×72" tall and weighing 400 pounds. Total weight is 10,400 pounds—well under the 45,000-pound capacity. However, these 26 pallets consume approximately 4,200 cubic feet. The trailer will cube out, requiring two trailers despite being nowhere near weight limits.
+
+**Cubing out** means filling all available space before reaching maximum weight. Light, bulky freight like furniture, potato chips, or pillows typically cubes out. You've used all the physical space but haven't reached weight limits.
+
+**Weighing out** means reaching maximum weight before filling all space. Dense, heavy freight like automotive parts, steel products, or bottled beverages typically weighs out. You can't load more because you've reached weight capacity, even though physical space remains.
+**Example:** You're shipping 26 pallets of furniture, each pallet 48"×40"×72" tall and weighing 400 pounds. Total weight is 10,400 pounds—well under the 45,000-pound capacity. However, these 26 pallets consume approximately 4,200 cubic feet. The trailer will cube out, requiring two trailers despite being nowhere near weight limits.
+
 Conversely, shipping 22 pallets of automotive batteries, each pallet weighing 2,000 pounds, totals 44,000 pounds. The pallets might only consume 2,500 cubic feet, but you've reached weight capacity and cannot load more freight.
-Ideal Freight Types for Dry Vans
+
+[REAL EXAMPLE] A common mistake: An agent quotes one trailer for 26 furniture pallets because the weight (10,400 lbs) is far below capacity. But 4,200 cubic feet exceeds the 4,000 cu ft trailer capacity. Understanding cubing out vs. weighing out prevents this costly error.
+
+**Ideal Freight Types for Dry Vans**
 Dry vans work best for:
 Palletized freight (boxes, cartons, cases on standard pallets)
 Manufactured products not requiring temperature control
@@ -1174,7 +1185,8 @@ Automotive parts (non-hazardous)
 Textiles and clothing
 Paper products
 General freight not needing special handling
-Limitations of Dry Vans
+**Limitations of Dry Vans**
+
 Dry vans cannot accommodate:
 Freight exceeding interior dimensions (you can't fit a 55-foot beam in a 53-foot trailer)
 Temperature-sensitive products requiring climate control
@@ -1182,18 +1194,23 @@ Freight needing top loading or side loading (dry vans load only through rear doo
 Overweight freight exceeding 45,000 pounds
 Freight requiring ventilation or special atmosphere
 Products needing live floor unloading
-Loading Considerations
+
+**Loading Considerations**
+
 Dry vans typically load and unload at dock height (approximately 48-52 inches off the ground). This requires:
 Loading docks at pickup and delivery locations, OR
 Forklifts capable of reaching trailer floor height, OR
 Liftgate service (hydraulic platform that raises/lowers freight)
-Always confirm how freight will be loaded and unloaded. A customer requesting dry van service at a location without a dock and without a forklift needs liftgate service—an additional cost you must account for in your pricing.
+
+[COMMON MISTAKE] Always confirm how freight will be loaded and unloaded. A customer requesting dry van service at a location without a dock and without a forklift needs liftgate service—an additional cost you must account for in your pricing.
 Floor Specifications
 Standard dry van floors are hardwood, typically oak or similar hardwood planking. Floor capacity is generally 16,000 pounds per four feet of length, meaning you can't concentrate enormous weight on small sections without risking floor damage.
 Some specialty dry vans have reinforced floors, aluminum floors, or other variations, but standard hardwood is most common.
 Module 4.3: Refrigerated Trailers (Reefers)
+
 Refrigerated trailers—universally called "reefers" in the industry—are insulated trailers equipped with refrigeration units that maintain specific temperatures. Essential for transporting temperature-sensitive products, reefers represent a significant segment of the freight market.
-Reefer Specifications
+
+**Reefer Specifications**
 Feature
 Details
 External Dimensions
@@ -1207,7 +1224,8 @@ Temperature Range
 Fuel Consumption
 0.5-1.0 gallon per hour (separate diesel tank for refrigeration unit)
 
-Temperature Requirements by Product Type
+**Temperature Requirements by Product Type**
+
 Different products require different temperatures. Understanding these requirements helps you communicate knowledgeably with customers and carriers:
 Frozen foods: 0°F to -10°F
 Ice cream and frozen desserts: -10°F to -20°F
@@ -1225,21 +1243,26 @@ Bananas: 56°F to 58°F
 Apples: 30°F to 32°F
 Berries: 31°F to 32°F
 Pharmaceuticals: Often 36°F to 46°F (2°C to 8°C), with some requiring more precise control
-Always confirm the exact temperature requirement. "Keep it cold" isn't sufficient instruction. Carriers need specific set-point temperatures.
-Operating Modes
+[IMPORTANT] Always confirm the exact temperature requirement. "Keep it cold" isn't sufficient instruction. Carriers need specific set-point temperatures.
+
+**Operating Modes**
 Refrigeration units operate in two primary modes:
 Continuous cycle: The unit runs constantly, maintaining very stable temperatures. This is most common for products requiring tight temperature control. Fuel consumption is higher but temperature stability is maximum.
 Start-stop (cycle sentry): The unit cycles on and off to maintain temperature within a range. Saves fuel but creates more temperature fluctuation. Acceptable for many products but not ideal for highly temperature-sensitive freight.
 Most customers will simply specify the temperature they need, and carriers will choose the appropriate operating mode. However, understanding the difference helps you communicate intelligently about temperature control.
-Pre-Cooling: A Critical Requirement
+**Pre-Cooling: A Critical Requirement**
+
 Refrigeration units maintain temperature; they don't rapidly cool warm freight. The trailer must be pre-cooled to the required temperature before loading begins.
+
 Loading warm freight into a warm trailer creates serious problems. Even with the refrigeration unit running at full capacity, it may take many hours to bring the product temperature down—potentially compromising product quality or safety. By then, the freight might have spent hours at unsafe temperatures.
-Professional carriers understand pre-cooling requirements and do it automatically. However, less experienced carriers sometimes skip this step, creating risk. When dispatching reefer loads, confirm: "Please ensure the trailer is pre-cooled to [temperature] before arriving for loading."
+
+[PRO TIP] Professional carriers understand pre-cooling requirements and do it automatically. However, less experienced carriers sometimes skip this step, creating risk. When dispatching reefer loads, confirm: "Please ensure the trailer is pre-cooled to [temperature] before arriving for loading."
 Multi-Temperature Loads
 Some trailers have bulkheads allowing multiple temperature zones (typically two zones—frozen in front, fresh in rear, or similar configurations). These are less common and command premium rates.
 Most reefers maintain a single temperature throughout. If a customer needs products at different temperatures, they typically require separate trailers or must compromise on temperature settings.
-Rate Implications
-Reefer freight typically commands 20-40% higher rates than dry van freight for several reasons:
+**Rate Implications**
+
+[KEY TAKEAWAY] Reefer freight typically commands 20-40% higher rates than dry van freight for several reasons:
 Specialized equipment is less available (fewer reefer trailers than dry vans means tighter capacity).
 Fuel costs are significant (refrigeration units consume 0.5-1.0 gallons per hour, adding $50-100+ per day in fuel costs).
 Maintenance costs are higher (refrigeration units require regular maintenance and occasional repairs).
@@ -1252,8 +1275,10 @@ Equipment failures: Refrigeration units break down. Ensure carriers have conting
 Loading delays: Extended loading times in warm warehouses can raise product temperature. Minimize dock time when possible.
 Receiver rejection: Some receivers test product temperature on arrival and reject loads if outside specification. This risk makes carrier selection critical—you need reliable carriers with well-maintained equipment.
 Module 4.4: Flatbed Trailers
+
 Flatbed trailers are open platforms without sides or roofs, used for freight that cannot fit inside enclosed trailers or requires top or side loading. Understanding flatbeds is essential because they serve specialized but significant freight segments.
-Flatbed Specifications
+
+**Flatbed Specifications**
 Feature
 Details
 Length
@@ -1267,7 +1292,8 @@ Weight Capacity
 Legal Height Limit
 13.5-14 feet total (load height plus 5-foot deck) without permits
 
-Load Securing Requirements
+**Load Securing Requirements**
+
 Unlike enclosed trailers where freight is contained by walls, flatbed freight must be properly secured to prevent shifting or falling during transit. This is both a safety requirement and a federal regulation.
 Drivers are responsible for securing freight according to Federal Motor Carrier Safety Administration regulations. Different cargo types require different securing methods:
 Chains and binders: Heavy loads like steel, machinery, and equipment typically secure with chains rated for appropriate weight. Binders (lever or ratchet devices) tighten chains. Standard practice is one chain per 10 feet of length, with minimums based on weight.
@@ -1275,12 +1301,16 @@ Straps and ratchets: Lighter loads and loads where chains might cause damage oft
 Blocking and bracing: Some loads require wooden blocks, timbers, or metal bracing to prevent forward, backward, or lateral movement. These work in combination with chains or straps.
 Edge protection: When straps or chains cross sharp edges, edge protectors prevent cutting the securing devices.
 Carriers should arrive with all necessary securing equipment. However, unusual loads might require specialized securing devices the carrier doesn't typically carry. Confirm securing requirements when booking to avoid problems at pickup.
-Tarping: Protection from Weather
+**Tarping: Protection from Weather**
+
 Some flatbed freight requires protection from weather, debris, or road spray. Drivers accomplish this with large tarps (typically 18×24 feet or larger) that cover and secure to the load.
+
 Tarping is labor-intensive—climbing on loads, pulling heavy tarps into position, securing them properly. It adds significant time (30-60+ minutes) and physical effort to the driver's work.
-Because of this effort, tarping carries additional charges, typically $50-150 depending on load complexity, tarp size, and regional norms. Always clarify whether tarping is required and include charges in your customer quote.
+
+[IMPORTANT] Because of this effort, tarping carries additional charges, typically $50-150 depending on load complexity, tarp size, and regional norms. Always clarify whether tarping is required and include charges in your customer quote.
 Not all loads require tarps. Steel products usually ship uncovered (they're weatherproof). Machinery often ships without tarps if it's designed for outdoor use. Lumber almost always requires tarps (moisture causes problems). Building materials like drywall absolutely require tarps (moisture destroys them).
-When unsure, ask the customer: "Does this freight require tarp protection?" If they're unsure, research the product type or call carriers familiar with that commodity.
+
+[PRO TIP] When unsure, ask the customer: "Does this freight require tarp protection?" If they're unsure, research the product type or call carriers familiar with that commodity.
 Ideal Freight Types for Flatbeds
 Flatbeds work best for:
 Steel products: Beams, plates, sheets, coils, pipes, structural steel. The steel industry is a major flatbed user.
@@ -1432,8 +1462,12 @@ Always confirm if the customer's weight includes everything. Ask specifically: "
 Understand typical weight-to-space ratios for common commodities. Experience teaches you that furniture rarely weighs out, steel almost always weighs out, and beverage pallets frequently create weight challenges.
 For heavy freight, discuss weight distribution with carriers during booking. "This load is 44,000 pounds of steel coils. Can your drivers handle proper positioning?" Experienced carriers appreciate this question and may provide guidance on how to load.
 Module 4.10: Matching Equipment to Freight
+
 Selecting appropriate equipment for each shipment is a skill you'll develop through experience. However, following a systematic evaluation process prevents most equipment selection errors.
-Step 1: Physical Dimensions
+
+[KEY TAKEAWAY] Follow this systematic 8-step process for every load: (1) Physical dimensions (2) Weight capacity (3) Temperature control (4) Loading method (5) Weather protection (6) Special regulations (7) Customer preferences (8) Economic efficiency.
+
+**Step 1: Physical Dimensions**
 Does the freight physically fit in the equipment you're considering?
 Length: If you have a 50-foot piece of lumber, it won't fit in a 48-foot trailer. Don't just consider the trailer's overall length—internal usable length is slightly less. Allow space for safe loading.
 Width: Standard trailers are 8.5 feet wide internally. Freight wider than 8 feet typically requires flatbed or specialized equipment. Some freight can rotate to fit, but confirm before assuming.
@@ -1474,8 +1508,9 @@ Step 8: Economic Efficiency
 Are you selecting appropriate equipment without being unnecessarily expensive?
 Using a reefer for freight that doesn't need temperature control wastes money. Using a specialized lowboy for freight that fits on a standard flatbed reduces your margin unnecessarily.
 Select equipment that safely and appropriately handles the freight at the most economical cost. This protects your margin while providing appropriate service.
-Common Equipment Selection Mistakes
-Quoting dry van for freight that needs flatbed (freight too tall, too long, or requiring top loading)
+**Common Equipment Selection Mistakes**
+
+[COMMON MISTAKE] Quoting dry van for freight that needs flatbed (freight too tall, too long, or requiring top loading)
 Quoting reefer for freight that doesn't need temperature control (wastes customer money and yours)
 Quoting standard flatbed for freight requiring step deck or lowboy (height issues)
 Forgetting to account for liftgate requirements (customer can't load without it)
@@ -1483,15 +1518,18 @@ Not confirming weight includes all components (pallets, packaging, frames, etc.)
 Assuming all trailers have the same capacity (reefers carry less weight than dry vans)
 Booking freight that's actually oversize without recognizing permit requirements
 Module 4.11: Communicating Equipment Needs to Carriers
+
 Once you've determined appropriate equipment, communicating requirements clearly to carriers prevents misunderstandings and problems.
-Essential Information to Provide
+
+**Essential Information to Provide**
+
 When contacting carriers, include:
 Equipment type: "53-foot dry van" or "48-foot flatbed with tarps" or "53-foot reefer set to 38 degrees"
 Weight and dimensions: "42,000 pounds, 26 pallets, each pallet 48×40×60 inches tall" or "28,000 pounds, 3 pieces, largest is 24 feet long × 8 feet wide × 6 feet tall"
 Special requirements: "Food-grade trailer required, no previous chemical loads" or "Straps and edge protectors needed for securing" or "Driver must have hazmat endorsement"
 Loading/unloading details: "Dock-height pickup and delivery" or "Shipper has forklift, receiver needs liftgate" or "Crane available for loading, forklift for unloading"
 Specific instructions: "Pre-cool to 38 degrees before loading" or "Driver must call 2 hours before arrival" or "Freight cannot get wet—secure tarps properly"
-Providing complete information upfront saves time and prevents carriers from arriving unprepared.
+[PRO TIP] Providing complete information upfront saves time and prevents carriers from arriving unprepared. Never assume carriers will "figure it out"—be specific about every requirement.
 
 CHAPTER 4 SUMMARY SHEET
 Dry Vans:

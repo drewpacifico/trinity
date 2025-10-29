@@ -973,6 +973,119 @@ h3 {
               </div>
               {% endif %}
             </li>
+          {% elif ch.id == 4 %}
+            <li style="cursor: pointer;">
+              <a href="{{ url_for('page', page_num=total_pages - 2) }}" style="color: var(--text); text-decoration: none; display: block;">Chapter {{ ch.id }}: {{ ch.title }}</a>
+              {% if page.ch4_modules %}
+              <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
+                {% for mod in page.ch4_modules %}
+                  {% set is_complete = module_completion.get(mod.id, False) %}
+                  {% set prev_index = loop.index0 - 1 %}
+                  {% set is_locked = False %}
+                  {% if loop.index0 > 0 and not preview_mode %}
+                    {% set prev_mod_id = page.ch4_modules[prev_index].id %}
+                    {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                  {% elif loop.index0 == 0 and not preview_mode %}
+                    {# First module of Chapter 4 requires Chapter 3 completion #}
+                    {% set is_locked = not all_ch3_modules_complete %}
+                  {% endif %}
+                  
+                  <div style="margin: 6px 0; display: flex; align-items: center;">
+                    {% if is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% else %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    {% endif %}
+                    
+                    {% if is_locked %}
+                      <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                      </span>
+                    {% else %}
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
+                         onmouseover="this.style.color='var(--accent)'" 
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
+                        Module {{ mod.id }}: {{ mod.title }}
+                      </a>
+                    {% endif %}
+                  </div>
+                  
+                  {% if is_complete and quiz_map.get(mod.id) %}
+                    <div class="quiz-toggle" onclick="toggleQuizDropdown('{{ mod.id }}')">
+                      <span class="quiz-toggle-icon" id="toggle-icon-{{ mod.id }}">▶</span>
+                      Quiz Questions ({{ quiz_map[mod.id]|length }})
+                    </div>
+                    <div class="quiz-dropdown" id="quiz-dropdown-{{ mod.id }}">
+                      {% for quiz_q in quiz_map[mod.id] %}
+                        {% set is_answered = quiz_answers.get(quiz_q.id, False) %}
+                        {% set quiz_page_num = page.quiz_page_map.get(quiz_q.id) %}
+                        <a href="{{ url_for('page', page_num=quiz_page_num) }}" 
+                           class="quiz-question-item {% if is_answered %}answered{% endif %}"
+                           style="color: {% if is_answered %}#10b981{% else %}var(--text){% endif %};">
+                          {% if is_answered %}✓{% else %}○{% endif %} {{ quiz_q.question[:80] }}...
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                
+                <!-- Chapter 4 Key Concepts (locked until all modules complete) -->
+                <div style="margin: 12px 0 6px; display: flex; align-items: center;">
+                  {% if all_ch4_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 2) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 4 Key Concepts
+                    </a>
+                  {% elif preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 2) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 4 Key Concepts
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                      🔒 Chapter 4 Key Concepts
+                    </span>
+                  {% endif %}
+                </div>
+                
+                <!-- Chapter 4 Action Items (locked until all modules complete) -->
+                <div style="margin: 6px 0; display: flex; align-items: center;">
+                  {% if all_ch4_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 4 Action Items
+                    </a>
+                  {% elif preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 4 Action Items
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                      🔒 Chapter 4 Action Items
+                    </span>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+            </li>
           {% else %}
             <li>Chapter {{ ch.id }}: {{ ch.title }}</li>
           {% endif %}

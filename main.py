@@ -564,6 +564,202 @@ chapter3_quizzes = [
     }
 ]
 
+# Chapter 4 Quizzes
+chapter4_quizzes = [
+    {
+        "id": "q4_1_1",
+        "question": "Why is equipment knowledge essential for freight agents beyond just booking loads?",
+        "choices": [
+            "It's only necessary to impress customers with technical jargon",
+            "Accurate equipment selection prevents wasted time, damaged relationships, and costly mistakes when carriers arrive unprepared or with wrong equipment",
+            "Most carriers will figure out the right equipment anyway, so detailed knowledge isn't critical",
+            "Equipment knowledge is only important for flatbed specialists"
+        ],
+        "correct_index": 1,
+        "explanation": "Equipment knowledge separates professional agents from amateurs. Incorrect equipment selection causes serious problems: carriers arriving unable to load freight, wasted time for everyone, damaged relationships with customers and carriers, and potential safety issues. You must understand what each trailer type can handle to quote loads accurately and communicate credibly."
+    },
+    {
+        "id": "q4_2_1",
+        "question": "You're quoting a load of 26 pallets of furniture. Each pallet is 48\"×40\"×72\" tall and weighs 400 pounds (total 10,400 lbs). The pallets will consume approximately 4,200 cubic feet. How many trailers do you need?",
+        "choices": [
+            "One trailer—the weight is only 10,400 lbs, well under the 45,000 lb capacity",
+            "Two trailers—this load will cube out despite being nowhere near weight limits",
+            "One trailer if you stack the pallets differently",
+            "Three trailers to ensure safe transport"
+        ],
+        "correct_index": 1,
+        "explanation": "This load cubes out. A standard dry van has approximately 4,000 cubic feet of capacity. These 26 pallets consume 4,200 cubic feet, exceeding the available space. Even though the 10,400-pound weight is far below the 45,000-pound capacity, you've filled all physical space. You need two trailers. Understanding cubing out vs. weighing out is critical for accurate quoting."
+    },
+    {
+        "id": "q4_2_2",
+        "question": "A customer requests dry van service for pickup at a small warehouse without a loading dock or forklift. What's the appropriate response?",
+        "choices": [
+            "Book a standard dry van—the driver will figure out loading somehow",
+            "Refuse the shipment since dry vans can't accommodate this situation",
+            "Quote dry van WITH liftgate service and include the additional cost, confirming the shipper can load pallets onto the liftgate platform",
+            "Recommend the customer build a loading dock before shipping"
+        ],
+        "correct_index": 2,
+        "explanation": "Dry vans load at dock height (48-52 inches off ground). Without a dock or forklift capable of reaching that height, you need liftgate service—a hydraulic platform that raises/lowers freight. This is an additional cost you must include in your pricing. Always confirm loading capabilities before finalizing equipment selection."
+    },
+    {
+        "id": "q4_3_1",
+        "question": "A pharmaceutical customer needs to ship temperature-sensitive products and says 'keep it cold.' What's your next step?",
+        "choices": [
+            "Book a reefer set to 35°F—that's cold enough for most products",
+            "Ask for the exact temperature requirement in degrees Fahrenheit—'cold' isn't sufficient instruction for carrier operations",
+            "Book a standard dry van—it will stay cold enough during transport",
+            "Tell the carrier to use their best judgment on temperature"
+        ],
+        "correct_index": 1,
+        "explanation": "Always confirm exact temperature requirements. Pharmaceuticals typically require 36°F to 46°F (2°C to 8°C), but some require more precise control. Different products have different temperature needs: frozen foods need 0°F to -10°F, fresh meat needs 28-32°F, dairy needs 34-38°F. Carriers need specific set-point temperatures, not vague instructions like 'keep it cold.'"
+    },
+    {
+        "id": "q4_3_2",
+        "question": "A carrier is picking up a refrigerated load at 2 PM. The required temperature is 38°F. When should the trailer be pre-cooled?",
+        "choices": [
+            "Pre-cooling isn't necessary—just turn on the unit when loading begins",
+            "BEFORE loading begins—the trailer must be pre-cooled to 38°F before freight arrives. Refrigeration units maintain temperature but don't rapidly cool warm freight",
+            "After loading—run the unit at maximum to bring everything down to temperature",
+            "Pre-cooling only matters for frozen products, not refrigerated"
+        ],
+        "correct_index": 1,
+        "explanation": "Pre-cooling is critical. Refrigeration units maintain temperature; they don't rapidly cool warm freight. Loading warm freight into a warm trailer can take many hours to reach proper temperature—potentially compromising product quality or safety. Always confirm with carriers: 'Please ensure the trailer is pre-cooled to [temperature] before arriving for loading.'"
+    },
+    {
+        "id": "q4_4_1",
+        "question": "You're quoting a load of steel beams that are 50 feet long, 4 feet wide, 3 feet tall, and weigh 28,000 pounds. The customer asks about weather protection. What equipment do you quote?",
+        "choices": [
+            "53-foot dry van with liftgate",
+            "53-foot flatbed—steel is weatherproof and doesn't require tarps. Confirm securing requirements (likely chains and binders)",
+            "48-foot dry van—it will fit if loaded diagonally",
+            "53-foot reefer to prevent rust"
+        ],
+        "correct_index": 1,
+        "explanation": "Steel products usually ship uncovered on flatbeds because they're weatherproof. A 50-foot beam fits on a 53-foot flatbed with room for proper securing. Tarping is unnecessary and would add cost. Steel typically secures with chains and binders. Always confirm securing requirements when booking flatbed loads."
+    },
+    {
+        "id": "q4_4_2",
+        "question": "A customer shipping palletized lumber asks if tarping is required. The carrier says tarping will add $100 to the rate. What's your recommendation?",
+        "choices": [
+            "Skip the tarp to save money—lumber can handle some moisture",
+            "Tarp is required—moisture causes serious problems with lumber. Include the $100 charge and explain why protection is necessary",
+            "Only tarp if it's raining",
+            "Ask the carrier to absorb the tarping cost"
+        ],
+        "correct_index": 1,
+        "explanation": "Lumber almost always requires tarps because moisture causes serious problems (warping, mold, structural damage). Tarping is labor-intensive (30-60+ minutes) and carries additional charges ($50-150). Always include tarping costs when required and explain the necessity to customers. This is protecting their investment, not an optional add-on."
+    },
+    {
+        "id": "q4_5_1",
+        "question": "You need to ship a piece of construction equipment that is 10.5 feet tall. On a standard flatbed (5-foot deck height), the total height would be 15.5 feet—exceeding the 13.5-14 foot legal limit. What equipment should you quote?",
+        "choices": [
+            "Standard flatbed—the driver can get oversize permits",
+            "Step deck (drop deck) trailer with 3.5-foot well deck, allowing the 10.5-foot freight to stay under the height limit",
+            "Dry van since the equipment needs protection anyway",
+            "Cancel the shipment—it can't transport legally"
+        ],
+        "correct_index": 1,
+        "explanation": "Step deck trailers have a lower well deck (approximately 3.5 feet off ground) that allows taller freight to remain under the 13.5-14 foot height limit. With a 3.5-foot deck, 10.5-foot freight totals 14 feet—legal height. Standard flatbeds with 5-foot decks can only carry 8.5-9 foot tall loads while staying legal. Step decks command premium rates but solve this exact problem."
+    },
+    {
+        "id": "q4_6_1",
+        "question": "A large manufacturer with 100 trailers wants to hire your carrier contacts to provide 'power only' service. What does this mean?",
+        "choices": [
+            "Carriers provide only electrical power to refrigeration units",
+            "Carriers provide only the tractor (power unit) and driver—the customer provides the trailers. This allows drop-and-hook efficiency",
+            "Carriers guarantee powerful engines for heavy loads",
+            "This is a specialized electrical equipment transport"
+        ],
+        "correct_index": 1,
+        "explanation": "Power only means carriers provide only the tractor and driver; the customer provides the trailer. This is common with large shippers who own trailer fleets. Carriers arrive, drop an empty trailer, hook a pre-loaded trailer, and depart quickly—eliminating wait time during loading. Rates are lower than full equipment rates but margins can be attractive because you're only sourcing tractor capacity."
+    },
+    {
+        "id": "q4_7_1",
+        "question": "A customer wants to ship a tanker load of food-grade vegetable oil. After delivery, the carrier says they want to haul a load of industrial lubricant next. Why is this problematic?",
+        "choices": [
+            "It's not problematic—tankers can haul any liquid",
+            "Food-grade tankers cannot haul non-food products without extensive cleaning protocols. Cross-contamination risks make this unacceptable without proper procedures",
+            "Vegetable oil and lubricant are similar enough that it doesn't matter",
+            "This only matters if the same customer uses the tanker again"
+        ],
+        "correct_index": 1,
+        "explanation": "Food-grade tankers must be thoroughly cleaned between loads and cannot haul non-food products without extensive cleaning protocols. Cross-contamination of food products with industrial chemicals creates serious safety and regulatory issues. This is why food-grade tanker freight is highly specialized and commands premium rates."
+    },
+    {
+        "id": "q4_8_1",
+        "question": "A customer asks about 'GVWR' when discussing equipment requirements. What does this mean?",
+        "choices": [
+            "Gross Vehicle Weight Rating—the maximum total weight of the vehicle including the vehicle itself plus all cargo",
+            "General Vehicle Width Requirement",
+            "Guaranteed Vehicle Weight Range",
+            "Ground Vehicle Weight Restriction"
+        ],
+        "correct_index": 0,
+        "explanation": "GVWR (Gross Vehicle Weight Rating) is the maximum total weight of the vehicle including the vehicle itself plus all cargo. It's the key metric determining truck classification. Understanding GVWR helps you communicate knowledgeably with carriers about appropriate equipment for different weight requirements."
+    },
+    {
+        "id": "q4_9_1",
+        "question": "A carrier mentions they need to distribute a 44,000-pound load carefully to avoid exceeding axle weight limits. Why does weight distribution matter when total weight is legal?",
+        "choices": [
+            "Weight distribution doesn't matter as long as total weight is under 80,000 lbs",
+            "It's just a carrier preference with no legal significance",
+            "Federal and state laws regulate not just total weight but how weight distributes across axles. Improper distribution can cause violations even if total weight is legal",
+            "This only matters for oversized loads"
+        ],
+        "correct_index": 2,
+        "explanation": "Federal and state regulations limit weight per axle, not just total vehicle weight. The typical 80,000-pound limit has specific sub-limits: steering axle (12,000 lbs), drive axles (34,000 lbs), trailer axles (34,000 lbs). Improper distribution can exceed individual axle limits even when total weight is legal. This is why proper loading and weight positioning matter."
+    },
+    {
+        "id": "q4_10_1",
+        "question": "You're evaluating equipment for a shipment. The freight is 44,000 lbs of temperature-sensitive pharmaceuticals that must maintain 40°F. What equipment do you select?",
+        "choices": [
+            "Dry van—it will stay cool enough during transport",
+            "Reefer set to 40°F—temperature-sensitive pharmaceuticals require active refrigeration to maintain precise temperatures",
+            "Flatbed with tarps for weather protection",
+            "Standard dry van with extra insulation"
+        ],
+        "correct_index": 1,
+        "explanation": "Temperature-sensitive freight requiring specific temperature maintenance needs a reefer. Pharmaceuticals typically require 36-46°F with precise control. Dry vans don't provide active temperature control and can't maintain specific temperatures. The systematic equipment selection process puts temperature control as Step 3: if yes, you need a reefer with the exact temperature specified."
+    },
+    {
+        "id": "q4_10_2",
+        "question": "Which of these represents the CORRECT equipment selection priority order?",
+        "choices": [
+            "Price first, then dimensions, then weight",
+            "Physical dimensions → weight capacity → temperature control → loading method → weather protection → special regulations → customer preferences → economic efficiency",
+            "Customer preferences first, then figure out what equipment works",
+            "Just ask the carrier what they recommend"
+        ],
+        "correct_index": 1,
+        "explanation": "Following a systematic evaluation process prevents equipment selection errors. The correct order is: (1) Physical dimensions—does it fit? (2) Weight capacity—can the equipment handle it? (3) Temperature control—does it need climate control? (4) Loading/unloading method—how will it load? (5) Weather protection—does it need coverage? (6) Special regulations—any regulatory requirements? (7) Customer preferences—specific requirements? (8) Economic efficiency—appropriate without being unnecessarily expensive?"
+    },
+    {
+        "id": "q4_11_1",
+        "question": "When booking a reefer load, what information is MOST critical to communicate to the carrier upfront?",
+        "choices": [
+            "Your commission rate and how much you're charging the customer",
+            "Exact temperature requirement (e.g., '38 degrees F'), pre-cooling requirement, weight, dimensions, and food-grade requirements if applicable",
+            "Just the pickup and delivery locations—carriers know how to handle reefers",
+            "The weather forecast for the route"
+        ],
+        "correct_index": 1,
+        "explanation": "When booking reefer loads, essential information includes: equipment type with exact temperature ('53-foot reefer set to 38 degrees'), weight and dimensions, special requirements ('food-grade trailer required, no previous chemical loads'), and specific instructions ('pre-cool to 38 degrees before loading'). Complete information upfront saves time and prevents carriers from arriving unprepared. Never assume carriers will 'figure it out.'"
+    },
+    {
+        "id": "q4_11_2",
+        "question": "A carrier asks for details about a flatbed load. You provide: '53-foot flatbed, 32,000 lbs.' The carrier says this isn't enough information. What critical details did you omit?",
+        "choices": [
+            "Nothing—weight and equipment type are sufficient",
+            "Dimensions of the freight, number of pieces, whether tarping is required, securing requirements (chains/straps), and loading/unloading equipment available",
+            "Only the pickup and delivery cities",
+            "Your company name"
+        ],
+        "correct_index": 1,
+        "explanation": "For flatbed loads, carriers need: dimensions and piece count ('3 pieces, largest is 24 feet long × 8 feet wide × 6 feet tall'), tarping requirements ('with tarps' or 'uncovered—steel freight'), securing requirements ('straps and edge protectors needed'), and loading/unloading details ('crane available for loading'). Flatbed freight is more variable than dry van freight, requiring more detailed communication."
+    }
+]
+
 
 def parse_project_outline(markdown_text: str):
     chapters_by_id = {}
@@ -977,6 +1173,7 @@ def get_chapter_completion_status(session_quiz_answers, chapter_num):
         1: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"],
         2: ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"],
         3: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"],
+        4: ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"],
     }
     
     if chapter_num not in chapter_modules:
@@ -1000,6 +1197,7 @@ def build_pages(text: str):
     ch1 = extract_chapter_content(text, 1)
     ch2 = extract_chapter_content(text, 2)
     ch3 = extract_chapter_content(text, 3)
+    ch4 = extract_chapter_content(text, 4)
     
     pages = []
     module_page_map = {}  # Maps module_id -> page_num
@@ -1008,10 +1206,10 @@ def build_pages(text: str):
     # Page 0: Cover page (lines 1-27 of project.md)
     lines = text.splitlines()
     cover_content = "\n".join(lines[0:27]) if len(lines) >= 27 else ""
-    pages.append({"type": "cover", "content": cover_content, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"]})
+    pages.append({"type": "cover", "content": cover_content, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"]})
     
     # Page 1: Table of Contents
-    pages.append({"type": "toc", "chapters": chapters, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"]})
+    pages.append({"type": "toc", "chapters": chapters, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"]})
     
     # Chapter 1 intro
     if ch1["intro"]:
@@ -1244,6 +1442,86 @@ def build_pages(text: str):
             "content_html": convert_to_html(ch3["action_items"])
         })
     
+    # Chapter 4 intro
+    if ch4["intro"]:
+        pages.append({
+            "type": "intro",
+            "chapter_id": 4,
+            "chapter_title": ch4["chapter_title"],
+            "content": ch4["intro"],
+            "content_html": convert_to_html(ch4["intro"])
+        })
+    
+    # Chapter 4 modules
+    for mod in ch4["modules"]:
+        module_page_map[mod["id"]] = len(pages)  # Record the first page number for this module
+        content_text = "\n".join(mod["content"])
+        
+        # Split module content into multiple pages if needed
+        content_pages = split_content_into_pages(content_text)
+        
+        for page_idx, page_content in enumerate(content_pages):
+            pages.append({
+                "type": "module",
+                "chapter_id": 4,
+                "chapter_title": ch4["chapter_title"],
+                "module_id": mod["id"],
+                "module_title": mod["title"],
+                "content": page_content,
+                "content_html": convert_to_html(page_content),
+                "module_page_num": page_idx + 1,
+                "module_total_pages": len(content_pages)
+            })
+        
+        # Add quiz questions after the last page of each module
+        quiz_map_ch4 = {
+            "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1")],
+            "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2")],
+            "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3")],
+            "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4")],
+            "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5")],
+            "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6")],
+            "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7")],
+            "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8")],
+            "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9")],
+            "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10")],
+            "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11")],
+        }
+        
+        if mod["id"] in quiz_map_ch4:
+            quiz_questions = quiz_map_ch4[mod["id"]]
+            for idx, quiz_question in enumerate(quiz_questions):
+                quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
+                pages.append({
+                    "type": "quiz",
+                    "chapter_id": 4,
+                    "module_id": mod["id"],
+                    "module_title": mod["title"],
+                    "quiz_question": quiz_question,
+                    "question_number": idx + 1,
+                    "total_questions": len(quiz_questions)
+                })
+    
+    # Chapter 4 summary
+    if ch4["summary"]:
+        pages.append({
+            "type": "summary",
+            "chapter_id": 4,
+            "chapter_title": ch4["chapter_title"],
+            "content": ch4["summary"],
+            "content_html": convert_to_html(ch4["summary"])
+        })
+    
+    # Chapter 4 action items
+    if ch4["action_items"]:
+        pages.append({
+            "type": "action_items",
+            "chapter_id": 4,
+            "chapter_title": ch4["chapter_title"],
+            "content": ch4["action_items"],
+            "content_html": convert_to_html(ch4["action_items"])
+        })
+    
     # Add module_page_map and quiz_page_map to cover and TOC pages
     pages[0]["module_page_map"] = module_page_map
     pages[0]["quiz_page_map"] = quiz_page_map
@@ -1328,6 +1606,8 @@ def page(page_num: int):
             # Define module sequences for each chapter
             chapter_1_modules = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"]
             chapter_2_modules = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"]
+            chapter_3_modules = ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"]
+            chapter_4_modules = ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"]
             
             # Determine which chapter and check previous modules
             if current_module_id.startswith("1."):
@@ -1345,6 +1625,26 @@ def page(page_num: int):
                 if module_index > 0:
                     for i in range(module_index):
                         if not get_module_completion_status(session.get('quiz_answers', {}), chapter_2_modules[i]):
+                            return redirect(url_for("page", page_num=1))
+            elif current_module_id.startswith("3."):
+                # For Chapter 3, first check if all Chapter 2 is complete
+                if not get_chapter_completion_status(session.get('quiz_answers', {}), 2):
+                    return redirect(url_for("page", page_num=1))
+                # Then check previous Chapter 3 modules
+                module_index = chapter_3_modules.index(current_module_id) if current_module_id in chapter_3_modules else 0
+                if module_index > 0:
+                    for i in range(module_index):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_3_modules[i]):
+                            return redirect(url_for("page", page_num=1))
+            elif current_module_id.startswith("4."):
+                # For Chapter 4, first check if all Chapter 3 is complete
+                if not get_chapter_completion_status(session.get('quiz_answers', {}), 3):
+                    return redirect(url_for("page", page_num=1))
+                # Then check previous Chapter 4 modules
+                module_index = chapter_4_modules.index(current_module_id) if current_module_id in chapter_4_modules else 0
+                if module_index > 0:
+                    for i in range(module_index):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_4_modules[i]):
                             return redirect(url_for("page", page_num=1))
     
     # Lock summary and action items until all modules complete (unless in preview mode)
@@ -1374,11 +1674,13 @@ def page(page_num: int):
     all_ch1_modules_complete = False
     all_ch2_modules_complete = False
     all_ch3_modules_complete = False
+    all_ch4_modules_complete = False
     if pages:
         # Get modules from all chapters' data stored in pages
         ch1_modules = pages[0].get("ch1_modules", [])
         ch2_modules = pages[0].get("ch2_modules", [])
         ch3_modules = pages[0].get("ch3_modules", [])
+        ch4_modules = pages[0].get("ch4_modules", [])
         
         for mod in ch1_modules:
             module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
@@ -1391,6 +1693,10 @@ def page(page_num: int):
         for mod in ch3_modules:
             module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
         all_ch3_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 3)
+        
+        for mod in ch4_modules:
+            module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
+        all_ch4_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 4)
     
     # Quiz map for TOC dropdown display
     quiz_map = {
@@ -1418,6 +1724,17 @@ def page(page_num: int):
         "3.7": [q for q in chapter3_quizzes if q["id"].startswith("q3_7")],
         "3.8": [q for q in chapter3_quizzes if q["id"].startswith("q3_8")],
         "3.9": [q for q in chapter3_quizzes if q["id"].startswith("q3_9")],
+        "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1")],
+        "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2")],
+        "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3")],
+        "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4")],
+        "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5")],
+        "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6")],
+        "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7")],
+        "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8")],
+        "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9")],
+        "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10")],
+        "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11")],
     }
     
     return render_template(
@@ -1435,6 +1752,7 @@ def page(page_num: int):
         all_ch1_modules_complete=all_ch1_modules_complete,
         all_ch2_modules_complete=all_ch2_modules_complete,
         all_ch3_modules_complete=all_ch3_modules_complete,
+        all_ch4_modules_complete=all_ch4_modules_complete,
         preview_mode=preview_mode,
         quiz_map=quiz_map,
         quiz_answers=session.get('quiz_answers', {})
