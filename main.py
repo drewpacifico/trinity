@@ -760,6 +760,280 @@ chapter4_quizzes = [
     }
 ]
 
+# ============================================================================
+# CHAPTER 5 QUIZZES
+# ============================================================================
+
+# Quiz questions for Module 5.1
+MODULE_5_1_QUIZ = [
+    {
+        "id": "q5_1_1",
+        "question": "Why is understanding different load types and cargo categories important for a freight agent?",
+        "choices": [
+            "It's not important—all freight is basically the same",
+            "It helps you communicate effectively with customers, select appropriate equipment, and anticipate challenges before they arise",
+            "Only to sound knowledgeable in conversations",
+            "It's only needed for specialized freight brokers"
+        ],
+        "correct_index": 1,
+        "explanation": "Understanding load types helps you ask intelligent questions, provide accurate quotes, select the right equipment, and avoid costly mistakes. Every commodity has unique characteristics affecting density, fragility, value, regulatory requirements, and handling needs."
+    }
+]
+
+# Quiz questions for Module 5.2
+MODULE_5_2_QUIZ = [
+    {
+        "id": "q5_2_1",
+        "question": "A customer has 24 pallets of automotive parts weighing 2,000 pounds per pallet (48,000 lbs total). What issue will you encounter when booking this load in a standard 53-foot dry van?",
+        "choices": [
+            "The load exceeds the trailer's 45,000-pound capacity and you'll need to remove pallets or find specialized equipment",
+            "The pallets won't fit because dry vans can only hold 20 pallets",
+            "Automotive parts require refrigeration",
+            "No issue—this load fits perfectly"
+        ],
+        "correct_index": 0,
+        "explanation": "Dense freight like automotive parts weighs out trailers quickly. At 2,000 lbs per pallet, 24 pallets totals 48,000 lbs, exceeding the standard 45,000-pound capacity. You'd need to reduce to 22-23 pallets or find equipment with higher capacity. Understanding whether freight will weigh out or cube out is critical for accurate quoting."
+    },
+    {
+        "id": "q5_2_2",
+        "question": "A customer says their freight 'can probably stack.' What should you do?",
+        "choices": [
+            "Tell the carrier the freight is stackable",
+            "Assume it can't stack to be safe",
+            "Don't assume—confirm with the customer whether the freight can definitely be stacked and how high it can safely stack",
+            "Stack it anyway since most freight is stackable"
+        ],
+        "correct_index": 2,
+        "explanation": "Never assume freight can be stacked without definite confirmation. 'Probably' isn't good enough. If freight cannot stack and you told the carrier it could, you create problems at pickup. Always ask: 'Can this freight be stacked? If yes, how high?' Get clear answers before dispatching."
+    }
+]
+
+# Quiz questions for Module 5.3
+MODULE_5_3_QUIZ = [
+    {
+        "id": "q5_3_1",
+        "question": "A customer needs to ship tomatoes and asks what temperature you recommend. What is the correct answer?",
+        "choices": [
+            "0°F—frozen like most produce",
+            "32-34°F—cold like lettuce and leafy greens",
+            "34-38°F—dairy temperature is safe for all food",
+            "50-60°F—tomatoes require warm temperatures; below 50°F causes chilling injury and flavor loss"
+        ],
+        "correct_index": 3,
+        "explanation": "Tomatoes require 50-60°F. Temperatures below 50°F cause chilling injury and flavor loss. This is a common mistake inexperienced agents make—assuming all produce needs cold temperatures. Different fruits and vegetables have vastly different temperature requirements. Always verify specific requirements for each product."
+    },
+    {
+        "id": "q5_3_2",
+        "question": "A customer asks for a 'food-grade trailer' for canned goods. What does this typically mean?",
+        "choices": [
+            "A refrigerated trailer set to specific temperature",
+            "A trailer that is clean, odor-free, and hasn't hauled non-food products or has been thoroughly cleaned according to food safety standards",
+            "Any dry van that has been swept out",
+            "A trailer certified by the FDA"
+        ],
+        "correct_index": 1,
+        "explanation": "Food-grade trailers are those that haven't hauled non-food products (like chemicals or automotive parts) or have been thoroughly cleaned according to food safety standards. Requirements vary by customer—some accept any clean trailer, others require trailers that have only hauled food products. Always ask: 'Do you require food-grade trailers? Are there specific previous load restrictions?'"
+    }
+]
+
+# Quiz questions for Module 5.4
+MODULE_5_4_QUIZ = [
+    {
+        "id": "q5_4_1",
+        "question": "Why do steel coils require special mention and extra caution when selecting carriers?",
+        "choices": [
+            "They're expensive and require extra insurance",
+            "An improperly secured 40,000-pound coil can shift or roll, crushing the driver's cab or causing the truck to overturn—only use carriers with documented steel coil experience",
+            "They require refrigeration",
+            "They're not actually dangerous; the concern is overblown"
+        ],
+        "correct_index": 1,
+        "explanation": "Steel coils are extremely heavy and dangerous if not secured properly. An improperly secured 40,000-pound coil that shifts or rolls can crush the driver's cab or cause the truck to overturn. Many carriers won't haul coils without extensive experience. Only use carriers with documented steel coil experience and proper securing equipment."
+    },
+    {
+        "id": "q5_4_2",
+        "question": "A customer needs drywall delivered and says tarping 'probably isn't necessary.' What should you tell them?",
+        "choices": [
+            "Agree—drywall is durable and doesn't need protection",
+            "Tarping is absolutely required—even brief rain exposure can ruin entire loads worth thousands of dollars because drywall is extremely moisture-sensitive",
+            "Leave it up to the carrier to decide",
+            "Only tarp if heavy rain is forecasted"
+        ],
+        "correct_index": 1,
+        "explanation": "Tarping is critical for drywall—even brief rain exposure can ruin entire loads worth thousands of dollars. Drywall is extremely fragile and moisture-sensitive. Moisture destroys it completely. Never transport drywall without tarping, regardless of weather forecasts."
+    }
+]
+
+# Quiz questions for Module 5.5
+MODULE_5_5_QUIZ = [
+    {
+        "id": "q5_5_1",
+        "question": "A customer says they have a 'small CNC machine' to ship. What critical mistake would it be to assume this means it's lightweight?",
+        "choices": [
+            "There is no mistake—small machines are always light",
+            "Small machinery can still be extremely heavy; a compact CNC machine might weigh 8,000+ pounds—always confirm exact dimensions and weights",
+            "CNC machines are always shipped by air, not truck",
+            "Size and weight don't matter for machinery"
+        ],
+        "correct_index": 1,
+        "explanation": "Never assume machinery characteristics based on description alone. A 'small' lathe might be 5,000 pounds, while a 'modest' press could be 20,000 pounds. A compact CNC machine might be 8,000 pounds. Always confirm exact dimensions and weights before quoting equipment and pricing."
+    },
+    {
+        "id": "q5_5_2",
+        "question": "A machinery shipment requires crane loading and unloading. What must you confirm before booking?",
+        "choices": [
+            "Nothing—the carrier will bring a crane",
+            "Confirm both origin and destination have adequate cranes with capacity matching or exceeding the machinery weight",
+            "Only verify that the origin has a crane",
+            "Just the weight of the machine"
+        ],
+        "correct_index": 1,
+        "explanation": "Always confirm loading and unloading methods and capabilities at both locations before booking. Arriving with heavy machinery and no way to load or unload it creates expensive problems. Crane capacity must match or exceed machinery weight at both origin and destination."
+    }
+]
+
+# Quiz questions for Module 5.6
+MODULE_5_6_QUIZ = [
+    {
+        "id": "q5_6_1",
+        "question": "A customer needs to ship paint products. They say it's 'just regular paint, nothing special.' What should you know?",
+        "choices": [
+            "Paint is general freight and requires no special handling",
+            "Paint is typically classified as Class 3 Flammable Liquids, requiring hazmat endorsement, special shipping papers, placarding, and commanding 15-30% rate premium",
+            "Paint only requires special handling if it's industrial paint",
+            "Paint can ship in any dry van with any driver"
+        ],
+        "correct_index": 1,
+        "explanation": "Paint is typically classified as Class 3 Flammable Liquids (hazmat). It requires drivers with hazmat endorsements, proper shipping papers, placarding, possible routing restrictions, and higher insurance ($5M vs. $750K). Many everyday products like paint, aerosols, cleaning chemicals, and batteries are hazmat. Always ask: 'Does your freight include anything flammable, corrosive, compressed, or otherwise hazardous?'"
+    },
+    {
+        "id": "q5_6_2",
+        "question": "What is the minimum cargo insurance requirement for hazmat freight requiring placarding, compared to general freight?",
+        "choices": [
+            "$750,000 for both",
+            "$5,000,000 for hazmat vs. $750,000 for general freight",
+            "$1,000,000 for both",
+            "$10,000,000 for hazmat vs. $1,000,000 for general freight"
+        ],
+        "correct_index": 1,
+        "explanation": "Hazmat requiring placarding requires minimum $5,000,000 insurance vs. $750,000 for standard freight. This higher insurance requirement affects carrier availability and costs, contributing to the 15-30% rate premium for hazmat freight."
+    }
+]
+
+# Quiz questions for Module 5.7
+MODULE_5_7_QUIZ = [
+    {
+        "id": "q5_7_1",
+        "question": "A customer needs to ship electronics worth $150,000. What security measures should you implement?",
+        "choices": [
+            "None—standard shipping is fine",
+            "Team drivers, GPS tracking, secure parking only (no truck stops), route security avoiding high-crime areas, and sealed trailers",
+            "Only GPS tracking is needed",
+            "Just use a reputable carrier"
+        ],
+        "correct_index": 1,
+        "explanation": "High-value cargo (typically $100K+) requires extensive security: team drivers (truck never left unattended), GPS tracking with geofencing, secure parking at approved facilities only, route security avoiding high-crime areas, and sealed trailers with numbered seals. Standard cargo insurance only covers $100K; additional insurance is required for high-value loads."
+    },
+    {
+        "id": "q5_7_2",
+        "question": "Why do team drivers cost 50-75% more than solo drivers for high-value freight?",
+        "choices": [
+            "It's an arbitrary markup",
+            "Two qualified drivers requiring compensation, plus the value of continuous movement reducing theft opportunities and never leaving the truck unattended",
+            "Only because of fuel costs",
+            "Team drivers aren't actually more expensive"
+        ],
+        "correct_index": 1,
+        "explanation": "Team drivers cost 50-75% more because you're paying two drivers, plus the enhanced security of continuous movement (truck is never left unattended, reducing theft opportunities). One driver rests while the other drives, allowing nearly continuous movement and preventing the security risks of parking overnight at truck stops."
+    }
+]
+
+# Quiz questions for Module 5.8
+MODULE_5_8_QUIZ = [
+    {
+        "id": "q5_8_1",
+        "question": "A customer needs freight to travel 1,200 miles in 24 hours. What service level is required and why can't a solo driver accomplish this?",
+        "choices": [
+            "Solo driver can do this easily",
+            "Expedited team drivers are required because solo drivers are limited to 11 hours of driving per day under HOS regulations (~500-550 miles), while teams can cover 1,000-1,200+ miles in 24 hours",
+            "Air freight is the only option",
+            "Just pay the solo driver extra to drive faster"
+        ],
+        "correct_index": 1,
+        "explanation": "Solo drivers can only drive 11 hours per day under Hours of Service regulations, covering ~500-550 miles. Covering 1,200 miles in 24 hours requires team drivers who alternate driving and resting, allowing nearly continuous movement. Team drivers cost 50-75% more but can cover 1,000-1,200+ miles in 24 hours."
+    },
+    {
+        "id": "q5_8_2",
+        "question": "For expedited freight under 1,500 miles, why might team trucking be better than air freight?",
+        "choices": [
+            "Air freight is always faster",
+            "Team trucking often costs less than air freight while delivering in comparable time, because air freight involves multiple handoffs (trucking to airport, airport handling, flight, destination airport, trucking from airport)",
+            "Air freight isn't available for distances under 1,500 miles",
+            "They're exactly the same"
+        ],
+        "correct_index": 1,
+        "explanation": "For distances under 1,500 miles, expedited team trucking often costs less than air freight while delivering in comparable time. Air freight involves trucking to origin airport, airport handling, air transport, destination airport handling, and trucking from destination airport—each transfer adds time and cost. Team drivers provide door-to-door service without multiple handoffs."
+    }
+]
+
+# Quiz questions for Module 5.9
+MODULE_5_9_QUIZ = [
+    {
+        "id": "q5_9_1",
+        "question": "A customer has machinery that is 10 feet wide, 14 feet tall (on flatbed), 52 feet long, and weighs 75,000 lbs. What permits are required?",
+        "choices": [
+            "No permits needed—these dimensions are legal",
+            "Oversize permits required for width (exceeds 8.5 feet) from every state the shipment travels through",
+            "Only overweight permits needed",
+            "Only the destination state requires permits"
+        ],
+        "correct_index": 1,
+        "explanation": "This load exceeds the legal width limit of 8.5 feet, requiring oversize permits. Permits must be obtained from every state the shipment travels through. Legal limits are: 8.5' wide, 13.5-14' tall, 53' long, 80,000 lbs. This load is 10' wide (oversize), so permits are required despite being within other limits."
+    },
+    {
+        "id": "q5_9_2",
+        "question": "A customer needs an oversize load delivered 'as soon as possible' and wants to book it today for pickup tomorrow. What should you tell them?",
+        "choices": [
+            "No problem—book it immediately",
+            "Oversize loads require substantial advance planning; permits take days to weeks to obtain and process. Routine permits need 3-7 days minimum, complex permits 2-4 weeks or more",
+            "Just skip the permits and deliver quickly",
+            "Permits can be obtained instantly online"
+        ],
+        "correct_index": 1,
+        "explanation": "Never accept OS/OW loads with immediate pickup requirements. Permits take time: routine permits 3-7 days minimum, complex permits 2-4 weeks or more. Route surveys (1-2 weeks), escort arrangements (days to weeks), and specialized rigging (days to weeks) all require advance planning. Customers expecting quick turnaround don't understand regulatory requirements."
+    }
+]
+
+# Quiz questions for Module 5.10
+MODULE_5_10_QUIZ = [
+    {
+        "id": "q5_10_1",
+        "question": "A customer has a 3,500-pound shipment going to a residential address without a loading dock. They need liftgate and inside delivery. What service is most appropriate?",
+        "choices": [
+            "Full truckload",
+            "LTL (less-than-truckload) with appropriate accessorial charges for liftgate and inside delivery to residential address",
+            "Partial truckload",
+            "Air freight"
+        ],
+        "correct_index": 1,
+        "explanation": "LTL is appropriate for shipments under 5,000 pounds to single destinations when cost is more important than speed. However, accessorial charges add up: liftgate ($50-150), inside delivery ($75-200), and residential delivery ($75-150). A shipment quoted at $250 might cost $475 after accessorials. Always include these charges in your quote to avoid surprise billing that damages customer relationships."
+    },
+    {
+        "id": "q5_10_2",
+        "question": "What four factors determine LTL freight classification and pricing?",
+        "choices": [
+            "Color, weight, distance, and time of year",
+            "Density, stowability, handling, and liability",
+            "Size, shape, temperature, and value",
+            "Origin, destination, carrier, and customer preference"
+        ],
+        "correct_index": 1,
+        "explanation": "LTL classification (Classes 50-500) is based on four factors: Density (weight per cubic foot—denser freight has lower classes), Stowability (how easily it fits with other freight), Handling (difficulty of loading/unloading), and Liability (risk of theft, damage, or spoilage). Understanding these helps you provide better LTL quotes. Light, bulky freight has high classifications and expensive LTL rates."
+    }
+]
+
+chapter5_quizzes = MODULE_5_1_QUIZ + MODULE_5_2_QUIZ + MODULE_5_3_QUIZ + MODULE_5_4_QUIZ + MODULE_5_5_QUIZ + MODULE_5_6_QUIZ + MODULE_5_7_QUIZ + MODULE_5_8_QUIZ + MODULE_5_9_QUIZ + MODULE_5_10_QUIZ
+
 
 def parse_project_outline(markdown_text: str):
     chapters_by_id = {}
@@ -1170,6 +1444,16 @@ def get_module_completion_status(session_quiz_answers, module_id):
         "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9_")],
         "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10_")],
         "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11_")],
+        "5.1": [q for q in chapter5_quizzes if q["id"].startswith("q5_1_")],
+        "5.2": [q for q in chapter5_quizzes if q["id"].startswith("q5_2_")],
+        "5.3": [q for q in chapter5_quizzes if q["id"].startswith("q5_3_")],
+        "5.4": [q for q in chapter5_quizzes if q["id"].startswith("q5_4_")],
+        "5.5": [q for q in chapter5_quizzes if q["id"].startswith("q5_5_")],
+        "5.6": [q for q in chapter5_quizzes if q["id"].startswith("q5_6_")],
+        "5.7": [q for q in chapter5_quizzes if q["id"].startswith("q5_7_")],
+        "5.8": [q for q in chapter5_quizzes if q["id"].startswith("q5_8_")],
+        "5.9": [q for q in chapter5_quizzes if q["id"].startswith("q5_9_")],
+        "5.10": [q for q in chapter5_quizzes if q["id"].startswith("q5_10_")],
     }
     
     if module_id not in quiz_map:
@@ -1189,6 +1473,7 @@ def get_chapter_completion_status(session_quiz_answers, chapter_num):
         2: ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"],
         3: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"],
         4: ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"],
+        5: ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"],
     }
     
     if chapter_num not in chapter_modules:
@@ -1213,6 +1498,7 @@ def build_pages(text: str):
     ch2 = extract_chapter_content(text, 2)
     ch3 = extract_chapter_content(text, 3)
     ch4 = extract_chapter_content(text, 4)
+    ch5 = extract_chapter_content(text, 5)
     
     pages = []
     module_page_map = {}  # Maps module_id -> page_num
@@ -1221,10 +1507,10 @@ def build_pages(text: str):
     # Page 0: Cover page (lines 1-27 of project.md)
     lines = text.splitlines()
     cover_content = "\n".join(lines[0:27]) if len(lines) >= 27 else ""
-    pages.append({"type": "cover", "content": cover_content, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"]})
+    pages.append({"type": "cover", "content": cover_content, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"]})
     
     # Page 1: Table of Contents
-    pages.append({"type": "toc", "chapters": chapters, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"]})
+    pages.append({"type": "toc", "chapters": chapters, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"]})
     
     # Chapter 1 intro
     if ch1["intro"]:
@@ -1537,6 +1823,87 @@ def build_pages(text: str):
             "content_html": convert_to_html(ch4["action_items"])
         })
     
+    # ================================================================
+    # CHAPTER 5
+    # ================================================================
+    
+    # Chapter 5 intro
+    if ch5["intro"]:
+        pages.append({
+            "type": "intro",
+            "chapter_id": 5,
+            "chapter_title": ch5["chapter_title"],
+            "content": ch5["intro"],
+            "content_html": convert_to_html(ch5["intro"])
+        })
+    
+    # Chapter 5 modules
+    for mod in ch5["modules"]:
+        module_page_map[mod["id"]] = len(pages)
+        content_text = "\n".join(mod["content"])
+        content_pages = split_content_into_pages(content_text)
+        
+        for page_idx, page_content in enumerate(content_pages):
+            pages.append({
+                "type": "module",
+                "chapter_id": 5,
+                "chapter_title": ch5["chapter_title"],
+                "module_id": mod["id"],
+                "module_title": mod["title"],
+                "content": page_content,
+                "content_html": convert_to_html(page_content),
+                "module_page_num": page_idx + 1,
+                "module_total_pages": len(content_pages)
+            })
+        
+        # Add quiz questions after the last page of each module
+        quiz_map_ch5 = {
+            "5.1": [q for q in chapter5_quizzes if q["id"].startswith("q5_1_")],
+            "5.2": [q for q in chapter5_quizzes if q["id"].startswith("q5_2_")],
+            "5.3": [q for q in chapter5_quizzes if q["id"].startswith("q5_3_")],
+            "5.4": [q for q in chapter5_quizzes if q["id"].startswith("q5_4_")],
+            "5.5": [q for q in chapter5_quizzes if q["id"].startswith("q5_5_")],
+            "5.6": [q for q in chapter5_quizzes if q["id"].startswith("q5_6_")],
+            "5.7": [q for q in chapter5_quizzes if q["id"].startswith("q5_7_")],
+            "5.8": [q for q in chapter5_quizzes if q["id"].startswith("q5_8_")],
+            "5.9": [q for q in chapter5_quizzes if q["id"].startswith("q5_9_")],
+            "5.10": [q for q in chapter5_quizzes if q["id"].startswith("q5_10_")],
+        }
+        
+        if mod["id"] in quiz_map_ch5:
+            quiz_questions = quiz_map_ch5[mod["id"]]
+            for idx, quiz_question in enumerate(quiz_questions):
+                quiz_page_map[quiz_question["id"]] = len(pages)
+                pages.append({
+                    "type": "quiz",
+                    "chapter_id": 5,
+                    "module_id": mod["id"],
+                    "module_title": mod["title"],
+                    "quiz_question": quiz_question,
+                    "question_number": idx + 1,
+                    "total_questions": len(quiz_questions)
+                })
+    
+    # Chapter 5 summary
+    if ch5["summary"]:
+        pages.append({
+            "type": "summary",
+            "chapter_id": 5,
+            "chapter_title": ch5["chapter_title"],
+            "content": ch5["summary"],
+            "content_html": convert_to_html(ch5["summary"])
+        })
+    
+    # Chapter 5 action items
+    if ch5["action_items"]:
+        pages.append({
+            "type": "action_items",
+            "chapter_id": 5,
+            "chapter_title": ch5["chapter_title"],
+            "content": ch5["action_items"],
+            "content_html": convert_to_html(ch5["action_items"])
+        })
+    
     # Add module_page_map and quiz_page_map to cover and TOC pages
     pages[0]["module_page_map"] = module_page_map
     pages[0]["quiz_page_map"] = quiz_page_map
@@ -1661,6 +2028,17 @@ def page(page_num: int):
                     for i in range(module_index):
                         if not get_module_completion_status(session.get('quiz_answers', {}), chapter_4_modules[i]):
                             return redirect(url_for("page", page_num=1))
+            elif current_module_id.startswith("5."):
+                # For Chapter 5, first check if all Chapter 4 is complete
+                if not get_chapter_completion_status(session.get('quiz_answers', {}), 4):
+                    return redirect(url_for("page", page_num=1))
+                # Then check previous Chapter 5 modules
+                chapter_5_modules = ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
+                module_index = chapter_5_modules.index(current_module_id) if current_module_id in chapter_5_modules else 0
+                if module_index > 0:
+                    for i in range(module_index):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_5_modules[i]):
+                            return redirect(url_for("page", page_num=1))
     
     # Lock summary and action items until all modules complete (unless in preview mode)
     if not preview_mode and current_page.get("type") in ["summary", "action_items"]:
@@ -1690,12 +2068,14 @@ def page(page_num: int):
     all_ch2_modules_complete = False
     all_ch3_modules_complete = False
     all_ch4_modules_complete = False
+    all_ch5_modules_complete = False
     if pages:
         # Get modules from all chapters' data stored in pages
         ch1_modules = pages[0].get("ch1_modules", [])
         ch2_modules = pages[0].get("ch2_modules", [])
         ch3_modules = pages[0].get("ch3_modules", [])
         ch4_modules = pages[0].get("ch4_modules", [])
+        ch5_modules = pages[0].get("ch5_modules", [])
         
         for mod in ch1_modules:
             module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
@@ -1712,6 +2092,10 @@ def page(page_num: int):
         for mod in ch4_modules:
             module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
         all_ch4_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 4)
+        
+        for mod in ch5_modules:
+            module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
+        all_ch5_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 5)
     
     # Quiz map for TOC dropdown display
     quiz_map = {
@@ -1750,6 +2134,16 @@ def page(page_num: int):
         "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9_")],
         "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10_")],
         "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11_")],
+        "5.1": [q for q in chapter5_quizzes if q["id"].startswith("q5_1_")],
+        "5.2": [q for q in chapter5_quizzes if q["id"].startswith("q5_2_")],
+        "5.3": [q for q in chapter5_quizzes if q["id"].startswith("q5_3_")],
+        "5.4": [q for q in chapter5_quizzes if q["id"].startswith("q5_4_")],
+        "5.5": [q for q in chapter5_quizzes if q["id"].startswith("q5_5_")],
+        "5.6": [q for q in chapter5_quizzes if q["id"].startswith("q5_6_")],
+        "5.7": [q for q in chapter5_quizzes if q["id"].startswith("q5_7_")],
+        "5.8": [q for q in chapter5_quizzes if q["id"].startswith("q5_8_")],
+        "5.9": [q for q in chapter5_quizzes if q["id"].startswith("q5_9_")],
+        "5.10": [q for q in chapter5_quizzes if q["id"].startswith("q5_10_")],
     }
     
     return render_template(
@@ -1768,6 +2162,7 @@ def page(page_num: int):
         all_ch2_modules_complete=all_ch2_modules_complete,
         all_ch3_modules_complete=all_ch3_modules_complete,
         all_ch4_modules_complete=all_ch4_modules_complete,
+        all_ch5_modules_complete=all_ch5_modules_complete,
         preview_mode=preview_mode,
         quiz_map=quiz_map,
         quiz_answers=session.get('quiz_answers', {})

@@ -74,44 +74,53 @@ Module 1.5: Setting Realistic Expectations
 **Months 1-3: Foundation Building**
 During your first quarter, focus on learning rather than earning. You will spend significant time in training, studying industry practices, understanding your brokerage's systems, and beginning to develop your prospecting skills. Your salary provides financial stability during this essential learning period. Commission earnings will be minimal as you're still building your customer base and learning to execute shipments effectively.
 **Key Focus Areas:**
-Master freight fundamentals (equipment types, regulations, documentation)
-Learn your brokerage's processes and technology systems
-Begin prospecting activities and initial customer outreach
-Shadow experienced agents to observe best practices
-Book your first few shipments under supervision
+- Master freight fundamentals (equipment types, regulations, documentation)
+- Learn your brokerage's processes and technology systems
+- Begin prospecting activities and initial customer outreach
+- Shadow experienced agents to observe best practices
+- Book your first few shipments under supervision
 **Months 3-6: Initial Customer Development**
 During your second quarter, you'll begin converting prospects into customers and handling shipments more independently. Your prospecting efforts from months 1-3 start producing results. Commission earnings begin to supplement your salary as you book regular shipments, though margins may be thinner as you learn pricing strategies and build confidence in negotiations.
 **Key Milestones:**
-Secure 3-5 regular customers
-Handle 5-15 shipments monthly
-Develop consistent daily prospecting and follow-up routines
-Improve pricing accuracy and margin management
-Build carrier relationships for reliable capacity
+- Secure 3-5 regular customers
+- Handle 5-15 shipments monthly
+- Develop consistent daily prospecting and follow-up routines
+- Improve pricing accuracy and margin management
+- Build carrier relationships for reliable capacity
 **Months 6-12: Momentum Building**
 During your second half of the first year, your efforts compound. Customers you secured earlier begin providing repeat business. Your operational efficiency improves, allowing more time for business development. Commission earnings become more substantial as your shipment volume increases and your pricing skills sharpen. Total compensation (salary plus commission) shows meaningful growth.
 **Key Achievements:**
-Establish 8-12 active customers
-Handle 20-40 shipments monthly
-Develop specialization or niche focus
-Achieve consistent margin targets
-Build reputation for reliability and service
+- Establish 8-12 active customers
+- Handle 20-40 shipments monthly
+- Develop specialization or niche focus
+- Achieve consistent margin targets
+- Build reputation for reliability and service
 **Year 2 and Beyond: Mature Performance**
 In your second year and beyond, you operate as a seasoned professional with an established customer base providing regular business. Commission earnings substantially supplement your base salary. Your efficiency allows you to handle higher volumes while continuing to develop new relationships. Many successful agents at this stage earn total compensation significantly exceeding their starting base salary, with commission becoming the larger portion of their income.
 **Long-Term Success Indicators:**
-15-25+ active customers with varying shipment frequencies
-50-100+ shipments monthly (varies by customer type and specialization)
-Strong margins reflecting pricing expertise and customer relationships
-Reputation generating referrals and inbound opportunities
-Mentor newer agents while continuing personal growth
-**Important Realities:**
-**Patience Required:** Building a sustainable freight business takes time. Customers don't appear overnight, and relationships develop gradually. Your salary provides the stability to invest in long-term relationship building rather than desperate short-term tactics.
+- 15-25+ active customers with varying shipment frequencies
+- 50-100+ shipments monthly (varies by customer type and specialization)
+- Strong margins reflecting pricing expertise and customer relationships
+- Reputation generating referrals and inbound opportunities
+- Mentor newer agents while continuing personal growth
+
+Building strong relationships takes time but pays dividends throughout your career. People prefer working with people they know, like, and trust.
+
+Your success in this industry ultimately depends on the quality of these relationships. Customers who trust you will provide repeat business and referrals. Carriers who respect you will prioritize your freight when capacity is tight. Industry peers who value you will offer opportunities and insights.
+
+Invest in these relationships daily through consistent professionalism, clear communication, and genuine care for the success of everyone you work with.
+
+---
+
+<u>**Important Realities**</u>
 
 [IMPORTANT] Effort precedes results. The prospecting calls you make today produce customers 30-90 days from now. Your current income reflects efforts from previous months. Consistent daily activity is essential even when immediate results aren't visible.
 
-**Effort Precedes Results:** The prospecting calls you make today produce customers 30-90 days from now. Your current income reflects efforts from previous months. Consistent daily activity is essential even when immediate results aren't visible.
-**Not Every Customer Works Out:** Some prospects you invest time in will never convert. Some customers you secure will prove unprofitable or difficult. This is normal business reality. Focus on building a diverse customer base where individual relationships aren't critical to your success.
-**Market Conditions Fluctuate:** Some months feature tight capacity and strong margins. Others feature excessive capacity and pricing pressure. Your salary provides stability through market cycles while commission rewards you during profitable periods.
-**Your Results Depend on Your Effort:** This career rewards those who consistently prospect, follow up systematically, serve customers excellently, and continuously improve their skills. Success is not guaranteed, but it is achievable for those who commit to the work required.
+- **Patience Required:** Building a sustainable freight business takes time. Customers don't appear overnight, and relationships develop gradually. Your salary provides the stability to invest in long-term relationship building rather than desperate short-term tactics.
+- **Effort Precedes Results:** The prospecting calls you make today produce customers 30-90 days from now. Your current income reflects efforts from previous months. Consistent daily activity is essential even when immediate results aren't visible.
+- **Not Every Customer Works Out:** Some prospects you invest time in will never convert. Some customers you secure will prove unprofitable or difficult. This is normal business reality. Focus on building a diverse customer base where individual relationships aren't critical to your success.
+- **Market Conditions Fluctuate:** Some months feature tight capacity and strong margins. Others feature excessive capacity and pricing pressure. Your salary provides stability through market cycles while commission rewards you during profitable periods.
+- **Your Results Depend on Your Effort:** This career rewards those who consistently prospect, follow up systematically, serve customers excellently, and continuously improve their skills. Success is not guaranteed, but it is achievable for those who commit to the work required.
 Module 1.6: Your Commitment to Professionalism
 **Here's an uncomfortable truth:** the freight brokerage industry has a reputation problem. There are dishonest brokers who misrepresent shipments, don't pay carriers on time, or disappear when problems arise. There are lazy agents who don't return calls, provide poor service, and damage relationships.
 **You have the opportunity—and responsibility—to be different.**
@@ -854,13 +863,10 @@ Beyond regulatory requirements, evaluate carriers based on their reputation, equ
 
 Maintain organized records of all transactions, communications, and documents. This serves multiple purposes:
 
-**Financial management:** You need records for invoicing, payment processing, and tax preparation.
-
-**Dispute resolution:** When disagreements arise months after delivery, detailed records prove what actually happened.
-
-**Regulatory compliance:** FMCSA regulations require brokers maintain specific records for defined periods (typically three years).
-
-**Business analysis:** Historical records show trends in customer behavior, carrier performance, and margin evolution.
+- **Financial management:** You need records for invoicing, payment processing, and tax preparation.
+- **Dispute resolution:** When disagreements arise months after delivery, detailed records prove what actually happened.
+- **Regulatory compliance:** FMCSA regulations require brokers maintain specific records for defined periods (typically three years).
+- **Business analysis:** Historical records show trends in customer behavior, carrier performance, and margin evolution.
 
 [KEY TAKEAWAY] Whatever system you use—whether sophisticated transportation management software or basic spreadsheets—ensure consistency. Every load should have a standardized file containing all relevant documents and communications.
 
@@ -868,15 +874,11 @@ Maintain organized records of all transactions, communications, and documents. T
 
 Multiple regulations govern freight brokerage operations. While your brokerage's compliance team handles most regulatory requirements, you must understand basic obligations:
 
-**Broker authority requirements:** Brokerages must maintain active FMCSA broker authority and the required $75,000 surety bond or trust fund.
-
-**Cargo claims procedures:** The Carmack Amendment establishes procedures and timelines for filing and resolving cargo loss or damage claims.
-
-**Hours of service rules:** Understanding driver HOS regulations helps you set realistic transit expectations and avoid encouraging drivers to violate regulations.
-
-**Hazardous materials regulations:** Hazmat shipments require specific documentation, placarding, and carrier qualifications.
-
-**Food safety regulations:** FSMA establishes requirements for temperature control, sanitation, and documentation for food shipments.
+- **Broker authority requirements:** Brokerages must maintain active FMCSA broker authority and the required $75,000 surety bond or trust fund.
+- **Cargo claims procedures:** The Carmack Amendment establishes procedures and timelines for filing and resolving cargo loss or damage claims.
+- **Hours of service rules:** Understanding driver HOS regulations helps you set realistic transit expectations and avoid encouraging drivers to violate regulations.
+- **Hazardous materials regulations:** Hazmat shipments require specific documentation, placarding, and carrier qualifications.
+- **Food safety regulations:** FSMA establishes requirements for temperature control, sanitation, and documentation for food shipments.
 
 You don't need to become a regulatory expert, but understanding basic requirements helps you avoid violations and protect your customers and carriers.
 
@@ -897,15 +899,11 @@ The freight industry changes constantly. Regulations update. Market conditions s
 
 Stay informed about industry trends, rate changes, capacity conditions, and competitive dynamics. Multiple sources provide valuable intelligence:
 
-**Industry publications:** FreightWaves, Transport Topics, Journal of Commerce, and others publish daily news and analysis about freight markets.
-
-**Load boards:** Beyond finding carriers, load boards reveal current rate trends and capacity conditions on specific lanes.
-
-**Carrier communication:** Conversations with drivers and dispatchers provide frontline intelligence about what's happening in the market.
-
-**Customer feedback:** What are customers hearing from other providers? What challenges are they facing? What trends are they seeing in their industries?
-
-**Networking:** Attend industry conferences and join professional associations to learn from peers.
+- **Industry publications:** FreightWaves, Transport Topics, Journal of Commerce, and others publish daily news and analysis about freight markets.
+- **Load boards:** Beyond finding carriers, load boards reveal current rate trends and capacity conditions on specific lanes.
+- **Carrier communication:** Conversations with drivers and dispatchers provide frontline intelligence about what's happening in the market.
+- **Customer feedback:** What are customers hearing from other providers? What challenges are they facing? What trends are they seeing in their industries?
+- **Networking:** Attend industry conferences and join professional associations to learn from peers.
 
 [KEY TAKEAWAY] This intelligence helps you anticipate market changes, price loads accurately, and provide valuable insights to customers.
 
@@ -913,15 +911,11 @@ Stay informed about industry trends, rate changes, capacity conditions, and comp
 
 Identify skills you need to improve and actively work on developing them:
 
-**Sales skills:** Learn consultative selling techniques, objection handling, and relationship building. Read sales books, listen to sales podcasts, practice your approach.
-
-**Negotiation abilities:** Study negotiation tactics, practice with lower-stakes loads, learn to create win-win outcomes.
-
-**Market knowledge:** Develop expertise in specific lanes, equipment types, or industries through focused study and experience.
-
-**Operational excellence:** Learn best practices for tracking, communication, and problem resolution. Analyze what works and what doesn't.
-
-**Technology proficiency:** Master the tools and platforms essential to modern freight operations.
+- **Sales skills:** Learn consultative selling techniques, objection handling, and relationship building. Read sales books, listen to sales podcasts, practice your approach.
+- **Negotiation abilities:** Study negotiation tactics, practice with lower-stakes loads, learn to create win-win outcomes.
+- **Market knowledge:** Develop expertise in specific lanes, equipment types, or industries through focused study and experience.
+- **Operational excellence:** Learn best practices for tracking, communication, and problem resolution. Analyze what works and what doesn't.
+- **Technology proficiency:** Master the tools and platforms essential to modern freight operations.
 
 [PRO TIP] Many successful agents schedule dedicated learning time weekly—reading industry publications, taking online courses, listening to freight podcasts, or studying specific topics relevant to their business.
 
@@ -929,11 +923,9 @@ Identify skills you need to improve and actively work on developing them:
 
 Your carrier network and customer relationships are assets you build over time. Invest continuously in strengthening these relationships:
 
-**With customers:** Provide consistent value beyond just booking loads. Share market intelligence. Offer insights that help them optimize their logistics. Be responsive and reliable. Build personal connections that transcend transactional relationships.
-
-**With carriers:** Pay fairly and promptly. Communicate clearly and respectfully. Provide regular freight when possible. Address their concerns seriously. Recognize that drivers and dispatchers are professionals deserving respect.
-
-**With industry peers:** Other agents (especially those in non-competing specialties) can be valuable sources of advice, referrals, and market intelligence. Don't view everyone as competition—many relationships are mutually beneficial.
+- **With customers:** Provide consistent value beyond just booking loads. Share market intelligence. Offer insights that help them optimize their logistics. Be responsive and reliable. Build personal connections that transcend transactional relationships.
+- **With carriers:** Pay fairly and promptly. Communicate clearly and respectfully. Provide regular freight when possible. Address their concerns seriously. Recognize that drivers and dispatchers are professionals deserving respect.
+- **With industry peers:** Other agents (especially those in non-competing specialties) can be valuable sources of advice, referrals, and market intelligence. Don't view everyone as competition—many relationships are mutually beneficial.
 
 Building strong relationships takes time but pays dividends throughout your career. People prefer working with people they know, like, and trust.
 Module 3.8: Time Management and Prioritization
@@ -1145,20 +1137,13 @@ Module 4.2: Dry Van Trailers
 Dry van trailers are the workhorses of the trucking industry. These are the standard enclosed trailers you see everywhere on highways—rectangular boxes protecting freight from weather while providing secure transport. Understanding dry vans is essential because they handle the majority of general freight shipments.
 
 **Standard Dry Van Specifications**
-Dimension
-Measurement
-Length
-53 feet (some 48-foot trailers still exist)
-Width
-8.5 feet (102 inches)
-Interior Height
-Approximately 9 feet (varies 8.5-9.5 feet)
-Door Opening
-8 feet wide × 9 feet tall
-Weight Capacity
-43,000-45,000 pounds
-Cube Capacity
-Approximately 4,000 cubic feet
+
+- **Length:** 53 feet (some 48-foot trailers still exist)
+- **Width:** 8.5 feet (102 inches)
+- **Interior Height:** Approximately 9 feet (varies 8.5-9.5 feet)
+- **Door Opening:** 8 feet wide × 9 feet tall
+- **Weight Capacity:** 43,000-45,000 pounds
+- **Cube Capacity:** Approximately 4,000 cubic feet
 
 **Critical Concept: Cubing Out vs. Weighing Out**
 
@@ -1174,33 +1159,34 @@ Conversely, shipping 22 pallets of automotive batteries, each pallet weighing 2,
 [REAL EXAMPLE] A common mistake: An agent quotes one trailer for 26 furniture pallets because the weight (10,400 lbs) is far below capacity. But 4,200 cubic feet exceeds the 4,000 cu ft trailer capacity. Understanding cubing out vs. weighing out prevents this costly error.
 
 **Ideal Freight Types for Dry Vans**
+
 Dry vans work best for:
-Palletized freight (boxes, cartons, cases on standard pallets)
-Manufactured products not requiring temperature control
-Retail merchandise
-Non-perishable food products
-Electronics and appliances
-Furniture and fixtures
-Automotive parts (non-hazardous)
-Textiles and clothing
-Paper products
-General freight not needing special handling
+- Palletized freight (boxes, cartons, cases on standard pallets)
+- Manufactured products not requiring temperature control
+- Retail merchandise
+- Non-perishable food products
+- Electronics and appliances
+- Furniture and fixtures
+- Automotive parts (non-hazardous)
+- Textiles and clothing
+- Paper products
+- General freight not needing special handling
 **Limitations of Dry Vans**
 
 Dry vans cannot accommodate:
-Freight exceeding interior dimensions (you can't fit a 55-foot beam in a 53-foot trailer)
-Temperature-sensitive products requiring climate control
-Freight needing top loading or side loading (dry vans load only through rear doors)
-Overweight freight exceeding 45,000 pounds
-Freight requiring ventilation or special atmosphere
-Products needing live floor unloading
+- Freight exceeding interior dimensions (you can't fit a 55-foot beam in a 53-foot trailer)
+- Temperature-sensitive products requiring climate control
+- Freight needing top loading or side loading (dry vans load only through rear doors)
+- Overweight freight exceeding 45,000 pounds
+- Freight requiring ventilation or special atmosphere
+- Products needing live floor unloading
 
 **Loading Considerations**
 
 Dry vans typically load and unload at dock height (approximately 48-52 inches off the ground). This requires:
-Loading docks at pickup and delivery locations, OR
-Forklifts capable of reaching trailer floor height, OR
-Liftgate service (hydraulic platform that raises/lowers freight)
+- Loading docks at pickup and delivery locations, OR
+- Forklifts capable of reaching trailer floor height, OR
+- Liftgate service (hydraulic platform that raises/lowers freight)
 
 [COMMON MISTAKE] Always confirm how freight will be loaded and unloaded. A customer requesting dry van service at a location without a dock and without a forklift needs liftgate service—an additional cost you must account for in your pricing.
 Floor Specifications
@@ -1211,44 +1197,40 @@ Module 4.3: Refrigerated Trailers (Reefers)
 Refrigerated trailers—universally called "reefers" in the industry—are insulated trailers equipped with refrigeration units that maintain specific temperatures. Essential for transporting temperature-sensitive products, reefers represent a significant segment of the freight market.
 
 **Reefer Specifications**
-Feature
-Details
-External Dimensions
-Same as dry vans (53' × 8.5' × 13.5' tall)
-Internal Dimensions
-Slightly smaller (typically 51-52 feet long due to insulation and refrigeration unit)
-Weight Capacity
-40,000-42,000 pounds (less than dry vans due to heavier trailer weight)
-Temperature Range
--20°F to +70°F
-Fuel Consumption
-0.5-1.0 gallon per hour (separate diesel tank for refrigeration unit)
+
+- **External Dimensions:** Same as dry vans (53' × 8.5' × 13.5' tall)
+- **Internal Dimensions:** Slightly smaller (typically 51-52 feet long due to insulation and refrigeration unit)
+- **Weight Capacity:** 40,000-42,000 pounds (less than dry vans due to heavier trailer weight)
+- **Temperature Range:** -20°F to +70°F
+- **Fuel Consumption:** 0.5-1.0 gallon per hour (separate diesel tank for refrigeration unit)
 
 **Temperature Requirements by Product Type**
 
 Different products require different temperatures. Understanding these requirements helps you communicate knowledgeably with customers and carriers:
-Frozen foods: 0°F to -10°F
-Ice cream and frozen desserts: -10°F to -20°F
-Frozen vegetables and fruits: 0°F
-Frozen meat and seafood: 0°F or below
-Fresh meat and poultry: 28°F to 32°F (as cold as possible without freezing)
-Dairy products: 34°F to 38°F
-Milk: 34°F to 38°F
-Cheese: 35°F to 40°F
-Butter: 35°F to 40°F
-Fresh produce: Varies dramatically by product
-Lettuce and leafy greens: 32°F to 34°F
-Tomatoes: 50°F to 55°F (will be damaged if too cold)
-Bananas: 56°F to 58°F
-Apples: 30°F to 32°F
-Berries: 31°F to 32°F
-Pharmaceuticals: Often 36°F to 46°F (2°C to 8°C), with some requiring more precise control
+
+- **Frozen foods:** 0°F to -10°F
+- **Ice cream and frozen desserts:** -10°F to -20°F
+- **Frozen vegetables and fruits:** 0°F
+- **Frozen meat and seafood:** 0°F or below
+- **Fresh meat and poultry:** 28°F to 32°F (as cold as possible without freezing)
+- **Dairy products:** 34°F to 38°F
+  - Milk: 34°F to 38°F
+  - Cheese: 35°F to 40°F
+  - Butter: 35°F to 40°F
+- **Fresh produce:** Varies dramatically by product
+  - Lettuce and leafy greens: 32°F to 34°F
+  - Tomatoes: 50°F to 55°F (will be damaged if too cold)
+  - Bananas: 56°F to 58°F
+  - Apples: 30°F to 32°F
+  - Berries: 31°F to 32°F
+- **Pharmaceuticals:** Often 36°F to 46°F (2°C to 8°C), with some requiring more precise control
 [IMPORTANT] Always confirm the exact temperature requirement. "Keep it cold" isn't sufficient instruction. Carriers need specific set-point temperatures.
 
 **Operating Modes**
+
 Refrigeration units operate in two primary modes:
-Continuous cycle: The unit runs constantly, maintaining very stable temperatures. This is most common for products requiring tight temperature control. Fuel consumption is higher but temperature stability is maximum.
-Start-stop (cycle sentry): The unit cycles on and off to maintain temperature within a range. Saves fuel but creates more temperature fluctuation. Acceptable for many products but not ideal for highly temperature-sensitive freight.
+- **Continuous cycle:** The unit runs constantly, maintaining very stable temperatures. This is most common for products requiring tight temperature control. Fuel consumption is higher but temperature stability is maximum.
+- **Start-stop (cycle sentry):** The unit cycles on and off to maintain temperature within a range. Saves fuel but creates more temperature fluctuation. Acceptable for many products but not ideal for highly temperature-sensitive freight.
 Most customers will simply specify the temperature they need, and carriers will choose the appropriate operating mode. However, understanding the difference helps you communicate intelligently about temperature control.
 **Pre-Cooling: A Critical Requirement**
 
@@ -1263,43 +1245,40 @@ Most reefers maintain a single temperature throughout. If a customer needs produ
 **Rate Implications**
 
 [KEY TAKEAWAY] Reefer freight typically commands 20-40% higher rates than dry van freight for several reasons:
-Specialized equipment is less available (fewer reefer trailers than dry vans means tighter capacity).
-Fuel costs are significant (refrigeration units consume 0.5-1.0 gallons per hour, adding $50-100+ per day in fuel costs).
-Maintenance costs are higher (refrigeration units require regular maintenance and occasional repairs).
-Risk is greater (temperature failures can destroy entire loads worth tens of thousands of dollars).
-Driver expertise matters (not all drivers understand proper reefer operation and temperature management).
+
+- Specialized equipment is less available (fewer reefer trailers than dry vans means tighter capacity)
+- Fuel costs are significant (refrigeration units consume 0.5-1.0 gallons per hour, adding $50-100+ per day in fuel costs)
+- Maintenance costs are higher (refrigeration units require regular maintenance and occasional repairs)
+- Risk is greater (temperature failures can destroy entire loads worth tens of thousands of dollars)
+- Driver expertise matters (not all drivers understand proper reefer operation and temperature management)
 When pricing reefer loads, account for these factors. Customers expecting dry van rates for refrigerated service have unrealistic expectations you'll need to manage.
-Common Reefer Freight Challenges
-Temperature disputes: Customer claims freight arrived at wrong temperature. Always document set-point temperatures, pre-cooling confirmation, and any temperature readings during transit.
-Equipment failures: Refrigeration units break down. Ensure carriers have contingency plans and proper insurance for product loss.
-Loading delays: Extended loading times in warm warehouses can raise product temperature. Minimize dock time when possible.
-Receiver rejection: Some receivers test product temperature on arrival and reject loads if outside specification. This risk makes carrier selection critical—you need reliable carriers with well-maintained equipment.
+**Common Reefer Freight Challenges**
+
+- **Temperature disputes:** Customer claims freight arrived at wrong temperature. Always document set-point temperatures, pre-cooling confirmation, and any temperature readings during transit.
+- **Equipment failures:** Refrigeration units break down. Ensure carriers have contingency plans and proper insurance for product loss.
+- **Loading delays:** Extended loading times in warm warehouses can raise product temperature. Minimize dock time when possible.
+- **Receiver rejection:** Some receivers test product temperature on arrival and reject loads if outside specification. This risk makes carrier selection critical—you need reliable carriers with well-maintained equipment.
 Module 4.4: Flatbed Trailers
 
 Flatbed trailers are open platforms without sides or roofs, used for freight that cannot fit inside enclosed trailers or requires top or side loading. Understanding flatbeds is essential because they serve specialized but significant freight segments.
 
 **Flatbed Specifications**
-Feature
-Details
-Length
-48 or 53 feet
-Width
-8.5 feet (102 inches)
-Deck Height
-Approximately 5 feet off ground
-Weight Capacity
-45,000-48,000 pounds
-Legal Height Limit
-13.5-14 feet total (load height plus 5-foot deck) without permits
+
+- **Length:** 48 or 53 feet
+- **Width:** 8.5 feet (102 inches)
+- **Deck Height:** Approximately 5 feet off ground
+- **Weight Capacity:** 45,000-48,000 pounds
+- **Legal Height Limit:** 13.5-14 feet total (load height plus 5-foot deck) without permits
 
 **Load Securing Requirements**
 
 Unlike enclosed trailers where freight is contained by walls, flatbed freight must be properly secured to prevent shifting or falling during transit. This is both a safety requirement and a federal regulation.
 Drivers are responsible for securing freight according to Federal Motor Carrier Safety Administration regulations. Different cargo types require different securing methods:
-Chains and binders: Heavy loads like steel, machinery, and equipment typically secure with chains rated for appropriate weight. Binders (lever or ratchet devices) tighten chains. Standard practice is one chain per 10 feet of length, with minimums based on weight.
-Straps and ratchets: Lighter loads and loads where chains might cause damage often secure with heavy-duty nylon or polyester straps. Ratchet mechanisms tighten straps. Similar patterns to chains—one strap per 10 feet with appropriate minimums.
-Blocking and bracing: Some loads require wooden blocks, timbers, or metal bracing to prevent forward, backward, or lateral movement. These work in combination with chains or straps.
-Edge protection: When straps or chains cross sharp edges, edge protectors prevent cutting the securing devices.
+
+- **Chains and binders:** Heavy loads like steel, machinery, and equipment typically secure with chains rated for appropriate weight. Binders (lever or ratchet devices) tighten chains. Standard practice is one chain per 10 feet of length, with minimums based on weight.
+- **Straps and ratchets:** Lighter loads and loads where chains might cause damage often secure with heavy-duty nylon or polyester straps. Ratchet mechanisms tighten straps. Similar patterns to chains—one strap per 10 feet with appropriate minimums.
+- **Blocking and bracing:** Some loads require wooden blocks, timbers, or metal bracing to prevent forward, backward, or lateral movement. These work in combination with chains or straps.
+- **Edge protection:** When straps or chains cross sharp edges, edge protectors prevent cutting the securing devices.
 Carriers should arrive with all necessary securing equipment. However, unusual loads might require specialized securing devices the carrier doesn't typically carry. Confirm securing requirements when booking to avoid problems at pickup.
 **Tarping: Protection from Weather**
 
@@ -1311,23 +1290,25 @@ Tarping is labor-intensive—climbing on loads, pulling heavy tarps into positio
 Not all loads require tarps. Steel products usually ship uncovered (they're weatherproof). Machinery often ships without tarps if it's designed for outdoor use. Lumber almost always requires tarps (moisture causes problems). Building materials like drywall absolutely require tarps (moisture destroys them).
 
 [PRO TIP] When unsure, ask the customer: "Does this freight require tarp protection?" If they're unsure, research the product type or call carriers familiar with that commodity.
-Ideal Freight Types for Flatbeds
+**Ideal Freight Types for Flatbeds**
+
 Flatbeds work best for:
-Steel products: Beams, plates, sheets, coils, pipes, structural steel. The steel industry is a major flatbed user.
-Lumber and building materials: Dimensional lumber, plywood, drywall, roofing materials, siding.
-Construction equipment: Skid steers, excavators, compressors, generators, scaffolding.
-Large machinery: Industrial equipment, manufacturing machinery, agricultural equipment.
-Vehicles and equipment: Forklifts, tractors, boats, non-running vehicles.
-Glass and windows: Large commercial glass panels (often on specialized racks).
-HVAC equipment: Large commercial units, ductwork, air handling units.
-Pipes and tubes: Large-diameter pipes, utility poles, structural tubes.
-Large crates: Oversized crates containing machinery or equipment.
-Any oversized items: Freight exceeding enclosed trailer dimensions.
-Loading Considerations
+- Steel products: Beams, plates, sheets, coils, pipes, structural steel. The steel industry is a major flatbed user.
+- Lumber and building materials: Dimensional lumber, plywood, drywall, roofing materials, siding.
+- Construction equipment: Skid steers, excavators, compressors, generators, scaffolding.
+- Large machinery: Industrial equipment, manufacturing machinery, agricultural equipment.
+- Vehicles and equipment: Forklifts, tractors, boats, non-running vehicles.
+- Glass and windows: Large commercial glass panels (often on specialized racks).
+- HVAC equipment: Large commercial units, ductwork, air handling units.
+- Pipes and tubes: Large-diameter pipes, utility poles, structural tubes.
+- Large crates: Oversized crates containing machinery or equipment.
+- Any oversized items: Freight exceeding enclosed trailer dimensions.
+**Loading Considerations**
+
 Flatbeds offer flexibility that enclosed trailers cannot:
-Top loading: Cranes or forklifts can load from above, useful for machinery or equipment.
-Side loading: Forklifts can access loads from either side, speeding loading operations.
-Ground-level loading: Freight can sometimes be loaded from ground level with appropriate equipment.
+- **Top loading:** Cranes or forklifts can load from above, useful for machinery or equipment.
+- **Side loading:** Forklifts can access loads from either side, speeding loading operations.
+- **Ground-level loading:** Freight can sometimes be loaded from ground level with appropriate equipment.
 However, flatbeds require loading equipment that can reach 5 feet off the ground. Not all facilities have such equipment. Confirm loading capabilities before booking flatbed loads.
 Module 4.5: Specialized Flatbed Variants
 
@@ -1338,33 +1319,37 @@ Several flatbed variations provide solutions for freight that doesn't fit on sta
 Step deck trailers have two deck levels. The front section sits at standard 5-foot height for approximately 10 feet, then "steps down" to a lower deck approximately 3.5 feet off the ground for the remaining 43 feet (on 53-foot trailers).
 
 [KEY TAKEAWAY] This design allows taller freight to remain under the 13.5-14 foot total height limit. A standard flatbed with 5-foot deck height can carry loads up to 8.5-9 feet tall. A step deck with 3.5-foot well deck can carry loads 10-11 feet tall while staying legal.
+
 **Common uses:**
-Tall machinery or equipment
-Large industrial components
-Construction equipment
-Agricultural equipment
-Any freight between 9 and 11 feet tall
+- Tall machinery or equipment
+- Large industrial components
+- Construction equipment
+- Agricultural equipment
+- Any freight between 9 and 11 feet tall
 
 **Step decks command premium rates over standard flatbeds because:**
-Less availability (fewer step decks than standard flatbeds)
-More versatility (they can haul anything a standard flatbed can, plus taller items)
-Higher equipment costs for carriers
+- Less availability (fewer step decks than standard flatbeds)
+- More versatility (they can haul anything a standard flatbed can, plus taller items)
+- Higher equipment costs for carriers
 **Double Drop (Lowboy) Trailers**
 
 Double drop trailers have three deck levels: standard height front (approximately 8-10 feet), very low center section (18-24 inches off ground), and standard or low height rear section.
 
 The extremely low well section allows hauling very tall freight—typically 12-15+ feet tall while staying legal. Some specialized lowboys sit even lower, allowing freight approaching 20 feet tall.
-Common uses:
-Heavy construction equipment (excavators, bulldozers, cranes)
-Large industrial machinery
-Transformers and electrical equipment
-Any extremely tall freight
+
+**Common uses:**
+- Heavy construction equipment (excavators, bulldozers, cranes)
+- Large industrial machinery
+- Transformers and electrical equipment
+- Any extremely tall freight
+
 Lowboys typically have higher weight capacity than standard flatbeds (often 50,000+ pounds on specialized units) because they're designed for heavy equipment.
-Lowboys command significant premiums—often 50-100% more than standard flatbed rates—due to:
-Limited availability (specialized equipment)
-Heavy equipment expertise required
-Often need permits even when technically legal
-Higher carrier equipment costs
+
+**Lowboys command significant premiums—often 50-100% more than standard flatbed rates—due to:**
+- Limited availability (specialized equipment)
+- Heavy equipment expertise required
+- Often need permits even when technically legal
+- Higher carrier equipment costs
 **RGN (Removable Gooseneck) Trailers**
 
 RGN trailers are lowboys where the front section (gooseneck) detaches from the trailer, creating a ramp. This allows rolling wheeled equipment directly onto the trailer rather than requiring cranes for loading.
@@ -1378,16 +1363,18 @@ Rates are similar to or slightly higher than standard lowboy rates, with the con
 Conestoga trailers have rolling tarp systems that slide along rails running the trailer length. Rather than manually wrestling tarps over loads, drivers simply crank a mechanism that rolls the tarp forward or backward.
 
 **This provides several advantages:**
-Much faster than manual tarping (5-10 minutes vs. 30-60 minutes)
-Less physical labor for drivers
-Better weather protection (systematic design seals better than manual tarps)
-Reduces damage risk to freight from climbing on loads
+- Much faster than manual tarping (5-10 minutes vs. 30-60 minutes)
+- Less physical labor for drivers
+- Better weather protection (systematic design seals better than manual tarps)
+- Reduces damage risk to freight from climbing on loads
+
 Conestogas are particularly popular for freight where drivers shouldn't walk on the load (finished products, delicate items) or where weather protection is critical but time is important.
-Conestogas command premiums over standard flatbed rates (typically $100-300 more) because:
-Limited availability (expensive equipment)
-Speed and convenience
-Better protection
-Often preferred for higher-value freight
+
+**Conestogas command premiums over standard flatbed rates (typically $100-300 more) because:**
+- Limited availability (expensive equipment)
+- Speed and convenience
+- Better protection
+- Often preferred for higher-value freight
 Module 4.6: Power Only Operations
 
 Power only is an operating arrangement where the carrier provides only the tractor (power unit), and the customer provides the trailer. This might seem unusual if you're new to freight, but it's increasingly common in certain segments.
@@ -1395,6 +1382,7 @@ Power only is an operating arrangement where the carrier provides only the tract
 **How Power Only Works**
 
 The shipper or receiver owns trailers. Carriers provide tractors and drivers to pull those trailers. This is common in several scenarios:
+
 **Drop and Hook Operations:** Large shippers with substantial trailer fleets load trailers in advance. Carriers drop empty trailers, pick up loaded trailers, and deliver them. This eliminates driver wait time during loading.
 
 [REAL EXAMPLE] A major manufacturer has 100 trailers. They load trailers throughout the week. Carriers arrive, drop an empty, hook a loaded trailer, and depart within 15-30 minutes. The efficiency benefits both the shipper (no dock congestion) and carrier (more miles per day, higher revenue).
@@ -1415,20 +1403,21 @@ Beyond the major categories (dry van, reefer, flatbed and variants), several spe
 Tankers haul liquids—fuel, chemicals, milk, juice, liquid food products, and countless other commodities. Tankers are heavily regulated, especially for hazardous materials and food-grade products.
 
 **Key characteristics:**
-Capacity: 5,000-9,000 gallons depending on product density and trailer design
-Multiple compartments: Many tankers have 3-6 compartments allowing separate products simultaneously
-Food-grade requirements: Tankers hauling food products must be thoroughly cleaned between loads and cannot haul non-food products without extensive cleaning protocols
-Hazmat certification: Tankers carrying hazardous materials require drivers with hazmat endorsements and trailers meeting stringent specifications
-Specialized loading/unloading: Some require pneumatic systems, heating systems, or specialized pumps
+- **Capacity:** 5,000-9,000 gallons depending on product density and trailer design
+- **Multiple compartments:** Many tankers have 3-6 compartments allowing separate products simultaneously
+- **Food-grade requirements:** Tankers hauling food products must be thoroughly cleaned between loads and cannot haul non-food products without extensive cleaning protocols
+- **Hazmat certification:** Tankers carrying hazardous materials require drivers with hazmat endorsements and trailers meeting stringent specifications
+- **Specialized loading/unloading:** Some require pneumatic systems, heating systems, or specialized pumps
 [IMPORTANT] Tanker freight is highly specialized. Unless you develop specific expertise in liquid transportation, you'll likely refer these opportunities to specialized agents or brokers.
 
 **Hopper Trailers**
 
 Hoppers haul dry bulk materials like grain, plastic pellets, cement powder, fly ash, sand, and similar commodities. They unload through bottom gates or pneumatic systems.
+
 **Types:**
-Pneumatic hoppers: Use compressed air to unload powder or small pellet materials through hoses
-Gravity hoppers: Unload through bottom gates into pits or conveyors
-End-dump hoppers: Tip backward to dump contents
+- **Pneumatic hoppers:** Use compressed air to unload powder or small pellet materials through hoses
+- **Gravity hoppers:** Unload through bottom gates into pits or conveyors
+- **End-dump hoppers:** Tip backward to dump contents
 
 Like tankers, hopper freight is specialized. Most freight agents focus on boxed or palletized freight rather than bulk commodities.
 
@@ -1440,8 +1429,8 @@ This is another highly specialized segment requiring specific expertise in anima
 Auto carriers transport multiple vehicles simultaneously—typically 7-9 cars on a single trailer depending on vehicle sizes.
 
 **Types:**
-Open carriers: Most new cars ship on open carriers. Vehicles are exposed to weather but secure.
-Enclosed carriers: High-value vehicles, classics, or luxury cars ship in enclosed trailers for maximum protection.
+- **Open carriers:** Most new cars ship on open carriers. Vehicles are exposed to weather but secure.
+- **Enclosed carriers:** High-value vehicles, classics, or luxury cars ship in enclosed trailers for maximum protection.
 
 Auto transport is typically handled by specialists in vehicle logistics rather than general freight agents.
 
@@ -1449,10 +1438,10 @@ Auto transport is typically handled by specialists in vehicle logistics rather t
 Curtain side trailers (sometimes called "sliding tarp" trailers) have solid roofs and floors but sides made of heavy fabric curtains that roll open. This allows side loading with forklifts while providing weather protection similar to dry vans.
 
 **Benefits:**
-Side loading access eliminates need for end-of-dock positioning
-Faster loading/unloading than dry vans (multiple forklifts can work simultaneously from both sides)
-Floor-to-ceiling access simplifies loading tall items
-Weather protection for freight
+- Side loading access eliminates need for end-of-dock positioning
+- Faster loading/unloading than dry vans (multiple forklifts can work simultaneously from both sides)
+- Floor-to-ceiling access simplifies loading tall items
+- Weather protection for freight
 Curtain sides are most common in Europe but growing in North America. They work well for freight that benefits from side loading efficiency but needs weather protection.
 Module 4.8: Truck Classifications and Weight Ratings
 
@@ -1463,9 +1452,9 @@ GVWR is the maximum total weight of the vehicle including the vehicle itself plu
 **Class 8 Trucks (GVWR over 33,000 pounds)**
 
 These are standard over-the-road semi-trucks—the heavy-duty tractors pulling trailers you see on highways. This is what you'll be booking for truckload freight. Class 8 includes:
-Day cabs (no sleeping compartment)
-Sleeper cabs (with beds for long-haul drivers)
-Various axle configurations (tandem, tri-axle, etc.)
+- Day cabs (no sleeping compartment)
+- Sleeper cabs (with beds for long-haul drivers)
+- Various axle configurations (tandem, tri-axle, etc.)
 Class 7 Trucks (GVWR 26,001-33,000 pounds)
 Medium-duty trucks used primarily for local deliveries. Box trucks, delivery trucks, and smaller commercial vehicles fall into this class. You might occasionally book these for local moves or smaller shipments.
 Class 6 and Below (GVWR under 26,001 pounds)
@@ -1481,19 +1470,20 @@ Federal and state laws regulate not just total vehicle weight but how weight dis
 
 **Federal Weight Limits on Interstate Highways**
 
-Maximum gross vehicle weight: 80,000 pounds total
-Steer axle (front): 12,000 pounds maximum
-Drive axles (tandem rear axles on tractor): 34,000 pounds maximum combined
-Trailer axles (tandem axles on trailer): 34,000 pounds maximum combined
+- **Maximum gross vehicle weight:** 80,000 pounds total
+- **Steer axle (front):** 12,000 pounds maximum
+- **Drive axles (tandem rear axles on tractor):** 34,000 pounds maximum combined
+- **Trailer axles (tandem axles on trailer):** 34,000 pounds maximum combined
 
 **Why Distribution Matters**
 Simply keeping the total weight under 80,000 pounds isn't sufficient. The weight must distribute properly across axles. Heavy freight positioned wrong in the trailer can cause individual axles to exceed limits even when total weight is legal.
 
 [COMMON MISTAKE] Example: A load weighs 45,000 pounds total—well under the 80,000-pound limit. However, if all freight loads in the front half of the trailer, it concentrates excessive weight on the trailer's front axle set, potentially exceeding the 34,000-pound tandem limit. The load is illegal despite being under gross weight limits.
+
 Experienced drivers understand proper weight distribution and position freight correctly. However, some commodities present challenges:
-Steel coils are extremely heavy and dense. A single coil might weigh 40,000 pounds. It must be positioned carefully to distribute weight properly.
-Machinery with uneven weight distribution requires careful positioning to balance axle weights.
-Partial loads where only the front or rear of the trailer is loaded require careful calculation to avoid excessive weight on specific axle sets.
+- Steel coils are extremely heavy and dense. A single coil might weigh 40,000 pounds. It must be positioned carefully to distribute weight properly.
+- Machinery with uneven weight distribution requires careful positioning to balance axle weights.
+- Partial loads where only the front or rear of the trailer is loaded require careful calculation to avoid excessive weight on specific axle sets.
 **State Variations**
 
 Some states allow higher weights on certain roads. Michigan, for example, allows up to 160,000 pounds on specific routes using trucks with additional axles. Some local roads have restrictions below federal limits (bridges with weight limits, residential streets with truck restrictions).
@@ -1521,10 +1511,10 @@ Door openings: Dry van rear doors are approximately 8 feet wide by 9 feet tall. 
 **Step 2: Weight Capacity**
 
 Can the equipment handle the weight?
-Dry vans: 43,000-45,000 pounds
-Reefers: 40,000-42,000 pounds (less capacity due to heavier trailer weight from insulation and refrigeration equipment)
-Flatbeds: 45,000-48,000 pounds
-Specialized equipment: Varies—confirm with carrier
+- **Dry vans:** 43,000-45,000 pounds
+- **Reefers:** 40,000-42,000 pounds (less capacity due to heavier trailer weight from insulation and refrigeration equipment)
+- **Flatbeds:** 45,000-48,000 pounds
+- **Specialized equipment:** Varies—confirm with carrier
 
 Remember that carriers consider both total weight and how it distributes. A 45,000-pound load that concentrates weight in a small area might be problematic even though total weight is legal.
 
@@ -1536,10 +1526,10 @@ Some freight is temperature-sensitive but doesn't require active refrigeration. 
 **Step 4: Loading and Unloading Method**
 
 How will the freight load and unload?
-Dock-height locations with forklifts: Dry vans and reefers work well 
-Ground-level locations without docks: Requires liftgate service or flatbed with appropriate ground-level loading equipment 
-Top loading or side loading required: Flatbed necessary 
-Roll-on/roll-off for wheeled equipment: RGN or similar specialized equipment
+- **Dock-height locations with forklifts:** Dry vans and reefers work well 
+- **Ground-level locations without docks:** Requires liftgate service or flatbed with appropriate ground-level loading equipment 
+- **Top loading or side loading required:** Flatbed necessary 
+- **Roll-on/roll-off for wheeled equipment:** RGN or similar specialized equipment
 
 Confirm loading capabilities at both pickup and delivery before finalizing equipment selection. A dry van without liftgate cannot pickup from a ground-level location without proper loading equipment.
 
@@ -1551,11 +1541,12 @@ If no, flatbed freight can ship uncovered.
 When unsure, ask the customer or research the commodity. Some materials seem durable but are actually sensitive to moisture or temperature swings.
 
 **Step 6: Special Regulations**
+
 Are there special regulatory requirements limiting equipment options?
-Hazmat: Requires carriers with hazmat endorsements, proper insurance levels, and appropriate equipment. Not all carriers handle hazmat.
-Food-grade: Some customers require trailers that haven't hauled non-food products. This limits carrier options and affects pricing.
-Oversize/overweight: Requires permits and sometimes specialized equipment. Affects routing and timing.
-Security requirements: High-value cargo might require specific security features (GPS tracking, sealed trailers, team drivers, etc.).
+- **Hazmat:** Requires carriers with hazmat endorsements, proper insurance levels, and appropriate equipment. Not all carriers handle hazmat.
+- **Food-grade:** Some customers require trailers that haven't hauled non-food products. This limits carrier options and affects pricing.
+- **Oversize/overweight:** Requires permits and sometimes specialized equipment. Affects routing and timing.
+- **Security requirements:** High-value cargo might require specific security features (GPS tracking, sealed trailers, team drivers, etc.).
 
 **Step 7: Customer Preferences**
 Does the customer have specific equipment preferences or requirements?
@@ -1567,13 +1558,15 @@ Using a reefer for freight that doesn't need temperature control wastes money. U
 Select equipment that safely and appropriately handles the freight at the most economical cost. This protects your margin while providing appropriate service.
 **Common Equipment Selection Mistakes**
 
-[COMMON MISTAKE] Quoting dry van for freight that needs flatbed (freight too tall, too long, or requiring top loading)
-Quoting reefer for freight that doesn't need temperature control (wastes customer money and yours)
-Quoting standard flatbed for freight requiring step deck or lowboy (height issues)
-Forgetting to account for liftgate requirements (customer can't load without it)
-Not confirming weight includes all components (pallets, packaging, frames, etc.)
-Assuming all trailers have the same capacity (reefers carry less weight than dry vans)
-Booking freight that's actually oversize without recognizing permit requirements
+[COMMON MISTAKE] Agents frequently make these equipment selection errors that cost money and damage relationships:
+
+- Quoting dry van for freight that needs flatbed (freight too tall, too long, or requiring top loading)
+- Quoting reefer for freight that doesn't need temperature control (wastes customer money and yours)
+- Quoting standard flatbed for freight requiring step deck or lowboy (height issues)
+- Forgetting to account for liftgate requirements (customer can't load without it)
+- Not confirming weight includes all components (pallets, packaging, frames, etc.)
+- Assuming all trailers have the same capacity (reefers carry less weight than dry vans)
+- Booking freight that's actually oversize without recognizing permit requirements
 Module 4.11: Communicating Equipment Needs to Carriers
 
 Once you've determined appropriate equipment, communicating requirements clearly to carriers prevents misunderstandings and problems.
@@ -1581,71 +1574,87 @@ Once you've determined appropriate equipment, communicating requirements clearly
 **Essential Information to Provide**
 
 When contacting carriers, include:
-Equipment type: "53-foot dry van" or "48-foot flatbed with tarps" or "53-foot reefer set to 38 degrees"
-Weight and dimensions: "42,000 pounds, 26 pallets, each pallet 48×40×60 inches tall" or "28,000 pounds, 3 pieces, largest is 24 feet long × 8 feet wide × 6 feet tall"
-Special requirements: "Food-grade trailer required, no previous chemical loads" or "Straps and edge protectors needed for securing" or "Driver must have hazmat endorsement"
-Loading/unloading details: "Dock-height pickup and delivery" or "Shipper has forklift, receiver needs liftgate" or "Crane available for loading, forklift for unloading"
-Specific instructions: "Pre-cool to 38 degrees before loading" or "Driver must call 2 hours before arrival" or "Freight cannot get wet—secure tarps properly"
+- **Equipment type:** "53-foot dry van" or "48-foot flatbed with tarps" or "53-foot reefer set to 38 degrees"
+- **Weight and dimensions:** "42,000 pounds, 26 pallets, each pallet 48×40×60 inches tall" or "28,000 pounds, 3 pieces, largest is 24 feet long × 8 feet wide × 6 feet tall"
+- **Special requirements:** "Food-grade trailer required, no previous chemical loads" or "Straps and edge protectors needed for securing" or "Driver must have hazmat endorsement"
+- **Loading/unloading details:** "Dock-height pickup and delivery" or "Shipper has forklift, receiver needs liftgate" or "Crane available for loading, forklift for unloading"
+- **Specific instructions:** "Pre-cool to 38 degrees before loading" or "Driver must call 2 hours before arrival" or "Freight cannot get wet—secure tarps properly"
 [PRO TIP] Providing complete information upfront saves time and prevents carriers from arriving unprepared. Never assume carriers will "figure it out"—be specific about every requirement.
 
 CHAPTER 4 SUMMARY SHEET
-Dry Vans:
-Dimensions: 53'×8.5'×9' interior, ~43-45K lbs capacity, 4,000 cu ft
-Most common trailer type for general freight
-Cubing out (filling space before weight) vs. weighing out (reaching weight before filling space)
-Requires dock-height loading or liftgate service
-Cannot accommodate temperature-sensitive or oversize freight
-Reefers (Refrigerated Trailers):
-Temperature range: -20°F to +70°F
-Capacity: 40-42K lbs (less than dry vans due to heavier equipment)
-Separate fuel tank for refrigeration unit (0.5-1.0 gal/hour consumption)
-Pre-cooling required before loading
-Rates typically 20-40% higher than dry van
-Temperature requirements vary by product: frozen (0°F to -10°F), dairy (34-38°F), produce (varies widely), pharmaceuticals (typically 36-46°F)
-Flatbeds:
-Dimensions: 48' or 53' long × 8.5' wide, deck height ~5' off ground
-Capacity: 45-48K lbs
-Legal height limit: 13.5-14' total (load + deck) without permits
-Proper securing required: chains, straps, blocking, bracing
-Tarping available for weather protection ($50-150 additional)
-Ideal for steel, lumber, machinery, construction materials, oversized items
-Top and side loading capabilities
-Specialized Flatbed Variants:
-Step Deck: Two-level deck, lower section ~3.5' off ground, carries 10-11' tall freight
-Double Drop (Lowboy): Three levels with 18-24" well section, carries 12-15'+ tall freight, higher weight capacity (50K+ lbs)
-RGN (Removable Gooseneck): Detachable front creates loading ramp for wheeled equipment
-Conestoga: Rolling tarp system, faster and better protection than manual tarps ($100-300 premium)
-Specialized Equipment:
-Tankers: Liquids, 5-9K gallons, food-grade or hazmat certification often required
-Hoppers: Dry bulk materials, pneumatic or gravity discharge
-Livestock: Live animals, multiple decks, strict welfare regulations
-Auto Carriers: 7-9 vehicles, open or enclosed
-Curtain Sides: Rollable fabric sides allow side loading with weather protection
-Weight Regulations:
-Federal maximum: 80,000 lbs gross
-Axle limits: 12K steer, 34K drive axles, 34K trailer axles
-Distribution matters—not just total weight
-State variations exist (some allow higher, some restrict lower)
-Truck Classifications:
-Class 8 (over 33,000 lbs GVWR): Standard semi-trucks for over-the-road freight
-Class 7 (26,001-33,000 lbs): Medium-duty local delivery trucks
-Class 6 and below (under 26,001 lbs): Light-duty commercial trucks
-Equipment Selection Process:
-Check physical dimensions (length, width, height, door openings)
-Verify weight capacity (remember reefers carry less than dry vans)
-Determine temperature control needs (specific degrees, not just "cold")
-Confirm loading/unloading method (dock, liftgate, top/side loading)
-Assess weather protection requirements
-Check special regulations (hazmat, food-grade, oversize permits)
-Consider customer preferences and requirements
-Select economically appropriate equipment (not unnecessarily expensive)
-Common Equipment Selection Mistakes:
-Quoting dry van for oversized freight
-Quoting reefer when temperature control unnecessary
-Forgetting liftgate requirements
-Not accounting for all weight components (pallets, packaging)
-Assuming all trailers have same capacity
-Missing permit requirements for oversize loads
+
+**Dry Vans:**
+
+- Dimensions: 53'×8.5'×9' interior, ~43-45K lbs capacity, 4,000 cu ft
+- Most common trailer type for general freight
+- Cubing out (filling space before weight) vs. weighing out (reaching weight before filling space)
+- Requires dock-height loading or liftgate service
+- Cannot accommodate temperature-sensitive or oversize freight
+
+**Reefers (Refrigerated Trailers):**
+
+- Temperature range: -20°F to +70°F
+- Capacity: 40-42K lbs (less than dry vans due to heavier equipment)
+- Separate fuel tank for refrigeration unit (0.5-1.0 gal/hour consumption)
+- Pre-cooling required before loading
+- Rates typically 20-40% higher than dry van
+- Temperature requirements vary by product: frozen (0°F to -10°F), dairy (34-38°F), produce (varies widely), pharmaceuticals (typically 36-46°F)
+
+**Flatbeds:**
+
+- Dimensions: 48' or 53' long × 8.5' wide, deck height ~5' off ground
+- Capacity: 45-48K lbs
+- Legal height limit: 13.5-14' total (load + deck) without permits
+- Proper securing required: chains, straps, blocking, bracing
+- Tarping available for weather protection ($50-150 additional)
+- Ideal for steel, lumber, machinery, construction materials, oversized items
+- Top and side loading capabilities
+
+**Specialized Flatbed Variants:**
+
+- **Step Deck:** Two-level deck, lower section ~3.5' off ground, carries 10-11' tall freight
+- **Double Drop (Lowboy):** Three levels with 18-24" well section, carries 12-15'+ tall freight, higher weight capacity (50K+ lbs)
+- **RGN (Removable Gooseneck):** Detachable front creates loading ramp for wheeled equipment
+- **Conestoga:** Rolling tarp system, faster and better protection than manual tarps ($100-300 premium)
+
+**Specialized Equipment:**
+
+- **Tankers:** Liquids, 5-9K gallons, food-grade or hazmat certification often required
+- **Hoppers:** Dry bulk materials, pneumatic or gravity discharge
+- **Livestock:** Live animals, multiple decks, strict welfare regulations
+- **Auto Carriers:** 7-9 vehicles, open or enclosed
+- **Curtain Sides:** Rollable fabric sides allow side loading with weather protection
+
+**Weight Regulations:**
+
+- Federal maximum: 80,000 lbs gross
+- Axle limits: 12K steer, 34K drive axles, 34K trailer axles
+- Distribution matters—not just total weight
+- State variations exist (some allow higher, some restrict lower)
+
+**Truck Classifications:**
+
+- **Class 8 (over 33,000 lbs GVWR):** Standard semi-trucks for over-the-road freight
+- **Class 7 (26,001-33,000 lbs):** Medium-duty local delivery trucks
+- **Class 6 and below (under 26,001 lbs):** Light-duty commercial trucks
+
+**Equipment Selection Process:**
+
+- Check physical dimensions (length, width, height, door openings)
+- Verify weight capacity (remember reefers carry less than dry vans)
+- Determine temperature control needs (specific degrees, not just "cold")
+- Confirm loading/unloading method (dock, liftgate, top/side loading)
+- Assess weather protection requirements
+- Check special regulations (hazmat, food-grade, oversize permits)
+- Consider customer preferences and requirements
+- Select economically appropriate equipment (not unnecessarily expensive)
+**Common Equipment Selection Mistakes:**
+- Quoting dry van for oversized freight
+- Quoting reefer when temperature control unnecessary
+- Forgetting liftgate requirements
+- Not accounting for all weight components (pallets, packaging)
+- Assuming all trailers have same capacity
+- Missing permit requirements for oversize loads
 
 ACTION ITEMS FOR CHAPTER 4
 Complete these tasks to master equipment knowledge:
@@ -1680,43 +1689,62 @@ As you move into Chapter 5 (Load Types and Cargo Categories), you'll build on th
 CHAPTER 5: LOAD TYPES AND CARGO CATEGORIES
 Module 5.1: Introduction to Freight Classification
 Understanding different load types and cargo categories helps you communicate effectively with customers, select appropriate equipment, and anticipate challenges before they arise. Every commodity has unique characteristics affecting how it ships—density, fragility, value, regulatory requirements, and handling needs all vary dramatically.
-This chapter walks you through the major freight categories you'll encounter as a freight agent. You don't need to become an expert in every commodity type, but understanding the basics helps you ask intelligent questions, provide accurate quotes, and avoid costly mistakes.
+
+[KEY TAKEAWAY] You don't need to become an expert in every commodity type, but understanding the basics helps you ask intelligent questions, provide accurate quotes, and avoid costly mistakes. Each freight category has unique equipment needs, regulatory requirements, and potential challenges.
+
+This chapter walks you through the major freight categories you'll encounter as a freight agent.
+
 Module 5.2: General Freight (FAK - Freight All Kinds)
 General freight encompasses most manufactured goods and consumer products that don't require specialized handling, temperature control, or hazardous materials protocols. This is the bread and butter of the freight industry—everyday products moving through supply chains.
-Characteristics of General Freight
+
+**Characteristics of General Freight**
 General freight typically arrives palletized, boxed, or crated, making it easy to handle with standard forklifts and loading equipment. Think of the products you see in retail stores, warehouses, and manufacturing facilities—if it's on a pallet and doesn't need special treatment, it's probably general freight.
-Common examples include:
-Retail merchandise (clothing, housewares, consumer goods)
-Consumer electronics (televisions, computers, appliances)
-Household goods (furniture, fixtures, home décor)
-Automotive parts (non-hazardous components, accessories)
-Industrial supplies (tools, equipment, maintenance items)
-Paper products (packaging materials, office supplies, printing stock)
-Manufactured components (parts for assembly operations)
-Packaging Standards
+
+**Common examples include:**
+- Retail merchandise (clothing, housewares, consumer goods)
+- Consumer electronics (televisions, computers, appliances)
+- Household goods (furniture, fixtures, home décor)
+- Automotive parts (non-hazardous components, accessories)
+- Industrial supplies (tools, equipment, maintenance items)
+- Paper products (packaging materials, office supplies, printing stock)
+- Manufactured components (parts for assembly operations)
+**Packaging Standards**
 Most general freight ships on standard wooden pallets—typically 40"×48" (the most common size in North America) or 42"×48". Pallets are usually shrink-wrapped or banded to stabilize the load and prevent shifting during transit.
-When booking general freight, always confirm:
-Number of pallets
-Weight per pallet (helps identify if freight will weigh out or cube out)
-Dimensions of each pallet (especially height—tall pallets affect how many fit in a trailer)
-Stackability (can pallets be double-stacked to maximize trailer space?)
-Density Variations Matter
+
+**When booking general freight, always confirm:**
+- Number of pallets
+- Weight per pallet (helps identify if freight will weigh out or cube out)
+- Dimensions of each pallet (especially height—tall pallets affect how many fit in a trailer)
+- Stackability (can pallets be double-stacked to maximize trailer space?)
+
+**Density Variations Matter**
 Even within general freight, density varies enormously and affects your pricing and equipment selection.
 Dense freight like automotive parts might weigh 2,000 pounds per pallet. You can fit 22-24 such pallets in a standard 53-foot trailer before reaching the 45,000-pound weight capacity, even though you haven't filled all the available space.
 Light freight like pillows, potato chips, or furniture might weigh just 300-500 pounds per pallet. You might fit 26-28 pallets in the trailer and still be nowhere near weight capacity. The trailer cubes out—runs out of physical space—long before reaching weight limits.
 Understanding whether freight is likely to cube out or weigh out helps you determine if you can combine partial loads, quote accurately for space utilization, and set proper expectations with carriers.
-Stackability: A Critical Question
+
+[PRO TIP] Dense freight (automotive parts, machinery components) weighs out trailers at 22-24 pallets. Light freight (pillows, chips, furniture) cubes out at 26-28 pallets before hitting weight limits. Understanding this helps you price accurately and identify opportunities to combine partial loads.
+
+**Stackability: A Critical Question**
 Never assume freight can be stacked without confirmation. Some general freight stacks easily (boxes of durable goods, properly packaged electronics), while other freight absolutely cannot stack (furniture, fragile items, irregularly shaped products).
+
+[COMMON MISTAKE] Never assume freight can stack based on "probably" from a customer. If freight cannot stack and you told the carrier it could, you create expensive problems at pickup. Always get definite confirmation: "Can this freight be stacked? If yes, how high?"
+
 Always ask: "Can this freight be stacked?" If the answer is yes, confirm how high it can stack. Double-stacking 14 pallets effectively gives you 28 pallet positions in terms of floor space, dramatically improving trailer utilization.
 If freight cannot stack, you need significantly more trailer space. This affects pricing and sometimes determines whether you need a full truckload or can combine shipments.
-Standard Handling Expectations
+
+**Standard Handling Expectations**
 General freight typically loads and unloads quickly at facilities equipped with forklifts and loading docks. Drivers expect to arrive, back into a dock, and have warehouse personnel load or unload efficiently.
 Standard "free time" for general freight is usually 2 hours at pickup and 2 hours at delivery. Beyond that, detention charges apply (typically $25-75 per hour depending on the carrier and market). Always communicate detention policies to customers upfront to avoid billing disputes.
 Module 5.3: Food and Beverage Products
 Food and beverage freight represents a large segment of the market with specific requirements you must understand to serve customers effectively and avoid costly mistakes.
-Temperature-Sensitive Products
+
+**Temperature-Sensitive Products**
 Many food products require precise temperature control throughout transportation. Getting temperatures wrong can spoil products worth tens of thousands of dollars and create serious food safety issues.
-Frozen Foods (0°F to -10°F):
+
+[IMPORTANT] Refrigerated trailers maintain temperature—they don't rapidly cool freight. Freight must be pre-cooled to required temperature before loading. A reefer set to 38°F cannot cool 70°F product down to 38°F during transit—it will arrive spoiled. Always confirm pre-cooling requirements.
+
+**Frozen Foods (0°F to -10°F):**
 Frozen products must remain solidly frozen throughout transit. This includes:
 Ice cream and frozen desserts: -10°F to -20°F (coldest requirements in food transport)
 Frozen vegetables and fruits: 0°F
@@ -1732,25 +1760,31 @@ Cheese: 35-40°F (some varieties tolerate slightly warmer)
 Butter and margarine: 35-40°F
 Yogurt: 36-40°F
 Dairy is particularly sensitive to temperature abuse. Temperatures too warm accelerate spoilage; temperatures too cold can affect texture and quality.
-Fresh Produce (Highly Variable):
+**Fresh Produce (Highly Variable):**
 Different fruits and vegetables require vastly different temperatures. This is where inexperienced agents make expensive mistakes by assuming "produce needs to be cold."
-Cold-tolerant produce (32-34°F):
+
+[COMMON MISTAKE] Tomatoes require 50-60°F (warm!), not 32-34°F like lettuce. Bananas need 56-58°F—too cold turns them black. Potatoes below proper temperature convert starches to sugars, affecting taste. Never assume all produce ships cold!
+
+**Cold-tolerant produce (32-34°F):**
 Lettuce and leafy greens
 Broccoli and cauliflower
 Carrots and celery
 Apples and pears
 Berries (strawberries, blueberries, raspberries)
-Medium-temperature produce (40-50°F):
+
+**Medium-temperature produce (40-50°F):**
 Cucumbers
 Bell peppers
 Green beans
 Citrus fruits (oranges, grapefruits, lemons)
-Warm-temperature produce (50-60°F):
+
+**Warm-temperature produce (50-60°F):**
 Tomatoes (temperatures below 50°F cause chilling injury and flavor loss)
 Bananas (56-58°F—too cold turns them black)
 Avocados
 Potatoes (too cold converts starches to sugars, affecting taste)
 Winter squash
+
 Never assume all produce ships at the same temperature. Always ask for specific temperature requirements, and when customers don't know, help them research the correct temperature for their specific product.
 Non-Temperature-Sensitive Food Products
 Many food products don't require temperature control and can ship in standard dry vans:
@@ -1761,14 +1795,18 @@ Packaged snack foods
 Cooking oils
 Certain packaged baked goods
 However, even non-temp-sensitive food products may have other requirements like food-grade trailers.
-Food-Grade Requirements
+**Food-Grade Requirements**
 Some customers require food-grade trailers—trailers that haven't hauled non-food products or have been thoroughly cleaned according to food safety standards.
-The stringency of requirements varies:
+
+**The stringency of requirements varies:**
 Some customers accept any clean trailer with no strong odors
 Others require trailers that have only hauled food products (no previous chemical, industrial, or non-food loads)
 Some require specific cleaning certifications
 A few require dedicated food-only fleets that never haul anything else
-Always ask: "Do you require food-grade trailers? Are there specific previous load restrictions?" Some customers prohibit trailers that previously hauled:
+
+[PRO TIP] Always ask upfront: "Do you require food-grade trailers? Are there specific previous load restrictions?" Discovering previous load issues at pickup wastes time, damages carrier relationships, and creates expensive problems requiring trailer changes.
+
+**Some customers prohibit trailers that previously hauled:**
 Paper products (dust and fiber contamination concerns)
 Automotive parts (oil and chemical residue concerns)
 Chemicals or industrial products
@@ -1807,7 +1845,8 @@ Extended loading times: Food facilities often have strict sanitation and inspect
 Driver cleanliness: Some food facilities require drivers to wear hairnets, remove jewelry, or follow other hygiene protocols when entering facilities. Inform drivers of such requirements.
 Module 5.4: Building Materials and Construction Products
 Construction materials move in large volumes and often require specialized equipment and handling. Understanding common construction freight types helps you serve this market effectively.
-Lumber and Dimensional Wood Products
+
+**Lumber and Dimensional Wood Products**
 Lumber is one of the most common construction materials moving by truck. It ships primarily on flatbeds due to length and loading requirements.
 Key characteristics:
 Usually ships in bundles (multiple pieces banded together)
@@ -1821,16 +1860,19 @@ Bundle sizes and weights
 Tarping requirements (customer or carrier provides tarps?)
 Loading method (usually crane or forklift from sides)
 Lumber rates fluctuate significantly with construction activity and raw material prices. During housing booms, lumber freight becomes highly competitive.
-Drywall (Gypsum Board)
+**Drywall (Gypsum Board)**
 Drywall ships on flatbeds in large quantities. It's heavy, fragile, and extremely moisture-sensitive.
-Key characteristics:
+
+**Key characteristics:**
 Very heavy for its size (loads weigh out quickly)
 Extremely fragile (requires careful securing to prevent breakage)
 Moisture destroys it (tarping absolutely required)
 Usually ships in large sheets (4×8 feet, 4×10 feet, 4×12 feet)
 Requires careful handling (broken drywall is worthless)
+
+[IMPORTANT] Tarping is absolutely critical for drywall—even brief rain exposure can ruin entire loads worth thousands of dollars. Never transport drywall without tarping, regardless of weather forecasts. Moisture destroys it completely.
+
 Drywall carriers often specialize in this freight because proper securing techniques prevent damage. Random flatbed carriers without drywall experience may break sheets through improper securing.
-Tarping is critical—even brief rain exposure can ruin entire loads worth thousands of dollars.
 Steel Products
 Steel moves in various forms, each with unique handling requirements. Steel is a major flatbed segment requiring specialized knowledge.
 Steel Beams and Structural Steel:
@@ -1844,13 +1886,14 @@ Flat steel in various thicknesses
 Requires proper securing and edge protection
 Sometimes requires tarping depending on finish
 Can be extremely heavy (thick plates weigh enormous amounts per square foot)
-Steel Coils:
+**Steel Coils:**
 Cylindrical rolls of sheet steel
 Extremely heavy and dangerous if not secured properly
 Requires specialized coil racks or proper chocking
 Must be positioned carefully for proper weight distribution
 Many carriers won't haul coils without extensive experience
-Steel coils deserve special mention because they're particularly hazardous. An improperly secured 40,000-pound coil that shifts or rolls can crush the driver's cab or cause the truck to overturn. Only use carriers with documented steel coil experience.
+
+[IMPORTANT] Steel coils are particularly hazardous. An improperly secured 40,000-pound coil that shifts or rolls can crush the driver's cab or cause the truck to overturn. Only use carriers with documented steel coil experience and proper securing equipment. Never use random flatbed carriers for coils.
 Concrete and Masonry Products
 Concrete blocks, pavers, bricks, and similar products share common characteristics:
 Extremely heavy (loads weigh out very quickly)
@@ -1883,12 +1926,15 @@ Weather impacts: Rain delays construction activity, affecting pickup and deliver
 Payment terms: Construction companies sometimes have longer payment cycles, especially when waiting for payments from general contractors or project owners.
 Module 5.5: Machinery and Industrial Equipment
 Machinery transportation ranges from small shop equipment to massive industrial systems. Understanding the variables helps you quote appropriately and select proper equipment.
-Size and Weight Variability
+
+**Size and Weight Variability**
 Machinery spans enormous size and weight ranges:
-Small machinery (shop equipment, compact tools): May fit in dry vans, weigh hundreds to a few thousand pounds, ship relatively easily.
-Mid-size machinery (manufacturing equipment, processing equipment): Often requires flatbeds, weighs 5,000-20,000 pounds, needs careful planning.
-Large machinery (heavy industrial equipment, processing lines): Requires specialized equipment (step decks, lowboys, RGNs), weighs 20,000-50,000+ pounds, often needs permits.
-Never assume machinery characteristics based on type alone. A small lathe might be just 5,000 pounds, while a modest press could be 20,000 pounds. A compact CNC machine might be 8,000 pounds. Always confirm exact dimensions and weights.
+
+**Small machinery** (shop equipment, compact tools): May fit in dry vans, weigh hundreds to a few thousand pounds, ship relatively easily.
+**Mid-size machinery** (manufacturing equipment, processing equipment): Often requires flatbeds, weighs 5,000-20,000 pounds, needs careful planning.
+**Large machinery** (heavy industrial equipment, processing lines): Requires specialized equipment (step decks, lowboys, RGNs), weighs 20,000-50,000+ pounds, often needs permits.
+
+[COMMON MISTAKE] Never assume machinery is lightweight based on size. A "small" lathe might be 5,000 pounds, a "modest" press could be 20,000 pounds, a "compact" CNC machine might be 8,000 pounds. Always confirm exact dimensions and weights before quoting equipment and pricing.
 Securing Requirements
 Machinery requires proper securing to prevent shifting during transit:
 Heavy-duty chains or straps rated for the weight
@@ -1896,13 +1942,15 @@ Blocking and bracing to prevent movement
 Sometimes custom cradles or frames
 Edge protection where securing devices contact machinery
 Confirm the carrier has appropriate securing equipment. Some machinery requires specialized securing beyond standard flatbed equipment.
-Loading and Unloading Equipment
+**Loading and Unloading Equipment**
 Machinery rarely loads with standard forklifts. Common loading methods include:
-Cranes: Heavy machinery often requires cranes for loading and unloading. Crane capacity must match or exceed machinery weight. Confirm both origin and destination have adequate cranes.
-High-capacity forklifts: Some machinery loads with heavy-duty forklifts (15,000+ pound capacity). Standard warehouse forklifts (5,000-8,000 pound capacity) are inadequate for most machinery.
-Riggers: Specialized rigging companies sometimes handle complex machinery moves requiring expertise in heavy equipment handling.
-Roll-on/roll-off: Self-propelled or wheeled machinery may load via ramps (requiring RGN trailers or similar).
-Always confirm loading and unloading methods and capabilities at both locations before booking. Arriving with machinery and no way to load or unload it creates expensive problems.
+
+**Cranes:** Heavy machinery often requires cranes for loading and unloading. Crane capacity must match or exceed machinery weight. Confirm both origin and destination have adequate cranes.
+**High-capacity forklifts:** Some machinery loads with heavy-duty forklifts (15,000+ pound capacity). Standard warehouse forklifts (5,000-8,000 pound capacity) are inadequate for most machinery.
+**Riggers:** Specialized rigging companies sometimes handle complex machinery moves requiring expertise in heavy equipment handling.
+**Roll-on/roll-off:** Self-propelled or wheeled machinery may load via ramps (requiring RGN trailers or similar).
+
+[PRO TIP] Always confirm loading and unloading methods and capabilities at BOTH locations before booking. Arriving with heavy machinery and no crane, no adequate forklift, and no way to load or unload creates expensive problems requiring emergency equipment rental or specialized rigging services.
 Crating and Packaging
 Some machinery ships in custom wooden crates for protection:
 Crating adds weight: A machine weighing 8,000 pounds might weigh 10,000 pounds crated. Factor crating weight into your calculations.
@@ -1922,7 +1970,8 @@ Machinery often represents significant value—tens or hundreds of thousands of 
 Confirm insurance requirements with your brokerage before accepting high-value machinery loads.
 Module 5.6: Hazardous Materials (Hazmat)
 Hazardous materials are substances posing risks to health, safety, property, or the environment during transportation. They're heavily regulated and require specialized knowledge.
-The Nine DOT Hazmat Classes
+
+**The Nine DOT Hazmat Classes**
 The Department of Transportation classifies hazardous materials into nine classes:
 Class 1 - Explosives:
 Division 1.1: Mass explosion hazard (dynamite, TNT)
@@ -1989,8 +2038,9 @@ Higher Insurance Requirements:
 Hazmat requiring placarding requires minimum $5,000,000 insurance
 Standard freight requires only $750,000
 This higher insurance requirement affects carrier availability and costs
-Common Examples of Hazmat
+**Common Examples of Hazmat**
 Many everyday products are classified as hazmat:
+
 Paint and coatings (flammable liquids)
 Aerosol products (compressed gases)
 Cleaning chemicals (corrosives, toxic substances)
@@ -1999,7 +2049,8 @@ Adhesives and sealants (flammable liquids)
 Automotive products (flammable liquids, corrosives)
 Pool chemicals (oxidizers, corrosives)
 Certain consumer products in bulk quantities
-Don't assume only industrial chemicals are hazmat. Ask customers: "Does your freight include anything flammable, corrosive, compressed, or otherwise hazardous?" Many people don't realize their products are regulated.
+
+[COMMON MISTAKE] Don't assume only industrial chemicals are hazmat. Paint, aerosols, cleaning products, and batteries are all regulated hazmat. Always ask: "Does your freight include anything flammable, corrosive, compressed, or otherwise hazardous?" Many customers don't realize their products require hazmat endorsements and special handling.
 Rate Implications
 Hazmat freight commands premium rates for several reasons:
 Limited driver availability (hazmat endorsement requirement)
@@ -2010,6 +2061,8 @@ Increased liability
 Expect hazmat rates to be 15-30% higher than non-hazmat freight on similar lanes, sometimes more for difficult hazmat or highly regulated materials.
 Module 5.7: High-Value Cargo
 High-value cargo typically means freight worth $100,000 or more, though some customers consider anything above $50,000 high-value. This freight requires additional security measures and insurance.
+
+[IMPORTANT] Standard cargo insurance only covers up to $100,000 per load. High-value freight requires additional insurance purchased for the specific shipment, typically costing 1-3% of declared value. Confirm your brokerage's insurance capabilities before accepting high-value loads.
 Common High-Value Freight Types
 Consumer electronics: Televisions, computers, smartphones, tablets, gaming systems. Electronics are both valuable and attractive to thieves.
 Telecommunications equipment: Network equipment, servers, switches, routers. Both valuable and easy to resell.
@@ -2076,7 +2129,10 @@ Carrier selection is more limited, reducing competition
 Don't treat high-value freight like standard freight when quoting. The additional costs are real and necessary to protect the cargo.
 Module 5.8: Time-Sensitive and Expedited Freight
 Some freight must move faster than standard transit times allow. Understanding expedited services helps you serve customers with urgent needs.
-Types of Time-Sensitive Freight
+
+[KEY TAKEAWAY] Customers paying premium rates for expedited service expect premium communication. Provide updates every 2-4 hours, monitor proactively, and notify immediately of any issues. Silence creates anxiety—regular updates reassure them you're managing their critical shipment attentively.
+
+**Types of Time-Sensitive Freight**
 Expedited/Hot Shot Service: Freight requiring delivery faster than standard transit allows. This might mean:
 1,000-1,500 miles in 24 hours (impossible for solo drivers under HOS rules)
 Guaranteed delivery by specific deadline
@@ -2095,11 +2151,15 @@ Often after-hours pickup or delivery
 May need special handling or installations
 Failure Consequences: Late delivery on JIT freight can cause production shutdowns. A manufacturing line producing vehicles worth millions daily that stops for lack of a $5,000 component creates enormous pressure to prevent delays.
 Customers remember service failures on critical shipments forever. Success on expedited freight builds strong relationships; failure destroys them quickly.
-Team Drivers
+**Team Drivers**
 Expedited freight over longer distances requires team drivers—two qualified drivers alternating driving and resting.
 While one driver operates the vehicle, the other rests in the sleeper berth. This doubles the distance covered compared to solo drivers limited by 11-hour driving rules.
-Solo driver coverage: ~500-550 miles in 11-hour driving day accounting for fuel stops, breaks, and traffic.
-Team driver coverage: ~1,000-1,200+ miles in 24 hours because drivers alternate, allowing nearly continuous movement.
+
+**Solo driver coverage:** ~500-550 miles in 11-hour driving day accounting for fuel stops, breaks, and traffic.
+**Team driver coverage:** ~1,000-1,200+ miles in 24 hours because drivers alternate, allowing nearly continuous movement.
+
+[REAL EXAMPLE] For distances under 1,500 miles, expedited team trucking often costs less than air freight while delivering in comparable time. Air freight involves multiple handoffs (trucking to airport, handling, flight, destination handling, trucking from airport). Team drivers provide door-to-door service without transfers.
+
 Team drivers command significant premium rates—typically 50-75% more than solo drivers for the same lane. This reflects:
 Two drivers requiring compensation
 Faster service value
@@ -2132,9 +2192,17 @@ Plan routes carefully: Fastest routes aren't always interstate highways. Sometim
 Have contingency plans: What happens if a truck breaks down? Have backup options identified before problems arise.
 Module 5.9: Oversized and Overweight Loads
 Freight exceeding legal size or weight limits requires special permits, routing, and often specialized equipment. Understanding oversize/overweight (OS/OW) requirements helps you recognize when standard freight becomes specialized.
-Legal Limits Without Permits
+
+**Legal Limits Without Permits**
 Remember these standard limits—freight within these parameters doesn't require special permits:
-Width: 8.5 feet (102 inches) Height: 13.5-14 feet (varies by state and sometimes by specific roads) Length: 53 feet for trailers on interstate highways Weight: 80,000 pounds gross vehicle weight
+
+**Width:** 8.5 feet (102 inches)
+**Height:** 13.5-14 feet (varies by state and sometimes by specific roads)
+**Length:** 53 feet for trailers on interstate highways
+**Weight:** 80,000 pounds gross vehicle weight
+
+[IMPORTANT] Never accept OS/OW loads with immediate pickup requirements. Permits take time: routine permits need 3-7 days minimum, complex permits 2-4 weeks or more. Route surveys, escort arrangements, and specialized rigging all require advance planning. Customers expecting quick turnaround don't understand regulatory requirements.
+
 Freight exceeding any of these requires permits and possibly specialized equipment.
 Permit Requirements
 Each state issues its own oversize/overweight permits. Interstate moves require permits from every state the shipment travels through.
@@ -2200,7 +2268,8 @@ Equipment securing: Days to weeks for specialized rigging
 Never accept OS/OW loads with immediate pickup requirements. Customers expecting quick turnaround don't understand the regulatory and planning requirements.
 Module 5.10: Partial Loads and LTL Considerations
 Not all freight fills entire trailers. Understanding partial truckload and less-than-truckload (LTL) options helps you serve customers with smaller shipment needs.
-Less-Than-Truckload (LTL)
+
+**Less-Than-Truckload (LTL)**
 LTL carriers consolidate freight from multiple shippers into single trailers. Each shipper pays for the space their freight occupies rather than paying for an entire truck.
 Typical LTL characteristics:
 Shipments from 150 pounds to 10,000 pounds
@@ -2226,8 +2295,9 @@ Stowability: How easily the freight fits in trailers with other freight. Irregul
 Handling: How difficult freight is to load and unload. Fragile, awkward, or heavy items requiring special handling have higher classifications.
 Liability: Risk of theft, damage, or spoilage affects classification. High-value or easily damaged freight has higher classifications.
 Understanding classification basics helps you provide better LTL quotes. Density is often the primary factor—shipping light, bulky freight in LTL is expensive due to high classifications.
-Accessorial Charges in LTL
+**Accessorial Charges in LTL**
 LTL carriers charge for services beyond standard dock-to-dock delivery:
+
 Liftgate service: Hydraulic lift for locations without loading docks ($50-150)
 Inside delivery: Carrying freight inside buildings rather than curbside ($75-200)
 Residential delivery: Delivery to residential addresses ($75-150)
@@ -2235,8 +2305,10 @@ Notify before delivery: Calling ahead for appointment ($20-50)
 Limited access: Delivery to locations like schools, churches, construction sites, farms ($50-100)
 Appointment required: Scheduling specific delivery times ($50-100)
 Reweigh/reclassification: Charges when actual weight or classification differs from what shipper declared
-These accessorials add up quickly. A shipment quoted at $250 might cost $475 after liftgate ($75), inside delivery ($100), and residential delivery ($50) are added.
-Always ask customers about delivery requirements and include appropriate accessorials in your quotes. Surprise charges damage relationships.
+
+[COMMON MISTAKE] Accessorial charges add up quickly! A shipment quoted at $250 might cost $475 after liftgate ($75), inside delivery ($100), and residential delivery ($50) are added. Always ask customers about delivery requirements upfront and include appropriate accessorials in your quotes. Surprise charges damage customer relationships and eat into your margins.
+
+These accessorials add up quickly.
 When to Use LTL vs. Partial Truckload vs. Full Truckload
 LTL makes sense for:
 Shipments under 5,000 pounds
