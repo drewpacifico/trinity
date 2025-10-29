@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training Manual</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0f0f10;
+  --card: #1a1a1d;
+  --text: #e8e8e8;
+  --muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-dim: #4f46e5;
+  --highlight: #fbbf24;
+}
+html, body { height: 100%; overflow: hidden; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content wrapper */
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px 120px;
+  position: relative;
+  overflow: hidden;
+  max-height: calc(100vh - 180px);
+}
+
+/* Scrollable version for cover and TOC pages */
+.page-wrapper.scrollable {
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+  scroll-behavior: smooth;
+}
+
+.content-card {
+  max-width: 1200px;
+  width: 100%;
+  max-height: calc(100vh - 240px);
+  background: var(--card);
+  border-radius: 16px;
+  padding: 48px 60px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: fadeIn 0.4s ease-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollable version for cover and TOC pages */
+.content-card.scrollable {
+  max-height: none;
+  overflow-y: auto;
+}
+
+/* Custom scrollbar styling for scrollable pages */
+.page-wrapper.scrollable::-webkit-scrollbar,
+.content-card.scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.page-wrapper.scrollable::-webkit-scrollbar-track,
+.content-card.scrollable::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.page-wrapper.scrollable::-webkit-scrollbar-thumb,
+.content-card.scrollable::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+.page-wrapper.scrollable::-webkit-scrollbar-thumb:hover,
+.content-card.scrollable::-webkit-scrollbar-thumb:hover {
+  background: var(--highlight);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography */
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--highlight);
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* Content sections */
+.content-text {
+  line-height: 1.8;
+  font-size: 17px;
+  color: var(--text);
+  margin-bottom: 20px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.content-text p {
+  margin-bottom: 16px;
+}
+
+.content-text strong, .content-text b {
+  font-weight: 700;
+  color: var(--highlight);
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.content-text em, .content-text i {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.content-text ul, .content-text ol {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+.content-text li {
+  margin: 8px 0;
+}
+
+/* Callout boxes */
+.callout {
+  margin: 24px 0;
+  padding: 18px 22px;
+  border-radius: 12px;
+  border-left: 5px solid;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.callout-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.callout-content {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.callout-tip {
+  background: rgba(59, 130, 246, 0.12);
+  border-left-color: #3b82f6;
+}
+
+.callout-tip .callout-title {
+  color: #60a5fa;
+}
+
+.callout-warning {
+  background: rgba(251, 191, 36, 0.12);
+  border-left-color: #fbbf24;
+}
+
+.callout-warning .callout-title {
+  color: #fbbf24;
+}
+
+.callout-example {
+  background: rgba(16, 185, 129, 0.12);
+  border-left-color: #10b981;
+}
+
+.callout-example .callout-title {
+  color: #34d399;
+}
+
+.callout-key {
+  background: rgba(251, 191, 36, 0.15);
+  border-left-color: var(--highlight);
+}
+
+.callout-key .callout-title {
+  color: var(--highlight);
+}
+
+.callout-important {
+  background: rgba(239, 68, 68, 0.12);
+  border-left-color: #ef4444;
+}
+
+.callout-important .callout-title {
+  color: #f87171;
+}
+
+.callout-note {
+  background: rgba(168, 85, 247, 0.12);
+  border-left-color: #a855f7;
+}
+
+.callout-note .callout-title {
+  color: #c084fc;
+}
+
+.content-text h1, .content-text h2, .content-text h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.content-text code {
+  background: rgba(99, 102, 241, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 32px 0;
+}
+
+.toc-list li {
+  margin: 16px 0;
+  padding: 16px 20px;
+  background: rgba(99, 102, 241, 0.1);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+
+.toc-list li:hover {
+  background: rgba(99, 102, 241, 0.2);
+  transform: translateX(4px);
+}
+
+/* Navigation arrows */
+.nav-arrows {
+  position: fixed;
+  bottom: 80px;
+  width: 100%;
+  max-width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  padding: 0 20px;
+}
+
+.arrow-btn {
+  pointer-events: all;
+  width: 56px;
+  height: 56px;
+  background: var(--accent);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-btn:hover:not(:disabled) {
+  background: var(--accent-dim);
+  transform: scale(1.1);
+}
+
+.arrow-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.center-buttons {
+  pointer-events: all;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.index-btn, .glossary-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.index-btn {
+  background: var(--highlight);
+  color: var(--bg);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+}
+
+.index-btn:hover {
+  background: #f59e0b;
+  transform: scale(1.05);
+}
+
+.glossary-btn {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.glossary-btn:hover {
+  background: var(--accent-dim);
+  transform: scale(1.05);
+}
+
+/* Quiz Dropdown Styles */
+.quiz-dropdown {
+  margin-top: 8px;
+  margin-left: 30px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.quiz-dropdown.expanded {
+  max-height: 500px;
+}
+
+.quiz-toggle {
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+  color: var(--accent);
+  margin-left: 30px;
+  margin-top: 4px;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.quiz-toggle:hover {
+  color: var(--highlight);
+}
+
+.quiz-toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-right: 4px;
+}
+
+.quiz-toggle-icon.rotated {
+  transform: rotate(90deg);
+}
+
+.quiz-question-item {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.quiz-question-item:hover {
+  color: var(--accent);
+}
+
+.quiz-question-item.answered {
+  color: #10b981;
+}
+
+.quiz-question-item.answered:hover {
+  color: var(--highlight);
+}
+
+.quiz-question-checkmark {
+  font-size: 14px;
+}
+
+/* Progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+  z-index: 100;
+}
+
+/* Footer hint */
+.keyboard-hint {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* Page counter */
+.page-counter {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(26, 26, 29, 0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: var(--muted);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  z-index: 50;
+}
+
+/* Breadcrumb navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  font-size: 14px;
+}
+
+.breadcrumb-link {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.breadcrumb-link:hover {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--highlight);
+}
+
+.breadcrumb-separator {
+  color: var(--muted);
+  opacity: 0.5;
+  font-size: 16px;
+}
+
+.breadcrumb-current {
+  color: var(--text);
+  font-weight: 500;
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" style="width: {{ (page_num / (total_pages - 1) * 100) if total_pages > 1 else 0 }}%;"></div>
+
+{% if preview_mode %}
+<div style="position: fixed; top: 20px; left: 20px; background: rgba(251, 191, 36, 0.2); border: 1px solid var(--highlight); padding: 6px 14px; border-radius: 20px; font-size: 13px; color: var(--highlight); font-weight: 600; z-index: 50;">
+  🔓 Preview Mode
+</div>
+{% endif %}
+
+{% if module_page_num %}
+<div class="page-counter">Page {{ module_page_num }} of {{ module_total_pages }}</div>
+{% endif %}
+
+<div class="page-wrapper{% if page.type == 'cover' or page.type == 'toc' %} scrollable{% endif %}">
+  <div class="content-card{% if page.type == 'cover' or page.type == 'toc' %} scrollable{% endif %}">
+    
+    <!-- Breadcrumb Navigation -->
+    {% if page.type != 'cover' %}
+    <nav class="breadcrumb">
+      <a href="{{ url_for('page', page_num=1) }}" class="breadcrumb-link">📑 Table of Contents</a>
+      
+      {% if page.type == 'intro' %}
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Chapter {{ page.chapter_id }}: {{ page.chapter_title }}</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Introduction</span>
+      
+      {% elif page.type == 'module' %}
+        <span class="breadcrumb-separator">›</span>
+        <a href="{{ url_for('page', page_num=2) }}" class="breadcrumb-link">Chapter {{ page.chapter_id }}: {{ page.chapter_title }}</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Module {{ page.module_id }}: {{ page.module_title }}</span>
+        {% if page.module_total_pages > 1 %}
+          <span class="breadcrumb-separator">›</span>
+          <span class="breadcrumb-current">Page {{ page.module_page_num }} of {{ page.module_total_pages }}</span>
+        {% endif %}
+      
+      {% elif page.type == 'quiz' %}
+        <span class="breadcrumb-separator">›</span>
+        <a href="{{ url_for('page', page_num=2) }}" class="breadcrumb-link">Chapter {{ page.chapter_id }}: Welcome to Freight Brokerage</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Module {{ page.module_id }}: {{ page.module_title }}</span>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Quiz Question {{ page.question_number }} of {{ page.total_questions }}</span>
+      
+      {% elif page.type == 'summary' %}
+        <span class="breadcrumb-separator">›</span>
+        <a href="{{ url_for('page', page_num=2) }}" class="breadcrumb-link">Chapter {{ page.chapter_id }}: {{ page.chapter_title }}</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Key Concepts</span>
+      
+      {% elif page.type == 'action_items' %}
+        <span class="breadcrumb-separator">›</span>
+        <a href="{{ url_for('page', page_num=2) }}" class="breadcrumb-link">Chapter {{ page.chapter_id }}: {{ page.chapter_title }}</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Action Items</span>
+      {% endif %}
+    </nav>
+    {% endif %}
+    {% if page.type == 'cover' %}
+      <div style="text-align: center; padding: 40px 0;">
+        <h1 style="font-size: 56px; margin-bottom: 8px; letter-spacing: 2px;">FREIGHT AGENT</h1>
+        <h1 style="font-size: 56px; margin-bottom: 40px; letter-spacing: 2px;">TRAINING MANUAL</h1>
+        <div style="font-size: 22px; color: var(--accent); margin-bottom: 80px; font-weight: 500;">
+          Complete Guide to Truck Brokerage Operations
+        </div>
+        
+        <div style="text-align: left; margin-top: 60px;">
+          <h2 style="font-size: 32px; margin-bottom: 32px; color: var(--highlight); text-align: center;">TABLE OF CONTENTS</h2>
+          
+          <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 20px; color: var(--accent); margin-bottom: 12px;">PART I: FOUNDATIONS</h3>
+            <div style="margin-left: 20px; line-height: 2; font-size: 16px;">
+              <div>Chapter 1: Welcome to Freight Brokerage</div>
+              <div>Chapter 2: Understanding the Industry Landscape</div>
+              <div>Chapter 3: The Role of a Freight Agent</div>
+            </div>
+          </div>
+          
+          <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 20px; color: var(--accent); margin-bottom: 12px;">PART II: TECHNICAL KNOWLEDGE</h3>
+            <div style="margin-left: 20px; line-height: 2; font-size: 16px;">
+              <div>Chapter 4: Truck Types and Specifications</div>
+              <div>Chapter 5: Load Types and Cargo Categories</div>
+              <div>Chapter 6: Load Restrictions and Regulations</div>
+            </div>
+          </div>
+          
+          <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 20px; color: var(--accent); margin-bottom: 12px;">PART III: BUSINESS DEVELOPMENT</h3>
+            <div style="margin-left: 20px; line-height: 2; font-size: 16px;">
+              <div>Chapter 7: Building Your Customer Base</div>
+              <div>Chapter 8: Sales Strategies for Freight Agents</div>
+              <div>Chapter 9: Effective Follow-Up Systems</div>
+            </div>
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            <div style="margin-left: 20px; line-height: 2; font-size: 16px;">
+              <div>Glossary</div>
+              <div style="color: var(--muted); font-size: 14px; margin-left: 20px;">Important Industry Terms & Definitions</div>
+            </div>
+          </div>
+        </div>
+        
+        <p style="margin-top: 60px; color: var(--muted); font-size: 15px; text-align: center;">
+          Press → to begin your journey
+        </p>
+      </div>
+    
+    {% elif page.type == 'toc' %}
+      <h1>Training Manual</h1>
+      <div class="subtitle">Your journey to becoming a freight agent starts here.</div>
+      {% if preview_mode %}
+        <div style="background: rgba(251, 191, 36, 0.2); border-left: 4px solid var(--highlight); padding: 12px 16px; border-radius: 8px; margin-bottom: 20px;">
+          <strong style="color: var(--highlight);">🔓 Preview Mode Active</strong> - All content unlocked for review
+        </div>
+      {% endif %}
+      
+      <!-- Glossary Button -->
+      <div style="text-align: center; margin-bottom: 32px;">
+        <a href="{{ url_for('glossary') }}" target="_blank" 
+           style="display: inline-block; padding: 14px 32px; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); transition: all 0.2s;"
+           onmouseover="this.style.background='var(--accent-dim)'; this.style.transform='scale(1.05)'"
+           onmouseout="this.style.background='var(--accent)'; this.style.transform='scale(1)'">
+          📚 Glossary (Always Available)
+        </a>
+      </div>
+      
+      <ul class="toc-list">
+        {% for ch in page.chapters %}
+          {% if ch.id == 'glossary' %}
+            {# Glossary button is now displayed above the chapter list #}
+          {% elif ch.id == 1 %}
+            <li style="cursor: pointer;">
+              <a href="{{ url_for('page', page_num=2) }}" style="color: var(--text); text-decoration: none; display: block;">Chapter {{ ch.id }}: {{ ch.title }}</a>
+              {% if page.ch1_modules %}
+              <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
+                {% for mod in page.ch1_modules %}
+                  {% set is_complete = module_completion.get(mod.id, False) %}
+                  {% set prev_index = loop.index0 - 1 %}
+                  {% set is_locked = False %}
+                  {% if loop.index0 > 0 and not preview_mode %}
+                    {% set prev_mod_id = page.ch1_modules[prev_index].id %}
+                    {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                  {% endif %}
+                  
+                  <div style="margin: 6px 0; display: flex; align-items: center;">
+                    {% if is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% else %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    {% endif %}
+                    
+                    {% if is_locked %}
+                      <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                      </span>
+                    {% else %}
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
+                         onmouseover="this.style.color='var(--accent)'" 
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
+                        Module {{ mod.id }}: {{ mod.title }}
+                      </a>
+                    {% endif %}
+                  </div>
+                  
+                  {% if is_complete and quiz_map.get(mod.id) %}
+                    <div class="quiz-toggle" onclick="toggleQuizDropdown('{{ mod.id }}')">
+                      <span class="quiz-toggle-icon" id="toggle-icon-{{ mod.id }}">▶</span>
+                      Quiz Questions ({{ quiz_map[mod.id]|length }})
+                    </div>
+                    <div class="quiz-dropdown" id="quiz-dropdown-{{ mod.id }}">
+                      {% for quiz_q in quiz_map[mod.id] %}
+                        {% set is_answered = quiz_answers.get(quiz_q.id, False) %}
+                        {% set quiz_page_num = page.quiz_page_map.get(quiz_q.id) %}
+                        <a href="{{ url_for('page', page_num=quiz_page_num) }}" 
+                           class="quiz-question-item {% if is_answered %}answered{% endif %}"
+                           style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                          <span class="quiz-question-checkmark">{% if is_answered %}✓{% else %}○{% endif %}</span>
+                          <span>Question {{ loop.index }}</span>
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                
+                <!-- Chapter 1 Key Concepts (locked until all modules complete) -->
+                <div style="margin: 12px 0 6px; display: flex; align-items: center;">
+                  {% if all_ch1_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    <a href="{{ url_for('page', page_num=25) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 1 Key Concepts
+                    </a>
+                  {% elif preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=25) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 1 Key Concepts
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                      🔒 Chapter 1 Key Concepts
+                    </span>
+                  {% endif %}
+                </div>
+                
+                <!-- Chapter 1 Action Items (locked until all modules complete) -->
+                <div style="margin: 6px 0; display: flex; align-items: center;">
+                  {% if all_ch1_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    <a href="{{ url_for('page', page_num=26) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 1 Action Items
+                    </a>
+                  {% elif preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=26) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 1 Action Items
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                      🔒 Chapter 1 Action Items
+                    </span>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+            </li>
+          {% elif ch.id == 2 %}
+            <li style="cursor: pointer;">
+              <a href="{{ url_for('page', page_num=28) }}" style="color: var(--text); text-decoration: none; display: block;">Chapter {{ ch.id }}: {{ ch.title }}</a>
+              {% if page.ch2_modules %}
+              <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
+                {% for mod in page.ch2_modules %}
+                  {% set is_complete = module_completion.get(mod.id, False) %}
+                  {% set prev_index = loop.index0 - 1 %}
+                  {% set is_locked = False %}
+                  {% if loop.index0 > 0 and not preview_mode %}
+                    {% set prev_mod_id = page.ch2_modules[prev_index].id %}
+                    {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                  {% elif loop.index0 == 0 and not preview_mode %}
+                    {# First module of Chapter 2 requires Chapter 1 completion #}
+                    {% set is_locked = not all_ch1_modules_complete %}
+                  {% endif %}
+                  
+                  <div style="margin: 6px 0; display: flex; align-items: center;">
+                    {% if is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% else %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    {% endif %}
+                    
+                    {% if is_locked %}
+                      <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                      </span>
+                    {% else %}
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
+                         onmouseover="this.style.color='var(--accent)'" 
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
+                        Module {{ mod.id }}: {{ mod.title }}
+                      </a>
+                    {% endif %}
+                  </div>
+                  
+                  {% if is_complete and quiz_map.get(mod.id) %}
+                    <div class="quiz-toggle" onclick="toggleQuizDropdown('{{ mod.id }}')">
+                      <span class="quiz-toggle-icon" id="toggle-icon-{{ mod.id }}">▶</span>
+                      Quiz Questions ({{ quiz_map[mod.id]|length }})
+                    </div>
+                    <div class="quiz-dropdown" id="quiz-dropdown-{{ mod.id }}">
+                      {% for quiz_q in quiz_map[mod.id] %}
+                        {% set is_answered = quiz_answers.get(quiz_q.id, False) %}
+                        {% set quiz_page_num = page.quiz_page_map.get(quiz_q.id) %}
+                        <a href="{{ url_for('page', page_num=quiz_page_num) }}" 
+                           class="quiz-question-item {% if is_answered %}answered{% endif %}"
+                           style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                          <span class="quiz-question-checkmark">{% if is_answered %}✓{% else %}○{% endif %}</span>
+                          <span>Question {{ loop.index }}</span>
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                
+                <!-- Chapter 2 Key Concepts (locked until all modules complete) -->
+                <div style="margin: 12px 0 6px; display: flex; align-items: center;">
+                  {% if all_ch2_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 2) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 2 Key Concepts
+                    </a>
+                  {% elif preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 2) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 2 Key Concepts
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                      🔒 Chapter 2 Key Concepts
+                    </span>
+                  {% endif %}
+                </div>
+                
+                <!-- Chapter 2 Action Items (locked until all modules complete) -->
+                <div style="margin: 6px 0; display: flex; align-items: center;">
+                  {% if all_ch2_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 2 Action Items
+                    </a>
+                  {% elif preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 2 Action Items
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                      🔒 Chapter 2 Action Items
+                    </span>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+            </li>
+          {% elif ch.id == 3 %}
+            <li style="cursor: pointer;">
+              <a href="{{ url_for('page', page_num=total_pages - 2) }}" style="color: var(--text); text-decoration: none; display: block;">Chapter {{ ch.id }}: {{ ch.title }}</a>
+              {% if page.ch3_modules %}
+              <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
+                {% for mod in page.ch3_modules %}
+                  {% set is_complete = module_completion.get(mod.id, False) %}
+                  {% set prev_index = loop.index0 - 1 %}
+                  {% set is_locked = False %}
+                  {% if loop.index0 > 0 and not preview_mode %}
+                    {% set prev_mod_id = page.ch3_modules[prev_index].id %}
+                    {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                  {% elif loop.index0 == 0 and not preview_mode %}
+                    {# First module of Chapter 3 requires Chapter 2 completion #}
+                    {% set is_locked = not all_ch2_modules_complete %}
+                  {% endif %}
+                  
+                  <div style="margin: 6px 0; display: flex; align-items: center;">
+                    {% if is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% else %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    {% endif %}
+                    
+                    {% if is_locked %}
+                      <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                      </span>
+                    {% else %}
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
+                         onmouseover="this.style.color='var(--accent)'" 
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
+                        Module {{ mod.id }}: {{ mod.title }}
+                      </a>
+                    {% endif %}
+                  </div>
+                  
+                  {% if is_complete and quiz_map.get(mod.id) %}
+                    <div class="quiz-toggle" onclick="toggleQuizDropdown('{{ mod.id }}')">
+                      <span class="quiz-toggle-icon" id="toggle-icon-{{ mod.id }}">▶</span>
+                      Quiz Questions ({{ quiz_map[mod.id]|length }})
+                    </div>
+                    <div class="quiz-dropdown" id="quiz-dropdown-{{ mod.id }}">
+                      {% for quiz_q in quiz_map[mod.id] %}
+                        {% set is_answered = quiz_answers.get(quiz_q.id, False) %}
+                        {% set quiz_page_num = page.quiz_page_map.get(quiz_q.id) %}
+                        <a href="{{ url_for('page', page_num=quiz_page_num) }}" 
+                           class="quiz-question-item {% if is_answered %}answered{% endif %}"
+                           style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                          <span class="quiz-question-checkmark">{% if is_answered %}✓{% else %}○{% endif %}</span>
+                          <span>Question {{ loop.index }}</span>
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+                
+                <!-- Chapter 3 Key Concepts (locked until all modules complete) -->
+                <div style="margin: 12px 0 6px; display: flex; align-items: center;">
+                  {% if all_ch3_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 2) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 3 Key Concepts
+                    </a>
+                  {% elif preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 2) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 3 Key Concepts
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                      🔒 Chapter 3 Key Concepts
+                    </span>
+                  {% endif %}
+                </div>
+                
+                <!-- Chapter 3 Action Items (locked until all modules complete) -->
+                <div style="margin: 6px 0; display: flex; align-items: center;">
+                  {% if all_ch3_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 3 Action Items
+                    </a>
+                  {% elif preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=total_pages - 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 3 Action Items
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
+                      🔒 Chapter 3 Action Items
+                    </span>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+            </li>
+          {% else %}
+            <li>Chapter {{ ch.id }}: {{ ch.title }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <p class="content-text" style="margin-top: 40px; color: var(--muted);">
+        Use arrow keys or buttons to navigate. Take your time with each section.
+      </p>
+    
+    {% elif page.type == 'intro' %}
+      <span class="badge">Chapter {{ page.chapter_id }}: {{ page.chapter_title }}</span>
+      <h2>Introduction</h2>
+      <div class="content-text">{{ page.content_html | safe }}</div>
+    
+    {% elif page.type == 'module' %}
+      <span class="badge">Module {{ page.module_id }}</span>
+      <h2>{{ page.module_title }}</h2>
+      <div class="content-text">{{ page.content_html | safe }}</div>
+    
+    {% elif page.type == 'summary' %}
+      <span class="badge">Chapter {{ page.chapter_id }} Key Concepts</span>
+      <h2>Key Concepts</h2>
+      <div class="content-text">{{ page.content_html | safe }}</div>
+    
+    {% elif page.type == 'action_items' %}
+      <span class="badge">Chapter {{ page.chapter_id }} Action Items</span>
+      <h2>Your Next Steps</h2>
+      <div class="content-text">{{ page.content_html | safe }}</div>
+    
+    {% elif page.type == 'quiz' %}
+      <span class="badge">Module {{ page.module_id }} - Question {{ page.question_number }} of {{ page.total_questions }}</span>
+      <h2>Knowledge Check</h2>
+      
+      {% if quiz_answered and not quiz_feedback %}
+        {# Already answered correctly in a previous session #}
+        <div style="background: rgba(34, 197, 94, 0.2); border-left: 4px solid #22c55e; padding: 16px 20px; border-radius: 8px; margin-bottom: 24px;">
+          <div style="color: #22c55e; font-weight: 600; margin-bottom: 8px;">✓ Already Completed</div>
+          <div style="color: var(--text); margin-bottom: 16px;">{{ page.quiz_question.explanation }}</div>
+          
+          {% if page.question_number < page.total_questions %}
+            <a href="{{ url_for('page', page_num=page_num + 1) }}" 
+               style="display: inline-block; padding: 12px 24px; background: #22c55e; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.2s;"
+               onmouseover="this.style.background='#16a34a'; this.style.transform='scale(1.05)'"
+               onmouseout="this.style.background='#22c55e'; this.style.transform='scale(1)'">
+              Next Question →
+            </a>
+          {% else %}
+            <div style="margin-top: 8px; padding: 12px 16px; background: rgba(34, 197, 94, 0.3); border-radius: 8px; color: #22c55e; font-weight: 600;">
+              🎉 Module {{ page.module_id }} questions complete! Use the arrow to continue.
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+      
+      {% if quiz_feedback %}
+        {% if quiz_feedback.correct %}
+          <div style="background: rgba(34, 197, 94, 0.2); border-left: 4px solid #22c55e; padding: 16px 20px; border-radius: 8px; margin-bottom: 24px;">
+            <div style="color: #22c55e; font-weight: 600; margin-bottom: 8px;">✓ Correct!</div>
+            <div style="color: var(--text); margin-bottom: 16px;">{{ quiz_feedback.message }}</div>
+            
+            {% if page.question_number < page.total_questions %}
+              <a href="{{ url_for('page', page_num=page_num + 1) }}" 
+                 style="display: inline-block; padding: 12px 24px; background: #22c55e; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.2s;"
+                 onmouseover="this.style.background='#16a34a'; this.style.transform='scale(1.05)'"
+                 onmouseout="this.style.background='#22c55e'; this.style.transform='scale(1)'">
+                Next Question →
+              </a>
+            {% else %}
+              <div style="margin-top: 8px; padding: 12px 16px; background: rgba(34, 197, 94, 0.3); border-radius: 8px; color: #22c55e; font-weight: 600;">
+                🎉 Module {{ page.module_id }} questions complete! Use the arrow to continue.
+              </div>
+            {% endif %}
+          </div>
+        {% else %}
+          <div style="background: rgba(239, 68, 68, 0.2); border-left: 4px solid #ef4444; padding: 16px 20px; border-radius: 8px; margin-bottom: 24px;">
+            <div style="color: #ef4444; font-weight: 600; margin-bottom: 8px;">✗ Incorrect</div>
+            <div style="color: var(--text);">{{ quiz_feedback.message }}</div>
+          </div>
+        {% endif %}
+      {% endif %}
+      
+      {% if not quiz_answered or (quiz_feedback and not quiz_feedback.correct) %}
+        <div class="content-text" style="font-size: 19px; font-weight: 500; margin-bottom: 32px;">
+          {{ page.quiz_question.question }}
+        </div>
+        
+        <form method="POST" action="{{ url_for('page', page_num=page_num) }}">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            {% for choice in page.quiz_question.choices %}
+              {% set idx = loop.index0 %}
+              <label style="display: flex; align-items: center; padding: 16px 20px; background: rgba(99, 102, 241, 0.1); border: 2px solid transparent; border-radius: 8px; cursor: pointer; transition: all 0.2s;"
+                     onmouseover="this.style.background='rgba(99, 102, 241, 0.2)'; this.style.borderColor='var(--accent)'"
+                     onmouseout="this.style.background='rgba(99, 102, 241, 0.1)'; this.style.borderColor='transparent'">
+                <input type="radio" name="answer" value="{{ idx }}" required 
+                       style="width: 20px; height: 20px; margin-right: 16px; cursor: pointer;"
+                       {% if quiz_feedback and not quiz_feedback.correct and quiz_feedback.selected_index == idx %}checked{% endif %}>
+                <span style="font-size: 17px;">{{ choice }}</span>
+              </label>
+            {% endfor %}
+          </div>
+          
+          <button type="submit" style="margin-top: 32px; padding: 14px 32px; background: var(--accent); color: white; border: none; border-radius: 8px; font-size: 17px; font-weight: 600; cursor: pointer; transition: all 0.2s;"
+                  onmouseover="this.style.background='var(--accent-dim)'; this.style.transform='scale(1.02)'"
+                  onmouseout="this.style.background='var(--accent)'; this.style.transform='scale(1)'">
+            Submit Answer
+          </button>
+        </form>
+        
+        {% if not quiz_answered %}
+          <div style="margin-top: 24px; padding: 12px 16px; background: rgba(251, 191, 36, 0.15); border-radius: 8px; color: var(--highlight); font-size: 14px;">
+            ⚠️ You must answer correctly to proceed
+          </div>
+        {% endif %}
+      {% endif %}
+    
+    {% else %}
+      <h2>Content not found</h2>
+      <p class="content-text">Please check your source file.</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="nav-arrows">
+  {% if prev_num is not none %}
+    <button class="arrow-btn" onclick="window.location.href='{{ url_for('page', page_num=prev_num) }}'">←</button>
+  {% else %}
+    <button class="arrow-btn" disabled>←</button>
+  {% endif %}
+  
+  <div class="center-buttons">
+    {% if page.type == 'cover' %}
+      <button class="index-btn" onclick="window.location.href='{{ url_for('page', page_num=1) }}'">🚀 Start</button>
+    {% else %}
+      <button class="index-btn" onclick="window.location.href='{{ url_for('page', page_num=1) }}'">📑 Index</button>
+    {% endif %}
+    <button class="glossary-btn" onclick="window.open('{{ url_for('glossary') }}', '_blank')">📚 Glossary</button>
+  </div>
+  
+  {% if next_num is not none %}
+    <button class="arrow-btn" onclick="window.location.href='{{ url_for('page', page_num=next_num) }}'">→</button>
+  {% else %}
+    <button class="arrow-btn" disabled>→</button>
+  {% endif %}
+</div>
+
+<div class="keyboard-hint">Use ← → arrow keys to navigate{% if page.type != 'cover' and page.type != 'toc' %} • No scrolling needed{% endif %}</div>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  {% if prev_num is not none %}
+  if (e.key === 'ArrowLeft') {
+    window.location.href = "{{ url_for('page', page_num=prev_num) }}";
+  }
+  {% endif %}
+  {% if next_num is not none %}
+  if (e.key === 'ArrowRight') {
+    window.location.href = "{{ url_for('page', page_num=next_num) }}";
+  }
+  {% endif %}
+});
+
+function toggleQuizDropdown(moduleId) {
+  const dropdown = document.getElementById('quiz-dropdown-' + moduleId);
+  const icon = document.getElementById('toggle-icon-' + moduleId);
+  
+  if (dropdown.classList.contains('expanded')) {
+    dropdown.classList.remove('expanded');
+    icon.classList.remove('rotated');
+  } else {
+    dropdown.classList.add('expanded');
+    icon.classList.add('rotated');
+  }
+}
+</script>
+
+</body>
+</html>
+

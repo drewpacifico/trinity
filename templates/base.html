@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% endblock %}</title>
+<style>
+:root {
+  --bg: #faf7f5;
+  --card: #ffffff;
+  --text: #2b2b2b;
+  --muted: #6b7280;
+  --primary: #4f46e5; /* indigo */
+  --primary-weak: #eef2ff;
+  --accent: #06b6d4; /* cyan */
+}
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.7; }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 960px; margin: 0 auto; padding: 24px; }
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.brand { font-weight: 700; letter-spacing: 0.3px; }
+.card { background: var(--card); border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding: 20px; }
+.badge { background: var(--primary-weak); color: var(--primary); border-radius: 999px; padding: 2px 10px; font-size: 12px; }
+.navbar { display: flex; gap: 12px; }
+.footer { margin-top: 32px; color: var(--muted); font-size: 14px; }
+h1 { font-size: 28px; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 0 0 8px; }
+h3 { font-size: 18px; margin: 0 0 6px; }
+pre { white-space: pre-wrap; margin: 0; }
+.button { display: inline-block; background: var(--primary); color: white; padding: 8px 14px; border-radius: 8px; }
+.button.secondary { background: var(--accent); }
+.breadcrumbs { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+.pagination { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand"><a href="{{ url_for('index') }}">Training Manual</a></div>
+      <div class="navbar">
+        <a class="badge" href="{{ url_for('index') }}">Chapters</a>
+      </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <div class="footer">Made for focused learning. Take breaks and hydrate.</div>
+  </div>
+</body>
+</html>

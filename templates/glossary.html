@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary - Training Manual</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0f0f10;
+  --card: #1a1a1d;
+  --text: #e8e8e8;
+  --muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-dim: #4f46e5;
+  --highlight: #fbbf24;
+}
+html, body { min-height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--accent);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--highlight);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 48px;
+}
+
+.glossary-content {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.search-box {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 16px;
+  margin-bottom: 32px;
+  font-family: inherit;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: var(--highlight);
+}
+
+.glossary-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.glossary-term {
+  padding: 20px;
+  background: rgba(99, 102, 241, 0.08);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.glossary-term:hover {
+  background: rgba(99, 102, 241, 0.15);
+  transform: translateX(4px);
+}
+
+.term-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  gap: 12px;
+}
+
+.term-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--highlight);
+  flex: 1;
+}
+
+.term-module {
+  font-size: 13px;
+  color: var(--muted);
+  background: rgba(251, 191, 36, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.term-definition {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.term-count {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 32px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <span class="badge">Reference Material</span>
+    <h1>Glossary</h1>
+    <div class="subtitle">Important industry terms and definitions</div>
+  </div>
+
+  <div class="glossary-content">
+    <input type="text" id="searchBox" class="search-box" placeholder="Search terms... (e.g., 'carrier', 'freight', 'regulations')">
+    
+    <div class="glossary-grid" id="glossaryGrid">
+      {% for term in glossary_terms %}
+      <div class="glossary-term" data-search="{{ term.name|lower }} {{ term.definition|lower }}">
+        <div class="term-header">
+          <div class="term-name">{{ term.name }}</div>
+          <div class="term-module">{{ term.module }}</div>
+        </div>
+        <div class="term-definition">{{ term.definition }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="no-results" id="noResults" style="display: none;">
+      No terms found matching your search.
+    </div>
+
+    <div class="term-count">
+      <span id="termCount">{{ glossary_terms|length }}</span> terms total
+    </div>
+  </div>
+</div>
+
+<script>
+const searchBox = document.getElementById('searchBox');
+const glossaryGrid = document.getElementById('glossaryGrid');
+const noResults = document.getElementById('noResults');
+const termCount = document.getElementById('termCount');
+const allTerms = glossaryGrid.querySelectorAll('.glossary-term');
+
+searchBox.addEventListener('input', function() {
+  const searchTerm = this.value.toLowerCase().trim();
+  let visibleCount = 0;
+
+  allTerms.forEach(term => {
+    const searchData = term.getAttribute('data-search');
+    if (searchData.includes(searchTerm)) {
+      term.style.display = 'block';
+      visibleCount++;
+    } else {
+      term.style.display = 'none';
+    }
+  });
+
+  if (visibleCount === 0) {
+    glossaryGrid.style.display = 'none';
+    noResults.style.display = 'block';
+  } else {
+    glossaryGrid.style.display = 'grid';
+    noResults.style.display = 'none';
+  }
+
+  termCount.textContent = visibleCount;
+});
+</script>
+
+</body>
+</html>
+
