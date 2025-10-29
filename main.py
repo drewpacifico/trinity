@@ -999,7 +999,7 @@ def estimate_visual_height(line: str, is_in_callout: bool = False, is_callout_st
     return lines_of_text * 1.2  # Account for line height
 
 
-def split_content_into_pages(content_text: str, max_height_score: float = 35.0) -> list:
+def split_content_into_pages(content_text: str, max_height_score: float = 28.0) -> list:
     """
     Split long content into multiple pages based on estimated VISUAL HEIGHT.
     
@@ -1008,7 +1008,7 @@ def split_content_into_pages(content_text: str, max_height_score: float = 35.0) 
     - Bold headers: ~2.5 height units (larger font + spacing)
     - Callout boxes: ~4.0 for title + 1.8x per line of content (padding + borders)
     
-    Max height score of 35.0 = approximately viewport height without scrolling.
+    Max height score of 28.0 = approximately viewport height without scrolling.
     Never splits callout blocks ([TYPE] content).
     """
     if not content_text:
@@ -1036,15 +1036,19 @@ def split_content_into_pages(content_text: str, max_height_score: float = 35.0) 
         # If in callout, collect lines
         if in_callout:
             callout_lines.append(line)
-            # Detect callout end (empty line after content)
-            if stripped == '' and len(callout_lines) > 1:
+            # Detect callout end (empty line after content OR next line is not indented/content)
+            is_last_line = (i == len(lines) - 1)
+            if (stripped == '' and len(callout_lines) > 1) or is_last_line:
                 # Callout is complete, calculate its total height
                 callout_height = estimate_visual_height(callout_lines[0], False, True)  # Title
                 for callout_line in callout_lines[1:]:
                     callout_height += estimate_visual_height(callout_line, True, False)
                 
-                # If adding callout would exceed limit, start new page
-                if current_height + callout_height > max_height_score and current_page:
+                # Be conservative - use 85% threshold for callouts to ensure they fit
+                safety_threshold = max_height_score * 0.85
+                
+                # If adding callout would exceed safe limit, start new page
+                if current_height + callout_height > safety_threshold and current_page:
                     pages.append('\n'.join(current_page))
                     current_page = callout_lines.copy()
                     current_height = callout_height
@@ -1155,6 +1159,17 @@ def get_module_completion_status(session_quiz_answers, module_id):
         "3.7": [q for q in chapter3_quizzes if q["id"].startswith("q3_7")],
         "3.8": [q for q in chapter3_quizzes if q["id"].startswith("q3_8")],
         "3.9": [q for q in chapter3_quizzes if q["id"].startswith("q3_9")],
+        "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1_")],
+        "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2_")],
+        "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3_")],
+        "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4_")],
+        "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5_")],
+        "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6_")],
+        "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7_")],
+        "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8_")],
+        "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9_")],
+        "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10_")],
+        "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11_")],
     }
     
     if module_id not in quiz_map:
@@ -1475,17 +1490,17 @@ def build_pages(text: str):
         
         # Add quiz questions after the last page of each module
         quiz_map_ch4 = {
-            "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1")],
-            "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2")],
-            "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3")],
-            "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4")],
-            "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5")],
-            "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6")],
-            "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7")],
-            "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8")],
-            "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9")],
-            "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10")],
-            "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11")],
+            "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1_")],
+            "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2_")],
+            "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3_")],
+            "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4_")],
+            "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5_")],
+            "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6_")],
+            "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7_")],
+            "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8_")],
+            "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9_")],
+            "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10_")],
+            "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11_")],
         }
         
         if mod["id"] in quiz_map_ch4:
@@ -1724,17 +1739,17 @@ def page(page_num: int):
         "3.7": [q for q in chapter3_quizzes if q["id"].startswith("q3_7")],
         "3.8": [q for q in chapter3_quizzes if q["id"].startswith("q3_8")],
         "3.9": [q for q in chapter3_quizzes if q["id"].startswith("q3_9")],
-        "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1")],
-        "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2")],
-        "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3")],
-        "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4")],
-        "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5")],
-        "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6")],
-        "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7")],
-        "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8")],
-        "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9")],
-        "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10")],
-        "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11")],
+        "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1_")],
+        "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2_")],
+        "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3_")],
+        "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4_")],
+        "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5_")],
+        "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6_")],
+        "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7_")],
+        "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8_")],
+        "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9_")],
+        "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10_")],
+        "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11_")],
     }
     
     return render_template(

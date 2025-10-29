@@ -991,10 +991,10 @@ h3 {
                   {% endif %}
                   
                   <div style="margin: 6px 0; display: flex; align-items: center;">
-                    {% if is_complete %}
-                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
-                    {% elif preview_mode %}
+                    {% if preview_mode %}
                       <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
@@ -1005,9 +1005,9 @@ h3 {
                       </span>
                     {% else %}
                       <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
+                         style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
                          onmouseover="this.style.color='var(--accent)'" 
-                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
+                         onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
                     {% endif %}
@@ -1024,8 +1024,9 @@ h3 {
                         {% set quiz_page_num = page.quiz_page_map.get(quiz_q.id) %}
                         <a href="{{ url_for('page', page_num=quiz_page_num) }}" 
                            class="quiz-question-item {% if is_answered %}answered{% endif %}"
-                           style="color: {% if is_answered %}#10b981{% else %}var(--text){% endif %};">
-                          {% if is_answered %}✓{% else %}○{% endif %} {{ quiz_q.question[:80] }}...
+                           style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                          <span class="quiz-question-checkmark">{% if is_answered %}✓{% else %}○{% endif %}</span>
+                          <span>Question {{ loop.index }}</span>
                         </a>
                       {% endfor %}
                     </div>
@@ -1034,18 +1035,18 @@ h3 {
                 
                 <!-- Chapter 4 Key Concepts (locked until all modules complete) -->
                 <div style="margin: 12px 0 6px; display: flex; align-items: center;">
-                  {% if all_ch4_modules_complete %}
-                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                  {% if preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
                     <a href="{{ url_for('page', page_num=total_pages - 2) }}" 
-                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
                        onmouseover="this.style.color='var(--accent)'" 
                        onmouseout="this.style.color='var(--highlight)'">
                       📋 Chapter 4 Key Concepts
                     </a>
-                  {% elif preview_mode %}
-                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                  {% elif all_ch4_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
                     <a href="{{ url_for('page', page_num=total_pages - 2) }}" 
-                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
                        onmouseover="this.style.color='var(--accent)'" 
                        onmouseout="this.style.color='var(--highlight)'">
                       📋 Chapter 4 Key Concepts
@@ -1060,16 +1061,16 @@ h3 {
                 
                 <!-- Chapter 4 Action Items (locked until all modules complete) -->
                 <div style="margin: 6px 0; display: flex; align-items: center;">
-                  {% if all_ch4_modules_complete %}
-                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                  {% if preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
                     <a href="{{ url_for('page', page_num=total_pages - 1) }}" 
                        style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
                        onmouseover="this.style.color='var(--accent)'" 
                        onmouseout="this.style.color='var(--highlight)'">
                       ✅ Chapter 4 Action Items
                     </a>
-                  {% elif preview_mode %}
-                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                  {% elif all_ch4_modules_complete %}
+                    <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
                     <a href="{{ url_for('page', page_num=total_pages - 1) }}" 
                        style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;" 
                        onmouseover="this.style.color='var(--accent)'" 

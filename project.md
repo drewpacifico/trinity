@@ -1330,22 +1330,29 @@ Side loading: Forklifts can access loads from either side, speeding loading oper
 Ground-level loading: Freight can sometimes be loaded from ground level with appropriate equipment.
 However, flatbeds require loading equipment that can reach 5 feet off the ground. Not all facilities have such equipment. Confirm loading capabilities before booking flatbed loads.
 Module 4.5: Specialized Flatbed Variants
+
 Several flatbed variations provide solutions for freight that doesn't fit on standard flatbeds.
-Step Deck (Drop Deck) Trailers
+
+**Step Deck (Drop Deck) Trailers**
+
 Step deck trailers have two deck levels. The front section sits at standard 5-foot height for approximately 10 feet, then "steps down" to a lower deck approximately 3.5 feet off the ground for the remaining 43 feet (on 53-foot trailers).
-This design allows taller freight to remain under the 13.5-14 foot total height limit. A standard flatbed with 5-foot deck height can carry loads up to 8.5-9 feet tall. A step deck with 3.5-foot well deck can carry loads 10-11 feet tall while staying legal.
-Common uses:
+
+[KEY TAKEAWAY] This design allows taller freight to remain under the 13.5-14 foot total height limit. A standard flatbed with 5-foot deck height can carry loads up to 8.5-9 feet tall. A step deck with 3.5-foot well deck can carry loads 10-11 feet tall while staying legal.
+**Common uses:**
 Tall machinery or equipment
 Large industrial components
 Construction equipment
 Agricultural equipment
 Any freight between 9 and 11 feet tall
-Step decks command premium rates over standard flatbeds because:
+
+**Step decks command premium rates over standard flatbeds because:**
 Less availability (fewer step decks than standard flatbeds)
 More versatility (they can haul anything a standard flatbed can, plus taller items)
 Higher equipment costs for carriers
-Double Drop (Lowboy) Trailers
+**Double Drop (Lowboy) Trailers**
+
 Double drop trailers have three deck levels: standard height front (approximately 8-10 feet), very low center section (18-24 inches off ground), and standard or low height rear section.
+
 The extremely low well section allows hauling very tall freight—typically 12-15+ feet tall while staying legal. Some specialized lowboys sit even lower, allowing freight approaching 20 feet tall.
 Common uses:
 Heavy construction equipment (excavators, bulldozers, cranes)
@@ -1358,14 +1365,19 @@ Limited availability (specialized equipment)
 Heavy equipment expertise required
 Often need permits even when technically legal
 Higher carrier equipment costs
-RGN (Removable Gooseneck) Trailers
+**RGN (Removable Gooseneck) Trailers**
+
 RGN trailers are lowboys where the front section (gooseneck) detaches from the trailer, creating a ramp. This allows rolling wheeled equipment directly onto the trailer rather than requiring cranes for loading.
+
 The gooseneck hydraulically lowers to ground level, creating an incline. Equipment drives or rolls up, then the gooseneck reattaches and raises to transport position.
-RGNs are extremely popular for heavy equipment hauling because they eliminate crane costs and simplify loading/unloading at job sites where cranes aren't available.
+
+[PRO TIP] RGNs are extremely popular for heavy equipment hauling because they eliminate crane costs and simplify loading/unloading at job sites where cranes aren't available.
 Rates are similar to or slightly higher than standard lowboy rates, with the convenience of roll-on/roll-off capability being the main advantage.
-Conestoga Trailers
+**Conestoga Trailers**
+
 Conestoga trailers have rolling tarp systems that slide along rails running the trailer length. Rather than manually wrestling tarps over loads, drivers simply crank a mechanism that rolls the tarp forward or backward.
-This provides several advantages:
+
+**This provides several advantages:**
 Much faster than manual tarping (5-10 minutes vs. 30-60 minutes)
 Less physical labor for drivers
 Better weather protection (systematic design seals better than manual tarps)
@@ -1377,57 +1389,79 @@ Speed and convenience
 Better protection
 Often preferred for higher-value freight
 Module 4.6: Power Only Operations
+
 Power only is an operating arrangement where the carrier provides only the tractor (power unit), and the customer provides the trailer. This might seem unusual if you're new to freight, but it's increasingly common in certain segments.
-How Power Only Works
+
+**How Power Only Works**
+
 The shipper or receiver owns trailers. Carriers provide tractors and drivers to pull those trailers. This is common in several scenarios:
-Drop and Hook Operations: Large shippers with substantial trailer fleets load trailers in advance. Carriers drop empty trailers, pick up loaded trailers, and deliver them. This eliminates driver wait time during loading.
-Example: A major manufacturer has 100 trailers. They load trailers throughout the week. Carriers arrive, drop an empty, hook a loaded trailer, and depart within 15-30 minutes. The efficiency benefits both the shipper (no dock congestion) and carrier (more miles per day, higher revenue).
+**Drop and Hook Operations:** Large shippers with substantial trailer fleets load trailers in advance. Carriers drop empty trailers, pick up loaded trailers, and deliver them. This eliminates driver wait time during loading.
+
+[REAL EXAMPLE] A major manufacturer has 100 trailers. They load trailers throughout the week. Carriers arrive, drop an empty, hook a loaded trailer, and depart within 15-30 minutes. The efficiency benefits both the shipper (no dock congestion) and carrier (more miles per day, higher revenue).
 Trailer Interchange: Carriers trade trailers to complete shipments more efficiently. Carrier A picks up a load but can't deliver it economically. They drop the trailer at an interchange point. Carrier B picks it up and completes delivery.
 Customer-Owned Trailer Fleets: Some shippers own trailer fleets sized for their peak needs and contract for power units rather than purchasing entire truck-tractor-trailer combinations. This reduces their capital investment while maintaining control of trailer specifications and maintenance.
 Chassis Operations: Intermodal containers (those metal boxes you see on trains and ships) don't have wheels. They sit on separate chassis (frames with wheels). Drayage carriers moving containers from ports to nearby facilities provide power units to pull chassis loaded with containers.
-Why Power Only Matters to You
-Understanding power only helps you recognize opportunities. Customers with trailer fleets often need power units during peak periods even if they have dedicated carrier relationships. They might need backup capacity when their regular providers are full. These become opportunities for you to provide power-only services.
+**Why Power Only Matters to You**
+
+[KEY TAKEAWAY] Understanding power only helps you recognize opportunities. Customers with trailer fleets often need power units during peak periods even if they have dedicated carrier relationships. They might need backup capacity when their regular providers are full. These become opportunities for you to provide power-only services.
+
 Rates for power only are typically lower than full equipment rates because the customer is providing the trailer. However, margins can still be attractive because you're not finding trailer capacity—just tractor capacity, which is sometimes easier.
 Module 4.7: Specialized Equipment Types
+
 Beyond the major categories (dry van, reefer, flatbed and variants), several specialized equipment types serve specific freight needs.
-Tanker Trailers
+
+**Tanker Trailers**
+
 Tankers haul liquids—fuel, chemicals, milk, juice, liquid food products, and countless other commodities. Tankers are heavily regulated, especially for hazardous materials and food-grade products.
-Key characteristics:
+
+**Key characteristics:**
 Capacity: 5,000-9,000 gallons depending on product density and trailer design
 Multiple compartments: Many tankers have 3-6 compartments allowing separate products simultaneously
 Food-grade requirements: Tankers hauling food products must be thoroughly cleaned between loads and cannot haul non-food products without extensive cleaning protocols
 Hazmat certification: Tankers carrying hazardous materials require drivers with hazmat endorsements and trailers meeting stringent specifications
 Specialized loading/unloading: Some require pneumatic systems, heating systems, or specialized pumps
-Tanker freight is highly specialized. Unless you develop specific expertise in liquid transportation, you'll likely refer these opportunities to specialized agents or brokers.
-Hopper Trailers
+[IMPORTANT] Tanker freight is highly specialized. Unless you develop specific expertise in liquid transportation, you'll likely refer these opportunities to specialized agents or brokers.
+
+**Hopper Trailers**
+
 Hoppers haul dry bulk materials like grain, plastic pellets, cement powder, fly ash, sand, and similar commodities. They unload through bottom gates or pneumatic systems.
-Types:
+**Types:**
 Pneumatic hoppers: Use compressed air to unload powder or small pellet materials through hoses
 Gravity hoppers: Unload through bottom gates into pits or conveyors
 End-dump hoppers: Tip backward to dump contents
+
 Like tankers, hopper freight is specialized. Most freight agents focus on boxed or palletized freight rather than bulk commodities.
-Livestock Trailers
+
+**Livestock Trailers**
 Livestock trailers transport live animals—cattle, pigs, poultry, and other livestock. These trailers have multiple decks with ventilation and are subject to strict animal welfare regulations.
 This is another highly specialized segment requiring specific expertise in animal handling, welfare regulations, and livestock markets. Few general freight agents handle livestock because the requirements differ so dramatically from typical freight.
-Automobile Carriers
+**Automobile Carriers**
+
 Auto carriers transport multiple vehicles simultaneously—typically 7-9 cars on a single trailer depending on vehicle sizes.
-Types:
+
+**Types:**
 Open carriers: Most new cars ship on open carriers. Vehicles are exposed to weather but secure.
 Enclosed carriers: High-value vehicles, classics, or luxury cars ship in enclosed trailers for maximum protection.
+
 Auto transport is typically handled by specialists in vehicle logistics rather than general freight agents.
-Curtain Side Trailers
+
+**Curtain Side Trailers**
 Curtain side trailers (sometimes called "sliding tarp" trailers) have solid roofs and floors but sides made of heavy fabric curtains that roll open. This allows side loading with forklifts while providing weather protection similar to dry vans.
-Benefits:
+
+**Benefits:**
 Side loading access eliminates need for end-of-dock positioning
 Faster loading/unloading than dry vans (multiple forklifts can work simultaneously from both sides)
 Floor-to-ceiling access simplifies loading tall items
 Weather protection for freight
 Curtain sides are most common in Europe but growing in North America. They work well for freight that benefits from side loading efficiency but needs weather protection.
 Module 4.8: Truck Classifications and Weight Ratings
+
 Understanding truck classifications helps you communicate knowledgeably with carriers and customers about appropriate equipment.
-Gross Vehicle Weight Rating (GVWR)
+
+**Gross Vehicle Weight Rating (GVWR)**
 GVWR is the maximum total weight of the vehicle including the vehicle itself plus all cargo. It's the key metric determining truck classification.
-Class 8 Trucks (GVWR over 33,000 pounds)
+**Class 8 Trucks (GVWR over 33,000 pounds)**
+
 These are standard over-the-road semi-trucks—the heavy-duty tractors pulling trailers you see on highways. This is what you'll be booking for truckload freight. Class 8 includes:
 Day cabs (no sleeping compartment)
 Sleeper cabs (with beds for long-haul drivers)
@@ -1436,28 +1470,39 @@ Class 7 Trucks (GVWR 26,001-33,000 pounds)
 Medium-duty trucks used primarily for local deliveries. Box trucks, delivery trucks, and smaller commercial vehicles fall into this class. You might occasionally book these for local moves or smaller shipments.
 Class 6 and Below (GVWR under 26,001 pounds)
 Light-duty commercial trucks including delivery trucks, large pickups, and small box trucks. These typically handle local deliveries or small shipments rather than over-the-road freight.
-Why Classification Matters
-Commercial driver's license (CDL) requirements change based on vehicle class. Drivers operating Class 8 trucks need CDLs. This affects carrier availability and rates—CDL drivers command higher wages than non-CDL drivers.
+**Why Classification Matters**
+
+[KEY TAKEAWAY] Commercial driver's license (CDL) requirements change based on vehicle class. Drivers operating Class 8 trucks need CDLs. This affects carrier availability and rates—CDL drivers command higher wages than non-CDL drivers.
+
 Additionally, some regulations apply differently to different weight classes. Understanding classifications helps you discuss equipment intelligently and understand why certain equipment costs more.
 Module 4.9: Axle Configurations and Weight Distribution
+
 Federal and state laws regulate not just total vehicle weight but how weight distributes across axles. Understanding these rules prevents overweight violations and helps you work with carriers on proper loading.
-Federal Weight Limits on Interstate Highways
+
+**Federal Weight Limits on Interstate Highways**
+
 Maximum gross vehicle weight: 80,000 pounds total
 Steer axle (front): 12,000 pounds maximum
 Drive axles (tandem rear axles on tractor): 34,000 pounds maximum combined
 Trailer axles (tandem axles on trailer): 34,000 pounds maximum combined
-Why Distribution Matters
+
+**Why Distribution Matters**
 Simply keeping the total weight under 80,000 pounds isn't sufficient. The weight must distribute properly across axles. Heavy freight positioned wrong in the trailer can cause individual axles to exceed limits even when total weight is legal.
-Example: A load weighs 45,000 pounds total—well under the 80,000-pound limit. However, if all freight loads in the front half of the trailer, it concentrates excessive weight on the trailer's front axle set, potentially exceeding the 34,000-pound tandem limit. The load is illegal despite being under gross weight limits.
+
+[COMMON MISTAKE] Example: A load weighs 45,000 pounds total—well under the 80,000-pound limit. However, if all freight loads in the front half of the trailer, it concentrates excessive weight on the trailer's front axle set, potentially exceeding the 34,000-pound tandem limit. The load is illegal despite being under gross weight limits.
 Experienced drivers understand proper weight distribution and position freight correctly. However, some commodities present challenges:
 Steel coils are extremely heavy and dense. A single coil might weigh 40,000 pounds. It must be positioned carefully to distribute weight properly.
 Machinery with uneven weight distribution requires careful positioning to balance axle weights.
 Partial loads where only the front or rear of the trailer is loaded require careful calculation to avoid excessive weight on specific axle sets.
-State Variations
+**State Variations**
+
 Some states allow higher weights on certain roads. Michigan, for example, allows up to 160,000 pounds on specific routes using trucks with additional axles. Some local roads have restrictions below federal limits (bridges with weight limits, residential streets with truck restrictions).
+
 When planning loads, research any state-specific requirements along the route, especially for heavy freight approaching weight limits.
-Practical Weight Management
-Be conservative with weight estimates. Customers sometimes underestimate weight, forgetting to include pallets, packaging materials, or moisture content in products. Building in safety margins prevents overweight surprises.
+
+**Practical Weight Management**
+[PRO TIP] Be conservative with weight estimates. Customers sometimes underestimate weight, forgetting to include pallets, packaging materials, or moisture content in products. Building in safety margins prevents overweight surprises.
+
 Always confirm if the customer's weight includes everything. Ask specifically: "Does this weight include pallets, packaging, and all accessories?"
 Understand typical weight-to-space ratios for common commodities. Experience teaches you that furniture rarely weighs out, steel almost always weighs out, and beverage pallets frequently create weight challenges.
 For heavy freight, discuss weight distribution with carriers during booking. "This load is 44,000 pounds of steel coils. Can your drivers handle proper positioning?" Experienced carriers appreciate this question and may provide guidance on how to load.
@@ -1473,38 +1518,50 @@ Length: If you have a 50-foot piece of lumber, it won't fit in a 48-foot trailer
 Width: Standard trailers are 8.5 feet wide internally. Freight wider than 8 feet typically requires flatbed or specialized equipment. Some freight can rotate to fit, but confirm before assuming.
 Height: Standard dry vans have approximately 9 feet of interior height. Taller freight requires specialized equipment. For flatbeds, remember the 13.5-14 foot total height limit includes the 5-foot deck height.
 Door openings: Dry van rear doors are approximately 8 feet wide by 9 feet tall. Freight fitting inside the trailer but not fitting through doors cannot load. This is where step decks or flatbeds become necessary despite the freight technically fitting inside a van.
-Step 2: Weight Capacity
+**Step 2: Weight Capacity**
+
 Can the equipment handle the weight?
 Dry vans: 43,000-45,000 pounds
 Reefers: 40,000-42,000 pounds (less capacity due to heavier trailer weight from insulation and refrigeration equipment)
 Flatbeds: 45,000-48,000 pounds
 Specialized equipment: Varies—confirm with carrier
+
 Remember that carriers consider both total weight and how it distributes. A 45,000-pound load that concentrates weight in a small area might be problematic even though total weight is legal.
-Step 3: Temperature Control
+
+**Step 3: Temperature Control**
 Does the freight require specific temperature maintenance?
 If yes, you need a reefer. Confirm the exact temperature requirement—"cold" isn't specific enough. Get the actual temperature range in degrees Fahrenheit.
 If no, dry van or flatbed depending on other factors.
 Some freight is temperature-sensitive but doesn't require active refrigeration. It might just need to avoid extreme heat or freezing. For these shipments, dry vans provide adequate protection in moderate weather, but reefers become necessary during extreme summer or winter conditions.
-Step 4: Loading and Unloading Method
+**Step 4: Loading and Unloading Method**
+
 How will the freight load and unload?
-Dock-height locations with forklifts: Dry vans and reefers work well Ground-level locations without docks: Requires liftgate service or flatbed with appropriate ground-level loading equipment Top loading or side loading required: Flatbed necessary Roll-on/roll-off for wheeled equipment: RGN or similar specialized equipment
+Dock-height locations with forklifts: Dry vans and reefers work well 
+Ground-level locations without docks: Requires liftgate service or flatbed with appropriate ground-level loading equipment 
+Top loading or side loading required: Flatbed necessary 
+Roll-on/roll-off for wheeled equipment: RGN or similar specialized equipment
+
 Confirm loading capabilities at both pickup and delivery before finalizing equipment selection. A dry van without liftgate cannot pickup from a ground-level location without proper loading equipment.
-Step 5: Weather Protection
+
+**Step 5: Weather Protection**
 Does the freight require protection from weather, debris, or road spray?
 If yes and it fits in an enclosed trailer, use dry van or reefer.
 If yes but requires flatbed for other reasons, ensure tarping is included and priced accordingly.
 If no, flatbed freight can ship uncovered.
 When unsure, ask the customer or research the commodity. Some materials seem durable but are actually sensitive to moisture or temperature swings.
-Step 6: Special Regulations
+
+**Step 6: Special Regulations**
 Are there special regulatory requirements limiting equipment options?
 Hazmat: Requires carriers with hazmat endorsements, proper insurance levels, and appropriate equipment. Not all carriers handle hazmat.
 Food-grade: Some customers require trailers that haven't hauled non-food products. This limits carrier options and affects pricing.
 Oversize/overweight: Requires permits and sometimes specialized equipment. Affects routing and timing.
 Security requirements: High-value cargo might require specific security features (GPS tracking, sealed trailers, team drivers, etc.).
-Step 7: Customer Preferences
+
+**Step 7: Customer Preferences**
 Does the customer have specific equipment preferences or requirements?
 Some customers require specific trailer types, ages, or conditions. "Trailers less than 5 years old" or "No previous hazmat loads" are examples. Always ask about requirements during load booking.
-Step 8: Economic Efficiency
+
+**Step 8: Economic Efficiency**
 Are you selecting appropriate equipment without being unnecessarily expensive?
 Using a reefer for freight that doesn't need temperature control wastes money. Using a specialized lowboy for freight that fits on a standard flatbed reduces your margin unnecessarily.
 Select equipment that safely and appropriately handles the freight at the most economical cost. This protects your margin while providing appropriate service.
