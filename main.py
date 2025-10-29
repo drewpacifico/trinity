@@ -1034,6 +1034,250 @@ MODULE_5_10_QUIZ = [
 
 chapter5_quizzes = MODULE_5_1_QUIZ + MODULE_5_2_QUIZ + MODULE_5_3_QUIZ + MODULE_5_4_QUIZ + MODULE_5_5_QUIZ + MODULE_5_6_QUIZ + MODULE_5_7_QUIZ + MODULE_5_8_QUIZ + MODULE_5_9_QUIZ + MODULE_5_10_QUIZ
 
+# Chapter 6 Quiz Questions
+MODULE_6_1_QUIZ = [
+    {
+        "id": "q6_1_1",
+        "scenario": "You're a new freight agent learning about the regulatory landscape. A customer asks why you need to understand regulations when carriers and drivers are responsible for compliance.",
+        "question": "Why is it important for freight agents to understand freight regulations even though carriers bear primary responsibility for compliance?",
+        "options": [
+            "A) To become certified as a compliance officer",
+            "B) To set realistic expectations, avoid legal problems, and prevent commitments that violate regulations or expose parties to liability",
+            "C) To take over the driver's responsibilities",
+            "D) Regulations only apply to carriers, not freight agents"
+        ],
+        "correct_index": 1,
+        "explanation": "While drivers and carriers bear primary responsibility for compliance, understanding regulations helps you set realistic expectations, avoid legal problems, and serve customers effectively. You don't need to become a regulatory expert, but understanding the basics prevents you from making commitments that violate regulations or expose you, your customers, or your carriers to liability. This knowledge is essential for professional freight agents."
+    }
+]
+
+MODULE_6_2_QUIZ = [
+    {
+        "id": "q6_2_1",
+        "scenario": "Your customer requests a 1,200-mile shipment picked up Friday at 6 PM and delivered Monday at 8 AM with a solo driver. You need to explain why this timeline is unrealistic due to Hours of Service regulations.",
+        "question": "What is the maximum realistic distance a solo driver can cover per day while complying with the 11-hour driving limit?",
+        "options": [
+            "A) 600-650 miles per day",
+            "B) 500-550 miles per day",
+            "C) 700-750 miles per day",
+            "D) 400-450 miles per day"
+        ],
+        "correct_index": 1,
+        "explanation": "A solo driver can realistically cover 500-550 miles in an 11-hour driving day when accounting for fuel stops, meal breaks, traffic, and the mandatory 30-minute break requirement. Some agents quote 600-650 miles per day, but this requires nearly perfect conditions. Conservative estimates prevent disappointed customers. For a 1,200-mile trip, plan for at least 2.5 driving days plus rest periods, meaning 3+ calendar days total."
+    },
+    {
+        "id": "q6_2_2",
+        "scenario": "A driver starts their workday at 7:00 AM with a pre-trip inspection. They spend 3 hours in detention at the shipper, then drive for 8 hours. It's now 6:00 PM.",
+        "question": "How much more driving time does the driver have available before their 14-hour duty window closes?",
+        "options": [
+            "A) 3 hours of driving time remaining",
+            "B) No more driving time—the 14-hour window closes at 9:00 PM regardless of detention",
+            "C) 6 hours of driving time remaining",
+            "D) Unlimited time if they take a 30-minute break"
+        ],
+        "correct_index": 1,
+        "explanation": "The 14-hour duty window starts when ANY work-related activity begins (7:00 AM) and runs continuously for 14 hours, closing at 9:00 PM. The driver has already used 11 hours (3 hours detention + 8 hours driving), leaving only 3 hours until the window closes. However, they've used 8 of their 11-hour driving limit, so they can only drive 2 more hours. Detention time consumes the duty window without producing miles—a key reason detention affects delivery schedules and why detention charges exist."
+    }
+]
+
+MODULE_6_3_QUIZ = [
+    {
+        "id": "q6_3_1",
+        "scenario": "Your carrier quotes include 2 hours of free time at pickup and delivery. A driver spends 6 hours in detention at the shipper's dock. The carrier wants to charge detention fees.",
+        "question": "What is the correct detention charge for this scenario if the carrier charges $50 per hour?",
+        "options": [
+            "A) $300 (6 hours × $50)",
+            "B) $200 (4 hours beyond free time × $50)",
+            "C) $250 (5 hours × $50)",
+            "D) $100 (2 hours × $50)"
+        ],
+        "correct_index": 1,
+        "explanation": "With 2 hours of standard free time included, detention charges apply only to the time BEYOND the free time. 6 total hours - 2 free hours = 4 billable hours. 4 hours × $50 = $200. Detention charges compensate carriers for time that consumes the driver's 14-hour duty window without producing revenue miles. Always communicate free time expectations and detention rates clearly when booking loads."
+    }
+]
+
+MODULE_6_4_QUIZ = [
+    {
+        "id": "q6_4_1",
+        "scenario": "A customer's load weighs 45,000 pounds total—well under the 80,000-pound gross vehicle weight limit. However, all freight is loaded in the front half of the trailer.",
+        "question": "Why is this load potentially illegal despite being under the gross weight limit?",
+        "options": [
+            "A) The trailer axles may exceed the 34,000-pound tandem limit due to improper weight distribution",
+            "B) Loads over 40,000 pounds always require permits regardless of distribution",
+            "C) The weight is too heavy for standard dry van trailers",
+            "D) Federal law requires freight to be distributed evenly across the entire trailer length"
+        ],
+        "correct_index": 0,
+        "explanation": "Weight must distribute properly across ALL axle sets, not just stay under the 80,000-pound gross limit. Loading all freight at the trailer's front concentrates excessive weight on the trailer's front axle set, potentially exceeding the 34,000-pound trailer axle limit. The load is illegal despite being under gross weight capacity. Federal limits are: 12,000 lbs steer axle, 34,000 lbs drive axles, 34,000 lbs trailer axles. Proper weight distribution is critical—always confirm customers' weights include pallets, packaging, and all materials."
+    },
+    {
+        "id": "q6_4_2",
+        "scenario": "A customer estimates their freight weighs 42,000 pounds but you're not confident in their estimate. They forgot to mention the freight is on wooden pallets.",
+        "question": "What is the best practice for managing this weight uncertainty?",
+        "options": [
+            "A) Quote the load at exactly 42,000 pounds since that's what the customer said",
+            "B) Refuse the load due to weight uncertainty",
+            "C) Build safety margins and plan for 44,000-45,000 pounds, confirming weight includes pallets",
+            "D) Always subtract 10% from customer weight estimates"
+        ],
+        "correct_index": 2,
+        "explanation": "Be conservative with weight estimates. Freight often weighs more than customers estimate because they forget to include pallet weights (40-70 pounds each), packaging materials, crates, or moisture content. ALWAYS ask: 'Does this weight include pallets, packaging, and all materials, or is it just the product weight?' Build safety margins—if a customer says 42,000 pounds and you're not confident, plan for 44,000-45,000 pounds. Better to have extra capacity than discover the load is overweight at weigh stations, which causes fines, delays, and damaged relationships."
+    }
+]
+
+MODULE_6_5_QUIZ = [
+    {
+        "id": "q6_5_1",
+        "scenario": "A customer needs to ship freight that is 11 feet wide and 15 feet tall. The shipment travels through 3 states.",
+        "question": "What permitting requirements apply to this moderately oversize load?",
+        "options": [
+            "A) No permits needed if traveling on interstate highways",
+            "B) Oversize permits required from all 3 states, route surveys may be needed, processing takes days to weeks, costs $300-800 per state",
+            "C) Single federal permit covers all states, same-day processing",
+            "D) Only the origin state requires a permit"
+        ],
+        "correct_index": 1,
+        "explanation": "Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall) requires oversize permits from EVERY state traveled. This 11' wide × 15' tall load is moderately oversize, requiring: permits from all 3 states, possible route surveys, days-to-weeks processing time, costs of $300-800 per state, likely travel restrictions (no nighttime/weekends/holidays), and possible escort vehicles. Lead time is critical—never accept loads requiring immediate pickup when permits haven't been obtained. The permitting process alone can take days or weeks."
+    }
+]
+
+MODULE_6_6_QUIZ = [
+    {
+        "id": "q6_6_1",
+        "scenario": "You're quoting a load of paint (Class 3 Flammable Liquid) requiring placards. The carrier must have appropriate insurance and the driver needs special qualifications.",
+        "question": "What are the minimum insurance and driver requirements for placarded hazmat freight?",
+        "options": [
+            "A) $750,000 insurance minimum, no special driver requirements",
+            "B) $1,000,000 insurance minimum, hazmat endorsement required",
+            "C) $5,000,000 insurance minimum, hazmat endorsement with TSA background check required",
+            "D) $2,000,000 insurance minimum, commercial driver's license required"
+        ],
+        "correct_index": 2,
+        "explanation": "Hazmat requiring placarding needs: $5,000,000 minimum cargo liability insurance (vs. $750,000 for general freight), and drivers must have hazmat endorsements obtained through specialized written testing, TSA background check (2-4 weeks processing), fingerprinting, and renewal every few years. This higher insurance requirement and limited driver availability (not all drivers maintain hazmat endorsements) means hazmat freight commands 15-30% premium rates. Always verify complete shipping papers and proper placarding before tendering hazmat loads."
+    },
+    {
+        "id": "q6_6_2",
+        "scenario": "A hazmat shipment requires detailed shipping papers. The shipper provides generic descriptions instead of proper regulatory names.",
+        "question": "What required information must hazmat shipping papers include?",
+        "options": [
+            "A) Only the weight and destination address",
+            "B) Product name, weight, and delivery date",
+            "C) Proper shipping name, hazard class, UN/NA number, packing group, quantity, number/type of packages, and emergency response phone number",
+            "D) Commodity description and shipper contact information"
+        ],
+        "correct_index": 2,
+        "explanation": "Hazmat shipping papers require: Proper shipping name (from Hazardous Materials Table, not generic descriptions), Hazard class or division (Class 1-9 with subdivisions), UN or NA identification number (four-digit number identifying the specific material), Packing group when applicable (I, II, or III indicating danger level), Quantity of hazmat, Number and type of packages, and Emergency response telephone number providing 24/7 contact. Shippers are responsible for proper classification and documentation, but verify documentation is complete before tendering hazmat loads. Incomplete paperwork creates liability for everyone involved."
+    }
+]
+
+MODULE_6_7_QUIZ = [
+    {
+        "id": "q6_7_1",
+        "scenario": "You're arranging a reefer load of dairy products. The customer mentions the trailer must be pre-cooled and temperature records maintained.",
+        "question": "Which regulation governs these food transportation requirements?",
+        "options": [
+            "A) OSHA workplace safety regulations",
+            "B) The Food Safety Modernization Act (FSMA) Sanitary Transportation Rule",
+            "C) Department of Transportation (DOT) hazmat regulations",
+            "D) Environmental Protection Agency (EPA) refrigerant regulations"
+        ],
+        "correct_index": 1,
+        "explanation": "The Food Safety Modernization Act (FSMA) Sanitary Transportation Rule requires: vehicles designed and maintained to prevent contamination, pre-cooling to required temperatures before loading, monitoring and recording temperature data when required, segregation from non-food items, cleaning/sanitizing between loads when necessary to prevent allergen cross-contact, documented training for personnel, and records maintained for at least 12 months. As a freight agent, understanding these requirements helps you select appropriate carriers, communicate customer requirements clearly, and set appropriate rates reflecting the additional compliance burden."
+    }
+]
+
+MODULE_6_8_QUIZ = [
+    {
+        "id": "q6_8_1",
+        "scenario": "A driver encounters an unexpected snowstorm that wasn't forecasted when their trip began. The storm significantly slows their progress.",
+        "question": "What HOS flexibility does the Adverse Driving Conditions exception provide?",
+        "options": [
+            "A) Unlimited driving time until the driver reaches their destination",
+            "B) The driver may extend the 11-hour driving limit by up to 2 hours to reach a safe location",
+            "C) The driver can skip the mandatory 10-hour rest period",
+            "D) The 14-hour duty window extends to 18 hours"
+        ],
+        "correct_index": 1,
+        "explanation": "When drivers encounter adverse driving conditions not apparent when the trip began (unexpected snowstorms, fog, accidents causing traffic), they may extend the 11-hour driving limit by up to 2 hours to reach a safe location. 'Adverse conditions' must be: unexpected at trip start (checking weather forecasts means anticipated snow doesn't qualify), creating danger or significantly slowing progress, and legitimate reasons to extend driving time. This exception provides some flexibility for genuine emergencies but cannot be planned around or used routinely. The 14-hour duty window does not extend."
+    }
+]
+
+MODULE_6_9_QUIZ = [
+    {
+        "id": "q6_9_1",
+        "scenario": "You're vetting a new carrier. A colleague suggests skipping the insurance verification step to save time since the carrier seems reputable.",
+        "question": "Why is proper carrier vetting legally required and not optional?",
+        "options": [
+            "A) Federal law requires all carriers to be vetted every 30 days",
+            "B) Courts have held brokers liable for selecting unfit, uninsured, or improperly authorized carriers—proper vetting is legal protection",
+            "C) Carrier vetting is only recommended best practice, not legally required",
+            "D) Vetting is only required for hazmat carriers"
+        ],
+        "correct_index": 1,
+        "explanation": "Courts have held brokers liable for selecting carriers who are unfit, uninsured, or improperly authorized. This is why proper carrier vetting is legally required, not just good practice. To protect against negligence claims: verify every carrier's operating authority with FMCSA, confirm insurance coverage with certificates listing appropriate limits, check safety ratings and inspection histories, document all vetting activities, and only use carriers meeting your brokerage's qualification standards. If you use an unqualified carrier and problems result, you face potential liability."
+    },
+    {
+        "id": "q6_9_2",
+        "scenario": "The Carmack Amendment governs interstate freight claims. A customer's load was damaged during transportation and they want to file a claim.",
+        "question": "What are the time requirements for filing freight claims under the Carmack Amendment?",
+        "options": [
+            "A) Claims must be filed within 30 days, lawsuits within 6 months",
+            "B) Claims must be filed within 9 months, lawsuits within 2 years of claim denial",
+            "C) Claims must be filed immediately, lawsuits within 1 year",
+            "D) No time limits apply to freight claims"
+        ],
+        "correct_index": 1,
+        "explanation": "The Carmack Amendment key provisions include: Carriers are liable for actual loss or damage to freight they accept for transportation (subject to certain defenses like acts of God, shipper fault, inherent vice), Claimants must file claims within specified timeframes (typically 9 months for loss/damage claims), Claims must include documentation proving loss/damage, value, and carrier responsibility, and Lawsuits must be filed within 2 years of claim denial. Understanding Carmack helps you explain claims processes to customers and understand carrier liability when problems occur."
+    }
+]
+
+MODULE_6_10_QUIZ = [
+    {
+        "id": "q6_10_1",
+        "scenario": "You're quoting a delivery to a residential address. The customer expects standard freight service pricing.",
+        "question": "What challenges make residential deliveries more expensive than commercial deliveries?",
+        "options": [
+            "A) Residences always require specialized refrigerated equipment",
+            "B) Limited maneuverability, lack of loading equipment, property damage risk, parking restrictions, and signature requirements",
+            "C) Residential deliveries can only occur on weekends",
+            "D) Federal regulations prohibit freight deliveries to residential addresses"
+        ],
+        "correct_index": 1,
+        "explanation": "Residential deliveries present significant challenges: Limited maneuverability (residential streets aren't designed for 53-foot trucks—tight turns, low-hanging trees, narrow roads create navigation difficulties), Lack of loading equipment (residences lack forklifts and loading docks, requiring manual unloading that's time-consuming and increases injury risk), Property damage risk (driveways, lawns, mailboxes can be damaged by large trucks), Parking restrictions (many areas prohibit/restrict commercial vehicle parking), and Signature requirements (finding someone home to sign creates scheduling complexity). Residential deliveries typically carry $75-150 surcharges. Always confirm if delivery is residential when quoting."
+    },
+    {
+        "id": "q6_10_2",
+        "scenario": "A customer needs a liftgate for delivery because the receiving location has no loading dock. The freight weighs 4,200 pounds.",
+        "question": "What is a critical consideration regarding liftgate capacity for this shipment?",
+        "options": [
+            "A) Liftgates can handle unlimited weight",
+            "B) Standard liftgates handle 3,000-5,000 pounds—this freight is near or at capacity limits and may require verification",
+            "C) Liftgates are only required for residential deliveries",
+            "D) Liftgates add $500+ to freight charges"
+        ],
+        "correct_index": 1,
+        "explanation": "Standard liftgates handle 3,000-5,000 pounds depending on equipment. This 4,200-pound freight is near or potentially at capacity limits. Heavy items may exceed liftgate capacity requiring different solutions. OSHA requires liftgates meet safety standards including load capacity ratings clearly marked, safety mechanisms preventing accidental lowering, and proper maintenance/inspection. Liftgate service typically adds $50-100 to freight charges. Always confirm delivery locations have docks or liftgates when booking loads—carriers arriving at ground-level locations without dock or liftgate service cannot complete deliveries."
+    }
+]
+
+MODULE_6_11_QUIZ = [
+    {
+        "id": "q6_11_1",
+        "scenario": "You're booking a shipment from the U.S. to Canada. The customer asks why there are delays at the border even with proper documentation.",
+        "question": "What factors contribute to border crossing delays even with proper documentation?",
+        "options": [
+            "A) Borders close at night",
+            "B) Customs inspection time (varies from quick to hours), traffic congestion, random detailed inspections, and seasonal variations",
+            "C) All cross-border shipments must wait exactly 24 hours at the border",
+            "D) Canadian carriers cannot enter the United States"
+        ],
+        "correct_index": 1,
+        "explanation": "Even with proper documentation, border crossings introduce delays: Inspection time (Customs and Border Protection inspections vary from quick clearances to detailed inspections taking hours), Traffic (major border crossings experience significant congestion during peak periods), Random inspections (some trucks selected for detailed inspections regardless of documentation quality), and Seasonal variations (holiday periods see increased traffic and longer waits). Build extra time into cross-border transit estimates. A domestic 500-mile trip might take one day, but a 500-mile cross-border trip might require two days accounting for border crossing time. Carriers must have country-specific operating authority beyond U.S. domestic authority."
+    }
+]
+
+chapter6_quizzes = MODULE_6_1_QUIZ + MODULE_6_2_QUIZ + MODULE_6_3_QUIZ + MODULE_6_4_QUIZ + MODULE_6_5_QUIZ + MODULE_6_6_QUIZ + MODULE_6_7_QUIZ + MODULE_6_8_QUIZ + MODULE_6_9_QUIZ + MODULE_6_10_QUIZ + MODULE_6_11_QUIZ
+
 
 def parse_project_outline(markdown_text: str):
     chapters_by_id = {}
@@ -1273,7 +1517,7 @@ def estimate_visual_height(line: str, is_in_callout: bool = False, is_callout_st
     return lines_of_text * 1.2  # Account for line height
 
 
-def split_content_into_pages(content_text: str, max_height_score: float = 28.0) -> list:
+def split_content_into_pages(content_text: str, max_height_score: float = 27.5) -> list:
     """
     Split long content into multiple pages based on estimated VISUAL HEIGHT.
     
@@ -1454,6 +1698,17 @@ def get_module_completion_status(session_quiz_answers, module_id):
         "5.8": [q for q in chapter5_quizzes if q["id"].startswith("q5_8_")],
         "5.9": [q for q in chapter5_quizzes if q["id"].startswith("q5_9_")],
         "5.10": [q for q in chapter5_quizzes if q["id"].startswith("q5_10_")],
+        "6.1": [q for q in chapter6_quizzes if q["id"].startswith("q6_1_")],
+        "6.2": [q for q in chapter6_quizzes if q["id"].startswith("q6_2_")],
+        "6.3": [q for q in chapter6_quizzes if q["id"].startswith("q6_3_")],
+        "6.4": [q for q in chapter6_quizzes if q["id"].startswith("q6_4_")],
+        "6.5": [q for q in chapter6_quizzes if q["id"].startswith("q6_5_")],
+        "6.6": [q for q in chapter6_quizzes if q["id"].startswith("q6_6_")],
+        "6.7": [q for q in chapter6_quizzes if q["id"].startswith("q6_7_")],
+        "6.8": [q for q in chapter6_quizzes if q["id"].startswith("q6_8_")],
+        "6.9": [q for q in chapter6_quizzes if q["id"].startswith("q6_9_")],
+        "6.10": [q for q in chapter6_quizzes if q["id"].startswith("q6_10_")],
+        "6.11": [q for q in chapter6_quizzes if q["id"].startswith("q6_11_")],
     }
     
     if module_id not in quiz_map:
@@ -1474,6 +1729,7 @@ def get_chapter_completion_status(session_quiz_answers, chapter_num):
         3: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"],
         4: ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"],
         5: ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"],
+        6: ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "6.11"],
     }
     
     if chapter_num not in chapter_modules:
@@ -1499,6 +1755,7 @@ def build_pages(text: str):
     ch3 = extract_chapter_content(text, 3)
     ch4 = extract_chapter_content(text, 4)
     ch5 = extract_chapter_content(text, 5)
+    ch6 = extract_chapter_content(text, 6)
     
     pages = []
     module_page_map = {}  # Maps module_id -> page_num
@@ -1507,10 +1764,10 @@ def build_pages(text: str):
     # Page 0: Cover page (lines 1-27 of project.md)
     lines = text.splitlines()
     cover_content = "\n".join(lines[0:27]) if len(lines) >= 27 else ""
-    pages.append({"type": "cover", "content": cover_content, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"]})
+    pages.append({"type": "cover", "content": cover_content, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"], "ch6_modules": ch6["modules"]})
     
     # Page 1: Table of Contents
-    pages.append({"type": "toc", "chapters": chapters, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"]})
+    pages.append({"type": "toc", "chapters": chapters, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"], "ch6_modules": ch6["modules"]})
     
     # Chapter 1 intro
     if ch1["intro"]:
@@ -1904,6 +2161,90 @@ def build_pages(text: str):
             "content_html": convert_to_html(ch5["action_items"])
         })
     
+    # ================================================================
+    # CHAPTER 6
+    # ================================================================
+    
+    # Chapter 6 intro
+    if ch6["intro"]:
+        pages.append({
+            "type": "intro",
+            "chapter_id": 6,
+            "chapter_title": ch6["chapter_title"],
+            "content": ch6["intro"],
+            "content_html": convert_to_html(ch6["intro"])
+        })
+    
+    # Chapter 6 modules
+    for mod in ch6["modules"]:
+        module_page_map[mod["id"]] = len(pages)  # Record the first page number for this module
+        content_text = "\n".join(mod["content"])
+        
+        # Split module content into multiple pages if needed
+        content_pages = split_content_into_pages(content_text)
+        
+        for page_idx, page_content in enumerate(content_pages):
+            pages.append({
+                "type": "module",
+                "chapter_id": 6,
+                "chapter_title": ch6["chapter_title"],
+                "module_id": mod["id"],
+                "module_title": mod["title"],
+                "content": page_content,
+                "content_html": convert_to_html(page_content),
+                "module_page_num": page_idx + 1,
+                "module_total_pages": len(content_pages)
+            })
+        
+        # Add quiz questions after the last page of each module
+        quiz_map_ch6 = {
+            "6.1": [q for q in chapter6_quizzes if q["id"].startswith("q6_1_")],
+            "6.2": [q for q in chapter6_quizzes if q["id"].startswith("q6_2_")],
+            "6.3": [q for q in chapter6_quizzes if q["id"].startswith("q6_3_")],
+            "6.4": [q for q in chapter6_quizzes if q["id"].startswith("q6_4_")],
+            "6.5": [q for q in chapter6_quizzes if q["id"].startswith("q6_5_")],
+            "6.6": [q for q in chapter6_quizzes if q["id"].startswith("q6_6_")],
+            "6.7": [q for q in chapter6_quizzes if q["id"].startswith("q6_7_")],
+            "6.8": [q for q in chapter6_quizzes if q["id"].startswith("q6_8_")],
+            "6.9": [q for q in chapter6_quizzes if q["id"].startswith("q6_9_")],
+            "6.10": [q for q in chapter6_quizzes if q["id"].startswith("q6_10_")],
+            "6.11": [q for q in chapter6_quizzes if q["id"].startswith("q6_11_")],
+        }
+        
+        if mod["id"] in quiz_map_ch6:
+            quiz_questions = quiz_map_ch6[mod["id"]]
+            for idx, quiz_question in enumerate(quiz_questions):
+                quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
+                pages.append({
+                    "type": "quiz",
+                    "chapter_id": 6,
+                    "module_id": mod["id"],
+                    "module_title": mod["title"],
+                    "quiz_question": quiz_question,
+                    "question_number": idx + 1,
+                    "total_questions": len(quiz_questions)
+                })
+    
+    # Chapter 6 summary
+    if ch6["summary"]:
+        pages.append({
+            "type": "summary",
+            "chapter_id": 6,
+            "chapter_title": ch6["chapter_title"],
+            "content": ch6["summary"],
+            "content_html": convert_to_html(ch6["summary"])
+        })
+    
+    # Chapter 6 action items
+    if ch6["action_items"]:
+        pages.append({
+            "type": "action_items",
+            "chapter_id": 6,
+            "chapter_title": ch6["chapter_title"],
+            "content": ch6["action_items"],
+            "content_html": convert_to_html(ch6["action_items"])
+        })
+    
     # Add module_page_map and quiz_page_map to cover and TOC pages
     pages[0]["module_page_map"] = module_page_map
     pages[0]["quiz_page_map"] = quiz_page_map
@@ -1938,6 +2279,12 @@ def page(page_num: int):
     # Initialize session for quiz answers if not exists
     if 'quiz_answers' not in session:
         session['quiz_answers'] = {}
+    
+    # Check for preview mode query parameter
+    if request.args.get('preview') == 'true':
+        session['preview_mode'] = True
+    elif 'preview' in request.args and request.args.get('preview') == 'false':
+        session['preview_mode'] = False
     
     # Handle quiz answer submission
     quiz_feedback = None
@@ -2039,6 +2386,17 @@ def page(page_num: int):
                     for i in range(module_index):
                         if not get_module_completion_status(session.get('quiz_answers', {}), chapter_5_modules[i]):
                             return redirect(url_for("page", page_num=1))
+            elif current_module_id.startswith("6."):
+                # For Chapter 6, first check if all Chapter 5 is complete
+                if not get_chapter_completion_status(session.get('quiz_answers', {}), 5):
+                    return redirect(url_for("page", page_num=1))
+                # Then check previous Chapter 6 modules
+                chapter_6_modules = ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "6.11"]
+                module_index = chapter_6_modules.index(current_module_id) if current_module_id in chapter_6_modules else 0
+                if module_index > 0:
+                    for i in range(module_index):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_6_modules[i]):
+                            return redirect(url_for("page", page_num=1))
     
     # Lock summary and action items until all modules complete (unless in preview mode)
     if not preview_mode and current_page.get("type") in ["summary", "action_items"]:
@@ -2069,6 +2427,7 @@ def page(page_num: int):
     all_ch3_modules_complete = False
     all_ch4_modules_complete = False
     all_ch5_modules_complete = False
+    all_ch6_modules_complete = False
     if pages:
         # Get modules from all chapters' data stored in pages
         ch1_modules = pages[0].get("ch1_modules", [])
@@ -2076,6 +2435,7 @@ def page(page_num: int):
         ch3_modules = pages[0].get("ch3_modules", [])
         ch4_modules = pages[0].get("ch4_modules", [])
         ch5_modules = pages[0].get("ch5_modules", [])
+        ch6_modules = pages[0].get("ch6_modules", [])
         
         for mod in ch1_modules:
             module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
@@ -2096,6 +2456,10 @@ def page(page_num: int):
         for mod in ch5_modules:
             module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
         all_ch5_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 5)
+        
+        for mod in ch6_modules:
+            module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
+        all_ch6_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 6)
     
     # Quiz map for TOC dropdown display
     quiz_map = {
@@ -2144,6 +2508,17 @@ def page(page_num: int):
         "5.8": [q for q in chapter5_quizzes if q["id"].startswith("q5_8_")],
         "5.9": [q for q in chapter5_quizzes if q["id"].startswith("q5_9_")],
         "5.10": [q for q in chapter5_quizzes if q["id"].startswith("q5_10_")],
+        "6.1": [q for q in chapter6_quizzes if q["id"].startswith("q6_1_")],
+        "6.2": [q for q in chapter6_quizzes if q["id"].startswith("q6_2_")],
+        "6.3": [q for q in chapter6_quizzes if q["id"].startswith("q6_3_")],
+        "6.4": [q for q in chapter6_quizzes if q["id"].startswith("q6_4_")],
+        "6.5": [q for q in chapter6_quizzes if q["id"].startswith("q6_5_")],
+        "6.6": [q for q in chapter6_quizzes if q["id"].startswith("q6_6_")],
+        "6.7": [q for q in chapter6_quizzes if q["id"].startswith("q6_7_")],
+        "6.8": [q for q in chapter6_quizzes if q["id"].startswith("q6_8_")],
+        "6.9": [q for q in chapter6_quizzes if q["id"].startswith("q6_9_")],
+        "6.10": [q for q in chapter6_quizzes if q["id"].startswith("q6_10_")],
+        "6.11": [q for q in chapter6_quizzes if q["id"].startswith("q6_11_")],
     }
     
     return render_template(
@@ -2163,6 +2538,7 @@ def page(page_num: int):
         all_ch3_modules_complete=all_ch3_modules_complete,
         all_ch4_modules_complete=all_ch4_modules_complete,
         all_ch5_modules_complete=all_ch5_modules_complete,
+        all_ch6_modules_complete=all_ch6_modules_complete,
         preview_mode=preview_mode,
         quiz_map=quiz_map,
         quiz_answers=session.get('quiz_answers', {})

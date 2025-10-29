@@ -2420,234 +2420,317 @@ Understanding regulations helps you set realistic expectations, avoid violations
 
 
 CHAPTER 6: LOAD RESTRICTIONS AND REGULATIONS
+
 Module 6.1: Introduction to Freight Regulations
 The freight transportation industry operates under extensive federal, state, and local regulations designed to ensure safety, protect infrastructure, and maintain fair competition. While drivers and carriers bear primary responsibility for compliance, understanding these regulations helps you set realistic expectations, avoid legal problems, and serve customers effectively.
 This chapter covers the regulations most relevant to your daily work as a freight agent. You don't need to become a regulatory expert, but understanding the basics prevents you from making commitments that violate regulations or expose you, your customers, or your carriers to liability.
 Module 6.2: Hours of Service (HOS) Regulations
+
 Hours of Service regulations limit how long drivers can operate commercial vehicles before taking mandatory rest breaks. While carriers and drivers are responsible for HOS compliance, understanding these rules helps you set realistic transit time expectations and recognize when customers are requesting impossible schedules.
-Key HOS Limits for Property-Carrying Drivers
-11-Hour Driving Limit:
+
+**Key HOS Limits for Property-Carrying Drivers**
+
+**11-Hour Driving Limit:**
 Drivers may drive a maximum of 11 hours after 10 consecutive hours off duty.
+
 This means once a driver starts their day, they can drive for up to 11 hours before they must stop for a mandatory rest period. Those 11 hours don't need to be consecutive—drivers can take breaks during the 14-hour window—but total driving cannot exceed 11 hours.
-14-Hour Duty Limit:
+
+**14-Hour Duty Limit:**
 After coming on duty, drivers cannot drive beyond the 14th consecutive hour, regardless of how much time was spent not driving.
-This is often misunderstood. The 14-hour clock starts when the driver begins any work-related activity (pretrip inspection, fueling, loading) and runs continuously. Even if a driver only drives 6 hours but spends 8 hours at loading docks, their 14-hour window closes 14 hours after they started their day.
-Example: Driver starts duty at 6:00 AM. They can drive until 8:00 PM (14 hours later) regardless of how many of those hours were spent driving versus waiting. If they spent 4 hours in detention during loading, they only have 10 hours available for driving instead of 11.
-60/70-Hour Work Week Limit:
+
+[IMPORTANT] The 14-hour clock starts when the driver begins any work-related activity (pretrip inspection, fueling, loading) and runs continuously. Even if a driver only drives 6 hours but spends 8 hours at loading docks, their 14-hour window closes 14 hours after they started their day.
+
+**Example:** Driver starts duty at 6:00 AM. They can drive until 8:00 PM (14 hours later) regardless of how many of those hours were spent driving versus waiting. If they spent 4 hours in detention during loading, they only have 10 hours available for driving instead of 11.
+
+**60/70-Hour Work Week Limit:**
 Drivers cannot drive after 60 hours on duty in 7 consecutive days, or 70 hours on duty in 8 consecutive days (which limit applies depends on the carrier's operating schedule).
+
 Once a driver reaches this weekly limit, they cannot drive until they take a 34-hour restart period (34 consecutive hours off duty) which resets the weekly clock to zero.
+
 This weekly limit affects driver availability. A driver who's been running hard all week may be unavailable for your load because they've exhausted their weekly hours and need a restart.
-30-Minute Break Requirement:
+
+**30-Minute Break Requirement:**
 Drivers must take a 30-minute break before driving beyond 8 consecutive hours since the last off-duty or sleeper-berth period of at least 30 minutes.
+
 This break can be on-duty (eating lunch while waiting at a dock) or off-duty, but the driver cannot drive during the break.
 Electronic Logging Device (ELD) Mandate:
 Since December 2017, most commercial drivers must use electronic logging devices that automatically record driving hours, engine status, and vehicle movement.
 ELDs have eliminated the flexibility drivers once had with paper logs. Hours are tracked precisely and automatically. Drivers cannot fudge logs to squeeze in extra miles. This means transit time estimates must account for strict HOS compliance—no shortcuts or creative logging.
-Transit Time Implications for Freight Agents
+**Transit Time Implications for Freight Agents**
+
 Understanding HOS helps you set realistic delivery expectations:
-Typical daily mileage: A driver can realistically cover 500-550 miles in an 11-hour driving day when accounting for fuel stops, meal breaks, traffic, and the 30-minute break requirement.
-Some agents quote transit times based on 600-650 miles per day, but this requires nearly perfect conditions with minimal delays. Conservative estimates prevent disappointed customers.
-Multi-day trips: For distances requiring multiple days, add complete days to your transit estimate. A 1,200-mile trip requires at minimum 2.5 driving days (roughly 500 miles per day), which means 3 calendar days when accounting for rest periods.
-Loading and unloading impact: Extended time at docks consumes the 14-hour window without producing miles. A shipment with 4 hours of loading time at origin and 3 hours of unloading time at destination effectively loses 7 hours of potential driving time across the trip.
+
+- **Typical daily mileage:** A driver can realistically cover 500-550 miles in an 11-hour driving day when accounting for fuel stops, meal breaks, traffic, and the 30-minute break requirement.
+- Some agents quote transit times based on 600-650 miles per day, but this requires nearly perfect conditions with minimal delays. Conservative estimates prevent disappointed customers.
+- **Multi-day trips:** For distances requiring multiple days, add complete days to your transit estimate. A 1,200-mile trip requires at minimum 2.5 driving days (roughly 500 miles per day), which means 3 calendar days when accounting for rest periods.
+- **Loading and unloading impact:** Extended time at docks consumes the 14-hour window without producing miles. A shipment with 4 hours of loading time at origin and 3 hours of unloading time at destination effectively loses 7 hours of potential driving time across the trip.
+
+[KEY TAKEAWAY] Plan for 500-550 miles per driving day, not 600+. Account for loading/unloading time consuming the 14-hour duty window. Multi-day trips need complete calendar days plus rest periods between.
 When customers request impossible schedules:
 Customer: "I need this 1,500-mile load picked up Friday at 5 PM and delivered Monday at 8 AM."
 You: "Let me walk through the timeline. With Friday evening pickup, the earliest realistic delivery is Tuesday morning. The driver would need Friday night for their 10-hour rest period, can drive Saturday (covering approximately 500 miles), must rest Saturday night, drives Sunday (another 500 miles), rests Sunday night, and completes the remaining 500 miles Monday morning for Tuesday delivery. Federal hours of service regulations require these rest periods—drivers cannot legally skip them. For Monday delivery, we'd need a team driver operation which costs 50-70% more, or Friday morning pickup instead of Friday evening."
 This explanation demonstrates your knowledge of regulations while helping customers understand why their timeline is unrealistic with solo drivers.
 Module 6.3: Detention and Its Impact on Hours of Service
+
 Detention occurs when drivers wait beyond the agreed "free time" at shipping or receiving facilities. Understanding detention's relationship to HOS helps you manage expectations and explain detention charges.
-Standard Free Time:
+
+**Standard Free Time:**
 Industry standard free time is typically 2 hours at pickup and 2 hours at delivery. During these 2 hours, the driver is expected to wait for loading or unloading without additional compensation beyond the line-haul rate.
+
 Beyond 2 hours, detention charges typically apply—usually $25-75 per hour depending on the carrier, region, and competitive dynamics.
-How Detention Affects HOS:
+
+**How Detention Affects HOS:**
 Every hour a driver spends waiting at a dock consumes their 14-hour duty window without producing miles. This affects their ability to complete deliveries on time and impacts their weekly hours.
-Example: A driver with an 800-mile run (approximately 16 hours of driving across two days) spends 6 hours in detention at origin. This 6-hour delay means:
-6 fewer hours available for driving within the 14-hour window that day
-Potential inability to reach planned stopping point
-Possible delivery delay the next day
-Reduced available hours for subsequent loads that week
+
+[REAL EXAMPLE] A driver with an 800-mile run (approximately 16 hours of driving across two days) spends 6 hours in detention at origin. This 6-hour delay means:
+- 6 fewer hours available for driving within the 14-hour window that day
+- Potential inability to reach planned stopping point
+- Possible delivery delay the next day
+- Reduced available hours for subsequent loads that week
+
 Detention isn't just a financial issue—it's an operational problem affecting the entire supply chain.
 Communicating Detention to Customers:
 When booking loads, establish clear expectations:
 "Our carrier quotes include 2 hours of free time at pickup and delivery. Beyond that, detention charges of $50 per hour apply. This isn't a profit center for us—it compensates carriers for time that could be used on other loads. The best way to avoid detention is ensuring your facility can load or unload within the free time window. What are realistic loading times at your facility?"
 Many customers don't understand detention until you explain how waiting time affects driver schedules and availability.
 Module 6.4: Weight Regulations and Bridge Laws
+
 Federal and state laws regulate vehicle weight to protect roadways and bridges from damage. Understanding weight regulations prevents overweight violations that result in fines, delays, and damaged carrier relationships.
-Federal Weight Limits on Interstate Highways
-Maximum Gross Vehicle Weight: 80,000 pounds total
-This is the combined weight of the tractor, trailer, cargo, and fuel. It's not just the freight weight—it's everything.
-Axle Weight Limits:
-Steer axle: 12,000 pounds maximum (front axle of the tractor)
-Drive axles: 34,000 pounds maximum combined (tandem rear axles of the tractor)
-Trailer axles: 34,000 pounds maximum combined (tandem axles on the trailer)
+
+**Federal Weight Limits on Interstate Highways**
+
+- **Maximum Gross Vehicle Weight:** 80,000 pounds total
+  - This is the combined weight of the tractor, trailer, cargo, and fuel. It's not just the freight weight—it's everything.
+
+**Axle Weight Limits:**
+- **Steer axle:** 12,000 pounds maximum (front axle of the tractor)
+- **Drive axles:** 34,000 pounds maximum combined (tandem rear axles of the tractor)
+- **Trailer axles:** 34,000 pounds maximum combined (tandem axles on the trailer)
 Why Weight Distribution Matters
 Simply keeping the total weight under 80,000 pounds isn't sufficient. Weight must distribute properly across all axles. Heavy freight positioned incorrectly can cause individual axle sets to exceed limits even when gross weight is legal.
 Example: A load weighs 45,000 pounds total—well under the 80,000-pound limit. However, if all freight is loaded at the front of the trailer, it concentrates excessive weight on the trailer's front axles, potentially exceeding the 34,000-pound trailer axle limit. The load is illegal despite being under gross weight capacity.
 Proper weight distribution requires:
-Heavy items distributed throughout the trailer length
-Consideration of trailer and tractor weights
-Understanding that tractor fuel adds 1,000-1,500 pounds
-Knowledge that trailers themselves weigh 10,000-15,000 pounds
+- Heavy items distributed throughout the trailer length
+- Consideration of trailer and tractor weights
+- Understanding that tractor fuel adds 1,000-1,500 pounds
+- Knowledge that trailers themselves weigh 10,000-15,000 pounds
+
 Experienced drivers know how to position freight properly. However, some freight—especially extremely heavy items like machinery or steel coils—requires careful calculation and positioning before loading begins.
-State Variations
+
+**State Variations**
+
 Some states allow higher weights on specific roads. Michigan, for example, allows up to 160,000 pounds on certain routes using trucks with additional axles.
+
 Conversely, some local roads have restrictions below federal limits—especially bridges with posted weight limits. County roads, residential streets, and older bridges sometimes prohibit or restrict heavy trucks.
+
 When quoting loads, research any state-specific weight regulations affecting the route, especially for freight approaching weight limits.
-Overweight Penalties
-Overweight violations result in substantial fines that escalate with the degree of overweight:
-1,000-5,000 pounds over: $100-500 fine typically
-5,000-10,000 pounds over: $500-1,500 fine
-10,000-15,000 pounds over: $1,500-5,000 fine
-15,000+ pounds over: $5,000+ fine, possible vehicle impoundment
+
+**Overweight Penalties**
+
+[COMMON MISTAKE] Overweight violations result in substantial fines that escalate with the degree of overweight:
+- 1,000-5,000 pounds over: $100-500 fine typically
+- 5,000-10,000 pounds over: $500-1,500 fine
+- 10,000-15,000 pounds over: $1,500-5,000 fine
+- 15,000+ pounds over: $5,000+ fine, possible vehicle impoundment
+
 Beyond fines, overweight violations create:
-Black marks on carrier safety records affecting insurance rates and customer access
-Delivery delays while freight is redistributed or transloaded
-Damaged relationships with customers whose freight is delayed
-Potential loss of carrier's operating authority for egregious violations
-Practical Weight Management for Agents
-Be conservative with weight estimates. Freight often weighs more than customers estimate. Customers sometimes forget to include:
-Pallet weights (40-70 pounds per wooden pallet)
-Packaging materials
-Crates or protective structures
-Moisture content in products (especially lumber or agricultural products)
+- Black marks on carrier safety records affecting insurance rates and customer access
+- Delivery delays while freight is redistributed or transloaded
+- Damaged relationships with customers whose freight is delayed
+- Potential loss of carrier's operating authority for egregious violations
+**Practical Weight Management for Agents**
+
+[PRO TIP] Be conservative with weight estimates. Freight often weighs more than customers estimate. Customers sometimes forget to include:
+- Pallet weights (40-70 pounds per wooden pallet)
+- Packaging materials
+- Crates or protective structures
+- Moisture content in products (especially lumber or agricultural products)
+
 Always ask: "Does this weight include pallets, packaging, and all materials, or is it just the product weight?"
+
 For freight approaching 40,000+ pounds, discuss weight distribution with carriers during booking. Ask: "Can your drivers handle proper positioning for this weight?" Experienced carriers appreciate the question and provide guidance.
+
 Build safety margins into your calculations. If a customer says their freight weighs 42,000 pounds and you're not confident in their estimate, plan for 44,000-45,000 pounds. Better to have extra capacity than discover the load is overweight at weigh stations.
+
 Module 6.5: Dimensional Restrictions
+
 Beyond weight, regulations limit vehicle and load dimensions to ensure safe navigation of roads, bridges, tunnels, and overhead structures.
-Legal Dimensions Without Permits
-Width: 8.5 feet (102 inches) maximum
-This is the standard trailer width. Freight wider than 8 feet typically requires flatbed equipment and potentially oversize permits.
-Height: 13.5 to 14 feet maximum total vehicle height
-This varies by state, with most states allowing 13.5 feet and some allowing 14 feet. The limit is total height—tractor, trailer, and cargo combined.
-For flatbeds with 5-foot deck height, freight can be approximately 8.5-9 feet tall while remaining under height limits. Taller freight requires specialized equipment like step decks or lowboys.
-Length: 53 feet maximum for trailers on interstate highways
-Some states allow 57-foot trailers on specific roads. However, 53 feet is the standard maximum for interstate commerce.
-Freight exceeding trailer length obviously cannot fit. Less obviously, freight exactly 53 feet long often won't fit in 53-foot trailers because you need clearance for safe loading and securing.
-Rear Overhang: Typically 3-4 feet of rear extension beyond the trailer is allowed without special marking or permits
-Freight slightly longer than the trailer can sometimes overhang the rear if properly marked with flags or lights. However, significant overhang requires permits.
-Permit Requirements for Oversize Loads
+
+**Legal Dimensions Without Permits**
+
+- **Width:** 8.5 feet (102 inches) maximum
+  - This is the standard trailer width. Freight wider than 8 feet typically requires flatbed equipment and potentially oversize permits.
+
+- **Height:** 13.5 to 14 feet maximum total vehicle height
+  - This varies by state, with most states allowing 13.5 feet and some allowing 14 feet. The limit is total height—tractor, trailer, and cargo combined.
+  - For flatbeds with 5-foot deck height, freight can be approximately 8.5-9 feet tall while remaining under height limits. Taller freight requires specialized equipment like step decks or lowboys.
+
+- **Length:** 53 feet maximum for trailers on interstate highways
+  - Some states allow 57-foot trailers on specific roads. However, 53 feet is the standard maximum for interstate commerce.
+  - Freight exceeding trailer length obviously cannot fit. Less obviously, freight exactly 53 feet long often won't fit in 53-foot trailers because you need clearance for safe loading and securing.
+
+- **Rear Overhang:** Typically 3-4 feet of rear extension beyond the trailer is allowed without special marking or permits
+  - Freight slightly longer than the trailer can sometimes overhang the rear if properly marked with flags or lights. However, significant overhang requires permits.
+**Permit Requirements for Oversize Loads**
+
 Freight exceeding standard dimensions requires oversize permits from every state the shipment travels through.
-Slightly oversize (width 8.5-10 feet, height 14-15 feet):
-Routine permits available
-Usually processed same-day or next-day
-Costs typically $100-300 per state
-May require special routing but generally manageable
-Moderately oversize (width 10-12 feet, height 15-16 feet):
-More complex permitting process
-May require route surveys
-Processing time: days to weeks
-Costs typically $300-800 per state
-Travel restrictions likely (no nighttime, weekends, or holidays)
-May require escort vehicles
-Extremely oversize (width over 12 feet, height over 16 feet):
-Extensive permitting requirements
-Route surveys almost always required
-Engineering review in some cases
-Processing time: weeks to months
-Very high costs (thousands per state possible)
-Police escorts often required
-Significant travel restrictions
-Lead time is critical for oversize loads. Don't accept loads requiring immediate pickup when permits haven't been obtained. The permitting process alone can take days or weeks depending on size and complexity.
+
+**Slightly oversize (width 8.5-10 feet, height 14-15 feet):**
+- Routine permits available
+- Usually processed same-day or next-day
+- Costs typically $100-300 per state
+- May require special routing but generally manageable
+
+**Moderately oversize (width 10-12 feet, height 15-16 feet):**
+- More complex permitting process
+- May require route surveys
+- Processing time: days to weeks
+- Costs typically $300-800 per state
+- Travel restrictions likely (no nighttime, weekends, or holidays)
+- May require escort vehicles
+
+**Extremely oversize (width over 12 feet, height over 16 feet):**
+- Extensive permitting requirements
+- Route surveys almost always required
+- Engineering review in some cases
+- Processing time: weeks to months
+- Very high costs (thousands per state possible)
+- Police escorts often required
+- Significant travel restrictions
+
+[IMPORTANT] Lead time is critical for oversize loads. Don't accept loads requiring immediate pickup when permits haven't been obtained. The permitting process alone can take days or weeks depending on size and complexity.
 Module 6.6: Hazardous Materials (Hazmat) Regulations
 Hazardous materials transportation is heavily regulated due to risks these materials pose to health, safety, and environment. While Chapter 5 covered hazmat from a freight classification perspective, this section focuses on regulatory compliance requirements.
 Federal Hazmat Regulations
 The Department of Transportation and Pipeline and Hazardous Materials Safety Administration (PHMSA) regulate hazmat transportation through extensive rules in 49 CFR Parts 100-185.
-Driver Requirements:
-Hazmat Endorsement: Drivers hauling hazmat requiring placarding must have hazmat endorsements on their Commercial Driver's Licenses.
+**Driver Requirements:**
+
+**Hazmat Endorsement:** Drivers hauling hazmat requiring placarding must have hazmat endorsements on their Commercial Driver's Licenses.
+
 Obtaining this endorsement requires:
-Passing a specialized written test covering hazmat regulations
-TSA background check (takes 2-4 weeks for processing)
-Fingerprinting
-Renewal every few years with recurrent testing
+- Passing a specialized written test covering hazmat regulations
+- TSA background check (takes 2-4 weeks for processing)
+- Fingerprinting
+- Renewal every few years with recurrent testing
+
 This endorsement requirement limits driver availability for hazmat freight. Not all drivers maintain hazmat endorsements due to the additional testing and background check requirements.
-Training Requirements:
+
+**Training Requirements:**
 All personnel involved in hazmat transportation—including shippers, carriers, and in some cases brokers arranging hazmat—must receive training every three years covering:
-General awareness of hazmat regulations
-Function-specific requirements for their role
-Safety training on risks and emergency procedures
-Security awareness training
+- General awareness of hazmat regulations
+- Function-specific requirements for their role
+- Safety training on risks and emergency procedures
+- Security awareness training
+
 Training must be documented, and records must be maintained proving compliance.
-Shipping Papers Requirements:
-Hazmat shipments require detailed shipping papers including:
-Proper shipping name (from Hazardous Materials Table, not generic descriptions)
-Hazard class or division (Class 1-9 with subdivisions)
-UN or NA identification number (four-digit number identifying the specific material)
-Packing group when applicable (I, II, or III indicating danger level)
-Quantity of hazmat being shipped
-Number and type of packages
-Emergency response telephone number providing 24/7 contact for emergencies
+
+**Shipping Papers Requirements:**
+
+[KEY TAKEAWAY] Hazmat shipments require detailed shipping papers including:
+- Proper shipping name (from Hazardous Materials Table, not generic descriptions)
+- Hazard class or division (Class 1-9 with subdivisions)
+- UN or NA identification number (four-digit number identifying the specific material)
+- Packing group when applicable (I, II, or III indicating danger level)
+- Quantity of hazmat being shipped
+- Number and type of packages
+- Emergency response telephone number providing 24/7 contact for emergencies
+
 Shippers are responsible for proper classification and documentation, but you should verify documentation is complete before tendering hazmat loads. Incomplete or incorrect paperwork creates liability for everyone involved.
-Placarding Requirements:
+**Placarding Requirements:**
+
 Vehicles carrying hazmat must display diamond-shaped placards on all four sides identifying the hazard class when:
-Table 1 materials: Always require placards regardless of quantity (extremely hazardous materials)
-Table 2 materials: Require placards when the aggregate gross weight of all Table 2 materials exceeds 1,001 pounds
+- **Table 1 materials:** Always require placards regardless of quantity (extremely hazardous materials)
+- **Table 2 materials:** Require placards when the aggregate gross weight of all Table 2 materials exceeds 1,001 pounds
+
 Placards must be:
-Properly sized (10.75 inches square)
-Display correct hazard class information
-Be visible from all sides (front, rear, both sides)
-Remain in place throughout transportation
-Routing Restrictions:
+- Properly sized (10.75 inches square)
+- Display correct hazard class information
+- Be visible from all sides (front, rear, both sides)
+- Remain in place throughout transportation
+
+**Routing Restrictions:**
+
 Federal regulations require carriers use the safest practical routes for certain hazmat. Additionally:
-Many tunnels prohibit or restrict hazmat transportation. Major tunnels often have specific hazmat prohibitions or require special permits.
-Some urban areas designate preferred hazmat routes. Carriers must use these designated routes rather than shortest or fastest routes.
-State and local jurisdictions may impose additional routing restrictions. Research route-specific requirements for hazmat shipments, especially in metropolitan areas.
-Rail Crossing Requirements:
+- Many tunnels prohibit or restrict hazmat transportation. Major tunnels often have specific hazmat prohibitions or require special permits.
+- Some urban areas designate preferred hazmat routes. Carriers must use these designated routes rather than shortest or fastest routes.
+- State and local jurisdictions may impose additional routing restrictions. Research route-specific requirements for hazmat shipments, especially in metropolitan areas.
+
+**Rail Crossing Requirements:**
+
 Vehicles carrying certain hazmat (specifically placarded loads of Division 2.3 Poison Gas, Division 6.1 Poison, or hazmat requiring both Class 3 Flammable and Class 8 Corrosive placards) must:
-Stop 15-50 feet before the nearest rail at all railroad crossings
-Listen and look in both directions for approaching trains
-Only proceed when certain it's safe to cross
+- Stop 15-50 feet before the nearest rail at all railroad crossings
+- Listen and look in both directions for approaching trains
+- Only proceed when certain it's safe to cross
+
 This requirement adds time to transit schedules for affected hazmat shipments.
-Higher Insurance Requirements:
+
+**Higher Insurance Requirements:**
+
 Hazmat requiring placarding requires minimum $5,000,000 cargo liability insurance, compared to $750,000 for general freight.
+
 This higher insurance requirement affects carrier availability—not all carriers maintain $5 million coverage—and influences rates because higher insurance costs must be recovered.
-Rate Implications
-Hazmat freight commands premium rates (typically 15-30% above non-hazmat freight, sometimes more for particularly dangerous materials) due to:
-Limited driver availability (hazmat endorsement requirement)
-Routing restrictions complicating routes and extending transit times
-Higher insurance requirements
-Additional paperwork and compliance burden
-Training requirements for personnel
-Increased liability exposure
+
+**Rate Implications**
+
+[PRO TIP] Hazmat freight commands premium rates (typically 15-30% above non-hazmat freight, sometimes more for particularly dangerous materials) due to:
+- Limited driver availability (hazmat endorsement requirement)
+- Routing restrictions complicating routes and extending transit times
+- Higher insurance requirements
+- Additional paperwork and compliance burden
+- Training requirements for personnel
+- Increased liability exposure
+
 When quoting hazmat freight, factor in these additional costs and don't try to compete on price with non-hazmat rates.
 Module 6.7: Food Safety Regulations (FSMA)
 The Food Safety Modernization Act (FSMA), implemented by the FDA, establishes federal requirements for transporting human and animal food safely. The Sanitary Transportation Rule within FSMA specifically addresses transportation practices.
-Core Requirements of the Sanitary Transportation Rule
-Vehicles and Equipment:
+**Core Requirements of the Sanitary Transportation Rule**
+
+**Vehicles and Equipment:**
 Vehicles and equipment used to transport food must be:
-Designed and maintained to prevent food contamination
-Suitable for their intended use and adequately cleaned
-Properly refrigerated when transporting temperature-controlled food
+- Designed and maintained to prevent food contamination
+- Suitable for their intended use and adequately cleaned
+- Properly refrigerated when transporting temperature-controlled food
+
 This means carriers must maintain trailers in good condition—no holes allowing pest entry, no contamination from previous loads, no strong odors affecting food, and functioning refrigeration for reefer loads.
-Temperature Control:
+
+**Temperature Control:**
 For temperature-controlled food, carriers must have procedures ensuring:
-Pre-cooling to required temperatures before loading
-Monitoring temperature during transport when necessary
-Recording temperature data when required by agreement
+- Pre-cooling to required temperatures before loading
+- Monitoring temperature during transport when necessary
+- Recording temperature data when required by agreement
+
 Temperature control procedures must be written and implemented consistently, not applied haphazardly.
-Prevention of Contamination:
+
+**Prevention of Contamination:**
 Measures must prevent contamination during transportation including:
-Segregation of food from non-food items that could contaminate
-Protection during loading and unloading from weather and other contamination sources
-Appropriate operations ensuring food isn't contaminated by transportation practices
-Cleaning Between Loads:
+- Segregation of food from non-food items that could contaminate
+- Protection during loading and unloading from weather and other contamination sources
+- Appropriate operations ensuring food isn't contaminated by transportation practices
+
+**Cleaning Between Loads:**
 When necessary to prevent allergen cross-contact or contamination, carriers must:
-Clean and sanitize vehicles and equipment between loads
-Document cleaning when required
-Maintain records of cleaning activities
-Not every load requires full sanitation, but some food products (especially allergen-containing foods) require documented cleaning between loads.
-Training Requirements:
+- Clean and sanitize vehicles and equipment between loads
+- Document cleaning when required
+- Maintain records of cleaning activities
+
+[IMPORTANT] Not every load requires full sanitation, but some food products (especially allergen-containing foods) require documented cleaning between loads.
+
+**Training Requirements:**
 Carriers must provide food safety training to personnel involved in food transportation covering:
-Sanitary transportation practices
-Temperature control requirements
-Cleaning and sanitation when required
-Company-specific food safety procedures
+- Sanitary transportation practices
+- Temperature control requirements
+- Cleaning and sanitation when required
+- Company-specific food safety procedures
+
 Training must be documented with records maintained proving personnel received proper instruction.
-Record Keeping:
+
+**Record Keeping:**
 Depending on circumstances, carriers must maintain records documenting:
-Training provided to personnel
-Written procedures for food safety
-Temperature monitoring (when required)
-Cleaning and sanitation activities
+- Training provided to personnel
+- Written procedures for food safety
+- Temperature monitoring (when required)
+- Cleaning and sanitation activities
+
 Records must be maintained for at least 12 months and made available for FDA inspection.
 Applicability to Freight Agents
 As a freight agent, you're generally not directly subject to FSMA Sanitary Transportation Rule requirements—those fall primarily on shippers and carriers. However, understanding these requirements helps you:
@@ -2683,14 +2766,19 @@ Suspended other regulations
 These exemptions facilitate emergency response and recovery efforts. They're announced publicly when declared and specify exact terms and duration.
 Recent examples include Hurricane Harvey, Hurricane Maria, and COVID-19 pandemic exemptions for specific freight types.
 Module 6.9: Liability and Insurance Requirements
+
 Understanding liability and insurance requirements protects you from legal and financial exposure.
-Motor Carrier Financial Responsibility
+
+**Motor Carrier Financial Responsibility**
+
 Federal regulations require motor carriers maintain minimum insurance coverage:
-General freight: $750,000 minimum liability insurance
-Hazmat requiring placarding: $5,000,000 minimum liability insurance
-Passenger vehicles: Different minimums based on seating capacity (not relevant to freight agents)
+- **General freight:** $750,000 minimum liability insurance
+- **Hazmat requiring placarding:** $5,000,000 minimum liability insurance
+- **Passenger vehicles:** Different minimums based on seating capacity (not relevant to freight agents)
+
 Many shippers require higher coverage regardless of federal minimums—$1,000,000 is common, and some large shippers require $2,000,000 or more.
-What this insurance covers:
+
+**What this insurance covers:**
 Liability insurance covers bodily injury and property damage caused by carrier negligence in accidents. It does NOT typically cover cargo loss or damage—that requires separate cargo insurance.
 Broker Surety Bond or Trust Fund
 Freight brokers must maintain a $75,000 surety bond or trust fund to protect shippers and carriers from broker default or non-payment.
@@ -2703,14 +2791,17 @@ While not federally mandated for most freight, cargo insurance protects against 
 Most brokerages maintain cargo insurance, typically $100,000 per occurrence. Higher-value freight requires additional coverage purchased specifically for those shipments.
 Cargo insurance typically costs 1-3% of declared value depending on commodity, route, and other risk factors.
 Your role: Confirm your brokerage's insurance limits and procedures for high-value freight before accepting loads worth more than standard coverage.
-Carrier Selection Liability (Broker Negligence)
-Courts have held brokers liable for selecting carriers who are unfit, uninsured, or improperly authorized. This is why proper carrier vetting is legally required, not just good practice.
+**Carrier Selection Liability (Broker Negligence)**
+
+[KEY TAKEAWAY] Courts have held brokers liable for selecting carriers who are unfit, uninsured, or improperly authorized. This is why proper carrier vetting is legally required, not just good practice.
+
 To protect against negligence claims:
-Verify every carrier's operating authority with FMCSA
-Confirm insurance coverage with certificates listing appropriate limits
-Check safety ratings and inspection histories
-Document all vetting activities
-Only use carriers meeting your brokerage's qualification standards
+- Verify every carrier's operating authority with FMCSA
+- Confirm insurance coverage with certificates listing appropriate limits
+- Check safety ratings and inspection histories
+- Document all vetting activities
+- Only use carriers meeting your brokerage's qualification standards
+
 If you use an unqualified carrier and problems result, you face potential liability. Proper vetting isn't optional—it's legal protection.
 Freight Claims Under the Carmack Amendment
 The Carmack Amendment is federal law governing liability for loss or damage to interstate freight shipments.
@@ -2725,38 +2816,49 @@ Some carriers offer "released rates" where shippers declare lower values in exch
 Example: Actual value is $50,000 but shipper releases value to $2 per pound. For a 20,000-pound shipment, maximum carrier liability is $40,000 even though actual value is $50,000.
 Released rates reduce carrier liability, creating risk for shippers. Ensure customers understand these arrangements and their implications before agreeing to released value terms.
 Module 6.10: Accessibility and Special Delivery Requirements
+
 Various regulations and practical considerations affect delivery capabilities at different locations.
-Liftgate Requirements
+
+**Liftgate Requirements**
+
 Liftgates are hydraulic platforms attached to trailers that raise and lower freight when locations lack loading docks.
-Capacity limits: Standard liftgates handle 3,000-5,000 pounds depending on equipment. Heavy items may exceed liftgate capacity requiring different solutions.
-Regulations: OSHA requires liftgates meet safety standards including:
-Load capacity ratings clearly marked
-Safety mechanisms preventing accidental lowering
-Proper maintenance and inspection
-Costs: Liftgate service typically adds $50-100 to freight charges reflecting equipment costs and additional driver time.
-Always confirm delivery locations have docks or liftgates when booking loads. Carriers arriving at ground-level locations without dock or liftgate service cannot complete deliveries.
-Residential Delivery Restrictions
+
+- **Capacity limits:** Standard liftgates handle 3,000-5,000 pounds depending on equipment. Heavy items may exceed liftgate capacity requiring different solutions.
+- **Regulations:** OSHA requires liftgates meet safety standards including:
+  - Load capacity ratings clearly marked
+  - Safety mechanisms preventing accidental lowering
+  - Proper maintenance and inspection
+- **Costs:** Liftgate service typically adds $50-100 to freight charges reflecting equipment costs and additional driver time.
+
+[COMMON MISTAKE] Always confirm delivery locations have docks or liftgates when booking loads. Carriers arriving at ground-level locations without dock or liftgate service cannot complete deliveries.
+
+**Residential Delivery Restrictions**
+
 Residential deliveries present challenges leading many carriers to avoid them or charge premiums:
-Limited maneuverability: Residential streets aren't designed for 53-foot trucks. Tight turns, low-hanging trees, and narrow roads create navigation difficulties.
-Lack of loading equipment: Residences lack forklifts and loading docks. Manual unloading is time-consuming and increases injury risk.
-Property damage risk: Driveways, lawns, and mailboxes can be damaged by large trucks.
-Parking restrictions: Many residential areas prohibit or restrict commercial vehicle parking.
-Signature requirements: Residential deliveries often require finding someone home to sign, creating scheduling complexity.
+- **Limited maneuverability:** Residential streets aren't designed for 53-foot trucks. Tight turns, low-hanging trees, and narrow roads create navigation difficulties.
+- **Lack of loading equipment:** Residences lack forklifts and loading docks. Manual unloading is time-consuming and increases injury risk.
+- **Property damage risk:** Driveways, lawns, and mailboxes can be damaged by large trucks.
+- **Parking restrictions:** Many residential areas prohibit or restrict commercial vehicle parking.
+- **Signature requirements:** Residential deliveries often require finding someone home to sign, creating scheduling complexity.
+
 Residential deliveries typically carry $75-150 surcharges reflecting these challenges. Always confirm if delivery is residential when quoting and include appropriate charges.
-Limited Access Locations
+**Limited Access Locations**
+
 Various location types are considered "limited access" due to lack of professional shipping/receiving facilities:
-Construction sites
-Farms and agricultural operations
-Mines and quarries
-Self-storage facilities
-Churches, schools, and government buildings
-Country clubs and residential communities
+- Construction sites
+- Farms and agricultural operations
+- Mines and quarries
+- Self-storage facilities
+- Churches, schools, and government buildings
+- Country clubs and residential communities
+
 Limited access surcharges (typically $50-100) compensate for:
-Lack of loading equipment
-Extended driver time
-Difficult navigation
-Potential for delays
-Always ask customers about delivery location characteristics to identify limited access situations and price appropriately.
+- Lack of loading equipment
+- Extended driver time
+- Difficult navigation
+- Potential for delays
+
+[PRO TIP] Always ask customers about delivery location characteristics to identify limited access situations and price appropriately.
 Inside Delivery vs. Threshold Delivery
 Standard freight service is dock-to-dock or curbside delivery. The driver's responsibility ends when freight is unloaded from the truck.
 Threshold delivery: Driver brings freight just inside the door or dock, but doesn't carry it further into the building.
@@ -2791,14 +2893,18 @@ Prohibited items (phones, cameras, etc.)
 Security procedures can consume significant time—sometimes 30-60 minutes just for check-in and inspection processes.
 When booking loads to government facilities, military bases, secure manufacturing sites, or high-security operations, ask about security procedures and communicate them to carriers so they're prepared with required documentation.
 Module 6.11: Cross-Border Considerations (U.S.-Canada/U.S.-Mexico)
+
 Cross-border freight introduces additional regulatory complexity requiring specialized knowledge and carrier capabilities.
-Customs Documentation
+
+**Customs Documentation**
+
 International shipments require customs documentation including:
-Commercial invoice: Describes goods, values, country of origin, buyer/seller information
-USMCA Certificate of Origin: For goods qualifying for duty-free treatment under United States-Mexico-Canada Agreement
-Shipper's Export Declaration: For certain exports exceeding value thresholds
-Specialized documents: Some commodities require additional permits, certificates, or documentation (food products, chemicals, certain agricultural items)
-Unless you have international freight expertise, work with freight forwarders or customs brokers who specialize in cross-border documentation. Errors cause delays, fines, and frustrated customers.
+- **Commercial invoice:** Describes goods, values, country of origin, buyer/seller information
+- **USMCA Certificate of Origin:** For goods qualifying for duty-free treatment under United States-Mexico-Canada Agreement
+- **Shipper's Export Declaration:** For certain exports exceeding value thresholds
+- **Specialized documents:** Some commodities require additional permits, certificates, or documentation (food products, chemicals, certain agricultural items)
+
+[IMPORTANT] Unless you have international freight expertise, work with freight forwarders or customs brokers who specialize in cross-border documentation. Errors cause delays, fines, and frustrated customers.
 Carrier Authority Requirements
 Carriers must have specific operating authority to cross international borders.
 U.S.-Canada: Carriers need FMCSA authority PLUS Canada-specific operating authority. Not all U.S. carriers have Canadian authority.
@@ -2827,73 +2933,92 @@ This model uses carriers specialized in either U.S. domestic or cross-border ope
 Understanding drayage helps you coordinate cross-border movements efficiently.
 
 CHAPTER 6 SUMMARY SHEET
-Hours of Service (HOS):
-11-hour driving limit after 10 hours off duty
-14-hour duty window (consecutive, starts at beginning of work)
-60/70-hour work week (requires 34-hour restart)
-30-minute break required before 8 hours of driving
-ELD mandate: Electronic logs eliminate flexibility, strict enforcement
-Transit time implications: ~500-550 miles per day realistic, account for loading/unloading consuming 14-hour window
-Detention:
-Standard free time: 2 hours pickup and delivery
-Beyond free time: $25-75/hour detention charges
-Impacts 14-hour window and weekly hours availability
-Communicate expectations clearly when booking
-Weight Regulations:
-Federal limits: 80,000 lbs gross, 12K steer axle, 34K drive axles, 34K trailer axles
-Distribution critical: Not just total weight—each axle set must be within limits
-State variations: Some allow higher (Michigan up to 160K), some restrict lower (local bridges)
-Penalties: Escalating fines ($100-$5,000+), possible impoundment, carrier safety record damage
-Practical management: Be conservative, confirm weight includes pallets/packaging, build safety margins
-Dimensional Restrictions:
-Legal without permits: 8.5' wide, 13.5-14' tall, 53' long, 3-4' rear overhang
-Permit requirements: Every state traveled requires permits for oversize
-Slightly oversize: Routine permits, $100-300/state, quick processing
-Moderately oversize: Route surveys may be needed, $300-800/state, days-weeks processing
-Extremely oversize: Engineering review, $1,000s/state, weeks-months, police escorts
-Critical: Lead time essential—don't accept immediate pickups for permitted loads
-Hazardous Materials:
-Nine DOT classes: Explosives, gases, flammable liquids/solids, oxidizers, toxic/infectious, radioactive, corrosives, miscellaneous
-Driver requirements: Hazmat endorsement (testing, TSA background check), training every 3 years
-Shipping papers: Proper shipping name, hazard class, UN/NA number, packing group, quantity, emergency contact
-Placarding: Table 1 (any quantity), Table 2 (over 1,001 lbs aggregate)
-Routing restrictions: Some roads/tunnels prohibit, preferred routes required
-Rail crossing stops: Required for certain hazmat classes
-Insurance: $5M minimum (vs. $750K general freight)
-Rates: 15-30% premium typical
-Food Safety (FSMA):
-Vehicles: Designed to prevent contamination, properly maintained, adequately cleaned
-Temperature control: Pre-cooling required, monitoring during transport, recording when needed
-Contamination prevention: Segregation from non-food, protection during loading/unloading
-Cleaning: Between loads when necessary to prevent cross-contamination
-Training: Required for personnel, must be documented
-Records: Training, procedures, temperature monitoring, cleaning activities (12 months minimum)
-HOS Exemptions:
-Short-haul: 150 air-miles, return within 14 hours (local operations, limited relevance)
-Adverse conditions: +2 hours driving when unexpected conditions arise
-Agricultural: Relaxed rules during planting/harvest within 150 air-miles of source
-Emergency: Temporary exemptions during declared emergencies
-Insurance and Liability:
-Carrier minimum: $750K general freight, $5M hazmat
-Broker bond: $75K surety bond/trust fund (brokerage maintains)
-Cargo insurance: Not mandated but common, typically $100K per occurrence
-Carrier selection liability: Brokers liable for using unfit/uninsured carriers
-Carmack Amendment: Governs interstate freight claims (filing requirements, time limits, carrier liability)
-Released rates: Lower declared value = reduced carrier liability (risk to shippers)
-Special Delivery Requirements:
-Liftgate: 3,000-5,000 lb capacity, $50-100 charge, required for locations without docks
-Residential: $75-150 premium (limited maneuverability, no equipment, damage risk, parking restrictions)
-Limited access: $50-100 charge (construction sites, farms, storage facilities, schools)
-Inside delivery: $100-300+ (labor-intensive, not all carriers offer)
-Appointments: Required at many facilities, narrow windows, fees/refusal if missed
-Operating hours: Vary widely (8-5, extended, 24-hour, limited), drivers can't deliver when closed
-Security procedures: Check-in, inspections, escorts, prohibited items (30-60 min additional time)
-Cross-Border (U.S.-Canada/Mexico):
-Customs documentation: Commercial invoice, USMCA certificate, export declarations, specialized permits
-Carrier authority: Must have country-specific authority beyond U.S. domestic
-Driver documentation: Passports, FAST cards for frequent crossers, valid CDL
-Border delays: Inspections, traffic, random searches (build extra time into estimates)
-Drayage: Short-distance trucking between border and nearby facilities (common model)
+
+**Hours of Service (HOS):**
+
+- 11-hour driving limit after 10 hours off duty
+- 14-hour duty window (consecutive, starts at beginning of work)
+- 60/70-hour work week (requires 34-hour restart)
+- 30-minute break required before 8 hours of driving
+- ELD mandate: Electronic logs eliminate flexibility, strict enforcement
+- Transit time implications: ~500-550 miles per day realistic, account for loading/unloading consuming 14-hour window
+
+**Detention:**
+
+- Standard free time: 2 hours pickup and delivery
+- Beyond free time: $25-75/hour detention charges
+- Impacts 14-hour window and weekly hours availability
+- Communicate expectations clearly when booking
+
+**Weight Regulations:**
+
+- Federal limits: 80,000 lbs gross, 12K steer axle, 34K drive axles, 34K trailer axles
+- Distribution critical: Not just total weight—each axle set must be within limits
+- State variations: Some allow higher (Michigan up to 160K), some restrict lower (local bridges)
+- Penalties: Escalating fines ($100-$5,000+), possible impoundment, carrier safety record damage
+- Practical management: Be conservative, confirm weight includes pallets/packaging, build safety margins
+
+**Dimensional Restrictions:**
+
+- Legal without permits: 8.5' wide, 13.5-14' tall, 53' long, 3-4' rear overhang
+- Permit requirements: Every state traveled requires permits for oversize
+- Slightly oversize: Routine permits, $100-300/state, quick processing
+- Moderately oversize: Route surveys may be needed, $300-800/state, days-weeks processing
+- Extremely oversize: Engineering review, $1,000s/state, weeks-months, police escorts
+- Critical: Lead time essential—don't accept immediate pickups for permitted loads
+**Hazardous Materials:**
+
+- Nine DOT classes: Explosives, gases, flammable liquids/solids, oxidizers, toxic/infectious, radioactive, corrosives, miscellaneous
+- Driver requirements: Hazmat endorsement (testing, TSA background check), training every 3 years
+- Shipping papers: Proper shipping name, hazard class, UN/NA number, packing group, quantity, emergency contact
+- Placarding: Table 1 (any quantity), Table 2 (over 1,001 lbs aggregate)
+- Routing restrictions: Some roads/tunnels prohibit, preferred routes required
+- Rail crossing stops: Required for certain hazmat classes
+- Insurance: $5M minimum (vs. $750K general freight)
+- Rates: 15-30% premium typical
+
+**Food Safety (FSMA):**
+
+- Vehicles: Designed to prevent contamination, properly maintained, adequately cleaned
+- Temperature control: Pre-cooling required, monitoring during transport, recording when needed
+- Contamination prevention: Segregation from non-food, protection during loading/unloading
+- Cleaning: Between loads when necessary to prevent cross-contamination
+- Training: Required for personnel, must be documented
+- Records: Training, procedures, temperature monitoring, cleaning activities (12 months minimum)
+
+**HOS Exemptions:**
+
+- Short-haul: 150 air-miles, return within 14 hours (local operations, limited relevance)
+- Adverse conditions: +2 hours driving when unexpected conditions arise
+- Agricultural: Relaxed rules during planting/harvest within 150 air-miles of source
+- Emergency: Temporary exemptions during declared emergencies
+
+**Insurance and Liability:**
+
+- Carrier minimum: $750K general freight, $5M hazmat
+- Broker bond: $75K surety bond/trust fund (brokerage maintains)
+- Cargo insurance: Not mandated but common, typically $100K per occurrence
+- Carrier selection liability: Brokers liable for using unfit/uninsured carriers
+- Carmack Amendment: Governs interstate freight claims (filing requirements, time limits, carrier liability)
+- Released rates: Lower declared value = reduced carrier liability (risk to shippers)
+
+**Special Delivery Requirements:**
+
+- Liftgate: 3,000-5,000 lb capacity, $50-100 charge, required for locations without docks
+- Residential: $75-150 premium (limited maneuverability, no equipment, damage risk, parking restrictions)
+- Limited access: $50-100 charge (construction sites, farms, storage facilities, schools)
+- Inside delivery: $100-300+ (labor-intensive, not all carriers offer)
+- Appointments: Required at many facilities, narrow windows, fees/refusal if missed
+- Operating hours: Vary widely (8-5, extended, 24-hour, limited), drivers can't deliver when closed
+- Security procedures: Check-in, inspections, escorts, prohibited items (30-60 min additional time)
+
+**Cross-Border (U.S.-Canada/Mexico):**
+
+- Customs documentation: Commercial invoice, USMCA certificate, export declarations, specialized permits
+- Carrier authority: Must have country-specific authority beyond U.S. domestic
+- Driver documentation: Passports, FAST cards for frequent crossers, valid CDL
+- Border delays: Inspections, traffic, random searches (build extra time into estimates)
+- Drayage: Short-distance trucking between border and nearby facilities (common model)
 
 ACTION ITEMS FOR CHAPTER 6
 Complete these tasks to master regulations and restrictions:
