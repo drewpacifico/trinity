@@ -121,21 +121,6 @@ body {
   box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
 }
 
-.guest-link {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.guest-link a {
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s;
-}
-
-.guest-link a:hover {
-  color: var(--highlight);
-}
 
 .info-box {
   background: rgba(99, 102, 241, 0.1);
@@ -220,10 +205,6 @@ body.modern-theme .info-box {
   color: #546e7a;
 }
 
-body.modern-theme .guest-link a {
-  color: #00bcd4;
-}
-
 body.modern-theme .theme-toggle {
   background: white;
   border-color: #e0e0e0;
@@ -250,10 +231,6 @@ body.modern-theme .theme-toggle:hover {
 
     <button type="submit" class="submit-btn">Start Training</button>
   </form>
-
-  <div class="guest-link">
-    <a href="{{ url_for('page', page_num=0) }}">Continue as Guest</a>
-  </div>
 
   <div class="info-box">
     💡 Enter any username to save your progress. No password required!

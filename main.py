@@ -2199,11 +2199,18 @@ def build_pages(text: str = None):
 
 @app.route("/")
 def index():
-    return redirect(url_for("page", page_num=0))
+    # Check if user is logged in
+    if not session.get('logged_in'):
+        return redirect(url_for("login"))
+    return redirect(url_for("page", page_num=1))
 
 
 @app.route("/page/<int:page_num>", methods=["GET", "POST"])
 def page(page_num: int):
+    # Require login (unless accessing preview mode)
+    if not session.get('logged_in') and not session.get('preview_mode'):
+        return redirect(url_for("login"))
+    
     try:
         text = PROJECT_MD_PATH.read_text(encoding="utf-8", errors="ignore")
     except FileNotFoundError:
@@ -2459,6 +2466,10 @@ def page(page_num: int):
 
 @app.route("/glossary")
 def glossary():
+    # Require login
+    if not session.get('logged_in') and not session.get('preview_mode'):
+        return redirect(url_for("login"))
+    
     try:
         text = PROJECT_MD_PATH.read_text(encoding="utf-8", errors="ignore")
     except FileNotFoundError:
@@ -2510,6 +2521,11 @@ def reset():
 def preview():
     """Enable preview mode - unlocks all content for creators to review."""
     session['preview_mode'] = True
+    session['logged_in'] = True
+    session['username'] = 'preview_user'
+    # Get or create preview user
+    user = get_or_create_user('preview_user', is_preview=True)
+    session['user_id'] = user.id
     return redirect(url_for("page", page_num=1))
 
 
