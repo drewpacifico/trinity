@@ -1,0 +1,26 @@
+# Trinity Training Guide - Python Dependencies
+
+# Core Flask framework
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# Database
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.23
+
+# PostgreSQL adapter (for production)
+psycopg2-binary==2.9.9
+
+# Markdown processing
+markdown==3.5.1
+
+# Production WSGI server
+gunicorn==21.2.0
+
+# Environment variables
+python-dotenv==1.0.0
+
+# Development tools (optional)
+# Flask-Migrate==4.0.5  # For database migrations
+# Flask-DebugToolbar==0.14.1  # For debugging
+

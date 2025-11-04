@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login - Training Manual</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style-modern.css') }}" id="modern-style" disabled>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0f0f10;
+  --card: #1a1a1d;
+  --text: #e8e8e8;
+  --muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-dim: #4f46e5;
+  --highlight: #fbbf24;
+}
+
+html, body { 
+  height: 100%; 
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-container {
+  max-width: 450px;
+  width: 100%;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 48px 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--highlight);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.logo p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.form-group input::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+  margin-bottom: 16px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+}
+
+.guest-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.guest-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.guest-link a:hover {
+  color: var(--highlight);
+}
+
+.info-box {
+  background: rgba(99, 102, 241, 0.1);
+  border-left: 4px solid var(--accent);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--accent);
+  border: 2px solid var(--highlight);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.6);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 24px;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 28px rgba(251, 191, 36, 0.8);
+  background: var(--highlight);
+  border-color: var(--accent);
+}
+
+/* Modern theme overrides */
+body.modern-theme {
+  background: #f8f9fa;
+}
+
+body.modern-theme .login-container {
+  background: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+body.modern-theme .logo h1 {
+  color: #00bcd4;
+}
+
+body.modern-theme .logo p {
+  color: #546e7a;
+}
+
+body.modern-theme .form-group label {
+  color: #2c3e50;
+}
+
+body.modern-theme .form-group input {
+  background: rgba(0, 188, 212, 0.05);
+  border-color: #e0e0e0;
+  color: #2c3e50;
+}
+
+body.modern-theme .form-group input:focus {
+  border-color: #00bcd4;
+  background: rgba(0, 188, 212, 0.1);
+}
+
+body.modern-theme .form-group input::placeholder {
+  color: #546e7a;
+}
+
+body.modern-theme .submit-btn {
+  background: linear-gradient(135deg, #00bcd4, #26c6da);
+}
+
+body.modern-theme .info-box {
+  background: rgba(0, 188, 212, 0.1);
+  border-left-color: #00bcd4;
+  color: #546e7a;
+}
+
+body.modern-theme .guest-link a {
+  color: #00bcd4;
+}
+
+body.modern-theme .theme-toggle {
+  background: white;
+  border-color: #e0e0e0;
+}
+
+body.modern-theme .theme-toggle:hover {
+  border-color: #00bcd4;
+}
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="logo">
+    <h1>🚛 Training Manual</h1>
+    <p>Your journey to becoming a freight agent</p>
+  </div>
+
+  <form method="POST" action="{{ url_for('login') }}">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required autofocus>
+    </div>
+
+    <button type="submit" class="submit-btn">Start Training</button>
+  </form>
+
+  <div class="guest-link">
+    <a href="{{ url_for('page', page_num=0) }}">Continue as Guest</a>
+  </div>
+
+  <div class="info-box">
+    💡 Enter any username to save your progress. No password required!
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
+
+</body>
+</html>
+

@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Training Manual</title>
+<!-- Modern Theme CSS (toggled via JavaScript) -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style-modern.css') }}" id="modern-style" disabled>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -31,10 +33,10 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 60px 20px 120px;
+  padding: 80px 20px 120px;
   position: relative;
   overflow: hidden;
-  max-height: calc(100vh - 180px);
+  max-height: calc(100vh - 200px);
 }
 
 /* Scrollable version for cover and TOC pages */
@@ -45,7 +47,7 @@ body {
 }
 
 .content-card {
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
   max-height: calc(100vh - 240px);
   background: var(--card);
@@ -123,14 +125,7 @@ h3 {
 }
 
 .badge {
-  display: inline-block;
-  background: rgba(99, 102, 241, 0.2);
-  color: var(--accent);
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: 24px;
+  display: none;
 }
 
 /* Content sections */
@@ -283,9 +278,9 @@ h3 {
 /* Navigation arrows */
 .nav-arrows {
   position: fixed;
-  bottom: 80px;
+  bottom: 40px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -428,139 +423,410 @@ h3 {
   font-size: 14px;
 }
 
-/* Progress bar */
-.progress-bar {
+/* Enhanced Progress Bar */
+.progress-container {
   position: fixed;
   top: 0;
   left: 0;
-  height: 4px;
-  background: var(--accent);
-  transition: width 0.3s ease;
+  right: 0;
+  background: rgba(26, 26, 29, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
   z-index: 100;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.progress-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.progress-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.module-badge-header {
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.progress-bar-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 200px;
+}
+
+.progress-bar-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--highlight));
+  border-radius: 4px;
+  transition: width 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-text {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.page-counter-header {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Old progress bar - hide it */
+.progress-bar {
+  display: none;
 }
 
 /* Footer hint */
 .keyboard-hint {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--muted);
-  font-size: 13px;
-  opacity: 0.6;
+  display: none;
 }
 
-/* Page counter */
+/* Page counter - now in header */
 .page-counter {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: rgba(26, 26, 29, 0.9);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  color: var(--muted);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  z-index: 50;
+  display: none;
 }
 
-/* Breadcrumb navigation */
+/* Breadcrumb navigation - now in header */
 .breadcrumb {
+  display: none;
+}
+
+.breadcrumb-header {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 8px;
-  padding-bottom: 20px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
-  font-size: 14px;
+  font-size: 13px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 300px;
 }
 
-.breadcrumb-link {
+.breadcrumb-link-header {
   color: var(--accent);
   text-decoration: none;
   transition: all 0.2s;
   padding: 4px 8px;
   border-radius: 6px;
+  white-space: nowrap;
 }
 
-.breadcrumb-link:hover {
+.breadcrumb-link-header:hover {
   background: rgba(99, 102, 241, 0.15);
   color: var(--highlight);
 }
 
-.breadcrumb-separator {
+.breadcrumb-sep {
   color: var(--muted);
   opacity: 0.5;
-  font-size: 16px;
 }
 
-.breadcrumb-current {
+.breadcrumb-current-header {
   color: var(--text);
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* User Info - Aligned with Header */
+.user-info-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.username-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Logout Button */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 20px;
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--accent);
+  border: 2px solid var(--highlight);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.6);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 24px;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 28px rgba(251, 191, 36, 0.8);
+  background: var(--highlight);
+  border-color: var(--accent);
+}
+
+/* Submit Quiz Button */
+.submit-quiz-btn {
+  min-width: 160px !important;
+  white-space: nowrap;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.continue-quiz-btn {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.6);
+  }
+}
+
+/* Continue Learning Button */
+.continue-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+  border: 2px solid rgba(251, 191, 36, 0.3);
+  white-space: nowrap;
+  animation: pulse-continue 3s ease-in-out infinite;
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+  border-color: var(--highlight);
+}
+
+@keyframes pulse-continue {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+  }
+  50% {
+    box-shadow: 0 6px 24px rgba(251, 191, 36, 0.5);
+  }
 }
 </style>
 </head>
 <body>
 
-<div class="progress-bar" style="width: {{ (page_num / (total_pages - 1) * 100) if total_pages > 1 else 0 }}%;"></div>
-
-{% if preview_mode %}
-<div style="position: fixed; top: 20px; left: 20px; background: rgba(251, 191, 36, 0.2); border: 1px solid var(--highlight); padding: 6px 14px; border-radius: 20px; font-size: 13px; color: var(--highlight); font-weight: 600; z-index: 50;">
-  🔓 Preview Mode
+<!-- Enhanced Progress Header -->
+<div class="progress-container">
+  <div class="progress-header">
+    <!-- Breadcrumb Navigation in Header -->
+    <div class="breadcrumb-header">
+      {% if page.type != 'cover' %}
+        <a href="{{ url_for('page', page_num=1) }}" class="breadcrumb-link-header">📑 TOC</a>
+        
+        {% if page.type == 'intro' %}
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Ch {{ page.chapter_id }}: {{ page.chapter_title }}</span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Intro</span>
+        
+        {% elif page.type == 'module' %}
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Ch {{ page.chapter_id }}: {{ page.chapter_title }}</span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Module {{ page.module_id }}</span>
+          {% if page.module_total_pages > 1 %}
+            <span class="breadcrumb-sep">›</span>
+            <span class="breadcrumb-current-header">Page {{ page.module_page_num }}/{{ page.module_total_pages }}</span>
+          {% endif %}
+        
+        {% elif page.type == 'quiz' %}
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Ch {{ page.chapter_id }}</span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Module {{ page.module_id }}</span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Quiz {{ page.question_number }}/{{ page.total_questions }}</span>
+        
+        {% elif page.type == 'summary' %}
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Ch {{ page.chapter_id }}: {{ page.chapter_title }}</span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Summary</span>
+        
+        {% elif page.type == 'action_items' %}
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Ch {{ page.chapter_id }}: {{ page.chapter_title }}</span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current-header">Action Items</span>
+        
+        {% elif page.type == 'toc' %}
+          <span class="breadcrumb-current-header">Table of Contents</span>
+        {% endif %}
+      {% else %}
+        <span class="breadcrumb-current-header">Welcome</span>
+      {% endif %}
+    </div>
+    
+    <!-- Chapter Progress -->
+    <div class="progress-info">
+      {% if page.type == 'module' or page.type == 'quiz' %}
+        {% set chapter_id = page.chapter_id %}
+        {% if chapter_id == 1 %}
+          {% set chapter_modules = ['1.1', '1.2', '1.3', '1.4', '1.5', '1.6'] %}
+        {% elif chapter_id == 2 %}
+          {% set chapter_modules = ['2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '2.8', '2.9'] %}
+        {% elif chapter_id == 3 %}
+          {% set chapter_modules = ['3.1', '3.2', '3.3', '3.4'] %}
+        {% elif chapter_id == 4 %}
+          {% set chapter_modules = ['4.1', '4.2', '4.3', '4.4', '4.5'] %}
+        {% elif chapter_id == 5 %}
+          {% set chapter_modules = ['5.1', '5.2', '5.3', '5.4', '5.5', '5.6'] %}
+        {% elif chapter_id == 6 %}
+          {% set chapter_modules = ['6.1', '6.2', '6.3', '6.4'] %}
+        {% else %}
+          {% set chapter_modules = [] %}
+        {% endif %}
+        
+        {% set current_module_id = page.module_id|string %}
+        {% set module_index = chapter_modules.index(current_module_id) + 1 if current_module_id in chapter_modules else 0 %}
+        {% set total_modules = chapter_modules|length %}
+        {% set progress_percent = (module_index / total_modules * 100) if total_modules > 0 else 0 %}
+        
+        <div class="module-badge-header">Chapter {{ chapter_id }} Progress</div>
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" style="width: {{ progress_percent }}%;"></div>
+          </div>
+          <span class="progress-text">Module {{ module_index }} of {{ total_modules }}</span>
+        </div>
+      {% elif page.type == 'intro' or page.type == 'summary' or page.type == 'action_items' %}
+        {% set chapter_id = page.chapter_id %}
+        <div class="module-badge-header">Chapter {{ chapter_id }}</div>
+      {% elif page.type == 'toc' %}
+        <div class="module-badge-header">Table of Contents</div>
+      {% elif page.type == 'cover' %}
+        <div class="module-badge-header">Welcome</div>
+      {% endif %}
+      
+      {% if preview_mode %}
+        <div style="background: rgba(251, 191, 36, 0.2); border: 1px solid var(--highlight); padding: 6px 14px; border-radius: 20px; font-size: 13px; color: var(--highlight); font-weight: 600; margin-left: auto;">
+          🔓 Preview
+        </div>
+      {% endif %}
+    </div>
+    
+    <!-- User Info - Aligned with Header -->
+    {% if session.get('logged_in') and session.get('username') %}
+    <div class="user-info-container">
+      <div class="username-badge">
+        <span>👤 {{ session.get('username') }}</span>
+      </div>
+      <a href="{{ url_for('logout') }}" class="logout-btn">
+        <span>Log Out</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </a>
+    </div>
+    {% endif %}
+  </div>
 </div>
-{% endif %}
-
-{% if module_page_num %}
-<div class="page-counter">Page {{ module_page_num }} of {{ module_total_pages }}</div>
-{% endif %}
 
 <div class="page-wrapper{% if page.type == 'cover' or page.type == 'toc' %} scrollable{% endif %}">
   <div class="content-card{% if page.type == 'cover' or page.type == 'toc' %} scrollable{% endif %}">
-    
-    <!-- Breadcrumb Navigation -->
-    {% if page.type != 'cover' %}
-    <nav class="breadcrumb">
-      <a href="{{ url_for('page', page_num=1) }}" class="breadcrumb-link">📑 Table of Contents</a>
-      
-      {% if page.type == 'intro' %}
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Chapter {{ page.chapter_id }}: {{ page.chapter_title }}</span>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Introduction</span>
-      
-      {% elif page.type == 'module' %}
-        <span class="breadcrumb-separator">›</span>
-        <a href="{{ url_for('page', page_num=2) }}" class="breadcrumb-link">Chapter {{ page.chapter_id }}: {{ page.chapter_title }}</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Module {{ page.module_id }}: {{ page.module_title }}</span>
-        {% if page.module_total_pages > 1 %}
-          <span class="breadcrumb-separator">›</span>
-          <span class="breadcrumb-current">Page {{ page.module_page_num }} of {{ page.module_total_pages }}</span>
-        {% endif %}
-      
-      {% elif page.type == 'quiz' %}
-        <span class="breadcrumb-separator">›</span>
-        <a href="{{ url_for('page', page_num=2) }}" class="breadcrumb-link">Chapter {{ page.chapter_id }}: Welcome to Freight Brokerage</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Module {{ page.module_id }}: {{ page.module_title }}</span>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Quiz Question {{ page.question_number }} of {{ page.total_questions }}</span>
-      
-      {% elif page.type == 'summary' %}
-        <span class="breadcrumb-separator">›</span>
-        <a href="{{ url_for('page', page_num=2) }}" class="breadcrumb-link">Chapter {{ page.chapter_id }}: {{ page.chapter_title }}</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Key Concepts</span>
-      
-      {% elif page.type == 'action_items' %}
-        <span class="breadcrumb-separator">›</span>
-        <a href="{{ url_for('page', page_num=2) }}" class="breadcrumb-link">Chapter {{ page.chapter_id }}: {{ page.chapter_title }}</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Action Items</span>
-      {% endif %}
-    </nav>
-    {% endif %}
     {% if page.type == 'cover' %}
       <div style="text-align: center; padding: 40px 0;">
         <h1 style="font-size: 56px; margin-bottom: 8px; letter-spacing: 2px;">FREIGHT AGENT</h1>
@@ -613,28 +879,90 @@ h3 {
       </div>
     
     {% elif page.type == 'toc' %}
-      <h1>Training Manual</h1>
-      <div class="subtitle">Your journey to becoming a freight agent starts here.</div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 24px;">
+        <div style="flex: 1; min-width: 300px;">
+          <h1 style="margin-bottom: 8px;">Training Manual</h1>
+          <div class="subtitle">Your journey to becoming a freight agent starts here.</div>
+        </div>
+        
+        {% if not preview_mode and page.ch1_modules %}
+          {# Find the next incomplete module #}
+          {% set next_module = namespace(mod=None, page=None) %}
+          
+          {% for mod in page.ch1_modules %}
+            {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+              {% set next_module.mod = mod %}
+              {% set next_module.page = page.module_page_map.get(mod['id']) %}
+            {% endif %}
+          {% endfor %}
+          
+          {% if not next_module.mod and page.ch2_modules %}
+            {% for mod in page.ch2_modules %}
+              {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+                {% set next_module.mod = mod %}
+                {% set next_module.page = page.module_page_map.get(mod['id']) %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          
+          {% if not next_module.mod and page.ch3_modules %}
+            {% for mod in page.ch3_modules %}
+              {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+                {% set next_module.mod = mod %}
+                {% set next_module.page = page.module_page_map.get(mod['id']) %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          
+          {% if not next_module.mod and page.ch4_modules %}
+            {% for mod in page.ch4_modules %}
+              {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+                {% set next_module.mod = mod %}
+                {% set next_module.page = page.module_page_map.get(mod['id']) %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          
+          {% if not next_module.mod and page.ch5_modules %}
+            {% for mod in page.ch5_modules %}
+              {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+                {% set next_module.mod = mod %}
+                {% set next_module.page = page.module_page_map.get(mod['id']) %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          
+          {% if not next_module.mod and page.ch6_modules %}
+            {% for mod in page.ch6_modules %}
+              {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+                {% set next_module.mod = mod %}
+                {% set next_module.page = page.module_page_map.get(mod['id']) %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          
+          {% if next_module.mod and next_module.page %}
+            <a href="{{ url_for('page', page_num=next_module.page) }}" class="continue-btn">
+              <span style="font-size: 18px;">▶</span>
+              <div>
+                <div style="font-size: 12px; opacity: 0.9;">Continue Learning</div>
+                <div style="font-size: 14px; font-weight: 600;">Module {{ next_module.mod['id'] }}</div>
+              </div>
+            </a>
+          {% endif %}
+        {% endif %}
+      </div>
+      
       {% if preview_mode %}
         <div style="background: rgba(251, 191, 36, 0.2); border-left: 4px solid var(--highlight); padding: 12px 16px; border-radius: 8px; margin-bottom: 20px;">
           <strong style="color: var(--highlight);">🔓 Preview Mode Active</strong> - All content unlocked for review
         </div>
       {% endif %}
       
-      <!-- Glossary Button -->
-      <div style="text-align: center; margin-bottom: 32px;">
-        <a href="{{ url_for('glossary') }}" target="_blank" 
-           style="display: inline-block; padding: 14px 32px; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); transition: all 0.2s;"
-           onmouseover="this.style.background='var(--accent-dim)'; this.style.transform='scale(1.05)'"
-           onmouseout="this.style.background='var(--accent)'; this.style.transform='scale(1)'">
-          📚 Glossary (Always Available)
-        </a>
-      </div>
-      
       <ul class="toc-list">
         {% for ch in page.chapters %}
           {% if ch.id == 'glossary' %}
-            {# Glossary button is now displayed above the chapter list #}
+            {# Glossary is available via button at bottom of screen #}
           {% elif ch.id == 1 %}
             <li style="cursor: pointer;">
               <a href="{{ url_for('page', page_num=2) }}" style="color: var(--text); text-decoration: none; display: block;">Chapter {{ ch.id }}: {{ ch.title }}</a>
@@ -1406,31 +1734,26 @@ h3 {
           {{ page.quiz_question.question }}
         </div>
         
-        <form method="POST" action="{{ url_for('page', page_num=page_num) }}">
+        <form method="POST" action="{{ url_for('page', page_num=page_num) }}" id="quiz-form-{{ page_num }}">
           <div style="display: flex; flex-direction: column; gap: 12px;">
-            {% for choice in page.quiz_question.options %}
+            {% for choice in page.quiz_question.choices %}
               {% set idx = loop.index0 %}
               <label style="display: flex; align-items: center; padding: 16px 20px; background: rgba(99, 102, 241, 0.1); border: 2px solid transparent; border-radius: 8px; cursor: pointer; transition: all 0.2s;"
                      onmouseover="this.style.background='rgba(99, 102, 241, 0.2)'; this.style.borderColor='var(--accent)'"
                      onmouseout="this.style.background='rgba(99, 102, 241, 0.1)'; this.style.borderColor='transparent'">
-                <input type="radio" name="answer" value="{{ idx }}" required 
+                <input type="radio" name="answer" value="{{ idx }}" class="quiz-choice"
                        style="width: 20px; height: 20px; margin-right: 16px; cursor: pointer;"
+                       onchange="document.getElementById('quiz-warning-{{ page_num }}').style.display='none'"
                        {% if quiz_feedback and not quiz_feedback.correct and quiz_feedback.selected_index == idx %}checked{% endif %}>
                 <span style="font-size: 17px;">{{ choice }}</span>
               </label>
             {% endfor %}
           </div>
-          
-          <button type="submit" style="margin-top: 32px; padding: 14px 32px; background: var(--accent); color: white; border: none; border-radius: 8px; font-size: 17px; font-weight: 600; cursor: pointer; transition: all 0.2s;"
-                  onmouseover="this.style.background='var(--accent-dim)'; this.style.transform='scale(1.02)'"
-                  onmouseout="this.style.background='var(--accent)'; this.style.transform='scale(1)'">
-            Submit Answer
-          </button>
         </form>
         
         {% if not quiz_answered %}
-          <div style="margin-top: 24px; padding: 12px 16px; background: rgba(251, 191, 36, 0.15); border-radius: 8px; color: var(--highlight); font-size: 14px;">
-            ⚠️ You must answer correctly to proceed
+          <div id="quiz-warning-{{ page_num }}" style="display: none; margin-top: 24px; padding: 12px 16px; background: rgba(251, 191, 36, 0.15); border-radius: 8px; color: var(--highlight); font-size: 14px;">
+            ⚠️ Please select an answer before submitting
           </div>
         {% endif %}
       {% endif %}
@@ -1458,14 +1781,86 @@ h3 {
     <button class="glossary-btn" onclick="window.open('{{ url_for('glossary') }}', '_blank')">📚 Glossary</button>
   </div>
   
-  {% if next_num is not none %}
+  {% if page.type == 'quiz' and (not quiz_answered or (quiz_feedback and not quiz_feedback.correct)) %}
+    {# Replace right arrow with Submit Answer button for unanswered quizzes #}
+    <button class="arrow-btn submit-quiz-btn" onclick="submitQuizAnswer({{ page_num }})" style="width: auto; padding: 0 24px; border-radius: 28px; font-size: 15px; font-weight: 600;">
+      Submit Answer →
+    </button>
+  {% elif page.type == 'toc' and not preview_mode %}
+    {# Replace right arrow with Continue Learning button on TOC #}
+    {% set next_module = namespace(mod=None, page=None) %}
+    {% if page.ch1_modules %}
+      {% for mod in page.ch1_modules %}
+        {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+          {% set next_module.mod = mod %}
+          {% set next_module.page = page.module_page_map.get(mod['id']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if not next_module.mod and page.ch2_modules %}
+      {% for mod in page.ch2_modules %}
+        {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+          {% set next_module.mod = mod %}
+          {% set next_module.page = page.module_page_map.get(mod['id']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if not next_module.mod and page.ch3_modules %}
+      {% for mod in page.ch3_modules %}
+        {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+          {% set next_module.mod = mod %}
+          {% set next_module.page = page.module_page_map.get(mod['id']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if not next_module.mod and page.ch4_modules %}
+      {% for mod in page.ch4_modules %}
+        {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+          {% set next_module.mod = mod %}
+          {% set next_module.page = page.module_page_map.get(mod['id']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if not next_module.mod and page.ch5_modules %}
+      {% for mod in page.ch5_modules %}
+        {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+          {% set next_module.mod = mod %}
+          {% set next_module.page = page.module_page_map.get(mod['id']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if not next_module.mod and page.ch6_modules %}
+      {% for mod in page.ch6_modules %}
+        {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+          {% set next_module.mod = mod %}
+          {% set next_module.page = page.module_page_map.get(mod['id']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    
+    {% if next_module.mod and next_module.page %}
+      <button class="arrow-btn continue-quiz-btn" onclick="window.location.href='{{ url_for('page', page_num=next_module.page) }}'" style="width: auto; padding: 0 24px; border-radius: 28px; font-size: 15px; font-weight: 600; min-width: 180px;">
+        Continue to {{ next_module.mod['id'] }} →
+      </button>
+    {% elif next_num is not none %}
+      <button class="arrow-btn" onclick="window.location.href='{{ url_for('page', page_num=next_num) }}'">→</button>
+    {% else %}
+      <button class="arrow-btn" disabled>→</button>
+    {% endif %}
+  {% elif next_num is not none %}
     <button class="arrow-btn" onclick="window.location.href='{{ url_for('page', page_num=next_num) }}'">→</button>
   {% else %}
     <button class="arrow-btn" disabled>→</button>
   {% endif %}
 </div>
 
-<div class="keyboard-hint">Use ← → arrow keys to navigate{% if page.type != 'cover' and page.type != 'toc' %} • No scrolling needed{% endif %}</div>
+<div class="keyboard-hint">
+  {% if page.type == 'quiz' and (not quiz_answered or (quiz_feedback and not quiz_feedback.correct)) %}
+    Use ← to go back • → to submit answer
+  {% else %}
+    Use ← → arrow keys to navigate{% if page.type != 'cover' and page.type != 'toc' %} • No scrolling needed{% endif %}
+  {% endif %}
+</div>
 
 <script>
 document.addEventListener('keydown', function(e) {
@@ -1474,12 +1869,56 @@ document.addEventListener('keydown', function(e) {
     window.location.href = "{{ url_for('page', page_num=prev_num) }}";
   }
   {% endif %}
-  {% if next_num is not none %}
+  {% if page.type == 'quiz' and (not quiz_answered or (quiz_feedback and not quiz_feedback.correct)) %}
+  if (e.key === 'ArrowRight') {
+    submitQuizAnswer({{ page_num }});
+  }
+  {% elif page.type == 'toc' and not preview_mode %}
+  {# Right arrow goes to next incomplete module on TOC #}
+  {% set next_module_page_key = namespace(page=None) %}
+  {% if page.ch1_modules %}
+    {% for mod in page.ch1_modules %}
+      {% if not next_module_page_key.page and module_completion.get(mod['id']) != True %}
+        {% set next_module_page_key.page = page.module_page_map.get(mod['id']) %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if not next_module_page_key.page and page.ch2_modules %}
+    {% for mod in page.ch2_modules %}
+      {% if not next_module_page_key.page and module_completion.get(mod['id']) != True %}
+        {% set next_module_page_key.page = page.module_page_map.get(mod['id']) %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if next_module_page_key.page %}
+  if (e.key === 'ArrowRight') {
+    window.location.href = "{{ url_for('page', page_num=next_module_page_key.page) }}";
+  }
+  {% endif %}
+  {% elif next_num is not none %}
   if (e.key === 'ArrowRight') {
     window.location.href = "{{ url_for('page', page_num=next_num) }}";
   }
   {% endif %}
 });
+
+function submitQuizAnswer(pageNum) {
+  const form = document.getElementById('quiz-form-' + pageNum);
+  const warning = document.getElementById('quiz-warning-' + pageNum);
+  const selectedAnswer = form.querySelector('input[name="answer"]:checked');
+  
+  if (!selectedAnswer) {
+    // No answer selected, show warning
+    if (warning) {
+      warning.style.display = 'block';
+      // Scroll to warning
+      warning.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  } else {
+    // Answer selected, submit form
+    form.submit();
+  }
+}
 
 function toggleQuizDropdown(moduleId) {
   const dropdown = document.getElementById('quiz-dropdown-' + moduleId);
@@ -1494,6 +1933,9 @@ function toggleQuizDropdown(moduleId) {
   }
 }
 </script>
+
+<!-- Theme Toggle Script -->
+<script src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
 
 </body>
 </html>

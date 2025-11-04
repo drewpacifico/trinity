@@ -3,67 +3,11 @@ import re
 from pathlib import Path
 import markdown
 
-# Database imports
-from models import (
-    db, Chapter, Module, ChapterSection, QuizQuestion, 
-    GlossaryTerm, User, get_or_create_user,
-    get_module_completion_status as db_get_module_completion,
-    get_chapter_completion_status as db_get_chapter_completion,
-    update_user_quiz_answer
-)
-from config import get_config
-
 app = Flask(__name__)
-
-# Load configuration
-config = get_config()
-app.config.from_object(config)
-
-# Initialize database
-db.init_app(app)
+app.secret_key = 'freight-training-secret-key-2025'  # Required for session management
 
 PROJECT_MD_PATH = Path(__file__).parent / "project.md"
 
-# ============================================================================
-# USER SESSION MANAGEMENT
-# ============================================================================
-
-def get_current_user():
-    """
-    Get or create the current user from session.
-    For now, uses anonymous users. Can be extended for authentication later.
-    """
-    # Check if user ID is in session
-    user_id = session.get('user_id')
-    
-    if user_id:
-        user = User.query.get(user_id)
-        if user:
-            return user
-    
-    # Check for preview mode
-    is_preview = session.get('preview_mode', False)
-    
-    # Create or get anonymous user
-    if is_preview:
-        username = 'preview_user'
-    else:
-        username = session.get('username', 'anonymous_user')
-    
-    user = get_or_create_user(username, is_preview=is_preview)
-    session['user_id'] = user.id
-    session['username'] = user.username
-    
-    return user
-
-# ============================================================================
-# LEGACY QUIZ DATA (NOW IN DATABASE)
-# ============================================================================
-# All quiz questions have been migrated to the database.
-# They are now queried from the QuizQuestion table.
-# This section is kept for reference only and can be deleted later.
-
-"""
 # Quiz questions for Module 1.1
 MODULE_1_1_QUIZ = [
     {
@@ -1333,93 +1277,118 @@ MODULE_6_11_QUIZ = [
 ]
 
 chapter6_quizzes = MODULE_6_1_QUIZ + MODULE_6_2_QUIZ + MODULE_6_3_QUIZ + MODULE_6_4_QUIZ + MODULE_6_5_QUIZ + MODULE_6_6_QUIZ + MODULE_6_7_QUIZ + MODULE_6_8_QUIZ + MODULE_6_9_QUIZ + MODULE_6_10_QUIZ + MODULE_6_11_QUIZ
-"""
 
-# ============================================================================
-# DATABASE QUERY FUNCTIONS (Replacing markdown parsing)
-# ============================================================================
 
-def parse_project_outline(markdown_text: str = None):
-    """
-    Get chapter list from database.
-    markdown_text parameter kept for backward compatibility but not used.
-    """
-    chapters = []
-    
-    # Query chapters from database
-    db_chapters = Chapter.query.order_by(Chapter.display_order).all()
-    
-    for ch in db_chapters:
-        chapters.append({
-            "id": ch.id,
-            "title": ch.title
-        })
-    
-    # Check if glossary exists
-    has_glossary = GlossaryTerm.query.count() > 0
+def parse_project_outline(markdown_text: str):
+    chapters_by_id = {}
+    has_glossary = False
+    for raw_line in markdown_text.splitlines():
+        line = raw_line.strip()
+        m1 = re.match(r"^Chapter\s+(\d+):\s*(.+)$", line, flags=re.IGNORECASE)
+        if m1:
+            cid = int(m1.group(1))
+            title = m1.group(2).strip()
+            # Convert to title case if it's all uppercase
+            if title.isupper():
+                title = title.title()
+            chapters_by_id[cid] = {"id": cid, "title": title}
+            continue
+        m2 = re.match(r"^CHAPTER\s+(\d+):\s*(.+)$", line, flags=re.IGNORECASE)
+        if m2 and int(m2.group(1)) not in chapters_by_id:
+            cid = int(m2.group(1))
+            title = m2.group(2).strip()
+            # Convert to title case if it's all uppercase
+            if title.isupper():
+                title = title.title()
+            chapters_by_id[cid] = {"id": cid, "title": title}
+        # Check for glossary
+        if re.match(r"^GLOSSARY OF FREIGHT AGENT TERMS$", line, flags=re.IGNORECASE):
+            has_glossary = True
+    chapters = [chapters_by_id[k] for k in sorted(chapters_by_id.keys())]
+    # Add glossary as a special entry after chapters
     if has_glossary:
         chapters.append({"id": "glossary", "title": "Glossary"})
-    
-    print(f"[parse_project_outline] Found {len(chapters)} chapters from database (including glossary: {has_glossary})")
+    print(f"[parse_project_outline] Found {len(chapters)} chapters (including glossary: {has_glossary})")
     return chapters
 
 
-def extract_chapter_content(markdown_text: str = None, chapter_id: int = 0):
-    """
-    Get chapter content from database.
-    Parameters kept for backward compatibility but markdown_text is not used.
-    """
-    # Get chapter from database
-    chapter = Chapter.query.get(chapter_id)
-    if not chapter:
-        return {
-            "chapter_id": chapter_id,
-            "chapter_title": "",
-            "intro": None,
-            "modules": [],
-            "summary": None,
-            "action_items": None,
-        }
-    
-    # Get chapter sections
-    intro_section = ChapterSection.query.filter_by(
-        chapter_id=chapter_id,
-        section_type='intro'
-    ).first()
-    
-    summary_section = ChapterSection.query.filter_by(
-        chapter_id=chapter_id,
-        section_type='summary'
-    ).first()
-    
-    action_items_section = ChapterSection.query.filter_by(
-        chapter_id=chapter_id,
-        section_type='action_items'
-    ).first()
-    
-    # Get modules
-    db_modules = Module.query.filter_by(chapter_id=chapter_id).order_by(Module.display_order).all()
-    
+def extract_chapter_content(markdown_text: str, chapter_id: int):
+    # Match only uppercase CHAPTER headers (not TOC-style "Chapter")
+    chapter_header_pattern = re.compile(rf"^CHAPTER\s+{chapter_id}:\s*(.+)$")
+    next_chapter_header_pattern = re.compile(r"^CHAPTER\s+\d+:\s*")
+    module_header_pattern = re.compile(r"^Module\s+(\d+\.\d+):\s*(.+)$")
+    summary_header_pattern = re.compile(rf"^CHAPTER\s+{chapter_id}\s+SUMMARY.*$", re.IGNORECASE)
+    action_items_header_pattern = re.compile(rf"^ACTION\s+ITEMS\s+FOR\s+CHAPTER\s+{chapter_id}\s*$", re.IGNORECASE)
+
+    lines = markdown_text.splitlines()
+    in_chapter = False
+    chapter_title = None
+    intro_lines = []
     modules = []
-    for mod in db_modules:
-        modules.append({
-            "id": mod.id,
-            "title": mod.title,
-            "content": mod.content_markdown.splitlines() if mod.content_markdown else []
-        })
-    
+    current_module = None
+    summary_lines = []
+    in_summary = False
+    action_items_lines = []
+    in_action_items = False
+
+    for raw_line in lines:
+        stripped = raw_line.strip()
+        enter = chapter_header_pattern.match(stripped)
+        if not in_chapter and enter:
+            in_chapter = True
+            chapter_title = enter.group(1).strip()
+            # Convert to title case if it's all uppercase
+            if chapter_title.isupper():
+                chapter_title = chapter_title.title()
+            continue
+        if not in_chapter:
+            continue
+        if next_chapter_header_pattern.match(stripped):
+            break
+        if summary_header_pattern.match(stripped):
+            in_summary = True
+            in_action_items = False
+            if current_module:
+                modules.append(current_module)
+                current_module = None
+            continue
+        if action_items_header_pattern.match(stripped):
+            in_action_items = True
+            in_summary = False
+            if current_module:
+                modules.append(current_module)
+                current_module = None
+            continue
+        m = module_header_pattern.match(stripped)
+        if m and not in_summary and not in_action_items:
+            if current_module:
+                modules.append(current_module)
+            current_module = {"id": m.group(1), "title": m.group(2).strip(), "content": []}
+            continue
+        if in_summary:
+            summary_lines.append(raw_line)
+        elif in_action_items:
+            action_items_lines.append(raw_line)
+        elif current_module is not None:
+            current_module["content"].append(raw_line)
+        else:
+            if stripped != "":
+                intro_lines.append(raw_line)
+    if current_module:
+        modules.append(current_module)
+
     print(
         f"[extract_chapter_content] ch={chapter_id} modules={len(modules)} "
-        f"summary={'yes' if summary_section else 'no'} action_items={'yes' if action_items_section else 'no'}"
+        f"summary={'yes' if summary_lines else 'no'} action_items={'yes' if action_items_lines else 'no'}"
     )
-    
+
     return {
         "chapter_id": chapter_id,
-        "chapter_title": chapter.title,
-        "intro": intro_section.content_markdown if intro_section else None,
+        "chapter_title": chapter_title or "",
+        "intro": "\n".join(intro_lines).strip() if intro_lines else None,
         "modules": modules,
-        "summary": summary_section.content_markdown if summary_section else None,
-        "action_items": action_items_section.content_markdown if action_items_section else None,
+        "summary": "\n".join(summary_lines).strip() if summary_lines else None,
+        "action_items": "\n".join(action_items_lines).strip() if action_items_lines else None,
     }
 
 
@@ -1681,82 +1650,105 @@ def parse_glossary_terms(markdown_text: str):
     return terms
 
 
-def get_module_completion_status(session_quiz_answers_or_user_id, module_id):
-    """
-    Check if all quizzes for a module are completed.
-    Now uses database instead of session storage.
+def get_module_completion_status(session_quiz_answers, module_id):
+    """Check if all quizzes for a module are completed."""
+    quiz_map = {
+        "1.1": MODULE_1_1_QUIZ,
+        "1.2": MODULE_1_2_QUIZ,
+        "1.3": MODULE_1_3_QUIZ,
+        "1.4": MODULE_1_4_QUIZ,
+        "1.5": MODULE_1_5_QUIZ,
+        "1.6": MODULE_1_6_QUIZ,
+        "2.1": MODULE_2_1_QUIZ,
+        "2.2": MODULE_2_2_QUIZ,
+        "2.3": MODULE_2_3_QUIZ,
+        "2.4": MODULE_2_4_QUIZ,
+        "2.5": MODULE_2_5_QUIZ,
+        "2.6": MODULE_2_6_QUIZ,
+        "2.7": MODULE_2_7_QUIZ,
+        "2.8": MODULE_2_8_QUIZ,
+        "2.9": MODULE_2_9_QUIZ,
+        "3.1": [q for q in chapter3_quizzes if q["id"].startswith("q3_1")],
+        "3.2": [q for q in chapter3_quizzes if q["id"].startswith("q3_2")],
+        "3.3": [q for q in chapter3_quizzes if q["id"].startswith("q3_3")],
+        "3.4": [q for q in chapter3_quizzes if q["id"].startswith("q3_4")],
+        "3.5": [q for q in chapter3_quizzes if q["id"].startswith("q3_5")],
+        "3.6": [q for q in chapter3_quizzes if q["id"].startswith("q3_6")],
+        "3.7": [q for q in chapter3_quizzes if q["id"].startswith("q3_7")],
+        "3.8": [q for q in chapter3_quizzes if q["id"].startswith("q3_8")],
+        "3.9": [q for q in chapter3_quizzes if q["id"].startswith("q3_9")],
+        "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1_")],
+        "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2_")],
+        "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3_")],
+        "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4_")],
+        "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5_")],
+        "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6_")],
+        "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7_")],
+        "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8_")],
+        "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9_")],
+        "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10_")],
+        "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11_")],
+        "5.1": [q for q in chapter5_quizzes if q["id"].startswith("q5_1_")],
+        "5.2": [q for q in chapter5_quizzes if q["id"].startswith("q5_2_")],
+        "5.3": [q for q in chapter5_quizzes if q["id"].startswith("q5_3_")],
+        "5.4": [q for q in chapter5_quizzes if q["id"].startswith("q5_4_")],
+        "5.5": [q for q in chapter5_quizzes if q["id"].startswith("q5_5_")],
+        "5.6": [q for q in chapter5_quizzes if q["id"].startswith("q5_6_")],
+        "5.7": [q for q in chapter5_quizzes if q["id"].startswith("q5_7_")],
+        "5.8": [q for q in chapter5_quizzes if q["id"].startswith("q5_8_")],
+        "5.9": [q for q in chapter5_quizzes if q["id"].startswith("q5_9_")],
+        "5.10": [q for q in chapter5_quizzes if q["id"].startswith("q5_10_")],
+        "6.1": [q for q in chapter6_quizzes if q["id"].startswith("q6_1_")],
+        "6.2": [q for q in chapter6_quizzes if q["id"].startswith("q6_2_")],
+        "6.3": [q for q in chapter6_quizzes if q["id"].startswith("q6_3_")],
+        "6.4": [q for q in chapter6_quizzes if q["id"].startswith("q6_4_")],
+        "6.5": [q for q in chapter6_quizzes if q["id"].startswith("q6_5_")],
+        "6.6": [q for q in chapter6_quizzes if q["id"].startswith("q6_6_")],
+        "6.7": [q for q in chapter6_quizzes if q["id"].startswith("q6_7_")],
+        "6.8": [q for q in chapter6_quizzes if q["id"].startswith("q6_8_")],
+        "6.9": [q for q in chapter6_quizzes if q["id"].startswith("q6_9_")],
+        "6.10": [q for q in chapter6_quizzes if q["id"].startswith("q6_10_")],
+        "6.11": [q for q in chapter6_quizzes if q["id"].startswith("q6_11_")],
+    }
     
-    Args:
-        session_quiz_answers_or_user_id: Can be user_id (int) or legacy session dict
-        module_id: Module ID like "1.1", "2.3", etc.
-    """
-    # Handle both old (session dict) and new (user_id) calling conventions
-    if isinstance(session_quiz_answers_or_user_id, int):
-        user_id = session_quiz_answers_or_user_id
-        # Use database function
-        return db_get_module_completion(user_id, module_id)
-    else:
-        # Legacy session-based: Get current user and use database
-        user = get_current_user()
-        return db_get_module_completion(user.id, module_id)
-
-
-def get_chapter_completion_status(session_quiz_answers_or_user_id, chapter_num):
-    """
-    Check if all modules in a chapter are completed.
-    Now uses database instead of session storage.
+    if module_id not in quiz_map:
+        return True  # Modules without quizzes are considered complete
     
-    Args:
-        session_quiz_answers_or_user_id: Can be user_id (int) or legacy session dict
-        chapter_num: Chapter number (1, 2, 3, etc.)
-    """
-    # Handle both old (session dict) and new (user_id) calling conventions
-    if isinstance(session_quiz_answers_or_user_id, int):
-        user_id = session_quiz_answers_or_user_id
-        # Use database function
-        return db_get_chapter_completion(user_id, chapter_num)
-    else:
-        # Legacy session-based: Get current user and use database
-        user = get_current_user()
-        return db_get_chapter_completion(user.id, chapter_num)
+    quiz_questions = quiz_map[module_id]
+    for question in quiz_questions:
+        if not session_quiz_answers.get(question["id"], False):
+            return False
+    return True
 
 
-def get_all_modules_completed(session_quiz_answers_or_user_id):
+def get_chapter_completion_status(session_quiz_answers, chapter_num):
+    """Check if all modules in a chapter are completed."""
+    chapter_modules = {
+        1: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"],
+        2: ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"],
+        3: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"],
+        4: ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"],
+        5: ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"],
+        6: ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "6.11"],
+    }
+    
+    if chapter_num not in chapter_modules:
+        return True
+    
+    module_ids = chapter_modules[chapter_num]
+    for mod_id in module_ids:
+        if not get_module_completion_status(session_quiz_answers, mod_id):
+            return False
+    return True
+
+
+def get_all_modules_completed(session_quiz_answers):
     """Check if all Chapter 1 modules are completed."""
-    return get_chapter_completion_status(session_quiz_answers_or_user_id, 1)
+    return get_chapter_completion_status(session_quiz_answers, 1)
 
 
-def get_quiz_questions_for_module(module_id):
-    """
-    Get quiz questions for a module from database.
-    Returns list of question dicts in the old format for compatibility.
-    """
-    quizzes = QuizQuestion.query.filter_by(module_id=module_id).order_by(QuizQuestion.display_order).all()
-    
-    questions = []
-    for quiz in quizzes:
-        # Get the quiz in the format expected by page rendering
-        # Note: choices are in their original order (a, b, c, d) here
-        # They'll be shuffled per user when displayed
-        questions.append({
-            "id": quiz.id,
-            "question": quiz.question,
-            "choices": [quiz.choice_a, quiz.choice_b, quiz.choice_c, quiz.choice_d],
-            "correct_index": ['a', 'b', 'c', 'd'].index(quiz.correct_choice),
-            "explanation": quiz.explanation
-        })
-    
-    return questions
-
-
-def build_pages(text: str = None):
-    """
-    Build a flat list of pages: Cover, TOC, then all chapters with modules, summaries, action items.
-    Now queries from database instead of parsing markdown.
-    
-    Args:
-        text: Optional markdown text (for backward compatibility, not used)
-    """
+def build_pages(text: str):
+    """Build a flat list of pages: Cover, TOC, then all chapters with modules, summaries, action items."""
     chapters = parse_project_outline(text)
     ch1 = extract_chapter_content(text, 1)
     ch2 = extract_chapter_content(text, 2)
@@ -1808,10 +1800,18 @@ def build_pages(text: str = None):
                 "module_total_pages": len(content_pages)
             })
         
-        # Add quiz questions after the last page of each module (from database)
-        quiz_questions = get_quiz_questions_for_module(mod["id"])
+        # Add quiz questions after the last page of each module
+        quiz_map = {
+            "1.1": MODULE_1_1_QUIZ,
+            "1.2": MODULE_1_2_QUIZ,
+            "1.3": MODULE_1_3_QUIZ,
+            "1.4": MODULE_1_4_QUIZ,
+            "1.5": MODULE_1_5_QUIZ,
+            "1.6": MODULE_1_6_QUIZ,
+        }
         
-        if quiz_questions:
+        if mod["id"] in quiz_map:
+            quiz_questions = quiz_map[mod["id"]]
             for idx, quiz_question in enumerate(quiz_questions):
                 quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
                 pages.append({
@@ -1875,10 +1875,21 @@ def build_pages(text: str = None):
                 "module_total_pages": len(content_pages)
             })
         
-        # Add quiz questions after the last page of each module (from database)
-        quiz_questions = get_quiz_questions_for_module(mod["id"])
+        # Add quiz questions after the last page of each module
+        quiz_map_ch2 = {
+            "2.1": MODULE_2_1_QUIZ,
+            "2.2": MODULE_2_2_QUIZ,
+            "2.3": MODULE_2_3_QUIZ,
+            "2.4": MODULE_2_4_QUIZ,
+            "2.5": MODULE_2_5_QUIZ,
+            "2.6": MODULE_2_6_QUIZ,
+            "2.7": MODULE_2_7_QUIZ,
+            "2.8": MODULE_2_8_QUIZ,
+            "2.9": MODULE_2_9_QUIZ,
+        }
         
-        if quiz_questions:
+        if mod["id"] in quiz_map_ch2:
+            quiz_questions = quiz_map_ch2[mod["id"]]
             for idx, quiz_question in enumerate(quiz_questions):
                 quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
                 pages.append({
@@ -1942,10 +1953,21 @@ def build_pages(text: str = None):
                 "module_total_pages": len(content_pages)
             })
         
-        # Add quiz questions after the last page of each module (from database)
-        quiz_questions = get_quiz_questions_for_module(mod["id"])
+        # Add quiz questions after the last page of each module
+        quiz_map_ch3 = {
+            "3.1": [q for q in chapter3_quizzes if q["id"].startswith("q3_1")],
+            "3.2": [q for q in chapter3_quizzes if q["id"].startswith("q3_2")],
+            "3.3": [q for q in chapter3_quizzes if q["id"].startswith("q3_3")],
+            "3.4": [q for q in chapter3_quizzes if q["id"].startswith("q3_4")],
+            "3.5": [q for q in chapter3_quizzes if q["id"].startswith("q3_5")],
+            "3.6": [q for q in chapter3_quizzes if q["id"].startswith("q3_6")],
+            "3.7": [q for q in chapter3_quizzes if q["id"].startswith("q3_7")],
+            "3.8": [q for q in chapter3_quizzes if q["id"].startswith("q3_8")],
+            "3.9": [q for q in chapter3_quizzes if q["id"].startswith("q3_9")],
+        }
         
-        if quiz_questions:
+        if mod["id"] in quiz_map_ch3:
+            quiz_questions = quiz_map_ch3[mod["id"]]
             for idx, quiz_question in enumerate(quiz_questions):
                 quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
                 pages.append({
@@ -2009,10 +2031,23 @@ def build_pages(text: str = None):
                 "module_total_pages": len(content_pages)
             })
         
-        # Add quiz questions after the last page of each module (from database)
-        quiz_questions = get_quiz_questions_for_module(mod["id"])
+        # Add quiz questions after the last page of each module
+        quiz_map_ch4 = {
+            "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1_")],
+            "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2_")],
+            "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3_")],
+            "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4_")],
+            "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5_")],
+            "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6_")],
+            "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7_")],
+            "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8_")],
+            "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9_")],
+            "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10_")],
+            "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11_")],
+        }
         
-        if quiz_questions:
+        if mod["id"] in quiz_map_ch4:
+            quiz_questions = quiz_map_ch4[mod["id"]]
             for idx, quiz_question in enumerate(quiz_questions):
                 quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
                 pages.append({
@@ -2078,10 +2113,22 @@ def build_pages(text: str = None):
                 "module_total_pages": len(content_pages)
             })
         
-        # Add quiz questions after the last page of each module (from database)
-        quiz_questions = get_quiz_questions_for_module(mod["id"])
+        # Add quiz questions after the last page of each module
+        quiz_map_ch5 = {
+            "5.1": [q for q in chapter5_quizzes if q["id"].startswith("q5_1_")],
+            "5.2": [q for q in chapter5_quizzes if q["id"].startswith("q5_2_")],
+            "5.3": [q for q in chapter5_quizzes if q["id"].startswith("q5_3_")],
+            "5.4": [q for q in chapter5_quizzes if q["id"].startswith("q5_4_")],
+            "5.5": [q for q in chapter5_quizzes if q["id"].startswith("q5_5_")],
+            "5.6": [q for q in chapter5_quizzes if q["id"].startswith("q5_6_")],
+            "5.7": [q for q in chapter5_quizzes if q["id"].startswith("q5_7_")],
+            "5.8": [q for q in chapter5_quizzes if q["id"].startswith("q5_8_")],
+            "5.9": [q for q in chapter5_quizzes if q["id"].startswith("q5_9_")],
+            "5.10": [q for q in chapter5_quizzes if q["id"].startswith("q5_10_")],
+        }
         
-        if quiz_questions:
+        if mod["id"] in quiz_map_ch5:
+            quiz_questions = quiz_map_ch5[mod["id"]]
             for idx, quiz_question in enumerate(quiz_questions):
                 quiz_page_map[quiz_question["id"]] = len(pages)
                 pages.append({
@@ -2149,10 +2196,23 @@ def build_pages(text: str = None):
                 "module_total_pages": len(content_pages)
             })
         
-        # Add quiz questions after the last page of each module (from database)
-        quiz_questions = get_quiz_questions_for_module(mod["id"])
+        # Add quiz questions after the last page of each module
+        quiz_map_ch6 = {
+            "6.1": [q for q in chapter6_quizzes if q["id"].startswith("q6_1_")],
+            "6.2": [q for q in chapter6_quizzes if q["id"].startswith("q6_2_")],
+            "6.3": [q for q in chapter6_quizzes if q["id"].startswith("q6_3_")],
+            "6.4": [q for q in chapter6_quizzes if q["id"].startswith("q6_4_")],
+            "6.5": [q for q in chapter6_quizzes if q["id"].startswith("q6_5_")],
+            "6.6": [q for q in chapter6_quizzes if q["id"].startswith("q6_6_")],
+            "6.7": [q for q in chapter6_quizzes if q["id"].startswith("q6_7_")],
+            "6.8": [q for q in chapter6_quizzes if q["id"].startswith("q6_8_")],
+            "6.9": [q for q in chapter6_quizzes if q["id"].startswith("q6_9_")],
+            "6.10": [q for q in chapter6_quizzes if q["id"].startswith("q6_10_")],
+            "6.11": [q for q in chapter6_quizzes if q["id"].startswith("q6_11_")],
+        }
         
-        if quiz_questions:
+        if mod["id"] in quiz_map_ch6:
+            quiz_questions = quiz_map_ch6[mod["id"]]
             for idx, quiz_question in enumerate(quiz_questions):
                 quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
                 pages.append({
@@ -2226,35 +2286,22 @@ def page(page_num: int):
     elif 'preview' in request.args and request.args.get('preview') == 'false':
         session['preview_mode'] = False
     
-    # Get current user for database operations
-    user = get_current_user()
-    
-    # Handle quiz answer submission (now uses database)
+    # Handle quiz answer submission
     quiz_feedback = None
     if request.method == "POST" and current_page.get("type") == "quiz":
         selected_answer = request.form.get("answer")
         if selected_answer is not None:
             selected_index = int(selected_answer)
             quiz_question = current_page["quiz_question"]
+            correct_index = quiz_question["correct_index"]
             
-            # Submit answer to database
-            # Note: The quiz_question has choices in original order (a, b, c, d)
-            # We need to pass the order to the database function
-            answer_order = ['a', 'b', 'c', 'd']  # Original order for now
-            result = update_user_quiz_answer(
-                user.id,
-                quiz_question["id"],
-                selected_index,
-                answer_order
-            )
-            
-            if result['is_correct']:
-                # Correct answer - also update session for backward compatibility
+            if selected_index == correct_index:
+                # Correct answer - mark as answered and allow progression
                 session['quiz_answers'][quiz_question["id"]] = True
                 session.modified = True
                 quiz_feedback = {
                     "correct": True,
-                    "message": "Correct! " + result['explanation']
+                    "message": "Correct! " + quiz_question["explanation"]
                 }
             else:
                 # Incorrect answer
@@ -2264,22 +2311,11 @@ def page(page_num: int):
                     "selected_index": selected_index
                 }
     
-    # Check if current quiz question has been answered correctly (from database)
+    # Check if current quiz question has been answered correctly
     quiz_answered = False
     if current_page.get("type") == "quiz":
         quiz_id = current_page["quiz_question"]["id"]
-        # Check database first
-        quiz_answered = db_get_module_completion(user.id, current_page.get("module_id", ""))
-        # Also check if this specific question was answered
-        from models import UserQuizAnswer
-        user_answer = UserQuizAnswer.query.filter_by(
-            user_id=user.id,
-            quiz_question_id=quiz_id
-        ).first()
-        if user_answer:
-            quiz_answered = user_answer.is_correct
-        # Update session for backward compatibility
-        session['quiz_answers'][quiz_id] = quiz_answered
+        quiz_answered = session['quiz_answers'].get(quiz_id, False)
     
     prev_num = page_num - 1 if page_num > 0 else None
     
@@ -2302,70 +2338,70 @@ def page(page_num: int):
             chapter_3_modules = ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"]
             chapter_4_modules = ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"]
             
-            # Determine which chapter and check previous modules (using database)
+            # Determine which chapter and check previous modules
             if current_module_id.startswith("1."):
                 module_index = chapter_1_modules.index(current_module_id) if current_module_id in chapter_1_modules else 0
                 if module_index > 0:
                     for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_1_modules[i]):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_1_modules[i]):
                             return redirect(url_for("page", page_num=1))
             elif current_module_id.startswith("2."):
                 # For Chapter 2, first check if all Chapter 1 is complete
-                if not get_chapter_completion_status(user.id, 1):
+                if not get_chapter_completion_status(session.get('quiz_answers', {}), 1):
                     return redirect(url_for("page", page_num=1))
                 # Then check previous Chapter 2 modules
                 module_index = chapter_2_modules.index(current_module_id) if current_module_id in chapter_2_modules else 0
                 if module_index > 0:
                     for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_2_modules[i]):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_2_modules[i]):
                             return redirect(url_for("page", page_num=1))
             elif current_module_id.startswith("3."):
                 # For Chapter 3, first check if all Chapter 2 is complete
-                if not get_chapter_completion_status(user.id, 2):
+                if not get_chapter_completion_status(session.get('quiz_answers', {}), 2):
                     return redirect(url_for("page", page_num=1))
                 # Then check previous Chapter 3 modules
                 module_index = chapter_3_modules.index(current_module_id) if current_module_id in chapter_3_modules else 0
                 if module_index > 0:
                     for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_3_modules[i]):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_3_modules[i]):
                             return redirect(url_for("page", page_num=1))
             elif current_module_id.startswith("4."):
                 # For Chapter 4, first check if all Chapter 3 is complete
-                if not get_chapter_completion_status(user.id, 3):
+                if not get_chapter_completion_status(session.get('quiz_answers', {}), 3):
                     return redirect(url_for("page", page_num=1))
                 # Then check previous Chapter 4 modules
                 module_index = chapter_4_modules.index(current_module_id) if current_module_id in chapter_4_modules else 0
                 if module_index > 0:
                     for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_4_modules[i]):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_4_modules[i]):
                             return redirect(url_for("page", page_num=1))
             elif current_module_id.startswith("5."):
                 # For Chapter 5, first check if all Chapter 4 is complete
-                if not get_chapter_completion_status(user.id, 4):
+                if not get_chapter_completion_status(session.get('quiz_answers', {}), 4):
                     return redirect(url_for("page", page_num=1))
                 # Then check previous Chapter 5 modules
                 chapter_5_modules = ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
                 module_index = chapter_5_modules.index(current_module_id) if current_module_id in chapter_5_modules else 0
                 if module_index > 0:
                     for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_5_modules[i]):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_5_modules[i]):
                             return redirect(url_for("page", page_num=1))
             elif current_module_id.startswith("6."):
                 # For Chapter 6, first check if all Chapter 5 is complete
-                if not get_chapter_completion_status(user.id, 5):
+                if not get_chapter_completion_status(session.get('quiz_answers', {}), 5):
                     return redirect(url_for("page", page_num=1))
                 # Then check previous Chapter 6 modules
                 chapter_6_modules = ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "6.11"]
                 module_index = chapter_6_modules.index(current_module_id) if current_module_id in chapter_6_modules else 0
                 if module_index > 0:
                     for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_6_modules[i]):
+                        if not get_module_completion_status(session.get('quiz_answers', {}), chapter_6_modules[i]):
                             return redirect(url_for("page", page_num=1))
     
     # Lock summary and action items until all modules complete (unless in preview mode)
     if not preview_mode and current_page.get("type") in ["summary", "action_items"]:
         chapter_id = current_page.get("chapter_id", 1)
-        if not get_chapter_completion_status(user.id, chapter_id):
+        if not get_chapter_completion_status(session.get('quiz_answers', {}), chapter_id):
             # Redirect to TOC if trying to access locked summary/action items
             return redirect(url_for("page", page_num=1))
     
@@ -2401,37 +2437,89 @@ def page(page_num: int):
         ch5_modules = pages[0].get("ch5_modules", [])
         ch6_modules = pages[0].get("ch6_modules", [])
         
-        # Get module completion from database
         for mod in ch1_modules:
-            module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
-        all_ch1_modules_complete = get_chapter_completion_status(user.id, 1)
+            module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
+        all_ch1_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 1)
         
         for mod in ch2_modules:
-            module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
-        all_ch2_modules_complete = get_chapter_completion_status(user.id, 2)
+            module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
+        all_ch2_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 2)
         
         for mod in ch3_modules:
-            module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
-        all_ch3_modules_complete = get_chapter_completion_status(user.id, 3)
+            module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
+        all_ch3_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 3)
         
         for mod in ch4_modules:
-            module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
-        all_ch4_modules_complete = get_chapter_completion_status(user.id, 4)
+            module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
+        all_ch4_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 4)
         
         for mod in ch5_modules:
-            module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
-        all_ch5_modules_complete = get_chapter_completion_status(user.id, 5)
+            module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
+        all_ch5_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 5)
         
         for mod in ch6_modules:
-            module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
-        all_ch6_modules_complete = get_chapter_completion_status(user.id, 6)
+            module_completion[mod["id"]] = get_module_completion_status(session.get('quiz_answers', {}), mod["id"])
+        all_ch6_modules_complete = get_chapter_completion_status(session.get('quiz_answers', {}), 6)
     
-    # Quiz map for TOC dropdown display (now from database)
-    quiz_map = {}
-    # Dynamically build quiz map from all modules
-    all_modules = Module.query.all()
-    for module in all_modules:
-        quiz_map[module.id] = get_quiz_questions_for_module(module.id)
+    # Quiz map for TOC dropdown display
+    quiz_map = {
+        "1.1": MODULE_1_1_QUIZ,
+        "1.2": MODULE_1_2_QUIZ,
+        "1.3": MODULE_1_3_QUIZ,
+        "1.4": MODULE_1_4_QUIZ,
+        "1.5": MODULE_1_5_QUIZ,
+        "1.6": MODULE_1_6_QUIZ,
+        "2.1": MODULE_2_1_QUIZ,
+        "2.2": MODULE_2_2_QUIZ,
+        "2.3": MODULE_2_3_QUIZ,
+        "2.4": MODULE_2_4_QUIZ,
+        "2.5": MODULE_2_5_QUIZ,
+        "2.6": MODULE_2_6_QUIZ,
+        "2.7": MODULE_2_7_QUIZ,
+        "2.8": MODULE_2_8_QUIZ,
+        "2.9": MODULE_2_9_QUIZ,
+        "3.1": [q for q in chapter3_quizzes if q["id"].startswith("q3_1")],
+        "3.2": [q for q in chapter3_quizzes if q["id"].startswith("q3_2")],
+        "3.3": [q for q in chapter3_quizzes if q["id"].startswith("q3_3")],
+        "3.4": [q for q in chapter3_quizzes if q["id"].startswith("q3_4")],
+        "3.5": [q for q in chapter3_quizzes if q["id"].startswith("q3_5")],
+        "3.6": [q for q in chapter3_quizzes if q["id"].startswith("q3_6")],
+        "3.7": [q for q in chapter3_quizzes if q["id"].startswith("q3_7")],
+        "3.8": [q for q in chapter3_quizzes if q["id"].startswith("q3_8")],
+        "3.9": [q for q in chapter3_quizzes if q["id"].startswith("q3_9")],
+        "4.1": [q for q in chapter4_quizzes if q["id"].startswith("q4_1_")],
+        "4.2": [q for q in chapter4_quizzes if q["id"].startswith("q4_2_")],
+        "4.3": [q for q in chapter4_quizzes if q["id"].startswith("q4_3_")],
+        "4.4": [q for q in chapter4_quizzes if q["id"].startswith("q4_4_")],
+        "4.5": [q for q in chapter4_quizzes if q["id"].startswith("q4_5_")],
+        "4.6": [q for q in chapter4_quizzes if q["id"].startswith("q4_6_")],
+        "4.7": [q for q in chapter4_quizzes if q["id"].startswith("q4_7_")],
+        "4.8": [q for q in chapter4_quizzes if q["id"].startswith("q4_8_")],
+        "4.9": [q for q in chapter4_quizzes if q["id"].startswith("q4_9_")],
+        "4.10": [q for q in chapter4_quizzes if q["id"].startswith("q4_10_")],
+        "4.11": [q for q in chapter4_quizzes if q["id"].startswith("q4_11_")],
+        "5.1": [q for q in chapter5_quizzes if q["id"].startswith("q5_1_")],
+        "5.2": [q for q in chapter5_quizzes if q["id"].startswith("q5_2_")],
+        "5.3": [q for q in chapter5_quizzes if q["id"].startswith("q5_3_")],
+        "5.4": [q for q in chapter5_quizzes if q["id"].startswith("q5_4_")],
+        "5.5": [q for q in chapter5_quizzes if q["id"].startswith("q5_5_")],
+        "5.6": [q for q in chapter5_quizzes if q["id"].startswith("q5_6_")],
+        "5.7": [q for q in chapter5_quizzes if q["id"].startswith("q5_7_")],
+        "5.8": [q for q in chapter5_quizzes if q["id"].startswith("q5_8_")],
+        "5.9": [q for q in chapter5_quizzes if q["id"].startswith("q5_9_")],
+        "5.10": [q for q in chapter5_quizzes if q["id"].startswith("q5_10_")],
+        "6.1": [q for q in chapter6_quizzes if q["id"].startswith("q6_1_")],
+        "6.2": [q for q in chapter6_quizzes if q["id"].startswith("q6_2_")],
+        "6.3": [q for q in chapter6_quizzes if q["id"].startswith("q6_3_")],
+        "6.4": [q for q in chapter6_quizzes if q["id"].startswith("q6_4_")],
+        "6.5": [q for q in chapter6_quizzes if q["id"].startswith("q6_5_")],
+        "6.6": [q for q in chapter6_quizzes if q["id"].startswith("q6_6_")],
+        "6.7": [q for q in chapter6_quizzes if q["id"].startswith("q6_7_")],
+        "6.8": [q for q in chapter6_quizzes if q["id"].startswith("q6_8_")],
+        "6.9": [q for q in chapter6_quizzes if q["id"].startswith("q6_9_")],
+        "6.10": [q for q in chapter6_quizzes if q["id"].startswith("q6_10_")],
+        "6.11": [q for q in chapter6_quizzes if q["id"].startswith("q6_11_")],
+    }
     
     return render_template(
         "page.html",
@@ -2470,33 +2558,6 @@ def glossary():
         "glossary.html",
         glossary_terms=glossary_terms
     )
-
-
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    """Login page - simple username-based authentication."""
-    if request.method == "POST":
-        username = request.form.get("username", "").strip()
-        if username:
-            # Get or create user
-            user = get_or_create_user(username, is_preview=False)
-            session['user_id'] = user.id
-            session['username'] = user.username
-            session['logged_in'] = True
-            return redirect(url_for("page", page_num=1))
-        else:
-            # If no username provided, redirect back to login
-            return redirect(url_for("login"))
-    
-    # GET request - show login page
-    return render_template("login.html")
-
-
-@app.route("/logout")
-def logout():
-    """Logout and clear session."""
-    session.clear()
-    return redirect(url_for("login"))
 
 
 @app.route("/reset")
