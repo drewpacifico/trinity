@@ -1,0 +1,29 @@
+MODULE: 7.1
+
+Q: q7_1_1
+Question: What is the primary benefit of using a Transportation Management System (TMS) in freight operations?
+A: It eliminates the need for human freight agents entirely
+B: It provides centralized visibility, automates processes, and improves efficiency in managing shipments and carriers
+C: It only tracks shipment locations without any other features
+D: It replaces the need for customer communication
+CORRECT: B
+EXPLANATION: A Transportation Management System provides centralized visibility into all shipments, automates routine processes like carrier selection and rate calculations, and significantly improves operational efficiency. While TMS technology is powerful, it complements rather than replaces human expertise and customer service.
+
+Q: q7_1_2
+Question: A customer asks you to explain why your brokerage uses a TMS instead of manual spreadsheets. What's the best response?
+A: Spreadsheets work just as well for any size operation
+B: TMS systems are only useful for large brokerages, not small ones
+C: A TMS provides real-time tracking, automated documentation, carrier management, and scalability that spreadsheets cannot match—allowing us to serve you more efficiently and accurately
+D: We use a TMS because it's more expensive and impresses customers
+CORRECT: C
+EXPLANATION: TMS systems offer capabilities that spreadsheets fundamentally cannot provide: real-time tracking integration, automated document generation, centralized carrier management, rate optimization, and the ability to scale operations efficiently. These features directly translate to better service, fewer errors, and faster response times for customers.
+
+Q: q7_1_3
+Question: Your TMS shows that a driver's ELD indicates they will run out of hours before reaching the delivery destination. What should you do?
+A: Tell the driver to keep driving anyway—the customer is counting on on-time delivery
+B: Immediately contact the customer to explain the situation, propose solutions (team driver, relay, or revised delivery time), and find the nearest safe location for the driver to park
+C: Wait until the driver actually runs out of hours before taking action
+D: Turn off the TMS tracking so you don't see the problem
+CORRECT: B
+EXPLANATION: When your TMS alerts you to an Hours of Service issue, proactive communication is essential. Contact the customer immediately to explain the situation and propose solutions—whether that's arranging a team driver, setting up a relay with another carrier, or revising the delivery schedule. Never pressure drivers to violate HOS regulations, which would put lives at risk and expose everyone to legal liability.
+
