@@ -4,12 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}{% endblock %}</title>
-<!-- Prevent flash of wrong theme - runs before page renders -->
+<!-- Prevent flash of wrong theme - apply immediately with inline CSS -->
 <script>
 (function() {
   var theme = localStorage.getItem('theme') || 'classic';
   if (theme === 'modern') {
-    // Enable modern CSS immediately
+    // Apply dark theme colors immediately (inline CSS - no download needed)
+    document.write('<style id="theme-preload">body.modern-theme{background:#1a1a2e!important;color:#e8e8e8!important;}body.modern-theme .card{background:#16213e!important;}</style>');
+  }
+  // Load full modern CSS
+  if (theme === 'modern') {
     document.write('<link rel="stylesheet" href="{{ url_for("static", filename="style-modern.css") }}" id="modern-style">');
   } else {
     document.write('<link rel="stylesheet" href="{{ url_for("static", filename="style-modern.css") }}" id="modern-style" disabled>');
