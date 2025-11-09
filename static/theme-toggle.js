@@ -58,9 +58,14 @@
         }, 300);
     }
     
+    // Apply theme immediately to body (if it exists)
+    if (document.body) {
+        applyTheme(getTheme());
+    }
+    
     // Initialize theme on page load
     document.addEventListener('DOMContentLoaded', function() {
-        // Apply saved theme
+        // Apply saved theme (in case body wasn't ready earlier)
         applyTheme(getTheme());
         
         // Create toggle button if it doesn't exist
