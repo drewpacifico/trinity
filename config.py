@@ -71,7 +71,8 @@ class ProductionConfig(Config):
     TESTING = False
     
     # PostgreSQL database for production
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    # Try DATABASE_URI first (Digital Ocean standard), fall back to DATABASE_URL
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or os.environ.get('DATABASE_URL')
     
     if SQLALCHEMY_DATABASE_URI and SQLALCHEMY_DATABASE_URI.startswith('postgres://'):
         # Fix for Heroku's postgres:// URL (should be postgresql://)
