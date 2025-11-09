@@ -223,17 +223,32 @@ body.modern-theme .theme-toggle:hover {
     <p>Your journey to becoming a freight agent</p>
   </div>
 
+  {% if error %}
+  <div style="background: rgba(239, 68, 68, 0.1); border: 2px solid rgba(239, 68, 68, 0.3); color: #ef4444; padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 14px;">
+    <span>⚠️ {{ error }}</span>
+  </div>
+  {% endif %}
+
   <form method="POST" action="{{ url_for('login') }}">
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" id="username" name="username" placeholder="Enter your username" required autofocus>
     </div>
 
-    <button type="submit" class="submit-btn">Start Training</button>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    </div>
+
+    <button type="submit" class="submit-btn">Sign In</button>
   </form>
 
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="{{ url_for('register') }}" style="color: var(--accent); text-decoration: none; font-size: 14px;">Don't have an account? Register</a>
+  </div>
+
   <div class="info-box">
-    💡 Enter any username to save your progress. No password required!
+    💡 Use your Trinity credentials to access your training. Need an account? Register above!
   </div>
 </div>
 
