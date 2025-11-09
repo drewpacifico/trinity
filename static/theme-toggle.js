@@ -4,7 +4,9 @@
     
     // Get or set theme preference
     function getTheme() {
-        return localStorage.getItem('theme') || 'classic';
+        // TEMPORARY: Force light mode for testing
+        return 'classic';
+        // return localStorage.getItem('theme') || 'classic';
     }
     
     function setTheme(theme) {
