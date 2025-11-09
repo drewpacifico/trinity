@@ -29,13 +29,17 @@ from models import (
     db, Chapter, Module, ChapterSection, QuizQuestion, 
     GlossaryTerm, User, get_or_create_user
 )
-from config import DevelopmentConfig
+from config import get_config
+import os
 
 
 def create_app():
     """Create Flask application with database configuration"""
     app = Flask(__name__)
-    app.config.from_object(DevelopmentConfig)
+    # Use production config if FLASK_ENV=production, otherwise development
+    env = os.environ.get('FLASK_ENV', 'development')
+    config = get_config(env)
+    app.config.from_object(config)
     db.init_app(app)
     return app
 
