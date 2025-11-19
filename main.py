@@ -2495,24 +2495,22 @@ def glossary():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """Login page with password authentication."""
+    """Simple login - just enter your name."""
     if request.method == "POST":
         username = request.form.get("username", "").strip()
-        password = request.form.get("password", "").strip()
         
-        if not username or not password:
-            return render_template("login.html", error="Please enter both username and password")
+        if not username:
+            return render_template("login.html", error="Please enter your name")
         
         # Find user by username
         from models import User
         user = User.query.filter_by(username=username).first()
         
-        if user and user.check_password(password):
+        if user:
             # Successful login
             session['user_id'] = user.id
             session['username'] = user.username
             session['logged_in'] = True
-            session['first_name'] = user.first_name
             
             # Update last login
             user.last_login = datetime.utcnow()
@@ -2520,8 +2518,8 @@ def login():
             
             return redirect(url_for("page", page_num=1))
         else:
-            # Invalid credentials
-            return render_template("login.html", error="Invalid username or password")
+            # User not found - suggest registration
+            return render_template("login.html", error="Name not found. Please register if you're new.")
     
     # GET request - show login page
     return render_template("login.html")
@@ -2529,65 +2527,26 @@ def login():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """Registration page for new users."""
+    """Simple registration - just enter your name to start."""
     if request.method == "POST":
-        # Get form data
-        first_name = request.form.get("first_name", "").strip()
-        last_name = request.form.get("last_name", "").strip()
-        employee_id = request.form.get("employee_id", "").strip()
+        # Get username (name) from form
         username = request.form.get("username", "").strip()
-        email = request.form.get("email", "").strip() or None
-        password = request.form.get("password", "").strip()
-        confirm_password = request.form.get("confirm_password", "").strip()
         
         # Validation
-        errors = []
-        
-        if not first_name or len(first_name) < 2:
-            errors.append("First name must be at least 2 characters")
-        
-        if not last_name or len(last_name) < 2:
-            errors.append("Last name must be at least 2 characters")
-        
-        if not employee_id or len(employee_id) < 3:
-            errors.append("Employee ID must be at least 3 characters")
-        
-        if not username or len(username) < 3:
-            errors.append("Username must be at least 3 characters")
-        
-        if not password or len(password) < 8:
-            errors.append("Password must be at least 8 characters")
-        
-        if password != confirm_password:
-            errors.append("Passwords do not match")
+        if not username or len(username) < 2:
+            return render_template("register.html", error="Please enter your name (at least 2 characters)")
         
         # Check for duplicate username
         from models import User
         if User.query.filter_by(username=username).first():
-            errors.append("Username already exists")
+            return render_template("register.html", error="This name is already registered. Please login instead.")
         
-        # Check for duplicate employee ID
-        if User.query.filter_by(employee_id=employee_id).first():
-            errors.append("Employee ID already exists")
-        
-        # Check for duplicate email if provided
-        if email and User.query.filter_by(email=email).first():
-            errors.append("Email already registered")
-        
-        if errors:
-            return render_template("register.html", error=" | ".join(errors))
-        
-        # Create new user
+        # Create new user (simple - just username)
         try:
             new_user = User(
                 username=username,
-                first_name=first_name,
-                last_name=last_name,
-                employee_id=employee_id,
-                email=email,
                 is_preview_mode=False
             )
-            new_user.set_password(password)
             
             db.session.add(new_user)
             db.session.commit()
@@ -2596,7 +2555,6 @@ def register():
             session['user_id'] = new_user.id
             session['username'] = new_user.username
             session['logged_in'] = True
-            session['first_name'] = new_user.first_name
             
             return redirect(url_for("page", page_num=1))
             
