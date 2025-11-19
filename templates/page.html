@@ -1735,6 +1735,124 @@ h3 {
                     </a>
                   </div>
                 {% endfor %}
+                
+                <!-- Chapter 7 Key Concepts -->
+                {% if page.summary_page_map and page.summary_page_map.get(7) %}
+                <div style="margin: 12px 0 6px; display: flex; align-items: center;">
+                  {% if preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=page.summary_page_map[7] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 7 Key Concepts
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <a href="{{ url_for('page', page_num=page.summary_page_map[7] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 7 Key Concepts
+                    </a>
+                  {% endif %}
+                </div>
+                {% endif %}
+                
+                <!-- Chapter 7 Action Items -->
+                {% if page.action_items_page_map and page.action_items_page_map.get(7) %}
+                <div style="margin: 6px 0; display: flex; align-items: center;">
+                  {% if preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=page.action_items_page_map[7] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 7 Action Items
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <a href="{{ url_for('page', page_num=page.action_items_page_map[7] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 7 Action Items
+                    </a>
+                  {% endif %}
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+            </li>
+          {% elif ch.id == 8 %}
+            <li style="cursor: pointer;">
+              <a href="{{ url_for('page', page_num=page.module_page_map.get(page.ch8_modules[0].id) if page.ch8_modules else 1) }}" style="color: var(--text); text-decoration: none; display: block;">Chapter {{ ch.id }}: {{ ch.title }}</a>
+              {% if page.ch8_modules %}
+              <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
+                {% for mod in page.ch8_modules %}
+                  {% set is_complete = module_completion.get(mod.id, False) %}
+                  <div style="margin: 6px 0; display: flex; align-items: center;">
+                    {% if preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% else %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    {% endif %}
+                    <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
+                       style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      Module {{ mod.id }}: {{ mod.title }}
+                    </a>
+                  </div>
+                {% endfor %}
+                
+                <!-- Chapter 8 Key Concepts -->
+                {% if page.summary_page_map and page.summary_page_map.get(8) %}
+                <div style="margin: 12px 0 6px; display: flex; align-items: center;">
+                  {% if preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=page.summary_page_map[8] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 8 Key Concepts
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <a href="{{ url_for('page', page_num=page.summary_page_map[8] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 8 Key Concepts
+                    </a>
+                  {% endif %}
+                </div>
+                {% endif %}
+                
+                <!-- Chapter 8 Action Items -->
+                {% if page.action_items_page_map and page.action_items_page_map.get(8) %}
+                <div style="margin: 6px 0; display: flex; align-items: center;">
+                  {% if preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=page.action_items_page_map[8] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 8 Action Items
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <a href="{{ url_for('page', page_num=page.action_items_page_map[8] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 8 Action Items
+                    </a>
+                  {% endif %}
+                </div>
+                {% endif %}
               </div>
               {% endif %}
             </li>
@@ -1787,6 +1905,52 @@ h3 {
                     </a>
                   </div>
                 {% endfor %}
+                
+                <!-- Chapter 9 Key Concepts -->
+                {% if page.summary_page_map and page.summary_page_map.get(9) %}
+                <div style="margin: 12px 0 6px; display: flex; align-items: center;">
+                  {% if preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=page.summary_page_map[9] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 9 Key Concepts
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <a href="{{ url_for('page', page_num=page.summary_page_map[9] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      📋 Chapter 9 Key Concepts
+                    </a>
+                  {% endif %}
+                </div>
+                {% endif %}
+                
+                <!-- Chapter 9 Action Items -->
+                {% if page.action_items_page_map and page.action_items_page_map.get(9) %}
+                <div style="margin: 6px 0; display: flex; align-items: center;">
+                  {% if preview_mode %}
+                    <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    <a href="{{ url_for('page', page_num=page.action_items_page_map[9] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 9 Action Items
+                    </a>
+                  {% else %}
+                    <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    <a href="{{ url_for('page', page_num=page.action_items_page_map[9] + 1) }}" 
+                       style="color: var(--highlight); text-decoration: none; transition: color 0.2s; font-weight: 600;"
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='var(--highlight)'">
+                      ✅ Chapter 9 Action Items
+                    </a>
+                  {% endif %}
+                </div>
+                {% endif %}
               </div>
               {% endif %}
             </li>

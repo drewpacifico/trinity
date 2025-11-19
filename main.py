@@ -1782,6 +1782,8 @@ def build_pages(text: str = None):
     pages = []
     module_page_map = {}  # Maps module_id -> page_num
     quiz_page_map = {}  # Maps quiz_id -> page_num
+    summary_page_map = {}  # Maps chapter_id -> page_num for summary pages
+    action_items_page_map = {}  # Maps chapter_id -> page_num for action_items pages
     
     # Page 0: Cover page (lines 1-27 of project.md)
     lines = text.splitlines() if text else []
@@ -1840,6 +1842,7 @@ def build_pages(text: str = None):
     
     # Chapter 1 summary
     if ch1["summary"]:
+        summary_page_map[1] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 1,
@@ -1850,6 +1853,7 @@ def build_pages(text: str = None):
     
     # Chapter 1 action items
     if ch1["action_items"]:
+        action_items_page_map[1] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 1,
@@ -1907,6 +1911,7 @@ def build_pages(text: str = None):
     
     # Chapter 2 summary
     if ch2["summary"]:
+        summary_page_map[2] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 2,
@@ -1917,6 +1922,7 @@ def build_pages(text: str = None):
     
     # Chapter 2 action items
     if ch2["action_items"]:
+        action_items_page_map[2] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 2,
@@ -1974,6 +1980,7 @@ def build_pages(text: str = None):
     
     # Chapter 3 summary
     if ch3["summary"]:
+        summary_page_map[3] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 3,
@@ -1984,6 +1991,7 @@ def build_pages(text: str = None):
     
     # Chapter 3 action items
     if ch3["action_items"]:
+        action_items_page_map[3] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 3,
@@ -2041,6 +2049,7 @@ def build_pages(text: str = None):
     
     # Chapter 4 summary
     if ch4["summary"]:
+        summary_page_map[4] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 4,
@@ -2051,6 +2060,7 @@ def build_pages(text: str = None):
     
     # Chapter 4 action items
     if ch4["action_items"]:
+        action_items_page_map[4] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 4,
@@ -2110,6 +2120,7 @@ def build_pages(text: str = None):
     
     # Chapter 5 summary
     if ch5["summary"]:
+        summary_page_map[5] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 5,
@@ -2120,6 +2131,7 @@ def build_pages(text: str = None):
     
     # Chapter 5 action items
     if ch5["action_items"]:
+        action_items_page_map[5] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 5,
@@ -2181,6 +2193,7 @@ def build_pages(text: str = None):
     
     # Chapter 6 summary
     if ch6["summary"]:
+        summary_page_map[6] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 6,
@@ -2191,6 +2204,7 @@ def build_pages(text: str = None):
     
     # Chapter 6 action items
     if ch6["action_items"]:
+        action_items_page_map[6] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 6,
@@ -2252,6 +2266,7 @@ def build_pages(text: str = None):
     
     # Chapter 7 summary
     if ch7["summary"]:
+        summary_page_map[7] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 7,
@@ -2262,6 +2277,7 @@ def build_pages(text: str = None):
     
     # Chapter 7 action items
     if ch7["action_items"]:
+        action_items_page_map[7] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 7,
@@ -2323,6 +2339,7 @@ def build_pages(text: str = None):
     
     # Chapter 8 summary
     if ch8["summary"]:
+        summary_page_map[8] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 8,
@@ -2333,6 +2350,7 @@ def build_pages(text: str = None):
     
     # Chapter 8 action items
     if ch8["action_items"]:
+        action_items_page_map[8] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 8,
@@ -2394,6 +2412,7 @@ def build_pages(text: str = None):
     
     # Chapter 9 summary
     if ch9["summary"]:
+        summary_page_map[9] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 9,
@@ -2404,6 +2423,7 @@ def build_pages(text: str = None):
     
     # Chapter 9 action items
     if ch9["action_items"]:
+        action_items_page_map[9] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 9,
@@ -2412,11 +2432,15 @@ def build_pages(text: str = None):
             "content_html": convert_to_html(ch9["action_items"])
         })
     
-    # Add module_page_map and quiz_page_map to cover and TOC pages
+    # Add module_page_map, quiz_page_map, summary_page_map, and action_items_page_map to cover and TOC pages
     pages[0]["module_page_map"] = module_page_map
     pages[0]["quiz_page_map"] = quiz_page_map
+    pages[0]["summary_page_map"] = summary_page_map
+    pages[0]["action_items_page_map"] = action_items_page_map
     pages[1]["module_page_map"] = module_page_map
     pages[1]["quiz_page_map"] = quiz_page_map
+    pages[1]["summary_page_map"] = summary_page_map
+    pages[1]["action_items_page_map"] = action_items_page_map
     
     # Note: Glossary is now a separate page at /glossary, not part of page navigation
     
