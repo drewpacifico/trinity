@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, jsonify
 import re
 from pathlib import Path
 import markdown
@@ -2632,6 +2632,119 @@ def preview():
     user = get_or_create_user('preview_user', is_preview=True)
     session['user_id'] = user.id
     return redirect(url_for("page", page_num=1))
+
+
+# ============================================================================
+# QUIZ QUESTION MANAGEMENT ROUTES
+# ============================================================================
+
+@app.route("/quiz_questions")
+def quiz_questions():
+    """Display quiz question management interface"""
+    # Get all quiz questions
+    questions = QuizQuestion.query.order_by(QuizQuestion.module_id, QuizQuestion.display_order).all()
+    
+    # Get all modules for dropdown
+    modules = Module.query.order_by(Module.chapter_id, Module.display_order).all()
+    
+    # Get all chapters for filtering
+    chapters = Chapter.query.order_by(Chapter.display_order).all()
+    
+    return render_template('quiz_questions.html', 
+                         questions=questions, 
+                         modules=modules, 
+                         chapters=chapters)
+
+
+@app.route("/add_quiz_question", methods=['POST'])
+def add_quiz_question():
+    """Add a new quiz question"""
+    try:
+        # Get form data
+        question_id = request.form.get('question_id')
+        module_id = request.form.get('module_id')
+        question = request.form.get('question')
+        choice_a = request.form.get('choice_a')
+        choice_b = request.form.get('choice_b')
+        choice_c = request.form.get('choice_c')
+        choice_d = request.form.get('choice_d')
+        correct_choice = request.form.get('correct_choice')
+        explanation = request.form.get('explanation')
+        display_order = request.form.get('display_order', 1)
+        
+        # Validate required fields
+        if not all([question_id, module_id, question, choice_a, choice_b, choice_c, choice_d, correct_choice, explanation]):
+            return redirect(url_for('quiz_questions', error='All fields are required'))
+        
+        # Check if question ID already exists
+        existing = QuizQuestion.query.get(question_id)
+        if existing:
+            return redirect(url_for('quiz_questions', error=f'Question ID {question_id} already exists'))
+        
+        # Create new question
+        new_question = QuizQuestion(
+            id=question_id,
+            module_id=module_id,
+            question=question,
+            choice_a=choice_a,
+            choice_b=choice_b,
+            choice_c=choice_c,
+            choice_d=choice_d,
+            correct_choice=correct_choice,
+            explanation=explanation,
+            display_order=int(display_order)
+        )
+        
+        db.session.add(new_question)
+        db.session.commit()
+        
+        return redirect(url_for('quiz_questions', success='Question added successfully!'))
+    
+    except Exception as e:
+        db.session.rollback()
+        return redirect(url_for('quiz_questions', error=f'Error adding question: {str(e)}'))
+
+
+@app.route("/update_quiz_question/<question_id>", methods=['POST'])
+def update_quiz_question(question_id):
+    """Update an existing quiz question"""
+    try:
+        # Get the question
+        question = QuizQuestion.query.get_or_404(question_id)
+        
+        # Update fields
+        question.module_id = request.form.get('module_id')
+        question.question = request.form.get('question')
+        question.choice_a = request.form.get('choice_a')
+        question.choice_b = request.form.get('choice_b')
+        question.choice_c = request.form.get('choice_c')
+        question.choice_d = request.form.get('choice_d')
+        question.correct_choice = request.form.get('correct_choice')
+        question.explanation = request.form.get('explanation')
+        question.display_order = int(request.form.get('display_order', 1))
+        
+        db.session.commit()
+        
+        return redirect(url_for('quiz_questions', success='Question updated successfully!'))
+    
+    except Exception as e:
+        db.session.rollback()
+        return redirect(url_for('quiz_questions', error=f'Error updating question: {str(e)}'))
+
+
+@app.route("/delete_quiz_question/<question_id>", methods=['POST'])
+def delete_quiz_question(question_id):
+    """Delete a quiz question"""
+    try:
+        question = QuizQuestion.query.get_or_404(question_id)
+        db.session.delete(question)
+        db.session.commit()
+        
+        return jsonify({'success': True})
+    
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'success': False, 'error': str(e)}), 400
 
 
 if __name__ == "__main__":
