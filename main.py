@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, session
 import re
 from pathlib import Path
 import markdown
+from datetime import datetime
 
 # Database imports
 from models import (
@@ -2201,8 +2202,17 @@ def build_pages(text: str = None):
 def index():
     # Check if user is logged in
     if not session.get('logged_in'):
-        return redirect(url_for("login"))
+        return redirect(url_for("home"))
     return redirect(url_for("page", page_num=1))
+
+
+@app.route("/home")
+def home():
+    """Home page with login/register options"""
+    # If already logged in, redirect to training
+    if session.get('logged_in'):
+        return redirect(url_for("page", page_num=1))
+    return render_template("home.html")
 
 
 @app.route("/page/<int:page_num>", methods=["GET", "POST"])
@@ -2485,29 +2495,124 @@ def glossary():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """Login page - simple username-based authentication."""
+    """Login page with password authentication."""
     if request.method == "POST":
         username = request.form.get("username", "").strip()
-        if username:
-            # Get or create user
-            user = get_or_create_user(username, is_preview=False)
+        password = request.form.get("password", "").strip()
+        
+        if not username or not password:
+            return render_template("login.html", error="Please enter both username and password")
+        
+        # Find user by username
+        from models import User
+        user = User.query.filter_by(username=username).first()
+        
+        if user and user.check_password(password):
+            # Successful login
             session['user_id'] = user.id
             session['username'] = user.username
             session['logged_in'] = True
+            session['first_name'] = user.first_name
+            
+            # Update last login
+            user.last_login = datetime.utcnow()
+            db.session.commit()
+            
             return redirect(url_for("page", page_num=1))
         else:
-            # If no username provided, redirect back to login
-            return redirect(url_for("login"))
+            # Invalid credentials
+            return render_template("login.html", error="Invalid username or password")
     
     # GET request - show login page
     return render_template("login.html")
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    """Registration page for new users."""
+    if request.method == "POST":
+        # Get form data
+        first_name = request.form.get("first_name", "").strip()
+        last_name = request.form.get("last_name", "").strip()
+        employee_id = request.form.get("employee_id", "").strip()
+        username = request.form.get("username", "").strip()
+        email = request.form.get("email", "").strip() or None
+        password = request.form.get("password", "").strip()
+        confirm_password = request.form.get("confirm_password", "").strip()
+        
+        # Validation
+        errors = []
+        
+        if not first_name or len(first_name) < 2:
+            errors.append("First name must be at least 2 characters")
+        
+        if not last_name or len(last_name) < 2:
+            errors.append("Last name must be at least 2 characters")
+        
+        if not employee_id or len(employee_id) < 3:
+            errors.append("Employee ID must be at least 3 characters")
+        
+        if not username or len(username) < 3:
+            errors.append("Username must be at least 3 characters")
+        
+        if not password or len(password) < 8:
+            errors.append("Password must be at least 8 characters")
+        
+        if password != confirm_password:
+            errors.append("Passwords do not match")
+        
+        # Check for duplicate username
+        from models import User
+        if User.query.filter_by(username=username).first():
+            errors.append("Username already exists")
+        
+        # Check for duplicate employee ID
+        if User.query.filter_by(employee_id=employee_id).first():
+            errors.append("Employee ID already exists")
+        
+        # Check for duplicate email if provided
+        if email and User.query.filter_by(email=email).first():
+            errors.append("Email already registered")
+        
+        if errors:
+            return render_template("register.html", error=" | ".join(errors))
+        
+        # Create new user
+        try:
+            new_user = User(
+                username=username,
+                first_name=first_name,
+                last_name=last_name,
+                employee_id=employee_id,
+                email=email,
+                is_preview_mode=False
+            )
+            new_user.set_password(password)
+            
+            db.session.add(new_user)
+            db.session.commit()
+            
+            # Auto-login after registration
+            session['user_id'] = new_user.id
+            session['username'] = new_user.username
+            session['logged_in'] = True
+            session['first_name'] = new_user.first_name
+            
+            return redirect(url_for("page", page_num=1))
+            
+        except Exception as e:
+            db.session.rollback()
+            return render_template("register.html", error=f"Registration failed: {str(e)}")
+    
+    # GET request - show registration page
+    return render_template("register.html")
 
 
 @app.route("/logout")
 def logout():
     """Logout and clear session."""
     session.clear()
-    return redirect(url_for("login"))
+    return redirect(url_for("home"))
 
 
 @app.route("/reset")

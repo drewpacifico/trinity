@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trinity Training Guide</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0f0f10;
+  --card: #1a1a1d;
+  --text: #e8e8e8;
+  --muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-dim: #4f46e5;
+  --highlight: #fbbf24;
+  --success: #10b981;
+}
+
+html, body { 
+  height: 100%; 
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  margin-bottom: 48px;
+}
+
+.logo h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--highlight);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.logo p {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 40px 32px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 80px rgba(99, 102, 241, 0.4);
+}
+
+.card-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 24px;
+  color: #00bcd4;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card .btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+}
+
+.card .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.6);
+}
+
+.card.register .btn {
+  background: linear-gradient(135deg, var(--success), #059669);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+}
+
+.card.register .btn:hover {
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.6);
+}
+
+.features {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.features h3 {
+  font-size: 20px;
+  margin-bottom: 24px;
+  color: var(--highlight);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+
+.feature {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+}
+
+.feature-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-text strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.feature-text span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Responsive: stack to 1 column on mobile */
+@media (max-width: 640px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modern theme overrides */
+body.modern-theme {
+  background: #f8f9fa;
+}
+
+body.modern-theme .card {
+  background: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+body.modern-theme .card:hover {
+  box-shadow: 0 12px 48px rgba(0, 188, 212, 0.3);
+}
+
+body.modern-theme .logo h1 {
+  color: #00bcd4;
+}
+
+body.modern-theme .logo p {
+  color: #546e7a;
+}
+
+body.modern-theme .features {
+  background: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+body.modern-theme .features h3 {
+  color: #00bcd4;
+}
+
+body.modern-theme .feature-text strong {
+  color: #2c3e50;
+}
+
+body.modern-theme .feature-text span {
+  color: #546e7a;
+}
+
+body.modern-theme .footer {
+  color: #546e7a;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--accent);
+  border: 2px solid var(--highlight);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.6);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 24px;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 28px rgba(251, 191, 36, 0.8);
+  background: var(--highlight);
+  border-color: var(--accent);
+}
+
+body.modern-theme .theme-toggle {
+  background: white;
+  border-color: #e0e0e0;
+}
+
+body.modern-theme .theme-toggle:hover {
+  border-color: #00bcd4;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo">
+    <h1>🚛 Trinity Training Guide</h1>
+    <p>Comprehensive training program for freight agents. Master the skills you need to succeed in the logistics industry.</p>
+  </div>
+
+  <div class="card-grid">
+    <a href="{{ url_for('login') }}" class="card login">
+      <div class="card-icon">🔑</div>
+      <h2>Login</h2>
+      <p>Already have an account? Sign in to continue your training journey.</p>
+      <span class="btn">Sign In</span>
+    </a>
+
+    <a href="{{ url_for('register') }}" class="card register">
+      <div class="card-icon">📝</div>
+      <h2>Register</h2>
+      <p>New to Trinity? Create your account and start your training today.</p>
+      <span class="btn">Get Started</span>
+    </a>
+  </div>
+
+  <div class="features">
+    <h3>✨ What You'll Learn</h3>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">📚</div>
+        <div class="feature-text">
+          <strong>6 Comprehensive Chapters</strong>
+          <span>Complete curriculum covering all aspects of freight logistics</span>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">✅</div>
+        <div class="feature-text">
+          <strong>Interactive Quizzes</strong>
+          <span>Test your knowledge and track your progress</span>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <div class="feature-text">
+          <strong>Progress Tracking</strong>
+          <span>Your progress is saved automatically as you learn</span>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-text">
+          <strong>Unlock Content</strong>
+          <span>Complete modules in sequence to unlock new chapters</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Trinity Training Guide • Your journey to becoming a freight agent starts here</p>
+  </div>
+</div>
+
+<div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+  🌙
+</div>
+
+<script src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
+
+</body>
+</html>
+

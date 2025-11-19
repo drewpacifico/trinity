@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register - Training Manual</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0f0f10;
+  --card: #1a1a1d;
+  --text: #e8e8e8;
+  --muted: #9ca3af;
+  --accent: #10b981;
+  --accent-dim: #059669;
+  --highlight: #fbbf24;
+  --error: #ef4444;
+}
+
+html, body { 
+  height: 100%; 
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.register-container {
+  max-width: 550px;
+  width: 100%;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 48px 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: fadeIn 0.5s ease-out;
+  margin: 20px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.logo p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.form-group label .required {
+  color: var(--error);
+  margin-left: 2px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.form-group input::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.form-group input.error {
+  border-color: var(--error);
+}
+
+.error-message {
+  color: var(--error);
+  font-size: 13px;
+  margin-top: 6px;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+  margin-bottom: 16px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.login-link a:hover {
+  color: var(--highlight);
+}
+
+.info-box {
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 4px solid var(--accent);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.password-strength {
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.password-strength-bar {
+  height: 100%;
+  width: 0%;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.password-strength-bar.weak {
+  width: 33%;
+  background: var(--error);
+}
+
+.password-strength-bar.medium {
+  width: 66%;
+  background: #f59e0b;
+}
+
+.password-strength-bar.strong {
+  width: 100%;
+  background: var(--accent);
+}
+
+.flash-message {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flash-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  color: var(--error);
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--accent);
+  border: 2px solid var(--highlight);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.6);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 24px;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 28px rgba(251, 191, 36, 0.8);
+  background: var(--highlight);
+  border-color: var(--accent);
+}
+
+/* Modern theme overrides */
+body.modern-theme {
+  background: #f8f9fa;
+}
+
+body.modern-theme .register-container {
+  background: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+body.modern-theme .logo h1 {
+  color: #10b981;
+}
+
+body.modern-theme .logo p {
+  color: #546e7a;
+}
+
+body.modern-theme .form-group label {
+  color: #2c3e50;
+}
+
+body.modern-theme .form-group input {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: #e0e0e0;
+  color: #2c3e50;
+}
+
+body.modern-theme .form-group input:focus {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+body.modern-theme .form-group input::placeholder {
+  color: #546e7a;
+}
+
+body.modern-theme .submit-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+body.modern-theme .info-box {
+  background: rgba(16, 185, 129, 0.1);
+  border-left-color: #10b981;
+  color: #546e7a;
+}
+
+body.modern-theme .login-link a {
+  color: #10b981;
+}
+
+body.modern-theme .theme-toggle {
+  background: white;
+  border-color: #e0e0e0;
+}
+
+body.modern-theme .theme-toggle:hover {
+  border-color: #10b981;
+}
+</style>
+</head>
+<body>
+
+<div class="register-container">
+  <div class="logo">
+    <h1>🚛 Create Account</h1>
+    <p>Join Trinity Training Guide</p>
+  </div>
+
+  {% if error %}
+  <div class="flash-message error">
+    <span>⚠️</span>
+    <span>{{ error }}</span>
+  </div>
+  {% endif %}
+
+  <form method="POST" action="{{ url_for('register') }}" id="registerForm">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="first_name">First Name <span class="required">*</span></label>
+        <input type="text" id="first_name" name="first_name" placeholder="John" required autofocus>
+        <div class="error-message" id="first_name_error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="last_name">Last Name <span class="required">*</span></label>
+        <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
+        <div class="error-message" id="last_name_error"></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="employee_id">Employee ID <span class="required">*</span></label>
+      <input type="text" id="employee_id" name="employee_id" placeholder="EMP001" required>
+      <div class="error-message" id="employee_id_error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="username">Username <span class="required">*</span></label>
+      <input type="text" id="username" name="username" placeholder="johndoe" required>
+      <div class="error-message" id="username_error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="john@example.com">
+      <div class="error-message" id="email_error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password <span class="required">*</span></label>
+      <input type="password" id="password" name="password" placeholder="Enter a strong password" required>
+      <div class="password-strength">
+        <div class="password-strength-bar" id="strengthBar"></div>
+      </div>
+      <div class="error-message" id="password_error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirm_password">Confirm Password <span class="required">*</span></label>
+      <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+      <div class="error-message" id="confirm_password_error"></div>
+    </div>
+
+    <button type="submit" class="submit-btn">Create Account</button>
+  </form>
+
+  <div class="login-link">
+    Already have an account? <a href="{{ url_for('login') }}">Sign In</a>
+  </div>
+
+  <div class="info-box">
+    💡 Your password should be at least 8 characters long and include uppercase, lowercase, and numbers.
+  </div>
+</div>
+
+<div class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+  🌙
+</div>
+
+<script>
+// Password strength checker
+const password = document.getElementById('password');
+const strengthBar = document.getElementById('strengthBar');
+
+password.addEventListener('input', function() {
+  const value = this.value;
+  let strength = 0;
+  
+  if (value.length >= 8) strength++;
+  if (value.match(/[a-z]/) && value.match(/[A-Z]/)) strength++;
+  if (value.match(/[0-9]/)) strength++;
+  if (value.match(/[^a-zA-Z0-9]/)) strength++;
+  
+  strengthBar.className = 'password-strength-bar';
+  if (strength <= 1) {
+    strengthBar.classList.add('weak');
+  } else if (strength <= 2) {
+    strengthBar.classList.add('medium');
+  } else {
+    strengthBar.classList.add('strong');
+  }
+});
+
+// Form validation
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  let isValid = true;
+  
+  // Clear previous errors
+  document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
+  document.querySelectorAll('input').forEach(el => el.classList.remove('error'));
+  
+  // Validate first name
+  const firstName = document.getElementById('first_name');
+  if (firstName.value.trim().length < 2) {
+    showError('first_name', 'First name must be at least 2 characters');
+    isValid = false;
+  }
+  
+  // Validate last name
+  const lastName = document.getElementById('last_name');
+  if (lastName.value.trim().length < 2) {
+    showError('last_name', 'Last name must be at least 2 characters');
+    isValid = false;
+  }
+  
+  // Validate employee ID
+  const employeeId = document.getElementById('employee_id');
+  if (employeeId.value.trim().length < 3) {
+    showError('employee_id', 'Employee ID must be at least 3 characters');
+    isValid = false;
+  }
+  
+  // Validate username
+  const username = document.getElementById('username');
+  if (username.value.trim().length < 3) {
+    showError('username', 'Username must be at least 3 characters');
+    isValid = false;
+  }
+  
+  // Validate password
+  const pwd = document.getElementById('password');
+  if (pwd.value.length < 8) {
+    showError('password', 'Password must be at least 8 characters');
+    isValid = false;
+  }
+  
+  // Validate password confirmation
+  const confirmPwd = document.getElementById('confirm_password');
+  if (pwd.value !== confirmPwd.value) {
+    showError('confirm_password', 'Passwords do not match');
+    isValid = false;
+  }
+  
+  if (!isValid) {
+    e.preventDefault();
+  }
+});
+
+function showError(fieldId, message) {
+  const field = document.getElementById(fieldId);
+  const error = document.getElementById(fieldId + '_error');
+  field.classList.add('error');
+  error.textContent = message;
+  error.classList.add('show');
+}
+</script>
+
+<script src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
+
+</body>
+</html>
+

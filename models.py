@@ -7,6 +7,7 @@ Supports both SQLite (development) and PostgreSQL (production).
 
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
 import json
 import random
 
@@ -193,8 +194,11 @@ class User(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
+    first_name = db.Column(db.String(100), nullable=False)
+    last_name = db.Column(db.String(100), nullable=False)
+    employee_id = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(255), unique=True)
-    password_hash = db.Column(db.String(255))  # For future authentication
+    password_hash = db.Column(db.String(255), nullable=False)
     is_preview_mode = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     last_login = db.Column(db.DateTime)
@@ -208,11 +212,22 @@ class User(db.Model):
     def __repr__(self):
         return f'<User {self.username}>'
     
+    def set_password(self, password):
+        """Hash and set the user's password"""
+        self.password_hash = generate_password_hash(password)
+    
+    def check_password(self, password):
+        """Check if the provided password matches the hash"""
+        return check_password_hash(self.password_hash, password)
+    
     def to_dict(self):
         """Convert to dictionary for JSON serialization"""
         return {
             'id': self.id,
             'username': self.username,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'employee_id': self.employee_id,
             'email': self.email,
             'is_preview_mode': self.is_preview_mode,
             'created_at': self.created_at.isoformat() if self.created_at else None,
