@@ -968,6 +968,33 @@ h3 {
             {% endfor %}
           {% endif %}
           
+          {% if not next_module.mod and page.ch7_modules %}
+            {% for mod in page.ch7_modules %}
+              {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+                {% set next_module.mod = mod %}
+                {% set next_module.page = page.module_page_map.get(mod['id']) %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          
+          {% if not next_module.mod and page.ch8_modules %}
+            {% for mod in page.ch8_modules %}
+              {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+                {% set next_module.mod = mod %}
+                {% set next_module.page = page.module_page_map.get(mod['id']) %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          
+          {% if not next_module.mod and page.ch9_modules %}
+            {% for mod in page.ch9_modules %}
+              {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+                {% set next_module.mod = mod %}
+                {% set next_module.page = page.module_page_map.get(mod['id']) %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          
           {% if next_module.mod and next_module.page %}
             <a href="{{ url_for('page', page_num=next_module.page) }}" class="continue-btn">
               <span style="font-size: 18px;">▶</span>
@@ -999,9 +1026,11 @@ h3 {
                   {% set is_complete = module_completion.get(mod.id, False) %}
                   {% set prev_index = loop.index0 - 1 %}
                   {% set is_locked = False %}
-                  {% if loop.index0 > 0 and not preview_mode %}
-                    {% set prev_mod_id = page.ch1_modules[prev_index].id %}
-                    {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                  {% if not preview_mode %}
+                    {% if loop.index0 > 0 %}
+                      {% set prev_mod_id = page.ch1_modules[prev_index].id %}
+                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                    {% endif %}
                   {% endif %}
                   
                   <div style="margin: 6px 0; display: flex; align-items: center;">
@@ -1013,7 +1042,7 @@ h3 {
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
                     
-                    {% if is_locked %}
+                    {% if is_locked and not preview_mode %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
                         🔒 Module {{ mod.id }}: {{ mod.title }}
                       </span>
@@ -1110,12 +1139,14 @@ h3 {
                   {% set is_complete = module_completion.get(mod.id, False) %}
                   {% set prev_index = loop.index0 - 1 %}
                   {% set is_locked = False %}
-                  {% if loop.index0 > 0 and not preview_mode %}
-                    {% set prev_mod_id = page.ch2_modules[prev_index].id %}
-                    {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                  {% elif loop.index0 == 0 and not preview_mode %}
-                    {# First module of Chapter 2 requires Chapter 1 completion #}
-                    {% set is_locked = not all_ch1_modules_complete %}
+                  {% if not preview_mode %}
+                    {% if loop.index0 > 0 %}
+                      {% set prev_mod_id = page.ch2_modules[prev_index].id %}
+                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                    {% elif loop.index0 == 0 %}
+                      {# First module of Chapter 2 requires Chapter 1 completion #}
+                      {% set is_locked = not all_ch1_modules_complete %}
+                    {% endif %}
                   {% endif %}
                   
                   <div style="margin: 6px 0; display: flex; align-items: center;">
@@ -1127,7 +1158,7 @@ h3 {
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
                     
-                    {% if is_locked %}
+                    {% if is_locked and not preview_mode %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
                         🔒 Module {{ mod.id }}: {{ mod.title }}
                       </span>
@@ -1224,12 +1255,14 @@ h3 {
                   {% set is_complete = module_completion.get(mod.id, False) %}
                   {% set prev_index = loop.index0 - 1 %}
                   {% set is_locked = False %}
-                  {% if loop.index0 > 0 and not preview_mode %}
-                    {% set prev_mod_id = page.ch3_modules[prev_index].id %}
-                    {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                  {% elif loop.index0 == 0 and not preview_mode %}
-                    {# First module of Chapter 3 requires Chapter 2 completion #}
-                    {% set is_locked = not all_ch2_modules_complete %}
+                  {% if not preview_mode %}
+                    {% if loop.index0 > 0 %}
+                      {% set prev_mod_id = page.ch3_modules[prev_index].id %}
+                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                    {% elif loop.index0 == 0 %}
+                      {# First module of Chapter 3 requires Chapter 2 completion #}
+                      {% set is_locked = not all_ch2_modules_complete %}
+                    {% endif %}
                   {% endif %}
                   
                   <div style="margin: 6px 0; display: flex; align-items: center;">
@@ -1241,7 +1274,7 @@ h3 {
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
                     
-                    {% if is_locked %}
+                    {% if is_locked and not preview_mode %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
                         🔒 Module {{ mod.id }}: {{ mod.title }}
                       </span>
@@ -1338,12 +1371,14 @@ h3 {
                   {% set is_complete = module_completion.get(mod.id, False) %}
                   {% set prev_index = loop.index0 - 1 %}
                   {% set is_locked = False %}
-                  {% if loop.index0 > 0 and not preview_mode %}
-                    {% set prev_mod_id = page.ch4_modules[prev_index].id %}
-                    {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                  {% elif loop.index0 == 0 and not preview_mode %}
-                    {# First module of Chapter 4 requires Chapter 3 completion #}
-                    {% set is_locked = not all_ch3_modules_complete %}
+                  {% if not preview_mode %}
+                    {% if loop.index0 > 0 %}
+                      {% set prev_mod_id = page.ch4_modules[prev_index].id %}
+                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                    {% elif loop.index0 == 0 %}
+                      {# First module of Chapter 4 requires Chapter 3 completion #}
+                      {% set is_locked = not all_ch3_modules_complete %}
+                    {% endif %}
                   {% endif %}
                   
                   <div style="margin: 6px 0; display: flex; align-items: center;">
@@ -1355,7 +1390,7 @@ h3 {
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
                     
-                    {% if is_locked %}
+                    {% if is_locked and not preview_mode %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
                         🔒 Module {{ mod.id }}: {{ mod.title }}
                       </span>
@@ -1452,12 +1487,14 @@ h3 {
                   {% set is_complete = module_completion.get(mod.id, False) %}
                   {% set prev_index = loop.index0 - 1 %}
                   {% set is_locked = False %}
-                  {% if loop.index0 > 0 and not preview_mode %}
-                    {% set prev_mod_id = page.ch5_modules[prev_index].id %}
-                    {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                  {% elif loop.index0 == 0 and not preview_mode %}
-                    {# First module of Chapter 5 requires Chapter 4 completion #}
-                    {% set is_locked = not all_ch4_modules_complete %}
+                  {% if not preview_mode %}
+                    {% if loop.index0 > 0 %}
+                      {% set prev_mod_id = page.ch5_modules[prev_index].id %}
+                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
+                    {% elif loop.index0 == 0 %}
+                      {# First module of Chapter 5 requires Chapter 4 completion #}
+                      {% set is_locked = not all_ch4_modules_complete %}
+                    {% endif %}
                   {% endif %}
                   
                   <div style="margin: 6px 0; display: flex; align-items: center;">
@@ -1469,7 +1506,7 @@ h3 {
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
                     
-                    {% if is_locked %}
+                    {% if is_locked and not preview_mode %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
                         🔒 Module {{ mod.id }}: {{ mod.title }}
                       </span>
@@ -1587,7 +1624,7 @@ h3 {
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
                     
-                    {% if is_locked %}
+                    {% if is_locked and not preview_mode %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
                         🔒 Module {{ mod.id }}: {{ mod.title }}
                       </span>
@@ -1672,6 +1709,84 @@ h3 {
                     </span>
                   {% endif %}
                 </div>
+              </div>
+              {% endif %}
+            </li>
+          {% elif ch.id == 7 %}
+            <li style="cursor: pointer;">
+              <a href="{{ url_for('page', page_num=page.module_page_map.get(page.ch7_modules[0].id) if page.ch7_modules else 1) }}" style="color: var(--text); text-decoration: none; display: block;">Chapter {{ ch.id }}: {{ ch.title }}</a>
+              {% if page.ch7_modules %}
+              <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
+                {% for mod in page.ch7_modules %}
+                  {% set is_complete = module_completion.get(mod.id, False) %}
+                  <div style="margin: 6px 0; display: flex; align-items: center;">
+                    {% if preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% else %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    {% endif %}
+                    <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
+                       style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      Module {{ mod.id }}: {{ mod.title }}
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </li>
+          {% elif ch.id == 8 %}
+            <li style="cursor: pointer;">
+              <a href="{{ url_for('page', page_num=page.module_page_map.get(page.ch8_modules[0].id) if page.ch8_modules else 1) }}" style="color: var(--text); text-decoration: none; display: block;">Chapter {{ ch.id }}: {{ ch.title }}</a>
+              {% if page.ch8_modules %}
+              <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
+                {% for mod in page.ch8_modules %}
+                  {% set is_complete = module_completion.get(mod.id, False) %}
+                  <div style="margin: 6px 0; display: flex; align-items: center;">
+                    {% if preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% else %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    {% endif %}
+                    <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
+                       style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      Module {{ mod.id }}: {{ mod.title }}
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </li>
+          {% elif ch.id == 9 %}
+            <li style="cursor: pointer;">
+              <a href="{{ url_for('page', page_num=page.module_page_map.get(page.ch9_modules[0].id) if page.ch9_modules else 1) }}" style="color: var(--text); text-decoration: none; display: block;">Chapter {{ ch.id }}: {{ ch.title }}</a>
+              {% if page.ch9_modules %}
+              <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
+                {% for mod in page.ch9_modules %}
+                  {% set is_complete = module_completion.get(mod.id, False) %}
+                  <div style="margin: 6px 0; display: flex; align-items: center;">
+                    {% if preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% else %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
+                    {% endif %}
+                    <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
+                       style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
+                       onmouseover="this.style.color='var(--accent)'" 
+                       onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      Module {{ mod.id }}: {{ mod.title }}
+                    </a>
+                  </div>
+                {% endfor %}
               </div>
               {% endif %}
             </li>
@@ -1858,6 +1973,33 @@ h3 {
     {% endif %}
     {% if not next_module.mod and page.ch6_modules %}
       {% for mod in page.ch6_modules %}
+        {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+          {% set next_module.mod = mod %}
+          {% set next_module.page = page.module_page_map.get(mod['id']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    
+    {% if not next_module.mod and page.ch7_modules %}
+      {% for mod in page.ch7_modules %}
+        {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+          {% set next_module.mod = mod %}
+          {% set next_module.page = page.module_page_map.get(mod['id']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    
+    {% if not next_module.mod and page.ch8_modules %}
+      {% for mod in page.ch8_modules %}
+        {% if not next_module.mod and module_completion.get(mod['id']) != True %}
+          {% set next_module.mod = mod %}
+          {% set next_module.page = page.module_page_map.get(mod['id']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    
+    {% if not next_module.mod and page.ch9_modules %}
+      {% for mod in page.ch9_modules %}
         {% if not next_module.mod and module_completion.get(mod['id']) != True %}
           {% set next_module.mod = mod %}
           {% set next_module.page = page.module_page_map.get(mod['id']) %}
