@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, jsonify
 import re
 from pathlib import Path
 import markdown
@@ -40,6 +40,12 @@ def get_current_user():
     if user_id:
         user = User.query.get(user_id)
         if user:
+            # Sync preview_mode from database to session
+            if user.is_preview_mode and not session.get('preview_mode'):
+                session['preview_mode'] = True
+            elif not user.is_preview_mode and session.get('preview_mode'):
+                # Only clear if it was set from database, not from /preview route
+                pass  # Keep session preview_mode if user manually enabled it
             return user
     
     # Check for preview mode
@@ -54,6 +60,10 @@ def get_current_user():
     user = get_or_create_user(username, is_preview=is_preview)
     session['user_id'] = user.id
     session['username'] = user.username
+    
+    # If user has preview mode enabled in database, set session preview_mode
+    if user.is_preview_mode:
+        session['preview_mode'] = True
     
     return user
 
@@ -1765,18 +1775,23 @@ def build_pages(text: str = None):
     ch4 = extract_chapter_content(text, 4)
     ch5 = extract_chapter_content(text, 5)
     ch6 = extract_chapter_content(text, 6)
+    ch7 = extract_chapter_content(text, 7)
+    ch8 = extract_chapter_content(text, 8)
+    ch9 = extract_chapter_content(text, 9)
     
     pages = []
     module_page_map = {}  # Maps module_id -> page_num
     quiz_page_map = {}  # Maps quiz_id -> page_num
+    summary_page_map = {}  # Maps chapter_id -> page_num for summary pages
+    action_items_page_map = {}  # Maps chapter_id -> page_num for action_items pages
     
     # Page 0: Cover page (lines 1-27 of project.md)
-    lines = text.splitlines()
+    lines = text.splitlines() if text else []
     cover_content = "\n".join(lines[0:27]) if len(lines) >= 27 else ""
-    pages.append({"type": "cover", "content": cover_content, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"], "ch6_modules": ch6["modules"]})
+    pages.append({"type": "cover", "content": cover_content, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"], "ch6_modules": ch6["modules"], "ch7_modules": ch7["modules"], "ch8_modules": ch8["modules"], "ch9_modules": ch9["modules"]})
     
     # Page 1: Table of Contents
-    pages.append({"type": "toc", "chapters": chapters, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"], "ch6_modules": ch6["modules"]})
+    pages.append({"type": "toc", "chapters": chapters, "ch1_modules": ch1["modules"], "ch2_modules": ch2["modules"], "ch3_modules": ch3["modules"], "ch4_modules": ch4["modules"], "ch5_modules": ch5["modules"], "ch6_modules": ch6["modules"], "ch7_modules": ch7["modules"], "ch8_modules": ch8["modules"], "ch9_modules": ch9["modules"]})
     
     # Chapter 1 intro
     if ch1["intro"]:
@@ -1827,6 +1842,7 @@ def build_pages(text: str = None):
     
     # Chapter 1 summary
     if ch1["summary"]:
+        summary_page_map[1] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 1,
@@ -1837,6 +1853,7 @@ def build_pages(text: str = None):
     
     # Chapter 1 action items
     if ch1["action_items"]:
+        action_items_page_map[1] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 1,
@@ -1894,6 +1911,7 @@ def build_pages(text: str = None):
     
     # Chapter 2 summary
     if ch2["summary"]:
+        summary_page_map[2] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 2,
@@ -1904,6 +1922,7 @@ def build_pages(text: str = None):
     
     # Chapter 2 action items
     if ch2["action_items"]:
+        action_items_page_map[2] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 2,
@@ -1961,6 +1980,7 @@ def build_pages(text: str = None):
     
     # Chapter 3 summary
     if ch3["summary"]:
+        summary_page_map[3] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 3,
@@ -1971,6 +1991,7 @@ def build_pages(text: str = None):
     
     # Chapter 3 action items
     if ch3["action_items"]:
+        action_items_page_map[3] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 3,
@@ -2028,6 +2049,7 @@ def build_pages(text: str = None):
     
     # Chapter 4 summary
     if ch4["summary"]:
+        summary_page_map[4] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 4,
@@ -2038,6 +2060,7 @@ def build_pages(text: str = None):
     
     # Chapter 4 action items
     if ch4["action_items"]:
+        action_items_page_map[4] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 4,
@@ -2097,6 +2120,7 @@ def build_pages(text: str = None):
     
     # Chapter 5 summary
     if ch5["summary"]:
+        summary_page_map[5] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 5,
@@ -2107,6 +2131,7 @@ def build_pages(text: str = None):
     
     # Chapter 5 action items
     if ch5["action_items"]:
+        action_items_page_map[5] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 5,
@@ -2168,6 +2193,7 @@ def build_pages(text: str = None):
     
     # Chapter 6 summary
     if ch6["summary"]:
+        summary_page_map[6] = len(pages)
         pages.append({
             "type": "summary",
             "chapter_id": 6,
@@ -2178,6 +2204,7 @@ def build_pages(text: str = None):
     
     # Chapter 6 action items
     if ch6["action_items"]:
+        action_items_page_map[6] = len(pages)
         pages.append({
             "type": "action_items",
             "chapter_id": 6,
@@ -2186,11 +2213,234 @@ def build_pages(text: str = None):
             "content_html": convert_to_html(ch6["action_items"])
         })
     
-    # Add module_page_map and quiz_page_map to cover and TOC pages
+    # ================================================================
+    # CHAPTER 7
+    # ================================================================
+    
+    # Chapter 7 intro
+    if ch7["intro"]:
+        pages.append({
+            "type": "intro",
+            "chapter_id": 7,
+            "chapter_title": ch7["chapter_title"],
+            "content": ch7["intro"],
+            "content_html": convert_to_html(ch7["intro"])
+        })
+    
+    # Chapter 7 modules
+    for mod in ch7["modules"]:
+        module_page_map[mod["id"]] = len(pages)  # Record the first page number for this module
+        content_text = "\n".join(mod["content"])
+        
+        # Split module content into multiple pages if needed
+        content_pages = split_content_into_pages(content_text)
+        
+        for page_idx, page_content in enumerate(content_pages):
+            pages.append({
+                "type": "module",
+                "chapter_id": 7,
+                "chapter_title": ch7["chapter_title"],
+                "module_id": mod["id"],
+                "module_title": mod["title"],
+                "content": page_content,
+                "content_html": convert_to_html(page_content),
+                "module_page_num": page_idx + 1,
+                "module_total_pages": len(content_pages)
+            })
+        
+        # Add quiz questions after the last page of each module (from database)
+        quiz_questions = get_quiz_questions_for_module(mod["id"])
+        
+        if quiz_questions:
+            for idx, quiz_question in enumerate(quiz_questions):
+                quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
+                pages.append({
+                    "type": "quiz",
+                    "chapter_id": 7,
+                    "module_id": mod["id"],
+                    "module_title": mod["title"],
+                    "quiz_question": quiz_question,
+                    "question_number": idx + 1,
+                    "total_questions": len(quiz_questions)
+                })
+    
+    # Chapter 7 summary
+    if ch7["summary"]:
+        summary_page_map[7] = len(pages)
+        pages.append({
+            "type": "summary",
+            "chapter_id": 7,
+            "chapter_title": ch7["chapter_title"],
+            "content": ch7["summary"],
+            "content_html": convert_to_html(ch7["summary"])
+        })
+    
+    # Chapter 7 action items
+    if ch7["action_items"]:
+        action_items_page_map[7] = len(pages)
+        pages.append({
+            "type": "action_items",
+            "chapter_id": 7,
+            "chapter_title": ch7["chapter_title"],
+            "content": ch7["action_items"],
+            "content_html": convert_to_html(ch7["action_items"])
+        })
+    
+    # ================================================================
+    # CHAPTER 8
+    # ================================================================
+    
+    # Chapter 8 intro
+    if ch8["intro"]:
+        pages.append({
+            "type": "intro",
+            "chapter_id": 8,
+            "chapter_title": ch8["chapter_title"],
+            "content": ch8["intro"],
+            "content_html": convert_to_html(ch8["intro"])
+        })
+    
+    # Chapter 8 modules
+    for mod in ch8["modules"]:
+        module_page_map[mod["id"]] = len(pages)  # Record the first page number for this module
+        content_text = "\n".join(mod["content"])
+        
+        # Split module content into multiple pages if needed
+        content_pages = split_content_into_pages(content_text)
+        
+        for page_idx, page_content in enumerate(content_pages):
+            pages.append({
+                "type": "module",
+                "chapter_id": 8,
+                "chapter_title": ch8["chapter_title"],
+                "module_id": mod["id"],
+                "module_title": mod["title"],
+                "content": page_content,
+                "content_html": convert_to_html(page_content),
+                "module_page_num": page_idx + 1,
+                "module_total_pages": len(content_pages)
+            })
+        
+        # Add quiz questions after the last page of each module (from database)
+        quiz_questions = get_quiz_questions_for_module(mod["id"])
+        
+        if quiz_questions:
+            for idx, quiz_question in enumerate(quiz_questions):
+                quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
+                pages.append({
+                    "type": "quiz",
+                    "chapter_id": 8,
+                    "module_id": mod["id"],
+                    "module_title": mod["title"],
+                    "quiz_question": quiz_question,
+                    "question_number": idx + 1,
+                    "total_questions": len(quiz_questions)
+                })
+    
+    # Chapter 8 summary
+    if ch8["summary"]:
+        summary_page_map[8] = len(pages)
+        pages.append({
+            "type": "summary",
+            "chapter_id": 8,
+            "chapter_title": ch8["chapter_title"],
+            "content": ch8["summary"],
+            "content_html": convert_to_html(ch8["summary"])
+        })
+    
+    # Chapter 8 action items
+    if ch8["action_items"]:
+        action_items_page_map[8] = len(pages)
+        pages.append({
+            "type": "action_items",
+            "chapter_id": 8,
+            "chapter_title": ch8["chapter_title"],
+            "content": ch8["action_items"],
+            "content_html": convert_to_html(ch8["action_items"])
+        })
+    
+    # ================================================================
+    # CHAPTER 9
+    # ================================================================
+    
+    # Chapter 9 intro
+    if ch9["intro"]:
+        pages.append({
+            "type": "intro",
+            "chapter_id": 9,
+            "chapter_title": ch9["chapter_title"],
+            "content": ch9["intro"],
+            "content_html": convert_to_html(ch9["intro"])
+        })
+    
+    # Chapter 9 modules
+    for mod in ch9["modules"]:
+        module_page_map[mod["id"]] = len(pages)  # Record the first page number for this module
+        content_text = "\n".join(mod["content"])
+        
+        # Split module content into multiple pages if needed
+        content_pages = split_content_into_pages(content_text)
+        
+        for page_idx, page_content in enumerate(content_pages):
+            pages.append({
+                "type": "module",
+                "chapter_id": 9,
+                "chapter_title": ch9["chapter_title"],
+                "module_id": mod["id"],
+                "module_title": mod["title"],
+                "content": page_content,
+                "content_html": convert_to_html(page_content),
+                "module_page_num": page_idx + 1,
+                "module_total_pages": len(content_pages)
+            })
+        
+        # Add quiz questions after the last page of each module (from database)
+        quiz_questions = get_quiz_questions_for_module(mod["id"])
+        
+        if quiz_questions:
+            for idx, quiz_question in enumerate(quiz_questions):
+                quiz_page_map[quiz_question["id"]] = len(pages)  # Track quiz question page number
+                pages.append({
+                    "type": "quiz",
+                    "chapter_id": 9,
+                    "module_id": mod["id"],
+                    "module_title": mod["title"],
+                    "quiz_question": quiz_question,
+                    "question_number": idx + 1,
+                    "total_questions": len(quiz_questions)
+                })
+    
+    # Chapter 9 summary
+    if ch9["summary"]:
+        summary_page_map[9] = len(pages)
+        pages.append({
+            "type": "summary",
+            "chapter_id": 9,
+            "chapter_title": ch9["chapter_title"],
+            "content": ch9["summary"],
+            "content_html": convert_to_html(ch9["summary"])
+        })
+    
+    # Chapter 9 action items
+    if ch9["action_items"]:
+        action_items_page_map[9] = len(pages)
+        pages.append({
+            "type": "action_items",
+            "chapter_id": 9,
+            "chapter_title": ch9["chapter_title"],
+            "content": ch9["action_items"],
+            "content_html": convert_to_html(ch9["action_items"])
+        })
+    
+    # Add module_page_map, quiz_page_map, summary_page_map, and action_items_page_map to cover and TOC pages
     pages[0]["module_page_map"] = module_page_map
     pages[0]["quiz_page_map"] = quiz_page_map
+    pages[0]["summary_page_map"] = summary_page_map
+    pages[0]["action_items_page_map"] = action_items_page_map
     pages[1]["module_page_map"] = module_page_map
     pages[1]["quiz_page_map"] = quiz_page_map
+    pages[1]["summary_page_map"] = summary_page_map
+    pages[1]["action_items_page_map"] = action_items_page_map
     
     # Note: Glossary is now a separate page at /glossary, not part of page navigation
     
@@ -2301,90 +2551,94 @@ def page(page_num: int):
     prev_num = page_num - 1 if page_num > 0 else None
     
     # Check if in preview mode (bypasses all locks for content creators)
-    preview_mode = session.get('preview_mode', False)
+    # Check preview mode from session OR from user's database record
+    preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
     
     # Only allow next if not a quiz OR quiz has been answered correctly (or in preview mode)
     next_allowed = True
     if current_page.get("type") == "quiz" and not quiz_answered and not preview_mode:
         next_allowed = False
     
-    # Check if trying to access a locked page (module/summary/action_items)
-    if not preview_mode and current_page.get("type") == "module":
-        # Check if previous modules are complete
-        current_module_id = current_page.get("module_id")
-        if current_module_id:
-            # Define module sequences for each chapter
-            chapter_1_modules = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"]
-            chapter_2_modules = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"]
-            chapter_3_modules = ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"]
-            chapter_4_modules = ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"]
-            
-            # Determine which chapter and check previous modules (using database)
-            if current_module_id.startswith("1."):
-                module_index = chapter_1_modules.index(current_module_id) if current_module_id in chapter_1_modules else 0
-                if module_index > 0:
-                    for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_1_modules[i]):
-                            return redirect(url_for("page", page_num=1))
-            elif current_module_id.startswith("2."):
-                # For Chapter 2, first check if all Chapter 1 is complete
-                if not get_chapter_completion_status(user.id, 1):
-                    return redirect(url_for("page", page_num=1))
-                # Then check previous Chapter 2 modules
-                module_index = chapter_2_modules.index(current_module_id) if current_module_id in chapter_2_modules else 0
-                if module_index > 0:
-                    for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_2_modules[i]):
-                            return redirect(url_for("page", page_num=1))
-            elif current_module_id.startswith("3."):
-                # For Chapter 3, first check if all Chapter 2 is complete
-                if not get_chapter_completion_status(user.id, 2):
-                    return redirect(url_for("page", page_num=1))
-                # Then check previous Chapter 3 modules
-                module_index = chapter_3_modules.index(current_module_id) if current_module_id in chapter_3_modules else 0
-                if module_index > 0:
-                    for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_3_modules[i]):
-                            return redirect(url_for("page", page_num=1))
-            elif current_module_id.startswith("4."):
-                # For Chapter 4, first check if all Chapter 3 is complete
-                if not get_chapter_completion_status(user.id, 3):
-                    return redirect(url_for("page", page_num=1))
-                # Then check previous Chapter 4 modules
-                module_index = chapter_4_modules.index(current_module_id) if current_module_id in chapter_4_modules else 0
-                if module_index > 0:
-                    for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_4_modules[i]):
-                            return redirect(url_for("page", page_num=1))
-            elif current_module_id.startswith("5."):
-                # For Chapter 5, first check if all Chapter 4 is complete
-                if not get_chapter_completion_status(user.id, 4):
-                    return redirect(url_for("page", page_num=1))
-                # Then check previous Chapter 5 modules
-                chapter_5_modules = ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
-                module_index = chapter_5_modules.index(current_module_id) if current_module_id in chapter_5_modules else 0
-                if module_index > 0:
-                    for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_5_modules[i]):
-                            return redirect(url_for("page", page_num=1))
-            elif current_module_id.startswith("6."):
-                # For Chapter 6, first check if all Chapter 5 is complete
-                if not get_chapter_completion_status(user.id, 5):
-                    return redirect(url_for("page", page_num=1))
-                # Then check previous Chapter 6 modules
-                chapter_6_modules = ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "6.11"]
-                module_index = chapter_6_modules.index(current_module_id) if current_module_id in chapter_6_modules else 0
-                if module_index > 0:
-                    for i in range(module_index):
-                        if not get_module_completion_status(user.id, chapter_6_modules[i]):
-                            return redirect(url_for("page", page_num=1))
+    # MODULE ACCESS RESTRICTIONS DISABLED - All modules are now freely accessible
+    # Uncomment the code below to re-enable sequential module locking
     
-    # Lock summary and action items until all modules complete (unless in preview mode)
-    if not preview_mode and current_page.get("type") in ["summary", "action_items"]:
-        chapter_id = current_page.get("chapter_id", 1)
-        if not get_chapter_completion_status(user.id, chapter_id):
-            # Redirect to TOC if trying to access locked summary/action items
-            return redirect(url_for("page", page_num=1))
+    # # Check if trying to access a locked page (module/summary/action_items)
+    # if not preview_mode and current_page.get("type") == "module":
+    #     # Check if previous modules are complete
+    #     current_module_id = current_page.get("module_id")
+    #     if current_module_id:
+    #         # Define module sequences for each chapter
+    #         chapter_1_modules = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"]
+    #         chapter_2_modules = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"]
+    #         chapter_3_modules = ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"]
+    #         chapter_4_modules = ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"]
+    #         
+    #         # Determine which chapter and check previous modules (using database)
+    #         if current_module_id.startswith("1."):
+    #             module_index = chapter_1_modules.index(current_module_id) if current_module_id in chapter_1_modules else 0
+    #             if module_index > 0:
+    #                 for i in range(module_index):
+    #                     if not get_module_completion_status(user.id, chapter_1_modules[i]):
+    #                         return redirect(url_for("page", page_num=1))
+    #         elif current_module_id.startswith("2."):
+    #             # For Chapter 2, first check if all Chapter 1 is complete
+    #             if not get_chapter_completion_status(user.id, 1):
+    #                 return redirect(url_for("page", page_num=1))
+    #             # Then check previous Chapter 2 modules
+    #             module_index = chapter_2_modules.index(current_module_id) if current_module_id in chapter_2_modules else 0
+    #             if module_index > 0:
+    #                 for i in range(module_index):
+    #                     if not get_module_completion_status(user.id, chapter_2_modules[i]):
+    #                         return redirect(url_for("page", page_num=1))
+    #         elif current_module_id.startswith("3."):
+    #             # For Chapter 3, first check if all Chapter 2 is complete
+    #             if not get_chapter_completion_status(user.id, 2):
+    #                 return redirect(url_for("page", page_num=1))
+    #             # Then check previous Chapter 3 modules
+    #             module_index = chapter_3_modules.index(current_module_id) if current_module_id in chapter_3_modules else 0
+    #             if module_index > 0:
+    #                 for i in range(module_index):
+    #                     if not get_module_completion_status(user.id, chapter_3_modules[i]):
+    #                         return redirect(url_for("page", page_num=1))
+    #         elif current_module_id.startswith("4."):
+    #             # For Chapter 4, first check if all Chapter 3 is complete
+    #             if not get_chapter_completion_status(user.id, 3):
+    #                 return redirect(url_for("page", page_num=1))
+    #             # Then check previous Chapter 4 modules
+    #             module_index = chapter_4_modules.index(current_module_id) if current_module_id in chapter_4_modules else 0
+    #             if module_index > 0:
+    #                 for i in range(module_index):
+    #                     if not get_module_completion_status(user.id, chapter_4_modules[i]):
+    #                         return redirect(url_for("page", page_num=1))
+    #         elif current_module_id.startswith("5."):
+    #             # For Chapter 5, first check if all Chapter 4 is complete
+    #             if not get_chapter_completion_status(user.id, 4):
+    #                 return redirect(url_for("page", page_num=1))
+    #             # Then check previous Chapter 5 modules
+    #             chapter_5_modules = ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
+    #             module_index = chapter_5_modules.index(current_module_id) if current_module_id in chapter_5_modules else 0
+    #             if module_index > 0:
+    #                 for i in range(module_index):
+    #                     if not get_module_completion_status(user.id, chapter_5_modules[i]):
+    #                         return redirect(url_for("page", page_num=1))
+    #         elif current_module_id.startswith("6."):
+    #             # For Chapter 6, first check if all Chapter 5 is complete
+    #             if not get_chapter_completion_status(user.id, 5):
+    #                 return redirect(url_for("page", page_num=1))
+    #             # Then check previous Chapter 6 modules
+    #             chapter_6_modules = ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "6.11"]
+    #             module_index = chapter_6_modules.index(current_module_id) if current_module_id in chapter_6_modules else 0
+    #             if module_index > 0:
+    #                 for i in range(module_index):
+    #                     if not get_module_completion_status(user.id, chapter_6_modules[i]):
+    #                         return redirect(url_for("page", page_num=1))
+    # 
+    # # Lock summary and action items until all modules complete (unless in preview mode)
+    # if not preview_mode and current_page.get("type") in ["summary", "action_items"]:
+    #     chapter_id = current_page.get("chapter_id", 1)
+    #     if not get_chapter_completion_status(user.id, chapter_id):
+    #         # Redirect to TOC if trying to access locked summary/action items
+    #         return redirect(url_for("page", page_num=1))
     
     next_num = page_num + 1 if page_num < len(pages) - 1 and next_allowed else None
     
@@ -2495,24 +2749,22 @@ def glossary():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """Login page with password authentication."""
+    """Simple login - just enter your name."""
     if request.method == "POST":
         username = request.form.get("username", "").strip()
-        password = request.form.get("password", "").strip()
         
-        if not username or not password:
-            return render_template("login.html", error="Please enter both username and password")
+        if not username:
+            return render_template("login.html", error="Please enter your name")
         
         # Find user by username
         from models import User
         user = User.query.filter_by(username=username).first()
         
-        if user and user.check_password(password):
+        if user:
             # Successful login
             session['user_id'] = user.id
             session['username'] = user.username
             session['logged_in'] = True
-            session['first_name'] = user.first_name
             
             # Update last login
             user.last_login = datetime.utcnow()
@@ -2520,8 +2772,8 @@ def login():
             
             return redirect(url_for("page", page_num=1))
         else:
-            # Invalid credentials
-            return render_template("login.html", error="Invalid username or password")
+            # User not found - suggest registration
+            return render_template("login.html", error="Name not found. Please register if you're new.")
     
     # GET request - show login page
     return render_template("login.html")
@@ -2529,65 +2781,26 @@ def login():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """Registration page for new users."""
+    """Simple registration - just enter your name to start."""
     if request.method == "POST":
-        # Get form data
-        first_name = request.form.get("first_name", "").strip()
-        last_name = request.form.get("last_name", "").strip()
-        employee_id = request.form.get("employee_id", "").strip()
+        # Get username (name) from form
         username = request.form.get("username", "").strip()
-        email = request.form.get("email", "").strip() or None
-        password = request.form.get("password", "").strip()
-        confirm_password = request.form.get("confirm_password", "").strip()
         
         # Validation
-        errors = []
-        
-        if not first_name or len(first_name) < 2:
-            errors.append("First name must be at least 2 characters")
-        
-        if not last_name or len(last_name) < 2:
-            errors.append("Last name must be at least 2 characters")
-        
-        if not employee_id or len(employee_id) < 3:
-            errors.append("Employee ID must be at least 3 characters")
-        
-        if not username or len(username) < 3:
-            errors.append("Username must be at least 3 characters")
-        
-        if not password or len(password) < 8:
-            errors.append("Password must be at least 8 characters")
-        
-        if password != confirm_password:
-            errors.append("Passwords do not match")
+        if not username or len(username) < 2:
+            return render_template("register.html", error="Please enter your name (at least 2 characters)")
         
         # Check for duplicate username
         from models import User
         if User.query.filter_by(username=username).first():
-            errors.append("Username already exists")
+            return render_template("register.html", error="This name is already registered. Please login instead.")
         
-        # Check for duplicate employee ID
-        if User.query.filter_by(employee_id=employee_id).first():
-            errors.append("Employee ID already exists")
-        
-        # Check for duplicate email if provided
-        if email and User.query.filter_by(email=email).first():
-            errors.append("Email already registered")
-        
-        if errors:
-            return render_template("register.html", error=" | ".join(errors))
-        
-        # Create new user
+        # Create new user (simple - just username)
         try:
             new_user = User(
                 username=username,
-                first_name=first_name,
-                last_name=last_name,
-                employee_id=employee_id,
-                email=email,
                 is_preview_mode=False
             )
-            new_user.set_password(password)
             
             db.session.add(new_user)
             db.session.commit()
@@ -2596,7 +2809,6 @@ def register():
             session['user_id'] = new_user.id
             session['username'] = new_user.username
             session['logged_in'] = True
-            session['first_name'] = new_user.first_name
             
             return redirect(url_for("page", page_num=1))
             
@@ -2632,6 +2844,119 @@ def preview():
     user = get_or_create_user('preview_user', is_preview=True)
     session['user_id'] = user.id
     return redirect(url_for("page", page_num=1))
+
+
+# ============================================================================
+# QUIZ QUESTION MANAGEMENT ROUTES
+# ============================================================================
+
+@app.route("/quiz_questions")
+def quiz_questions():
+    """Display quiz question management interface"""
+    # Get all quiz questions
+    questions = QuizQuestion.query.order_by(QuizQuestion.module_id, QuizQuestion.display_order).all()
+    
+    # Get all modules for dropdown
+    modules = Module.query.order_by(Module.chapter_id, Module.display_order).all()
+    
+    # Get all chapters for filtering
+    chapters = Chapter.query.order_by(Chapter.display_order).all()
+    
+    return render_template('quiz_questions.html', 
+                         questions=questions, 
+                         modules=modules, 
+                         chapters=chapters)
+
+
+@app.route("/add_quiz_question", methods=['POST'])
+def add_quiz_question():
+    """Add a new quiz question"""
+    try:
+        # Get form data
+        question_id = request.form.get('question_id')
+        module_id = request.form.get('module_id')
+        question = request.form.get('question')
+        choice_a = request.form.get('choice_a')
+        choice_b = request.form.get('choice_b')
+        choice_c = request.form.get('choice_c')
+        choice_d = request.form.get('choice_d')
+        correct_choice = request.form.get('correct_choice')
+        explanation = request.form.get('explanation')
+        display_order = request.form.get('display_order', 1)
+        
+        # Validate required fields
+        if not all([question_id, module_id, question, choice_a, choice_b, choice_c, choice_d, correct_choice, explanation]):
+            return redirect(url_for('quiz_questions', error='All fields are required'))
+        
+        # Check if question ID already exists
+        existing = QuizQuestion.query.get(question_id)
+        if existing:
+            return redirect(url_for('quiz_questions', error=f'Question ID {question_id} already exists'))
+        
+        # Create new question
+        new_question = QuizQuestion(
+            id=question_id,
+            module_id=module_id,
+            question=question,
+            choice_a=choice_a,
+            choice_b=choice_b,
+            choice_c=choice_c,
+            choice_d=choice_d,
+            correct_choice=correct_choice,
+            explanation=explanation,
+            display_order=int(display_order)
+        )
+        
+        db.session.add(new_question)
+        db.session.commit()
+        
+        return redirect(url_for('quiz_questions', success='Question added successfully!'))
+    
+    except Exception as e:
+        db.session.rollback()
+        return redirect(url_for('quiz_questions', error=f'Error adding question: {str(e)}'))
+
+
+@app.route("/update_quiz_question/<question_id>", methods=['POST'])
+def update_quiz_question(question_id):
+    """Update an existing quiz question"""
+    try:
+        # Get the question
+        question = QuizQuestion.query.get_or_404(question_id)
+        
+        # Update fields
+        question.module_id = request.form.get('module_id')
+        question.question = request.form.get('question')
+        question.choice_a = request.form.get('choice_a')
+        question.choice_b = request.form.get('choice_b')
+        question.choice_c = request.form.get('choice_c')
+        question.choice_d = request.form.get('choice_d')
+        question.correct_choice = request.form.get('correct_choice')
+        question.explanation = request.form.get('explanation')
+        question.display_order = int(request.form.get('display_order', 1))
+        
+        db.session.commit()
+        
+        return redirect(url_for('quiz_questions', success='Question updated successfully!'))
+    
+    except Exception as e:
+        db.session.rollback()
+        return redirect(url_for('quiz_questions', error=f'Error updating question: {str(e)}'))
+
+
+@app.route("/delete_quiz_question/<question_id>", methods=['POST'])
+def delete_quiz_question(question_id):
+    """Delete a quiz question"""
+    try:
+        question = QuizQuestion.query.get_or_404(question_id)
+        db.session.delete(question)
+        db.session.commit()
+        
+        return jsonify({'success': True})
+    
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'success': False, 'error': str(e)}), 400
 
 
 if __name__ == "__main__":

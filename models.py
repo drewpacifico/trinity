@@ -194,11 +194,11 @@ class User(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
-    first_name = db.Column(db.String(100), nullable=False)
-    last_name = db.Column(db.String(100), nullable=False)
-    employee_id = db.Column(db.String(50), unique=True, nullable=False)
+    first_name = db.Column(db.String(100))  # Optional for simple login
+    last_name = db.Column(db.String(100))   # Optional for simple login
+    employee_id = db.Column(db.String(50), unique=True)  # Optional for simple login
     email = db.Column(db.String(255), unique=True)
-    password_hash = db.Column(db.String(255), nullable=False)
+    password_hash = db.Column(db.String(255))  # Optional - no password needed for simple login
     is_preview_mode = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     last_login = db.Column(db.DateTime)

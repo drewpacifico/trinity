@@ -15,12 +15,12 @@
   --accent: #6366f1;
   --accent-dim: #4f46e5;
   --highlight: #fbbf24;
+  --error: #ef4444;
 }
 
 html, body { 
   height: 100%; 
   margin: 0;
-  overflow: hidden;
 }
 
 body {
@@ -50,20 +50,21 @@ body {
 
 .logo {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .logo h1 {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
-  color: var(--highlight);
-  margin-bottom: 8px;
+  color: var(--accent);
+  margin-bottom: 12px;
   letter-spacing: -0.5px;
 }
 
 .logo p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .form-group {
@@ -72,64 +73,105 @@ body {
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-weight: 600;
   color: var(--text);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 14px 16px;
+  padding: 16px 18px;
   background: rgba(99, 102, 241, 0.1);
   border: 2px solid rgba(99, 102, 241, 0.2);
   border-radius: 12px;
   color: var(--text);
   font-size: 16px;
-  transition: all 0.3s ease;
   font-family: inherit;
+  transition: all 0.3s ease;
 }
 
 .form-group input:focus {
   outline: none;
   border-color: var(--accent);
   background: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
 }
 
 .form-group input::placeholder {
   color: var(--muted);
-  opacity: 0.6;
 }
 
 .submit-btn {
   width: 100%;
   padding: 16px;
   background: linear-gradient(135deg, var(--accent), var(--accent-dim));
-  color: white;
   border: none;
   border-radius: 12px;
+  color: white;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
-  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  margin-top: 8px;
 }
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
+.submit-btn:active {
+  transform: translateY(0);
+}
 
 .info-box {
+  margin-top: 32px;
+  padding: 20px;
   background: rgba(99, 102, 241, 0.1);
-  border-left: 4px solid var(--accent);
-  padding: 16px;
-  border-radius: 8px;
-  margin-top: 24px;
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
   font-size: 14px;
   color: var(--muted);
+  line-height: 1.6;
+}
+
+.info-box strong {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.register-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.register-link:hover {
+  color: var(--highlight);
+  text-decoration: underline;
+}
+
+.flash-message {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flash-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  color: var(--error);
 }
 
 .theme-toggle {
@@ -169,7 +211,7 @@ body.modern-theme .login-container {
 }
 
 body.modern-theme .logo h1 {
-  color: #00bcd4;
+  color: #6366f1;
 }
 
 body.modern-theme .logo p {
@@ -181,14 +223,14 @@ body.modern-theme .form-group label {
 }
 
 body.modern-theme .form-group input {
-  background: rgba(0, 188, 212, 0.05);
+  background: rgba(99, 102, 241, 0.05);
   border-color: #e0e0e0;
   color: #2c3e50;
 }
 
 body.modern-theme .form-group input:focus {
-  border-color: #00bcd4;
-  background: rgba(0, 188, 212, 0.1);
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
 }
 
 body.modern-theme .form-group input::placeholder {
@@ -196,64 +238,89 @@ body.modern-theme .form-group input::placeholder {
 }
 
 body.modern-theme .submit-btn {
-  background: linear-gradient(135deg, #00bcd4, #26c6da);
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
 }
 
 body.modern-theme .info-box {
-  background: rgba(0, 188, 212, 0.1);
-  border-left-color: #00bcd4;
+  background: rgba(99, 102, 241, 0.1);
+  border-color: #e0e0e0;
   color: #546e7a;
 }
 
-body.modern-theme .theme-toggle {
-  background: white;
-  border-color: #e0e0e0;
+body.modern-theme .info-box strong {
+  color: #6366f1;
 }
 
-body.modern-theme .theme-toggle:hover {
-  border-color: #00bcd4;
+body.modern-theme .register-link {
+  color: #6366f1;
+}
+
+body.modern-theme .flash-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #dc2626;
+}
+
+@media (max-width: 640px) {
+  .login-container {
+    padding: 36px 28px;
+  }
+  
+  .logo h1 {
+    font-size: 28px;
+  }
 }
 </style>
 </head>
 <body>
-
-<div class="login-container">
-  <div class="logo">
-    <h1>🚛 Training Manual</h1>
-    <p>Your journey to becoming a freight agent</p>
-  </div>
-
-  {% if error %}
-  <div style="background: rgba(239, 68, 68, 0.1); border: 2px solid rgba(239, 68, 68, 0.3); color: #ef4444; padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 14px;">
-    <span>⚠️ {{ error }}</span>
-  </div>
-  {% endif %}
-
-  <form method="POST" action="{{ url_for('login') }}">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username" required autofocus>
+  <div class="login-container">
+    <div class="logo">
+      <h1>👋 Welcome Back!</h1>
+      <p>Enter your name to continue</p>
     </div>
 
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    {% if error %}
+    <div class="flash-message error">
+      <span>⚠️</span>
+      <span>{{ error }}</span>
+    </div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+      <div class="form-group">
+        <label for="username">Your Name</label>
+        <input 
+          type="text" 
+          id="username" 
+          name="username" 
+          placeholder="Enter your name" 
+          required 
+          autofocus
+          autocomplete="name"
+        >
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Continue Training →
+      </button>
+    </form>
+
+    <div class="info-box">
+      <strong>🔐 Secure & Simple</strong>
+      Your progress is saved under your name. Just enter the same name each time you return.
     </div>
 
-    <button type="submit" class="submit-btn">Sign In</button>
-  </form>
-
-  <div style="text-align: center; margin-top: 20px;">
-    <a href="{{ url_for('register') }}" style="color: var(--accent); text-decoration: none; font-size: 14px;">Don't have an account? Register</a>
+    <a href="{{ url_for('register') }}" class="register-link">
+      New user? Start here →
+    </a>
   </div>
 
-  <div class="info-box">
-    💡 Use your Trinity credentials to access your training. Need an account? Register above!
-  </div>
-</div>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <span id="theme-icon">🌙</span>
+  </button>
 
-<script src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
-
+  <!-- Theme Toggle Script -->
+  <script src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
 </body>
 </html>
-
