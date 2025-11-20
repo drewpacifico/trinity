@@ -2913,6 +2913,12 @@ def preview():
 @app.route("/quiz_questions")
 def quiz_questions():
     """Display quiz question management interface"""
+    # Require preview mode
+    user = get_current_user()
+    preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
+    if not preview_mode:
+        return redirect(url_for("page", page_num=1))
+    
     # Get all quiz questions
     questions = QuizQuestion.query.order_by(QuizQuestion.module_id, QuizQuestion.display_order).all()
     
@@ -2925,12 +2931,19 @@ def quiz_questions():
     return render_template('quiz_questions.html', 
                          questions=questions, 
                          modules=modules, 
-                         chapters=chapters)
+                         chapters=chapters,
+                         preview_mode=preview_mode)
 
 
 @app.route("/add_quiz_question", methods=['POST'])
 def add_quiz_question():
     """Add a new quiz question"""
+    # Require preview mode
+    user = get_current_user()
+    preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
+    if not preview_mode:
+        return redirect(url_for("page", page_num=1))
+    
     try:
         # Get form data
         question_id = request.form.get('question_id')
@@ -2980,6 +2993,12 @@ def add_quiz_question():
 @app.route("/update_quiz_question/<question_id>", methods=['POST'])
 def update_quiz_question(question_id):
     """Update an existing quiz question"""
+    # Require preview mode
+    user = get_current_user()
+    preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
+    if not preview_mode:
+        return redirect(url_for("page", page_num=1))
+    
     try:
         # Get the question
         question = QuizQuestion.query.get_or_404(question_id)
@@ -3007,6 +3026,12 @@ def update_quiz_question(question_id):
 @app.route("/delete_quiz_question/<question_id>", methods=['POST'])
 def delete_quiz_question(question_id):
     """Delete a quiz question"""
+    # Require preview mode
+    user = get_current_user()
+    preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
+    if not preview_mode:
+        return redirect(url_for("page", page_num=1))
+    
     try:
         question = QuizQuestion.query.get_or_404(question_id)
         db.session.delete(question)

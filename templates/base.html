@@ -89,7 +89,9 @@ pre { white-space: pre-wrap; margin: 0; }
       <div class="brand"><a href="{{ url_for('index') }}">Training Manual</a></div>
       <div class="navbar">
         <a class="badge" href="{{ url_for('index') }}">Chapters</a>
+        {% if preview_mode %}
         <a class="badge admin" href="{{ url_for('quiz_questions') }}">📝 Quiz Manager</a>
+        {% endif %}
       </div>
     </div>
 
