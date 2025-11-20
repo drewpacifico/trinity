@@ -2499,6 +2499,33 @@ def page(page_num: int):
     # Get current user for database operations
     user = get_current_user()
     
+    # Shuffle quiz question choices BEFORE handling submission (so order is consistent)
+    if current_page.get("type") == "quiz":
+        quiz_id = current_page["quiz_question"]["id"]
+        # Get the QuizQuestion object to use get_shuffled_for_user
+        from models import QuizQuestion
+        quiz_obj = QuizQuestion.query.get(quiz_id)
+        
+        if quiz_obj:
+            # Get shuffled choices for this user (maintains consistent order per user)
+            shuffled_data = quiz_obj.get_shuffled_for_user(user.id)
+            
+            # Replace quiz_question with shuffled version
+            current_page["quiz_question"] = {
+                "id": shuffled_data["id"],
+                "question": shuffled_data["question"],
+                "choices": shuffled_data["choices"],  # Already shuffled
+                "correct_index": shuffled_data["correct_index"],  # Index in shuffled array
+                "explanation": shuffled_data["explanation"],
+                "answer_order": shuffled_data["answer_order"]  # Store order for answer submission
+            }
+            
+            # Store answer_order in session for answer submission
+            if 'quiz_answer_orders' not in session:
+                session['quiz_answer_orders'] = {}
+            session['quiz_answer_orders'][quiz_id] = shuffled_data["answer_order"]
+            session.modified = True
+    
     # Handle quiz answer submission (now uses database)
     quiz_feedback = None
     if request.method == "POST" and current_page.get("type") == "quiz":
@@ -2507,10 +2534,14 @@ def page(page_num: int):
             selected_index = int(selected_answer)
             quiz_question = current_page["quiz_question"]
             
+            # Get the stored answer_order from session (set when page was rendered above)
+            # Fallback to answer_order from quiz_question dict if session doesn't have it
+            answer_order = session.get('quiz_answer_orders', {}).get(
+                quiz_question["id"],
+                quiz_question.get("answer_order", ['a', 'b', 'c', 'd'])
+            )
+            
             # Submit answer to database
-            # Note: The quiz_question has choices in original order (a, b, c, d)
-            # We need to pass the order to the database function
-            answer_order = ['a', 'b', 'c', 'd']  # Original order for now
             result = update_user_quiz_answer(
                 user.id,
                 quiz_question["id"],
@@ -2666,6 +2697,9 @@ def page(page_num: int):
     all_ch4_modules_complete = False
     all_ch5_modules_complete = False
     all_ch6_modules_complete = False
+    all_ch7_modules_complete = False
+    all_ch8_modules_complete = False
+    all_ch9_modules_complete = False
     if pages:
         # Get modules from all chapters' data stored in pages
         ch1_modules = pages[0].get("ch1_modules", [])
@@ -2674,6 +2708,9 @@ def page(page_num: int):
         ch4_modules = pages[0].get("ch4_modules", [])
         ch5_modules = pages[0].get("ch5_modules", [])
         ch6_modules = pages[0].get("ch6_modules", [])
+        ch7_modules = pages[0].get("ch7_modules", [])
+        ch8_modules = pages[0].get("ch8_modules", [])
+        ch9_modules = pages[0].get("ch9_modules", [])
         
         # Get module completion from database
         for mod in ch1_modules:
@@ -2699,6 +2736,18 @@ def page(page_num: int):
         for mod in ch6_modules:
             module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
         all_ch6_modules_complete = get_chapter_completion_status(user.id, 6)
+        
+        for mod in ch7_modules:
+            module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
+        all_ch7_modules_complete = get_chapter_completion_status(user.id, 7)
+        
+        for mod in ch8_modules:
+            module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
+        all_ch8_modules_complete = get_chapter_completion_status(user.id, 8)
+        
+        for mod in ch9_modules:
+            module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
+        all_ch9_modules_complete = get_chapter_completion_status(user.id, 9)
     
     # Quiz map for TOC dropdown display (now from database)
     quiz_map = {}
@@ -2725,6 +2774,9 @@ def page(page_num: int):
         all_ch4_modules_complete=all_ch4_modules_complete,
         all_ch5_modules_complete=all_ch5_modules_complete,
         all_ch6_modules_complete=all_ch6_modules_complete,
+        all_ch7_modules_complete=all_ch7_modules_complete,
+        all_ch8_modules_complete=all_ch8_modules_complete,
+        all_ch9_modules_complete=all_ch9_modules_complete,
         preview_mode=preview_mode,
         quiz_map=quiz_map,
         quiz_answers=session.get('quiz_answers', {})
