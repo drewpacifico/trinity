@@ -182,6 +182,11 @@ def main():
         action='store_true',
         help='Apply changes (default is dry-run)'
     )
+    parser.add_argument(
+        '--skip-if-unavailable',
+        action='store_true',
+        help='Skip migration if database is not available (for build time)'
+    )
     
     args = parser.parse_args()
     
@@ -189,6 +194,14 @@ def main():
         engine = create_engine(database_uri)
         migrate_schema(engine, apply=args.apply)
     
+    except OperationalError as e:
+        if args.skip_if_unavailable:
+            print("\n[INFO] Database not available during build - skipping migration")
+            print("       Run migrations manually after deployment")
+            sys.exit(0)  # Exit successfully
+        else:
+            print(f"\n[ERROR] Database connection failed: {e}")
+            sys.exit(1)
     except Exception as e:
         print(f"\n[ERROR] Failed: {e}")
         sys.exit(1)

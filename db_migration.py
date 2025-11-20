@@ -30,6 +30,7 @@ from models import (
     GlossaryTerm, User, get_or_create_user
 )
 from config import get_config
+from sqlalchemy.exc import OperationalError
 import os
 
 
@@ -609,6 +610,11 @@ def main():
         action='store_true',
         help='Verify migration results'
     )
+    parser.add_argument(
+        '--skip-if-unavailable',
+        action='store_true',
+        help='Skip migration if database is not available (for build time)'
+    )
     
     args = parser.parse_args()
     
@@ -620,6 +626,14 @@ def main():
     
     try:
         with app.app_context():
+            # Test database connection if skip flag is set
+            if args.skip_if_unavailable:
+                try:
+                    db.engine.connect()
+                except OperationalError:
+                    print("\n[INFO] Database not available during build - skipping migration")
+                    print("       Run migrations manually after deployment")
+                    sys.exit(0)  # Exit successfully
             # Determine what to migrate
             migrate_all = not (args.chapters_only or args.quizzes_only or args.glossary_only or args.verify)
             
