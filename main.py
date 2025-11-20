@@ -3,6 +3,9 @@ import re
 from pathlib import Path
 import markdown
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # Database imports
 from models import (

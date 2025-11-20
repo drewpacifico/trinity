@@ -1,209 +1,198 @@
 """
-Database Migration: Add User Registration Fields
+Migration Script: Make User Fields Nullable in Production Database
 
-This script adds the new fields to the users table:
-- first_name
-- last_name
-- employee_id
-- Makes password_hash NOT NULL
-- Updates existing users with default values
+This script modifies the users table in PostgreSQL to allow NULL values
+for optional fields: first_name, last_name, employee_id, email, password_hash, last_login
 
 Usage:
-    python migrate_users_schema.py
+    python migrate_users_schema.py                    # Preview changes (dry-run)
+    python migrate_users_schema.py --apply           # Apply changes
 """
 
+import os
 import sys
+import argparse
 from pathlib import Path
 
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent))
+# Try to load .env file if python-dotenv is available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
-from flask import Flask
-from models import db
-from config import get_config
-from sqlalchemy import text
-import os
+from sqlalchemy import create_engine, text, inspect
+from sqlalchemy.exc import OperationalError
+
+# Get database URI from environment
+database_uri = os.environ.get('DATABASE_URI') or os.environ.get('DATABASE_URL')
+
+if not database_uri:
+    print("[ERROR] DATABASE_URI or DATABASE_URL not set!")
+    print("\nSet it with:")
+    print("  PowerShell: $env:DATABASE_URI = 'postgresql://...'")
+    print("  Or create a .env file with DATABASE_URI=...")
+    sys.exit(1)
+
+# Fix postgres:// to postgresql:// if needed
+if database_uri.startswith('postgres://'):
+    database_uri = database_uri.replace('postgres://', 'postgresql://', 1)
 
 
-def migrate_users_table():
-    """Add new fields to users table"""
-    
-    print("🔄 Starting user schema migration...\n")
-    
-    # Create Flask app
-    app = Flask(__name__)
-    config = get_config()
-    app.config.from_object(config)
-    db.init_app(app)
-    
-    with app.app_context():
-        # Check database type
-        db_uri = app.config['SQLALCHEMY_DATABASE_URI']
-        is_sqlite = db_uri.startswith('sqlite')
-        is_postgres = 'postgresql' in db_uri or 'postgres://' in db_uri
+def check_current_schema(engine):
+    """Check current schema of users table"""
+    with engine.connect() as conn:
+        # Get column information
+        result = conn.execute(text("""
+            SELECT 
+                column_name,
+                data_type,
+                is_nullable,
+                column_default
+            FROM information_schema.columns
+            WHERE table_name = 'users'
+            ORDER BY ordinal_position;
+        """))
         
-        print(f"📊 Database: {'SQLite' if is_sqlite else 'PostgreSQL'}")
-        print(f"🔗 URI: {db_uri[:50]}...")
-        print()
+        columns = {}
+        for row in result.fetchall():
+            columns[row[0]] = {
+                'data_type': row[1],
+                'is_nullable': row[2] == 'YES',
+                'default': row[3]
+            }
         
-        try:
-            # For SQLite, we need to handle schema changes carefully
-            if is_sqlite:
-                print("⚠️  SQLite detected - Will recreate table with new schema")
-                print("    Existing user data will be preserved")
-                print()
-                
-                # Check if new columns already exist
-                result = db.session.execute(text("PRAGMA table_info(users)"))
-                columns = [row[1] for row in result.fetchall()]
-                
-                if 'first_name' in columns:
-                    print("✅ Migration already applied! New fields exist.")
-                    return
-                
-                print("📝 Creating migration SQL...")
-                
-                # SQLite doesn't support ALTER TABLE easily, so we:
-                # 1. Rename old table
-                # 2. Create new table with updated schema
-                # 3. Copy data
-                # 4. Drop old table
-                
-                migration_sql = """
-                -- Step 1: Rename existing table
-                ALTER TABLE users RENAME TO users_old;
-                
-                -- Step 2: Create new table with updated schema
-                CREATE TABLE users (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    username VARCHAR(100) NOT NULL UNIQUE,
-                    first_name VARCHAR(100) NOT NULL,
-                    last_name VARCHAR(100) NOT NULL,
-                    employee_id VARCHAR(50) NOT NULL UNIQUE,
-                    email VARCHAR(255) UNIQUE,
-                    password_hash VARCHAR(255) NOT NULL,
-                    is_preview_mode BOOLEAN DEFAULT 0,
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    last_login TIMESTAMP
-                );
-                
-                -- Step 3: Copy existing data with default values
-                INSERT INTO users (id, username, first_name, last_name, employee_id, email, password_hash, is_preview_mode, created_at, last_login)
-                SELECT 
-                    id,
-                    username,
-                    'User' as first_name,
-                    COALESCE(username, 'Unknown') as last_name,
-                    'EMP' || CAST(id AS TEXT) as employee_id,
-                    email,
-                    COALESCE(password_hash, 'legacy_user_no_password') as password_hash,
-                    is_preview_mode,
-                    created_at,
-                    last_login
-                FROM users_old;
-                
-                -- Step 4: Drop old table
-                DROP TABLE users_old;
-                """
-                
-                print("🚀 Executing migration...")
-                for statement in migration_sql.split(';'):
-                    if statement.strip():
-                        db.session.execute(text(statement))
-                
-                db.session.commit()
-                print("✅ SQLite migration complete!")
-                
-            elif is_postgres:
-                print("🐘 PostgreSQL detected - Using ALTER TABLE")
-                print()
-                
-                # Check if columns exist
-                result = db.session.execute(text("""
-                    SELECT column_name 
-                    FROM information_schema.columns 
-                    WHERE table_name = 'users'
-                """))
-                columns = [row[0] for row in result.fetchall()]
-                
-                if 'first_name' in columns:
-                    print("✅ Migration already applied! New fields exist.")
-                    return
-                
-                print("📝 Adding new columns...")
-                
-                # Add new columns (as nullable first)
-                db.session.execute(text("ALTER TABLE users ADD COLUMN first_name VARCHAR(100)"))
-                db.session.execute(text("ALTER TABLE users ADD COLUMN last_name VARCHAR(100)"))
-                db.session.execute(text("ALTER TABLE users ADD COLUMN employee_id VARCHAR(50)"))
-                
-                print("📝 Setting default values for existing users...")
-                
-                # Update existing users with default values
-                db.session.execute(text("""
-                    UPDATE users 
-                    SET first_name = 'User',
-                        last_name = COALESCE(username, 'Unknown'),
-                        employee_id = 'EMP' || CAST(id AS TEXT)
-                    WHERE first_name IS NULL
-                """))
-                
-                # Update password_hash for users without it
-                db.session.execute(text("""
-                    UPDATE users
-                    SET password_hash = 'legacy_user_no_password'
-                    WHERE password_hash IS NULL
-                """))
-                
-                db.session.commit()
-                
-                print("📝 Making fields NOT NULL...")
-                
-                # Now make fields NOT NULL
-                db.session.execute(text("ALTER TABLE users ALTER COLUMN first_name SET NOT NULL"))
-                db.session.execute(text("ALTER TABLE users ALTER COLUMN last_name SET NOT NULL"))
-                db.session.execute(text("ALTER TABLE users ALTER COLUMN employee_id SET NOT NULL"))
-                db.session.execute(text("ALTER TABLE users ALTER COLUMN password_hash SET NOT NULL"))
-                
-                print("📝 Adding unique constraint to employee_id...")
-                db.session.execute(text("ALTER TABLE users ADD CONSTRAINT users_employee_id_key UNIQUE (employee_id)"))
-                
-                db.session.commit()
-                print("✅ PostgreSQL migration complete!")
-            
+        return columns
+
+
+def migrate_schema(engine, apply=False):
+    """Migrate users table schema to allow NULL values"""
+    
+    print("="*60)
+    print("USER TABLE SCHEMA MIGRATION")
+    print("="*60)
+    
+    # Hide password in output
+    safe_uri = database_uri.split('@')[1] if '@' in database_uri else database_uri
+    print(f"\nDatabase: ...@{safe_uri}")
+    
+    if not apply:
+        print("\n[DRY RUN MODE] - No changes will be made")
+    else:
+        print("\n[APPLY MODE] - Changes will be applied!")
+    
+    print()
+    
+    try:
+        # Check current schema
+        print("[*] Checking current schema...")
+        current_schema = check_current_schema(engine)
+        
+        print("\nCurrent schema:")
+        fields_to_migrate = ['first_name', 'last_name', 'employee_id', 'email', 'password_hash', 'last_login']
+        
+        changes_needed = []
+        for field in fields_to_migrate:
+            if field in current_schema:
+                nullable = current_schema[field]['is_nullable']
+                print(f"   {field:20} - NULL allowed: {nullable}")
+                if not nullable:
+                    changes_needed.append(field)
             else:
-                print("❌ Unknown database type")
-                return
+                print(f"   {field:20} - NOT FOUND")
+        
+        if not changes_needed:
+            print("\n[SUCCESS] All fields already allow NULL values!")
+            print("   No migration needed.")
+            return
+        
+        print(f"\n[*] Found {len(changes_needed)} fields that need to be modified:")
+        for field in changes_needed:
+            print(f"   • {field}")
+        
+        if not apply:
+            print("\n[DRY RUN] Would execute the following SQL:")
+            print()
+            for field in changes_needed:
+                sql = f"ALTER TABLE users ALTER COLUMN {field} DROP NOT NULL;"
+                print(f"   {sql}")
+            print("\nRun with --apply to execute these changes.")
+            return
+        
+        # Apply changes
+        print("\n[*] Applying schema changes...")
+        with engine.connect() as conn:
+            # Start a transaction
+            trans = conn.begin()
             
-            # Verify migration
-            print()
-            print("🔍 Verifying migration...")
-            result = db.session.execute(text("SELECT COUNT(*) FROM users"))
-            user_count = result.fetchone()[0]
-            print(f"✅ Found {user_count} users in migrated table")
-            
-            print()
-            print("🎉 Migration completed successfully!")
-            print()
-            print("⚠️  IMPORTANT: Existing users have these default values:")
-            print("   - first_name: 'User'")
-            print("   - last_name: Their username")
-            print("   - employee_id: 'EMP' + their user ID")
-            print("   - password_hash: 'legacy_user_no_password' (cannot login)")
-            print()
-            print("📝 Next steps:")
-            print("   1. Existing users should register again with the new form")
-            print("   2. Or manually update their info in the database")
-            print("   3. They will need to set a password to login")
-            
-        except Exception as e:
-            db.session.rollback()
-            print(f"❌ Migration failed: {e}")
-            import traceback
-            traceback.print_exc()
-            sys.exit(1)
+            try:
+                for field in changes_needed:
+                    sql = f"ALTER TABLE users ALTER COLUMN {field} DROP NOT NULL;"
+                    print(f"   Executing: {sql}")
+                    conn.execute(text(sql))
+                
+                # Commit transaction
+                trans.commit()
+                print("\n[SUCCESS] Schema migration completed!")
+                
+                # Verify changes
+                print("\n[*] Verifying changes...")
+                new_schema = check_current_schema(engine)
+                all_nullable = True
+                for field in changes_needed:
+                    if field in new_schema:
+                        nullable = new_schema[field]['is_nullable']
+                        if not nullable:
+                            all_nullable = False
+                            print(f"   [WARNING] {field} still not nullable!")
+                        else:
+                            print(f"   [OK] {field} is now nullable")
+                
+                if all_nullable:
+                    print("\n[SUCCESS] All fields are now nullable!")
+                    print("   You can now run: python sync_to_production.py")
+                
+            except Exception as e:
+                trans.rollback()
+                print(f"\n[ERROR] Migration failed: {e}")
+                print("   Changes have been rolled back.")
+                raise
+        
+    except OperationalError as e:
+        print(f"\n[ERROR] Database connection failed: {e}")
+        print("\nTroubleshooting:")
+        print("   1. Verify your IP address is whitelisted in DigitalOcean")
+        print("   2. Check your connection string is correct")
+        print("   3. Verify database is running")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\n[ERROR] Migration failed: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
 
 
-if __name__ == "__main__":
-    migrate_users_table()
+def main():
+    """Main entry point"""
+    parser = argparse.ArgumentParser(
+        description='Migrate users table schema to allow NULL values'
+    )
+    parser.add_argument(
+        '--apply',
+        action='store_true',
+        help='Apply changes (default is dry-run)'
+    )
+    
+    args = parser.parse_args()
+    
+    try:
+        engine = create_engine(database_uri)
+        migrate_schema(engine, apply=args.apply)
+    
+    except Exception as e:
+        print(f"\n[ERROR] Failed: {e}")
+        sys.exit(1)
 
+
+if __name__ == '__main__':
+    main()
