@@ -2811,12 +2811,12 @@ def glossary():
 def login():
     """Simple login - just enter your name."""
     if request.method == "POST":
-        username = request.form.get("username", "").strip()
+        username = request.form.get("username", "").strip().lower()
         
         if not username:
             return render_template("login.html", error="Please enter your name")
         
-        # Find user by username
+        # Find user by username (case-insensitive)
         from models import User
         user = User.query.filter_by(username=username).first()
         
@@ -2843,14 +2843,14 @@ def login():
 def register():
     """Simple registration - just enter your name to start."""
     if request.method == "POST":
-        # Get username (name) from form
-        username = request.form.get("username", "").strip()
+        # Get username (name) from form and convert to lowercase
+        username = request.form.get("username", "").strip().lower()
         
         # Validation
         if not username or len(username) < 2:
             return render_template("register.html", error="Please enter your name (at least 2 characters)")
         
-        # Check for duplicate username
+        # Check for duplicate username (case-insensitive)
         from models import User
         if User.query.filter_by(username=username).first():
             return render_template("register.html", error="This name is already registered. Please login instead.")
