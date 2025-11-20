@@ -447,19 +447,29 @@ class DatabaseSyncer:
             local_progress = local_session.query(UserProgress).all()
             print(f"   Found {len(local_progress)} progress records in local database")
             
-            for local_p in local_progress:
+            # Pre-fetch all modules to avoid repeated queries
+            all_modules = {m.id for m in prod_session.query(Module.id).all()}
+            
+            created_count = 0
+            updated_count = 0
+            skipped_count = 0
+            
+            # Process in batches for better performance
+            batch_size = 50
+            for i, local_p in enumerate(local_progress, 1):
+                # Show progress every 50 records
+                if i % batch_size == 0:
+                    print(f"   Processing... {i}/{len(local_progress)} ({created_count} created, {updated_count} updated, {skipped_count} skipped)")
+                
                 # Map local user_id to production user_id
                 prod_user_id = self.user_id_map.get(local_p.user_id)
                 if not prod_user_id:
-                    print(f"   [!] Skipping Progress {local_p.id}: User ID {local_p.user_id} not mapped")
-                    self.stats['skipped']['user_progress'] = self.stats['skipped'].get('user_progress', 0) + 1
+                    skipped_count += 1
                     continue
                 
                 # Verify module exists
-                prod_module = prod_session.query(Module).get(local_p.module_id)
-                if not prod_module:
-                    print(f"   [!] Skipping Progress {local_p.id}: Module {local_p.module_id} not found")
-                    self.stats['skipped']['user_progress'] = self.stats['skipped'].get('user_progress', 0) + 1
+                if local_p.module_id not in all_modules:
+                    skipped_count += 1
                     continue
                 
                 # Check if exists (by user_id and module_id)
@@ -472,9 +482,7 @@ class DatabaseSyncer:
                     # Update existing
                     prod_p.completed = local_p.completed
                     prod_p.completion_date = local_p.completion_date
-                    if not self.dry_run:
-                        prod_session.commit()
-                    self.stats['updated']['user_progress'] = self.stats['updated'].get('user_progress', 0) + 1
+                    updated_count += 1
                 else:
                     # Create new
                     new_p = UserProgress(
@@ -484,11 +492,21 @@ class DatabaseSyncer:
                         completion_date=local_p.completion_date
                     )
                     prod_session.add(new_p)
-                    if not self.dry_run:
-                        prod_session.commit()
-                    self.stats['created']['user_progress'] = self.stats['created'].get('user_progress', 0) + 1
+                    created_count += 1
+                
+                # Commit in batches (every 50 records) instead of one-by-one
+                if not self.dry_run and i % batch_size == 0:
+                    prod_session.commit()
             
-            print(f"   Processed {len(local_progress)} progress records")
+            # Commit remaining records
+            if not self.dry_run:
+                prod_session.commit()
+            
+            self.stats['created']['user_progress'] = created_count
+            self.stats['updated']['user_progress'] = updated_count
+            self.stats['skipped']['user_progress'] = skipped_count
+            
+            print(f"   Completed: {created_count} created, {updated_count} updated, {skipped_count} skipped")
         
         except Exception as e:
             print(f"   [!] Error syncing user progress: {e}")
@@ -511,19 +529,29 @@ class DatabaseSyncer:
             local_answers = local_session.query(UserQuizAnswer).all()
             print(f"   Found {len(local_answers)} quiz answers in local database")
             
-            for local_answer in local_answers:
+            # Pre-fetch all quiz IDs to avoid repeated queries
+            all_quizzes = {q.id for q in prod_session.query(QuizQuestion.id).all()}
+            
+            created_count = 0
+            updated_count = 0
+            skipped_count = 0
+            
+            # Process in batches for better performance
+            batch_size = 50
+            for i, local_answer in enumerate(local_answers, 1):
+                # Show progress every 50 records
+                if i % batch_size == 0:
+                    print(f"   Processing... {i}/{len(local_answers)} ({created_count} created, {updated_count} updated, {skipped_count} skipped)")
+                
                 # Map local user_id to production user_id
                 prod_user_id = self.user_id_map.get(local_answer.user_id)
                 if not prod_user_id:
-                    print(f"   [!] Skipping Answer {local_answer.id}: User ID {local_answer.user_id} not mapped")
-                    self.stats['skipped']['user_quiz_answers'] = self.stats['skipped'].get('user_quiz_answers', 0) + 1
+                    skipped_count += 1
                     continue
                 
                 # Verify quiz exists
-                prod_quiz = prod_session.query(QuizQuestion).get(local_answer.quiz_question_id)
-                if not prod_quiz:
-                    print(f"   [!] Skipping Answer {local_answer.id}: Quiz {local_answer.quiz_question_id} not found")
-                    self.stats['skipped']['user_quiz_answers'] = self.stats['skipped'].get('user_quiz_answers', 0) + 1
+                if local_answer.quiz_question_id not in all_quizzes:
+                    skipped_count += 1
                     continue
                 
                 # Check if exists (by user_id and quiz_question_id)
@@ -538,9 +566,7 @@ class DatabaseSyncer:
                     prod_answer.is_correct = local_answer.is_correct
                     prod_answer.answer_order = local_answer.answer_order
                     prod_answer.answered_at = local_answer.answered_at
-                    if not self.dry_run:
-                        prod_session.commit()
-                    self.stats['updated']['user_quiz_answers'] = self.stats['updated'].get('user_quiz_answers', 0) + 1
+                    updated_count += 1
                 else:
                     # Create new
                     new_answer = UserQuizAnswer(
@@ -552,11 +578,21 @@ class DatabaseSyncer:
                         answered_at=local_answer.answered_at
                     )
                     prod_session.add(new_answer)
-                    if not self.dry_run:
-                        prod_session.commit()
-                    self.stats['created']['user_quiz_answers'] = self.stats['created'].get('user_quiz_answers', 0) + 1
+                    created_count += 1
+                
+                # Commit in batches (every 50 records) instead of one-by-one
+                if not self.dry_run and i % batch_size == 0:
+                    prod_session.commit()
             
-            print(f"   Processed {len(local_answers)} quiz answers")
+            # Commit remaining records
+            if not self.dry_run:
+                prod_session.commit()
+            
+            self.stats['created']['user_quiz_answers'] = created_count
+            self.stats['updated']['user_quiz_answers'] = updated_count
+            self.stats['skipped']['user_quiz_answers'] = skipped_count
+            
+            print(f"   Completed: {created_count} created, {updated_count} updated, {skipped_count} skipped")
         
         except Exception as e:
             print(f"   [!] Error syncing user quiz answers: {e}")
