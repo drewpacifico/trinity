@@ -44,11 +44,13 @@ def get_current_user():
         user = User.query.get(user_id)
         if user:
             # Sync preview_mode from database to session
-            if user.is_preview_mode and not session.get('preview_mode'):
+            # Database is the source of truth - always sync from database
+            if user.is_preview_mode:
                 session['preview_mode'] = True
-            elif not user.is_preview_mode and session.get('preview_mode'):
-                # Only clear if it was set from database, not from /preview route
-                pass  # Keep session preview_mode if user manually enabled it
+            else:
+                # Clear session preview_mode if database says user shouldn't have it
+                session['preview_mode'] = False
+            session.modified = True
             return user
     
     # Check for preview mode
@@ -64,9 +66,12 @@ def get_current_user():
     session['user_id'] = user.id
     session['username'] = user.username
     
-    # If user has preview mode enabled in database, set session preview_mode
+    # Sync preview_mode from database to session (database is source of truth)
     if user.is_preview_mode:
         session['preview_mode'] = True
+    else:
+        session['preview_mode'] = False
+    session.modified = True
     
     return user
 
