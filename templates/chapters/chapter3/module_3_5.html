@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}Module 3.5: Financial Management - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 3.5</span>
+        <h1 class="module-title">Financial Management</h1>
+    </div>
+
+    <p>Running a profitable freight business requires managing money carefully. You must ensure customers pay you, carriers are paid fairly and promptly, and your margins support a sustainable business.</p>
+
+    <h2>Invoicing</h2>
+
+    <p>Bill customers promptly after deliveries are completed. Delays in invoicing slow your cash flow and create opportunities for disputes. If you wait three weeks to invoice, customers may have difficulty remembering details if questions arise.</p>
+
+    <p><strong>Accurate invoicing requires:</strong></p>
+    <ul>
+        <li>Customer's correct billing information and any required purchase order numbers</li>
+        <li>Detailed description of services provided (origin, destination, date, weight, commodity)</li>
+        <li>Agreed-upon rate plus any applicable accessorial charges (detention, fuel surcharge, etc.)</li>
+        <li>Supporting documentation attached (copy of BOL, POD, inspection reports)</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            Many customers have specific invoicing requirements. Learn each customer's requirements and follow them precisely. Invoices that don't meet their requirements get rejected, delaying payment by weeks.
+        </div>
+    </div>
+
+    <h2>Carrier Payment</h2>
+
+    <p>Carriers typically expect payment within 7-30 days after delivery. Your payment terms affect your ability to secure capacity—carriers remember agents who pay slowly or dispute charges unfairly.</p>
+
+    <p>Verify the carrier completed the service as agreed before processing payment. Confirm delivery occurred on the specified date. Verify no damage or service failures occurred that would justify withholding payment.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Process payment according to agreed terms. If you promised net 15, pay in 15 days. Don't delay payment hoping to collect from customers first—your obligation to carriers exists regardless of whether customers have paid you.
+        </div>
+    </div>
+
+    <p>Address any payment disputes quickly and fairly. Even if you ultimately disagree, explain your reasoning and provide documentation supporting your position.</p>
+
+    <p>Late payment damages relationships severely. Carriers who aren't paid on time will stop accepting your loads. Word spreads through the carrier community about agents who don't pay fairly or promptly.</p>
+
+    <h2>Margin Management</h2>
+
+    <p>Track your margin on every load. Over time, patterns emerge showing which customers, lanes, and load types are most profitable.</p>
+
+    <p><strong>Analyze your margins monthly:</strong></p>
+    <ul>
+        <li>What's your average margin per load?</li>
+        <li>Which customers provide the best margins?</li>
+        <li>Which lanes are most profitable?</li>
+        <li>Are certain equipment types more profitable than others?</li>
+        <li>Where are you losing money or earning minimal margins?</li>
+    </ul>
+
+    <p>This analysis guides business decisions. Customers consistently providing thin margins may not be worth the time investment. Lanes where you struggle to find carriers at profitable rates might not be your best focus.</p>
+
+    <div class="callout callout-example">
+        <div class="callout-title">
+            <span class="callout-icon">&#128218;</span>
+            Real Example
+        </div>
+        <div class="callout-content">
+            A customer paying slightly lower margins but providing five loads weekly might be more valuable than a customer paying high margins on one load monthly. Calculate relationship profitability, not just individual transaction profitability.
+        </div>
+    </div>
+
+    <h2>Credit Management</h2>
+
+    <p>Extending credit to customers—allowing them to pay after you've delivered services—creates risk. Some customers pay slowly. Others may not pay at all.</p>
+
+    <p><strong>Before working with new customers, assess their creditworthiness:</strong></p>
+    <ul>
+        <li>How long have they been in business?</li>
+        <li>What's their financial condition?</li>
+        <li>Do they have a history of paying vendors on time?</li>
+        <li>Are there any legal judgments or liens against them?</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Start new customer relationships cautiously. Arrange payment terms requiring quicker payment initially (net 15 rather than net 30). Keep total outstanding invoices modest until you've confirmed they pay reliably.
+        </div>
+    </div>
+
+    <p>Monitor aging accounts receivable carefully. If an invoice becomes 15-30 days past due, contact the customer immediately. Polite persistence often resolves payment issues before they become serious.</p>
+
+    <h2>Dispute Resolution</h2>
+
+    <p>Disagreements about charges happen regularly in freight. Common disputes include late delivery claims, detention time disputes, unauthorized accessorial charges, and rate adjustments for freight not as described.</p>
+
+    <p><strong>Resolve disputes fairly and quickly:</strong></p>
+    <ol>
+        <li><strong>Gather all relevant documentation.</strong> BOLs, PODs, rate confirmations, communication records, timestamps.</li>
+        <li><strong>Understand both parties' perspectives.</strong> What's each side's position? What documentation supports each?</li>
+        <li><strong>Determine what's fair based on facts.</strong> Sometimes the customer is right. Sometimes the carrier is right.</li>
+        <li><strong>Propose solutions that acknowledge reasonable positions.</strong> Split disputed amounts when both parties have valid points.</li>
+        <li><strong>Document the resolution.</strong> Ensure all parties understand and agree.</li>
+    </ol>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Learn from disputes. Many arise from preventable miscommunications. If you consistently have disputes about detention, you probably need to communicate free time policies more clearly upfront.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

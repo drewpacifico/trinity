@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 3 Action Items - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 3</span>
+        <h1 class="module-title">Action Items</h1>
+    </div>
+
+    <p>Complete these tasks to establish effective work habits and systems:</p>
+
+    <div class="action-items">
+        <ul class="checklist">
+            <li><strong>Map out your typical daily schedule:</strong> Create a template showing when you'll focus on each responsibility category, building in flexibility for operational issues</li>
+            <li><strong>Assess your strengths and weaknesses:</strong> Honestly evaluate your current abilities across the six responsibility categories. Which areas need the most development?</li>
+            <li><strong>Block prospecting time in your calendar:</strong> Schedule specific times for business development activities and protect that time unless operational emergencies arise</li>
+            <li><strong>Set up a shipment tracking system:</strong> Whether using your brokerage's TMS, a spreadsheet, or another tool, establish a system that shows all active loads at a glance</li>
+            <li><strong>Create a load information checklist:</strong> Build a form ensuring you collect all essential details before quoting any load—complete addresses, dates, commodity, weight, dimensions, special requirements</li>
+            <li><strong>Establish your carrier vetting process:</strong> Confirm your brokerage's carrier qualification requirements and create your personal checklist for using new carriers</li>
+            <li><strong>Set up a documentation filing system:</strong> Organize digital files so you can locate any document for any shipment within 60 seconds</li>
+            <li><strong>Write your personal professional standards:</strong> Document your commitments regarding response times, communication quality, and service standards. Post where you'll see it daily</li>
+            <li><strong>Create a daily checklist:</strong> List the non-negotiable tasks you must complete every day—checking active loads, invoicing deliveries, following up on quotes</li>
+            <li><strong>Schedule weekly business review time:</strong> Block one hour weekly to review your performance metrics, margin analysis, and improvement opportunities</li>
+        </ul>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

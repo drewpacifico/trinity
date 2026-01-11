@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 3 Summary - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 3</span>
+        <h1 class="module-title">Summary Sheet</h1>
+    </div>
+
+    <h2>Six Core Responsibility Categories</h2>
+
+    <ul>
+        <li><strong>Sales and Business Development:</strong> Prospecting, qualifying, presenting, closing, and relationship management</li>
+        <li><strong>Load Booking and Coordination:</strong> Gathering details, determining equipment, pricing, finding carriers, confirming shipments</li>
+        <li><strong>Operational Execution:</strong> Tracking, problem resolution, documentation, and customer communication</li>
+        <li><strong>Financial Management:</strong> Invoicing, carrier payment, margin management, credit management, dispute resolution</li>
+        <li><strong>Administrative and Compliance:</strong> Carrier vetting, record keeping, regulatory compliance, technology management</li>
+        <li><strong>Continuous Learning:</strong> Market intelligence, skill development, relationship building</li>
+    </ul>
+
+    <h2>Sales Process Flow</h2>
+
+    <ul>
+        <li><strong>Prospecting:</strong> Identify potential customers through research, networking, and observation</li>
+        <li><strong>Qualifying:</strong> Determine if prospects are worth pursuing based on volume, fit, and payment history</li>
+        <li><strong>Presenting:</strong> Communicate your value by focusing on their specific needs and challenges</li>
+        <li><strong>Closing:</strong> Convert prospects with low-risk trial opportunities</li>
+        <li><strong>Relationship Management:</strong> Grow accounts through consistent value and communication</li>
+    </ul>
+
+    <h2>Load Booking Flow</h2>
+
+    <ul>
+        <li><strong>Step 1:</strong> Gather complete details (locations, dates, commodity, weight, special requirements)</li>
+        <li><strong>Step 2:</strong> Determine equipment requirements based on freight characteristics</li>
+        <li><strong>Step 3:</strong> Price the load considering market conditions, difficulty, and relationship</li>
+        <li><strong>Step 4:</strong> Find a qualified carrier at a rate that preserves margin</li>
+        <li><strong>Step 5:</strong> Confirm everything in writing with rate confirmation</li>
+    </ul>
+
+    <h2>Time Management Priority Order</h2>
+
+    <ul>
+        <li><strong>First:</strong> Active shipments and customer service (always takes priority)</li>
+        <li><strong>Second:</strong> Sales and prospecting (fill the gaps between operational needs)</li>
+        <li><strong>Third:</strong> Administrative tasks (batch daily for efficiency)</li>
+        <li><strong>Fourth:</strong> Learning and development (build into routine continuously)</li>
+    </ul>
+
+    <h2>Success Mindset Principles</h2>
+
+    <ul>
+        <li><strong>Ownership:</strong> Every load is your responsibility regardless of whose fault problems are</li>
+        <li><strong>Long-term thinking:</strong> Relationships over transactions, reputation over short-term profits</li>
+        <li><strong>Proactive communication:</strong> Inform before being asked, address issues before they escalate</li>
+        <li><strong>Continuous improvement:</strong> Learn from every experience, seek feedback, refine processes</li>
+        <li><strong>Resilience:</strong> Handle setbacks without losing motivation or professionalism</li>
+        <li><strong>Ethical standards:</strong> Integrity builds reputation; reputation drives long-term success</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Remember
+        </div>
+        <div class="callout-content">
+            You're running a business within a business. Success requires mastering all six responsibility categories—not just the ones you enjoy most. The agents who thrive are those who develop systems for each area and allocate their time based on priorities, not preferences.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('chapter', chapter_num=3, page='action_items') }}" class="btn btn-accent btn-lg">
+            View Action Items &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

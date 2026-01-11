@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 3: The Role of a Freight Agent - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 3</span>
+        <h1 class="module-title">The Role of a Freight Agent</h1>
+    </div>
+
+    <p>Now that you understand the industry landscape, it's time to dive deep into what you'll actually be doing every day. This chapter breaks down the complete role of a freight agent into manageable components.</p>
+
+    <p>In this chapter, you'll learn:</p>
+
+    <ul>
+        <li><strong>Your core responsibilities:</strong> The six major categories of work that define your daily activities</li>
+        <li><strong>Sales and business development:</strong> How to prospect, qualify, present, close, and manage customer relationships</li>
+        <li><strong>Load booking and coordination:</strong> The step-by-step process from gathering details to confirming shipments</li>
+        <li><strong>Operational execution:</strong> Tracking, problem resolution, documentation, and customer communication</li>
+        <li><strong>Financial management:</strong> Invoicing, carrier payment, margin management, and dispute resolution</li>
+        <li><strong>Administrative and compliance:</strong> Carrier vetting, record keeping, and regulatory requirements</li>
+        <li><strong>Continuous learning:</strong> Market intelligence, skill development, and relationship building</li>
+        <li><strong>Time management:</strong> How to prioritize and structure your day for maximum effectiveness</li>
+        <li><strong>The success mindset:</strong> Mental frameworks that separate thriving agents from struggling ones</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Point
+        </div>
+        <div class="callout-content">
+            As a freight agent, you're running a business within a business. Every day requires you to wear multiple hats. Understanding these different roles and how they interconnect helps you allocate your time effectively and develop the skills that matter most.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('module', module_id='3.1') }}" class="btn btn-accent btn-lg">
+            Begin Module 3.1 &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}
