@@ -1052,6 +1052,26 @@ strong, b {
   display: block;
 }
 
+/* Tooltip with image support */
+.glossary-tooltip-image {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.glossary-tooltip-image img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Widen tooltip when it has an image */
+.glossary-tooltip:has(.glossary-tooltip-image) {
+  width: 320px;
+}
+
 /* Tooltip positioning for terms near edges */
 .glossary-term-link.tooltip-left .glossary-tooltip {
   left: 0;

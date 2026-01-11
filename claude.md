@@ -53,6 +53,14 @@
 - **Storage**: SQLite to start; models for User, Chapter, Module, Question, Choice, Attempt, Flashcard.
 - **TTS**: Pluggable provider (e.g., gTTS, Azure, Amazon Polly); cache audio files per chapter.
 
+### Content Writing Guidelines
+
+When creating or editing module content:
+- **Keep it simple for new hires.** Avoid jargon like "vertical" when "market" or "industry" works. These are people new to freight brokerage.
+- **Check the TOC first.** Before adding detailed content, check if the topic is covered in a later chapter. Reference forward ("You'll learn more about this in Chapter 4") rather than duplicating content.
+- **No em dashes mid-sentence.** Avoid using em dashes (—) to divide information. Use periods for separate sentences or commas for lists. Hyphens in compound words (high-volume) and date ranges (September-November) are fine.
+- **Add glossary links with images** for equipment terms when available. Include the image in the tooltip for visual learners.
+
 ### Content Organization Notes (from `project.md`)
 - **Chapters identified**: 1) Welcome to Freight Brokerage 2) Understanding the Industry Landscape 3) The Role of a Freight Agent 4) Truck Types and Specifications 5) Load Types and Cargo Categories 6) Load Restrictions and Regulations 7) Building Your Customer Base 8) Sales Strategies for Freight Agents 9) Effective Follow-Up Systems.
 - **Modules**: Use module subsections under each chapter (e.g., 1.1, 1.2, 1.3, 1.4 as seen in Chapter 1) as atomic learning units.
