@@ -2791,7 +2791,13 @@ def submit_quiz(module_id, question_num=1):
     answer_order = data.get('answer_order', ['a', 'b', 'c', 'd'])
 
     if isinstance(answer_order, str):
-        answer_order = json.loads(answer_order)
+        if answer_order.strip():
+            try:
+                answer_order = json.loads(answer_order)
+            except json.JSONDecodeError:
+                answer_order = ['a', 'b', 'c', 'd']
+        else:
+            answer_order = ['a', 'b', 'c', 'd']
 
     result = update_user_quiz_answer(user.id, question_id, selected_index, answer_order)
 
