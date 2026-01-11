@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 1 Summary - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 1</span>
+        <h1 class="module-title">Summary Sheet</h1>
+    </div>
+
+    <h2>Key Concepts to Remember</h2>
+
+    <ul>
+        <li><strong>Freight agents connect shippers with carriers</strong>, serving as logistics consultants rather than simple middlemen</li>
+        <li>The trucking industry generates <strong>$800+ billion annually</strong> and moves <strong>70% of U.S. freight tonnage</strong></li>
+        <li><strong>Your value proposition:</strong> time savings, expertise, flexibility, risk management, and often better pricing</li>
+        <li><strong>Salaried position with commission incentives:</strong> you earn base salary plus commission on the margins you generate from arranging shipments</li>
+        <li><strong>Realistic timeline:</strong> 3-12 months to build momentum, with commission earnings growing as your customer base develops</li>
+        <li><strong>Professional integrity is essential</strong>—your reputation is your most valuable asset</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Remember
+        </div>
+        <div class="callout-content">
+            Building strong relationships takes time but pays dividends throughout your career. People prefer working with people they know, like, and trust. Invest in these relationships daily through consistent professionalism, clear communication, and genuine care for the success of everyone you work with.
+        </div>
+    </div>
+
+    
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('chapter', chapter_num=1, page='action_items') }}" class="btn btn-accent btn-lg">
+            View Action Items &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 2 Summary - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 2</span>
+        <h1 class="module-title">Summary: Understanding the Industry Landscape</h1>
+    </div>
+
+    <div class="summary-content">
+        <ul class="summary-list">
+            <li>The Freight Ecosystem Participants:</li>
+            <li>Shippers (your customers): Manufacturers, distributors, retailers, construction companies, agricultural businesses, e-commerce companies, each with unique needs and challenges</li>
+            <li>Carriers (your service providers): Owner-operators, small/medium/large fleets, asset-based and non-asset carriers with different capabilities and service levels</li>
+            <li>Intermediaries: Freight brokerages, 3PLs, freight forwarders, load boards connecting various ecosystem participants</li>
+            <li>Regulators: FMCSA (primary), DOT (parent agency), state agencies, industry associations setting standards and requirements</li>
+            <li>Money Flow: Customer pays you → You pay carrier → Margin is split based on commission agreement (typically 50-70% to agent)</li>
+            <li>Market Dynamics:</li>
+            <li>Capacity: Tight (more loads than trucks = higher rates) vs. Loose (more trucks than loads = lower rates)</li>
+            <li>Seasonality: Pre-holidays, harvest seasons, month/quarter-end create tight capacity; winter typically slower</li>
+            <li>Other factors: Economic conditions, weather events, regulatory changes, fuel prices affect rates</li>
+            <li>Competition: Other agents, large brokerages, asset-based carriers with brokerage arms, 3PLs, digital platforms, direct carrier relationships, each with distinct advantages and disadvantages</li>
+            <li>Specialization Options: Geographic (lanes, regions, rural), industry (food, construction, manufacturing), equipment (flatbed, reefer, heavy haul), service level (expedited, white-glove, cross-border)</li>
+        </ul>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

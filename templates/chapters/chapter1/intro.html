@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 1: Welcome to Freight Brokerage - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 1</span>
+        <h1 class="module-title">Welcome to Freight Brokerage</h1>
+    </div>
+
+    <p>Welcome to the first chapter of your freight agent training. This chapter will establish the foundation for everything that follows.</p>
+
+    <p>In this chapter, you'll discover:</p>
+
+    <ul>
+        <li><strong>Your new career</strong> - What it means to be a freight agent and why this role matters</li>
+        <li><strong>The economic impact</strong> - How trucking drives the American economy</li>
+        <li><strong>Your value proposition</strong> - Why businesses need your services</li>
+        <li><strong>The business model</strong> - How you'll earn income as an agent</li>
+        <li><strong>Realistic expectations</strong> - What success looks like over time</li>
+        <li><strong>Professional standards</strong> - The commitment required for long-term success</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Point
+        </div>
+        <div class="callout-content">
+            This chapter establishes the mindset and understanding you need before diving into technical knowledge. Take your time with these concepts—they form the foundation of your success.
+        </div>
+    </div>
+
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('module', module_id='1.1') }}" class="btn btn-accent btn-lg">
+            Begin Module 1.1 &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Module 2.7: Market Dynamics and Rate Fluctuations - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 2.7</span>
+        <h1 class="module-title">Market Dynamics and Rate Fluctuations</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?fm=jpg&q=80&w=1200"
+             alt="Stock market chart showing price fluctuations and trends"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+<h2>Why do freight rates constantly change?</h2>
+
+    <p>Freight rates aren't static. They fluctuate based on supply and demand, just like any market. Understanding these dynamics helps you price loads appropriately and set realistic expectations with customers.</p>
+
+<h2>Capacity: The Primary Driver</h2>
+
+    <p>Capacity refers to the availability of trucks relative to the number of loads needing to be moved.</p>
+
+<strong>Tight capacity</strong> exists when there are more loads than available trucks. Carriers can be selective, accepting only their most profitable loads. Rates increase because shippers must pay more to secure trucks. Getting loads covered becomes challenging, especially on difficult lanes or for demanding customers.
+
+<strong>Loose capacity</strong> exists when there are more trucks than available loads. Carriers compete for freight, often accepting loads at lower rates to keep trucks moving. Rates decrease because shippers have many options. Getting loads covered becomes easier, and carriers are more flexible.
+
+<div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            The capacity market swings between extremes regularly, sometimes within the same month. Learning to read capacity conditions through load board activity, carrier communication, and industry reports becomes a critical skill for profitable pricing.
+        </div>
+    </div>
+
+    <h2>Seasonality</h2>
+
+    <p>Freight demand follows predictable seasonal patterns:</p>
+
+    <ul>
+        <li><strong>Pre-holiday seasons</strong> (September through early November) see tight capacity as retailers stock shelves for holiday shopping. Rates increase significantly, especially on retail-heavy lanes.</li>
+        <li><strong>Harvest seasons</strong> (August through October for most crops, but timing varies by product and region) create tight capacity for refrigerated and dry bulk equipment. Agricultural regions see dramatically higher rates.</li>
+        <li><strong>Month-end and quarter-end</strong> see temporary capacity crunches as manufacturers push to meet production targets and distributors hit sales goals.</li>
+        <li><strong>January through February</strong> are typically slower periods with looser capacity and lower rates, as post-holiday inventory works through the system.</li>
+        <li><strong>Spring</strong> (March through May) often sees moderate capacity as construction season ramps up but agricultural demand remains modest.</li>
+    </ul>
+
+    <p>Understanding these patterns helps you price loads appropriately, manage customer expectations, and plan your business development efforts.</p>
+
+    <h2>Other Factors Affecting Rates</h2>
+
+    <p><strong>Economic conditions</strong> influence freight demand. Economic growth increases shipping; recessions decrease it. Manufacturing indexes and retail sales reports provide leading indicators of freight demand.</p>
+
+    <p><strong>Weather events</strong> can dramatically affect capacity. Winter storms shut down major highways, creating temporary capacity crunches on alternative routes. Hurricane season disrupts southeastern freight patterns. Spring flooding in agricultural regions affects planting and harvest timing.</p>
+
+    <p><strong>Regulatory changes</strong> occasionally impact capacity and rates. New safety regulations, environmental standards, or hours-of-service rules can reduce effective fleet capacity, tightening the market.</p>
+
+    <p><strong>Fuel prices</strong> affect carrier costs and influence rate negotiations. When fuel prices spike, carriers need higher revenue to maintain profitability. Many carriers use fuel surcharges that adjust weekly based on Department of Energy fuel price indexes.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

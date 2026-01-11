@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Module 2.2.3: Retailers - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 2.2.3</span>
+        <h1 class="module-title">Retailers</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?fm=jpg&q=80&w=1200"
+             alt="Retail store interior with merchandise displays"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Retailers sell products to consumers through physical stores or online platforms. They need regular inbound shipments from suppliers and sometimes outbound shipments between their own locations.</p>
+
+    <h2>What makes them good customers</h2>
+
+    <ul>
+        <li><strong>Predictable schedules:</strong> Regular receiving hours make planning easier and create consistent, repeatable business</li>
+        <li><strong>Multiple locations:</strong> Retailers with several stores need ongoing shipments across many <a href="{{ url_for('glossary') }}#lane" class="glossary-term-link">lanes<span class="glossary-tooltip"><span class="glossary-tooltip-term">Lane</span><span class="glossary-tooltip-definition">A specific origin-destination route pair in freight transportation. For example, Dallas to Chicago is one lane.</span></span></a></li>
+        <li><strong>E-commerce growth:</strong> More retailers are expanding online, which increases their distribution and fulfillment needs</li>
+    </ul>
+
+    <h2>Challenges you'll face</h2>
+
+    <p>Smaller retailers may have lower per-shipment volumes, requiring partial truckload or <a href="{{ url_for('glossary') }}#less-than-truckload-ltl" class="glossary-term-link">LTL<span class="glossary-tooltip"><span class="glossary-tooltip-term">Less-Than-Truckload (LTL)</span><span class="glossary-tooltip-definition">Freight service consolidating shipments from multiple shippers (typically 150-10,000 pounds), priced by freight class.</span></span></a> services. Many require specialized delivery services like liftgate delivery, inside delivery, or appointment scheduling. Strict receiving hours and detention policies can make carrier procurement difficult. Large retailers often have centralized logistics teams that are hard to access.</p>
+
+    <h2>Your best approach</h2>
+
+    <p>Focus on small to mid-sized retailers who lack dedicated logistics teams. Understand their receiving constraints and find carriers willing to work within those parameters. Offer value-added services like tracking updates and proactive problem resolution. Position yourself as their logistics department rather than just a freight provider.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

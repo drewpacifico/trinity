@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Module 2.6: How Money Flows Through the Industry - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 2.6</span>
+        <h1 class="module-title">How Money Flows Through the Industry</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?fm=jpg&q=80&w=1200"
+             alt="Financial documents with calculator representing business transactions"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+<h2>How does money move through freight transactions?</h2>
+
+    <p>Understanding the financial flow helps you manage cash, understand payment terms, and recognize where risks exist.</p>
+
+<h2>The Basic Flow:</h2>
+
+    <p>The shipper (your customer) pays you for arranging their transportation. You negotiate a rate with a carrier to haul the load. Your brokerage receives payment from the customer. Your brokerage pays the carrier according to agreed terms. The margin (customer rate minus carrier rate minus costs) is split between you and your brokerage based on your commission agreement.</p>
+
+<h2>Important Timing Considerations:</h2>
+
+    <p>Customer payment terms typically range from net 15 to net 60 days (meaning payment is due 15-60 days after delivery). Many customers negotiate net 30 as standard.</p>
+
+    <p>Carrier payment expectations are usually shorter, often net 7 to net 30 days. Some carriers require quick pay (payment within 5-7 days) and may offer small discounts for it.</p>
+
+    <p>This timing mismatch creates a cash flow challenge: brokerages must pay carriers before receiving customer payment. This is why brokerages need working capital and why some brokerages use factoring (selling invoices to third parties for immediate cash at a discount).</p>
+
+<div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Your brokerage pays carriers before customers pay you. This timing mismatch is normal in freight brokerage and requires working capital to manage.
+        </div>
+    </div>
+
+<h2>Where Your Commission Comes From:</h2>
+
+    <p>When you book a load for $1,500 and arrange carrier service for $1,100, there's a $400 gross margin. From this margin, the brokerage must cover: Their overhead costs (office, technology, insurance, administrative staff), the risk of non-payment from customers, the cost of capital (paying carriers before receiving customer payment), and your commission.</p>
+
+    <p>At a 60/40 commission split (60% to you, 40% to brokerage), you receive $240 and the brokerage receives $160 to cover these costs and their profit.</p>
+
+<div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistake
+        </div>
+        <div class="callout-content">
+            Don't squeeze carrier rates so tight that service suffers. Pushing a carrier rate from $1,100 to $1,025 gains you $15 in commission but risks poor service that could cost you the customer permanently.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

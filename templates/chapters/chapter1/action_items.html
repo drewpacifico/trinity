@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 1 Action Items - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 1</span>
+        <h1 class="module-title">Action Items</h1>
+    </div>
+
+    <p>Before moving to Chapter 2, complete these tasks to ensure you've absorbed the foundational concepts:</p>
+
+    <div style="background: var(--bg); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+        <h3 style="margin-top: 0; color: var(--primary);">Task 1: Understand the Agent Role and Value Proposition</h3>
+        <p>Write in your own words why a business would choose to work with you instead of calling carriers directly.</p>
+        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.875rem;">
+            <input type="checkbox" id="task1" style="width: 18px; height: 18px;">
+            <label for="task1">Mark as complete</label>
+        </div>
+    </div>
+
+    <div style="background: var(--bg); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+        <h3 style="margin-top: 0; color: var(--primary);">Task 2: Review Commission Structure with Your Brokerage</h3>
+        <p>Confirm your specific commission split, payment terms, and any additional fees or requirements.</p>
+        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.875rem;">
+            <input type="checkbox" id="task2" style="width: 18px; height: 18px;">
+            <label for="task2">Mark as complete</label>
+        </div>
+    </div>
+
+    <div style="background: var(--bg); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+        <h3 style="margin-top: 0; color: var(--primary);">Task 3: Set Realistic Income Expectations for First Year</h3>
+        <p>Create a personal financial plan showing how you'll cover expenses during the 3-6 month startup phase.</p>
+        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.875rem;">
+            <input type="checkbox" id="task3" style="width: 18px; height: 18px;">
+            <label for="task3">Mark as complete</label>
+        </div>
+    </div>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Take these action items seriously. They're designed to help you internalize the concepts and prepare you for the more technical content in the chapters ahead.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+        <a href="{{ url_for('chapter', chapter_num=1, page='summary') }}" class="btn btn-outline">
+            &larr; Back to Summary
+        </a>
+        <a href="{{ url_for('chapter', chapter_num=2, page='intro') }}" class="btn btn-accent btn-lg">
+            Continue to Chapter 2 &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

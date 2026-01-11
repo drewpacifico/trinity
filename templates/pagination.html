@@ -1,0 +1,22 @@
+<!-- Pagination Navigation - Include at the bottom of content-card -->
+<div class="pagination-nav">
+    {% if prev_url %}
+    <a href="{{ prev_url }}" class="pagination-btn pagination-prev" title="Previous">
+        <span class="pagination-arrow">&#8592;</span>
+    </a>
+    {% else %}
+    <span class="pagination-btn pagination-prev pagination-disabled">
+        <span class="pagination-arrow">&#8592;</span>
+    </span>
+    {% endif %}
+
+    {% if next_url %}
+    <a href="{{ next_url }}" class="pagination-btn pagination-next" title="Next">
+        <span class="pagination-arrow">&#8594;</span>
+    </a>
+    {% else %}
+    <span class="pagination-btn pagination-next pagination-disabled">
+        <span class="pagination-arrow">&#8594;</span>
+    </span>
+    {% endif %}
+</div>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 2 Action Items - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 2</span>
+        <h1 class="module-title">Action Items</h1>
+    </div>
+
+    <p>Complete these tasks to apply your understanding of the industry landscape:</p>
+
+    <div class="action-items">
+        <ul class="checklist">
+            <li><strong>Identify 3-5 shipper types to target:</strong> Based on your local market, interests, and background, determine which customer types offer the best opportunities for you</li>
+            <li><strong>Research major carriers in your region:</strong> Use FMCSA's database to identify asset-based carriers operating in your area. Note their equipment types and service areas</li>
+            <li><strong>Study current capacity conditions:</strong> Check load boards, read industry publications, and talk to carriers to understand whether capacity is currently tight or loose in your primary markets</li>
+            <li><strong>Choose 1-2 potential niches:</strong> Identify specializations that align with your background, local opportunities, and interests. Research the specific requirements of these niches</li>
+            <li><strong>Subscribe to industry publications:</strong> Sign up for FreightWaves, Transport Topics, or other industry news sources to stay informed about market conditions and trends</li>
+            <li><strong>Map your competitive landscape:</strong> List the brokerages, 3PLs, and other competitors serving your target market. Identify their strengths and how you'll differentiate yourself</li>
+            <li><strong>Create a carrier research system:</strong> Set up a spreadsheet or CRM to track carriers you discover, including their equipment types, service areas, contact information, and notes on their capabilities</li>
+        </ul>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Module 2.2: Shippers (Your Customers) - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 2.2</span>
+        <h1 class="module-title">Shippers (Your Customers)</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?fm=jpg&q=80&w=1200"
+             alt="Warehouse worker checking inventory on industrial shelving"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <h2>Who are your customers and what do they need?</h2>
+
+    <p>Shippers are businesses that need to move goods from one location to another. They're your customers, and understanding the different types will help you tailor your approach to their specific needs.</p>
+
+    <p>In this module, you'll learn about six major customer types:</p>
+
+    <ul>
+        <li><strong>Manufacturers:</strong> Companies producing goods that need regular shipment</li>
+        <li><strong>Distributors and Wholesalers:</strong> High-volume shippers with diverse lane opportunities</li>
+        <li><strong>Retailers:</strong> Businesses needing inbound shipments for their stores</li>
+        <li><strong>Construction Companies:</strong> Project-based shippers needing specialized equipment</li>
+        <li><strong>Agricultural Businesses:</strong> Seasonal shippers with unique rural challenges</li>
+        <li><strong>E-commerce Businesses:</strong> Fast-growing segment with increasing logistics needs</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Point
+        </div>
+        <div class="callout-content">
+            Each customer type has unique needs, challenges, and opportunities. Understanding these differences helps you position yourself effectively and provide real value.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('module', module_id='2.2.1') }}" class="btn btn-accent btn-lg">
+            Continue to Manufacturers &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

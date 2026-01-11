@@ -4653,6 +4653,7 @@ Mod 6.10 - Inside Delivery - Service where drivers carry freight to specified lo
 Mod 3.5 - Invoicing - Billing customers promptly after deliveries with detailed service descriptions, agreed rates, and supporting documentation.
 Mod 5.7 - Just-In-Time (JIT) - Manufacturing strategy using minimal inventory with precise delivery timing, where late deliveries can cause production shutdowns costing thousands per hour.
 Mod 8.5 - LAVA Method - Objection handling technique: Listen (fully), Acknowledge (validate concern), Verify (confirm understanding), Answer (address specifically).
+Mod 2.2 - Lane - A specific origin-destination route pair in freight transportation. For example, Dallas to Chicago is one lane, and Los Angeles to Phoenix is another lane. Having multiple lanes means shipping across many different routes.
 Mod 5.9 - Less-Than-Truckload (LTL) - Freight service consolidating shipments from multiple shippers (typically 150-10,000 pounds), priced by freight class based on density, stowability, handling, and liability.
 Mod 6.10 - Liftgate - Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.
 Mod 6.10 - Limited Access Location - Facilities lacking professional shipping/receiving equipment (construction sites, farms, churches, schools), typically carrying $50-100 surcharges.

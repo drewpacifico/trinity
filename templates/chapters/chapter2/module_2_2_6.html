@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Module 2.2.6: E-commerce Businesses - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 2.2.6</span>
+        <h1 class="module-title">E-commerce Businesses</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?fm=jpg&q=80&w=1200"
+             alt="E-commerce fulfillment center with packages ready for shipping"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Online retailers and direct-to-consumer brands need to move products from manufacturers or warehouses to fulfillment centers, and sometimes to end customers.</p>
+
+    <h2>What makes them good customers</h2>
+
+    <p>This is a rapidly growing segment with increasing logistics needs. Many are relatively new businesses without established carrier relationships. They often lack logistics expertise, creating opportunities to provide consultative value. Volume can grow quickly as businesses scale.</p>
+
+    <h2>Challenges you'll face</h2>
+
+    <p>Expectations may be unrealistic. They might expect parcel carrier service levels at truckload prices. Businesses can be unpredictable, with rapid volume fluctuations based on sales performance. Payment terms and creditworthiness may be uncertain for newer companies. They may expect extensive value-added services (tracking, repackaging, etc.) without understanding associated costs.</p>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistake
+        </div>
+        <div class="callout-content">
+            Don't assume e-commerce companies understand freight logistics. Many think everything ships like Amazon Prime packages. Take time to educate them on the differences between small package and freight transportation.
+        </div>
+    </div>
+
+    <h2>Your best approach</h2>
+
+    <p>Educate them on logistics realities while demonstrating flexibility and responsiveness. Help them understand the differences between small package shipping and freight. Start small and grow with them as their volume increases. Emphasize technology and communication because they're often digital-first businesses expecting real-time updates.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request, session, jsonify
 import re
+import json
 from pathlib import Path
 import markdown
 from datetime import datetime
@@ -1682,7 +1683,8 @@ def parse_glossary_terms(markdown_text: str):
     terms = []
     
     # Pattern: "Mod X.X - Term Name - Definition"
-    pattern = re.compile(r'^(Mod\s+[\d.]+)\s*-\s*([^-]+?)\s*-\s*(.+)$')
+    # Use " - " (space-hyphen-space) as delimiter to support hyphenated terms like "Less-Than-Truckload"
+    pattern = re.compile(r'^(Mod\s+[\d.]+)\s+-\s+(.+?)\s+-\s+(.+)$')
     
     for line in glossary_text.splitlines():
         line = line.strip()
@@ -2461,7 +2463,7 @@ def index():
     # Check if user is logged in
     if not session.get('logged_in'):
         return redirect(url_for("home"))
-    return redirect(url_for("page", page_num=1))
+    return redirect(url_for("cover"))
 
 
 @app.route("/home")
@@ -2469,8 +2471,340 @@ def home():
     """Home page with login/register options"""
     # If already logged in, redirect to training
     if session.get('logged_in'):
-        return redirect(url_for("page", page_num=1))
+        return redirect(url_for("cover"))
     return render_template("home.html")
+
+
+# ============================================================================
+# NEW TEMPLATE-BASED ROUTES (Professional Refactor)
+# ============================================================================
+
+@app.route("/cover")
+def cover():
+    """Professional cover page"""
+    if not session.get('logged_in') and not session.get('preview_mode'):
+        return redirect(url_for("login"))
+    return render_template("pages/cover.html")
+
+
+@app.route("/toc")
+def toc():
+    """Table of contents page"""
+    if not session.get('logged_in') and not session.get('preview_mode'):
+        return redirect(url_for("login"))
+    return render_template("pages/toc.html")
+
+
+@app.route("/chapter/<int:chapter_num>/<page>")
+def chapter(chapter_num, page):
+    """
+    Serve chapter pages (intro, summary, action_items)
+    """
+    if not session.get('logged_in') and not session.get('preview_mode'):
+        return redirect(url_for("login"))
+
+    # Chapter titles for progress bar
+    chapter_titles = {
+        1: "Welcome to Freight Brokerage",
+        2: "Understanding the Industry Landscape",
+        3: "The Role of a Freight Agent",
+        4: "Truck Types and Specifications",
+        5: "Load Types and Cargo Categories",
+        6: "Load Restrictions and Regulations",
+        7: "Building Your Customer Base",
+        8: "Sales Strategies for Freight Agents",
+        9: "Effective Follow-Up Systems"
+    }
+
+    # Module counts per chapter
+    module_counts = {1: 6, 2: 9, 3: 9, 4: 11, 5: 10, 6: 11, 7: 5, 8: 9, 9: 9}
+
+    # Valid page types
+    valid_pages = ['intro', 'summary', 'action_items']
+    if page not in valid_pages:
+        return redirect(url_for("toc"))
+
+    # Calculate progress (placeholder - can be enhanced with user progress tracking)
+    progress_percent = 0
+
+    # Navigation URLs
+    if page == 'intro':
+        prev_url = url_for('toc') if chapter_num == 1 else url_for('chapter', chapter_num=chapter_num-1, page='action_items')
+        next_url = url_for('module', module_id=f'{chapter_num}.1')
+    elif page == 'summary':
+        prev_url = url_for('module', module_id=f'{chapter_num}.{module_counts.get(chapter_num, 6)}')
+        next_url = url_for('chapter', chapter_num=chapter_num, page='action_items')
+    elif page == 'action_items':
+        prev_url = url_for('chapter', chapter_num=chapter_num, page='summary')
+        next_url = url_for('chapter', chapter_num=chapter_num+1, page='intro') if chapter_num < 9 else url_for('toc')
+
+    template_path = f"chapters/chapter{chapter_num}/{page}.html"
+
+    return render_template(
+        template_path,
+        chapter_num=chapter_num,
+        chapter_title=chapter_titles.get(chapter_num, ""),
+        progress_percent=progress_percent,
+        prev_url=prev_url,
+        next_url=next_url
+    )
+
+
+@app.route("/module/<module_id>")
+def module(module_id):
+    """
+    Serve individual module pages
+    Supports both 2-part IDs (e.g., "2.2") and 3-part IDs (e.g., "2.2.1") for sub-modules
+    """
+    if not session.get('logged_in') and not session.get('preview_mode'):
+        return redirect(url_for("login"))
+
+    # Parse module ID (e.g., "1.1" -> chapter 1, module 1, or "2.2.1" -> chapter 2, module 2, sub-module 1)
+    try:
+        parts = module_id.split('.')
+        chapter_num = int(parts[0])
+        module_num = int(parts[1])
+        sub_module_num = int(parts[2]) if len(parts) > 2 else None
+    except (ValueError, IndexError):
+        return redirect(url_for("toc"))
+
+    # Chapter titles for progress bar
+    chapter_titles = {
+        1: "Welcome to Freight Brokerage",
+        2: "Understanding the Industry Landscape",
+        3: "The Role of a Freight Agent",
+        4: "Truck Types and Specifications",
+        5: "Load Types and Cargo Categories",
+        6: "Load Restrictions and Regulations",
+        7: "Building Your Customer Base",
+        8: "Sales Strategies for Freight Agents",
+        9: "Effective Follow-Up Systems"
+    }
+
+    # Module counts per chapter
+    module_counts = {1: 6, 2: 9, 3: 9, 4: 11, 5: 10, 6: 11, 7: 5, 8: 9, 9: 9}
+    max_module = module_counts.get(chapter_num, 6)
+
+    # Sub-module configuration: maps parent module to number of sub-modules
+    sub_module_counts = {
+        "2.2": 6,  # Module 2.2 has sub-modules 2.2.1 through 2.2.6
+    }
+
+    parent_module_id = f"{chapter_num}.{module_num}"
+    max_sub_module = sub_module_counts.get(parent_module_id, 0)
+
+    # Calculate progress
+    if sub_module_num:
+        # For sub-modules, calculate progress within the parent module range
+        base_progress = int(((module_num - 1) / max_module) * 100)
+        sub_progress = int((sub_module_num / max_sub_module) * (100 / max_module))
+        progress_percent = base_progress + sub_progress
+    else:
+        progress_percent = int((module_num / max_module) * 100)
+
+    # Navigation URLs
+    if sub_module_num:
+        # Sub-module navigation
+        if sub_module_num == 1:
+            # First sub-module - previous goes to parent module
+            prev_url = url_for('module', module_id=parent_module_id)
+        else:
+            # Previous sub-module
+            prev_url = url_for('module', module_id=f'{parent_module_id}.{sub_module_num - 1}')
+
+        if sub_module_num >= max_sub_module:
+            # Last sub-module - check if parent module has quiz
+            quiz_count = QuizQuestion.query.filter_by(module_id=parent_module_id).count()
+            if quiz_count > 0:
+                next_url = url_for('quiz', module_id=parent_module_id, question_num=1)
+            elif module_num >= max_module:
+                next_url = url_for('chapter', chapter_num=chapter_num, page='summary')
+            else:
+                next_url = url_for('module', module_id=f'{chapter_num}.{module_num + 1}')
+        else:
+            # Next sub-module
+            next_url = url_for('module', module_id=f'{parent_module_id}.{sub_module_num + 1}')
+    else:
+        # Regular module navigation
+        if module_num == 1:
+            prev_url = url_for('chapter', chapter_num=chapter_num, page='intro')
+        else:
+            # Check if previous module has sub-modules
+            prev_module_id = f'{chapter_num}.{module_num-1}'
+            prev_max_sub = sub_module_counts.get(prev_module_id, 0)
+            if prev_max_sub > 0:
+                # Previous module has sub-modules - check if last sub-module has quiz
+                prev_quiz_count = QuizQuestion.query.filter_by(module_id=prev_module_id).count()
+                if prev_quiz_count > 0:
+                    prev_url = url_for('quiz', module_id=prev_module_id, question_num=prev_quiz_count)
+                else:
+                    prev_url = url_for('module', module_id=f'{prev_module_id}.{prev_max_sub}')
+            else:
+                # Check if previous module has quiz
+                prev_quiz_count = QuizQuestion.query.filter_by(module_id=prev_module_id).count()
+                if prev_quiz_count > 0:
+                    prev_url = url_for('quiz', module_id=prev_module_id, question_num=prev_quiz_count)
+                else:
+                    prev_url = url_for('module', module_id=prev_module_id)
+
+        # Check if this module has sub-modules
+        if max_sub_module > 0:
+            # Has sub-modules - next goes to first sub-module
+            next_url = url_for('module', module_id=f'{parent_module_id}.1')
+        else:
+            # Check if this module has quiz questions
+            quiz_count = QuizQuestion.query.filter_by(module_id=module_id).count()
+
+            if quiz_count > 0:
+                # Has quiz - next goes to quiz
+                next_url = url_for('quiz', module_id=module_id, question_num=1)
+            elif module_num >= max_module:
+                # No quiz, last module - go to summary
+                next_url = url_for('chapter', chapter_num=chapter_num, page='summary')
+            else:
+                # No quiz - go to next module
+                next_url = url_for('module', module_id=f'{chapter_num}.{module_num+1}')
+
+    template_path = f"chapters/chapter{chapter_num}/module_{module_id.replace('.', '_')}.html"
+
+    return render_template(
+        template_path,
+        module_id=module_id,
+        chapter_num=chapter_num,
+        chapter_title=chapter_titles.get(chapter_num, ""),
+        progress_percent=progress_percent,
+        prev_url=prev_url,
+        next_url=next_url,
+        has_quiz=QuizQuestion.query.filter_by(module_id=parent_module_id if sub_module_num else module_id).count() > 0
+    )
+
+
+@app.route("/quiz/<module_id>", defaults={'question_num': 1})
+@app.route("/quiz/<module_id>/<int:question_num>")
+def quiz(module_id, question_num):
+    """
+    Serve individual quiz questions, one per page
+    """
+    if not session.get('logged_in') and not session.get('preview_mode'):
+        return redirect(url_for("login"))
+
+    user = get_current_user()
+    if not user:
+        return redirect(url_for("login"))
+
+    # Parse module ID
+    try:
+        parts = module_id.split('.')
+        chapter_num = int(parts[0])
+        module_num = int(parts[1])
+    except (ValueError, IndexError):
+        return redirect(url_for("toc"))
+
+    # Chapter titles
+    chapter_titles = {
+        1: "Welcome to Freight Brokerage",
+        2: "Understanding the Industry Landscape",
+        3: "The Role of a Freight Agent",
+        4: "Truck Types and Specifications",
+        5: "Load Types and Cargo Categories",
+        6: "Load Restrictions and Regulations",
+        7: "Building Your Customer Base",
+        8: "Sales Strategies for Freight Agents",
+        9: "Effective Follow-Up Systems"
+    }
+
+    # Module counts per chapter
+    module_counts = {1: 6, 2: 9, 3: 9, 4: 11, 5: 10, 6: 11, 7: 5, 8: 9, 9: 9}
+    max_module = module_counts.get(chapter_num, 6)
+
+    # Get quiz questions for this module
+    db_questions = QuizQuestion.query.filter_by(module_id=module_id).order_by(QuizQuestion.display_order).all()
+
+    if not db_questions:
+        # No quiz questions - go to next module or summary
+        if module_num >= max_module:
+            return redirect(url_for('chapter', chapter_num=chapter_num, page='summary'))
+        else:
+            return redirect(url_for('module', module_id=f'{chapter_num}.{module_num+1}'))
+
+    # Validate question number
+    if question_num < 1 or question_num > len(db_questions):
+        return redirect(url_for('quiz', module_id=module_id, question_num=1))
+
+    # Get the current question
+    current_question = db_questions[question_num - 1]
+    question_data = current_question.get_shuffled_for_user(user.id)
+    total_questions = len(db_questions)
+
+    # Navigation
+    prev_url = url_for('quiz', module_id=module_id, question_num=question_num-1) if question_num > 1 else url_for('module', module_id=module_id)
+
+    if question_num >= total_questions:
+        # Last question - next goes to next module or summary
+        if module_num >= max_module:
+            next_url = url_for('chapter', chapter_num=chapter_num, page='summary')
+        else:
+            next_url = url_for('module', module_id=f'{chapter_num}.{module_num+1}')
+    else:
+        next_url = url_for('quiz', module_id=module_id, question_num=question_num+1)
+
+    # Check if user already answered this question
+    from models import UserQuizAnswer
+    existing_answer = UserQuizAnswer.query.filter_by(
+        user_id=user.id,
+        quiz_question_id=current_question.id
+    ).first()
+
+    already_answered = existing_answer and existing_answer.selected_choice is not None
+    was_correct = existing_answer.is_correct if already_answered else None
+
+    return render_template(
+        "pages/quiz.html",
+        module_id=module_id,
+        chapter_num=chapter_num,
+        chapter_title=chapter_titles.get(chapter_num, ""),
+        question=question_data,
+        question_num=question_num,
+        total_questions=total_questions,
+        prev_url=prev_url,
+        next_url=next_url,
+        already_answered=already_answered,
+        was_correct=was_correct,
+        progress_percent=int((module_num / max_module) * 100)
+    )
+
+
+@app.route("/submit-quiz/<module_id>/<int:question_num>", methods=["POST"])
+def submit_quiz(module_id, question_num=1):
+    """Handle quiz answer submission"""
+    if not session.get('logged_in') and not session.get('preview_mode'):
+        return jsonify({'error': 'Not logged in'}), 401
+
+    user = get_current_user()
+    if not user:
+        return jsonify({'error': 'User not found'}), 401
+
+    data = request.get_json() if request.is_json else request.form
+
+    question_id = data.get('question_id')
+    selected_index = int(data.get('selected_index', data.get('answer', 0)))
+    answer_order = data.get('answer_order', ['a', 'b', 'c', 'd'])
+
+    if isinstance(answer_order, str):
+        answer_order = json.loads(answer_order)
+
+    result = update_user_quiz_answer(user.id, question_id, selected_index, answer_order)
+
+    if request.is_json:
+        return jsonify(result)
+    else:
+        # For form submission, redirect to next question or next module
+        return redirect(url_for('quiz', module_id=module_id, question_num=question_num))
+
+
+# ============================================================================
+# END NEW TEMPLATE-BASED ROUTES
+# ============================================================================
 
 
 @app.route("/page/<int:page_num>", methods=["GET", "POST"])
@@ -2809,32 +3143,36 @@ def glossary():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """Simple login - just enter your name."""
+    """Login with username and password."""
     if request.method == "POST":
         username = request.form.get("username", "").strip().lower()
-        
+        password = request.form.get("password", "")
+
         if not username:
-            return render_template("login.html", error="Please enter your name")
-        
+            return render_template("login.html", error="Please enter your username")
+
+        if not password:
+            return render_template("login.html", error="Please enter your password")
+
         # Find user by username (case-insensitive)
         from models import User
         user = User.query.filter_by(username=username).first()
-        
-        if user:
+
+        if user and user.password_hash and user.check_password(password):
             # Successful login
             session['user_id'] = user.id
             session['username'] = user.username
             session['logged_in'] = True
-            
+
             # Update last login
             user.last_login = datetime.utcnow()
             db.session.commit()
-            
-            return redirect(url_for("page", page_num=1))
+
+            return redirect(url_for("cover"))
         else:
-            # User not found - suggest registration
-            return render_template("login.html", error="Name not found. Please register if you're new.")
-    
+            # Invalid credentials
+            return render_template("login.html", error="Invalid username or password")
+
     # GET request - show login page
     return render_template("login.html")
 
@@ -3042,6 +3380,94 @@ def delete_quiz_question(question_id):
     except Exception as e:
         db.session.rollback()
         return jsonify({'success': False, 'error': str(e)}), 400
+
+
+# ============================================================================
+# CLI Commands for User Management
+# ============================================================================
+# Usage:
+#   flask user-add <username> <password>     - Add a new user
+#   flask user-password <username> <password> - Change user's password
+#   flask user-list                          - List all users
+#   flask user-delete <username>             - Delete a user
+# ============================================================================
+
+import click
+
+@app.cli.command("user-add")
+@click.argument("username")
+@click.argument("password")
+def cli_user_add(username, password):
+    """Add a new user with a password."""
+    from models import User
+    username = username.strip().lower()
+
+    # Check if user already exists
+    existing = User.query.filter_by(username=username).first()
+    if existing:
+        click.echo(f"Error: User '{username}' already exists.")
+        return
+
+    # Create user
+    user = User(username=username)
+    user.set_password(password)
+    db.session.add(user)
+    db.session.commit()
+    click.echo(f"User '{username}' created successfully.")
+
+
+@app.cli.command("user-password")
+@click.argument("username")
+@click.argument("password")
+def cli_user_password(username, password):
+    """Change a user's password."""
+    from models import User
+    username = username.strip().lower()
+
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        click.echo(f"Error: User '{username}' not found.")
+        return
+
+    user.set_password(password)
+    db.session.commit()
+    click.echo(f"Password updated for user '{username}'.")
+
+
+@app.cli.command("user-list")
+def cli_user_list():
+    """List all users."""
+    from models import User
+    users = User.query.all()
+
+    if not users:
+        click.echo("No users found.")
+        return
+
+    click.echo(f"{'Username':<20} {'Has Password':<15} {'Preview Mode':<15} {'Last Login'}")
+    click.echo("-" * 70)
+    for user in users:
+        has_pw = "Yes" if user.password_hash else "No"
+        preview = "Yes" if user.is_preview_mode else "No"
+        last_login = user.last_login.strftime("%Y-%m-%d %H:%M") if user.last_login else "Never"
+        click.echo(f"{user.username:<20} {has_pw:<15} {preview:<15} {last_login}")
+
+
+@app.cli.command("user-delete")
+@click.argument("username")
+def cli_user_delete(username):
+    """Delete a user."""
+    from models import User
+    username = username.strip().lower()
+
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        click.echo(f"Error: User '{username}' not found.")
+        return
+
+    db.session.delete(user)
+    db.session.commit()
+    click.echo(f"User '{username}' deleted.")
 
 
 if __name__ == "__main__":

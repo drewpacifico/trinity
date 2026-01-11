@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Module 1.2: The Economic Impact of Trucking - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 1.2</span>
+        <h1 class="module-title">The Economic Impact of Trucking</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?fm=jpg&q=80&w=1200"
+             alt="White freight truck on open highway"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <h2>The Numbers Tell a Compelling Story</h2>
+
+    <p>The American trucking industry generates over <strong>$800 billion in revenue annually</strong>. There are approximately 3.5 million professional truck drivers operating more than 15 million commercial trucks across the country. These trucks travel over 400 billion miles each year, delivering everything from fresh produce to manufacturing components to finished consumer goods.</p>
+
+    <p>When trucks stop moving, the economy stops functioning. During the COVID-19 pandemic, truck drivers were designated as essential workers because supply chains depend entirely on their ability to move goods. Natural disasters that close highways create immediate shortages. Labor disputes that interrupt trucking operations ripple through entire industries within days.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            What This Means for You
+        </div>
+        <div class="callout-content">
+            The services you provide aren't optional extras that businesses can easily do without. You're facilitating essential operations. Companies need reliable freight transportation, and they're willing to pay professionals who can deliver it consistently.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 2: Understanding the Industry Landscape - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 2</span>
+        <h1 class="module-title">Understanding the Industry Landscape</h1>
+    </div>
+
+    <p>Now that you understand your role as a freight agent, it's time to learn about the industry you're entering. This chapter maps out the entire freight ecosystem: who the players are, how they interact, and where you fit in.</p>
+
+    <p>In this chapter, you'll discover:</p>
+
+    <ul>
+        <li><strong>The freight ecosystem</strong>:  All the interconnected participants and how they work together</li>
+        <li><strong>Your customers (shippers)</strong>:  Different types of businesses you'll serve and their unique needs</li>
+        <li><strong>Your service providers (carriers)</strong>:  Types of trucking companies and when to use each</li>
+        <li><strong>Industry intermediaries</strong>:  Brokerages, 3PLs, freight forwarders, and load boards</li>
+        <li><strong>Regulatory bodies</strong>:  FMCSA, DOT, and compliance requirements</li>
+        <li><strong>Money flow</strong>:  How payments move through freight transactions</li>
+        <li><strong>Market dynamics</strong>:  Why rates fluctuate and how to read the market</li>
+        <li><strong>Competition</strong>:  Who you're competing against and your advantages</li>
+        <li><strong>Finding your niche</strong>:  Specialization strategies for long-term success</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Point
+        </div>
+        <div class="callout-content">
+            Understanding the industry landscape transforms you from someone who "just moves freight" into a knowledgeable consultant who can explain market dynamics, anticipate challenges, and provide real value to customers.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('module', module_id='2.1') }}" class="btn btn-accent btn-lg">
+            Begin Module 2.1 &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}
