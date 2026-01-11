@@ -27,9 +27,11 @@
         <!-- Already answered - show result -->
         <div class="quiz-options">
             {% for choice in question.choices %}
-            <div class="quiz-option {% if loop.index0 == question.correct_index %}correct{% elif was_correct == False and loop.index0 == question.answer_order.index(question.selected_choice|default('')) %}incorrect{% endif %}" style="pointer-events: none;">
-                <span style="width: 24px; height: 24px; border-radius: 50%; background: {% if loop.index0 == question.correct_index %}var(--success){% else %}var(--bg){% endif %}; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; color: {% if loop.index0 == question.correct_index %}white{% else %}var(--text-muted){% endif %}; flex-shrink: 0;">
-                    {% if loop.index0 == question.correct_index %}&#10003;{% else %}{{ loop.index }}{% endif %}
+            {% set is_correct_answer = loop.index0 == question.correct_index %}
+            {% set is_user_wrong_selection = was_correct == False and question.selected_choice and question.selected_choice in question.answer_order and loop.index0 == question.answer_order.index(question.selected_choice) %}
+            <div class="quiz-option {% if is_correct_answer %}correct{% elif is_user_wrong_selection %}incorrect{% endif %}" style="pointer-events: none;">
+                <span style="width: 24px; height: 24px; border-radius: 50%; background: {% if is_correct_answer %}var(--success){% elif is_user_wrong_selection %}var(--error){% else %}var(--bg){% endif %}; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; color: {% if is_correct_answer or is_user_wrong_selection %}white{% else %}var(--text-muted){% endif %}; flex-shrink: 0;">
+                    {% if is_correct_answer %}&#10003;{% elif is_user_wrong_selection %}&#10007;{% else %}{{ loop.index }}{% endif %}
                 </span>
                 <span>{{ choice }}</span>
             </div>
@@ -73,7 +75,7 @@
                 {% endfor %}
             </div>
             <input type="hidden" name="question_id" value="{{ question.id }}">
-            <input type="hidden" name="answer_order" value="{{ question.answer_order | tojson }}">
+            <input type="hidden" name="answer_order" value='{{ question.answer_order | tojson }}'>
 
             <div style="text-align: center; margin-top: 2rem;">
                 <button type="submit" class="btn btn-accent btn-lg quiz-submit-btn" disabled>

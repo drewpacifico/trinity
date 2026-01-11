@@ -6,26 +6,68 @@
 <div class="content-card">
     <div class="module-header">
         <span class="module-number">Chapter 2</span>
-        <h1 class="module-title">Summary: Understanding the Industry Landscape</h1>
+        <h1 class="module-title">Summary Sheet</h1>
     </div>
 
-    <div class="summary-content">
-        <ul class="summary-list">
-            <li>The Freight Ecosystem Participants:</li>
-            <li>Shippers (your customers): Manufacturers, distributors, retailers, construction companies, agricultural businesses, e-commerce companies, each with unique needs and challenges</li>
-            <li>Carriers (your service providers): Owner-operators, small/medium/large fleets, asset-based and non-asset carriers with different capabilities and service levels</li>
-            <li>Intermediaries: Freight brokerages, 3PLs, freight forwarders, load boards connecting various ecosystem participants</li>
-            <li>Regulators: FMCSA (primary), DOT (parent agency), state agencies, industry associations setting standards and requirements</li>
-            <li>Money Flow: Customer pays you → You pay carrier → Margin is split based on commission agreement (typically 50-70% to agent)</li>
-            <li>Market Dynamics:</li>
-            <li>Capacity: Tight (more loads than trucks = higher rates) vs. Loose (more trucks than loads = lower rates)</li>
-            <li>Seasonality: Pre-holidays, harvest seasons, month/quarter-end create tight capacity; winter typically slower</li>
-            <li>Other factors: Economic conditions, weather events, regulatory changes, fuel prices affect rates</li>
-            <li>Competition: Other agents, large brokerages, asset-based carriers with brokerage arms, 3PLs, digital platforms, direct carrier relationships, each with distinct advantages and disadvantages</li>
-            <li>Specialization Options: Geographic (lanes, regions, rural), industry (food, construction, manufacturing), equipment (flatbed, reefer, heavy haul), service level (expedited, white-glove, cross-border)</li>
-        </ul>
+    <h2>The Freight Ecosystem</h2>
+
+    <ul>
+        <li><strong>Shippers (your customers):</strong> Manufacturers, distributors, retailers, construction companies, agricultural businesses, and e-commerce companies—each with unique shipping needs</li>
+        <li><strong>Carriers (your service providers):</strong> Owner-operators, small/medium/large fleets, asset-based and non-asset carriers with different capabilities and service levels</li>
+        <li><strong>Intermediaries:</strong> Freight brokerages, 3PLs, freight forwarders, and load boards connecting ecosystem participants</li>
+        <li><strong>Regulators:</strong> FMCSA (primary), DOT (parent agency), state agencies, and industry associations setting standards</li>
+    </ul>
+
+    <h2>How Money Flows</h2>
+
+    <ul>
+        <li><strong>The chain:</strong> Customer pays you &rarr; You pay carrier &rarr; Margin is your gross profit</li>
+        <li><strong>Your earnings:</strong> Commission split with brokerage (typically 50/50)</li>
+        <li><strong>Key insight:</strong> Your income grows with volume AND margin—both matter</li>
+    </ul>
+
+    <h2>Market Dynamics</h2>
+
+    <ul>
+        <li><strong>Tight capacity</strong> (more loads than trucks) = higher rates, easier to find freight, harder to find trucks</li>
+        <li><strong>Loose capacity</strong> (more trucks than loads) = lower rates, harder to find freight, easier to find trucks</li>
+        <li><strong>Seasonal patterns:</strong> Pre-holidays, harvest seasons, and month/quarter-end create tight capacity; winter is typically slower</li>
+        <li><strong>External factors:</strong> Economic conditions, weather events, regulatory changes, and fuel prices all affect rates</li>
+    </ul>
+
+    <h2>Your Competition</h2>
+
+    <ul>
+        <li><strong>Direct competitors:</strong> Other agents, large brokerages, 3PLs, and digital freight platforms</li>
+        <li><strong>Indirect competitors:</strong> Asset-based carriers with brokerage arms, direct shipper-carrier relationships</li>
+        <li><strong>Your advantage:</strong> Personal service, specialized knowledge, and relationship-based trust</li>
+    </ul>
+
+    <h2>Specialization Paths</h2>
+
+    <ul>
+        <li><strong>Geographic:</strong> Specific lanes, regions, or rural/hard-to-serve areas</li>
+        <li><strong>Industry:</strong> Food & beverage, construction, manufacturing, retail</li>
+        <li><strong>Equipment:</strong> Flatbed, reefer, tanker, heavy haul, specialized</li>
+        <li><strong>Service level:</strong> Expedited, white-glove, cross-border, high-value</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Remember
+        </div>
+        <div class="callout-content">
+            Understanding the industry landscape helps you identify opportunities others miss. When capacity tightens, shippers need reliable agents more than ever. When capacity loosens, your carrier relationships become your competitive edge. Success comes from reading the market and adapting your approach accordingly.
+        </div>
     </div>
 
     {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('chapter', chapter_num=2, page='action_items') }}" class="btn btn-accent btn-lg">
+            View Action Items &rarr;
+        </a>
+    </div>
 </div>
 {% endblock %}

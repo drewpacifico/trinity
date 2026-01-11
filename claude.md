@@ -61,6 +61,36 @@ When creating or editing module content:
 - **No em dashes mid-sentence.** Avoid using em dashes (—) to divide information. Use periods for separate sentences or commas for lists. Hyphens in compound words (high-volume) and date ranges (September-November) are fine.
 - **Add glossary links with images** for equipment terms when available. Include the image in the tooltip for visual learners.
 
+### Module Review Checklist
+
+When reviewing existing modules, check the following:
+
+**Content Quality:**
+- [ ] Content is accessible to new hires with no industry background
+- [ ] Lists used instead of long paragraphs where appropriate
+- [ ] Callouts (tips, warnings, examples) highlight key points
+- [ ] "Practical application" section with real questions to ask
+- [ ] "Where to focus" section prioritizing what new agents should learn first
+- [ ] Forward references to later chapters instead of duplicating content
+- [ ] No em dashes used mid-sentence
+- [ ] Glossary links added for industry terms (with images where available)
+
+**Quiz Question Review:**
+- [ ] Existing quiz questions align with the module's actual content
+- [ ] Questions test understanding, not just memorization
+- [ ] Each distractor (wrong answer) represents a real-world misconception
+- [ ] Rationale explains why the correct answer is right
+
+**Identify Quiz-Worthy Content:**
+When reviewing, flag content that should have quiz questions:
+- Key definitions or concepts a new agent must know
+- Common mistakes or misconceptions to avoid
+- Verification steps or compliance requirements
+- Decision points (when to use X vs Y)
+- Safety or liability concerns
+
+Mark potential quiz topics with: `[QUIZ: brief description of question topic]` in review notes.
+
 ### Content Organization Notes (from `project.md`)
 - **Chapters identified**: 1) Welcome to Freight Brokerage 2) Understanding the Industry Landscape 3) The Role of a Freight Agent 4) Truck Types and Specifications 5) Load Types and Cargo Categories 6) Load Restrictions and Regulations 7) Building Your Customer Base 8) Sales Strategies for Freight Agents 9) Effective Follow-Up Systems.
 - **Modules**: Use module subsections under each chapter (e.g., 1.1, 1.2, 1.3, 1.4 as seen in Chapter 1) as atomic learning units.

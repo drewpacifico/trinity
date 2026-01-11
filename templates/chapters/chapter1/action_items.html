@@ -9,54 +9,21 @@
         <h1 class="module-title">Action Items</h1>
     </div>
 
-    <p>Before moving to Chapter 2, complete these tasks to ensure you've absorbed the foundational concepts:</p>
+    <p>Complete these tasks to build your foundation and accelerate your learning:</p>
 
-    <div style="background: var(--bg); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-        <h3 style="margin-top: 0; color: var(--primary);">Task 1: Understand the Agent Role and Value Proposition</h3>
-        <p>Write in your own words why a business would choose to work with you instead of calling carriers directly.</p>
-        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.875rem;">
-            <input type="checkbox" id="task1" style="width: 18px; height: 18px;">
-            <label for="task1">Mark as complete</label>
-        </div>
-    </div>
-
-    <div style="background: var(--bg); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-        <h3 style="margin-top: 0; color: var(--primary);">Task 2: Review Commission Structure with Your Brokerage</h3>
-        <p>Confirm your specific commission split, payment terms, and any additional fees or requirements.</p>
-        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.875rem;">
-            <input type="checkbox" id="task2" style="width: 18px; height: 18px;">
-            <label for="task2">Mark as complete</label>
-        </div>
-    </div>
-
-    <div style="background: var(--bg); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-        <h3 style="margin-top: 0; color: var(--primary);">Task 3: Set Realistic Income Expectations for First Year</h3>
-        <p>Create a personal financial plan showing how you'll cover expenses during the 3-6 month startup phase.</p>
-        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.875rem;">
-            <input type="checkbox" id="task3" style="width: 18px; height: 18px;">
-            <label for="task3">Mark as complete</label>
-        </div>
-    </div>
-
-    <div class="callout callout-tip">
-        <div class="callout-title">
-            <span class="callout-icon">&#128161;</span>
-            Pro Tip
-        </div>
-        <div class="callout-content">
-            Take these action items seriously. They're designed to help you internalize the concepts and prepare you for the more technical content in the chapters ahead.
-        </div>
+    <div class="action-items">
+        <ul class="checklist">
+            <li><strong>Write your value proposition:</strong> In your own words, explain why a business would choose to work with you instead of calling carriers directly. Practice saying this out loud until it feels natural</li>
+            <li><strong>Confirm your commission structure:</strong> Review your specific commission split, payment terms, and any fees or requirements with your brokerage manager</li>
+            <li><strong>Create a personal financial plan:</strong> Map out how you'll cover expenses during the 3-6 month ramp-up period while building your customer base</li>
+            <li><strong>Subscribe to industry news:</strong> Sign up for FreightWaves, Transport Topics, or DAT Trendlines to start learning how industry professionals talk about the market</li>
+            <li><strong>Listen to freight podcasts:</strong> Find 2-3 trucking or logistics podcasts and listen during your commute or downtime. Recommendations: FreightWaves' WHAT THE TRUCK?!?, Truck Parking Podcast, or The Loadboard</li>
+            <li><strong>Follow industry voices on LinkedIn:</strong> Connect with freight brokers, carriers, and logistics professionals. Pay attention to how they discuss challenges and solutions</li>
+            <li><strong>Learn the language:</strong> Start a personal glossary of terms you hear that you don't understand. Look them up and write definitions in your own words</li>
+            <li><strong>Study a map:</strong> Familiarize yourself with major freight corridors, key cities, and geographic regions. Understanding where freight flows helps you think like a broker</li>
+        </ul>
     </div>
 
     {% include 'pagination.html' %}
-
-    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-        <a href="{{ url_for('chapter', chapter_num=1, page='summary') }}" class="btn btn-outline">
-            &larr; Back to Summary
-        </a>
-        <a href="{{ url_for('chapter', chapter_num=2, page='intro') }}" class="btn btn-accent btn-lg">
-            Continue to Chapter 2 &rarr;
-        </a>
-    </div>
 </div>
 {% endblock %}

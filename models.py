@@ -418,23 +418,23 @@ def get_chapter_completion_status(user_id, chapter_id):
 def update_user_quiz_answer(user_id, quiz_id, selected_index, answer_order):
     """
     Update user's answer to a quiz question.
-    
+
     Args:
         user_id: User ID
         quiz_id: Quiz question ID
         selected_index: Index (0-3) selected by user in shuffled choices
         answer_order: List like ['b', 'a', 'd', 'c'] representing shuffle order
-    
+
     Returns:
         dict with keys: is_correct, explanation
     """
     quiz = QuizQuestion.query.get(quiz_id)
     if not quiz:
         return {'is_correct': False, 'explanation': 'Quiz question not found'}
-    
+
     # Convert selected index to actual choice letter
     selected_choice = answer_order[selected_index]
-    is_correct = (selected_choice == quiz.correct_choice)
+    is_correct = bool(selected_choice == quiz.correct_choice)
     
     # Update or create answer record
     answer = UserQuizAnswer.query.filter_by(
@@ -457,11 +457,11 @@ def update_user_quiz_answer(user_id, quiz_id, selected_index, answer_order):
         db.session.add(answer)
     
     db.session.commit()
-    
+
     # Check if module is now complete
     if is_correct:
         get_module_completion_status(user_id, quiz.module_id)
-    
+
     return {
         'is_correct': is_correct,
         'explanation': quiz.explanation

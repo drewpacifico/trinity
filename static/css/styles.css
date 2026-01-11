@@ -589,7 +589,9 @@ strong, b {
 
 .quiz-option.incorrect {
   border-color: var(--error);
+  border-width: 2px;
   background: var(--error-light);
+  box-shadow: 0 0 0 1px var(--error);
 }
 
 .quiz-option input[type="radio"] {

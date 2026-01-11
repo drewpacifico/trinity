@@ -2135,7 +2135,7 @@ h3 {
       {% endif %}
       
       {% if quiz_feedback %}
-        {% if quiz_feedback.correct %}
+        {% if quiz_feedback.correct == true %}
           <div style="background: rgba(34, 197, 94, 0.2); border-left: 4px solid #22c55e; padding: 16px 20px; border-radius: 8px; margin-bottom: 24px;">
             <div style="color: #22c55e; font-weight: 600; margin-bottom: 8px;">✓ Correct!</div>
             <div style="color: var(--text); margin-bottom: 16px;">{{ quiz_feedback.message }}</div>
