@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Trinity Training Guide - Welcome{% endblock %}
+
+{% block progress %}
+<!-- No progress bar on cover page -->
+{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="cover-page">
+        <div class="cover-logo">
+            <img src="{{ url_for('static', filename='images/trinity_transport.png') }}" alt="Trinity Transport">
+        </div>
+
+        <h1 class="cover-title">Freight Agent Training Guide</h1>
+        <p class="cover-subtitle">Your comprehensive guide to becoming a successful freight agent</p>
+
+        <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+            <h2 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 1.5rem; text-align: center;">
+                What You'll Learn
+            </h2>
+
+            <div style="display: grid; gap: 1rem;">
+                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background: var(--bg); border-radius: 8px;">
+                    <span style="color: var(--accent); font-weight: 700; font-size: 1.25rem;">I</span>
+                    <div>
+                        <strong style="color: var(--primary);">Foundations</strong>
+                        <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--text-muted);">
+                            Industry overview, your role, and the freight ecosystem
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background: var(--bg); border-radius: 8px;">
+                    <span style="color: var(--accent); font-weight: 700; font-size: 1.25rem;">II</span>
+                    <div>
+                        <strong style="color: var(--primary);">Technical Knowledge</strong>
+                        <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--text-muted);">
+                            Truck types, load categories, and regulations
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background: var(--bg); border-radius: 8px;">
+                    <span style="color: var(--accent); font-weight: 700; font-size: 1.25rem;">III</span>
+                    <div>
+                        <strong style="color: var(--primary);">Business Development</strong>
+                        <p style="margin: 0.25rem 0 0; font-size: 0.9rem; color: var(--text-muted);">
+                            Building customers, sales strategies, and follow-up systems
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cover-cta">
+            <a href="{{ url_for('toc') }}" class="btn btn-accent btn-lg">
+                Begin Training &rarr;
+            </a>
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--text-muted);">
+            9 Chapters &bull; 79 Modules &bull; Interactive Quizzes
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block navigation %}
+<a href="{{ url_for('toc') }}" class="side-nav side-nav-next" title="Next">
+    <span class="side-nav-arrow">&rarr;</span>
+</a>
+{% endblock %}

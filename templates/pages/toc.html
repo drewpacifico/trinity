@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block title %}Table of Contents - Trinity Training Guide{% endblock %}
+
+{% block progress %}
+<!-- No progress bar on TOC page -->
+{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <h1>Table of Contents</h1>
+
+    <ul class="toc-list">
+        <!-- Part I: Foundations -->
+        <li style="margin-bottom: 2rem;">
+            <p style="font-size: 0.875rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">
+                Part I: Foundations
+            </p>
+
+            <!-- Chapter 1 -->
+            <li class="toc-chapter">
+                <a href="{{ url_for('chapter', chapter_num=1, page='intro') }}" class="toc-chapter-title">
+                    <span class="toc-chapter-number">1</span>
+                    Welcome to Freight Brokerage
+                </a>
+                <ul class="toc-modules">
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='1.1') }}">1.1 Introduction to Your New Career</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='1.2') }}">1.2 The Economic Impact of Trucking</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='1.3') }}">1.3 Understanding Your Value Proposition</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='1.4') }}">1.4 The Agent Business Model</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='1.5') }}">1.5 Setting Realistic Expectations</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='1.6') }}">1.6 Your Commitment to Professionalism</a></li>
+                </ul>
+            </li>
+
+            <!-- Chapter 2 -->
+            <li class="toc-chapter">
+                <a href="{{ url_for('chapter', chapter_num=2, page='intro') }}" class="toc-chapter-title">
+                    <span class="toc-chapter-number">2</span>
+                    Understanding the Industry Landscape
+                </a>
+                <ul class="toc-modules">
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='2.1') }}">2.1 The Freight Ecosystem</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='2.2') }}">2.2 Shippers (Your Customers)</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='2.3') }}">2.3 Motor Carriers (Your Service Providers)</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='2.4') }}">2.4 Freight Brokerages and Industry Intermediaries</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='2.5') }}">2.5 Regulatory Bodies</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='2.6') }}">2.6 How Money Flows Through the Industry</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='2.7') }}">2.7 Market Dynamics and Rate Fluctuations</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='2.8') }}">2.8 The Competitive Landscape</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='2.9') }}">2.9 Finding Your Niche in the Market</a></li>
+                </ul>
+            </li>
+
+            <!-- Chapter 3 -->
+            <li class="toc-chapter">
+                <a href="{{ url_for('chapter', chapter_num=3, page='intro') }}" class="toc-chapter-title">
+                    <span class="toc-chapter-number">3</span>
+                    The Role of a Freight Agent
+                </a>
+                <ul class="toc-modules">
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='3.1') }}">3.1 Your Core Responsibilities Overview</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='3.2') }}">3.2 Sales and Business Development</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='3.3') }}">3.3 Load Booking and Coordination</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='3.4') }}">3.4 Operational Execution</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='3.5') }}">3.5 Financial Management</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='3.6') }}">3.6 Administrative and Compliance Tasks</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='3.7') }}">3.7 Continuous Learning and Improvement</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='3.8') }}">3.8 Time Management and Prioritization</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='3.9') }}">3.9 The Mindset of a Successful Agent</a></li>
+                </ul>
+            </li>
+        </li>
+
+        <!-- Part II: Technical Knowledge -->
+        <li style="margin-bottom: 2rem;">
+            <p style="font-size: 0.875rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">
+                Part II: Technical Knowledge
+            </p>
+
+            <!-- Chapter 4 -->
+            <li class="toc-chapter">
+                <a href="{{ url_for('chapter', chapter_num=4, page='intro') }}" class="toc-chapter-title">
+                    <span class="toc-chapter-number">4</span>
+                    Truck Types and Specifications
+                </a>
+                <ul class="toc-modules">
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.1') }}">4.1 Introduction to Equipment Knowledge</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.2') }}">4.2 Dry Van Trailers</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.3') }}">4.3 Refrigerated Trailers (Reefers)</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.4') }}">4.4 Flatbed Trailers</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.5') }}">4.5 Specialized Flatbed Variants</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.6') }}">4.6 Power Only Operations</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.7') }}">4.7 Specialized Equipment Types</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.8') }}">4.8 Truck Classifications and Weight Ratings</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.9') }}">4.9 Axle Configurations and Weight Distribution</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.10') }}">4.10 Matching Equipment to Freight</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='4.11') }}">4.11 Communicating Equipment Needs to Carriers</a></li>
+                </ul>
+            </li>
+
+            <!-- Chapter 5 -->
+            <li class="toc-chapter">
+                <a href="{{ url_for('chapter', chapter_num=5, page='intro') }}" class="toc-chapter-title">
+                    <span class="toc-chapter-number">5</span>
+                    Load Types and Cargo Categories
+                </a>
+                <ul class="toc-modules">
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.1') }}">5.1 Introduction to Freight Classification</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.2') }}">5.2 General Freight (FAK - Freight All Kinds)</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.3') }}">5.3 Food and Beverage Products</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.4') }}">5.4 Building Materials and Construction Products</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.5') }}">5.5 Machinery and Industrial Equipment</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.6') }}">5.6 Hazardous Materials (Hazmat)</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.7') }}">5.7 High-Value Cargo</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.8') }}">5.8 Time-Sensitive and Expedited Freight</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.9') }}">5.9 Oversized and Overweight Loads</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='5.10') }}">5.10 Partial Loads and LTL Considerations</a></li>
+                </ul>
+            </li>
+
+            <!-- Chapter 6 -->
+            <li class="toc-chapter">
+                <a href="{{ url_for('chapter', chapter_num=6, page='intro') }}" class="toc-chapter-title">
+                    <span class="toc-chapter-number">6</span>
+                    Load Restrictions and Regulations
+                </a>
+                <ul class="toc-modules">
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.1') }}">6.1 Introduction to Freight Regulations</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.2') }}">6.2 Hours of Service (HOS) Regulations</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.3') }}">6.3 Detention and Its Impact on Hours of Service</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.4') }}">6.4 Weight Regulations and Bridge Laws</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.5') }}">6.5 Dimensional Restrictions</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.6') }}">6.6 Hazardous Materials (Hazmat) Regulations</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.7') }}">6.7 Food Safety Regulations (FSMA)</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.8') }}">6.8 Hours of Service Exemptions and Special Cases</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.9') }}">6.9 Liability and Insurance Requirements</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.10') }}">6.10 Accessibility and Special Delivery Requirements</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='6.11') }}">6.11 Cross-Border Considerations (U.S.-Canada/U.S.-Mexico)</a></li>
+                </ul>
+            </li>
+        </li>
+
+        <!-- Part III: Business Development -->
+        <li style="margin-bottom: 2rem;">
+            <p style="font-size: 0.875rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">
+                Part III: Business Development
+            </p>
+
+            <!-- Chapter 7 -->
+            <li class="toc-chapter">
+                <a href="{{ url_for('chapter', chapter_num=7, page='intro') }}" class="toc-chapter-title">
+                    <span class="toc-chapter-number">7</span>
+                    Building Your Customer Base
+                </a>
+                <ul class="toc-modules">
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='7.1') }}">7.1 Identifying Target Customers</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='7.2') }}">7.2 Customer Types by Business Model</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='7.3') }}">7.3 Research and Prospecting Methods</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='7.4') }}">7.4 Initial Contact Strategies</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='7.5') }}">7.5 Building Credibility and Trust</a></li>
+                </ul>
+            </li>
+
+            <!-- Chapter 8 -->
+            <li class="toc-chapter">
+                <a href="{{ url_for('chapter', chapter_num=8, page='intro') }}" class="toc-chapter-title">
+                    <span class="toc-chapter-number">8</span>
+                    Sales Strategies for Freight Agents
+                </a>
+                <ul class="toc-modules">
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='8.1') }}">8.1 Consultative Selling Approach</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='8.2') }}">8.2 Value-Based Selling vs. Price-Based Selling</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='8.3') }}">8.3 Understanding Customer Buying Motivations</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='8.4') }}">8.4 Effective Sales Presentation Structure</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='8.5') }}">8.5 Handling Objections Professionally</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='8.6') }}">8.6 Storytelling and Social Proof</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='8.7') }}">8.7 Negotiation Tactics</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='8.8') }}">8.8 Building Long-Term Customer Relationships</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='8.9') }}">8.9 Upselling and Cross-Selling</a></li>
+                </ul>
+            </li>
+
+            <!-- Chapter 9 -->
+            <li class="toc-chapter">
+                <a href="{{ url_for('chapter', chapter_num=9, page='intro') }}" class="toc-chapter-title">
+                    <span class="toc-chapter-number">9</span>
+                    Effective Follow-Up Systems
+                </a>
+                <ul class="toc-modules">
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='9.1') }}">9.1 The Importance of Systematic Follow-Up</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='9.2') }}">9.2 Creating a Follow-Up Schedule</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='9.3') }}">9.3 Long-Term Nurture Strategy</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='9.4') }}">9.4 Follow-Up After Quotes</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='9.5') }}">9.5 Technology Tools for Follow-Up Management</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='9.6') }}">9.6 Tracking Follow-Up Effectiveness</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='9.7') }}">9.7 Organizing Your Follow-Up Workflow</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='9.8') }}">9.8 Knowing When to Stop Following Up</a></li>
+                    <li class="toc-module"><a href="{{ url_for('module', module_id='9.9') }}">9.9 Follow-Up with Existing Customers</a></li>
+                </ul>
+            </li>
+        </li>
+    </ul>
+
+    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center;">
+        <a href="{{ url_for('glossary') }}" class="btn btn-outline">
+            View Glossary
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block navigation %}
+<a href="{{ url_for('cover') }}" class="side-nav side-nav-prev" title="Cover">
+    <span class="side-nav-arrow">&larr;</span>
+</a>
+
+<a href="{{ url_for('chapter', chapter_num=1, page='intro') }}" class="side-nav side-nav-next" title="Start Chapter 1">
+    <span class="side-nav-arrow">&rarr;</span>
+</a>
+{% endblock %}

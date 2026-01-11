@@ -1,106 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}{% endblock %}</title>
-<!-- Prevent flash of wrong theme - apply immediately with inline CSS -->
-<script>
-(function() {
-  // TEMPORARY: Force light mode for testing
-  var theme = 'classic';
-  // var theme = localStorage.getItem('theme') || 'classic';
-  if (theme === 'modern') {
-    // Apply dark theme colors immediately (inline CSS - no download needed)
-    document.write('<style id="theme-preload">body.modern-theme{background:#1a1a2e!important;color:#e8e8e8!important;}body.modern-theme .card{background:#16213e!important;}</style>');
-  }
-  // Load full modern CSS
-  if (theme === 'modern') {
-    document.write('<link rel="stylesheet" href="{{ url_for("static", filename="style-modern.css") }}" id="modern-style">');
-  } else {
-    document.write('<link rel="stylesheet" href="{{ url_for("static", filename="style-modern.css") }}" id="modern-style" disabled>');
-  }
-})();
-</script>
-<style>
-:root {
-  --bg: #faf7f5;
-  --card: #ffffff;
-  --text: #2b2b2b;
-  --muted: #6b7280;
-  --primary: #4f46e5; /* indigo */
-  --primary-weak: #eef2ff;
-  --accent: #06b6d4; /* cyan */
-}
-html, body { height: 100%; }
-body { margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.7; }
-a { color: var(--primary); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { max-width: 960px; margin: 0 auto; padding: 24px; }
-.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-.brand { font-weight: 700; letter-spacing: 0.3px; }
-.card { background: var(--card); border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding: 20px; }
-.badge { background: var(--primary-weak); color: var(--primary); border-radius: 999px; padding: 2px 10px; font-size: 12px; }
-.badge.admin { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; font-weight: 600; padding: 6px 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); transition: all 0.2s; }
-.badge.admin:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.5); text-decoration: none; }
-.navbar { display: flex; gap: 12px; align-items: center; }
-.footer { margin-top: 32px; color: var(--muted); font-size: 14px; }
-h1 { font-size: 28px; margin: 0 0 8px; }
-h2 { font-size: 20px; margin: 0 0 8px; }
-h3 { font-size: 18px; margin: 0 0 6px; }
-pre { white-space: pre-wrap; margin: 0; }
-.button { display: inline-block; background: var(--primary); color: white; padding: 8px 14px; border-radius: 8px; }
-.button.secondary { background: var(--accent); }
-.breadcrumbs { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
-.pagination { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
-
-/* Theme Toggle Button */
-.theme-toggle {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: var(--primary);
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  display: none; /* TEMP: Hidden for testing */
-  /* display: flex; */
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.6);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  font-size: 24px;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.15);
-  box-shadow: 0 6px 28px rgba(6, 182, 212, 0.8);
-  background: var(--accent);
-  border-color: var(--primary);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Trinity Training Guide{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block head %}{% endblock %}
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="brand"><a href="{{ url_for('index') }}">Training Manual</a></div>
-      <div class="navbar">
-        <a class="badge" href="{{ url_for('index') }}">Chapters</a>
-        {% if preview_mode %}
-        <a class="badge admin" href="{{ url_for('quiz_questions') }}">📝 Quiz Manager</a>
-        {% endif %}
-      </div>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('toc') }}">
+                    <img src="{{ url_for('static', filename='images/trinity_transport.png') }}" alt="Trinity Transport">
+                </a>
+                <span class="logo-text">Training Guide</span>
+            </div>
+            <div class="header-center">
+                <a href="{{ url_for('toc') }}" class="header-link">Contents</a>
+                <a href="{{ url_for('glossary') }}" class="header-link">Glossary</a>
+            </div>
+
+            <div class="header-right">
+                {% if session.get('username') %}
+                <span class="user-badge">{{ session.get('username') }}</span>
+                <a href="{{ url_for('logout') }}" class="btn-logout">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="content-container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <!-- SIDE NAVIGATION ARROWS -->
+    {% block navigation %}
+    {% if prev_url %}
+    <a href="{{ prev_url }}" class="side-nav side-nav-prev" title="Previous">
+        <span class="side-nav-arrow">&larr;</span>
+    </a>
+    {% endif %}
+
+    {% if next_url %}
+    <a href="{{ next_url }}" class="side-nav side-nav-next" title="Next">
+        <span class="side-nav-arrow">&rarr;</span>
+    </a>
+    {% endif %}
+    {% endblock %}
+
+    <!-- PROGRESS BAR -->
+    {% block progress %}
+    {% if chapter_num is defined and chapter_title is defined %}
+    <div class="progress-section">
+        <div class="progress-container">
+            <div class="progress-label">
+                <span class="chapter-name">Chapter {{ chapter_num }}: {{ chapter_title }}</span>
+                <span class="progress-percent">{{ progress_percent|default(0) }}% Complete</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: {{ progress_percent|default(0) }}%"></div>
+            </div>
+        </div>
     </div>
+    {% endif %}
+    {% endblock %}
 
-    {% block content %}{% endblock %}
-
-    <div class="footer">Made for focused learning. Take breaks and hydrate.</div>
-  </div>
-  
-  <!-- Theme Toggle Script -->
-  <script src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
 </body>
 </html>

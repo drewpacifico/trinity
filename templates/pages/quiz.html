@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz - Module {{ module_id }} - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module {{ module_id }} Quiz</span>
+        <h1 class="module-title">Knowledge Check</h1>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding: 1rem; background: var(--bg); border-radius: 8px;">
+        <span style="font-size: 0.875rem; color: var(--text-muted);">
+            Question {{ question_num }} of {{ total_questions }}
+        </span>
+        <div style="display: flex; gap: 0.5rem;">
+            {% for i in range(1, total_questions + 1) %}
+            <span style="width: 10px; height: 10px; border-radius: 50%; background: {% if i == question_num %}var(--accent){% elif i < question_num %}var(--success){% else %}var(--border){% endif %};"></span>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="quiz-container" style="background: transparent; padding: 0;">
+        <p class="quiz-question" style="font-size: 1.25rem; margin-bottom: 1.5rem;">{{ question.question }}</p>
+
+        {% if already_answered %}
+        <!-- Already answered - show result -->
+        <div class="quiz-options">
+            {% for choice in question.choices %}
+            <div class="quiz-option {% if loop.index0 == question.correct_index %}correct{% elif was_correct == False and loop.index0 == question.answer_order.index(question.selected_choice|default('')) %}incorrect{% endif %}" style="pointer-events: none;">
+                <span style="width: 24px; height: 24px; border-radius: 50%; background: {% if loop.index0 == question.correct_index %}var(--success){% else %}var(--bg){% endif %}; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; color: {% if loop.index0 == question.correct_index %}white{% else %}var(--text-muted){% endif %}; flex-shrink: 0;">
+                    {% if loop.index0 == question.correct_index %}&#10003;{% else %}{{ loop.index }}{% endif %}
+                </span>
+                <span>{{ choice }}</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="quiz-feedback {% if was_correct %}correct{% else %}incorrect{% endif %}" style="margin-top: 1.5rem;">
+            <div class="quiz-feedback-title">
+                {% if was_correct %}
+                <span>&#10003;</span> Correct!
+                {% else %}
+                <span>&#10007;</span> Incorrect
+                {% endif %}
+            </div>
+            {% if question.explanation %}
+            <div class="quiz-feedback-content" style="margin-top: 0.5rem;">
+                {{ question.explanation }}
+            </div>
+            {% endif %}
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="{{ next_url }}" class="btn btn-accent btn-lg">
+                {% if question_num >= total_questions %}
+                Continue &rarr;
+                {% else %}
+                Next Question &rarr;
+                {% endif %}
+            </a>
+        </div>
+
+        {% else %}
+        <!-- Not answered yet - show form -->
+        <form class="quiz-form" method="POST" action="{{ url_for('submit_quiz', module_id=module_id, question_num=question_num) }}">
+            <div class="quiz-options">
+                {% for choice in question.choices %}
+                <label class="quiz-option">
+                    <input type="radio" name="answer" value="{{ loop.index0 }}" required>
+                    <span>{{ choice }}</span>
+                </label>
+                {% endfor %}
+            </div>
+            <input type="hidden" name="question_id" value="{{ question.id }}">
+            <input type="hidden" name="answer_order" value="{{ question.answer_order | tojson }}">
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button type="submit" class="btn btn-accent btn-lg quiz-submit-btn" disabled>
+                    Submit Answer
+                </button>
+            </div>
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block navigation %}
+<a href="{{ prev_url }}" class="side-nav side-nav-prev" title="Previous">
+    <span class="side-nav-arrow">&larr;</span>
+</a>
+
+{% if already_answered %}
+<a href="{{ next_url }}" class="side-nav side-nav-next" title="Next">
+    <span class="side-nav-arrow">&rarr;</span>
+</a>
+{% endif %}
+{% endblock %}

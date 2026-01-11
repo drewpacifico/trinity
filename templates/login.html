@@ -1,326 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Login - Training Manual</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style-modern.css') }}" id="modern-style" disabled>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --bg: #0f0f10;
-  --card: #1a1a1d;
-  --text: #e8e8e8;
-  --muted: #9ca3af;
-  --accent: #6366f1;
-  --accent-dim: #4f46e5;
-  --highlight: #fbbf24;
-  --error: #ef4444;
-}
-
-html, body { 
-  height: 100%; 
-  margin: 0;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.login-container {
-  max-width: 450px;
-  width: 100%;
-  background: var(--card);
-  border-radius: 20px;
-  padding: 48px 40px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  animation: fadeIn 0.5s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.logo {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.logo h1 {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
-}
-
-.logo p {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.form-group {
-  margin-bottom: 24px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: 600;
-  color: var(--text);
-  font-size: 15px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 16px 18px;
-  background: rgba(99, 102, 241, 0.1);
-  border: 2px solid rgba(99, 102, 241, 0.2);
-  border-radius: 12px;
-  color: var(--text);
-  font-size: 16px;
-  font-family: inherit;
-  transition: all 0.3s ease;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: rgba(99, 102, 241, 0.15);
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-}
-
-.form-group input::placeholder {
-  color: var(--muted);
-}
-
-.submit-btn {
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
-  border: none;
-  border-radius: 12px;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-  margin-top: 8px;
-}
-
-.submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
-}
-
-.submit-btn:active {
-  transform: translateY(0);
-}
-
-.info-box {
-  margin-top: 32px;
-  padding: 20px;
-  background: rgba(99, 102, 241, 0.1);
-  border: 2px solid rgba(99, 102, 241, 0.2);
-  border-radius: 12px;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.info-box strong {
-  color: var(--accent);
-  display: block;
-  margin-bottom: 8px;
-  font-size: 15px;
-}
-
-.register-link {
-  display: inline-block;
-  margin-top: 24px;
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
-
-.register-link:hover {
-  color: var(--highlight);
-  text-decoration: underline;
-}
-
-.flash-message {
-  padding: 16px;
-  border-radius: 12px;
-  margin-bottom: 24px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.flash-message.error {
-  background: rgba(239, 68, 68, 0.1);
-  border: 2px solid rgba(239, 68, 68, 0.3);
-  color: var(--error);
-}
-
-.theme-toggle {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: var(--accent);
-  border: 2px solid var(--highlight);
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.6);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  font-size: 24px;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.15);
-  box-shadow: 0 6px 28px rgba(251, 191, 36, 0.8);
-  background: var(--highlight);
-  border-color: var(--accent);
-}
-
-/* Modern theme overrides */
-body.modern-theme {
-  background: #f8f9fa;
-}
-
-body.modern-theme .login-container {
-  background: white;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-}
-
-body.modern-theme .logo h1 {
-  color: #6366f1;
-}
-
-body.modern-theme .logo p {
-  color: #546e7a;
-}
-
-body.modern-theme .form-group label {
-  color: #2c3e50;
-}
-
-body.modern-theme .form-group input {
-  background: rgba(99, 102, 241, 0.05);
-  border-color: #e0e0e0;
-  color: #2c3e50;
-}
-
-body.modern-theme .form-group input:focus {
-  border-color: #6366f1;
-  background: rgba(99, 102, 241, 0.1);
-}
-
-body.modern-theme .form-group input::placeholder {
-  color: #546e7a;
-}
-
-body.modern-theme .submit-btn {
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
-}
-
-body.modern-theme .info-box {
-  background: rgba(99, 102, 241, 0.1);
-  border-color: #e0e0e0;
-  color: #546e7a;
-}
-
-body.modern-theme .info-box strong {
-  color: #6366f1;
-}
-
-body.modern-theme .register-link {
-  color: #6366f1;
-}
-
-body.modern-theme .flash-message.error {
-  background: rgba(239, 68, 68, 0.1);
-  border-color: rgba(239, 68, 68, 0.3);
-  color: #dc2626;
-}
-
-@media (max-width: 640px) {
-  .login-container {
-    padding: 36px 28px;
-  }
-  
-  .logo h1 {
-    font-size: 28px;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Trinity Training Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body>
-  <div class="login-container">
-    <div class="logo">
-      <h1>👋 Welcome Back!</h1>
-      <p>Enter your name to continue</p>
+<body class="login-page">
+    <div class="login-card">
+        <div class="login-logo">
+            <img src="{{ url_for('static', filename='images/trinity_transport.png') }}" alt="Trinity Transport">
+        </div>
+
+        <div class="login-title">
+            <h1>Training Guide</h1>
+            <p>Sign in to access your training materials</p>
+        </div>
+
+        {% if error %}
+        <div class="form-error">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                    autofocus
+                    autocomplete="username"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                    autocomplete="current-password"
+                >
+            </div>
+
+            <button type="submit" class="login-submit">
+                Sign In
+            </button>
+        </form>
+
+        <div class="login-footer">
+            Contact your administrator if you need login credentials.
+        </div>
     </div>
-
-    {% if error %}
-    <div class="flash-message error">
-      <span>⚠️</span>
-      <span>{{ error }}</span>
-    </div>
-    {% endif %}
-
-    <form method="POST" action="{{ url_for('login') }}">
-      <div class="form-group">
-        <label for="username">Your Name</label>
-        <input 
-          type="text" 
-          id="username" 
-          name="username" 
-          placeholder="Enter your name" 
-          required 
-          autofocus
-          autocomplete="name"
-        >
-      </div>
-
-      <button type="submit" class="submit-btn">
-        Continue Training →
-      </button>
-    </form>
-
-    <div class="info-box">
-      <strong>🔐 Secure & Simple</strong>
-      Your progress is saved under your name. Just enter the same name each time you return.
-    </div>
-
-    <a href="{{ url_for('register') }}" class="register-link">
-      New user? Start here →
-    </a>
-  </div>
-
-  <!-- Theme Toggle Button -->
-  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
-    <span id="theme-icon">🌙</span>
-  </button>
-
-  <!-- Theme Toggle Script -->
-  <script src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
 </body>
 </html>

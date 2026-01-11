@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sqlite3:*)",
+      "WebFetch(domain:www.shiptrinity.com)",
+      "Bash(dir /b)",
+      "Bash(copy \"C:\\\\Trinity-Training-Guide_main\\\\static\\\\trinity_transport.png\" \"C:\\\\Trinity-Training-Guide_main\\\\static\\\\images\\\\trinity_transport.png\")",
+      "Bash(ls:*)",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(python:*)",
+      "Bash(find:*)"
+    ]
+  }
+}
