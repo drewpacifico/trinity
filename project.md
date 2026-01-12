@@ -4604,7 +4604,6 @@ Mod 3.3 - Bill of Lading (BOL) - The contract between shipper and carrier specif
 Mod 4.2 - Box Truck - A medium-duty truck with an integrated cargo box (typically 12-26 feet long), also called a straight truck or cube van. The cab and cargo area are one unit—no trailer hookup required. Used for local deliveries, LTL consolidation, last-mile delivery, and moving services. Drivers don't need a CDL for trucks under 26,000 lbs GVWR. Benefits: highly maneuverable, accesses tight locations (residential, urban), no trailer backing skills needed, lower operating costs than tractor-trailers. Limitations: smaller capacity (typically 5,000-10,000 lbs), limited to regional/local routes, not for long-haul freight. Common in e-commerce delivery, food service distribution, and small-business shipping.
 Mod 1.4 - Brokerage - A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.
 Mod 6.9 - Broker Surety Bond - A $75,000 bond or trust fund that freight brokers must maintain to protect shippers and carriers from broker default or non-payment.
-Mod 7.1 - Building Customer Base - The systematic process of identifying, contacting, qualifying, and converting prospects into paying customers through prospecting and relationship building.
 Mod 5.3 - Building Materials - Construction products including lumber, drywall, steel, concrete, glass, and HVAC equipment that often require flatbed transportation and special handling.
 Mod 7.7 - Business Directories - Online databases like ReferenceUSA, Hoovers, and Manta that provide company information useful for identifying and researching potential customers.
 Mod 8.5 - Call to Action - A specific, low-risk next step suggested at the end of a sales presentation, such as a trial shipment or pilot program.
@@ -4679,7 +4678,7 @@ Mod 5.9 - Partial Truckload - Freight between LTL and full truckload (typically 
 Mod 6.6 - Placarding - Diamond-shaped hazard class signs required on vehicles carrying certain hazmat quantities: Table 1 materials at any amount, Table 2 over 1,001 pounds.
 Mod 4.6 - Power Only - An operating arrangement where carriers provide only the tractor and driver while customers provide trailers, common in drop-and-hook operations.
 Mod 4.2 - Pre-Cooling - Bringing a refrigerated trailer to required temperature before loading begins, essential since reefer units maintain temperature but don't rapidly cool warm freight.
-Mod 8.1 - Presenting Phase - The third phase of consultative selling where you explain how your services address customer needs with concrete examples.
+Mod 8.1 - Recommendation Phase - The third phase of consultative selling where you explain how your services address customer needs with concrete examples.
 Mod 3.9 - Proactive Communication - Providing updates before problems become crises and before customers ask, addressing small issues before they become large ones.
 Mod 3.4 - Problem Resolution - Addressing shipping issues by gathering information, communicating transparently, developing solutions quickly, and following through to completion.
 Mod 3.3 - Proof of Delivery (POD) - Signed documentation confirming freight was delivered, required for invoicing customers and proving shipment completion.

@@ -66,17 +66,25 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     """Production environment configuration"""
-    
+
     DEBUG = False
     TESTING = False
-    
-    # PostgreSQL database for production
-    # Try DATABASE_URI first (Digital Ocean standard), fall back to DATABASE_URL
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') or os.environ.get('DATABASE_URL')
-    
-    if SQLALCHEMY_DATABASE_URI and SQLALCHEMY_DATABASE_URI.startswith('postgres://'):
+
+    # Database configuration for production
+    # Supports MySQL, PostgreSQL, or SQLite
+    # Priority: DATABASE_URI > DATABASE_URL > MYSQL_URI
+    SQLALCHEMY_DATABASE_URI = (
+        os.environ.get('DATABASE_URI') or
+        os.environ.get('DATABASE_URL') or
+        os.environ.get('MYSQL_URI')
+    )
+
+    if SQLALCHEMY_DATABASE_URI:
         # Fix for Heroku's postgres:// URL (should be postgresql://)
-        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace('postgres://', 'postgresql://', 1)
+        if SQLALCHEMY_DATABASE_URI.startswith('postgres://'):
+            SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace('postgres://', 'postgresql://', 1)
+        # MySQL connection string format: mysql+pymysql://user:pass@host/db
+        # No modification needed for MySQL URIs
     
     # Production security settings
     SESSION_COOKIE_SECURE = True  # HTTPS only

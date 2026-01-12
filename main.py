@@ -1859,17 +1859,87 @@ def glossary():
     # Require login
     if not session.get('logged_in') and not session.get('preview_mode'):
         return redirect(url_for("login"))
-    
+
     try:
         text = PROJECT_MD_PATH.read_text(encoding="utf-8", errors="ignore")
     except FileNotFoundError:
         text = ""
-    
+
     glossary_terms = parse_glossary_terms(text) if text else []
-    
+
+    # Filter out truck types (they're now on the /trucks page)
+    truck_term_names = {
+        'Dry Van Trailer',
+        'Refrigerated Trailer (Reefer)',
+        'Flatbed Trailer',
+        'Step Deck (Drop Deck) Trailer',
+        'Tanker Trailer',
+        'Box Truck'
+    }
+    glossary_terms = [term for term in glossary_terms if term['name'] not in truck_term_names]
+
     return render_template(
         "glossary.html",
         glossary_terms=glossary_terms
+    )
+
+
+@app.route("/trucks")
+def trucks():
+    """Truck types reference page with images"""
+    # Require login
+    if not session.get('logged_in') and not session.get('preview_mode'):
+        return redirect(url_for("login"))
+
+    # Define truck types with their images and definitions
+    truck_data = [
+        {
+            'id': 'dry-van-trailer',
+            'name': 'Dry Van Trailer',
+            'module': 'Mod 4.2',
+            'image': '/static/images/dry_van.jpeg',
+            'definition': "The most common trailer in trucking: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity. Used for palletized goods, boxed retail products, and any general freight not requiring temperature control. Benefits include weather protection, cargo security, and versatility across industries."
+        },
+        {
+            'id': 'refrigerated-trailer-reefer',
+            'name': 'Refrigerated Trailer (Reefer)',
+            'module': 'Mod 4.2',
+            'image': '/static/images/reefer.jpeg',
+            'definition': "Insulated trailers with self-powered refrigeration units maintaining temperatures from -20°F (frozen) to +70°F (climate-controlled). Capacity 40,000-42,000 lbs. Essential for frozen foods, fresh produce, dairy, meat, pharmaceuticals, and anything temperature-sensitive."
+        },
+        {
+            'id': 'flatbed-trailer',
+            'name': 'Flatbed Trailer',
+            'module': 'Mod 4.3',
+            'image': '/static/images/flatbed.jpeg',
+            'definition': "An open platform trailer (48' or 53' long × 8.5' wide × 5' deck height) without sides or roof. Used for lumber, steel, pipe, machinery, construction materials, and anything requiring top or side loading. Freight is secured with chains, straps, and blocking/bracing."
+        },
+        {
+            'id': 'step-deck-drop-deck-trailer',
+            'name': 'Step Deck (Drop Deck) Trailer',
+            'module': 'Mod 4.4',
+            'image': '/static/images/step_deck_original.jpeg',
+            'definition': "A flatbed with two deck levels: the front section sits at standard 5' height for about 10 feet, then 'steps down' to approximately 3.5' off ground for the remaining 43 feet. This design allows freight 10-11 feet tall to stay under the 13.5-14' highway height limit."
+        },
+        {
+            'id': 'tanker-trailer',
+            'name': 'Tanker Trailer',
+            'module': 'Mod 4.6',
+            'image': '/static/images/tanker.jpeg',
+            'definition': "Cylindrical trailers designed for liquid cargo, with capacities ranging from 5,000-9,000 gallons depending on product density and weight limits. Used for fuel, chemicals, milk, food-grade liquids, and industrial fluids. Tankers are specialized: a fuel tanker can't haul milk."
+        },
+        {
+            'id': 'box-truck',
+            'name': 'Box Truck',
+            'module': 'Mod 4.2',
+            'image': '/static/images/box_truck.jpeg',
+            'definition': "A medium-duty truck with an integrated cargo box (typically 12-26 feet long), also called a straight truck or cube van. The cab and cargo area are one unit. Used for local deliveries, LTL consolidation, last-mile delivery, and moving services. Highly maneuverable for urban and residential access."
+        }
+    ]
+
+    return render_template(
+        "trucks.html",
+        trucks=truck_data
     )
 
 

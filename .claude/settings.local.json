@@ -10,7 +10,9 @@
       "WebFetch(domain:unsplash.com)",
       "Bash(python:*)",
       "Bash(find:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "WebFetch(domain:www.dreamstime.com)",
+      "WebFetch(domain:commons.wikimedia.org)"
     ]
   }
 }

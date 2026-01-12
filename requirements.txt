@@ -8,8 +8,12 @@ Werkzeug==3.0.1
 Flask-SQLAlchemy==3.1.1
 SQLAlchemy==2.0.23
 
-# PostgreSQL adapter (for production)
+# PostgreSQL adapter (for production on Heroku/DigitalOcean)
 psycopg2-binary==2.9.9
+
+# MySQL adapter (for production on Hostinger VPS)
+PyMySQL==1.1.0
+cryptography==41.0.7
 
 # Markdown processing
 markdown==3.5.1
