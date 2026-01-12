@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5.1: Introduction to Freight Classification - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 5.1</span>
+        <h1 class="module-title">Introduction to Freight Classification</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?fm=jpg&q=80&w=1200"
+             alt="Organized warehouse showing different freight categories"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Understanding different load types and cargo categories helps you communicate effectively with customers, select appropriate equipment, and anticipate challenges before they arise. Every commodity has unique characteristics affecting how it ships: density, fragility, value, regulatory requirements, and handling needs all vary dramatically.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            You don't need to become an expert in every commodity type, but understanding the basics helps you ask intelligent questions, provide accurate quotes, and avoid costly mistakes. Each freight category has unique equipment needs, regulatory requirements, and potential challenges.
+        </div>
+    </div>
+
+    <p>This chapter walks you through the major freight categories you'll encounter as a freight agent.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when a customer describes their freight:</p>
+
+    <ul>
+        <li><strong>"What exactly is the commodity?"</strong> Generic descriptions like "freight" or "product" aren't sufficient.</li>
+        <li><strong>"Does it require temperature control?"</strong> This immediately narrows equipment options.</li>
+        <li><strong>"Is it hazardous in any way?"</strong> Chemicals, batteries, and many common products are <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a>.</li>
+        <li><strong>"What's the value?"</strong> High-value freight needs different handling and insurance.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>General freight first:</strong> Most of your loads will be standard palletized goods. Master this category.</li>
+        <li><strong>Recognize specialized freight:</strong> Learn to identify when freight needs special handling so you can ask the right questions.</li>
+        <li><strong>Know your limits:</strong> Some freight categories require expertise you may not have yet. Know when to ask for help.</li>
+    </ul>
+
+    <p>You don't need to memorize every detail about every commodity. Focus on asking good questions and recognizing when freight has special requirements.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

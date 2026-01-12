@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.1: Introduction to Equipment Knowledge - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.1</span>
+        <h1 class="module-title">Introduction to Equipment Knowledge</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?fm=jpg&q=80&w=1200"
+             alt="Fleet of commercial trucks representing equipment knowledge"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Understanding truck and trailer types is fundamental to your success as a freight agent. You can't effectively match freight to equipment if you don't know what each trailer type can handle. You can't quote loads accurately if you don't understand equipment limitations. You can't communicate credibly with <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> if you use incorrect terminology or make unrealistic equipment requests.</p>
+
+    <p>This chapter provides comprehensive information about the most common equipment types you'll encounter. The knowledge you gain here will be used every single day of your career.</p>
+
+    <h2>Why Equipment Knowledge Matters</h2>
+
+    <ul>
+        <li><strong>Accurate quoting:</strong> Know what equipment a load requires before you price it</li>
+        <li><strong>Effective carrier communication:</strong> Speak the language carriers understand</li>
+        <li><strong>Problem prevention:</strong> Avoid booking wrong equipment that can't handle the freight</li>
+        <li><strong>Professional credibility:</strong> Demonstrate expertise that builds trust with customers and carriers</li>
+        <li><strong>Cost optimization:</strong> Select appropriate equipment without overspending on unnecessary features</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Study this material thoroughly. Equipment knowledge separates professional agents from amateurs who waste everyone's time by quoting inappropriate equipment or making impossible requests.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask yourself as you learn equipment types:</p>
+
+    <ul>
+        <li><strong>"What equipment type does this freight require?"</strong> Practice this mental exercise with every load you encounter.</li>
+        <li><strong>"Why can't I use a different equipment type?"</strong> Understanding limitations reinforces your knowledge.</li>
+        <li><strong>"What would happen if I sent the wrong equipment?"</strong> Visualize consequences to cement the importance of accuracy.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Dry vans first:</strong> They handle most general freight. Master <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry van<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a> specs before moving to specialized equipment.</li>
+        <li><strong>Reefer basics:</strong> Temperature-controlled freight is common. Know the fundamentals even if you don't specialize in it.</li>
+        <li><strong>Flatbed recognition:</strong> Learn to identify when freight needs <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a> instead of enclosed trailers.</li>
+    </ul>
+
+    <p>Specialized equipment like <a href="{{ url_for('glossary') }}#tanker-trailer" class="glossary-term-link" target="_blank">tankers<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/tanker.jpeg" alt="Tanker trailer"></span><span class="glossary-tooltip-term">Tanker Trailer</span><span class="glossary-tooltip-definition">Trailers hauling liquids (fuel, chemicals, food products) with 5,000-9,000 gallon capacity, heavily regulated especially for hazmat and food-grade.</span></span></a>, <a href="{{ url_for('glossary') }}#hopper-trailer" class="glossary-term-link" target="_blank">hoppers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hopper Trailer</span><span class="glossary-tooltip-definition">Trailers that haul dry bulk materials like grain, plastic pellets, or cement, unloading through bottom gates or pneumatic systems.</span></span></a>, and <a href="{{ url_for('glossary') }}#livestock-trailer" class="glossary-term-link" target="_blank">livestock trailers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Livestock Trailer</span><span class="glossary-tooltip-definition">Specialized multi-deck trailers with ventilation for transporting live animals, subject to strict animal welfare regulations.</span></span></a> can wait until you encounter specific opportunities.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

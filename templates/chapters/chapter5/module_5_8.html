@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5.8: Time-Sensitive and Expedited Freight - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 5.8</span>
+        <h1 class="module-title">Time-Sensitive and Expedited Freight</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?fm=jpg&q=80&w=1200"
+             alt="Express delivery truck representing expedited freight service"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Some freight must move faster than standard transit times allow. Understanding expedited services helps you serve customers with urgent needs.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Customers paying premium rates for expedited service expect premium communication. Provide updates every 2-4 hours, monitor proactively, and notify immediately of any issues. Silence creates anxiety—regular updates reassure them you're managing their critical shipment attentively.
+        </div>
+    </div>
+
+    <h2>Types of Time-Sensitive Freight</h2>
+
+    <h3>Expedited/Hot Shot Service</h3>
+    <p>Freight requiring delivery faster than standard transit allows. This might mean:</p>
+    <ul>
+        <li>1,000-1,500 miles in 24 hours (impossible for solo drivers under <a href="{{ url_for('glossary') }}#hours-of-service-hos" class="glossary-term-link" target="_blank">HOS<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hours of Service (HOS)</span><span class="glossary-tooltip-definition">Federal regulations limiting driver operating hours: 11-hour driving limit, 14-hour duty window, 60/70-hour work week, 30-minute break requirement.</span></span></a> rules)</li>
+        <li>Guaranteed delivery by specific deadline</li>
+        <li>Bypassing standard routing to save time</li>
+        <li>Minimal or no stops except fuel and required breaks</li>
+    </ul>
+
+    <h3>Just-In-Time (<a href="{{ url_for('glossary') }}#just-in-time-jit" class="glossary-term-link" target="_blank">JIT<span class="glossary-tooltip"><span class="glossary-tooltip-term">Just-In-Time (JIT)</span><span class="glossary-tooltip-definition">Manufacturing strategy using minimal inventory with precise delivery timing, where late deliveries can cause production shutdowns costing thousands per hour.</span></span></a>) Manufacturing Deliveries</h3>
+    <p>Manufacturing facilities using JIT inventory systems need parts delivered within precise time windows. Early delivery is often as problematic as late delivery because they lack storage space.</p>
+
+    <p><strong>JIT characteristics:</strong></p>
+    <ul>
+        <li>Narrow delivery windows (sometimes 30-60 minutes)</li>
+        <li>Critical to production (late delivery stops manufacturing lines)</li>
+        <li>High consequences for failure (production shutdowns cost thousands per hour)</li>
+        <li>Usually recurring shipments on predictable schedules</li>
+    </ul>
+
+    <h3>Emergency Shipments</h3>
+    <p>Equipment breakdowns or production issues create urgent needs for replacement parts or materials:</p>
+    <ul>
+        <li>Fastest possible delivery regardless of cost</li>
+        <li>Sometimes require specialized equipment pickup and delivery</li>
+        <li>Often after-hours pickup or delivery</li>
+        <li>May need special handling or installations</li>
+    </ul>
+
+    <h2>Failure Consequences</h2>
+
+    <p>Late delivery on JIT freight can cause production shutdowns. A manufacturing line producing vehicles worth millions daily that stops for lack of a $5,000 component creates enormous pressure to prevent delays.</p>
+
+    <p>Customers remember service failures on critical shipments forever. Success on expedited freight builds strong relationships; failure destroys them quickly.</p>
+
+    <h2>Team Drivers for Expedited Service</h2>
+
+    <p>Team drivers are essential for long-distance expedited freight:</p>
+    <ul>
+        <li>Two drivers allow continuous movement</li>
+        <li>One drives while the other rests</li>
+        <li>Can cover 1,000+ miles per day legally</li>
+        <li>Cost 50-75% more than solo drivers</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            For distances under 1,500 miles, truck expedited service is often cheaper than air freight while providing comparable speed. Always present expedited trucking as an option for urgent shipments—customers may not realize it's available.
+        </div>
+    </div>
+
+    <h2>Communication Standards</h2>
+
+    <p>Expedited freight demands enhanced communication:</p>
+    <ul>
+        <li>Updates every 2-4 hours (not just daily)</li>
+        <li>Proactive notification of any delays or issues</li>
+        <li>Real-time tracking access for customers when possible</li>
+        <li>Immediate escalation of problems</li>
+        <li>After-hours availability for critical shipments</li>
+    </ul>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask for time-sensitive freight:</p>
+
+    <ul>
+        <li><strong>"What is the absolute latest delivery time?"</strong> Get a specific deadline, not "as soon as possible."</li>
+        <li><strong>"What happens if we miss this deadline?"</strong> Understand the stakes to price appropriately.</li>
+        <li><strong>"Can you do after-hours pickup or delivery?"</strong> Expedited often requires non-standard hours.</li>
+        <li><strong>"What level of communication do you need?"</strong> Set expectations for update frequency.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Team driver math:</strong> Solo drivers legally cover about 500-600 miles daily. Teams can do 1,000+ miles. Know the difference.</li>
+        <li><strong>Communication intensity:</strong> Expedited customers expect updates every 2-4 hours, not once daily.</li>
+        <li><strong>Premium pricing:</strong> Expedited service costs 50-100% more than standard. Price accordingly.</li>
+    </ul>
+
+    <p>Expedited freight builds strong customer relationships when you deliver. Failures, however, destroy trust quickly. Only commit to what you can execute.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Module 8.7: Negotiation Tactics - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 8.7</span>
+        <h1 class="module-title">Negotiation Tactics</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?fm=jpg&q=80&w=1200"
+             alt="Business negotiation between professionals"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Effective negotiation creates win-win outcomes where both parties feel satisfied. Poor negotiation leaves one party feeling taken advantage of, damaging the relationship before it starts.</p>
+
+    <h2>Preparation is Critical</h2>
+
+    <p>Before any negotiation, thorough preparation determines your success:</p>
+
+    <ul>
+        <li><strong>Know your numbers:</strong> Target rate (ideal outcome), walk-away rate (absolute minimum), market rates, your costs</li>
+        <li><strong>Understand their position:</strong> Current rates, budget, price sensitivity, alternatives</li>
+        <li><strong>Identify your leverage:</strong> What you offer that competitors don't, how badly they need coverage</li>
+    </ul>
+
+    <h2>Fundamental Negotiation Principles</h2>
+
+    <h3>Never Make the First Offer (When Possible)</h3>
+    <p>Customer: "What's your rate for this lane?"</p>
+    <p><strong>Weak:</strong> "I can do it for $1,800."</p>
+    <p><strong>Strong:</strong> "I'd be happy to provide a competitive quote. What rate range are you currently seeing?"</p>
+
+    <h3>Anchor High (But Reasonably)</h3>
+    <p>If you must quote first, start higher than your target but within market reasonableness. If your target is $1,800 and market rates are $1,700-$2,000, quote $1,950.</p>
+
+    <h3>Trade, Don't Cave</h3>
+    <p>Customer: "Can you do this for $100 less?"</p>
+    <p><strong>Weak:</strong> "Okay, I can do $1,700." (Gave away $100 for nothing)</p>
+    <p><strong>Strong:</strong> "I can reduce by $50 if you can provide 72-hour advance notice instead of 48. Would that work?"</p>
+
+    <p><strong>Common trade elements:</strong></p>
+    <ul>
+        <li>Payment terms (faster payment justifies rate reduction)</li>
+        <li>Volume commitment (guaranteed loads justify better rates)</li>
+        <li>Flexibility (pickup/delivery windows improve <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> options)</li>
+        <li>Lead time (more advance notice helps)</li>
+    </ul>
+
+    <h3>Use Silence Strategically</h3>
+    <p>After making an offer, stop talking. Let the customer speak next. Many salespeople negotiate against themselves by filling silence:</p>
+    <p><em>"My rate is $1,800. [Silence] Of course, I could probably do $1,750... [More silence] Or maybe $1,700..."</em></p>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistake
+        </div>
+        <div class="callout-content">
+            Don't negotiate against yourself by filling silence. State your offer and wait. Their response tells you what to do next.
+        </div>
+    </div>
+
+    <h3>Find Creative Solutions</h3>
+    <p>If you can't meet their price, look for alternatives:</p>
+    <ul>
+        <li><strong>Volume discounts:</strong> "For 10+ loads monthly, I can offer better rates"</li>
+        <li><strong>Flexible timing:</strong> "If you can be flexible by +/- 1 day, I can reduce the rate"</li>
+        <li><strong>Different service level:</strong> "If you're willing to accept [standard services], I can do [lower rate]"</li>
+    </ul>
+
+    <h3>Know When to Walk Away</h3>
+    <p>Not every negotiation should result in agreement. Sometimes declining unprofitable business is the right decision:</p>
+    <p><em>"I appreciate the opportunity. At that rate, I can't provide the service level I maintain. If your situation changes or you need backup <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>, I'm here to help."</em></p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Some customers aren't worth having. Price-driven customers who will never value your services appropriately are better left to competitors. Preserve your margins and focus on customers who appreciate value.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Negotiation principles to practice:</p>
+
+    <ul>
+        <li><strong>Know your numbers:</strong> Before negotiating, know your target rate, walk-away rate, and market rates.</li>
+        <li><strong>Let them go first:</strong> "What rate range are you currently seeing?" gets information before you commit.</li>
+        <li><strong>Trade, don't cave:</strong> "I can reduce by $50 if you can provide 72-hour advance notice."</li>
+        <li><strong>Use silence:</strong> After making an offer, stop talking. Let them respond.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Prepare thoroughly:</strong> Know your numbers before every negotiation.</li>
+        <li><strong>Don't negotiate against yourself:</strong> State your offer and wait for response.</li>
+        <li><strong>Know when to walk away:</strong> Not every deal is worth making at any price.</li>
+    </ul>
+
+    <p>Good negotiation creates relationships where both parties feel they got fair value. That's the foundation for long-term business.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

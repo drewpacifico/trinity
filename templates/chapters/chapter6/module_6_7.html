@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.7: Food Safety Regulations (FSMA) - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.7</span>
+        <h1 class="module-title">Food Safety Regulations (FSMA)</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?fm=jpg&q=80&w=1200"
+             alt="Fresh produce representing food safety requirements"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>The Food Safety Modernization Act (FSMA), implemented by the FDA, establishes federal requirements for transporting human and animal food safely. The Sanitary Transportation Rule within FSMA specifically addresses transportation practices.</p>
+
+    <h2>Core Requirements of the Sanitary Transportation Rule</h2>
+
+    <h3>Vehicles and Equipment</h3>
+    <p>Vehicles and equipment used to transport food must be:</p>
+    <ul>
+        <li>Designed and maintained to prevent food contamination</li>
+        <li>Suitable for their intended use and adequately cleaned</li>
+        <li>Properly refrigerated when transporting temperature-controlled food</li>
+    </ul>
+    <p>This means <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> must maintain trailers in good condition—no holes allowing pest entry, no contamination from previous loads, no strong odors affecting food, and functioning refrigeration for <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">reefer<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a> loads.</p>
+
+    <h3>Temperature Control</h3>
+    <p>For temperature-controlled food, carriers must have procedures ensuring:</p>
+    <ul>
+        <li>Pre-cooling to required temperatures before loading</li>
+        <li>Monitoring temperature during transport when necessary</li>
+        <li>Recording temperature data when required by agreement</li>
+    </ul>
+    <p>Temperature control procedures must be written and implemented consistently, not applied haphazardly.</p>
+
+    <h3>Prevention of Contamination</h3>
+    <p>Measures must prevent contamination during transportation including:</p>
+    <ul>
+        <li>Segregation of food from non-food items that could contaminate</li>
+        <li>Protection during loading and unloading from weather and other contamination sources</li>
+        <li>Appropriate operations ensuring food isn't contaminated by transportation practices</li>
+    </ul>
+
+    <h3>Cleaning Between Loads</h3>
+    <p>When necessary to prevent allergen cross-contact or contamination, carriers must:</p>
+    <ul>
+        <li>Clean and sanitize vehicles and equipment between loads</li>
+        <li>Document cleaning when required</li>
+        <li>Maintain records of cleaning activities</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            Not every load requires full sanitation, but some food products (especially allergen-containing foods) require documented cleaning between loads. Confirm requirements with food <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shippers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> before booking.
+        </div>
+    </div>
+
+    <h2>Training Requirements</h2>
+    <p>Carriers must provide food safety training to personnel involved in food transportation. Training must cover:</p>
+    <ul>
+        <li>Sanitary transportation practices</li>
+        <li>Temperature control requirements</li>
+        <li>Procedures for their specific role</li>
+    </ul>
+    <p>Training must be documented and records maintained.</p>
+
+    <h2>Record Keeping</h2>
+    <p>FSMA requires maintaining records of:</p>
+    <ul>
+        <li>Training provided to personnel</li>
+        <li>Written procedures for temperature control and sanitation</li>
+        <li>Temperature monitoring records when required</li>
+        <li>Cleaning and sanitation activities</li>
+    </ul>
+    <p>Records must be maintained for at least 12 months.</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            When working with food shippers, ask about their specific requirements upfront. Some have requirements beyond FSMA minimums, such as prohibiting previous meat loads for produce trailers or requiring specific cleaning documentation.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when transporting food products:</p>
+
+    <ul>
+        <li><strong>"What temperature does this product require?"</strong> Temperature control is critical for food safety.</li>
+        <li><strong>"Are there any prohibited previous loads?"</strong> Some shippers won't allow trailers that previously hauled meat or chemicals.</li>
+        <li><strong>"Do you require a washout certificate?"</strong> Documentation of trailer cleaning may be required.</li>
+        <li><strong>"What temperature monitoring or documentation do you need?"</strong> Some shippers have requirements beyond FSMA minimums.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Temperature requirements:</strong> Always confirm and communicate required temperature settings for food products.</li>
+        <li><strong>Previous load restrictions:</strong> Some food shippers have strict requirements about what the trailer previously hauled.</li>
+        <li><strong>Documentation:</strong> Food shippers may require washout certificates or other cleaning documentation.</li>
+    </ul>
+
+    <p>Food safety regulations protect consumers and your customers' reputations. Taking shortcuts on food transportation can have serious consequences.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

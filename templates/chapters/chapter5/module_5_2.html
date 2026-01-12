@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5.2: General Freight (FAK - Freight All Kinds) - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 5.2</span>
+        <h1 class="module-title">General Freight (FAK - Freight All Kinds)</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1565891741441-64926e441838?fm=jpg&q=80&w=1200"
+             alt="Palletized general freight in warehouse ready for shipping"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>General freight encompasses most manufactured goods and consumer products that don't require specialized handling, temperature control, or <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazardous materials<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a> protocols. This is the bread and butter of the freight industry: everyday products moving through supply chains.</p>
+
+    <h2>Characteristics of General Freight</h2>
+
+    <p>General freight typically arrives palletized, boxed, or crated, making it easy to handle with standard forklifts and loading equipment. Think of the products you see in retail stores, warehouses, and manufacturing facilities—if it's on a pallet and doesn't need special treatment, it's probably general freight.</p>
+
+    <p><strong>Common examples include:</strong></p>
+    <ul>
+        <li>Retail merchandise (clothing, housewares, consumer goods)</li>
+        <li>Consumer electronics (televisions, computers, appliances)</li>
+        <li>Household goods (furniture, fixtures, home decor)</li>
+        <li>Automotive parts (non-hazardous components, accessories)</li>
+        <li>Industrial supplies (tools, equipment, maintenance items)</li>
+        <li>Paper products (packaging materials, office supplies, printing stock)</li>
+        <li>Manufactured components (parts for assembly operations)</li>
+    </ul>
+
+    <h2>Packaging Standards</h2>
+
+    <p>Most general freight ships on standard wooden pallets—typically 40"x48" (the most common size in North America) or 42"x48". Pallets are usually shrink-wrapped or banded to stabilize the load and prevent shifting during transit.</p>
+
+    <p><strong>When booking general freight, always confirm:</strong></p>
+    <ul>
+        <li>Number of pallets</li>
+        <li>Weight per pallet (helps identify if freight will weigh out or cube out)</li>
+        <li>Dimensions of each pallet (especially height—tall pallets affect how many fit in a trailer)</li>
+        <li>Stackability (can pallets be double-stacked to maximize trailer space?)</li>
+    </ul>
+
+    <h2>Density Variations Matter</h2>
+
+    <p>Even within general freight, density varies enormously and affects your pricing and equipment selection.</p>
+
+    <p><strong>Dense freight</strong> like automotive parts might weigh 2,000 pounds per pallet. You can fit 22-24 such pallets in a standard 53-foot trailer before reaching the 45,000-pound weight <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>, even though you haven't filled all the available space. This freight "weighs out."</p>
+
+    <p><strong>Light freight</strong> like furniture or empty packaging might weigh only 300-500 pounds per pallet. You'll fill the entire trailer with 26 pallets long before approaching weight limits. This freight "cubes out."</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Understanding whether freight cubes out or weighs out helps you quote appropriately. Lightweight, bulky freight that cubes out often commands higher rates per pound because it fills a trailer without providing proportional weight-based revenue.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when booking general freight:</p>
+
+    <ul>
+        <li><strong>"How many pallets and what are the dimensions?"</strong> Height matters for stacking and trailer capacity.</li>
+        <li><strong>"What's the weight per pallet?"</strong> Determines if you'll cube out or weigh out.</li>
+        <li><strong>"Can pallets be stacked or double-decked?"</strong> Affects how many fit in one trailer.</li>
+        <li><strong>"Is there anything fragile or requiring special handling?"</strong> Catches exceptions that need attention.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Pallet math:</strong> Know that a 53-foot trailer fits 26 standard pallets single-stacked. Weight capacity is 45,000 pounds.</li>
+        <li><strong>Cubing vs. weighing out:</strong> This concept affects pricing. Light bulky freight costs more per pound than dense freight.</li>
+        <li><strong>Standard packaging:</strong> Learn standard pallet sizes (40x48 is most common) and typical weights for common commodities.</li>
+    </ul>
+
+    <p>General freight is where you'll spend most of your time. Master these fundamentals before moving to specialized categories.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

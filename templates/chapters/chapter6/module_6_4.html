@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.4: Weight Regulations and Bridge Laws - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.4</span>
+        <h1 class="module-title">Weight Regulations and Bridge Laws</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?fm=jpg&q=80&w=1200"
+             alt="Truck scale for weighing commercial vehicles"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Federal and state laws regulate vehicle weight to protect roadways and bridges from damage. Understanding weight regulations prevents <a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">overweight<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a> violations that result in fines, delays, and damaged <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> relationships.</p>
+
+    <h2>Federal Weight Limits on Interstate Highways</h2>
+
+    <ul>
+        <li><strong>Maximum Gross Vehicle Weight:</strong> 80,000 pounds total
+            <p>This is the combined weight of the tractor, trailer, cargo, and fuel. It's not just the freight weight—it's everything.</p>
+        </li>
+    </ul>
+
+    <h3>Axle Weight Limits</h3>
+    <ul>
+        <li><strong>Steer axle:</strong> 12,000 pounds maximum (front axle of the tractor)</li>
+        <li><strong>Drive axles:</strong> 34,000 pounds maximum combined (tandem rear axles of the tractor)</li>
+        <li><strong>Trailer axles:</strong> 34,000 pounds maximum combined (tandem axles on the trailer)</li>
+    </ul>
+
+    <h2>Why Weight Distribution Matters</h2>
+
+    <p>Simply keeping the total weight under 80,000 pounds isn't sufficient. Weight must distribute properly across all axles. Heavy freight positioned incorrectly can cause individual axle sets to exceed limits even when gross weight is legal.</p>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistake
+        </div>
+        <div class="callout-content">
+            A load weighs 45,000 pounds total—well under the 80,000-pound limit. However, if all freight is loaded at the front of the trailer, it concentrates excessive weight on the trailer's front axles, potentially exceeding the 34,000-pound trailer axle limit. The load is illegal despite being under gross weight <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>.
+        </div>
+    </div>
+
+    <p><strong>Proper weight distribution requires:</strong></p>
+    <ul>
+        <li>Heavy items distributed throughout the trailer length</li>
+        <li>Consideration of trailer and tractor weights</li>
+        <li>Understanding that tractor fuel adds 1,000-1,500 pounds</li>
+        <li>Knowledge that trailers themselves weigh 10,000-15,000 pounds</li>
+    </ul>
+
+    <p>Experienced drivers know how to position freight properly. However, some freight—especially extremely heavy items like machinery or steel coils—requires careful calculation and positioning before loading begins.</p>
+
+    <h2>State Variations</h2>
+
+    <p>Some states allow higher weights on specific roads. Michigan, for example, allows up to 160,000 pounds on certain routes using trucks with additional axles.</p>
+
+    <p>Conversely, some local roads have restrictions below federal limits—bridges with weight limits, residential streets with truck restrictions.</p>
+
+    <h2>Overweight Penalties</h2>
+
+    <p>Overweight violations result in:</p>
+    <ul>
+        <li><strong>Fines:</strong> Escalating from $100 for minor overweight to $5,000+ for significant violations</li>
+        <li><strong>Delays:</strong> Trucks may be held until weight is reduced</li>
+        <li><strong>Carrier safety record:</strong> Violations affect CSA scores</li>
+        <li><strong>Relationship damage:</strong> Carriers avoid <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shippers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> who consistently provide incorrect weights</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Be conservative with weight estimates. Customers sometimes underestimate weight, forgetting to include pallets, packaging materials, or moisture content. Building in safety margins prevents overweight surprises. Always ask: "Does this weight include pallets, packaging, and all accessories?"
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when evaluating load weights:</p>
+
+    <ul>
+        <li><strong>"What is the total weight including pallets and packaging?"</strong> Customers often underestimate by forgetting these.</li>
+        <li><strong>"Is this weight per pallet or total?"</strong> Clarify to avoid miscalculation.</li>
+        <li><strong>"Does this product have moisture content that varies?"</strong> Some commodities weigh more than expected.</li>
+        <li><strong>"Where in the trailer should this be positioned?"</strong> Heavy items need proper distribution.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>The 80,000-pound limit:</strong> This is gross vehicle weight, not just cargo weight.</li>
+        <li><strong>Axle weight matters:</strong> Weight distribution, not just total weight, determines legality.</li>
+        <li><strong>Be conservative:</strong> When in doubt, round up weight estimates to avoid surprises at scales.</li>
+    </ul>
+
+    <p>Overweight violations create fines, delays, and damage carrier relationships. Always verify weights and ask about packaging.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

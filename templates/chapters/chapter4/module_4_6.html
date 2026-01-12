@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.6: Power Only Operations - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.6</span>
+        <h1 class="module-title">Power Only Operations</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?fm=jpg&q=80&w=1200"
+             alt="Semi truck tractor without trailer representing power only operations"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Power only is an operating arrangement where the <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> provides only the tractor (power unit), and the customer provides the trailer. This might seem unusual if you're new to freight, but it's increasingly common in certain segments.</p>
+
+    <h2>How Power Only Works</h2>
+
+    <p>The <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shipper<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> or receiver owns trailers. Carriers provide tractors and drivers to pull those trailers. This is common in several scenarios:</p>
+
+    <h3>Drop and Hook Operations</h3>
+    <p>Large shippers with substantial trailer fleets load trailers in advance. Carriers drop empty trailers, pick up loaded trailers, and deliver them. This eliminates driver wait time during loading.</p>
+
+    <div class="callout callout-example">
+        <div class="callout-title">
+            <span class="callout-icon">&#128218;</span>
+            Real Example
+        </div>
+        <div class="callout-content">
+            A major manufacturer has 100 trailers. They load trailers throughout the week. Carriers arrive, drop an empty, hook a loaded trailer, and depart within 15-30 minutes. The efficiency benefits both the shipper (no dock congestion) and carrier (more miles per day, higher revenue).
+        </div>
+    </div>
+
+    <h3>Trailer Interchange</h3>
+    <p>Carriers trade trailers to complete shipments more efficiently. Carrier A picks up a load but can't deliver it economically. They drop the trailer at an interchange point. Carrier B picks it up and completes delivery.</p>
+
+    <h3>Customer-Owned Trailer Fleets</h3>
+    <p>Some shippers own trailer fleets sized for their peak needs and contract for power units rather than purchasing entire truck-tractor-trailer combinations. This reduces their capital investment while maintaining control of trailer specifications.</p>
+
+    <h3>Chassis Operations</h3>
+    <p>Intermodal containers (those metal boxes you see on trains and ships) don't have wheels. They sit on separate chassis (frames with wheels). Drayage carriers moving containers from ports to nearby facilities provide power units to pull chassis loaded with containers.</p>
+
+    <h2>Why Power Only Matters to You</h2>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Understanding power only helps you recognize opportunities. Customers with trailer fleets often need power units during peak periods even if they have dedicated carrier relationships. These become opportunities for you to provide power-only services.
+        </div>
+    </div>
+
+    <p>Rates for power only are typically lower than full equipment rates because the customer is providing the trailer. However, margins can still be attractive because you're not finding trailer <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>, just tractor capacity, which is sometimes easier.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when power only opportunities arise:</p>
+
+    <ul>
+        <li><strong>"Whose trailer is this?"</strong> Confirm the customer owns or controls the trailer.</li>
+        <li><strong>"Is this drop and hook or live load?"</strong> Drop and hook is faster and often more attractive to carriers.</li>
+        <li><strong>"What type of trailer?"</strong> Carriers need to know if their tractor is compatible.</li>
+        <li><strong>"Where does the empty trailer need to go?"</strong> Understand the complete move, not just loaded miles.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Recognition:</strong> Learn to identify when customers have their own trailers. This opens power-only opportunities.</li>
+        <li><strong>Drop and hook efficiency:</strong> Understand why carriers prefer drop and hook (no wait time during loading).</li>
+        <li><strong>Chassis operations:</strong> If you work with intermodal freight, understand container-on-chassis basics.</li>
+    </ul>
+
+    <p>Power only is a niche but useful capability. Understanding it helps you serve customers with trailer fleets and recognize opportunities others might miss.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

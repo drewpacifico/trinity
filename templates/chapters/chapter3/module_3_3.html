@@ -9,11 +9,17 @@
         <h1 class="module-title">Load Booking and Coordination</h1>
     </div>
 
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?fm=jpg&q=80&w=1200"
+             alt="Logistics coordinator reviewing shipping documents and coordinating loads"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
     <p>Once you've established customer relationships, the core of your daily work becomes booking and coordinating shipments. This process has five key steps that must be executed carefully every time.</p>
 
     <h2>Gathering Load Details</h2>
 
-    <p>Every shipment requires specific information before you can price it accurately and find an appropriate carrier. Missing or incorrect details cause problems later, so develop a systematic approach to information gathering.</p>
+    <p>Every shipment requires specific information before you can price it accurately and find an appropriate <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a>. Missing or incorrect details cause problems later, so develop a systematic approach to information gathering.</p>
 
     <p><strong>Essential information includes:</strong></p>
 
@@ -22,7 +28,7 @@
         <li><strong>Pickup and delivery dates and times.</strong> Is this a specific appointment or a window? What are the operating hours? Is there flexibility?</li>
         <li><strong>Commodity description.</strong> What exactly is being shipped? General terms like "freight" or "parts" aren't sufficient. You need to know if it's steel coils, furniture, food products, or machinery.</li>
         <li><strong>Weight and dimensions.</strong> Total weight, number of pieces, and dimensions of the largest piece. For palletized freight, how many pallets and weight per pallet?</li>
-        <li><strong>Special requirements.</strong> Temperature control? Hazardous material? Appointment required? Liftgate needed? Straps, tarps, or special securing equipment?</li>
+        <li><strong>Special requirements.</strong> Temperature control? Hazardous material? Appointment required? <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">Liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a> needed? Straps, tarps, or special securing equipment?</li>
         <li><strong>Contact information</strong> for pickup and delivery. Who should the driver call? What are their phone numbers?</li>
     </ul>
 
@@ -43,7 +49,7 @@
     <p><strong>Ask yourself:</strong></p>
     <ul>
         <li>Does the freight physically fit in the equipment type I'm considering?</li>
-        <li>Will the weight exceed the equipment's capacity? (Remember reefers carry less than dry vans)</li>
+        <li>Will the weight exceed the equipment's <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>? (Remember <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">reefers<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a> carry less than <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry vans<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a>)</li>
         <li>Does the freight require temperature control, and if so, what specific temperature?</li>
         <li>Can the freight be loaded and unloaded at the specified locations with the selected equipment?</li>
     </ul>
@@ -54,7 +60,7 @@
             Common Mistake
         </div>
         <div class="callout-content">
-            Getting equipment selection wrong causes serious problems. Dispatching a dry van for freight that needs a flatbed means the carrier arrives and cannot load. You've wasted everyone's time and damaged relationships with both customer and carrier.
+            Getting equipment selection wrong causes serious problems. Dispatching a dry van for freight that needs a <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a> means the carrier arrives and cannot load. You've wasted everyone's time and damaged relationships with both customer and carrier.
         </div>
     </div>
 
@@ -64,7 +70,7 @@
 
     <p><strong>Factors affecting your price:</strong></p>
     <ul>
-        <li><strong>Current market rates for the lane.</strong> Load boards provide benchmarks, but experience on the lane tells you more than any single data point.</li>
+        <li><strong>Current market rates for the lane.</strong> <a href="{{ url_for('glossary') }}#load-board" class="glossary-term-link" target="_blank">Load boards<span class="glossary-tooltip"><span class="glossary-tooltip-term">Load Board</span><span class="glossary-tooltip-definition">Online marketplace connecting available loads with available trucks (DAT, Truckstop.com, 123Loadboard), also providing market rate intelligence.</span></span></a> provide benchmarks, but experience on the lane tells you more than any single data point.</li>
         <li><strong>Difficulty of the shipment.</strong> Easy loads (dock-to-dock, flexible timing) price lower than difficult loads (residential, tight appointments, rural areas).</li>
         <li><strong>Urgency.</strong> Customers needing immediate pickup pay more than those with flexible timing.</li>
         <li><strong>Relationship and volume.</strong> Long-term customers providing consistent volume deserve better pricing than occasional one-off shipments.</li>
@@ -96,7 +102,7 @@
             Pro Tip
         </div>
         <div class="callout-content">
-            When contacting carriers, provide complete information immediately. Instead of "Got a load going to Texas, you interested?" say: "I have 42,000 lbs of palletized freight, 24 pallets, picking up Thursday in Kansas City going to Houston, delivering Friday. Shipper and receiver are both warehouses with docks. Rate is $2,100. Are you available and interested?"
+            When contacting carriers, provide complete information immediately. Instead of "Got a load going to Texas, you interested?" say: "I have 42,000 lbs of palletized freight, 24 pallets, picking up Thursday in Kansas City going to Houston, delivering Friday. <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">Shipper<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> and receiver are both warehouses with docks. Rate is $2,100. Are you available and interested?"
         </div>
     </div>
 
@@ -113,11 +119,11 @@
         <li>Pickup information (date, time, location, contact, special instructions)</li>
         <li>Delivery information (date, time, location, contact, special instructions)</li>
         <li>Rate and payment terms</li>
-        <li>Any special requirements or accessorial charges</li>
+        <li>Any special requirements or <a href="{{ url_for('glossary') }}#accessorial-charges" class="glossary-term-link" target="_blank">accessorial<span class="glossary-tooltip"><span class="glossary-tooltip-term">Accessorial Charges</span><span class="glossary-tooltip-definition">Additional fees charged by carriers for services beyond standard dock-to-dock delivery, such as liftgate service, inside delivery, residential delivery, or appointment scheduling.</span></span></a> charges</li>
         <li>Insurance requirements</li>
     </ul>
 
-    <p>Send rate confirmations immediately after booking the load. Delays create opportunities for miscommunication.</p>
+    <p>Send <a href="{{ url_for('glossary') }}#rate-confirmation-rate-con" class="glossary-term-link" target="_blank">rate confirmations<span class="glossary-tooltip"><span class="glossary-tooltip-term">Rate Confirmation (Rate Con)</span><span class="glossary-tooltip-definition">Written agreement between broker and carrier specifying load details, rate, payment terms, and special requirements.</span></span></a> immediately after booking the load. Delays create opportunities for miscommunication.</p>
 
     <div class="callout callout-warning">
         <div class="callout-title">
@@ -128,6 +134,30 @@
             Always require carrier acknowledgment of the rate confirmation. They should sign and return it or confirm receipt electronically. This acknowledgment creates a binding agreement protecting both parties.
         </div>
     </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when gathering load details:</p>
+
+    <ul>
+        <li><strong>"What exactly are you shipping?"</strong> Get the commodity description, not just "product" or "freight."</li>
+        <li><strong>"What's the total weight and how is it packaged?"</strong> Palletized? Floor-loaded? Piece count?</li>
+        <li><strong>"Are there any access restrictions at pickup or delivery?"</strong> Dock height, liftgate needed, forklift available?</li>
+        <li><strong>"What's your flexibility on pickup and delivery timing?"</strong> Tight windows cost more than flexible ones.</li>
+        <li><strong>"Is there anything unusual about this shipment I should know?"</strong> This catches things customers forget to mention.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Information gathering discipline:</strong> Create a checklist and use it every time. Missing one detail can derail an entire shipment.</li>
+        <li><strong>Equipment matching basics:</strong> Learn the fundamental differences between dry vans, flatbeds, and reefers. Know when each is required. You'll learn more about equipment in Chapter 4.</li>
+        <li><strong>Rate confirmation accuracy:</strong> Every detail in your rate confirmation must match what you told the customer and carrier. Double-check before sending.</li>
+    </ul>
+
+    <p>Pricing strategy and carrier negotiation skills develop with experience. Focus first on gathering complete information and executing bookings accurately.</p>
 
     {% include 'pagination.html' %}
 </div>

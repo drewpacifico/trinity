@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Module 8.2: Value-Based Selling vs. Price-Based Selling - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 8.2</span>
+        <h1 class="module-title">Value-Based Selling vs. Price-Based Selling</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?fm=jpg&q=80&w=1200"
+             alt="Value proposition concept with upward graph"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Competing solely on price is a race to the bottom that's impossible to win sustainably. There's always someone willing to work for less. Successful freight agents sell value, not just competitive rates.</p>
+
+    <h2>The Problem with Price-Based Selling</h2>
+
+    <p>Price-based selling creates multiple problems:</p>
+    <ul>
+        <li><strong>Attracts wrong customers:</strong> Price-driven customers switch constantly chasing the lowest rate. They have no loyalty.</li>
+        <li><strong>Destroys margins:</strong> Constantly reducing rates erodes margins until you're working hard for minimal income.</li>
+        <li><strong>Creates unsustainable business:</strong> One problem shipment can eliminate profit on ten successful loads.</li>
+        <li><strong>Eliminates differentiation:</strong> When everything becomes about price, you're completely commoditized.</li>
+    </ul>
+
+    <h2>The Power of Value-Based Selling</h2>
+
+    <p>Value-based selling focuses on the total cost and total benefit of your services, not just the upfront rate. A slightly higher rate that includes superior service might save thousands in prevented problems.</p>
+
+    <h2>Quantifying Value for Customers</h2>
+
+    <p>Abstract value claims are weak. "We provide great service" means nothing. Quantified value is persuasive.</p>
+
+    <h3>Time Savings</h3>
+    <p>"How much time does your shipping manager spend each week finding <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a>, negotiating rates, tracking shipments? At 15 hours weekly and a $35-per-hour salary, that's $27,300 annually. Our service handles all of that. What could your team accomplish with an extra 15 hours weekly?"</p>
+
+    <h3>Reduced Delays and Disruptions</h3>
+    <p>"You mentioned production stops cost approximately $8,000 per hour. Last year you experienced three freight-related delays totaling six hours—that's $48,000 in lost production. If we prevent just one delay annually, we've saved you $48,000."</p>
+
+    <h3>Customer Retention</h3>
+    <p>"Late deliveries damage customer relationships. If a customer generates $500,000 annually and has been with you for 10 years, that relationship is worth millions. Reliable freight service protects those relationships."</p>
+
+    <h3>Risk Mitigation</h3>
+    <p>"Using unvetted carriers exposes you to insurance and compliance risks. One cargo claim could cost tens of thousands. Our rigorous carrier vetting process protects you from those exposures."</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Help customers understand that the cheapest rate isn't the lowest total cost. A $1,400 rate with 15% late deliveries often costs more than a $1,500 rate with 98% on-time performance when you factor in staff time managing problems and customer relationship damage.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Ways to quantify value for customers:</p>
+
+    <ul>
+        <li><strong>Calculate time savings:</strong> "How many hours does your team spend on freight logistics weekly? At their salary, that costs $X annually."</li>
+        <li><strong>Calculate problem costs:</strong> "How much does a late delivery or rejected load cost your operation?"</li>
+        <li><strong>Calculate relationship value:</strong> "What is your average customer worth over their lifetime? Reliable freight protects those relationships."</li>
+        <li><strong>Compare total costs:</strong> "A $100 lower rate with 15% late deliveries costs more than our rate with 98% on-time."</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Never compete on price alone:</strong> There's always someone cheaper. Compete on total value.</li>
+        <li><strong>Quantify your value:</strong> Abstract claims are weak. Specific dollar amounts are persuasive.</li>
+        <li><strong>Know when to walk away:</strong> Some price-driven customers aren't worth having.</li>
+    </ul>
+
+    <p>Value-based selling protects your margins and attracts customers who appreciate quality service over the lowest possible rate.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

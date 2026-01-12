@@ -9,15 +9,21 @@
         <h1 class="module-title">Continuous Learning and Improvement</h1>
     </div>
 
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?fm=jpg&q=80&w=1200"
+             alt="Professional reading industry publications and learning"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
     <p>The freight industry changes constantly. Regulations update. Market conditions shift. Customer expectations evolve. Technology advances. Successful agents commit to continuous learning throughout their careers.</p>
 
     <h2>Market Intelligence</h2>
 
-    <p>Stay informed about industry trends, rate changes, capacity conditions, and competitive dynamics. Multiple sources provide valuable intelligence:</p>
+    <p>Stay informed about industry trends, rate changes, <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> conditions, and competitive dynamics. Multiple sources provide valuable intelligence:</p>
 
     <ul>
         <li><strong>Industry publications:</strong> FreightWaves, Transport Topics, Journal of Commerce, and others publish daily news and analysis about freight markets</li>
-        <li><strong>Load boards:</strong> Beyond finding carriers, load boards reveal current rate trends and capacity conditions on specific lanes</li>
+        <li><strong>Load boards:</strong> Beyond finding <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a>, <a href="{{ url_for('glossary') }}#load-board" class="glossary-term-link" target="_blank">load boards<span class="glossary-tooltip"><span class="glossary-tooltip-term">Load Board</span><span class="glossary-tooltip-definition">Online marketplace connecting available loads with available trucks (DAT, Truckstop.com, 123Loadboard), also providing market rate intelligence.</span></span></a> reveal current rate trends and capacity conditions on specific lanes</li>
         <li><strong>Carrier communication:</strong> Conversations with drivers and dispatchers provide frontline intelligence about market conditions</li>
         <li><strong>Customer feedback:</strong> What are customers hearing from other providers? What challenges are they facing?</li>
         <li><strong>Networking:</strong> Attend industry conferences and join professional associations to learn from peers</li>
@@ -66,9 +72,32 @@
     <p>Pay fairly and promptly. Communicate clearly and respectfully. Provide regular freight when possible. Address their concerns seriously. Recognize that drivers and dispatchers are professionals deserving respect.</p>
 
     <h3>With Industry Peers</h3>
-    <p>Other agents (especially those in non-competing specialties) can be valuable sources of advice, referrals, and market intelligence. Don't view everyone as competition—many relationships are mutually beneficial.</p>
+    <p>Other agents (especially those in non-competing specialties) can be valuable sources of advice, referrals, and market intelligence. Don't view everyone as competition. Many relationships are mutually beneficial.</p>
 
     <p>Building strong relationships takes time but pays dividends throughout your career. People prefer working with people they know, like, and trust.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to guide your continuous learning:</p>
+
+    <ul>
+        <li><strong>"What happened in freight news this week?"</strong> Spend 15 minutes daily scanning industry headlines.</li>
+        <li><strong>"What did I learn from my last difficult shipment?"</strong> Every problem contains a lesson if you look for it.</li>
+        <li><strong>"What skill would make me most effective?"</strong> Focus development time on your biggest gaps.</li>
+        <li><strong>"Who could I reach out to for insights or mentorship?"</strong> Build relationships with experienced professionals.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Daily market awareness:</strong> Understand what's happening with rates and capacity. This affects every conversation with customers and carriers.</li>
+        <li><strong>Learn from every load:</strong> After each shipment, note what went well and what you'd do differently.</li>
+        <li><strong>Ask questions freely:</strong> Experienced colleagues have knowledge worth learning. Most are happy to share if you ask.</li>
+    </ul>
+
+    <p>Deep specialization and advanced market analysis come later. Start by building habits of consistent learning and reflection.</p>
 
     {% include 'pagination.html' %}
 </div>

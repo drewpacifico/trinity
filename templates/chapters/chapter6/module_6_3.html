@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.3: Detention and Its Impact on Hours of Service - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.3</span>
+        <h1 class="module-title">Detention and Its Impact on Hours of Service</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?fm=jpg&q=80&w=1200"
+             alt="Truck waiting at loading dock representing detention time"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Detention occurs when drivers wait beyond the agreed "free time" at shipping or receiving facilities. Understanding detention's relationship to HOS helps you manage expectations and explain detention charges.</p>
+
+    <h2>Standard Free Time</h2>
+
+    <p>Industry standard free time is typically 2 hours at pickup and 2 hours at delivery. During these 2 hours, the driver is expected to wait for loading or unloading without additional compensation beyond the line-haul rate.</p>
+
+    <p>Beyond 2 hours, detention charges typically apply—usually $25-75 per hour depending on the <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a>, region, and competitive dynamics.</p>
+
+    <h2>How Detention Affects HOS</h2>
+
+    <p>Every hour a driver spends waiting at a dock consumes their 14-hour duty window without producing miles. This affects their ability to complete deliveries on time and impacts their weekly hours.</p>
+
+    <div class="callout callout-example">
+        <div class="callout-title">
+            <span class="callout-icon">&#128214;</span>
+            Real Example
+        </div>
+        <div class="callout-content">
+            A driver with an 800-mile run (approximately 16 hours of driving across two days) spends 6 hours in detention at origin. This 6-hour delay means:
+            <ul>
+                <li>6 fewer hours available for driving within the 14-hour window that day</li>
+                <li>Potential inability to reach planned stopping point</li>
+                <li>Possible delivery delay the next day</li>
+                <li>Reduced available hours for subsequent loads that week</li>
+            </ul>
+        </div>
+    </div>
+
+    <p>Detention isn't just a financial issue—it's an operational problem affecting the entire supply chain.</p>
+
+    <h2>Communicating Detention to Customers</h2>
+
+    <p>When booking loads, establish clear expectations:</p>
+
+    <p><em>"Our carrier quotes include 2 hours of free time at pickup and delivery. Beyond that, detention charges of $50 per hour apply. This isn't a profit center for us—it compensates carriers for time that could be used on other loads. The best way to avoid detention is ensuring your facility can load or unload within the free time window. What are realistic loading times at your facility?"</em></p>
+
+    <p>Many customers don't understand detention until you explain how waiting time affects driver schedules and availability.</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            When customers consistently create detention issues, use it as a coaching opportunity. Help them understand that carriers avoiding their facilities due to detention problems leads to higher rates and reduced <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>—hurting the customer in the long run.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when managing detention situations:</p>
+
+    <ul>
+        <li><strong>"What are realistic loading times at your facility?"</strong> Set expectations before the driver arrives.</li>
+        <li><strong>"Is this a first-come-first-served dock or appointment-based?"</strong> FCFS docks often create longer wait times.</li>
+        <li><strong>"Are there recurring detention issues with this <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shipper<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a>?"</strong> Patterns indicate systemic problems to address.</li>
+        <li><strong>"Can we schedule earlier to avoid peak dock times?"</strong> Proactive scheduling reduces detention.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Standard free time:</strong> 2 hours at pickup and 2 hours at delivery is the industry norm.</li>
+        <li><strong>Detention rates:</strong> $25-75 per hour beyond free time is typical.</li>
+        <li><strong>Set expectations early:</strong> Explain detention policies when booking loads, not when charges appear.</li>
+    </ul>
+
+    <p>Detention is a real cost that affects driver availability and carrier willingness. Managing it well improves relationships with both customers and carriers.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

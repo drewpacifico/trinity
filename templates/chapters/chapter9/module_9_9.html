@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}Module 9.9: Follow-Up with Existing Customers - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 9.9</span>
+        <h1 class="module-title">Follow-Up with Existing Customers</h1>
+    </div>
+
+    <p>Follow-up isn't just for prospects. Maintaining contact with existing customers prevents churn and identifies growth opportunities.</p>
+
+    <h2>Active Customer Follow-Up Schedule</h2>
+
+    <h3>Before Every Shipment</h3>
+    <ul>
+        <li>Confirm pickup and delivery details (addresses, dates, times)</li>
+        <li>Verify any special requirements or changes from previous shipments</li>
+        <li>Set expectations for communication during transit</li>
+        <li>Ensure customer knows how to reach you if issues arise</li>
+    </ul>
+
+    <h3>During Every Shipment</h3>
+    <ul>
+        <li>Confirm pickup completed successfully (call or text within 30 minutes of scheduled pickup)</li>
+        <li>Provide in-transit updates (at minimum, mid-transit check on longer hauls)</li>
+        <li>Alert immediately to any issues or potential delays</li>
+        <li>Proactive communication prevents anxious customer calls</li>
+    </ul>
+
+    <h3>After Every Shipment</h3>
+    <ul>
+        <li>Confirm successful delivery within 1-2 hours of completion</li>
+        <li>Address any concerns or issues that arose during transit</li>
+        <li>Request feedback on <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> performance</li>
+        <li>Send <a href="{{ url_for('glossary') }}#proof-of-delivery-pod" class="glossary-term-link" target="_blank">proof of delivery<span class="glossary-tooltip"><span class="glossary-tooltip-term">Proof of Delivery (POD)</span><span class="glossary-tooltip-definition">Signed documentation confirming freight was delivered, required for invoicing customers and proving shipment completion.</span></span></a> documentation promptly</li>
+    </ul>
+
+    <p>This per-shipment communication builds trust and demonstrates attentiveness.</p>
+
+    <h2>Weekly for High-Volume Customers (Tier A)</h2>
+
+    <p>Schedule regular weekly calls or emails:</p>
+
+    <p><em>"Hi Jennifer, this is our weekly check-in. All five shipments this week delivered on time with no issues. Looking ahead to next week, I see you have seven loads scheduled. <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">Capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> looks good on all lanes. Do you anticipate any additional shipments or changes to what's scheduled?"</em></p>
+
+    <p>Weekly touchpoints allow you to:</p>
+    <ul>
+        <li>Review recent performance</li>
+        <li>Address any developing concerns before they become major issues</li>
+        <li>Understand upcoming needs</li>
+        <li>Share relevant market intelligence</li>
+        <li>Maintain strong relationship through consistent contact</li>
+    </ul>
+
+    <h2>Monthly for Moderate-Volume Customers (Tier B)</h2>
+
+    <p>Schedule monthly calls reviewing overall performance:</p>
+
+    <p><em>"Hi Tom, wanted to touch base for our monthly check-in. Last month we handled 12 shipments with 100% on-time delivery. I noticed three of those were new lanes we hadn't handled before—how did those go from your perspective? Anything we could improve?"</em></p>
+
+    <p>Monthly reviews for mid-tier customers keep relationships strong without overwhelming them with excessive contact.</p>
+
+    <h2>Quarterly for All Customers</h2>
+
+    <p>Conduct formal business reviews every three months with significant customers:</p>
+
+    <h3>Review Past Quarter</h3>
+    <ul>
+        <li>Total shipments handled</li>
+        <li>Performance metrics (on-time percentage, damage rates, issue resolution time)</li>
+        <li>Cost savings achieved or rate trends</li>
+        <li>Challenges encountered and how resolved</li>
+        <li>Customer satisfaction with service quality</li>
+    </ul>
+
+    <h3>Plan Upcoming Quarter</h3>
+    <ul>
+        <li>Anticipated volume changes</li>
+        <li>New lanes or services needed</li>
+        <li>Market trends affecting their business</li>
+        <li>Seasonal considerations or known busy periods</li>
+        <li>Capacity strategies for peak periods</li>
+    </ul>
+
+    <h3>Discuss Improvement Opportunities</h3>
+    <ul>
+        <li>Could freight be consolidated for cost savings?</li>
+        <li>Mode optimization possibilities (truckload vs. <a href="{{ url_for('glossary') }}#less-than-truckload-ltl" class="glossary-term-link" target="_blank">LTL<span class="glossary-tooltip"><span class="glossary-tooltip-term">Less-Than-Truckload (LTL)</span><span class="glossary-tooltip-definition">Freight service consolidating shipments from multiple shippers (typically 150-10,000 pounds), priced by freight class based on density, stowability, handling, and liability.</span></span></a>, direct vs. intermodal)?</li>
+        <li>Routing improvements for speed or cost?</li>
+        <li>Technology or process enhancements?</li>
+        <li>Additional services that might benefit them?</li>
+    </ul>
+
+    <h3>Strengthen Relationship</h3>
+    <ul>
+        <li>Acknowledge what's working well</li>
+        <li>Address any dissatisfaction or concerns</li>
+        <li>Discuss their business goals and how you can support them</li>
+        <li>Express appreciation for their business</li>
+    </ul>
+
+    <h2>Annual Reviews for Major Customers</h2>
+
+    <p>With your largest customers, conduct comprehensive annual reviews:</p>
+    <ul>
+        <li><strong>Deep-dive analysis:</strong> Full year performance data, trend analysis, cost comparisons</li>
+        <li><strong>Strategic planning:</strong> Next year's projections, growth opportunities, service expansion</li>
+        <li><strong>Relationship health:</strong> Overall satisfaction assessment, competitive positioning, partnership strength</li>
+        <li><strong>Value demonstration:</strong> Quantify the value you've provided (savings achieved, problems solved, efficiencies gained)</li>
+    </ul>
+
+    <h2>Service Recovery Follow-Up</h2>
+
+    <p>When problems occur, follow-up becomes especially critical:</p>
+
+    <h3>Immediate (During Issue)</h3>
+    <p>Frequent updates until resolved—over-communicate rather than under-communicate.</p>
+
+    <h3>24 Hours After Resolution</h3>
+    <p>Call to confirm they're satisfied with how the issue was handled.</p>
+
+    <h3>One Week After Issue</h3>
+    <p>Send written summary of what happened, what you did to resolve it, and what you're doing to prevent recurrence.</p>
+
+    <h3>One Month After Issue</h3>
+    <p>Check in to ensure no lingering concerns and that subsequent shipments have gone smoothly.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Customers who experience problems that are handled well often become more loyal than customers who never experienced problems. The key is thorough follow-up demonstrating you take issues seriously and are committed to continuous improvement.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

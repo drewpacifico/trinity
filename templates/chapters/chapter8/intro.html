@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 8: Sales Strategies for Freight Agents - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 8</span>
+        <h1 class="module-title">Sales Strategies for Freight Agents</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?fm=jpg&q=80&w=1200"
+             alt="Sales professional presenting to a client"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Freight sales isn't about pushing services onto reluctant customers. It's about understanding their needs deeply and providing solutions that genuinely help their businesses. When you focus on helping customers succeed, sales become a natural outcome rather than a forced transaction.</p>
+
+    <p>In this chapter, you'll learn:</p>
+
+    <ul>
+        <li><strong>Consultative selling:</strong> A discovery-based approach that builds long-term relationships</li>
+        <li><strong>Value-based selling:</strong> How to compete on total value rather than just price</li>
+        <li><strong>Customer buying motivations:</strong> Understanding what different customers truly want</li>
+        <li><strong>Sales presentation structure:</strong> How to present your services effectively</li>
+        <li><strong>Handling objections:</strong> The LAVA method for addressing concerns professionally</li>
+        <li><strong>Storytelling and social proof:</strong> Using customer success stories to build credibility</li>
+        <li><strong>Negotiation tactics:</strong> How to negotiate win-win outcomes</li>
+        <li><strong>Long-term relationships:</strong> Building customer loyalty that lasts</li>
+        <li><strong>Upselling and cross-selling:</strong> Expanding relationships with additional services</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Point
+        </div>
+        <div class="callout-content">
+            The fundamental shift in consultative selling is from "How can I sell my services?" to "How can I help solve their logistics challenges?" This mindset change transforms your entire approach and leads to more successful, sustainable customer relationships.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('module', module_id='8.1') }}" class="btn btn-accent btn-lg">
+            Begin Module 8.1 &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

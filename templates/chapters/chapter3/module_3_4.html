@@ -9,7 +9,13 @@
         <h1 class="module-title">Operational Execution</h1>
     </div>
 
-    <p>After booking a load, your work isn't finished—it's just beginning. Operational execution means ensuring the shipment proceeds smoothly from pickup through delivery.</p>
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?fm=jpg&q=80&w=1200"
+             alt="Freight truck on highway representing shipment tracking and monitoring"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>After booking a load, your work isn't finished. It's just beginning. Operational execution means ensuring the shipment proceeds smoothly from pickup through delivery.</p>
 
     <h2>Tracking and Monitoring</h2>
 
@@ -17,10 +23,10 @@
 
     <p><strong>Key tracking milestones:</strong></p>
     <ul>
-        <li>Confirm the carrier picked up on time and the freight was loaded correctly</li>
+        <li>Confirm the <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> picked up on time and the freight was loaded correctly</li>
         <li>Check in during transit, especially on longer hauls, to verify progress</li>
         <li>Confirm the delivery appointment is still valid and the receiver is prepared</li>
-        <li>Verify successful delivery and obtain proof of delivery (POD) documentation</li>
+        <li>Verify successful delivery and obtain <a href="{{ url_for('glossary') }}#proof-of-delivery-pod" class="glossary-term-link" target="_blank">proof of delivery<span class="glossary-tooltip"><span class="glossary-tooltip-term">Proof of Delivery (POD)</span><span class="glossary-tooltip-definition">Signed documentation confirming freight was delivered, required for invoicing customers and proving shipment completion.</span></span></a> (POD) documentation</li>
     </ul>
 
     <div class="callout callout-tip">
@@ -65,7 +71,7 @@
 
     <p><strong>Essential documents for every shipment:</strong></p>
     <ul>
-        <li><strong>Bills of Lading (BOL):</strong> The contract between shipper and carrier specifying what's being shipped and the terms</li>
+        <li><strong>Bills of Lading (<a href="{{ url_for('glossary') }}#bill-of-lading-bol" class="glossary-term-link" target="_blank">BOL<span class="glossary-tooltip"><span class="glossary-tooltip-term">Bill of Lading (BOL)</span><span class="glossary-tooltip-definition">The contract between shipper and carrier specifying freight details, destination, and terms; serves as receipt at pickup and proof of delivery.</span></span></a>):</strong> The contract between <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shipper<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> and carrier specifying what's being shipped and the terms</li>
         <li><strong>Proof of Delivery (POD):</strong> Signed documentation confirming freight was delivered—you need this to invoice customers</li>
         <li><strong>Rate confirmations:</strong> The agreement between you and the carrier specifying rate and terms</li>
         <li><strong>Inspection reports:</strong> For freight requiring quality checks or special handling</li>
@@ -90,7 +96,7 @@
     <ul>
         <li>Send pickup confirmation immediately after the carrier loads</li>
         <li>Provide mid-transit updates on longer hauls</li>
-        <li>Alert customers immediately to any delays or problems—don't wait for them to call you</li>
+        <li>Alert customers immediately to any delays or problems. Don't wait for them to call you.</li>
         <li>Send delivery confirmation as soon as you receive it</li>
     </ul>
 
@@ -103,6 +109,29 @@
             Many customers appreciate regular updates even when everything is going perfectly. It reassures them you're monitoring their freight attentively.
         </div>
     </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask yourself during shipment execution:</p>
+
+    <ul>
+        <li><strong>"When did I last check on this load?"</strong> If it's been more than a few hours on an active shipment, check in.</li>
+        <li><strong>"Does the customer know the current status?"</strong> If not, send an update before they have to ask.</li>
+        <li><strong>"What could go wrong between now and delivery?"</strong> Anticipate problems and monitor accordingly.</li>
+        <li><strong>"Do I have everything I need to invoice once delivered?"</strong> BOL, POD, and any <a href="{{ url_for('glossary') }}#accessorial-charges" class="glossary-term-link" target="_blank">accessorial<span class="glossary-tooltip"><span class="glossary-tooltip-term">Accessorial Charges</span><span class="glossary-tooltip-definition">Additional fees charged by carriers for services beyond standard dock-to-dock delivery, such as liftgate service, inside delivery, residential delivery, or appointment scheduling.</span></span></a> documentation.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Proactive check-ins:</strong> Call drivers and dispatchers regularly. Don't wait for problems to surface.</li>
+        <li><strong>Customer communication habits:</strong> Make updates automatic, not reactive. Send confirmation at pickup and delivery every time.</li>
+        <li><strong>Documentation collection:</strong> Get PODs immediately. Chasing paperwork weeks later wastes time and delays payment.</li>
+    </ul>
+
+    <p>Problem resolution skills develop with experience. Focus first on establishing consistent tracking and communication habits that prevent small issues from becoming major problems.</p>
 
     {% include 'pagination.html' %}
 </div>

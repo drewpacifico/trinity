@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 6: Load Restrictions and Regulations - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 6</span>
+        <h1 class="module-title">Load Restrictions and Regulations</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?fm=jpg&q=80&w=1200"
+             alt="Legal documents and regulations on a desk"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>The freight transportation industry operates under extensive federal, state, and local regulations designed to ensure safety, protect infrastructure, and maintain fair competition. While drivers and <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> bear primary responsibility for compliance, understanding these regulations helps you set realistic expectations, avoid legal problems, and serve customers effectively.</p>
+
+    <p>In this chapter, you'll learn:</p>
+
+    <ul>
+        <li><strong>Hours of Service (<a href="{{ url_for('glossary') }}#hours-of-service-hos" class="glossary-term-link" target="_blank">HOS<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hours of Service (HOS)</span><span class="glossary-tooltip-definition">Federal regulations limiting driver operating hours: 11-hour driving limit, 14-hour duty window, 60/70-hour work week, 30-minute break requirement.</span></span></a>):</strong> Driving limits, rest requirements, and how they affect transit times</li>
+        <li><strong>Detention:</strong> How waiting time consumes driver hours and impacts operations</li>
+        <li><strong>Weight regulations:</strong> Federal limits, axle distribution, and state variations</li>
+        <li><strong>Dimensional restrictions:</strong> Legal limits and when permits are required</li>
+        <li><strong>Hazmat regulations:</strong> Compliance requirements for hazardous materials</li>
+        <li><strong>Food safety (FSMA):</strong> Sanitary transportation requirements for food products</li>
+        <li><strong>HOS exemptions:</strong> Special cases and when exceptions apply</li>
+        <li><strong>Liability and insurance:</strong> Coverage requirements and <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">broker<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> responsibilities</li>
+        <li><strong>Special delivery requirements:</strong> <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">Liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a>, residential, limited access considerations</li>
+        <li><strong>Cross-border freight:</strong> U.S.-Canada and U.S.-Mexico considerations</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Point
+        </div>
+        <div class="callout-content">
+            You don't need to become a regulatory expert, but understanding the basics prevents you from making commitments that violate regulations or expose you, your customers, or your carriers to liability. This knowledge helps you set realistic expectations and build credibility.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('module', module_id='6.1') }}" class="btn btn-accent btn-lg">
+            Begin Module 6.1 &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

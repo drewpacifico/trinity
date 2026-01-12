@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Module 8.5: Handling Objections Professionally - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 8.5</span>
+        <h1 class="module-title">Handling Objections Professionally</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?fm=jpg&q=80&w=1200"
+             alt="Professional handling customer objections in conversation"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Objections aren't rejections—they're requests for more information or expressions of concern that need addressing. Welcome objections as opportunities to clarify misunderstandings and resolve concerns.</p>
+
+    <h2>The LAVA Method for Objection Handling</h2>
+
+    <p>LAVA provides a systematic approach to addressing objections effectively:</p>
+
+    <h3>L - Listen</h3>
+    <p>Allow customers to fully express their concern without interrupting. Show you're listening through verbal acknowledgments ("I understand," "I see") and body language. Don't interrupt to defend yourself.</p>
+
+    <h3>A - Acknowledge</h3>
+    <p>Validate their concern as legitimate rather than dismissing it:</p>
+    <ul>
+        <li>"I understand why that's important to you."</li>
+        <li>"That's a legitimate concern."</li>
+        <li>"I appreciate you raising that."</li>
+    </ul>
+
+    <h3>V - Verify</h3>
+    <p>Ensure you understand the real objection rather than assuming:</p>
+    <ul>
+        <li>"Just to make sure I understand, your main concern is [restate objection]—is that correct?"</li>
+        <li>"Is there anything else about [topic] that concerns you?"</li>
+    </ul>
+
+    <h3>A - Answer</h3>
+    <p>Address the concern directly with specific information, examples, or alternatives. Your answer should specifically address their verified concern.</p>
+
+    <h2>Common Objections and Effective Responses</h2>
+
+    <h3>"Your rate is too high."</h3>
+    <p><strong>Verify:</strong> "When you say too high, are you comparing to a specific quote, or do you have a target rate in mind?"</p>
+    <p><strong>Answer:</strong> "Let me explain what's included: verified insurance, proactive tracking, 24/7 problem resolution. One prevented problem pays for the rate difference on 20 loads."</p>
+
+    <h3>"I need to think about it."</h3>
+    <p><strong>Verify:</strong> "Is there specific information you need, or would you like time to evaluate other options?"</p>
+    <p><strong>Answer:</strong> Based on their response, either provide needed information or schedule specific follow-up.</p>
+
+    <h3>"We've been burned by <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">brokers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> before."</h3>
+    <p><strong>Acknowledge:</strong> "I'm sorry you had that experience. I understand why you'd be cautious."</p>
+    <p><strong>Verify:</strong> "What specifically went wrong? I want to address your concerns directly."</p>
+    <p><strong>Answer:</strong> Explain how you're different and offer a trial shipment to prove yourself.</p>
+
+    <h3>"We only work directly with <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a>, not brokers."</h3>
+    <p><strong>Verify:</strong> "Have you experienced situations where your preferred carriers didn't have <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>?"</p>
+    <p><strong>Answer:</strong> "That's exactly where we add value—not replacing your carrier relationships, but supplementing them when they're unavailable."</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Sometimes what people say initially isn't their real concern. Verification uncovers the actual issue. Ask follow-up questions before jumping to answer what you think they're concerned about.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Practice the LAVA method with common objections:</p>
+
+    <ul>
+        <li><strong>"Your rate is too high"</strong> - Verify what they're comparing to, then explain total value.</li>
+        <li><strong>"I need to think about it"</strong> - Verify if they need more information or time, then provide what's needed.</li>
+        <li><strong>"We've been burned by brokers before"</strong> - Acknowledge their experience, verify what went wrong, then explain how you're different.</li>
+        <li><strong>"We only work with carriers directly"</strong> - Verify if they've had capacity issues, then position yourself as backup.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Listen fully:</strong> Don't interrupt or get defensive. Let them express the full concern.</li>
+        <li><strong>Verify before answering:</strong> What they say initially may not be the real concern.</li>
+        <li><strong>Welcome objections:</strong> They indicate interest. Uninterested prospects don't bother objecting.</li>
+    </ul>
+
+    <p>Objections are opportunities to provide information and build trust. Handle them professionally and you'll convert more prospects.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

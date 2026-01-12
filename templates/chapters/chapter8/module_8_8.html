@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Module 8.8: Building Long-Term Customer Relationships - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 8.8</span>
+        <h1 class="module-title">Building Long-Term Customer Relationships</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?fm=jpg&q=80&w=1200"
+             alt="Business professional building lasting relationships"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>The initial sale is just the beginning. Long-term success comes from customer retention and account growth over time.</p>
+
+    <h2>Regular Communication</h2>
+
+    <p>Don't only contact customers when you want something. Maintain relationships through regular touchpoints:</p>
+
+    <ul>
+        <li><strong>Tier A customers (high volume):</strong> Weekly check-ins, proactive outreach before shipping periods, quarterly business reviews</li>
+        <li><strong>Tier B customers (moderate volume):</strong> Bi-weekly check-ins, monthly market updates</li>
+        <li><strong>Tier C customers (lower volume):</strong> Monthly check-ins, quarterly emails with valuable content</li>
+    </ul>
+
+    <h2>Provide Market Intelligence</h2>
+
+    <p>Position yourself as their logistics advisor by sharing insights:</p>
+
+    <ul>
+        <li><em>"I'm seeing <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> tightening on Midwest lanes due to harvest season. You might want to book loads early rather than waiting until day-of."</em></li>
+        <li><em>"Diesel prices dropped 12% this month, which should help stabilize freight rates."</em></li>
+        <li><em>"New <a href="{{ url_for('glossary') }}#fmcsa-federal-motor-carrier-safety-administration" class="glossary-term-link" target="_blank">FMCSA<span class="glossary-tooltip"><span class="glossary-tooltip-term">FMCSA (Federal Motor Carrier Safety Administration)</span><span class="glossary-tooltip-definition">The primary regulatory body for trucking, issuing operating authority, enforcing safety regulations, and maintaining carrier safety ratings.</span></span></a> regulations taking effect next quarter will affect driver hours. Let's discuss how to adjust your scheduling."</em></li>
+    </ul>
+
+    <h2>Proactive Problem-Solving</h2>
+
+    <p>Anticipate issues before they become problems:</p>
+    <ul>
+        <li>Alert customers early when capacity will be tight</li>
+        <li>Communicate proactively with contingency plans for weather impacts</li>
+        <li>Share recommendations for pattern optimization even if it means less immediate revenue</li>
+        <li>Bring regulatory changes affecting their industry to their attention</li>
+    </ul>
+
+    <h2>Continuous Improvement</h2>
+
+    <p>Regularly ask for feedback and act on it:</p>
+    <ul>
+        <li>"How are we doing? What could we improve?"</li>
+        <li>"I noticed we've had delays on [specific lane]. I'm working with different <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> to improve reliability."</li>
+        <li>"You mentioned wanting more detailed tracking updates. I've implemented [specific change]. Is this meeting expectations?"</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Acting on customer feedback—and letting them know you acted on it—strengthens relationships significantly. It demonstrates that you're listening and continuously improving.
+        </div>
+    </div>
+
+    <h2>Personal Connection</h2>
+
+    <p>Remember details about customers that go beyond business:</p>
+    <ul>
+        <li>Ask about their families, hobbies, or interests when appropriate</li>
+        <li>Remember birthdays or work anniversaries</li>
+        <li>Acknowledge personal milestones</li>
+        <li>Find common interests that strengthen personal bonds</li>
+    </ul>
+
+    <p>People do business with people they like. Personal connections make you harder to replace even when competitors offer lower rates.</p>
+
+    <h2>Account Reviews</h2>
+
+    <p>Schedule quarterly or annual business reviews with major customers covering:</p>
+    <ul>
+        <li><strong>Performance metrics:</strong> Shipments handled, on-time percentage, cost trends</li>
+        <li><strong>Upcoming needs:</strong> Volume changes, new lanes, seasonal planning</li>
+        <li><strong>Improvement opportunities:</strong> Consolidation, mode optimization, routing</li>
+        <li><strong>Relationship strength:</strong> What's working, concerns, growth opportunities</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Account reviews demonstrate that you view customers as partners deserving regular attention, not just order-takers providing commodity services. This differentiates you from transactional competitors.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Relationship maintenance practices:</p>
+
+    <ul>
+        <li><strong>Schedule regular check-ins:</strong> Weekly for high-volume, bi-weekly for moderate, monthly for lower volume customers.</li>
+        <li><strong>Share market intelligence:</strong> Capacity trends, rate changes, regulatory updates they should know.</li>
+        <li><strong>Ask for feedback:</strong> "How are we doing? What could we improve?"</li>
+        <li><strong>Conduct account reviews:</strong> Quarterly reviews covering performance, upcoming needs, and opportunities.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Stay in touch proactively:</strong> Don't only call when you want something.</li>
+        <li><strong>Act on feedback:</strong> When customers suggest improvements, implement them and report back.</li>
+        <li><strong>Build personal connections:</strong> People do business with people they like.</li>
+    </ul>
+
+    <p>Customer retention is more profitable than acquisition. Invest in relationships and they'll grow over time.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

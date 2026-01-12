@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Module 9.7: Organizing Your Follow-Up Workflow - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 9.7</span>
+        <h1 class="module-title">Organizing Your Follow-Up Workflow</h1>
+    </div>
+
+    <p>Effective follow-up requires daily discipline and organization. Random, sporadic efforts produce random, sporadic results.</p>
+
+    <h2>Daily Follow-Up Routine</h2>
+
+    <h3>Morning (30-60 minutes)</h3>
+    <ul>
+        <li>Review <a href="{{ url_for('glossary') }}#crm" class="glossary-term-link" target="_blank">CRM<span class="glossary-tooltip"><span class="glossary-tooltip-term">CRM (Customer Relationship Management)</span><span class="glossary-tooltip-definition">A database tracking all prospect and customer information, interactions, and scheduled activities. It's the foundation of systematic follow-up.</span></span></a> for today's scheduled follow-up tasks</li>
+        <li>Prioritize tasks (hot prospects first, then warm, then cold nurture)</li>
+        <li>Prepare for calls (review previous conversation notes, refresh memory on context, identify key talking points)</li>
+        <li>Update market intelligence to share (recent <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> changes, rate trends, relevant news)</li>
+        <li>Make morning follow-up calls (9-11 AM when decision-makers are most available)</li>
+    </ul>
+
+    <h3>Mid-Day (30 minutes)</h3>
+    <ul>
+        <li>Send follow-up emails to prospects who didn't answer phone calls</li>
+        <li>Send value-add content to long-term nurture contacts on today's schedule</li>
+        <li>Update CRM with morning activities (log calls, record outcomes, schedule next actions)</li>
+        <li>Review any responses received and respond promptly</li>
+    </ul>
+
+    <h3>Afternoon (30-60 minutes)</h3>
+    <ul>
+        <li>Make afternoon follow-up calls (2-4 PM, second-best calling window)</li>
+        <li>Respond to any inbound inquiries from earlier follow-ups</li>
+        <li>End-of-day CRM update (complete all logging, scheduling, and note-taking)</li>
+        <li>Prepare tomorrow's follow-up list and priorities</li>
+    </ul>
+
+    <p><strong>Total daily follow-up time:</strong> 90-150 minutes</p>
+
+    <p>This represents 1.5-2.5 hours daily dedicated exclusively to follow-up—separate from new prospecting, operational work, and customer service.</p>
+
+    <h2>Time Management Tips</h2>
+
+    <h3>Batch Similar Activities</h3>
+    <ul>
+        <li>Make all follow-up calls in one block (morning block, afternoon block)</li>
+        <li>Send all follow-up emails in another dedicated block</li>
+        <li>Complete all CRM updates in a third block</li>
+    </ul>
+    <p>Batching reduces context-switching overhead. Your brain operates more efficiently doing ten similar tasks consecutively than alternating between different task types.</p>
+
+    <h3>Use Templates Wisely</h3>
+    <p>Create templates for common follow-up scenarios, but always personalize before sending.</p>
+    <p>Templates save time on structure and boilerplate language, but personalization ensures authenticity and relevance.</p>
+    <ul>
+        <li><strong>Good template use:</strong> Start with template, add specific details from previous conversations, reference their particular situation, send.</li>
+        <li><strong>Bad template use:</strong> Send generic template with only name personalized, ignoring context.</li>
+    </ul>
+
+    <h3>Schedule Everything</h3>
+    <p>Don't rely on memory for follow-up. Every prospect interaction should generate a scheduled next action in your CRM.</p>
+    <ul>
+        <li><strong>After every call:</strong> "When should I follow up with this person?" → Schedule specific date and action.</li>
+        <li><strong>After every email:</strong> "If they don't respond, when do I follow up?" → Schedule reminder.</li>
+        <li><strong>After every quote:</strong> "When do I check on this?" → Schedule follow-up call or email.</li>
+    </ul>
+    <p>Scheduled actions become daily task lists ensuring nothing falls through cracks.</p>
+
+    <h3>Protect Follow-Up Time</h3>
+    <p>Treat follow-up blocks as appointments you cannot skip or reschedule without good reason.</p>
+    <p>Don't let operational issues constantly override follow-up time. Handle urgent operational matters immediately, but return to scheduled follow-up afterward.</p>
+    <p>If customers or <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> can reach you during follow-up time, they will. Consider using voicemail or brief responses during dedicated follow-up blocks.</p>
+
+    <h3>Work Ahead When Possible</h3>
+    <p>If you complete today's follow-up tasks early, start on tomorrow's. Building a buffer prevents falling behind during busy operational days.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Consistency beats intensity. Following up with 10 prospects daily for a month produces far better results than following up with 100 prospects in one day and then nothing for three weeks. Build the daily habit.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

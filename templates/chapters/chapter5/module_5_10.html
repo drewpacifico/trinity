@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5.10: Partial Loads and LTL Considerations - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 5.10</span>
+        <h1 class="module-title">Partial Loads and LTL Considerations</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?fm=jpg&q=80&w=1200"
+             alt="LTL freight terminal with multiple partial shipments"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Not all freight fills entire trailers. Understanding partial truckload and less-than-truckload (LTL) options helps you serve customers with smaller shipment needs.</p>
+
+    <h2>Less-Than-Truckload (LTL)</h2>
+
+    <p>LTL <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> consolidate freight from multiple <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shippers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> into single trailers. Each shipper pays for the space their freight occupies rather than paying for an entire truck.</p>
+
+    <p><strong>Typical LTL characteristics:</strong></p>
+    <ul>
+        <li>Shipments from 150 pounds to 10,000 pounds</li>
+        <li>Multiple handling points (origin terminal, potential intermediate terminals, destination terminal)</li>
+        <li>Longer transit times than truckload (due to multiple stops and terminal handling)</li>
+        <li>Higher cost per pound than truckload but lower total cost for small shipments</li>
+    </ul>
+
+    <p><strong>LTL works well for:</strong></p>
+    <ul>
+        <li>Small businesses without full truckload volumes</li>
+        <li>Occasional shipments of moderate-sized freight</li>
+        <li>Multiple small deliveries to different destinations</li>
+        <li>Freight weighing a few thousand pounds</li>
+    </ul>
+
+    <h2>Partial Truckload</h2>
+
+    <p>Partial truckload falls between LTL and full truckload—typically 5-20 pallets or 2,000-12,000 pounds. Too large for LTL to be economical but not enough to fill a truck.</p>
+
+    <p><strong>Options for partial loads:</strong></p>
+    <ul>
+        <li><strong>Shared truckload:</strong> Some carriers offer shared truck programs where they combine 2-3 compatible partial loads heading in the same general direction. Customers share truck space and costs.</li>
+        <li><strong>Volume LTL:</strong> LTL carriers offer discounted rates for larger shipments that don't require full trucks but generate good revenue per stop.</li>
+        <li><strong>Partial truck rates:</strong> Some truckload carriers accept partial loads at adjusted rates (higher per pound than full truckload but less than you'd pay for wasted truck space).</li>
+        <li><strong>Consolidation services:</strong> Some brokerages specialize in consolidating multiple customers' partial loads into full trucks.</li>
+    </ul>
+
+    <h2>LTL Freight Classification</h2>
+
+    <p>LTL pricing uses a classification system (Classes 50 through 500) based on four factors:</p>
+
+    <ul>
+        <li><strong>Density:</strong> Weight per cubic foot. Denser freight generally has lower classifications (lower class numbers mean lower rates).</li>
+        <li><strong>Stowability:</strong> How easily the freight stacks and fits with other freight. Irregular shapes are harder to stow.</li>
+        <li><strong>Handling:</strong> Special handling requirements increase classification.</li>
+        <li><strong>Liability:</strong> High-value or fragile items that create claim risk have higher classifications.</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Freight class significantly affects LTL pricing. Accurate classification prevents billing disputes and reclassification charges. When in doubt, confirm the commodity's NMFC (National Motor Freight Classification) code with the shipper.
+        </div>
+    </div>
+
+    <h2>LTL <a href="{{ url_for('glossary') }}#accessorial-charges" class="glossary-term-link" target="_blank">Accessorial<span class="glossary-tooltip"><span class="glossary-tooltip-term">Accessorial Charges</span><span class="glossary-tooltip-definition">Additional fees charged by carriers for services beyond standard dock-to-dock delivery, such as liftgate service, inside delivery, residential delivery, or appointment scheduling.</span></span></a> Charges</h2>
+
+    <p>LTL carriers commonly charge extra for services beyond basic dock-to-dock delivery:</p>
+
+    <ul>
+        <li><strong>Liftgate:</strong> $50-150 for hydraulic lift service at pickup or delivery</li>
+        <li><strong>Inside delivery:</strong> $75-200 for delivery beyond the truck tailgate</li>
+        <li><strong>Residential delivery:</strong> $75-150 for home delivery (higher handling costs)</li>
+        <li><strong>Limited access:</strong> $50-100 for difficult-to-reach locations</li>
+        <li><strong>Appointment/notification:</strong> $25-75 for scheduled delivery windows</li>
+        <li><strong>Reweigh/reclass:</strong> Charges if actual weight or class differs from quoted</li>
+    </ul>
+
+    <h2>Choosing Between LTL and Truckload</h2>
+
+    <p>Consider these factors when advising customers:</p>
+    <ul>
+        <li><strong>Weight:</strong> Generally, 8,000-10,000+ pounds becomes more economical as truckload</li>
+        <li><strong>Destinations:</strong> Multiple stops favor LTL; single destination favors truckload</li>
+        <li><strong>Speed:</strong> Truckload is faster (direct); LTL adds terminal handling time</li>
+        <li><strong>Handling:</strong> Fragile freight may do better in dedicated truckload (less handling)</li>
+        <li><strong>Cost sensitivity:</strong> Compare total costs including all accessorials</li>
+    </ul>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask for partial loads:</p>
+
+    <ul>
+        <li><strong>"How many pallets and what's the total weight?"</strong> Helps determine if LTL or partial truckload is more economical.</li>
+        <li><strong>"How time-sensitive is this?"</strong> LTL is slower. Truckload is faster but may cost more.</li>
+        <li><strong>"What's the freight class?"</strong> LTL pricing depends heavily on classification.</li>
+        <li><strong>"Any special handling or delivery requirements?"</strong> LTL accessorials add up quickly.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Know the crossover point:</strong> Around 8,000-10,000 pounds, truckload often becomes more economical than LTL.</li>
+        <li><strong>Understand accessorials:</strong> <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">Liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a>, residential, inside delivery, and limited access charges can double LTL costs.</li>
+        <li><strong>Offer options:</strong> Present both LTL and partial truckload quotes so customers can choose.</li>
+    </ul>
+
+    <p>Understanding LTL helps you serve smaller customers and provide solutions when truckload doesn't make sense. Not every load fills a truck.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

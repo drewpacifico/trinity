@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.2: Dry Van Trailers - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.2</span>
+        <h1 class="module-title">Dry Van Trailers</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="/static/images/dry_van.jpeg"
+             alt="Standard 53-foot dry van trailer"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Dry van trailers are the workhorses of the trucking industry. These are the standard enclosed trailers you see everywhere on highways, rectangular boxes protecting freight from weather while providing secure transport. Understanding dry vans is essential because they handle the majority of general freight shipments.</p>
+
+    <h2>Standard Dry Van Specifications</h2>
+
+    <ul>
+        <li><strong>Length:</strong> 53 feet (some 48-foot trailers still exist)</li>
+        <li><strong>Width:</strong> 8.5 feet (102 inches)</li>
+        <li><strong>Interior Height:</strong> Approximately 9 feet (varies 8.5-9.5 feet)</li>
+        <li><strong>Door Opening:</strong> 8 feet wide × 9 feet tall</li>
+        <li><strong>Weight <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">Capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>:</strong> 43,000-45,000 pounds</li>
+        <li><strong>Cube Capacity:</strong> Approximately 4,000 cubic feet</li>
+    </ul>
+
+    <h2>Critical Concept: Cubing Out vs. Weighing Out</h2>
+
+    <p>A trailer can exceed either its weight capacity OR its cube capacity, but not both simultaneously. Understanding which constraint applies to your freight determines whether you can fit everything in one trailer.</p>
+
+    <p><strong>Cubing out</strong> means filling all available space before reaching maximum weight. Light, bulky freight like furniture, potato chips, or pillows typically cubes out. You've used all the physical space but haven't reached weight limits.</p>
+
+    <p><strong>Weighing out</strong> means reaching maximum weight before filling all space. Dense, heavy freight like automotive parts, steel products, or bottled beverages typically weighs out. You can't load more because you've reached weight capacity, even though physical space remains.</p>
+
+    <div class="callout callout-example">
+        <div class="callout-title">
+            <span class="callout-icon">&#128218;</span>
+            Real Example
+        </div>
+        <div class="callout-content">
+            <p><strong>Cubing out:</strong> You're shipping 26 pallets of furniture, each 48"×40"×72" tall and weighing 400 pounds. Total weight is 10,400 pounds—well under capacity. However, these pallets consume approximately 4,200 cubic feet, exceeding the 4,000 cu ft capacity. You need two trailers despite being nowhere near weight limits.</p>
+            <p><strong>Weighing out:</strong> Shipping 22 pallets of automotive batteries at 2,000 pounds each totals 44,000 pounds. The pallets might only consume 2,500 cubic feet, but you've reached weight capacity.</p>
+        </div>
+    </div>
+
+    <h2>Ideal Freight Types for Dry Vans</h2>
+
+    <ul>
+        <li>Palletized freight (boxes, cartons, cases on standard pallets)</li>
+        <li>Manufactured products not requiring temperature control</li>
+        <li>Retail merchandise</li>
+        <li>Non-perishable food products</li>
+        <li>Electronics and appliances</li>
+        <li>Furniture and fixtures</li>
+        <li>Automotive parts (non-hazardous)</li>
+        <li>Textiles and clothing</li>
+        <li>Paper products</li>
+        <li>General freight not needing special handling</li>
+    </ul>
+
+    <h2>Limitations of Dry Vans</h2>
+
+    <p>Dry vans cannot accommodate:</p>
+    <ul>
+        <li>Freight exceeding interior dimensions (you can't fit a 55-foot beam in a 53-foot trailer)</li>
+        <li>Temperature-sensitive products requiring climate control</li>
+        <li>Freight needing top loading or side loading (dry vans load only through rear doors)</li>
+        <li>Overweight freight exceeding 45,000 pounds</li>
+        <li>Freight requiring ventilation or special atmosphere</li>
+    </ul>
+
+    <h2>Loading Considerations</h2>
+
+    <p>Dry vans typically load and unload at dock height (approximately 48-52 inches off the ground). This requires:</p>
+    <ul>
+        <li>Loading docks at pickup and delivery locations, OR</li>
+        <li>Forklifts capable of reaching trailer floor height, OR</li>
+        <li>Liftgate service (hydraulic platform that raises/lowers freight)</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistake
+        </div>
+        <div class="callout-content">
+            Always confirm how freight will be loaded and unloaded. A customer requesting dry van service at a location without a dock and without a forklift needs <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a> service—an additional cost you must account for in your pricing.
+        </div>
+    </div>
+
+    <h2>Floor Specifications</h2>
+
+    <p>Standard dry van floors are hardwood, typically oak or similar hardwood planking. Floor capacity is generally 16,000 pounds per four feet of length, meaning you can't concentrate enormous weight on small sections without risking floor damage.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when booking dry van loads:</p>
+
+    <ul>
+        <li><strong>"What are the dimensions and weight of each pallet?"</strong> Calculate if you'll cube out or weigh out.</li>
+        <li><strong>"Does the pickup location have a loading dock?"</strong> If not, you may need liftgate service.</li>
+        <li><strong>"Will the freight fit through the door opening?"</strong> Remember: 8 feet wide × 9 feet tall.</li>
+        <li><strong>"Does this freight need temperature control?"</strong> If yes, it's not a dry van load.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Memorize the specs:</strong> 53 feet long, 8.5 feet wide, 9 feet tall interior, 45,000 pounds capacity. These numbers come up constantly.</li>
+        <li><strong>Understand cubing vs. weighing out:</strong> This concept affects pricing and capacity planning on nearly every load.</li>
+        <li><strong>Always confirm dock access:</strong> Liftgate requirements are among the most common booking oversights.</li>
+    </ul>
+
+    <p>Dry vans are your bread and butter. Most of your loads will likely be dry van freight, so mastering these fundamentals pays immediate dividends.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Module 8.4: Effective Sales Presentation Structure - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 8.4</span>
+        <h1 class="module-title">Effective Sales Presentation Structure</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?fm=jpg&q=80&w=1200"
+             alt="Professional giving a sales presentation"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>When presenting your services to prospects, follow a logical structure that builds confidence and addresses concerns systematically.</p>
+
+    <h2>Step 1: Establish Credibility (30 seconds)</h2>
+
+    <p>Begin with a brief introduction establishing why prospects should listen to you:</p>
+
+    <p><em>"I'm [Your Name] with [Brokerage]. I've specialized in refrigerated food transportation for five years and currently manage freight for twelve produce distributors across the Southeast. I've handled over 2,000 <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">reefer<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a> loads and have maintained a 98% on-time delivery rate."</em></p>
+
+    <p>Avoid lengthy company histories. Prospects care more about how you help them than about your background.</p>
+
+    <h2>Step 2: Demonstrate Understanding (1-2 minutes)</h2>
+
+    <p>Summarize what you learned in discovery to confirm you understand their situation:</p>
+
+    <p><em>"Based on our conversation, you ship 15-20 reefer loads weekly from California to eastern markets. Maintaining precise temperature control between 34-38 degrees is critical. You've experienced problems with <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> not <a href="{{ url_for('glossary') }}#pre-cooling" class="glossary-term-link" target="_blank">pre-cooling<span class="glossary-tooltip"><span class="glossary-tooltip-term">Pre-Cooling</span><span class="glossary-tooltip-definition">Bringing a refrigerated trailer to required temperature before loading begins, essential since reefer units maintain temperature but don't rapidly cool warm freight.</span></span></a> properly, resulting in two rejected loads last quarter that cost approximately $30,000."</em></p>
+
+    <p>This shows you listened carefully and gives them opportunity to correct misunderstandings.</p>
+
+    <h2>Step 3: Present Solutions (2-3 minutes)</h2>
+
+    <p>Explain specifically how your services address their needs. Connect your services directly to their stated challenges—don't list generic capabilities.</p>
+
+    <p><em>"Here's how we handle reefer shipments: First, carrier selection—we only work with reefer carriers who have temperature monitoring equipment. Second, pre-cooling verification—we verify the trailer has been pre-cooled before the carrier arrives. Third, in-transit monitoring—we contact drivers mid-transit to confirm temperatures. Finally, if despite our precautions an issue occurs, I personally manage the resolution."</em></p>
+
+    <h2>Step 4: Address Concerns (1-2 minutes)</h2>
+
+    <p>Anticipate objections and address them proactively:</p>
+
+    <p><em>"You might be wondering about rates. This level of service typically costs 15-20% more than basic reefer service. However, when you consider that one prevented rejection saves the cost differential on 100 loads, the investment protects against far greater losses."</em></p>
+
+    <p><em>"You might also be concerned about switching providers. I'm not asking you to switch all your freight immediately. Start with one or two loads per week. Experience our service firsthand with minimal risk."</em></p>
+
+    <h2>Step 5: Call to Action (30 seconds)</h2>
+
+    <p>Suggest a specific, easy next step:</p>
+
+    <p><em>"I'd like to propose handling two of your California-to-Florida loads next week. You'll experience our temperature management process firsthand. Does that sound reasonable?"</em></p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Effective calls to action are specific (not vague), low-risk (trial shipments, not full commitment), time-bound (next week, not someday), and easy to say yes to. Avoid pushy language—you're proposing a logical next step, not demanding commitment.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Presentation structure to practice:</p>
+
+    <ul>
+        <li><strong>Credibility (30 sec):</strong> Brief intro with relevant experience and results.</li>
+        <li><strong>Understanding (1-2 min):</strong> Summarize what you learned about their situation.</li>
+        <li><strong>Solutions (2-3 min):</strong> Connect your services to their specific challenges.</li>
+        <li><strong>Concerns (1-2 min):</strong> Address objections before they raise them.</li>
+        <li><strong>Action (30 sec):</strong> Suggest a specific, low-risk next step.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Confirm understanding first:</strong> Restate their situation before presenting solutions.</li>
+        <li><strong>Connect to their needs:</strong> Don't list generic capabilities. Show how you solve their problems.</li>
+        <li><strong>Propose trial shipments:</strong> Low-risk starting points are easier to accept than full commitments.</li>
+    </ul>
+
+    <p>Structure creates confidence. Following a logical flow helps prospects understand your value and makes decisions easier.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

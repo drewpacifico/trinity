@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 8 Action Items - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 8</span>
+        <h1 class="module-title">Action Items</h1>
+    </div>
+
+    <p>Complete these tasks to master sales strategies:</p>
+
+    <div class="action-items">
+        <ul class="checklist">
+            <li><strong>Develop your consultative discovery questions:</strong> Write 10-15 open-ended questions you'll ask every prospect to understand needs, challenges, priorities, and decision process</li>
+            <li><strong>Create value quantification examples for your services:</strong> Calculate time savings, prevented problem costs, inventory optimization, etc. in dollar terms prospects can easily understand</li>
+            <li><strong>Write 3-5 customer success stories:</strong> Use the situation-problem-solution-results structure. Choose stories representing different customer types and challenges you solve</li>
+            <li><strong>Practice LAVA method for common objections:</strong> Role-play with colleague or mentor: rate too high, need to think, burned before, need approval, only use carriers</li>
+            <li><strong>Prepare negotiation parameters for typical lanes:</strong> For your most common lanes, establish: target rate, walk-away rate, market rate range, trade elements available</li>
+            <li><strong>Schedule regular customer check-ins:</strong> Set recurring calendar reminders for Tier A (weekly), Tier B (bi-weekly), Tier C (monthly) customer touchpoints</li>
+            <li><strong>Identify upsell/cross-sell opportunities in current customer base:</strong> Review existing customers: Who ships additional lanes you don't handle? Who uses only one equipment type but needs others?</li>
+            <li><strong>Create relationship-building calendar:</strong> Schedule quarterly account reviews with major customers, plan for holiday acknowledgments, set reminders for customer milestones</li>
+            <li><strong>Build market intelligence sharing system:</strong> Subscribe to <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> reports, rate indexes, industry news. Create schedule for sharing relevant insights with customers monthly</li>
+            <li><strong>Develop your personal sales metrics:</strong> Track: contact-to-conversation ratio, conversation-to-quote ratio, quote-to-close ratio, average deal size</li>
+            <li><strong>Practice your 30-second credibility statement:</strong> Write and rehearse until natural: who you are, your specialization, one impressive credential</li>
+            <li><strong>Create call-to-action templates:</strong> Write 5-7 low-risk CTAs for different situations: trial shipment, backup lane, overflow freight, pilot program</li>
+        </ul>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

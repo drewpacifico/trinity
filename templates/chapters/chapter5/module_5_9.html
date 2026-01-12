@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5.9: Oversized and Overweight Loads - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 5.9</span>
+        <h1 class="module-title">Oversized and Overweight Loads</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?fm=jpg&q=80&w=1200"
+             alt="Oversized load with wide load banner and escort vehicle"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Freight exceeding legal size or weight limits requires special permits, routing, and often specialized equipment. Understanding oversize/overweight (OS/OW) requirements helps you recognize when standard freight becomes specialized.</p>
+
+    <h2>Legal Limits Without Permits</h2>
+
+    <p>Remember these standard limits—freight within these parameters doesn't require special permits:</p>
+
+    <ul>
+        <li><strong>Width:</strong> 8.5 feet (102 inches)</li>
+        <li><strong>Height:</strong> 13.5-14 feet (varies by state and sometimes by specific roads)</li>
+        <li><strong>Length:</strong> 53 feet for trailers on interstate highways</li>
+        <li><strong>Weight:</strong> 80,000 pounds gross vehicle weight</li>
+    </ul>
+
+    <p>Freight exceeding any of these requires permits and possibly specialized equipment.</p>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            Never accept OS/OW loads with immediate pickup requirements. Permits take time: routine permits need 3-7 days minimum, complex permits 2-4 weeks or more. Route surveys, escort arrangements, and specialized rigging all require advance planning. Customers expecting quick turnaround don't understand regulatory requirements.
+        </div>
+    </div>
+
+    <h2>Permit Requirements</h2>
+
+    <p>Each state issues its own oversize/overweight permits. Interstate moves require permits from every state the shipment travels through.</p>
+
+    <p>Permit complexity and cost vary based on how much freight exceeds standard dimensions:</p>
+
+    <ul>
+        <li><strong>Slightly oversize</strong> (width 8.5' to 10', height 14' to 15'): Routine permits, relatively quick processing (often same-day or next-day), moderate costs ($100-300 per state typically).</li>
+        <li><strong>Moderately oversize</strong> (width 10' to 12', height 15' to 16'): May require route surveys, longer processing times (days to weeks), higher costs ($300-800 per state often).</li>
+        <li><strong>Extremely oversize</strong> (width over 12', height over 16'): Almost always require route surveys, can take weeks or months for approval, very high costs (thousands per state possible), may require police escorts.</li>
+    </ul>
+
+    <p>Lead time matters enormously. Don't accept OS/OW loads requiring immediate pickup—permits take time to obtain and process.</p>
+
+    <h2>Route Surveys</h2>
+
+    <p>Very large loads may require route surveys identifying obstacles along the planned path:</p>
+    <ul>
+        <li>Low bridges and overpasses</li>
+        <li>Narrow roads or tight turns</li>
+        <li>Utility lines that may need temporary removal</li>
+        <li>Weight-restricted bridges</li>
+        <li>Construction zones</li>
+    </ul>
+
+    <p>Route surveys add time and cost but prevent loads from getting stuck mid-route at impassable obstacles.</p>
+
+    <h2>Escort Vehicles</h2>
+
+    <p>Large oversize loads often require escort vehicles (pilot cars) traveling ahead or behind:</p>
+    <ul>
+        <li>Warn other traffic of oversized load</li>
+        <li>Help navigate through obstacles</li>
+        <li>Required by permit conditions for loads over certain dimensions</li>
+        <li>Typically cost $200-400 per day per vehicle</li>
+        <li>Some loads require police escorts in addition to or instead of pilot cars</li>
+    </ul>
+
+    <h2>Travel Restrictions</h2>
+
+    <p>Oversize loads often face travel restrictions:</p>
+    <ul>
+        <li><strong>Nighttime restrictions:</strong> Some permits prohibit travel after dark</li>
+        <li><strong>Weekend restrictions:</strong> No travel on weekends or holidays</li>
+        <li><strong>Weather restrictions:</strong> No travel in rain, snow, or high winds</li>
+        <li><strong>Rush hour restrictions:</strong> No travel during peak traffic periods</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            OS/OW loads command premium rates reflecting permits, escorts, specialized equipment, and extended transit times. Factor all these costs when quoting, and always build in buffer time for permit processing.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when freight might be oversized:</p>
+
+    <ul>
+        <li><strong>"What are the exact dimensions when loaded?"</strong> Include the trailer deck height in your calculations.</li>
+        <li><strong>"What is the total weight?"</strong> Over 80,000 pounds requires permits.</li>
+        <li><strong>"What is the pickup timeline?"</strong> Permits take days to weeks. Rush pickups aren't possible.</li>
+        <li><strong>"Have you shipped this before?"</strong> Previous experience may reveal permit or route requirements.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Know the limits:</strong> Width: 8.5 feet. Height: 13.5-14 feet. Weight: 80,000 pounds. Anything over requires permits.</li>
+        <li><strong>Lead time awareness:</strong> Never promise quick pickup for oversized freight. Permits take time.</li>
+        <li><strong>Ask for help:</strong> Complex OS/OW loads require specialized expertise. Know when to involve experienced colleagues.</li>
+    </ul>
+
+    <p>Oversized freight commands premium rates but requires advance planning. The most common mistake is promising timelines that permit processing won't allow.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

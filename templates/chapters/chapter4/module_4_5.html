@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.5: Specialized Flatbed Variants - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.5</span>
+        <h1 class="module-title">Specialized Flatbed Variants</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="/static/images/step_deck.jpeg"
+             alt="Step deck (drop deck) trailer"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Several flatbed variations provide solutions for freight that doesn't fit on standard flatbeds.</p>
+
+    <h2>Step Deck (Drop Deck) Trailers</h2>
+
+    <p>Step deck trailers have two deck levels. The front section sits at standard 5-foot height for approximately 10 feet, then "steps down" to a lower deck approximately 3.5 feet off the ground for the remaining 43 feet.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            This design allows taller freight to remain under the 13.5-14 foot total height limit. A standard flatbed with 5-foot deck can carry loads up to 8.5-9 feet tall. A step deck with 3.5-foot well deck can carry loads 10-11 feet tall while staying legal.
+        </div>
+    </div>
+
+    <p><strong>Common uses:</strong> Tall machinery, large industrial components, construction equipment, agricultural equipment, any freight between 9 and 11 feet tall.</p>
+
+    <p><strong>Step decks command premium rates</strong> because of less availability, more versatility, and higher equipment costs for <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a>.</p>
+
+    <h2>Double Drop (<a href="{{ url_for('glossary') }}#double-drop-lowboy-trailer" class="glossary-term-link" target="_blank">Lowboy<span class="glossary-tooltip"><span class="glossary-tooltip-term">Double Drop (Lowboy) Trailer</span><span class="glossary-tooltip-definition">A flatbed with three deck levels including a very low center section (18-24 inches off ground), allowing 12-15+ foot tall freight.</span></span></a>) Trailers</h2>
+
+    <p>Double drop trailers have three deck levels: standard height front (approximately 8-10 feet), very low center section (18-24 inches off ground), and standard or low height rear section.</p>
+
+    <p>The extremely low well section allows hauling very tall freight—typically 12-15+ feet tall while staying legal. Some specialized lowboys sit even lower, allowing freight approaching 20 feet tall.</p>
+
+    <p><strong>Common uses:</strong> Heavy construction equipment (excavators, bulldozers, cranes), large industrial machinery, transformers and electrical equipment.</p>
+
+    <p>Lowboys typically have higher weight <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> than standard flatbeds (often 50,000+ pounds on specialized units) because they're designed for heavy equipment.</p>
+
+    <p><strong>Lowboys command significant premiums</strong>—often 50-100% more than standard flatbed rates—due to limited availability, heavy equipment expertise required, frequent permit needs, and higher carrier equipment costs.</p>
+
+    <h2>RGN (Removable Gooseneck) Trailers</h2>
+
+    <p>RGN trailers are lowboys where the front section (gooseneck) detaches from the trailer, creating a ramp. This allows rolling wheeled equipment directly onto the trailer rather than requiring cranes for loading.</p>
+
+    <p>The gooseneck hydraulically lowers to ground level, creating an incline. Equipment drives or rolls up, then the gooseneck reattaches and raises to transport position.</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            <a href="{{ url_for('glossary') }}#rgn-removable-gooseneck-trailer" class="glossary-term-link" target="_blank">RGNs<span class="glossary-tooltip"><span class="glossary-tooltip-term">RGN (Removable Gooseneck) Trailer</span><span class="glossary-tooltip-definition">A lowboy trailer where the front section detaches to create a loading ramp, allowing wheeled equipment to roll on and off.</span></span></a> are extremely popular for heavy equipment hauling because they eliminate crane costs and simplify loading/unloading at job sites where cranes aren't available.
+        </div>
+    </div>
+
+    <h2>Conestoga Trailers</h2>
+
+    <p>Conestoga trailers have rolling tarp systems that slide along rails running the trailer length. Rather than manually wrestling tarps over loads, drivers simply crank a mechanism that rolls the tarp forward or backward.</p>
+
+    <p><strong>Advantages:</strong></p>
+    <ul>
+        <li>Much faster than manual <a href="{{ url_for('glossary') }}#tarping" class="glossary-term-link" target="_blank">tarping<span class="glossary-tooltip"><span class="glossary-tooltip-term">Tarping</span><span class="glossary-tooltip-definition">Covering flatbed freight with large protective tarps (typically 18×24 feet) to protect from weather, debris, or road spray, adding $50-150 to costs.</span></span></a> (5-10 minutes vs. 30-60 minutes)</li>
+        <li>Less physical labor for drivers</li>
+        <li>Better weather protection (systematic design seals better than manual tarps)</li>
+        <li>Reduces damage risk to freight from climbing on loads</li>
+    </ul>
+
+    <p>Conestogas are particularly popular for freight where drivers shouldn't walk on the load (finished products, delicate items) or where weather protection is critical but time is important.</p>
+
+    <p><strong>Conestogas command premiums</strong> over standard flatbed rates (typically $100-300 more) because of limited availability, speed and convenience, and better protection.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when freight might need specialized flatbed:</p>
+
+    <ul>
+        <li><strong>"How tall is the freight?"</strong> Over 8.5 feet tall often means step deck. Over 10-11 feet means lowboy.</li>
+        <li><strong>"Does this equipment drive or roll?"</strong> If yes, RGN may be the most practical option.</li>
+        <li><strong>"How heavy is it?"</strong> Very heavy loads (50,000+ pounds) may require specialized lowboys.</li>
+        <li><strong>"Does the customer want faster tarping?"</strong> Conestoga might be worth the premium.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Step deck recognition:</strong> This is the most common specialized flatbed. Learn when freight is too tall for standard flatbed.</li>
+        <li><strong>Height thresholds:</strong> Standard flatbed: up to 8.5 feet tall. Step deck: 9-11 feet tall. Lowboy: over 11 feet tall.</li>
+        <li><strong>When to ask for help:</strong> Complex oversized loads often need permits and expertise. Don't guess on these.</li>
+    </ul>
+
+    <p>Specialized flatbed freight can be highly profitable but requires more expertise. Start with standard flatbeds and step decks before tackling complex lowboy or RGN loads.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

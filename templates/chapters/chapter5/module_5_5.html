@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5.5: Machinery and Industrial Equipment - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 5.5</span>
+        <h1 class="module-title">Machinery and Industrial Equipment</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?fm=jpg&q=80&w=1200"
+             alt="Industrial machinery being prepared for transport"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Machinery transportation ranges from small shop equipment to massive industrial systems. Understanding the variables helps you quote appropriately and select proper equipment.</p>
+
+    <h2>Size and Weight Variability</h2>
+
+    <p>Machinery spans enormous size and weight ranges:</p>
+
+    <ul>
+        <li><strong>Small machinery</strong> (shop equipment, compact tools): May fit in <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry vans<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a>, weigh hundreds to a few thousand pounds, ship relatively easily.</li>
+        <li><strong>Mid-size machinery</strong> (manufacturing equipment, processing equipment): Often requires <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbeds<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a>, weighs 5,000-20,000 pounds, needs careful planning.</li>
+        <li><strong>Large machinery</strong> (heavy industrial equipment, processing lines): Requires specialized equipment (<a href="{{ url_for('glossary') }}#step-deck-drop-deck-trailer" class="glossary-term-link" target="_blank">step decks<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/step_deck.jpeg" alt="Step deck trailer"></span><span class="glossary-tooltip-term">Step Deck (Drop Deck) Trailer</span><span class="glossary-tooltip-definition">A flatbed with two deck levels (higher front section, lower rear section at ~3.5 feet off ground), accommodating 10-11 foot tall freight.</span></span></a>, <a href="{{ url_for('glossary') }}#double-drop-lowboy-trailer" class="glossary-term-link" target="_blank">lowboys<span class="glossary-tooltip"><span class="glossary-tooltip-term">Double Drop (Lowboy) Trailer</span><span class="glossary-tooltip-definition">A flatbed with three deck levels including a very low center section (18-24 inches off ground), allowing 12-15+ foot tall freight.</span></span></a>, <a href="{{ url_for('glossary') }}#rgn-removable-gooseneck-trailer" class="glossary-term-link" target="_blank">RGNs<span class="glossary-tooltip"><span class="glossary-tooltip-term">RGN (Removable Gooseneck) Trailer</span><span class="glossary-tooltip-definition">A lowboy trailer where the front section detaches to create a loading ramp, allowing wheeled equipment to roll on and off.</span></span></a>), weighs 20,000-50,000+ pounds, often needs permits.</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistake
+        </div>
+        <div class="callout-content">
+            Never assume machinery is lightweight based on size. A "small" lathe might be 5,000 pounds, a "modest" press could be 20,000 pounds, a "compact" CNC machine might be 8,000 pounds. Always confirm exact dimensions and weights before quoting equipment and pricing.
+        </div>
+    </div>
+
+    <h2>Securing Requirements</h2>
+
+    <p>Machinery requires proper securing to prevent shifting during transit:</p>
+    <ul>
+        <li>Heavy-duty chains or straps rated for the weight</li>
+        <li>Blocking and bracing to prevent movement</li>
+        <li>Sometimes custom cradles or frames</li>
+        <li>Edge protection where securing devices contact machinery</li>
+    </ul>
+
+    <p>Confirm the <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> has appropriate securing equipment. Some machinery requires specialized securing beyond standard flatbed equipment.</p>
+
+    <h2>Loading and Unloading Equipment</h2>
+
+    <p>Machinery rarely loads with standard forklifts. Common loading methods include:</p>
+
+    <ul>
+        <li><strong>Cranes:</strong> Heavy machinery often requires cranes for loading and unloading. Crane <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> must match or exceed machinery weight. Confirm both origin and destination have adequate cranes.</li>
+        <li><strong>High-capacity forklifts:</strong> Some machinery loads with heavy-duty forklifts (15,000+ pound capacity). Standard warehouse forklifts (5,000-8,000 pound capacity) are inadequate for most machinery.</li>
+        <li><strong>Riggers:</strong> Specialized rigging companies sometimes handle complex machinery moves, positioning heavy equipment with precision.</li>
+        <li><strong>RGN trailers:</strong> For wheeled equipment, removable gooseneck trailers allow drive-on/drive-off loading.</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Always confirm loading and unloading capabilities at both origin and destination. A load that can be loaded with a crane at the origin but has no crane at the destination creates serious problems.
+        </div>
+    </div>
+
+    <h2>Crating Considerations</h2>
+
+    <p>Some machinery ships in protective crates. Crating affects your planning:</p>
+    <ul>
+        <li>Crating adds weight (sometimes hundreds of pounds)</li>
+        <li>Crating adds dimensions (affects equipment selection and permits)</li>
+        <li>Crated machinery may have different handling requirements</li>
+        <li>Confirm whether weights and dimensions are for the machinery alone or include crating</li>
+    </ul>
+
+    <h2>Permits and Special Requirements</h2>
+
+    <p>Large machinery often requires <a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">oversize<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a>/overweight permits. Plan for:</p>
+    <ul>
+        <li>Permit lead time (days to weeks depending on dimensions)</li>
+        <li>Route restrictions and surveys for very large pieces</li>
+        <li>Escort vehicles if required by permit conditions</li>
+        <li>Travel time restrictions (no night travel, no weekends, etc.)</li>
+    </ul>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when booking machinery:</p>
+
+    <ul>
+        <li><strong>"What are the exact dimensions and weight?"</strong> Never guess with machinery. Small items can be surprisingly heavy.</li>
+        <li><strong>"Is it crated, and are those dimensions included?"</strong> Crating adds size and weight.</li>
+        <li><strong>"How will it be loaded and unloaded?"</strong> Confirm crane or forklift availability at both ends.</li>
+        <li><strong>"Does it need to stay upright or level?"</strong> Some machinery has orientation requirements.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Get exact specifications:</strong> Never assume. A "small" machine might weigh 10,000 pounds.</li>
+        <li><strong>Confirm loading equipment:</strong> Machinery often needs cranes or high-capacity forklifts that aren't universally available.</li>
+        <li><strong>Plan for permits:</strong> Large machinery frequently exceeds legal limits and requires advance permit arrangements.</li>
+    </ul>
+
+    <p>Machinery freight can be very profitable but requires careful attention to detail. One missed dimension can mean wrong equipment and failed pickup.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

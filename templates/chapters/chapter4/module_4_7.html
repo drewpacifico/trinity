@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.7: Specialized Equipment Types - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.7</span>
+        <h1 class="module-title">Specialized Equipment Types</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="/static/images/tanker.jpeg"
+             alt="Tanker trailer for liquid transport"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Beyond the major categories (<a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry van<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a>, <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">reefer<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a>, <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a> and variants), several specialized equipment types serve specific freight needs.</p>
+
+    <h2>Tanker Trailers</h2>
+
+    <p>Tankers haul liquids—fuel, chemicals, milk, juice, liquid food products, and countless other commodities. Tankers are heavily regulated, especially for <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazardous materials<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a> and food-grade products.</p>
+
+    <p><strong>Key characteristics:</strong></p>
+    <ul>
+        <li><strong>Capacity:</strong> 5,000-9,000 gallons depending on product density and trailer design</li>
+        <li><strong>Multiple compartments:</strong> Many tankers have 3-6 compartments allowing separate products simultaneously</li>
+        <li><strong>Food-grade requirements:</strong> Tankers hauling food products must be thoroughly cleaned between loads</li>
+        <li><strong>Hazmat certification:</strong> Tankers carrying hazardous materials require drivers with hazmat endorsements</li>
+        <li><strong>Specialized loading/unloading:</strong> Some require pneumatic systems, heating systems, or specialized pumps</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            Tanker freight is highly specialized. Unless you develop specific expertise in liquid transportation, you'll likely refer these opportunities to specialized agents or <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">brokers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a>.
+        </div>
+    </div>
+
+    <h2>Hopper Trailers</h2>
+
+    <p>Hoppers haul dry bulk materials like grain, plastic pellets, cement powder, fly ash, sand, and similar commodities. They unload through bottom gates or pneumatic systems.</p>
+
+    <p><strong>Types:</strong></p>
+    <ul>
+        <li><strong>Pneumatic <a href="{{ url_for('glossary') }}#hopper-trailer" class="glossary-term-link" target="_blank">hoppers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hopper Trailer</span><span class="glossary-tooltip-definition">Trailers that haul dry bulk materials like grain, plastic pellets, or cement, unloading through bottom gates or pneumatic systems.</span></span></a>:</strong> Use compressed air to unload powder or small pellet materials through hoses</li>
+        <li><strong>Gravity hoppers:</strong> Unload through bottom gates into pits or conveyors</li>
+        <li><strong>End-dump hoppers:</strong> Tip backward to dump contents</li>
+    </ul>
+
+    <p>Like tankers, hopper freight is specialized. Most freight agents focus on boxed or palletized freight rather than bulk commodities.</p>
+
+    <h2>Livestock Trailers</h2>
+
+    <p>Livestock trailers transport live animals—cattle, pigs, poultry, and other livestock. These trailers have multiple decks with ventilation and are subject to strict animal welfare regulations.</p>
+
+    <p>This is another highly specialized segment requiring specific expertise in animal handling, welfare regulations, and livestock markets.</p>
+
+    <h2>Automobile Carriers</h2>
+
+    <p>Auto <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> transport multiple vehicles simultaneously—typically 7-9 cars on a single trailer depending on vehicle sizes.</p>
+
+    <p><strong>Types:</strong></p>
+    <ul>
+        <li><strong>Open carriers:</strong> Most new cars ship on open carriers. Vehicles are exposed to weather but secure.</li>
+        <li><strong>Enclosed carriers:</strong> High-value vehicles, classics, or luxury cars ship in enclosed trailers for maximum protection.</li>
+    </ul>
+
+    <p>Auto transport is typically handled by specialists in vehicle logistics rather than general freight agents.</p>
+
+    <h2>Curtain Side Trailers</h2>
+
+    <p>Curtain side trailers (sometimes called "sliding tarp" trailers) have solid roofs and floors but sides made of heavy fabric curtains that roll open. This allows side loading with forklifts while providing weather protection similar to dry vans.</p>
+
+    <p><strong>Benefits:</strong></p>
+    <ul>
+        <li>Side loading access eliminates need for end-of-dock positioning</li>
+        <li>Faster loading/unloading than dry vans (multiple forklifts can work simultaneously from both sides)</li>
+        <li>Floor-to-ceiling access simplifies loading tall items</li>
+        <li>Weather protection for freight</li>
+    </ul>
+
+    <p>Curtain sides are most common in Europe but growing in North America. They work well for freight that benefits from side loading efficiency but needs weather protection.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when specialized equipment might be needed:</p>
+
+    <ul>
+        <li><strong>"Is this a liquid, powder, or bulk material?"</strong> If yes, it probably needs tanker or hopper equipment.</li>
+        <li><strong>"Are these live animals or vehicles?"</strong> Livestock and auto transport are highly specialized.</li>
+        <li><strong>"Would side loading significantly speed up this shipment?"</strong> Consider curtain side trailers.</li>
+        <li><strong>"Is this outside my area of expertise?"</strong> Know when to refer to specialists.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Recognition over expertise:</strong> Know when freight needs specialized equipment so you can refer appropriately.</li>
+        <li><strong>Build specialist contacts:</strong> Develop relationships with agents or brokers who specialize in tankers, hoppers, or auto transport.</li>
+        <li><strong>Stay in your lane:</strong> Don't quote specialized equipment you don't understand. Mistakes in these segments can be costly.</li>
+    </ul>
+
+    <p>Most freight agents focus on dry van, reefer, and flatbed. Specialized equipment represents opportunities but requires dedicated expertise to handle well.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

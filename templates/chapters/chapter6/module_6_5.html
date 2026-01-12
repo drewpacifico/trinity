@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.5: Dimensional Restrictions - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.5</span>
+        <h1 class="module-title">Dimensional Restrictions</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?fm=jpg&q=80&w=1200"
+             alt="Oversized load on <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a> truck with wide load banner"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Beyond weight, regulations limit vehicle and load dimensions to ensure safe navigation of roads, bridges, tunnels, and overhead structures.</p>
+
+    <h2>Legal Dimensions Without Permits</h2>
+
+    <ul>
+        <li><strong>Width:</strong> 8.5 feet (102 inches) maximum
+            <p>This is the standard trailer width. Freight wider than 8 feet typically requires flatbed equipment and potentially <a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">oversize<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a> permits.</p>
+        </li>
+        <li><strong>Height:</strong> 13.5 to 14 feet maximum total vehicle height
+            <p>This varies by state, with most states allowing 13.5 feet and some allowing 14 feet. The limit is total height—tractor, trailer, and cargo combined.</p>
+            <p>For flatbeds with 5-foot deck height, freight can be approximately 8.5-9 feet tall while remaining under height limits. Taller freight requires specialized equipment like <a href="{{ url_for('glossary') }}#step-deck-drop-deck-trailer" class="glossary-term-link" target="_blank">step decks<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/step_deck.jpeg" alt="Step deck trailer"></span><span class="glossary-tooltip-term">Step Deck (Drop Deck) Trailer</span><span class="glossary-tooltip-definition">A flatbed with two deck levels (higher front section, lower rear section at ~3.5 feet off ground), accommodating 10-11 foot tall freight.</span></span></a> or <a href="{{ url_for('glossary') }}#double-drop-lowboy-trailer" class="glossary-term-link" target="_blank">lowboys<span class="glossary-tooltip"><span class="glossary-tooltip-term">Double Drop (Lowboy) Trailer</span><span class="glossary-tooltip-definition">A flatbed with three deck levels including a very low center section (18-24 inches off ground), allowing 12-15+ foot tall freight.</span></span></a>.</p>
+        </li>
+        <li><strong>Length:</strong> 53 feet maximum for trailers on interstate highways
+            <p>Some states allow 57-foot trailers on specific roads. However, 53 feet is the standard maximum for interstate commerce.</p>
+            <p>Freight exceeding trailer length obviously cannot fit. Less obviously, freight exactly 53 feet long often won't fit in 53-foot trailers because you need clearance for safe loading and securing.</p>
+        </li>
+        <li><strong>Rear Overhang:</strong> Typically 3-4 feet of rear extension beyond the trailer is allowed without special marking or permits
+            <p>Freight slightly longer than the trailer can sometimes overhang the rear if properly marked with flags or lights. However, significant overhang requires permits.</p>
+        </li>
+    </ul>
+
+    <h2>Permit Requirements for Oversize Loads</h2>
+
+    <p>Freight exceeding standard dimensions requires oversize permits from every state the shipment travels through.</p>
+
+    <h3>Slightly Oversize (width 8.5-10 feet, height 14-15 feet)</h3>
+    <ul>
+        <li>Routine permits available</li>
+        <li>Usually processed same-day or next-day</li>
+        <li>Costs typically $100-300 per state</li>
+        <li>May require special routing but generally manageable</li>
+    </ul>
+
+    <h3>Moderately Oversize (width 10-12 feet, height 15-16 feet)</h3>
+    <ul>
+        <li>More complex permitting process</li>
+        <li>May require route surveys</li>
+        <li>Processing time: days to weeks</li>
+        <li>Costs typically $300-800 per state</li>
+        <li>Escort vehicles often required</li>
+    </ul>
+
+    <h3>Extremely Oversize (width over 12 feet, height over 16 feet)</h3>
+    <ul>
+        <li>Engineering review often required</li>
+        <li>Route surveys mandatory</li>
+        <li>Processing time: weeks to months</li>
+        <li>Costs can reach thousands per state</li>
+        <li>Police escorts typically required</li>
+        <li>Travel restrictions (daylight only, no weekends/holidays)</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            Lead time is critical for permitted loads. Never accept oversize freight requiring immediate pickup—permits take time to obtain and process. Always confirm dimensions early and begin permit applications well in advance.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when freight might exceed standard dimensions:</p>
+
+    <ul>
+        <li><strong>"What are the exact dimensions when loaded on the trailer?"</strong> Include trailer deck height in calculations.</li>
+        <li><strong>"When do you need this picked up?"</strong> Permits take days to weeks. Plan accordingly.</li>
+        <li><strong>"Is this a regular shipment or one-time?"</strong> Recurring oversize moves may benefit from annual permits.</li>
+        <li><strong>"Have you shipped this before? What was required?"</strong> Previous experience reveals permit and routing needs.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Know the limits:</strong> 8.5 feet wide, 13.5-14 feet tall, 53 feet long. Anything over requires permits.</li>
+        <li><strong>Lead time is critical:</strong> Never promise quick pickup for oversize freight. Permits take time.</li>
+        <li><strong>Ask for help:</strong> Complex oversize loads require specialized expertise. Know when to involve experienced colleagues.</li>
+    </ul>
+
+    <p>Dimensional restrictions affect equipment choice and permit requirements. Always confirm dimensions early in the booking process.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

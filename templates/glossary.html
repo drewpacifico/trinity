@@ -84,8 +84,9 @@
 
 .term-image-popup img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 220px;
+    object-fit: contain;
+    background: var(--bg);
 }
 
 .term-image-popup .image-caption {
@@ -167,7 +168,8 @@ const equipmentImages = {
     },
     'step-deck-drop-deck-trailer': {
         image: '/static/images/step_deck.jpeg',
-        caption: 'Step deck trailer with lowered rear section'
+        caption: 'Step deck trailer with lowered rear section',
+        fit: 'cover'
     },
     'tanker-trailer': {
         image: '/static/images/tanker.jpeg',
@@ -187,8 +189,9 @@ Object.keys(equipmentImages).forEach(termId => {
         const imgData = equipmentImages[termId];
 
         termElement.classList.add('has-image');
+        const fitStyle = imgData.fit ? `object-fit: ${imgData.fit};` : '';
         popup.innerHTML = `
-            <img src="${imgData.image}" alt="${imgData.caption}">
+            <img src="${imgData.image}" alt="${imgData.caption}" style="${fitStyle}">
             <div class="image-caption">${imgData.caption}</div>
         `;
     }

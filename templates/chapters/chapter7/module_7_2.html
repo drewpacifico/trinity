@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}Module 7.2: Customer Types by Business Model - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 7.2</span>
+        <h1 class="module-title">Customer Types by Business Model</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?fm=jpg&q=80&w=1200"
+             alt="Various businesses representing different customer types"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Different business models create different shipping patterns and needs. Understanding these differences helps you target prospects strategically.</p>
+
+    <h2>Manufacturers</h2>
+
+    <p>Manufacturers produce goods requiring regular shipment to distributors, retailers, or other facilities. They're often excellent long-term customers.</p>
+
+    <p><strong>Strengths as customers:</strong></p>
+    <ul>
+        <li>Predictable shipping schedules aligned with production cycles</li>
+        <li>Consistent volumes creating stable revenue streams</li>
+        <li>Often ship same lanes repeatedly, allowing you to develop specialized expertise</li>
+        <li>Understand logistics complexities from experience</li>
+        <li>Value reliability because production schedules depend on coordinated freight</li>
+    </ul>
+
+    <p><strong>Challenges you'll face:</strong></p>
+    <ul>
+        <li>Many have established <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> relationships built over years</li>
+        <li>Often have sophisticated procurement processes with competitive bidding</li>
+        <li>Price-sensitive because freight represents significant cost</li>
+        <li>May have stringent requirements for carrier qualifications and insurance</li>
+        <li>Decision cycles can be long (weeks or months to become approved vendors)</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Position yourself as <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> supplement rather than trying to replace primary carriers immediately. Request opportunities to quote overflow or backup freight. Once you've proven yourself on a few shipments, gradually expand your share of their business.
+        </div>
+    </div>
+
+    <h2>Distributors and Wholesalers</h2>
+
+    <p>Distributors purchase products from manufacturers and sell to retailers or other businesses. They operate warehouses shipping products to multiple destinations regularly.</p>
+
+    <p><strong>Strengths as customers:</strong></p>
+    <ul>
+        <li>High shipping volumes creating substantial commission opportunities</li>
+        <li>Multiple destinations providing diverse lane opportunities</li>
+        <li>Less seasonal than manufacturers</li>
+        <li>Value efficiency and speed</li>
+        <li>Often willing to work with multiple freight providers simultaneously</li>
+    </ul>
+
+    <p><strong>Challenges you'll face:</strong></p>
+    <ul>
+        <li>Intense price sensitivity (freight is major expense affecting margins)</li>
+        <li>May use multiple <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">brokers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> and carriers, creating competition for each load</li>
+        <li>High service expectations—need fast quotes, quick confirmations</li>
+        <li>Payment terms might be longer (net 45 or net 60)</li>
+    </ul>
+
+    <h2>Retailers</h2>
+
+    <p>Retailers sell products to consumers through physical stores or online platforms. They need regular inbound shipments and sometimes outbound shipments between locations.</p>
+
+    <p><strong>Best approach:</strong> Focus on small to mid-sized retailers ($5M-$100M revenue) who lack dedicated logistics departments. Understand their receiving constraints and build carrier relationships with companies willing to work within strict parameters.</p>
+
+    <h2>Construction Companies</h2>
+
+    <p>Construction companies move equipment, materials, and supplies to job sites. These shipments often involve heavy, oversized, or irregularly shaped items requiring specialized equipment.</p>
+
+    <p><strong>Strengths as customers:</strong></p>
+    <ul>
+        <li>Need specialized equipment (<a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbeds<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a>, <a href="{{ url_for('glossary') }}#step-deck-drop-deck-trailer" class="glossary-term-link" target="_blank">step decks<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/step_deck.jpeg" alt="Step deck trailer"></span><span class="glossary-tooltip-term">Step Deck (Drop Deck) Trailer</span><span class="glossary-tooltip-definition">A flatbed with two deck levels (higher front section, lower rear section at ~3.5 feet off ground), accommodating 10-11 foot tall freight.</span></span></a>) commanding higher rates</li>
+        <li>Willing to pay premium for reliable service</li>
+        <li>Value expertise in handling challenging freight</li>
+        <li>Often need urgent shipments when plans change</li>
+    </ul>
+
+    <p><strong>Challenges:</strong> Irregular patterns tied to projects, challenging job site deliveries, seasonal fluctuations, sometimes slow payment.</p>
+
+    <h2>E-commerce Businesses</h2>
+
+    <p>Online retailers represent a rapidly growing segment with complex logistics needs.</p>
+
+    <p><strong>Strengths:</strong> Fast-growing, often lack established relationships, volume can grow quickly.</p>
+
+    <p><strong>Challenges:</strong> Expectations may be unrealistic, unpredictable volumes, uncertain creditworthiness for newer companies.</p>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            E-commerce customers often expect parcel carrier service levels at truckload prices. Educate them on freight logistics realities while demonstrating flexibility and responsiveness. Start with smaller commitments and grow with them.
+        </div>
+    </div>
+
+    <h2>Agricultural Businesses</h2>
+
+    <p>Farms, cooperatives, and agricultural processors move crops, livestock, feed, equipment, and supplies with unique characteristics driven by seasonal cycles.</p>
+
+    <p><strong>Best approach:</strong> Build relationships before peak season and maintain them year-round. Develop carriers willing to serve rural areas. Be flexible with timing because weather often disrupts schedules.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when evaluating different customer types:</p>
+
+    <ul>
+        <li><strong>"What does your production or sales cycle look like?"</strong> Understand their shipping patterns and peak periods.</li>
+        <li><strong>"How do you currently arrange your trucking?"</strong> Learn about existing relationships and potential gaps.</li>
+        <li><strong>"What challenges have you faced with freight?"</strong> Identify problems you can solve.</li>
+        <li><strong>"Would you be open to working with a backup provider?"</strong> Position yourself as supplement, not replacement.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Start with manufacturers:</strong> They offer predictable volumes, consistent lanes, and value reliability.</li>
+        <li><strong>Position as backup first:</strong> Request overflow opportunities to prove yourself before seeking primary business.</li>
+        <li><strong>Match customer type to your strengths:</strong> If you have <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">reefer<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a> expertise, target food producers. If you know flatbed, pursue construction.</li>
+    </ul>
+
+    <p>Understanding business models helps you approach each prospect appropriately and identify where you can add the most value.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

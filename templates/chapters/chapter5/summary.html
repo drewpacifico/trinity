@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 5 Summary - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 5</span>
+        <h1 class="module-title">Summary Sheet</h1>
+    </div>
+
+    <h2>General Freight (FAK)</h2>
+    <ul>
+        <li><strong>Characteristics:</strong> Palletized, boxed, or crated manufactured goods</li>
+        <li><strong>Typical pallets:</strong> 40"x48" or 42"x48", shrink-wrapped</li>
+        <li><strong>Density variations:</strong> Dense freight (auto parts ~2,000 lbs/pallet) vs. light freight (furniture ~300-500 lbs/pallet)</li>
+        <li><strong>Key concept:</strong> Stackability critical for space utilization</li>
+        <li><strong>Standard free time:</strong> 2 hours pickup and delivery</li>
+    </ul>
+
+    <h2>Food and Beverage</h2>
+    <ul>
+        <li><strong>Temperature requirements:</strong> Frozen (0°F to -10°F), fresh meat (28-32°F), dairy (34-38°F), produce (varies 32-60°F by product)</li>
+        <li><strong>Food-grade trailers:</strong> May prohibit previous non-food loads</li>
+        <li><strong>FSMA regulations:</strong> Sanitary transport, temperature control, training, documentation</li>
+        <li><strong>Pre-cooling essential:</strong> <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">Reefer<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a> units maintain temperature, don't rapidly cool freight</li>
+        <li><strong>Rates:</strong> Typically 20-40% higher than dry van</li>
+    </ul>
+
+    <h2>Building Materials</h2>
+    <ul>
+        <li><strong>Lumber:</strong> <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">Flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a>, requires <a href="{{ url_for('glossary') }}#tarping" class="glossary-term-link" target="_blank">tarping<span class="glossary-tooltip"><span class="glossary-tooltip-term">Tarping</span><span class="glossary-tooltip-definition">Covering flatbed freight with large protective tarps (typically 18×24 feet) to protect from weather, debris, or road spray, adding $50-150 to costs.</span></span></a>, relatively heavy, lengths 8-20+ feet</li>
+        <li><strong>Drywall:</strong> Flatbed, extremely fragile and moisture-sensitive, tarping absolutely required</li>
+        <li><strong>Steel products:</strong> Beams/plates (weather-resistant), coils (specialized securing, very dangerous if improper)</li>
+        <li><strong>Windows/glass:</strong> Fragile, specialized racks/crating, premium rates</li>
+    </ul>
+
+    <h2>Machinery and Equipment</h2>
+    <ul>
+        <li><strong>Size range:</strong> Shop equipment (<a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry vans<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a>) to massive industrial systems (specialized equipment)</li>
+        <li><strong>Weight warning:</strong> Always confirm—small appearance doesn't mean light weight</li>
+        <li><strong>Securing:</strong> Chains, straps, blocking, bracing, sometimes custom cradles</li>
+        <li><strong>Loading:</strong> Often requires cranes or heavy-duty forklifts, confirm capabilities at both locations</li>
+        <li><strong>Permits:</strong> May be required for <a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">oversize<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a>/overweight</li>
+    </ul>
+
+    <h2>Hazardous Materials</h2>
+    <ul>
+        <li><strong>Nine <a href="{{ url_for('glossary') }}#dot-department-of-transportation" class="glossary-term-link" target="_blank">DOT<span class="glossary-tooltip"><span class="glossary-tooltip-term">DOT (Department of Transportation)</span><span class="glossary-tooltip-definition">The federal parent agency overseeing transportation policy, including FMCSA and other modal administrations.</span></span></a> classes:</strong> Explosives, gases, flammable liquids, flammable solids, oxidizers, toxic/infectious, radioactive, corrosives, miscellaneous</li>
+        <li><strong>Requirements:</strong> Driver <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a> endorsement, specialized shipping papers, placarding, routing restrictions</li>
+        <li><strong>Insurance:</strong> $5M minimum (vs. $750K for general freight)</li>
+        <li><strong>Common examples:</strong> Paint, aerosols, cleaning chemicals, batteries</li>
+        <li><strong>Rates:</strong> Typically 15-30% higher than non-hazmat</li>
+    </ul>
+
+    <h2>High-Value Cargo</h2>
+    <ul>
+        <li><strong>Threshold:</strong> Typically $100K+ (some consider $50K+ high-value)</li>
+        <li><strong>Common types:</strong> Electronics, pharmaceuticals, jewelry, luxury goods</li>
+        <li><strong>Security measures:</strong> <a href="{{ url_for('glossary') }}#team-drivers" class="glossary-term-link" target="_blank">Team drivers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Team Drivers</span><span class="glossary-tooltip-definition">Two qualified drivers alternating driving and resting, allowing near-continuous movement covering 1,000-1,200+ miles in 24 hours at 50-75% premium rates.</span></span></a>, GPS tracking, secure parking, sealed trailers</li>
+        <li><strong>Insurance:</strong> Additional coverage required beyond standard $100K</li>
+        <li><strong>Premium rates:</strong> 50-75% more for team drivers plus 1-3% insurance costs</li>
+    </ul>
+
+    <h2>Time-Sensitive/Expedited</h2>
+    <ul>
+        <li><strong>Expedited service:</strong> 1,000-1,500 miles in 24 hours, requires team drivers</li>
+        <li><strong>Just-In-Time:</strong> Narrow delivery windows, critical to production, high failure consequences</li>
+        <li><strong>Team drivers:</strong> 50-75% premium over solo drivers</li>
+        <li><strong>Communication:</strong> Updates every 2-4 hours required</li>
+        <li><strong>Cost comparison:</strong> For distances under 1,500 miles, often cheaper than air freight</li>
+    </ul>
+
+    <h2>Oversized/Overweight</h2>
+    <ul>
+        <li><strong>Legal limits:</strong> 8.5' wide, 13.5-14' tall, 53' long, 80K lbs</li>
+        <li><strong>Permits required:</strong> From every state traveled, costs vary by degree of oversize</li>
+        <li><strong>Route surveys:</strong> Required for extreme dimensions, identify obstacles</li>
+        <li><strong>Escort vehicles:</strong> $200-400/day per vehicle, requirements vary by dimensions</li>
+        <li><strong>Travel restrictions:</strong> Nighttime, weekend, holiday, weather prohibitions</li>
+        <li><strong>Lead time:</strong> Substantial planning required (days to weeks)</li>
+    </ul>
+
+    <h2>Partial Loads and LTL</h2>
+    <ul>
+        <li><strong>LTL:</strong> 150-10,000 lbs, terminal-to-terminal with consolidation, longer transit</li>
+        <li><strong>Freight classes:</strong> 50-500 based on density, stowability, handling, liability</li>
+        <li><strong>Partial truckload:</strong> 5-20 pallets or 2,000-12,000 lbs, shared truck or volume <a href="{{ url_for('glossary') }}#less-than-truckload-ltl" class="glossary-term-link" target="_blank">LTL<span class="glossary-tooltip"><span class="glossary-tooltip-term">Less-Than-Truckload (LTL)</span><span class="glossary-tooltip-definition">Freight service consolidating shipments from multiple shippers (typically 150-10,000 pounds), priced by freight class based on density, stowability, handling, and liability.</span></span></a> options</li>
+        <li><strong>Accessorial charges:</strong> <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">Liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a> ($50-150), inside delivery ($75-200), residential ($75-150), limited access ($50-100)</li>
+        <li><strong>Breakpoint:</strong> Generally 8,000-10,000+ pounds becomes more economical as truckload</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Remember
+        </div>
+        <div class="callout-content">
+            Each freight category has unique equipment needs, regulatory requirements, and potential challenges. You don't need to be an expert in every commodity, but understanding the basics helps you ask intelligent questions, provide accurate quotes, and avoid costly mistakes.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('chapter', chapter_num=5, page='action_items') }}" class="btn btn-accent btn-lg">
+            View Action Items &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

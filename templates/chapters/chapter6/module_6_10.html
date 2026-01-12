@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.10: Accessibility and Special Delivery Requirements - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.10</span>
+        <h1 class="module-title">Accessibility and Special Delivery Requirements</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?fm=jpg&q=80&w=1200"
+             alt="Delivery truck with <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a> at residential location"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Various regulations and practical considerations affect delivery capabilities at different locations.</p>
+
+    <h2>Liftgate Requirements</h2>
+
+    <p>Liftgates are hydraulic platforms attached to trailers that raise and lower freight when locations lack loading docks.</p>
+
+    <ul>
+        <li><strong>Capacity limits:</strong> Standard liftgates handle 3,000-5,000 pounds depending on equipment. Heavy items may exceed liftgate <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> requiring different solutions.</li>
+        <li><strong>Regulations:</strong> OSHA requires liftgates meet safety standards including:
+            <ul>
+                <li>Load capacity ratings clearly marked</li>
+                <li>Safety mechanisms preventing accidental lowering</li>
+                <li>Proper maintenance and inspection</li>
+            </ul>
+        </li>
+        <li><strong>Costs:</strong> Liftgate service typically adds $50-100 to freight charges reflecting equipment costs and additional driver time.</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistake
+        </div>
+        <div class="callout-content">
+            Always confirm delivery locations have docks or require liftgates when booking loads. <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">Carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> arriving at ground-level locations without dock or liftgate service cannot complete deliveries, creating costly service failures.
+        </div>
+    </div>
+
+    <h2>Residential Delivery Restrictions</h2>
+
+    <p>Residential deliveries present challenges leading many carriers to avoid them or charge premiums:</p>
+
+    <ul>
+        <li><strong>Limited maneuverability:</strong> Residential streets aren't designed for 53-foot trucks. Tight turns, low-hanging trees, and narrow roads create navigation difficulties.</li>
+        <li><strong>Lack of loading equipment:</strong> Residences lack forklifts and loading docks. Manual unloading is time-consuming and increases injury risk.</li>
+        <li><strong>Property damage risk:</strong> Driveways, lawns, and mailboxes can be damaged by large trucks.</li>
+        <li><strong>Parking restrictions:</strong> Many residential areas prohibit or restrict commercial vehicle parking.</li>
+        <li><strong>Signature requirements:</strong> Residential deliveries often require finding someone home to sign, creating scheduling complexity.</li>
+    </ul>
+
+    <p>Residential deliveries typically carry $75-150 surcharges reflecting these challenges. Always confirm if delivery is residential when quoting and include appropriate charges.</p>
+
+    <h2>Limited Access Locations</h2>
+
+    <p>Various location types are considered "limited access" due to lack of professional receiving facilities:</p>
+
+    <ul>
+        <li>Construction sites</li>
+        <li>Farms and agricultural facilities</li>
+        <li>Churches and places of worship</li>
+        <li>Schools and universities</li>
+        <li>Government facilities</li>
+        <li>Military bases</li>
+        <li>Prisons and correctional facilities</li>
+        <li>Mines and remote industrial sites</li>
+        <li>Self-storage facilities</li>
+    </ul>
+
+    <p>Limited access locations typically carry $50-100 surcharges and may have additional restrictions (security clearances, appointment requirements, specific entry procedures).</p>
+
+    <h2>Inside Delivery</h2>
+
+    <p>When freight must be delivered beyond the truck tailgate—into a building, up stairs, or to a specific room—this is "inside delivery."</p>
+
+    <ul>
+        <li>Not all carriers offer inside delivery</li>
+        <li>Costs typically $100-300+ depending on difficulty</li>
+        <li>May require additional labor or equipment</li>
+        <li>Confirm requirements and capabilities before booking</li>
+    </ul>
+
+    <h2>Appointment Requirements</h2>
+
+    <p>Many receiving facilities require delivery appointments:</p>
+    <ul>
+        <li>Appointments must be scheduled in advance</li>
+        <li>Missing appointments may result in fees or refusal</li>
+        <li>Some facilities have narrow windows (30-60 minutes)</li>
+        <li>Confirm appointment requirements during booking</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Create a checklist for special delivery requirements: liftgate needed?, residential?, limited access?, inside delivery?, appointment required?, security procedures?, operating hours?. Ask these questions upfront to avoid surprises.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when confirming delivery requirements:</p>
+
+    <ul>
+        <li><strong>"Does the delivery location have a loading dock?"</strong> If not, liftgate is required.</li>
+        <li><strong>"Is this a residential address?"</strong> Residential deliveries carry surcharges and restrictions.</li>
+        <li><strong>"Is inside delivery required?"</strong> Delivery beyond the truck tailgate costs extra.</li>
+        <li><strong>"Does the receiver require an appointment?"</strong> Many facilities require scheduled deliveries.</li>
+        <li><strong>"Are there any access restrictions or security procedures?"</strong> Limited access locations have special requirements.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Ask upfront:</strong> Confirm delivery requirements when booking, not when the driver arrives.</li>
+        <li><strong>Know the surcharges:</strong> Liftgate ($50-100), residential ($75-150), limited access ($50-100), inside delivery ($100-300+).</li>
+        <li><strong>Create a checklist:</strong> Liftgate, residential, limited access, inside delivery, appointment, security procedures, operating hours.</li>
+    </ul>
+
+    <p>Special delivery requirements affect pricing and carrier selection. Missing these details creates service failures and unexpected charges.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

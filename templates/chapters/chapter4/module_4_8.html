@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.8: Truck Classifications and Weight Ratings - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.8</span>
+        <h1 class="module-title">Truck Classifications and Weight Ratings</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?fm=jpg&q=80&w=1200"
+             alt="Heavy duty Class 8 semi truck on highway"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Understanding truck classifications helps you communicate knowledgeably with <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> and customers about appropriate equipment.</p>
+
+    <h2>Gross Vehicle Weight Rating (GVWR)</h2>
+
+    <p>GVWR is the maximum total weight of the vehicle including the vehicle itself plus all cargo. It's the key metric determining truck classification.</p>
+
+    <h2>Class 8 Trucks (GVWR over 33,000 pounds)</h2>
+
+    <p>These are standard over-the-road semi-trucks—the heavy-duty tractors pulling trailers you see on highways. This is what you'll be booking for truckload freight.</p>
+
+    <p><strong>Class 8 includes:</strong></p>
+    <ul>
+        <li>Day cabs (no sleeping compartment)</li>
+        <li>Sleeper cabs (with beds for long-haul drivers)</li>
+        <li>Various axle configurations (tandem, tri-axle, etc.)</li>
+    </ul>
+
+    <h2>Class 7 Trucks (GVWR 26,001-33,000 pounds)</h2>
+
+    <p>Medium-duty trucks used primarily for local deliveries. <a href="{{ url_for('glossary') }}#box-truck" class="glossary-term-link" target="_blank">Box trucks<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/box_truck.jpeg" alt="Box truck"></span><span class="glossary-tooltip-term">Box Truck</span><span class="glossary-tooltip-definition">A straight truck with an enclosed cargo area attached directly to the cab. Common sizes range from 10-26 feet, used for local and regional deliveries.</span></span></a>, delivery trucks, and smaller commercial vehicles fall into this class. You might occasionally book these for local moves or smaller shipments.</p>
+
+    <h2>Class 6 and Below (GVWR under 26,001 pounds)</h2>
+
+    <p>Light-duty commercial trucks including delivery trucks, large pickups, and small box trucks. These typically handle local deliveries or small shipments rather than over-the-road freight.</p>
+
+    <h2>Why Classification Matters</h2>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Commercial driver's license (CDL) requirements change based on vehicle class. Drivers operating Class 8 trucks need CDLs. This affects carrier availability and rates—CDL drivers command higher wages than non-CDL drivers.
+        </div>
+    </div>
+
+    <p>Additionally, some regulations apply differently to different weight classes. Understanding classifications helps you discuss equipment intelligently and understand why certain equipment costs more.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions related to truck classifications:</p>
+
+    <ul>
+        <li><strong>"Does this load require a full-size semi?"</strong> Some smaller loads might work with Class 6-7 trucks at lower cost.</li>
+        <li><strong>"Does the carrier have CDL drivers?"</strong> Class 8 operations require CDL-licensed drivers.</li>
+        <li><strong>"Is this local or over-the-road?"</strong> Day cabs work for local; sleeper cabs for long haul.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Class 8 is your default:</strong> Most truckload freight moves on Class 8 semi-trucks. Know this category well.</li>
+        <li><strong>CDL requirement:</strong> Understand that Class 8 drivers need CDLs, which affects carrier availability and rates.</li>
+        <li><strong>Day cab vs. sleeper:</strong> Learn the difference and when each is appropriate based on trip length.</li>
+    </ul>
+
+    <p>Truck classification knowledge helps you sound professional in carrier conversations and understand equipment cost differences.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

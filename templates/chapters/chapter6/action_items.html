@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 6 Action Items - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 6</span>
+        <h1 class="module-title">Action Items</h1>
+    </div>
+
+    <p>Complete these tasks to master regulations and restrictions:</p>
+
+    <div class="action-items">
+        <ul class="checklist">
+            <li><strong>Memorize basic <a href="{{ url_for('glossary') }}#hours-of-service-hos" class="glossary-term-link" target="_blank">HOS<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hours of Service (HOS)</span><span class="glossary-tooltip-definition">Federal regulations limiting driver operating hours: 11-hour driving limit, 14-hour duty window, 60/70-hour work week, 30-minute break requirement.</span></span></a> limits:</strong> 11 hours driving, 14 hours duty, 60/70 work week, 30-min break. Practice calculating realistic transit times for various distances.</li>
+            <li><strong>Understand weight distribution requirements:</strong> Study how weight must distribute across axles, not just total gross weight. Practice identifying potential weight distribution problems.</li>
+            <li><strong>Learn when <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a> endorsements required:</strong> Memorize the 9 <a href="{{ url_for('glossary') }}#dot-department-of-transportation" class="glossary-term-link" target="_blank">DOT<span class="glossary-tooltip"><span class="glossary-tooltip-term">DOT (Department of Transportation)</span><span class="glossary-tooltip-definition">The federal parent agency overseeing transportation policy, including FMCSA and other modal administrations.</span></span></a> hazmat classes and recognize common examples (paint, aerosols, chemicals, batteries). Understand placarding thresholds.</li>
+            <li><strong>Research FSMA requirements for food products:</strong> Study temperature control, <a href="{{ url_for('glossary') }}#pre-cooling" class="glossary-term-link" target="_blank">pre-cooling<span class="glossary-tooltip"><span class="glossary-tooltip-term">Pre-Cooling</span><span class="glossary-tooltip-definition">Bringing a refrigerated trailer to required temperature before loading begins, essential since reefer units maintain temperature but don't rapidly cool warm freight.</span></span></a>, cleaning, and documentation requirements. Understand which foods are most regulated.</li>
+            <li><strong>Study <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> insurance requirements:</strong> Know minimums ($750K general, $5M hazmat), understand cargo insurance vs. liability insurance, learn when higher coverage needed.</li>
+            <li><strong>Create checklist for special delivery requirements:</strong> Build reference for <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a>, residential, limited access, inside delivery, appointments, security procedures with typical costs.</li>
+            <li><strong>Understand when permits needed:</strong> Memorize legal dimensions (8.5' wide, 13.5-14' tall, 53' long, 80K lbs). Know process and lead times for <a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">oversize<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a>/overweight permits.</li>
+            <li><strong>Build <a href="{{ url_for('glossary') }}#detention" class="glossary-term-link" target="_blank">detention<span class="glossary-tooltip"><span class="glossary-tooltip-term">Detention</span><span class="glossary-tooltip-definition">Time drivers spend waiting beyond agreed 'free time' (typically 2 hours) at shipping or receiving facilities, usually charged at $25-75 per hour.</span></span></a> communication strategy:</strong> Develop language explaining free time, detention charges, and HOS impact to customers during load booking.</li>
+            <li><strong>Study cross-border basics:</strong> If serving international customers, learn documentation requirements, authority needs, typical border crossing times in your region.</li>
+            <li><strong>Create regulatory quick reference guide:</strong> One-page summary of most important limits and requirements you'll reference frequently.</li>
+            <li><strong>Practice explaining regulations to customers:</strong> Role-play explaining why certain requests violate HOS rules or why specific requirements exist. Build confidence in regulatory knowledge.</li>
+            <li><strong>Verify carrier vetting procedures with brokerage:</strong> Confirm your brokerage's process for checking authority, insurance, safety ratings. Understand your responsibilities.</li>
+        </ul>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

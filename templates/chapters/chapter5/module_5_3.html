@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5.3: Food and Beverage Products - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 5.3</span>
+        <h1 class="module-title">Food and Beverage Products</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?fm=jpg&q=80&w=1200"
+             alt="Fresh produce and food products in cold storage facility"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Food and beverage freight represents a large segment of the market with specific requirements you must understand to serve customers effectively and avoid costly mistakes.</p>
+
+    <h2>Temperature-Sensitive Products</h2>
+
+    <p>Many food products require precise temperature control throughout transportation. Getting temperatures wrong can spoil products worth tens of thousands of dollars and create serious food safety issues.</p>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">Refrigerated trailers<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a> maintain temperature—they don't rapidly cool freight. Freight must be pre-cooled to required temperature before loading. A reefer set to 38°F cannot cool 70°F product down to 38°F during transit—it will arrive spoiled. Always confirm <a href="{{ url_for('glossary') }}#pre-cooling" class="glossary-term-link" target="_blank">pre-cooling<span class="glossary-tooltip"><span class="glossary-tooltip-term">Pre-Cooling</span><span class="glossary-tooltip-definition">Bringing a refrigerated trailer to required temperature before loading begins, essential since reefer units maintain temperature but don't rapidly cool warm freight.</span></span></a> requirements.
+        </div>
+    </div>
+
+    <h3>Frozen Foods (0°F to -10°F)</h3>
+    <p>Frozen products must remain solidly frozen throughout transit. This includes:</p>
+    <ul>
+        <li><strong>Ice cream and frozen desserts:</strong> -10°F to -20°F (coldest requirements in food transport)</li>
+        <li><strong>Frozen vegetables and fruits:</strong> 0°F</li>
+        <li><strong>Frozen meat, poultry, and seafood:</strong> 0°F or below</li>
+        <li><strong>Frozen prepared meals:</strong> 0°F</li>
+    </ul>
+    <p>Any temperature rise above freezing compromises product quality and safety. Customers receiving partially thawed frozen products will reject the load, leaving you responsible for resolving the situation.</p>
+
+    <h3>Fresh Meat and Poultry (28°F to 32°F)</h3>
+    <p>Fresh (not frozen) meat and poultry require temperatures as cold as possible without actually freezing. This narrow range preserves freshness while preventing freezing damage. These products are highly perishable—even small temperature excursions affect shelf life and safety.</p>
+
+    <h3>Dairy Products (34°F to 38°F)</h3>
+    <p>Dairy products require consistent cool temperatures but not freezing:</p>
+    <ul>
+        <li><strong>Fluid milk:</strong> 34-38°F</li>
+        <li><strong>Cheese:</strong> 35-40°F (some varieties tolerate slightly warmer)</li>
+        <li><strong>Butter and margarine:</strong> 35-40°F</li>
+        <li><strong>Yogurt:</strong> 36-40°F</li>
+    </ul>
+    <p>Dairy is particularly sensitive to temperature abuse. Temperatures too warm accelerate spoilage; temperatures too cold can affect texture and quality.</p>
+
+    <h3>Fresh Produce (Highly Variable)</h3>
+    <p>Different fruits and vegetables require vastly different temperatures:</p>
+    <ul>
+        <li><strong>Leafy greens:</strong> 32-34°F</li>
+        <li><strong>Berries:</strong> 32-34°F</li>
+        <li><strong>Apples:</strong> 30-32°F</li>
+        <li><strong>Bananas:</strong> 56-58°F (cold damages them)</li>
+        <li><strong>Tomatoes:</strong> 55-60°F</li>
+        <li><strong>Potatoes:</strong> 45-50°F</li>
+    </ul>
+
+    <h2>Food-Grade Trailer Requirements</h2>
+
+    <p>Many food <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shippers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> require "food-grade" trailers that haven't previously hauled certain products. Common restrictions include:</p>
+    <ul>
+        <li>No previous <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a> loads</li>
+        <li>No previous chemical loads</li>
+        <li>No previous meat loads (for produce shippers)</li>
+        <li>No strong-smelling products</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Reefer rates are typically 20-40% higher than <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry van<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a> rates due to equipment costs, fuel consumption, and the specialized nature of the work. Factor this into your quotes for temperature-controlled freight.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when booking food and beverage freight:</p>
+
+    <ul>
+        <li><strong>"What exact temperature do you require?"</strong> Get a specific number, not "cold" or "frozen."</li>
+        <li><strong>"Is this product pre-cooled to temperature?"</strong> Reefers maintain temperature; they don't rapidly cool freight.</li>
+        <li><strong>"Do you require a food-grade trailer?"</strong> Many shippers have restrictions on previous loads.</li>
+        <li><strong>"What documentation do you need?"</strong> Temperature recorders, pulp tests, or specific paperwork.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Temperature specificity:</strong> Every food product has an ideal temperature. Learn the common ones (frozen: 0°F, dairy: 34-38°F, produce: varies widely).</li>
+        <li><strong>Pre-cooling importance:</strong> Emphasize this with every reefer load. Most temperature claims stem from improper pre-cooling.</li>
+        <li><strong>Higher rates:</strong> Reefer freight costs 20-40% more than dry van. Factor this into quotes.</li>
+    </ul>
+
+    <p>Food freight has higher stakes because temperature failures can destroy entire loads worth tens of thousands of dollars.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

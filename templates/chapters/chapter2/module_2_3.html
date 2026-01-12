@@ -15,11 +15,11 @@
              style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
     </div>
 
-    <p>Carriers are the trucking companies that actually move freight. As a freight agent, you're the middleman between shippers (your customers) and carriers (your service providers). Understanding different carrier types helps you select the right partner for each load and build a reliable network over time.</p>
+    <p>Carriers are the trucking companies that actually move freight. As a freight agent, you're the middleman between <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shippers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> (your customers) and carriers (your service providers). Understanding different carrier types helps you select the right partner for each load and build a reliable network over time.</p>
 
     <h2>Types of carriers</h2>
 
-    <p>Carriers range from single-truck owner-operators to massive national fleets. Each type has strengths and limitations that affect when you should use them.</p>
+    <p>Carriers range from single-truck <a href="{{ url_for('glossary') }}#owner-operator" class="glossary-term-link" target="_blank">owner-operators<span class="glossary-tooltip"><span class="glossary-tooltip-term">Owner-Operator</span><span class="glossary-tooltip-definition">An independent driver who owns and operates their own truck, providing personalized service but without backup capacity if unavailable.</span></span></a> to massive national fleets. Each type has strengths and limitations that affect when you should use them.</p>
 
     <h3>Owner-Operators</h3>
 
@@ -27,7 +27,7 @@
 
     <ul>
         <li><strong>Strengths:</strong> Excellent personalized service because their reputation is their business. Very responsive and communicative. Flexible with special requests since they control their own schedule.</li>
-        <li><strong>Limitations:</strong> No backup if their truck breaks down. Capacity limited to one truck. May have less sophisticated tracking systems. Must verify insurance and authority carefully.</li>
+        <li><strong>Limitations:</strong> No backup if their truck breaks down. <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">Capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> limited to one truck. May have less sophisticated tracking systems. Must verify insurance and authority carefully.</li>
         <li><strong>When to use:</strong> Loads requiring special attention or white-glove service. Consistent lanes where you can provide regular freight. When you've built trust and know their reliability.</li>
     </ul>
 
@@ -41,7 +41,7 @@
         </div>
     </div>
 
-    <h3>Small Fleet Owners (2-10 trucks)</h3>
+    <h3>Small <a href="{{ url_for('glossary') }}#fleet-owner" class="glossary-term-link" target="_blank">Fleet Owners<span class="glossary-tooltip"><span class="glossary-tooltip-term">Fleet Owner</span><span class="glossary-tooltip-definition">A carrier operating multiple trucks with hired drivers, ranging from small operations (2-10 trucks) to large fleets (100+ trucks).</span></span></a> (2-10 trucks)</h3>
 
     <p>Small businesses operating multiple trucks with hired drivers. The owner is usually still directly involved in operations.</p>
 
@@ -67,7 +67,7 @@
 
     <ul>
         <li><strong>Strengths:</strong> Capacity for significant volume. Geographic reach across entire country. Sophisticated tracking systems. Financial stability and proper insurance. Established safety and compliance programs.</li>
-        <li><strong>Limitations:</strong> Less flexible on rates and terms. Service quality inconsistent across large driver pool. May not prioritize small broker relationships. Preferred customers get priority capacity.</li>
+        <li><strong>Limitations:</strong> Less flexible on rates and terms. Service quality inconsistent across large driver pool. May not prioritize small <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">broker<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> relationships. Preferred customers get priority capacity.</li>
         <li><strong>When to use:</strong> Large customers requiring significant capacity. When national coverage is essential. Customers requiring carriers with specific certifications. Tight capacity markets when you need reliable truck access.</li>
     </ul>
 
@@ -89,7 +89,7 @@
         <li><strong>Accurate load information:</strong> Weight, dimensions, pickup/delivery details, and special requirements upfront. Surprises frustrate drivers and damage relationships.</li>
         <li><strong>Fair rates:</strong> They know market rates. Consistently low-balling means they stop answering your calls.</li>
         <li><strong>Quick payment:</strong> Standard is 30 days, but carriers prefer faster. Quick pay options (paying sooner for a small fee) build loyalty.</li>
-        <li><strong>Respect for their time:</strong> Long detention at shippers/receivers costs them money. Communicate expected wait times honestly.</li>
+        <li><strong>Respect for their time:</strong> Long <a href="{{ url_for('glossary') }}#detention" class="glossary-term-link" target="_blank">detention<span class="glossary-tooltip"><span class="glossary-tooltip-term">Detention</span><span class="glossary-tooltip-definition">Time drivers spend waiting beyond agreed 'free time' (typically 2 hours) at shipping or receiving facilities, usually charged at $25-75 per hour.</span></span></a> at shippers/receivers costs them money. Communicate expected wait times honestly.</li>
         <li><strong>Professional communication:</strong> Return calls promptly. Provide updates without being asked. Handle problems fairly.</li>
     </ul>
 
@@ -108,11 +108,11 @@
     <p>Before booking a load with any carrier, you need to verify they're legitimate and qualified. Your brokerage will have specific vetting requirements, but here are the basics:</p>
 
     <ul>
-        <li><strong>Operating authority:</strong> Verify active MC (Motor Carrier) number through FMCSA's SAFER system. Authority must be active, not pending or revoked.</li>
+        <li><strong>Operating authority:</strong> Verify active MC (Motor Carrier) number through <a href="{{ url_for('glossary') }}#fmcsa-federal-motor-carrier-safety-administration" class="glossary-term-link" target="_blank">FMCSA<span class="glossary-tooltip"><span class="glossary-tooltip-term">FMCSA (Federal Motor Carrier Safety Administration)</span><span class="glossary-tooltip-definition">The primary regulatory body for trucking, issuing operating authority, enforcing safety regulations, and maintaining carrier safety ratings.</span></span></a>'s SAFER system. Authority must be active, not pending or revoked.</li>
         <li><strong>Insurance:</strong> Confirm adequate cargo and liability insurance. Certificates should be current and list your brokerage as certificate holder.</li>
         <li><strong>Safety rating:</strong> Check CSA scores and inspection history. Avoid carriers with "Unsatisfactory" ratings or concerning safety patterns.</li>
         <li><strong>Time in business:</strong> New authorities (under 90 days) require extra scrutiny. Some brokerages won't use carriers under 6 months old.</li>
-        <li><strong>Equipment verification:</strong> Confirm they have appropriate equipment for the load. A carrier claiming flatbed capacity should actually have flatbeds.</li>
+        <li><strong>Equipment verification:</strong> Confirm they have appropriate equipment for the load. A carrier claiming <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a> capacity should actually have flatbeds.</li>
     </ul>
 
     <h2>Red flags to watch for</h2>
@@ -133,7 +133,7 @@
             Double Brokering
         </div>
         <div class="callout-content">
-            <p>Double brokering occurs when a carrier accepts your load then re-brokers it to another carrier without your knowledge. This is usually prohibited by your rate confirmation. It creates liability issues and reduces service control. Watch for signs: carrier contact info changes, truck/driver details don't match what was dispatched, or the person who answers tracking calls seems unfamiliar with the load.</p>
+            <p>Double brokering occurs when a carrier accepts your load then re-brokers it to another carrier without your knowledge. This is usually prohibited by your <a href="{{ url_for('glossary') }}#rate-confirmation-rate-con" class="glossary-term-link" target="_blank">rate confirmation<span class="glossary-tooltip"><span class="glossary-tooltip-term">Rate Confirmation (Rate Con)</span><span class="glossary-tooltip-definition">Written agreement between broker and carrier specifying load details, rate, payment terms, and special requirements.</span></span></a>. It creates liability issues and reduces service control. Watch for signs: carrier contact info changes, truck/driver details don't match what was dispatched, or the person who answers tracking calls seems unfamiliar with the load.</p>
         </div>
     </div>
 
@@ -143,7 +143,7 @@
 
     <ul>
         <li><strong>Start with your lanes:</strong> Focus on finding reliable carriers for the routes you book most often. Depth on key lanes beats breadth across many.</li>
-        <li><strong>Use load boards strategically:</strong> Load boards like DAT and Truckstop help you find carriers, but relationships matter more. Use boards to find carriers, then build direct relationships.</li>
+        <li><strong>Use <a href="{{ url_for('glossary') }}#load-board" class="glossary-term-link" target="_blank">load boards<span class="glossary-tooltip"><span class="glossary-tooltip-term">Load Board</span><span class="glossary-tooltip-definition">Online marketplace connecting available loads with available trucks (DAT, Truckstop.com, 123Loadboard), also providing market rate intelligence.</span></span></a> strategically:</strong> Load boards like <a href="{{ url_for('glossary') }}#dat" class="glossary-term-link" target="_blank">DAT<span class="glossary-tooltip"><span class="glossary-tooltip-term">DAT</span><span class="glossary-tooltip-definition">A major load board (online marketplace) connecting available loads with available trucks, also providing market rate intelligence and capacity data.</span></span></a> and Truckstop help you find carriers, but relationships matter more. Use boards to find carriers, then build direct relationships.</li>
         <li><strong>Ask for referrals:</strong> Good carriers know other good carriers. When you find someone reliable, ask who else they'd recommend.</li>
         <li><strong>Treat carriers well:</strong> Fair rates, accurate information, quick payment, and respectful communication make carriers want to work with you again.</li>
         <li><strong>Track performance:</strong> Note which carriers deliver on time, communicate well, and handle problems professionally. Prioritize them for future loads.</li>

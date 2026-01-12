@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 7 Action Items - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 7</span>
+        <h1 class="module-title">Action Items</h1>
+    </div>
+
+    <p>Complete these tasks to build an effective prospecting system:</p>
+
+    <div class="action-items">
+        <ul class="checklist">
+            <li><strong>Create list of 50 target prospects in your area:</strong> Use ReferenceUSA, LinkedIn, and geographic prospecting to identify specific companies with names, addresses, and approximate size</li>
+            <li><strong>Set up <a href="{{ url_for('glossary') }}#crm" class="glossary-term-link" target="_blank">CRM<span class="glossary-tooltip"><span class="glossary-tooltip-term">CRM (Customer Relationship Management)</span><span class="glossary-tooltip-definition">A database tracking all prospect and customer information, interactions, and scheduled activities. It's the foundation of systematic follow-up.</span></span></a> or tracking system for prospects:</strong> Whether sophisticated software or simple spreadsheet, create system tracking: company name, contact information, interactions, next follow-up date, notes</li>
+            <li><strong>Develop your 15-20 second introduction:</strong> Write and practice your opening statement until it sounds natural and confident. Record yourself and listen critically.</li>
+            <li><strong>Write email templates for different prospect types:</strong> Create 3-5 templates for manufacturers, distributors, retailers, construction, etc. Personalize each before sending but have structure ready.</li>
+            <li><strong>Practice handling common objections:</strong> Role-play with colleague or mentor responding to "we already have providers," "send information," "too busy," etc.</li>
+            <li><strong>Identify 3-5 potential referral sources:</strong> List existing customers, <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a>, or business service providers who might refer prospects. Reach out and explain how they can help.</li>
+            <li><strong>Schedule daily prospecting time blocks:</strong> Reserve specific times (ideally 9-11 AM Tuesday-Thursday) exclusively for prospecting calls. Protect this time from operational interruptions.</li>
+            <li><strong>Create qualifying question checklist:</strong> Write 8-10 questions you'll ask every prospect to determine shipping volume, freight types, lanes, current providers, decision process, pain points</li>
+            <li><strong>Research major employers in your region:</strong> Identify top 20-30 manufacturers, distributors, or companies in your target industries within 50 miles. These should be your highest-priority prospects.</li>
+            <li><strong>Join relevant LinkedIn groups:</strong> Find and join 3-5 groups for your target industries (construction, manufacturing, food/beverage, etc.). Engage authentically, don't just spam sales messages.</li>
+            <li><strong>Drive through 2-3 industrial areas:</strong> Spend a few hours visiting industrial parks, noting company names, photographing buildings with visible signage and loading docks for later research</li>
+            <li><strong>Prepare referral request script:</strong> Write specific language you'll use to ask satisfied customers for referrals: "Do you know anyone at [company] who might benefit from our services?"</li>
+            <li><strong>Set up follow-up sequences:</strong> Create templates for Day 1 (thank you), Day 3-4 (value email), Day 7-10 (call), Day 14-21 (value), etc. Build these into your CRM or calendar system.</li>
+            <li><strong>Create value-add content library:</strong> Compile 5-10 items you can share with prospects: market updates, industry articles, seasonal <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> forecasts, rate trend analyses, logistics tips</li>
+            <li><strong>Establish weekly prospecting goals:</strong> Set specific targets: X new prospects identified, Y cold calls made, Z emails sent, A conversations completed. Track and measure weekly.</li>
+        </ul>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

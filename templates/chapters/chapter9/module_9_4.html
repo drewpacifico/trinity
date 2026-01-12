@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}Module 9.4: Follow-Up After Quotes - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 9.4</span>
+        <h1 class="module-title">Follow-Up After Quotes</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?fm=jpg&q=80&w=1200"
+             alt="Business quote and proposal documents"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>When you provide a quote that doesn't immediately result in a booking, implement this specific follow-up sequence:</p>
+
+    <h2>2-4 Hours After Quote</h2>
+
+    <p>Send confirmation email with written quote details:</p>
+
+    <div class="callout callout-example">
+        <div class="callout-title">
+            <span class="callout-icon">&#128221;</span>
+            Example
+        </div>
+        <div class="callout-content">
+            <p><em>"Hi [Name],</em></p>
+            <p><em>As discussed, here's your quote for the shipment:</em></p>
+            <ul>
+                <li><em>Origin: [Complete address]</em></li>
+                <li><em>Destination: [Complete address]</em></li>
+                <li><em>Pickup date: [Date/time]</em></li>
+                <li><em>Delivery date: [Date/time]</em></li>
+                <li><em>Equipment: [Type and specifications]</em></li>
+                <li><em>Commodity: [Description]</em></li>
+                <li><em>Weight: [Pounds]</em></li>
+                <li><em>Rate: $[Amount]</em></li>
+                <li><em>Payment terms: [Terms]</em></li>
+                <li><em>Any special requirements: [List]</em></li>
+            </ul>
+            <p><em>This quote is valid for [timeframe]. Please let me know if you have any questions or need any modifications.</em></p>
+            <p><em>Best regards, [Your Name]"</em></p>
+        </div>
+    </div>
+
+    <h2>Next Business Day</h2>
+
+    <p>Brief phone call or email confirming they received the quote and checking for questions:</p>
+
+    <p><strong>Call:</strong> <em>"Hi [Name], just checking in to make sure you received the quote I sent yesterday for the [origin]-to-[destination] shipment. Do you have any questions, or is there anything you'd like me to adjust?"</em></p>
+
+    <p><strong>Email (if they don't answer):</strong> <em>"Hi [Name] - Wanted to confirm you received yesterday's quote for $[amount]. I'm here if you need any clarification or modifications. Let me know how you'd like to proceed."</em></p>
+
+    <h2>48 Hours After Quote</h2>
+
+    <p>If no response, call to verify they received it and understand if they need modifications:</p>
+
+    <p><strong>Script:</strong> <em>"Hi [Name], I want to make sure you received my quote for the [origin]-to-[destination] shipment. I haven't heard back and wanted to ensure nothing was unclear or if you need any adjustments. Are there questions I can answer or changes that would make this work better for you?"</em></p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Don't assume silence means disinterest. People get busy. Emails get lost. Decisions get delayed. A simple follow-up call often uncovers that they fully intended to respond but got distracted.
+        </div>
+    </div>
+
+    <h2>One Week After Quote</h2>
+
+    <p>If still no decision, check if timeline has changed or if you're competing against other bids:</p>
+
+    <p><strong>Script:</strong> <em>"Hi [Name], I know you were looking to book this shipment this week. Has your timing changed, or are you evaluating multiple options? I'm happy to answer any questions that would help with your decision. If price is a concern, let me know—I might have some flexibility depending on timing and other factors."</em></p>
+
+    <p>This approach:</p>
+    <ul>
+        <li>Acknowledges the timeline they mentioned</li>
+        <li>Invites them to share what's really happening</li>
+        <li>Opens door to negotiation if price is the issue</li>
+        <li>Shows you're still interested without being pushy</li>
+    </ul>
+
+    <h2>If Lost to Competitor</h2>
+
+    <p>When customers choose another provider, don't disappear. This is an opportunity to learn and position yourself for future business:</p>
+
+    <p><strong>Script:</strong> <em>"Thanks for letting me know you went with another provider. I appreciate you taking the time to get my quote. If you're comfortable sharing, what was the deciding factor? I'm always looking to improve, and your feedback helps me serve customers better.</em></p>
+
+    <p><em>I hope this shipment goes smoothly for you. I'd welcome the opportunity to work together on future loads—please keep my information for times when you need backup <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> or have a load that doesn't fit your current provider's strengths."</em></p>
+
+    <p>After losing a quote:</p>
+    <ul>
+        <li>Thank them professionally</li>
+        <li>Request feedback (optional—not everyone will share)</li>
+        <li>Position yourself as backup option</li>
+        <li>Move them to quarterly nurture contact</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Many customers who choose competitors initially become customers later. The provider they chose might fail. Their needs might change. Maintaining professional contact keeps the door open for future opportunities.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Quote follow-up timeline:</p>
+
+    <ul>
+        <li><strong>Same day (2-4 hours):</strong> Send written quote confirmation with all details.</li>
+        <li><strong>Next business day:</strong> Call or email to confirm receipt and check for questions.</li>
+        <li><strong>48 hours:</strong> If no response, call to verify and offer modifications.</li>
+        <li><strong>One week:</strong> Check if timeline changed or if they're evaluating options.</li>
+        <li><strong>If lost:</strong> Thank them, request feedback, position yourself as backup.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Written confirmations:</strong> Always send quote details in writing immediately.</li>
+        <li><strong>Don't assume silence means no:</strong> People get busy. Emails get lost. Follow up.</li>
+        <li><strong>Learn from losses:</strong> Ask what the deciding factor was when you lose a quote.</li>
+    </ul>
+
+    <p>Customers who choose competitors initially often become customers later. Maintain professional contact.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

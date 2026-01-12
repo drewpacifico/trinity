@@ -9,7 +9,13 @@
         <h1 class="module-title">Financial Management</h1>
     </div>
 
-    <p>Running a profitable freight business requires managing money carefully. You must ensure customers pay you, carriers are paid fairly and promptly, and your margins support a sustainable business.</p>
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?fm=jpg&q=80&w=1200"
+             alt="Financial documents and calculator representing margin management and invoicing"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Running a profitable freight business requires managing money carefully. You must ensure customers pay you, <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> are paid fairly and promptly, and your margins support a sustainable business.</p>
 
     <h2>Invoicing</h2>
 
@@ -19,8 +25,8 @@
     <ul>
         <li>Customer's correct billing information and any required purchase order numbers</li>
         <li>Detailed description of services provided (origin, destination, date, weight, commodity)</li>
-        <li>Agreed-upon rate plus any applicable accessorial charges (detention, fuel surcharge, etc.)</li>
-        <li>Supporting documentation attached (copy of BOL, POD, inspection reports)</li>
+        <li>Agreed-upon rate plus any applicable <a href="{{ url_for('glossary') }}#accessorial-charges" class="glossary-term-link" target="_blank">accessorial<span class="glossary-tooltip"><span class="glossary-tooltip-term">Accessorial Charges</span><span class="glossary-tooltip-definition">Additional fees charged by carriers for services beyond standard dock-to-dock delivery, such as liftgate service, inside delivery, residential delivery, or appointment scheduling.</span></span></a> charges (<a href="{{ url_for('glossary') }}#detention" class="glossary-term-link" target="_blank">detention<span class="glossary-tooltip"><span class="glossary-tooltip-term">Detention</span><span class="glossary-tooltip-definition">Time drivers spend waiting beyond agreed 'free time' (typically 2 hours) at shipping or receiving facilities, usually charged at $25-75 per hour.</span></span></a>, fuel surcharge, etc.)</li>
+        <li>Supporting documentation attached (copy of <a href="{{ url_for('glossary') }}#bill-of-lading-bol" class="glossary-term-link" target="_blank">BOL<span class="glossary-tooltip"><span class="glossary-tooltip-term">Bill of Lading (BOL)</span><span class="glossary-tooltip-definition">The contract between shipper and carrier specifying freight details, destination, and terms; serves as receipt at pickup and proof of delivery.</span></span></a>, <a href="{{ url_for('glossary') }}#proof-of-delivery-pod" class="glossary-term-link" target="_blank">POD<span class="glossary-tooltip"><span class="glossary-tooltip-term">Proof of Delivery (POD)</span><span class="glossary-tooltip-definition">Signed documentation confirming freight was delivered, required for invoicing customers and proving shipment completion.</span></span></a>, inspection reports)</li>
     </ul>
 
     <div class="callout callout-warning">
@@ -35,7 +41,7 @@
 
     <h2>Carrier Payment</h2>
 
-    <p>Carriers typically expect payment within 7-30 days after delivery. Your payment terms affect your ability to secure capacity—carriers remember agents who pay slowly or dispute charges unfairly.</p>
+    <p>Carriers typically expect payment within 7-30 days after delivery. Your payment terms affect your ability to secure <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>—carriers remember agents who pay slowly or dispute charges unfairly.</p>
 
     <p>Verify the carrier completed the service as agreed before processing payment. Confirm delivery occurred on the specified date. Verify no damage or service failures occurred that would justify withholding payment.</p>
 
@@ -108,7 +114,7 @@
 
     <p><strong>Resolve disputes fairly and quickly:</strong></p>
     <ol>
-        <li><strong>Gather all relevant documentation.</strong> BOLs, PODs, rate confirmations, communication records, timestamps.</li>
+        <li><strong>Gather all relevant documentation.</strong> BOLs, PODs, <a href="{{ url_for('glossary') }}#rate-confirmation-rate-con" class="glossary-term-link" target="_blank">rate confirmations<span class="glossary-tooltip"><span class="glossary-tooltip-term">Rate Confirmation (Rate Con)</span><span class="glossary-tooltip-definition">Written agreement between broker and carrier specifying load details, rate, payment terms, and special requirements.</span></span></a>, communication records, timestamps.</li>
         <li><strong>Understand both parties' perspectives.</strong> What's each side's position? What documentation supports each?</li>
         <li><strong>Determine what's fair based on facts.</strong> Sometimes the customer is right. Sometimes the carrier is right.</li>
         <li><strong>Propose solutions that acknowledge reasonable positions.</strong> Split disputed amounts when both parties have valid points.</li>
@@ -124,6 +130,29 @@
             Learn from disputes. Many arise from preventable miscommunications. If you consistently have disputes about detention, you probably need to communicate free time policies more clearly upfront.
         </div>
     </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask yourself about financial management:</p>
+
+    <ul>
+        <li><strong>"Am I invoicing within 24 hours of delivery confirmation?"</strong> Delays hurt cash flow and create disputes.</li>
+        <li><strong>"Do I know my average margin per load?"</strong> Track this metric weekly to spot trends.</li>
+        <li><strong>"Which customers provide my best margins?"</strong> Prioritize relationships with profitable customers.</li>
+        <li><strong>"Are any invoices past due?"</strong> Follow up immediately when payments are late.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Invoice immediately:</strong> Make same-day invoicing a habit. The sooner you bill, the sooner you get paid.</li>
+        <li><strong>Track every margin:</strong> Know what you're making on each load. This data guides pricing decisions.</li>
+        <li><strong>Honor payment terms with carriers:</strong> Pay when you promised. Your reputation with carriers depends on it.</li>
+    </ul>
+
+    <p>Credit management and complex dispute resolution skills develop over time. Start by establishing disciplined invoicing habits and simple margin tracking.</p>
 
     {% include 'pagination.html' %}
 </div>

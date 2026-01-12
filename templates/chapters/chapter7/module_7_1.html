@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Module 7.1: Identifying Target Customers - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 7.1</span>
+        <h1 class="module-title">Identifying Target Customers</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?fm=jpg&q=80&w=1200"
+             alt="Business person identifying target customers on a digital board"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Your success as a freight agent depends entirely on finding customers who regularly ship freight and value the services you provide. Not every business that ships is a good prospect for you. Understanding which customer types align with your capabilities and market position saves enormous time and energy.</p>
+
+    <h2>Ideal Customer Characteristics</h2>
+
+    <p>Before you start prospecting, define what makes a customer ideal for your business:</p>
+
+    <h3>Regular Shipping Needs</h3>
+    <p>Customers shipping at least 1-2 loads monthly create sustainable relationships worth your investment. One-time <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shippers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> generate single commissions but don't build long-term value. Focus on businesses with consistent, ongoing freight needs.</p>
+
+    <h3>Appropriate Freight Types</h3>
+    <p>Match prospects to freight types you can handle effectively. If you've built a <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">reefer<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a> <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> network, target food producers and distributors. If you specialize in <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a>, pursue construction and manufacturing companies. Don't chase freight types where you lack expertise or carrier relationships.</p>
+
+    <h3>Growth Potential</h3>
+    <p>The best customers are growing businesses whose shipping volumes will increase over time. A small manufacturer shipping 5 loads monthly today might ship 20 monthly in two years. Growing with them creates compounding value.</p>
+
+    <h3>Reasonable Expectations</h3>
+    <p>Some customers understand logistics realities—<a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> fluctuations, weather impacts, occasional delays. Others expect perfection at impossibly low prices. Target customers with realistic expectations who value reliability over solely chasing the absolute lowest rate.</p>
+
+    <h3>Timely Payment</h3>
+    <p>Customers must pay vendors according to agreed terms. Companies with histories of slow payment or payment disputes create cash flow problems and administrative headaches. Research payment histories before investing heavily in relationships.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Not every potential customer is worth pursuing. Invest your time in prospects who match your capabilities, have regular shipping needs, and value quality service. A few great customers are worth more than many problematic ones.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when evaluating potential customers:</p>
+
+    <ul>
+        <li><strong>"How often do you ship freight?"</strong> Look for at least 1-2 loads monthly for sustainable relationships.</li>
+        <li><strong>"What types of freight do you typically move?"</strong> Match their needs to your expertise and carrier network.</li>
+        <li><strong>"What are your primary shipping lanes?"</strong> Identify if they align with your market knowledge.</li>
+        <li><strong>"What's most important to you in freight service?"</strong> Understanding priorities helps you assess fit.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Quality over quantity:</strong> A few great customers are worth more than many problematic ones.</li>
+        <li><strong>Match your capabilities:</strong> Target freight types where you have expertise and carrier relationships.</li>
+        <li><strong>Regular shippers:</strong> Focus on businesses shipping at least monthly for sustainable revenue.</li>
+    </ul>
+
+    <p>Not every prospect is worth pursuing. Invest your time in customers who match your capabilities and value quality service.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

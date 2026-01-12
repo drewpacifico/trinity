@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 8 Summary - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 8</span>
+        <h1 class="module-title">Summary Sheet</h1>
+    </div>
+
+    <h2>Consultative Selling Process</h2>
+    <ul>
+        <li><strong>Discovery (80% listening):</strong> Ask open-ended questions to understand needs, challenges, priorities</li>
+        <li><strong>Analysis:</strong> Identify patterns, recognize problems you can solve, match services to priorities</li>
+        <li><strong>Recommendation:</strong> Restate situation, explain specific solutions, provide concrete examples</li>
+        <li><strong>Validation:</strong> Confirm fit, invite questions, engage prospects in evaluation</li>
+    </ul>
+
+    <h2>Value vs. Price</h2>
+    <ul>
+        <li><strong>Price-based selling:</strong> Creates unsustainable business (thin margins, wrong customers, no differentiation)</li>
+        <li><strong>Value-based selling:</strong> Focuses on total cost and total benefit, not just upfront rate</li>
+        <li><strong>Quantify value:</strong> Time savings, reduced delays, inventory optimization, customer retention, risk mitigation</li>
+    </ul>
+
+    <h2>Customer Buying Motivations</h2>
+    <ul>
+        <li><strong>Cost-driven:</strong> Need competitive pricing, show value even while discussing price</li>
+        <li><strong>Relationship-driven:</strong> Value trust and partnership, emphasize personal accountability</li>
+        <li><strong>Quality-driven:</strong> Want best solutions, highlight vetting process and performance metrics</li>
+        <li><strong>Convenience-driven:</strong> Need simplicity and time savings, emphasize how you simplify</li>
+        <li><strong>Innovation-driven:</strong> Seek advanced solutions, showcase technology and continuous improvement</li>
+    </ul>
+
+    <h2>Sales Presentation Structure</h2>
+    <ul>
+        <li><strong>Establish credibility (30 sec):</strong> Brief intro with relevant credential</li>
+        <li><strong>Demonstrate understanding (1-2 min):</strong> Summarize their situation</li>
+        <li><strong>Present solutions (2-3 min):</strong> Explain how you address specific needs</li>
+        <li><strong>Address concerns (1-2 min):</strong> Anticipate objections proactively</li>
+        <li><strong>Call to action (30 sec):</strong> Specific, low-risk next step</li>
+    </ul>
+
+    <h2>LAVA Objection Handling</h2>
+    <ul>
+        <li><strong>Listen:</strong> Allow full expression without interrupting</li>
+        <li><strong>Acknowledge:</strong> Validate concern as legitimate</li>
+        <li><strong>Verify:</strong> Ensure understanding of real objection</li>
+        <li><strong>Answer:</strong> Address specifically with facts, examples, or alternatives</li>
+    </ul>
+
+    <h2>Storytelling Structure</h2>
+    <ul>
+        <li><strong>Situation:</strong> Similar customer</li>
+        <li><strong>Problem:</strong> Specific challenges they faced</li>
+        <li><strong>Solution:</strong> How you helped</li>
+        <li><strong>Results:</strong> Quantified improvements</li>
+    </ul>
+
+    <h2>Negotiation Tactics</h2>
+    <ul>
+        <li><strong>Prepare thoroughly:</strong> Know your numbers, understand their position, identify leverage</li>
+        <li><strong>Never make first offer</strong> when possible</li>
+        <li><strong>Anchor high but reasonably</strong></li>
+        <li><strong>Trade concessions,</strong> don't cave to price requests</li>
+        <li><strong>Use silence strategically</strong></li>
+        <li><strong>Find creative solutions:</strong> Volume discounts, flexible timing, payment terms</li>
+        <li><strong>Know when to walk away</strong> from unprofitable business</li>
+    </ul>
+
+    <h2>Relationship Building</h2>
+    <ul>
+        <li><strong>Regular communication:</strong> Appropriate to customer tier (weekly/monthly/quarterly)</li>
+        <li><strong>Provide market intelligence</strong> and insights</li>
+        <li><strong>Proactive problem-solving</strong> before issues arise</li>
+        <li><strong>Ask for feedback</strong> and act on it</li>
+        <li><strong>Build personal connections</strong> beyond business</li>
+        <li><strong>Conduct account reviews</strong> quarterly/annually</li>
+    </ul>
+
+    <h2>Upselling/Cross-selling</h2>
+    <ul>
+        <li><strong>Upselling:</strong> Additional lanes, increased frequency, premium services, volume commitments</li>
+        <li><strong>Cross-selling:</strong> Additional equipment types, different service levels, other divisions/locations</li>
+        <li><strong>Only suggest genuinely beneficial services</strong></li>
+        <li><strong>Time appropriately</strong> (after proving value)</li>
+        <li><strong>Frame as opportunities</strong> (not pressure)</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Remember
+        </div>
+        <div class="callout-content">
+            The fundamental shift in effective selling is from "How can I sell my services?" to "How can I help solve their logistics challenges?" When you genuinely focus on helping customers succeed, sales become a natural outcome rather than a forced transaction.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('chapter', chapter_num=8, page='action_items') }}" class="btn btn-accent btn-lg">
+            View Action Items &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -9,16 +9,22 @@
         <h1 class="module-title">Administrative and Compliance Tasks</h1>
     </div>
 
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?fm=jpg&q=80&w=1200"
+             alt="Professional reviewing compliance documents and regulations"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
     <p>Behind-the-scenes administrative work isn't glamorous, but it's essential for operating legally and professionally.</p>
 
     <h2>Carrier Vetting</h2>
 
-    <p>Federal regulations require brokers to verify that carriers have proper authority, insurance, and acceptable safety ratings before tendering freight. This isn't optional—it's a legal requirement that protects you from liability.</p>
+    <p>Federal regulations require <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">brokers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> to verify that <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> have proper authority, insurance, and acceptable safety ratings before tendering freight. This isn't optional. It's a legal requirement that protects you from liability.</p>
 
     <p><strong>Every carrier you use must have:</strong></p>
     <ul>
-        <li>Active FMCSA operating authority (MC number or DOT number)</li>
-        <li>Valid commercial auto liability insurance at required levels ($750,000 minimum for most freight, $5,000,000 for hazardous materials)</li>
+        <li>Active <a href="{{ url_for('glossary') }}#fmcsa-federal-motor-carrier-safety-administration" class="glossary-term-link" target="_blank">FMCSA<span class="glossary-tooltip"><span class="glossary-tooltip-term">FMCSA (Federal Motor Carrier Safety Administration)</span><span class="glossary-tooltip-definition">The primary regulatory body for trucking, issuing operating authority, enforcing safety regulations, and maintaining carrier safety ratings.</span></span></a> operating authority (MC number or <a href="{{ url_for('glossary') }}#dot-department-of-transportation" class="glossary-term-link" target="_blank">DOT<span class="glossary-tooltip"><span class="glossary-tooltip-term">DOT (Department of Transportation)</span><span class="glossary-tooltip-definition">The federal parent agency overseeing transportation policy, including FMCSA and other modal administrations.</span></span></a> number)</li>
+        <li>Valid commercial auto liability insurance at required levels ($750,000 minimum for most freight, $5,000,000 for <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazardous materials<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a>)</li>
         <li>Acceptable safety rating (avoid carriers with "Unsatisfactory" ratings or consistently poor inspection results)</li>
     </ul>
 
@@ -62,7 +68,7 @@
     <ul>
         <li><strong>Broker authority requirements:</strong> Brokerages must maintain active FMCSA broker authority and the required $75,000 surety bond or trust fund</li>
         <li><strong>Cargo claims procedures:</strong> The Carmack Amendment establishes procedures and timelines for filing and resolving cargo loss or damage claims</li>
-        <li><strong>Hours of service rules:</strong> Understanding driver HOS regulations helps you set realistic transit expectations</li>
+        <li><strong>Hours of service rules:</strong> Understanding driver <a href="{{ url_for('glossary') }}#hours-of-service-hos" class="glossary-term-link" target="_blank">HOS<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hours of Service (HOS)</span><span class="glossary-tooltip-definition">Federal regulations limiting driver operating hours: 11-hour driving limit, 14-hour duty window, 60/70-hour work week, 30-minute break requirement.</span></span></a> regulations helps you set realistic transit expectations</li>
         <li><strong>Hazardous materials regulations:</strong> Hazmat shipments require specific documentation, placarding, and carrier qualifications</li>
         <li><strong>Food safety regulations:</strong> FSMA establishes requirements for temperature control, sanitation, and documentation for food shipments</li>
     </ul>
@@ -71,11 +77,11 @@
 
     <h2>Technology Management</h2>
 
-    <p>Modern freight operations depend on technology—transportation management systems, load boards, tracking platforms, communication tools, and document management systems.</p>
+    <p>Modern freight operations depend on technology—transportation management systems, <a href="{{ url_for('glossary') }}#load-board" class="glossary-term-link" target="_blank">load boards<span class="glossary-tooltip"><span class="glossary-tooltip-term">Load Board</span><span class="glossary-tooltip-definition">Online marketplace connecting available loads with available trucks (DAT, Truckstop.com, 123Loadboard), also providing market rate intelligence.</span></span></a>, tracking platforms, communication tools, and document management systems.</p>
 
     <p><strong>Learn to use these tools effectively:</strong></p>
     <ul>
-        <li>Your TMS for quoting, booking, tracking, and invoicing</li>
+        <li>Your <a href="{{ url_for('glossary') }}#tms-transportation-management-system" class="glossary-term-link" target="_blank">TMS<span class="glossary-tooltip"><span class="glossary-tooltip-term">TMS (Transportation Management System)</span><span class="glossary-tooltip-definition">Software combining freight operations with customer relationship management, often provided by brokerages to agents.</span></span></a> for quoting, booking, tracking, and invoicing</li>
         <li>Load boards for finding carriers and researching market rates</li>
         <li>Email and phone systems for professional communication</li>
         <li>Document scanning and electronic signature tools for paperwork management</li>
@@ -93,6 +99,29 @@
             Stay informed about new technologies that might improve your operations. The freight industry continues evolving technologically, and agents who adopt useful innovations gain competitive advantages.
         </div>
     </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask about your administrative processes:</p>
+
+    <ul>
+        <li><strong>"Is this carrier approved in our system?"</strong> Never tender freight to an unvetted carrier, no matter how urgent the load.</li>
+        <li><strong>"Can I find any document from any shipment within 60 seconds?"</strong> If not, your filing system needs improvement.</li>
+        <li><strong>"Am I using my TMS effectively?"</strong> Identify features you're not using that could save time.</li>
+        <li><strong>"Do I understand the compliance requirements for this shipment?"</strong> Hazmat, food safety, and oversized loads have specific rules.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Carrier vetting basics:</strong> Learn your brokerage's carrier qualification process before booking your first load. This isn't negotiable.</li>
+        <li><strong>Document organization:</strong> Set up a consistent filing system from day one. It's much harder to organize retroactively.</li>
+        <li><strong>TMS proficiency:</strong> Master the core functions of your transportation management system. Speed and accuracy improve with practice.</li>
+    </ul>
+
+    <p>Regulatory expertise develops over time. Start by understanding the basics and knowing when to ask for help on specialized requirements.</p>
 
     {% include 'pagination.html' %}
 </div>

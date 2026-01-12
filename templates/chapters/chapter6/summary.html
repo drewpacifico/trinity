@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 6 Summary - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 6</span>
+        <h1 class="module-title">Summary Sheet</h1>
+    </div>
+
+    <h2>Hours of Service (<a href="{{ url_for('glossary') }}#hours-of-service-hos" class="glossary-term-link" target="_blank">HOS<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hours of Service (HOS)</span><span class="glossary-tooltip-definition">Federal regulations limiting driver operating hours: 11-hour driving limit, 14-hour duty window, 60/70-hour work week, 30-minute break requirement.</span></span></a>)</h2>
+    <ul>
+        <li><strong>11-hour driving limit:</strong> After 10 hours off duty</li>
+        <li><strong>14-hour duty window:</strong> Consecutive, starts at beginning of work</li>
+        <li><strong>60/70-hour work week:</strong> Requires 34-hour restart</li>
+        <li><strong>30-minute break:</strong> Required before 8 hours of driving</li>
+        <li><strong>ELD mandate:</strong> Electronic logs eliminate flexibility, strict enforcement</li>
+        <li><strong>Transit time:</strong> ~500-550 miles per day realistic; account for loading/unloading consuming 14-hour window</li>
+    </ul>
+
+    <h2>Detention</h2>
+    <ul>
+        <li><strong>Standard free time:</strong> 2 hours pickup and delivery</li>
+        <li><strong>Beyond free time:</strong> $25-75/hour <a href="{{ url_for('glossary') }}#detention" class="glossary-term-link" target="_blank">detention<span class="glossary-tooltip"><span class="glossary-tooltip-term">Detention</span><span class="glossary-tooltip-definition">Time drivers spend waiting beyond agreed 'free time' (typically 2 hours) at shipping or receiving facilities, usually charged at $25-75 per hour.</span></span></a> charges</li>
+        <li><strong>Impact:</strong> Consumes 14-hour window and weekly hours availability</li>
+        <li><strong>Best practice:</strong> Communicate expectations clearly when booking</li>
+    </ul>
+
+    <h2>Weight Regulations</h2>
+    <ul>
+        <li><strong>Federal limits:</strong> 80,000 lbs gross, 12K steer axle, 34K drive axles, 34K trailer axles</li>
+        <li><strong>Distribution critical:</strong> Not just total weight—each axle set must be within limits</li>
+        <li><strong>State variations:</strong> Some allow higher (Michigan up to 160K), some restrict lower</li>
+        <li><strong>Penalties:</strong> Escalating fines ($100-$5,000+), possible impoundment, CSA score damage</li>
+        <li><strong>Best practice:</strong> Be conservative, confirm weight includes pallets/packaging</li>
+    </ul>
+
+    <h2>Dimensional Restrictions</h2>
+    <ul>
+        <li><strong>Legal without permits:</strong> 8.5' wide, 13.5-14' tall, 53' long, 3-4' rear overhang</li>
+        <li><strong>Slightly <a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">oversize<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a>:</strong> Routine permits, $100-300/state, quick processing</li>
+        <li><strong>Moderately oversize:</strong> Route surveys may be needed, $300-800/state, days-weeks</li>
+        <li><strong>Extremely oversize:</strong> Engineering review, $1,000s/state, weeks-months, police escorts</li>
+        <li><strong>Critical:</strong> Lead time essential—don't accept immediate pickups for permitted loads</li>
+    </ul>
+
+    <h2>Hazardous Materials</h2>
+    <ul>
+        <li><strong>Nine <a href="{{ url_for('glossary') }}#dot-department-of-transportation" class="glossary-term-link" target="_blank">DOT<span class="glossary-tooltip"><span class="glossary-tooltip-term">DOT (Department of Transportation)</span><span class="glossary-tooltip-definition">The federal parent agency overseeing transportation policy, including FMCSA and other modal administrations.</span></span></a> classes:</strong> Explosives, gases, flammable liquids/solids, oxidizers, toxic/infectious, radioactive, corrosives, miscellaneous</li>
+        <li><strong>Driver requirements:</strong> <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">Hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a> endorsement (testing, TSA background check), training every 3 years</li>
+        <li><strong>Shipping papers:</strong> Proper shipping name, hazard class, UN/NA number, packing group, quantity, emergency contact</li>
+        <li><strong>Placarding:</strong> Table 1 (any quantity), Table 2 (over 1,001 lbs aggregate)</li>
+        <li><strong>Insurance:</strong> $5M minimum (vs. $750K general freight)</li>
+        <li><strong>Rates:</strong> 15-30% premium typical</li>
+    </ul>
+
+    <h2>Food Safety (FSMA)</h2>
+    <ul>
+        <li><strong>Vehicles:</strong> Designed to prevent contamination, properly maintained, adequately cleaned</li>
+        <li><strong>Temperature control:</strong> <a href="{{ url_for('glossary') }}#pre-cooling" class="glossary-term-link" target="_blank">Pre-cooling<span class="glossary-tooltip"><span class="glossary-tooltip-term">Pre-Cooling</span><span class="glossary-tooltip-definition">Bringing a refrigerated trailer to required temperature before loading begins, essential since reefer units maintain temperature but don't rapidly cool warm freight.</span></span></a> required, monitoring during transport, recording when needed</li>
+        <li><strong>Contamination prevention:</strong> Segregation from non-food, protection during loading/unloading</li>
+        <li><strong>Cleaning:</strong> Between loads when necessary to prevent cross-contamination</li>
+        <li><strong>Records:</strong> Training, procedures, temperature monitoring, cleaning (12 months minimum)</li>
+    </ul>
+
+    <h2>HOS Exemptions</h2>
+    <ul>
+        <li><strong>Short-haul:</strong> 150 air-miles, return within 14 hours (local operations)</li>
+        <li><strong>Adverse conditions:</strong> +2 hours driving when unexpected conditions arise</li>
+        <li><strong>Agricultural:</strong> Relaxed rules during planting/harvest within 150 air-miles of source</li>
+        <li><strong>Emergency:</strong> Temporary exemptions during declared emergencies</li>
+    </ul>
+
+    <h2>Insurance and Liability</h2>
+    <ul>
+        <li><strong>Carrier minimum:</strong> $750K general freight, $5M hazmat</li>
+        <li><strong>Broker bond:</strong> $75K surety bond/trust fund (brokerage maintains)</li>
+        <li><strong>Cargo insurance:</strong> Not mandated but common, typically $100K per occurrence</li>
+        <li><strong>Carrier selection liability:</strong> <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">Brokers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> liable for using unfit/uninsured carriers</li>
+        <li><strong>Carmack Amendment:</strong> Governs interstate freight claims (filing requirements, time limits)</li>
+    </ul>
+
+    <h2>Special Delivery Requirements</h2>
+    <ul>
+        <li><strong>Liftgate:</strong> 3,000-5,000 lb <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>, $50-100 charge</li>
+        <li><strong>Residential:</strong> $75-150 premium (limited maneuverability, no equipment)</li>
+        <li><strong>Limited access:</strong> $50-100 charge (construction sites, farms, schools)</li>
+        <li><strong>Inside delivery:</strong> $100-300+ (labor-intensive, not all <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> offer)</li>
+        <li><strong>Appointments:</strong> Required at many facilities, fees if missed</li>
+    </ul>
+
+    <h2>Cross-Border (U.S.-Canada/Mexico)</h2>
+    <ul>
+        <li><strong>Customs documentation:</strong> Commercial invoice, USMCA certificate, export declarations</li>
+        <li><strong>Carrier authority:</strong> Must have country-specific authority beyond U.S. domestic</li>
+        <li><strong>Driver documentation:</strong> Passports, FAST cards for frequent crossers</li>
+        <li><strong>Border delays:</strong> Build extra time into estimates (inspections, traffic, random searches)</li>
+        <li><strong>Drayage:</strong> Common model for cross-border moves</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Remember
+        </div>
+        <div class="callout-content">
+            Regulations exist for safety and infrastructure protection. Understanding them helps you set realistic expectations, avoid violations, and build credibility with customers and carriers. You don't need to be a regulatory expert, but knowing the basics prevents costly mistakes.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('chapter', chapter_num=6, page='action_items') }}" class="btn btn-accent btn-lg">
+            View Action Items &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

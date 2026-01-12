@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.9: Liability and Insurance Requirements - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.9</span>
+        <h1 class="module-title">Liability and Insurance Requirements</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?fm=jpg&q=80&w=1200"
+             alt="Insurance documents and financial paperwork"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Understanding liability and insurance requirements protects you from legal and financial exposure.</p>
+
+    <h2>Motor <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">Carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> Financial Responsibility</h2>
+
+    <p>Federal regulations require motor carriers maintain minimum insurance coverage:</p>
+    <ul>
+        <li><strong>General freight:</strong> $750,000 minimum liability insurance</li>
+        <li><strong>Hazmat requiring placarding:</strong> $5,000,000 minimum liability insurance</li>
+        <li><strong>Passenger vehicles:</strong> Different minimums based on seating <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> (not relevant to freight agents)</li>
+    </ul>
+
+    <p>Many <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shippers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> require higher coverage regardless of federal minimums—$1,000,000 is common, and some large shippers require $2,000,000 or more.</p>
+
+    <p><strong>What this insurance covers:</strong> Liability insurance covers bodily injury and property damage caused by carrier negligence in accidents. It does NOT typically cover cargo loss or damage—that requires separate cargo insurance.</p>
+
+    <h2>Broker Surety Bond or Trust Fund</h2>
+
+    <p>Freight <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">brokers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> must maintain a $75,000 surety bond or trust fund to protect shippers and carriers from broker default or non-payment.</p>
+
+    <p>Your brokerage maintains this bond as part of their operating authority. You don't personally need a bond, but understanding its purpose helps you explain your brokerage's credibility to skeptical customers.</p>
+
+    <p>The bond protects:</p>
+    <ul>
+        <li>Shippers if you collect payment but fail to pay carriers</li>
+        <li>Carriers if you arrange freight but fail to ensure payment</li>
+    </ul>
+
+    <h2>Cargo Insurance</h2>
+
+    <p>While not federally mandated for most freight, cargo insurance protects against loss or damage during transportation.</p>
+
+    <p>Most brokerages maintain cargo insurance, typically $100,000 per occurrence. Higher-value freight requires additional coverage purchased specifically for those shipments.</p>
+
+    <p>Cargo insurance typically costs 1-3% of declared value depending on commodity, route, and other risk factors.</p>
+
+    <p><strong>Your role:</strong> Confirm your brokerage's insurance limits and procedures for high-value freight before accepting loads worth more than standard coverage.</p>
+
+    <h2>Carrier Selection Liability (Broker Negligence)</h2>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Courts have held brokers liable for negligent carrier selection when they fail to verify carrier authority, insurance, or safety records. Using carriers with suspended authority, lapsed insurance, or poor safety ratings exposes your brokerage to significant liability if accidents or cargo losses occur.
+        </div>
+    </div>
+
+    <p>This is why carrier vetting matters. Always verify:</p>
+    <ul>
+        <li>Active operating authority</li>
+        <li>Current insurance certificates</li>
+        <li>Acceptable safety ratings</li>
+        <li>No fraud alerts or warning signs</li>
+    </ul>
+
+    <h2>Carmack Amendment</h2>
+
+    <p>The Carmack Amendment governs liability for interstate freight transportation, establishing:</p>
+    <ul>
+        <li>Carrier liability for loss or damage during transportation</li>
+        <li>Time limits for filing claims (typically 9 months)</li>
+        <li>Requirements for written claims with documentation</li>
+        <li>Carrier's right to limit liability through released rates</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            "Released rates" means carriers can limit their liability if shippers accept lower declared values in exchange for reduced freight rates. Understand your brokerage's policies on released rates and ensure customers understand the implications.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when evaluating insurance and liability:</p>
+
+    <ul>
+        <li><strong>"What is the declared value of this shipment?"</strong> Determines if additional cargo insurance is needed.</li>
+        <li><strong>"Does this shipper require higher coverage minimums?"</strong> Many large shippers require $1-2 million in liability coverage.</li>
+        <li><strong>"Is this carrier's insurance current?"</strong> Always verify before dispatching.</li>
+        <li><strong>"What are our brokerage's cargo insurance limits?"</strong> Know your coverage before accepting high-value loads.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Standard minimums:</strong> $750,000 for general freight, $5 million for placarded <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a>.</li>
+        <li><strong>Cargo insurance limits:</strong> Typically $100,000 per occurrence. High-value loads need additional coverage.</li>
+        <li><strong>Carrier vetting:</strong> Always verify active authority and current insurance before dispatching.</li>
+    </ul>
+
+    <p>Insurance protects everyone in the transaction. Taking shortcuts on carrier vetting exposes your brokerage to significant liability.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

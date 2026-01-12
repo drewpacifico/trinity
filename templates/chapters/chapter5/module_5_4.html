@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5.4: Building Materials and Construction Products - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 5.4</span>
+        <h1 class="module-title">Building Materials and Construction Products</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?fm=jpg&q=80&w=1200"
+             alt="Lumber and construction materials stacked at building site"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Construction materials move in large volumes and often require specialized equipment and handling. Understanding common construction freight types helps you serve this market effectively.</p>
+
+    <h2>Lumber and Dimensional Wood Products</h2>
+
+    <p>Lumber is one of the most common construction materials moving by truck. It ships primarily on <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbeds<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a> due to length and loading requirements.</p>
+
+    <p><strong>Key characteristics:</strong></p>
+    <ul>
+        <li>Usually ships in bundles (multiple pieces banded together)</li>
+        <li>Lengths vary from 8 feet to 20+ feet</li>
+        <li>Requires proper securing with straps (chains can damage wood)</li>
+        <li>Almost always requires <a href="{{ url_for('glossary') }}#tarping" class="glossary-term-link" target="_blank">tarping<span class="glossary-tooltip"><span class="glossary-tooltip-term">Tarping</span><span class="glossary-tooltip-definition">Covering flatbed freight with large protective tarps (typically 18×24 feet) to protect from weather, debris, or road spray, adding $50-150 to costs.</span></span></a> (moisture damages lumber and creates liability)</li>
+        <li>Relatively heavy (loads typically weigh out)</li>
+    </ul>
+
+    <p><strong>When quoting lumber loads, confirm:</strong></p>
+    <ul>
+        <li>Exact lengths (affects trailer requirements and permits)</li>
+        <li>Bundle sizes and weights</li>
+        <li>Tarping requirements (customer or <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> provides tarps?)</li>
+        <li>Loading method (usually crane or forklift from sides)</li>
+    </ul>
+
+    <p>Lumber rates fluctuate significantly with construction activity and raw material prices. During housing booms, lumber freight becomes highly competitive.</p>
+
+    <h2>Drywall (Gypsum Board)</h2>
+
+    <p>Drywall ships on flatbeds in large quantities. It's heavy, fragile, and extremely moisture-sensitive.</p>
+
+    <p><strong>Key characteristics:</strong></p>
+    <ul>
+        <li>Very heavy for its size (loads weigh out quickly)</li>
+        <li>Extremely fragile (requires careful securing to prevent breakage)</li>
+        <li>Moisture destroys it (tarping absolutely required)</li>
+        <li>Usually ships in large sheets (4x8 feet, 4x10 feet, 4x12 feet)</li>
+        <li>Requires careful handling (broken drywall is worthless)</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            Tarping is absolutely critical for drywall—even brief rain exposure can ruin entire loads worth thousands of dollars. Never transport drywall without tarping, regardless of weather forecasts. Moisture destroys it completely.
+        </div>
+    </div>
+
+    <p>Drywall carriers often specialize in this freight because proper securing techniques prevent damage. Random flatbed carriers without drywall experience may break sheets through improper securing.</p>
+
+    <h2>Steel Products</h2>
+
+    <p>Steel moves in various forms, each with unique characteristics:</p>
+
+    <ul>
+        <li><strong>Steel beams and structural steel:</strong> Long, heavy, typically flatbed. Weather-resistant but may require securing with chains.</li>
+        <li><strong>Steel plate:</strong> Flat sheets of varying thickness. Very heavy, requires proper load distribution.</li>
+        <li><strong>Steel coils:</strong> Rolled steel for manufacturing. Extremely heavy and dangerous if improperly secured. Requires specialized coil racks or cradles.</li>
+        <li><strong>Rebar:</strong> Reinforcing bars for concrete. Bundles of long, heavy steel bars.</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistake
+        </div>
+        <div class="callout-content">
+            Steel coils are extremely dangerous if improperly secured. A 40,000-pound coil shifting during transit can cause catastrophic accidents. Only experienced carriers with proper coil equipment should handle this freight.
+        </div>
+    </div>
+
+    <h2>Windows and Glass</h2>
+
+    <p>Glass products require specialized handling and equipment:</p>
+    <ul>
+        <li>Extremely fragile (requires careful securing and handling)</li>
+        <li>Often ships in specialized racks or crating</li>
+        <li>May require air-ride suspension trailers</li>
+        <li>Premium rates due to fragility and specialized handling</li>
+    </ul>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when booking building materials:</p>
+
+    <ul>
+        <li><strong>"What are the exact lengths?"</strong> Lumber over 48 feet may need permits or specialized equipment.</li>
+        <li><strong>"Does this require tarping?"</strong> Almost all lumber and drywall must be tarped.</li>
+        <li><strong>"How will this be loaded?"</strong> Confirm crane or forklift availability.</li>
+        <li><strong>"Is this going to a construction site?"</strong> Site access may be limited or muddy.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Tarping requirements:</strong> Moisture destroys lumber and drywall. Always confirm tarping is included.</li>
+        <li><strong>Weight awareness:</strong> Building materials are heavy. Steel and drywall loads typically weigh out, not cube out.</li>
+        <li><strong>Flatbed basics:</strong> Most construction materials ship on flatbeds. Know the equipment requirements.</li>
+    </ul>
+
+    <p>Construction freight follows economic cycles. During building booms, this segment becomes highly competitive and profitable.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

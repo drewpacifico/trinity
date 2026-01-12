@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Module 7.3: Research and Prospecting Methods - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 7.3</span>
+        <h1 class="module-title">Research and Prospecting Methods</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?fm=jpg&q=80&w=1200"
+             alt="Research and data analysis on computer screens"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Effective prospecting starts with systematically identifying businesses likely to need your services. Random cold calling wastes time. Targeted research focusing on qualified prospects produces far better results.</p>
+
+    <h2>Online Research Techniques</h2>
+
+    <p>Modern prospecting leverages online resources to identify and qualify prospects before making contact.</p>
+
+    <h3>Company Websites</h3>
+    <p>Visit websites of potential prospects looking for indicators of shipping activity:</p>
+    <ul>
+        <li><strong>"Careers" pages</strong> listing shipping/receiving positions indicate active shipping operations</li>
+        <li><strong>"About Us" pages</strong> mentioning distribution centers or multiple locations suggest inter-facility shipping</li>
+        <li><strong>Product catalogs</strong> showing physical goods indicate freight transportation requirements</li>
+        <li><strong>"Locations" pages</strong> listing multiple facilities suggest regular shipments between locations</li>
+    </ul>
+
+    <h3>Business Directories</h3>
+    <ul>
+        <li><strong>ReferenceUSA:</strong> Comprehensive database (often free through public libraries) with filters for industry, size, location</li>
+        <li><strong>Hoovers/Dun & Bradstreet:</strong> Company profiles, financial data, contact information</li>
+        <li><strong>Manta:</strong> Free business directory with basic company information</li>
+        <li><strong>Industry-specific directories:</strong> Trade associations often maintain member directories</li>
+    </ul>
+
+    <h3>LinkedIn for B2B Prospecting</h3>
+    <p>LinkedIn is extraordinarily valuable for identifying decision-makers:</p>
+    <ul>
+        <li>Search for job titles like "shipping manager," "logistics coordinator," "warehouse manager"</li>
+        <li>Company pages show employee counts, locations, and business updates</li>
+        <li>Employee movements: New hires in logistics roles haven't established vendor relationships</li>
+        <li>Your network may connect you to decision-makers through mutual connections</li>
+    </ul>
+
+    <h3>Local Business Journals</h3>
+    <p>Business publications regularly cover company expansions, fast-growing companies, and new businesses—all indicators of freight needs.</p>
+
+    <h2>Geographic Prospecting</h2>
+
+    <p>Sometimes the most effective prospecting involves physical observation in your market.</p>
+
+    <h3>Industrial Parks</h3>
+    <p>Drive through systematically, noting company names and observing loading docks and truck traffic. Take photos of buildings with visible signage for later research.</p>
+
+    <h3>Port Areas and Distribution Corridors</h3>
+    <p>Areas near ports, intermodal facilities, or major interstate intersections host businesses built around freight movement.</p>
+
+    <h2>Referral Generation</h2>
+
+    <p>Your best prospects often come through referrals from people who know and trust you.</p>
+
+    <h3>Existing Customers</h3>
+    <p>After successfully handling several shipments, ask directly:</p>
+    <ul>
+        <li>"Who else do you know in your industry who might benefit from our services?"</li>
+        <li>"Do you work with suppliers or customers who might need reliable freight transportation?"</li>
+        <li>"Would you be comfortable introducing me to colleagues at other companies?"</li>
+    </ul>
+
+    <h3>Carriers</h3>
+    <p>Trucking companies know which businesses ship frequently. Ask: "Which <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shippers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> might need additional <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">broker<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> support?"</p>
+
+    <h3>Industry Peers</h3>
+    <p>Other freight agents (especially in non-competing specialties) can refer overflow freight or shipments outside their focus.</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Make referral requests specific: "Do you know anyone at [specific company]?" works better than vague "Do you know anyone who ships freight?" Specific questions are easier to answer and more likely to generate useful referrals.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to guide your prospecting research:</p>
+
+    <ul>
+        <li><strong>"Does this company ship physical products?"</strong> Service companies without products don't need freight services.</li>
+        <li><strong>"What size is this company?"</strong> Target mid-sized companies ($5M-$100M) who ship regularly but lack dedicated logistics teams.</li>
+        <li><strong>"Can I identify the decision-maker?"</strong> Use LinkedIn to find shipping managers, logistics coordinators, or operations managers.</li>
+        <li><strong>"Do I have any connections to this company?"</strong> Referrals and warm introductions are more effective than cold outreach.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Research before calling:</strong> 30 minutes of research makes your call far more effective than random dialing.</li>
+        <li><strong>Use LinkedIn:</strong> It's the most valuable tool for identifying decision-makers and their backgrounds.</li>
+        <li><strong>Ask for referrals:</strong> Every happy customer and <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> can introduce you to new prospects.</li>
+    </ul>
+
+    <p>Targeted prospecting produces better results than volume-based cold calling. Quality research leads to quality conversations.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

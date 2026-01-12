@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 9 Summary - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 9</span>
+        <h1 class="module-title">Summary Sheet</h1>
+    </div>
+
+    <h2>Why Follow-Up Matters</h2>
+    <ul>
+        <li><strong>80% of sales occur between 5th-12th contact</strong> (yet 44% of salespeople give up after one attempt)</li>
+        <li><strong>Timing is everything:</strong> Prospects may be interested but circumstances aren't right yet</li>
+        <li><strong>Familiarity builds trust:</strong> Repeated contact increases recognition and confidence</li>
+        <li><strong>Persistence demonstrates work ethic</strong> and commitment</li>
+        <li><strong>Most competitors give up quickly:</strong> Your persistence is competitive advantage</li>
+    </ul>
+
+    <h2>Initial Follow-Up Sequence (First 90 Days)</h2>
+    <ul>
+        <li><strong>Day 1:</strong> Thank-you email with summary and value content (same day)</li>
+        <li><strong>Day 3-4:</strong> Brief value email (article, market update, tip)</li>
+        <li><strong>Day 7-10:</strong> Phone call checking in, asking about materials sent</li>
+        <li><strong>Day 14-21:</strong> Another value email (different content)</li>
+        <li><strong>Day 30:</strong> Phone call, brief check-in</li>
+        <li><strong>Day 45:</strong> Email with specific trial offer or low-risk proposal</li>
+        <li><strong>Day 60:</strong> Phone call asking what needs to happen before they can move forward</li>
+        <li><strong>Day 90+:</strong> Move to monthly nurture cycle</li>
+    </ul>
+
+    <h2>Long-Term Nurture (After 90 Days)</h2>
+    <ul>
+        <li><strong>Monthly touchpoints</strong> alternating email and phone</li>
+        <li><strong>Content types:</strong> Market updates, industry news, seasonal planning, education, success stories, tips</li>
+        <li><strong>Quarterly deeper engagement:</strong> In-person visits, freight analysis, lunch/coffee, personalized gestures</li>
+        <li><strong>Annual comprehensive outreach:</strong> Detailed market analysis, rate benchmarking, complimentary consultation, planning guide</li>
+    </ul>
+
+    <h2>Quote Follow-Up Sequence</h2>
+    <ul>
+        <li><strong>2-4 hours:</strong> Confirmation email with written details</li>
+        <li><strong>Next day:</strong> Brief call/email confirming receipt and checking questions</li>
+        <li><strong>48 hours:</strong> Call to verify received and if modifications needed</li>
+        <li><strong>One week:</strong> Check if timeline changed or evaluating multiple options</li>
+        <li><strong>If lost:</strong> Thank professionally, request feedback, position as backup, maintain quarterly contact</li>
+    </ul>
+
+    <h2>Technology Tools</h2>
+    <ul>
+        <li><strong>CRM essential features:</strong> Contact management, activity tracking, task management, pipeline visualization, reporting, email integration, mobile access</li>
+        <li><strong>CRM options:</strong> HubSpot (free), Zoho, Freshsales (entry), Salesforce, Pipedrive (mid-tier), industry TMS</li>
+        <li><strong>Setup:</strong> Import complete data, define sales stages, create templates, automate reminders, daily review habit</li>
+        <li><strong>Email automation:</strong> Acceptable for thank-yous, confirmations, scheduled content; avoid obvious templates and excessive frequency</li>
+    </ul>
+
+    <h2>Key Metrics to Track</h2>
+    <ul>
+        <li><strong>Contact-to-conversation:</strong> 15-25% target (attempts needed to reach prospect)</li>
+        <li><strong>Conversation-to-quote:</strong> 40-60% target (conversations resulting in quotes)</li>
+        <li><strong>Quote-to-close:</strong> 20-35% new customers, 50-70% existing (quotes converting to bookings)</li>
+        <li><strong>Follow-up-to-response:</strong> 25-40% target (follow-ups generating responses)</li>
+        <li><strong>Average touchpoints to close:</strong> 5-15 typical range</li>
+        <li><strong>Time-to-first-load:</strong> 30-120 days typical</li>
+    </ul>
+
+    <h2>Daily Workflow</h2>
+    <ul>
+        <li><strong>Morning (30-60 min):</strong> Review <a href="{{ url_for('glossary') }}#crm" class="glossary-term-link" target="_blank">CRM<span class="glossary-tooltip"><span class="glossary-tooltip-term">CRM (Customer Relationship Management)</span><span class="glossary-tooltip-definition">A database tracking all prospect and customer information, interactions, and scheduled activities. It's the foundation of systematic follow-up.</span></span></a> tasks, prioritize, prepare, make calls (9-11 AM)</li>
+        <li><strong>Midday (30 min):</strong> Follow-up emails, value content, CRM updates</li>
+        <li><strong>Afternoon (30-60 min):</strong> More calls (2-4 PM), respond to inquiries, end-of-day logging</li>
+        <li><strong>Total:</strong> 90-150 minutes daily dedicated to follow-up</li>
+        <li>Batch similar activities, use templates wisely, schedule everything, protect time, work ahead</li>
+    </ul>
+
+    <h2>When to Stop Following Up</h2>
+    <ul>
+        <li><strong>Direct request to stop</strong> (respect immediately)</li>
+        <li><strong>Multiple no-shows</strong> without rescheduling</li>
+        <li><strong>8-10 attempts over 90 days</strong> with zero response</li>
+        <li><strong>Business closed</strong> or fundamentally changed</li>
+        <li><strong>Bad fit revealed</strong> through conversations</li>
+        <li><strong>Decision matrix after 90 days:</strong> High potential (monthly forever), medium (quarterly), low (annual or remove)</li>
+        <li>Send professional breakup email before stopping</li>
+    </ul>
+
+    <h2>Customer Follow-Up</h2>
+    <ul>
+        <li><strong>Per shipment:</strong> Before (confirm details), during (pickup confirmation, in-transit updates, alert to issues), after (delivery confirmation, feedback, <a href="{{ url_for('glossary') }}#proof-of-delivery-pod" class="glossary-term-link" target="_blank">POD<span class="glossary-tooltip"><span class="glossary-tooltip-term">Proof of Delivery (POD)</span><span class="glossary-tooltip-definition">Signed documentation confirming freight was delivered, required for invoicing customers and proving shipment completion.</span></span></a>)</li>
+        <li><strong>Weekly:</strong> Tier A high-volume customers (review recent, discuss upcoming)</li>
+        <li><strong>Monthly:</strong> Tier B moderate-volume (overall performance review)</li>
+        <li><strong>Quarterly:</strong> All significant customers (performance review, planning, improvements, relationship)</li>
+        <li><strong>Annual:</strong> Major customers (deep-dive analysis, strategic planning, health assessment, value demonstration)</li>
+        <li><strong>Service recovery:</strong> Immediate (frequent updates), 24 hours (satisfaction confirmation), one week (written summary), one month (check lingering concerns)</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Remember
+        </div>
+        <div class="callout-content">
+            Systematic follow-up is the difference between agents who struggle and agents who thrive. Most sales happen after the fifth contact—your persistence in maintaining valuable, consistent communication is what converts prospects into customers and keeps customers loyal long-term.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('chapter', chapter_num=9, page='action_items') }}" class="btn btn-accent btn-lg">
+            View Action Items &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

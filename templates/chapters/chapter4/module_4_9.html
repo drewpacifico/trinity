@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.9: Axle Configurations and Weight Distribution - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.9</span>
+        <h1 class="module-title">Axle Configurations and Weight Distribution</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?fm=jpg&q=80&w=1200"
+             alt="Truck axle and wheel configuration detail"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Federal and state laws regulate not just total vehicle weight but how weight distributes across axles. Understanding these rules prevents <a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">overweight<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a> violations and helps you work with <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> on proper loading.</p>
+
+    <h2>Federal Weight Limits on Interstate Highways</h2>
+
+    <ul>
+        <li><strong>Maximum gross vehicle weight:</strong> 80,000 pounds total</li>
+        <li><strong>Steer axle (front):</strong> 12,000 pounds maximum</li>
+        <li><strong>Drive axles (tandem rear axles on tractor):</strong> 34,000 pounds maximum combined</li>
+        <li><strong>Trailer axles (tandem axles on trailer):</strong> 34,000 pounds maximum combined</li>
+    </ul>
+
+    <h2>Why Distribution Matters</h2>
+
+    <p>Simply keeping the total weight under 80,000 pounds isn't sufficient. The weight must distribute properly across axles. Heavy freight positioned wrong in the trailer can cause individual axles to exceed limits even when total weight is legal.</p>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistake
+        </div>
+        <div class="callout-content">
+            A load weighs 45,000 pounds total—well under the 80,000-pound limit. However, if all freight loads in the front half of the trailer, it concentrates excessive weight on the trailer's front axle set, potentially exceeding the 34,000-pound tandem limit. The load is illegal despite being under gross weight limits.
+        </div>
+    </div>
+
+    <p>Experienced drivers understand proper weight distribution. However, some commodities present challenges:</p>
+    <ul>
+        <li><strong>Steel coils:</strong> Extremely heavy and dense. A single coil might weigh 40,000 pounds and must be positioned carefully.</li>
+        <li><strong>Machinery:</strong> Uneven weight distribution requires careful positioning to balance axle weights.</li>
+        <li><strong>Partial loads:</strong> When only the front or rear of the trailer is loaded, careful calculation is needed.</li>
+    </ul>
+
+    <h2>State Variations</h2>
+
+    <p>Some states allow higher weights on certain roads. Michigan, for example, allows up to 160,000 pounds on specific routes using trucks with additional axles. Some local roads have restrictions below federal limits (bridges with weight limits, residential streets with truck restrictions).</p>
+
+    <p>When planning loads, research any state-specific requirements along the route, especially for heavy freight approaching weight limits.</p>
+
+    <h2>Practical Weight Management</h2>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Be conservative with weight estimates. Customers sometimes underestimate weight, forgetting to include pallets, packaging materials, or moisture content. Building in safety margins prevents overweight surprises.
+        </div>
+    </div>
+
+    <p>Always confirm if the customer's weight includes everything. Ask specifically: "Does this weight include pallets, packaging, and all accessories?"</p>
+
+    <p>Understand typical weight-to-space ratios for common commodities. Experience teaches you that furniture rarely weighs out, steel almost always weighs out, and beverage pallets frequently create weight challenges.</p>
+
+    <p>For heavy freight, discuss weight distribution with carriers during booking. "This load is 44,000 pounds of steel coils. Can your drivers handle proper positioning?" Experienced carriers appreciate this question.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask about weight:</p>
+
+    <ul>
+        <li><strong>"Does this weight include pallets and packaging?"</strong> Customers often forget to include these.</li>
+        <li><strong>"How is the weight distributed across pieces?"</strong> One heavy piece may create balance issues.</li>
+        <li><strong>"Is this freight approaching weight limits?"</strong> Anything over 40,000 pounds deserves extra attention.</li>
+        <li><strong>"Are there any state weight restrictions on this route?"</strong> Some states have different limits.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>The 80,000-pound limit:</strong> Total gross weight cannot exceed 80,000 pounds on interstate highways.</li>
+        <li><strong>Build in safety margins:</strong> When weight is close to limits, be conservative. Overweight fines are expensive.</li>
+        <li><strong>Heavy commodity awareness:</strong> Steel, beverages, and dense products often create weight challenges.</li>
+    </ul>
+
+    <p>Weight issues cause delays, fines, and frustrated carriers. A few extra questions upfront prevent these problems.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

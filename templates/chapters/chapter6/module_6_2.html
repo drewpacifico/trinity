@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.2: Hours of Service (HOS) Regulations - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.2</span>
+        <h1 class="module-title">Hours of Service (HOS) Regulations</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1495364141860-b0d03eccd065?fm=jpg&q=80&w=1200"
+             alt="Clock representing hours of service time limits"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Hours of Service regulations limit how long drivers can operate commercial vehicles before taking mandatory rest breaks. While <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> and drivers are responsible for HOS compliance, understanding these rules helps you set realistic transit time expectations and recognize when customers are requesting impossible schedules.</p>
+
+    <h2>Key HOS Limits for Property-Carrying Drivers</h2>
+
+    <h3>11-Hour Driving Limit</h3>
+    <p>Drivers may drive a maximum of 11 hours after 10 consecutive hours off duty.</p>
+    <p>This means once a driver starts their day, they can drive for up to 11 hours before they must stop for a mandatory rest period. Those 11 hours don't need to be consecutive—drivers can take breaks during the 14-hour window—but total driving cannot exceed 11 hours.</p>
+
+    <h3>14-Hour Duty Limit</h3>
+    <p>After coming on duty, drivers cannot drive beyond the 14th consecutive hour, regardless of how much time was spent not driving.</p>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            The 14-hour clock starts when the driver begins any work-related activity (pretrip inspection, fueling, loading) and runs continuously. Even if a driver only drives 6 hours but spends 8 hours at loading docks, their 14-hour window closes 14 hours after they started their day.
+        </div>
+    </div>
+
+    <p><strong>Example:</strong> Driver starts duty at 6:00 AM. They can drive until 8:00 PM (14 hours later) regardless of how many of those hours were spent driving versus waiting. If they spent 4 hours in <a href="{{ url_for('glossary') }}#detention" class="glossary-term-link" target="_blank">detention<span class="glossary-tooltip"><span class="glossary-tooltip-term">Detention</span><span class="glossary-tooltip-definition">Time drivers spend waiting beyond agreed 'free time' (typically 2 hours) at shipping or receiving facilities, usually charged at $25-75 per hour.</span></span></a> during loading, they only have 10 hours available for driving instead of 11.</p>
+
+    <h3>60/70-Hour Work Week Limit</h3>
+    <p>Drivers cannot drive after 60 hours on duty in 7 consecutive days, or 70 hours on duty in 8 consecutive days (which limit applies depends on the carrier's operating schedule).</p>
+    <p>Once a driver reaches this weekly limit, they cannot drive until they take a 34-hour restart period (34 consecutive hours off duty) which resets the weekly clock to zero.</p>
+    <p>This weekly limit affects driver availability. A driver who's been running hard all week may be unavailable for your load because they've exhausted their weekly hours.</p>
+
+    <h3>30-Minute Break Requirement</h3>
+    <p>Drivers must take a 30-minute break before 8 hours of driving time. This break can be taken at any point during the first 8 hours of driving.</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            A realistic driving day covers approximately 500-550 miles. When calculating transit times, account for the 14-hour duty window being consumed by loading, unloading, and mandatory breaks—not just driving time.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when estimating transit times:</p>
+
+    <ul>
+        <li><strong>"How far is this haul?"</strong> At 500-550 miles per day, calculate realistic driving days needed.</li>
+        <li><strong>"What are the loading and unloading times?"</strong> Every hour at a dock consumes the 14-hour window.</li>
+        <li><strong>"Has the driver been running all week?"</strong> Weekly limits may affect availability for long hauls late in the week.</li>
+        <li><strong>"Is this timeline physically possible?"</strong> If the math doesn't work with HOS limits, the timeline isn't realistic.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>The 14-hour rule:</strong> Understand that this clock runs continuously once it starts, regardless of driving time.</li>
+        <li><strong>Daily mileage limits:</strong> 500-550 miles is a realistic driving day. Don't promise more.</li>
+        <li><strong>Detention impact:</strong> Every hour waiting reduces driving time available that day.</li>
+    </ul>
+
+    <p>Understanding HOS prevents you from promising impossible timelines. When a customer asks for 1,200 miles in one day with a solo driver, you'll know that's not legal.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

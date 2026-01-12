@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.11: Communicating Equipment Needs to Carriers - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.11</span>
+        <h1 class="module-title">Communicating Equipment Needs to Carriers</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?fm=jpg&q=80&w=1200"
+             alt="Business professional on phone communicating with carriers"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Once you've determined appropriate equipment, communicating requirements clearly to carriers prevents misunderstandings and problems.</p>
+
+    <h2>Essential Information to Provide</h2>
+
+    <p>When contacting carriers, include:</p>
+
+    <ul>
+        <li><strong>Equipment type:</strong> "53-foot <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry van<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a>" or "48-foot <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a> with tarps" or "53-foot <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">reefer<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a> set to 38 degrees"</li>
+        <li><strong>Weight and dimensions:</strong> "42,000 pounds, 26 pallets, each pallet 48×40×60 inches tall" or "28,000 pounds, 3 pieces, largest is 24 feet long × 8 feet wide × 6 feet tall"</li>
+        <li><strong>Special requirements:</strong> "Food-grade trailer required, no previous chemical loads" or "Straps and edge protectors needed" or "Driver must have <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a> endorsement"</li>
+        <li><strong>Loading/unloading details:</strong> "Dock-height pickup and delivery" or "<a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">Shipper<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a> has forklift, receiver needs <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a>" or "Crane available for loading"</li>
+        <li><strong>Specific instructions:</strong> "Pre-cool to 38 degrees before loading" or "Driver must call 2 hours before arrival" or "Freight cannot get wet—secure tarps properly"</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Providing complete information upfront saves time and prevents carriers from arriving unprepared. Never assume carriers will "figure it out"—be specific about every requirement.
+        </div>
+    </div>
+
+    <h2>Example Equipment Communications</h2>
+
+    <p><strong>Good communication:</strong></p>
+    <p>"I need a 53-foot dry van for 42,000 pounds of palletized auto parts. 26 pallets, each 48×40×48 inches. Dock-height pickup in Detroit, dock-height delivery in Nashville. Standard pallet jack for the driver to assist with unloading."</p>
+
+    <p><strong>Poor communication:</strong></p>
+    <p>"Need a truck to move some parts from Detroit to Nashville."</p>
+
+    <p>The first example gives carriers everything they need to determine if they can handle the load. The second wastes time with back-and-forth questions.</p>
+
+    <h2>When Requirements Are Unusual</h2>
+
+    <p>For loads with unusual requirements, communicate those requirements prominently:</p>
+
+    <ul>
+        <li>"This is hazmat—driver needs hazmat endorsement and we need to verify placarding requirements"</li>
+        <li>"<a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">Oversize<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a> load—14 feet wide, will need permits and possibly escort vehicles"</li>
+        <li>"High-value electronics—require <a href="{{ url_for('glossary') }}#team-drivers" class="glossary-term-link" target="_blank">team drivers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Team Drivers</span><span class="glossary-tooltip-definition">Two qualified drivers alternating driving and resting, allowing near-continuous movement covering 1,000-1,200+ miles in 24 hours at 50-75% premium rates.</span></span></a> and GPS tracking, no unattended parking"</li>
+        <li>"Liquid food-grade—<a href="{{ url_for('glossary') }}#tanker-trailer" class="glossary-term-link" target="_blank">tanker<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/tanker.jpeg" alt="Tanker trailer"></span><span class="glossary-tooltip-term">Tanker Trailer</span><span class="glossary-tooltip-definition">Trailers hauling liquids (fuel, chemicals, food products) with 5,000-9,000 gallon capacity, heavily regulated especially for hazmat and food-grade.</span></span></a> must be kosher certified"</li>
+    </ul>
+
+    <p>Unusual requirements affect which carriers can handle the load and what rates they'll charge. Be upfront about these requirements rather than surprising carriers after they've committed.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Carrier communication checklist:</p>
+
+    <ul>
+        <li><strong>Equipment type and specs:</strong> "53-foot dry van" or "48-foot flatbed with tarps"</li>
+        <li><strong>Weight and dimensions:</strong> Total weight, piece count, largest piece dimensions</li>
+        <li><strong>Loading details:</strong> Dock height, forklift available, liftgate needed</li>
+        <li><strong>Special requirements:</strong> Temperature, hazmat, food-grade, securement</li>
+        <li><strong>Any unusual factors:</strong> Permits needed, driver certifications, security requirements</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Be specific, not vague:</strong> "42,000 pounds of palletized auto parts" beats "some freight."</li>
+        <li><strong>Include loading method:</strong> Carriers need to know dock vs. ground level, forklift vs. liftgate.</li>
+        <li><strong>Disclose unusual requirements early:</strong> Surprises at pickup frustrate carriers and damage relationships.</li>
+    </ul>
+
+    <p>Clear communication builds carrier trust. Carriers who know exactly what to expect become reliable partners who prioritize your loads.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

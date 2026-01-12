@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Module 8.3: Understanding Customer Buying Motivations - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 8.3</span>
+        <h1 class="module-title">Understanding Customer Buying Motivations</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?fm=jpg&q=80&w=1200"
+             alt="Understanding customer motivations in a meeting"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Different customers prioritize different factors when selecting freight providers. Recognizing buying motivations helps you position your services effectively.</p>
+
+    <h2>Cost-Driven Buyers</h2>
+
+    <p>Cost-driven buyers prioritize lowest rates above other factors. They're typically operating in thin-margin industries or under pressure to reduce logistics spend.</p>
+
+    <p><strong>How to work with them:</strong></p>
+    <ul>
+        <li>Be competitive on pricing without being the absolute cheapest</li>
+        <li>Demonstrate value even while discussing price</li>
+        <li>Show how you prevent costly problems</li>
+        <li>Be honest when you can't compete—don't sacrifice margins for every price-driven customer</li>
+    </ul>
+
+    <h2>Relationship-Driven Buyers</h2>
+
+    <p>Relationship-driven buyers value trust, partnership, and personal connection. They've often been burned by unreliable providers and prioritize trustworthiness.</p>
+
+    <p><strong>How to work with them:</strong></p>
+    <ul>
+        <li>Emphasize reliability and consistency</li>
+        <li>Share customer references and testimonials</li>
+        <li>Demonstrate long-term thinking</li>
+        <li>Invest time in understanding their business</li>
+        <li>Be personally accountable</li>
+    </ul>
+
+    <h2>Quality-Driven Buyers</h2>
+
+    <p>Quality-driven buyers prioritize service excellence and want the best available solutions. They're often willing to pay premium rates for demonstrably superior service.</p>
+
+    <p><strong>How to work with them:</strong></p>
+    <ul>
+        <li>Highlight your <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> vetting process</li>
+        <li>Provide detailed performance metrics</li>
+        <li>Share your quality control procedures</li>
+        <li>Offer service guarantees</li>
+        <li>Emphasize expertise and specialization</li>
+    </ul>
+
+    <h2>Convenience-Driven Buyers</h2>
+
+    <p>Convenience-driven buyers value simplicity, ease of working relationship, and time savings. They want experts to handle freight so they can focus on their core business.</p>
+
+    <p><strong>How to work with them:</strong></p>
+    <ul>
+        <li>Emphasize how you simplify their operations</li>
+        <li>Demonstrate responsiveness</li>
+        <li>Offer comprehensive solutions</li>
+        <li>Streamline their processes</li>
+        <li>Handle all the details</li>
+    </ul>
+
+    <h2>Innovation-Driven Buyers</h2>
+
+    <p>Innovation-driven buyers seek advanced solutions, modern technology, and continuous improvement. They're typically larger, more sophisticated organizations.</p>
+
+    <p><strong>How to work with them:</strong></p>
+    <ul>
+        <li>Showcase your technology capabilities</li>
+        <li>Discuss data and analytics</li>
+        <li>Demonstrate continuous improvement mindset</li>
+        <li>Share industry insights</li>
+        <li>Offer collaborative partnership</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Listen during discovery to identify which motivation drives each prospect. Then tailor your presentation to emphasize the factors they care about most. The same services can be positioned very differently depending on what the customer values.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to identify buying motivations:</p>
+
+    <ul>
+        <li><strong>"What's most important to you in freight service?"</strong> Their answer reveals primary motivation.</li>
+        <li><strong>"What problems have you experienced with previous providers?"</strong> Past pain points indicate current priorities.</li>
+        <li><strong>"How do you evaluate freight providers?"</strong> Their criteria reveal what they value.</li>
+        <li><strong>"What would make you switch from your current provider?"</strong> Identifies what they're missing.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Listen for motivation clues:</strong> Words like "reliable," "affordable," "easy," or "innovative" reveal priorities.</li>
+        <li><strong>Tailor your presentation:</strong> Emphasize factors that match their motivation.</li>
+        <li><strong>Recognize mixed motivations:</strong> Most buyers have primary and secondary priorities.</li>
+    </ul>
+
+    <p>The same services can be positioned very differently depending on what the customer values. Listen carefully and adapt your approach.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

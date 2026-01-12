@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Module 9.2: Creating a Follow-Up Schedule - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 9.2</span>
+        <h1 class="module-title">Creating a Follow-Up Schedule</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?fm=jpg&q=80&w=1200"
+             alt="Calendar with scheduled follow-up appointments"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Random, unplanned follow-up rarely works. You need a systematic approach ensuring consistent contact without overwhelming prospects or letting them slip through the cracks.</p>
+
+    <h2>The Initial Follow-Up Sequence</h2>
+
+    <p>After an initial conversation with a qualified prospect who isn't ready to commit immediately, implement this sequence:</p>
+
+    <h3>Day 1 (Same Day)</h3>
+    <p>Send a thank-you email immediately after your conversation. This email should:</p>
+    <ul>
+        <li>Thank them for their time</li>
+        <li>Summarize key points discussed</li>
+        <li>Confirm any information or materials you promised to send</li>
+        <li>Include your complete contact information</li>
+        <li>Provide one piece of valuable information related to their specific situation</li>
+    </ul>
+
+    <div class="callout callout-example">
+        <div class="callout-title">
+            <span class="callout-icon">&#128221;</span>
+            Example
+        </div>
+        <div class="callout-content">
+            <p><em>"Hi Jennifer,</em></p>
+            <p><em>Thank you for taking time this morning to discuss your refrigerated shipping needs. As we discussed, you typically ship 8-10 <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">reefer<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a> loads weekly from California to the Southeast, and maintaining precise temperature control is critical for your produce quality.</em></p>
+            <p><em>As promised, I'm attaching our <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> qualification process document and a recent market update on reefer <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> in your primary lanes. I noticed you mentioned challenges during peak produce season—the capacity report shows historical patterns that might help with your planning.</em></p>
+            <p><em>I'll follow up next week to answer any questions. In the meantime, I'm available anytime at [phone] or [email].</em></p>
+            <p><em>Best regards, [Your Name]"</em></p>
+        </div>
+    </div>
+
+    <h3>Day 3-4</h3>
+    <p>Send a brief, valuable email—not a sales pitch. Share something relevant to their situation:</p>
+    <ul>
+        <li>An industry article affecting their business</li>
+        <li>A market update impacting their lanes</li>
+        <li>A logistics tip related to challenges they mentioned</li>
+        <li>Information about regulatory changes relevant to their freight</li>
+    </ul>
+
+    <p>Keep it brief (3-4 sentences maximum). You're providing value without asking for anything.</p>
+
+    <h3>Day 7-10</h3>
+    <p>Make a phone call. Reference your previous conversation, ask if they've had a chance to review materials you sent, and inquire whether anything has changed with their situation.</p>
+
+    <div class="callout callout-example">
+        <div class="callout-title">
+            <span class="callout-icon">&#128221;</span>
+            Script
+        </div>
+        <div class="callout-content">
+            <p><em>"Hi Jennifer, this is [Your Name] with [Brokerage]. We spoke last week about your California produce shipments. I'm following up to see if you've had any questions about our process, and to check whether your situation has changed at all. I know you mentioned being committed through the end of the quarter—is that still the timeline you're working with?"</em></p>
+        </div>
+    </div>
+
+    <p>Keep it conversational, not pushy. If they're still not ready, acknowledge that and ask when would be a better time to reconnect.</p>
+
+    <h3>Day 14-21</h3>
+    <p>Send another value-add email. Different content than Day 3-4:</p>
+    <ul>
+        <li>Market intelligence about capacity or rates</li>
+        <li>Seasonal capacity outlook for their busy periods</li>
+        <li>Relevant case study showing how you helped a similar customer</li>
+        <li>Logistics best practice article</li>
+    </ul>
+
+    <h3>Day 30</h3>
+    <p>Make another phone call. Brief check-in to maintain contact and assess any changes in their situation or needs.</p>
+
+    <h3>Day 45</h3>
+    <p>Email with a specific low-risk offer:</p>
+    <ul>
+        <li>Trial shipment at competitive rate</li>
+        <li>Backup capacity arrangement for peak periods</li>
+        <li>Rate comparison on specific lane</li>
+    </ul>
+
+    <h3>Day 60</h3>
+    <p>Phone call asking directly: "What needs to happen before you'd consider working with us?" This question often reveals hidden objections or specific timelines you didn't know about.</p>
+
+    <h3>Day 90+</h3>
+    <p>If still not ready to move forward, transition to monthly nurture cycle (covered in the next module).</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            The key is alternating between phone calls and emails, always providing value rather than just "checking in." Each touchpoint should offer something useful—market intelligence, helpful content, or a specific opportunity—not just remind them you exist.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Your initial follow-up sequence checklist:</p>
+
+    <ul>
+        <li><strong>Day 1:</strong> Send thank-you email summarizing conversation and next steps.</li>
+        <li><strong>Day 3-4:</strong> Send valuable content (market update, relevant article) without sales pitch.</li>
+        <li><strong>Day 7-10:</strong> Phone call referencing previous conversation, checking for questions.</li>
+        <li><strong>Day 14-21:</strong> Another value-add email with different content.</li>
+        <li><strong>Day 30-60:</strong> Continue alternating calls and emails with value.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Same-day thank you:</strong> Send confirmation email immediately after every conversation.</li>
+        <li><strong>Alternate channels:</strong> Mix phone calls and emails to vary your approach.</li>
+        <li><strong>Provide value:</strong> Every touchpoint should offer something useful, not just "checking in."</li>
+    </ul>
+
+    <p>A systematic schedule ensures consistent contact without overwhelming prospects or letting them slip away.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

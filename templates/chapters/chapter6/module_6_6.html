@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.6: Hazardous Materials (Hazmat) Regulations - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.6</span>
+        <h1 class="module-title">Hazardous Materials (Hazmat) Regulations</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?fm=jpg&q=80&w=1200"
+             alt="Hazmat warning placards and safety signage"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Hazardous materials transportation is heavily regulated due to risks these materials pose to health, safety, and environment. While Chapter 5 covered hazmat from a freight classification perspective, this section focuses on regulatory compliance requirements.</p>
+
+    <h2>Federal Hazmat Regulations</h2>
+
+    <p>The Department of Transportation and Pipeline and Hazardous Materials Safety Administration (PHMSA) regulate hazmat transportation through extensive rules in 49 CFR Parts 100-185.</p>
+
+    <h3>Driver Requirements</h3>
+
+    <p><strong>Hazmat Endorsement:</strong> Drivers hauling hazmat requiring placarding must have hazmat endorsements on their Commercial Driver's Licenses.</p>
+
+    <p>Obtaining this endorsement requires:</p>
+    <ul>
+        <li>Passing a specialized written test covering hazmat regulations</li>
+        <li>TSA background check (takes 2-4 weeks for processing)</li>
+        <li>Fingerprinting</li>
+        <li>Renewal every few years with recurrent testing</li>
+    </ul>
+
+    <p>This endorsement requirement limits driver availability for hazmat freight. Not all drivers maintain hazmat endorsements due to the additional testing and background check requirements.</p>
+
+    <h3>Training Requirements</h3>
+    <p>All personnel involved in hazmat transportation—including <a href="{{ url_for('glossary') }}#shipper" class="glossary-term-link" target="_blank">shippers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Shipper</span><span class="glossary-tooltip-definition">A business needing to move goods from one location to another, including manufacturers, distributors, retailers, and other customer types.</span></span></a>, <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a>, and in some cases <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">brokers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> arranging hazmat—must receive training every three years covering:</p>
+    <ul>
+        <li>General awareness of hazmat regulations</li>
+        <li>Function-specific requirements for their role</li>
+        <li>Safety training on risks and emergency procedures</li>
+        <li>Security awareness training</li>
+    </ul>
+    <p>Training must be documented, and records must be maintained proving compliance.</p>
+
+    <h2>Shipping Papers Requirements</h2>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Hazmat shipments require detailed shipping papers including:
+            <ul>
+                <li>Proper shipping name (from Hazardous Materials Table, not generic descriptions)</li>
+                <li>Hazard class or division (Class 1-9 with subdivisions)</li>
+                <li>UN or NA identification number (four-digit number identifying the specific material)</li>
+                <li>Packing group when applicable (I, II, or III indicating danger level)</li>
+                <li>Quantity of hazmat being shipped</li>
+                <li>Number and type of packages</li>
+                <li>Emergency response telephone number</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Placarding Requirements</h2>
+
+    <p>Vehicles carrying hazmat must display diamond-shaped placards indicating the hazard class. Requirements depend on quantity and hazard class:</p>
+    <ul>
+        <li><strong>Table 1 materials:</strong> Require placards in any quantity (most dangerous materials)</li>
+        <li><strong>Table 2 materials:</strong> Require placards when over 1,001 pounds aggregate</li>
+    </ul>
+
+    <h2>Routing Restrictions</h2>
+    <p>Some roads, tunnels, and bridges prohibit hazmat. Carriers must use preferred routes and avoid restricted areas. This affects transit times and route planning.</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Hazmat carriers require $5 million in liability insurance (vs. $750K for general freight). This higher insurance requirement, combined with endorsement and training requirements, results in rates typically 15-30% higher than non-hazmat freight.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when hazmat might be involved:</p>
+
+    <ul>
+        <li><strong>"Is any of this freight classified as hazardous?"</strong> Customers don't always volunteer this information.</li>
+        <li><strong>"Do you have the UN/NA number and proper shipping name?"</strong> Required for all hazmat shipments.</li>
+        <li><strong>"What class and division is this?"</strong> Determines placarding and handling requirements.</li>
+        <li><strong>"Do you have the shipping papers prepared?"</strong> Hazmat requires specific documentation.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Recognition:</strong> Learn to identify common hazmat products (paint, aerosols, batteries, cleaning chemicals).</li>
+        <li><strong>Always ask:</strong> "Is any of this freight hazardous?" Customers sometimes forget to mention it.</li>
+        <li><strong>Know your limits:</strong> Complex hazmat shipments require expertise. Ask for help when needed.</li>
+    </ul>
+
+    <p>Hazmat adds 15-30% to rates but requires carriers with proper endorsements and equipment. Not all carriers can handle hazmat.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

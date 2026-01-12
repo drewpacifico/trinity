@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 7: Building Your Customer Base - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 7</span>
+        <h1 class="module-title">Building Your Customer Base</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?fm=jpg&q=80&w=1200"
+             alt="Business professionals networking and building relationships"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Your success as a freight agent depends entirely on finding customers who regularly ship freight and value the services you provide. Not every business that ships is a good prospect for you. Understanding which customer types align with your capabilities and market position saves enormous time and energy.</p>
+
+    <p>In this chapter, you'll learn:</p>
+
+    <ul>
+        <li><strong>Identifying target customers:</strong> What makes an ideal customer for your business</li>
+        <li><strong>Customer types by business model:</strong> Understanding manufacturers, distributors, retailers, construction, e-commerce, and agricultural businesses</li>
+        <li><strong>Research and prospecting methods:</strong> Online research, geographic prospecting, and referral generation</li>
+        <li><strong>Initial contact strategies:</strong> Cold calling, email outreach, and in-person prospecting</li>
+        <li><strong>Building credibility and trust:</strong> Demonstrating knowledge, setting expectations, and providing value</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Point
+        </div>
+        <div class="callout-content">
+            Building a customer base takes time and persistent effort. Focus on quality prospects who match your capabilities, demonstrate value through expertise and service, and build relationships that grow over time. The customers you acquire in your first year often become the foundation of your long-term success.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('module', module_id='7.1') }}" class="btn btn-accent btn-lg">
+            Begin Module 7.1 &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.1: Introduction to Freight Regulations - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.1</span>
+        <h1 class="module-title">Introduction to Freight Regulations</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?fm=jpg&q=80&w=1200"
+             alt="Legal scales and gavel representing freight regulations"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>The freight transportation industry operates under extensive federal, state, and local regulations designed to ensure safety, protect infrastructure, and maintain fair competition. While drivers and <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> bear primary responsibility for compliance, understanding these regulations helps you set realistic expectations, avoid legal problems, and serve customers effectively.</p>
+
+    <p>This chapter covers the regulations most relevant to your daily work as a freight agent. You don't need to become a regulatory expert, but understanding the basics prevents you from making commitments that violate regulations or expose you, your customers, or your carriers to liability.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Regulations exist for good reasons—safety, infrastructure protection, and fair competition. Understanding them helps you work within the system effectively rather than fighting against it or making promises that can't be kept legally.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask yourself when evaluating regulatory situations:</p>
+
+    <ul>
+        <li><strong>"Does this timeline account for regulatory constraints?"</strong> <a href="{{ url_for('glossary') }}#hours-of-service-hos" class="glossary-term-link" target="_blank">HOS<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hours of Service (HOS)</span><span class="glossary-tooltip-definition">Federal regulations limiting driver operating hours: 11-hour driving limit, 14-hour duty window, 60/70-hour work week, 30-minute break requirement.</span></span></a> limits, permit processing, and other rules affect realistic delivery schedules.</li>
+        <li><strong>"What special requirements does this freight have?"</strong> <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">Hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a>, <a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">oversize<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a>, temperature control, and food products all have specific regulations.</li>
+        <li><strong>"Do I understand the basics enough to set correct expectations?"</strong> If not, ask for help before making commitments.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Know what you don't know:</strong> Recognizing when a load involves regulatory complexity is more important than memorizing all the rules.</li>
+        <li><strong>Ask questions early:</strong> Identify special requirements before committing to timelines or rates.</li>
+        <li><strong>Build credibility:</strong> Understanding regulations helps you explain realistic expectations to customers rather than making promises that can't be kept.</li>
+    </ul>
+
+    <p>Regulations aren't obstacles. They're the framework that keeps the industry safe and fair. Understanding them helps you work effectively within the system.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.10: Matching Equipment to Freight - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.10</span>
+        <h1 class="module-title">Matching Equipment to Freight</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?fm=jpg&q=80&w=1200"
+             alt="Freight being loaded into trailer representing equipment matching"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Selecting appropriate equipment for each shipment is a skill you'll develop through experience. However, following a systematic evaluation process prevents most equipment selection errors.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Follow this systematic 8-step process for every load: (1) Physical dimensions (2) Weight <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a> (3) Temperature control (4) Loading method (5) Weather protection (6) Special regulations (7) Customer preferences (8) Economic efficiency.
+        </div>
+    </div>
+
+    <h2>Step 1: Physical Dimensions</h2>
+
+    <p>Does the freight physically fit in the equipment you're considering?</p>
+    <ul>
+        <li><strong>Length:</strong> If you have a 50-foot piece of lumber, it won't fit in a 48-foot trailer. Allow space for safe loading.</li>
+        <li><strong>Width:</strong> Standard trailers are 8.5 feet wide internally. Freight wider than 8 feet typically requires <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a>.</li>
+        <li><strong>Height:</strong> Standard <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry vans<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a> have approximately 9 feet of interior height. For flatbeds, remember the 13.5-14 foot total height limit includes the 5-foot deck height.</li>
+        <li><strong>Door openings:</strong> Dry van rear doors are approximately 8 feet wide by 9 feet tall. Freight fitting inside the trailer but not through doors cannot load.</li>
+    </ul>
+
+    <h2>Step 2: Weight Capacity</h2>
+
+    <p>Can the equipment handle the weight?</p>
+    <ul>
+        <li><strong>Dry vans:</strong> 43,000-45,000 pounds</li>
+        <li><strong>Reefers:</strong> 40,000-42,000 pounds (less capacity due to heavier trailer)</li>
+        <li><strong>Flatbeds:</strong> 45,000-48,000 pounds</li>
+        <li><strong>Specialized equipment:</strong> Varies—confirm with carrier</li>
+    </ul>
+
+    <h2>Step 3: Temperature Control</h2>
+
+    <p>Does the freight require specific temperature maintenance? If yes, you need a <a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">reefer<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a>. Confirm the exact temperature requirement—"cold" isn't specific enough.</p>
+
+    <h2>Step 4: Loading and Unloading Method</h2>
+
+    <ul>
+        <li><strong>Dock-height locations with forklifts:</strong> Dry vans and reefers work well</li>
+        <li><strong>Ground-level locations without docks:</strong> Requires <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a> service or flatbed</li>
+        <li><strong>Top loading or side loading required:</strong> Flatbed necessary</li>
+        <li><strong>Roll-on/roll-off for wheeled equipment:</strong> <a href="{{ url_for('glossary') }}#rgn-removable-gooseneck-trailer" class="glossary-term-link" target="_blank">RGN<span class="glossary-tooltip"><span class="glossary-tooltip-term">RGN (Removable Gooseneck) Trailer</span><span class="glossary-tooltip-definition">A lowboy trailer where the front section detaches to create a loading ramp, allowing wheeled equipment to roll on and off.</span></span></a> or similar specialized equipment</li>
+    </ul>
+
+    <h2>Step 5: Weather Protection</h2>
+
+    <p>Does the freight require protection from weather, debris, or road spray? If yes and it fits in an enclosed trailer, use dry van or reefer. If yes but requires flatbed, ensure <a href="{{ url_for('glossary') }}#tarping" class="glossary-term-link" target="_blank">tarping<span class="glossary-tooltip"><span class="glossary-tooltip-term">Tarping</span><span class="glossary-tooltip-definition">Covering flatbed freight with large protective tarps (typically 18×24 feet) to protect from weather, debris, or road spray, adding $50-150 to costs.</span></span></a> is included.</p>
+
+    <h2>Step 6: Special Regulations</h2>
+
+    <ul>
+        <li><strong>Hazmat:</strong> Requires <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> with <a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a> endorsements and appropriate equipment</li>
+        <li><strong>Food-grade:</strong> Some customers require trailers that haven't hauled non-food products</li>
+        <li><strong>Oversize/<a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">overweight<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a>:</strong> Requires permits and sometimes specialized equipment</li>
+        <li><strong>Security requirements:</strong> High-value cargo might require GPS tracking, sealed trailers, or team drivers</li>
+    </ul>
+
+    <h2>Step 7: Customer Preferences</h2>
+
+    <p>Does the customer have specific equipment preferences? "Trailers less than 5 years old" or "No previous hazmat loads" are examples. Always ask about requirements during load booking.</p>
+
+    <h2>Step 8: Economic Efficiency</h2>
+
+    <p>Are you selecting appropriate equipment without being unnecessarily expensive? Using a reefer for freight that doesn't need temperature control wastes money. Select equipment that safely handles the freight at the most economical cost.</p>
+
+    <h2>Common Equipment Selection Mistakes</h2>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Common Mistakes
+        </div>
+        <div class="callout-content">
+            <ul>
+                <li>Quoting dry van for freight that needs flatbed (freight too tall or requiring top loading)</li>
+                <li>Quoting reefer for freight that doesn't need temperature control</li>
+                <li>Quoting standard flatbed for freight requiring <a href="{{ url_for('glossary') }}#step-deck-drop-deck-trailer" class="glossary-term-link" target="_blank">step deck<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/step_deck.jpeg" alt="Step deck trailer"></span><span class="glossary-tooltip-term">Step Deck (Drop Deck) Trailer</span><span class="glossary-tooltip-definition">A flatbed with two deck levels (higher front section, lower rear section at ~3.5 feet off ground), accommodating 10-11 foot tall freight.</span></span></a> or lowboy</li>
+                <li>Forgetting to account for liftgate requirements</li>
+                <li>Not confirming weight includes all components (pallets, packaging)</li>
+                <li>Assuming all trailers have the same capacity</li>
+                <li>Booking oversize freight without recognizing permit requirements</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Use this checklist for every load:</p>
+
+    <ul>
+        <li><strong>Step 1:</strong> Will it physically fit? (Length, width, height, door opening)</li>
+        <li><strong>Step 2:</strong> Is it under weight limits? (Total and per-axle)</li>
+        <li><strong>Step 3:</strong> Does it need temperature control?</li>
+        <li><strong>Step 4:</strong> How will it be loaded/unloaded? (Dock, forklift, crane, liftgate)</li>
+        <li><strong>Step 5:</strong> Does it need weather protection? (Enclosed or tarp)</li>
+        <li><strong>Step 6:</strong> Any special regulations? (Hazmat, food-grade, oversized)</li>
+        <li><strong>Step 7:</strong> Customer preferences? (Trailer age, previous loads)</li>
+        <li><strong>Step 8:</strong> Am I using the right equipment without overspending?</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Use the 8-step process:</strong> Follow it systematically until it becomes automatic. Shortcuts cause mistakes.</li>
+        <li><strong>When in doubt, ask:</strong> Call the customer for clarification. Call an experienced colleague for guidance.</li>
+        <li><strong>Learn from mistakes:</strong> When equipment selection goes wrong, document what happened and why.</li>
+    </ul>
+
+    <p>Equipment matching becomes intuitive with experience. Until then, trust the systematic process.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

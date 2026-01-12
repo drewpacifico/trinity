@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.3: Refrigerated Trailers (Reefers) - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.3</span>
+        <h1 class="module-title">Refrigerated Trailers (Reefers)</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="/static/images/reefer.jpeg"
+             alt="Refrigerated trailer (reefer) with temperature control unit"
+             style="width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Refrigerated trailers (universally called "reefers" in the industry) are insulated trailers equipped with refrigeration units that maintain specific temperatures. Essential for transporting temperature-sensitive products, reefers represent a significant segment of the freight market.</p>
+
+    <h2>Reefer Specifications</h2>
+
+    <ul>
+        <li><strong>External Dimensions:</strong> Same as <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry vans<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a> (53' × 8.5' × 13.5' tall)</li>
+        <li><strong>Internal Dimensions:</strong> Slightly smaller (typically 51-52 feet long due to insulation and refrigeration unit)</li>
+        <li><strong>Weight <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">Capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>:</strong> 40,000-42,000 pounds (less than dry vans due to heavier trailer weight)</li>
+        <li><strong>Temperature Range:</strong> -20°F to +70°F</li>
+        <li><strong>Fuel Consumption:</strong> 0.5-1.0 gallon per hour (separate diesel tank for refrigeration unit)</li>
+    </ul>
+
+    <h2>Temperature Requirements by Product Type</h2>
+
+    <p>Different products require different temperatures. Understanding these requirements helps you communicate knowledgeably:</p>
+
+    <h3>Frozen Products</h3>
+    <ul>
+        <li><strong>Ice cream and frozen desserts:</strong> -10°F to -20°F</li>
+        <li><strong>Frozen vegetables and fruits:</strong> 0°F</li>
+        <li><strong>Frozen meat and seafood:</strong> 0°F or below</li>
+        <li><strong>General frozen foods:</strong> 0°F to -10°F</li>
+    </ul>
+
+    <h3>Fresh Products</h3>
+    <ul>
+        <li><strong>Fresh meat and poultry:</strong> 28°F to 32°F (as cold as possible without freezing)</li>
+        <li><strong>Dairy products:</strong> 34°F to 38°F</li>
+        <li><strong>Lettuce and leafy greens:</strong> 32°F to 34°F</li>
+        <li><strong>Tomatoes:</strong> 50°F to 55°F (will be damaged if too cold)</li>
+        <li><strong>Bananas:</strong> 56°F to 58°F</li>
+        <li><strong>Apples:</strong> 30°F to 32°F</li>
+        <li><strong>Berries:</strong> 31°F to 32°F</li>
+        <li><strong>Pharmaceuticals:</strong> Often 36°F to 46°F (2°C to 8°C)</li>
+    </ul>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            Always confirm the exact temperature requirement. "Keep it cold" isn't sufficient instruction. <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">Carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> need specific set-point temperatures in degrees.
+        </div>
+    </div>
+
+    <h2>Operating Modes</h2>
+
+    <ul>
+        <li><strong>Continuous cycle:</strong> The unit runs constantly, maintaining very stable temperatures. Higher fuel consumption but maximum temperature stability.</li>
+        <li><strong>Start-stop (cycle sentry):</strong> The unit cycles on and off to maintain temperature within a range. Saves fuel but creates more temperature fluctuation.</li>
+    </ul>
+
+    <h2>Pre-Cooling: A Critical Requirement</h2>
+
+    <p>Refrigeration units maintain temperature; they don't rapidly cool warm freight. The trailer must be pre-cooled to the required temperature before loading begins.</p>
+
+    <p>Loading warm freight into a warm trailer creates serious problems. Even with the refrigeration unit running at full capacity, it may take many hours to bring the product temperature down—potentially compromising product quality or safety.</p>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Professional carriers understand <a href="{{ url_for('glossary') }}#pre-cooling" class="glossary-term-link" target="_blank">pre-cooling<span class="glossary-tooltip"><span class="glossary-tooltip-term">Pre-Cooling</span><span class="glossary-tooltip-definition">Bringing a refrigerated trailer to required temperature before loading begins, essential since reefer units maintain temperature but don't rapidly cool warm freight.</span></span></a> requirements. However, when dispatching reefer loads, confirm: "Please ensure the trailer is pre-cooled to [temperature] before arriving for loading."
+        </div>
+    </div>
+
+    <h2>Rate Implications</h2>
+
+    <p>Reefer freight typically commands 20-40% higher rates than dry van freight for several reasons:</p>
+
+    <ul>
+        <li>Specialized equipment is less available (fewer reefer trailers means tighter capacity)</li>
+        <li>Fuel costs are significant (refrigeration units consume 0.5-1.0 gallons per hour)</li>
+        <li>Maintenance costs are higher (refrigeration units require regular maintenance)</li>
+        <li>Risk is greater (temperature failures can destroy entire loads)</li>
+        <li>Driver expertise matters (not all drivers understand proper reefer operation)</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            When pricing reefer loads, account for these factors. Customers expecting dry van rates for refrigerated service have unrealistic expectations you'll need to manage.
+        </div>
+    </div>
+
+    <h2>Common Reefer Freight Challenges</h2>
+
+    <ul>
+        <li><strong>Temperature disputes:</strong> Customer claims freight arrived at wrong temperature. Always document set-point temperatures and pre-cooling confirmation.</li>
+        <li><strong>Equipment failures:</strong> Refrigeration units break down. Ensure carriers have contingency plans and proper insurance.</li>
+        <li><strong>Loading delays:</strong> Extended loading times in warm warehouses can raise product temperature.</li>
+        <li><strong>Receiver rejection:</strong> Some receivers test product temperature on arrival and reject loads if outside specification.</li>
+    </ul>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when booking reefer loads:</p>
+
+    <ul>
+        <li><strong>"What exact temperature do you need?"</strong> Get a specific number in degrees, not "cold" or "frozen."</li>
+        <li><strong>"Is this continuous cycle or start-stop acceptable?"</strong> Some products need constant temperature.</li>
+        <li><strong>"What product is this?"</strong> Knowing the commodity helps verify the temperature requirement makes sense.</li>
+        <li><strong>"Does the carrier need to provide a temperature recorder printout?"</strong> Some customers require proof of temperature maintenance.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Temperature specificity:</strong> Always get exact temperatures. "Keep it cold" causes problems.</li>
+        <li><strong>Pre-cooling confirmation:</strong> Remind carriers to pre-cool before pickup. This prevents most temperature disputes.</li>
+        <li><strong>Lower weight capacity:</strong> Remember reefers carry 40,000-42,000 pounds, not the 45,000 pounds of dry vans.</li>
+    </ul>
+
+    <p>Reefer freight commands premium rates but requires more attention to detail. Master the basics before taking on high-value pharmaceutical or specialty food loads.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}Module 4.4: Flatbed Trailers - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 4.4</span>
+        <h1 class="module-title">Flatbed Trailers</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="/static/images/flatbed.jpeg"
+             alt="Standard flatbed trailer"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Flatbed trailers are open platforms without sides or roofs, used for freight that cannot fit inside enclosed trailers or requires top or side loading. Understanding flatbeds is essential because they serve specialized but significant freight segments.</p>
+
+    <h2>Flatbed Specifications</h2>
+
+    <ul>
+        <li><strong>Length:</strong> 48 or 53 feet</li>
+        <li><strong>Width:</strong> 8.5 feet (102 inches)</li>
+        <li><strong>Deck Height:</strong> Approximately 5 feet off ground</li>
+        <li><strong>Weight <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">Capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>:</strong> 45,000-48,000 pounds</li>
+        <li><strong>Legal Height Limit:</strong> 13.5-14 feet total (load height plus 5-foot deck) without permits</li>
+    </ul>
+
+    <h2>Load Securing Requirements</h2>
+
+    <p>Unlike enclosed trailers where freight is contained by walls, flatbed freight must be properly secured to prevent shifting or falling during transit. This is both a safety requirement and a federal regulation.</p>
+
+    <h3>Securing Methods</h3>
+
+    <ul>
+        <li><strong>Chains and binders:</strong> Heavy loads like steel, machinery, and equipment typically secure with chains rated for appropriate weight. Standard practice is one chain per 10 feet of length.</li>
+        <li><strong>Straps and ratchets:</strong> Lighter loads and loads where chains might cause damage often secure with heavy-duty nylon or polyester straps.</li>
+        <li><strong>Blocking and bracing:</strong> Some loads require wooden blocks, timbers, or metal bracing to prevent forward, backward, or lateral movement.</li>
+        <li><strong>Edge protection:</strong> When straps or chains cross sharp edges, edge protectors prevent cutting the securing devices.</li>
+    </ul>
+
+    <p>Carriers should arrive with all necessary securing equipment. However, unusual loads might require specialized securing devices. Confirm securing requirements when booking to avoid problems at pickup.</p>
+
+    <h2>Tarping: Protection from Weather</h2>
+
+    <p>Some flatbed freight requires protection from weather, debris, or road spray. Drivers accomplish this with large tarps (typically 18×24 feet or larger) that cover and secure to the load.</p>
+
+    <p>Tarping is labor-intensive—climbing on loads, pulling heavy tarps into position, securing them properly. It adds significant time (30-60+ minutes) and physical effort.</p>
+
+    <div class="callout callout-warning">
+        <div class="callout-title">
+            <span class="callout-icon">&#9888;</span>
+            Important
+        </div>
+        <div class="callout-content">
+            Because of this effort, <a href="{{ url_for('glossary') }}#tarping" class="glossary-term-link" target="_blank">tarping<span class="glossary-tooltip"><span class="glossary-tooltip-term">Tarping</span><span class="glossary-tooltip-definition">Covering flatbed freight with large protective tarps (typically 18×24 feet) to protect from weather, debris, or road spray, adding $50-150 to costs.</span></span></a> carries additional charges, typically $50-150 depending on load complexity and regional norms. Always clarify whether tarping is required and include charges in your customer quote.
+        </div>
+    </div>
+
+    <h3>When Tarps Are Required</h3>
+    <ul>
+        <li><strong>Steel products:</strong> Usually ship uncovered (they're weatherproof)</li>
+        <li><strong>Machinery:</strong> Often ships without tarps if designed for outdoor use</li>
+        <li><strong>Lumber:</strong> Almost always requires tarps (moisture causes problems)</li>
+        <li><strong>Building materials like drywall:</strong> Absolutely requires tarps (moisture destroys them)</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            When unsure, ask the customer: "Does this freight require tarp protection?" If they're unsure, research the product type or call <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> familiar with that commodity.
+        </div>
+    </div>
+
+    <h2>Ideal Freight Types for Flatbeds</h2>
+
+    <ul>
+        <li><strong>Steel products:</strong> Beams, plates, sheets, coils, pipes, structural steel</li>
+        <li><strong>Lumber and building materials:</strong> Dimensional lumber, plywood, drywall, roofing materials</li>
+        <li><strong>Construction equipment:</strong> Skid steers, excavators, compressors, generators</li>
+        <li><strong>Large machinery:</strong> Industrial equipment, manufacturing machinery, agricultural equipment</li>
+        <li><strong>Vehicles and equipment:</strong> Forklifts, tractors, boats, non-running vehicles</li>
+        <li><strong>HVAC equipment:</strong> Large commercial units, ductwork, air handling units</li>
+        <li><strong>Pipes and tubes:</strong> Large-diameter pipes, utility poles, structural tubes</li>
+        <li><strong>Oversized items:</strong> Freight exceeding enclosed trailer dimensions</li>
+    </ul>
+
+    <h2>Loading Considerations</h2>
+
+    <p>Flatbeds offer flexibility that enclosed trailers cannot:</p>
+    <ul>
+        <li><strong>Top loading:</strong> Cranes or forklifts can load from above</li>
+        <li><strong>Side loading:</strong> Forklifts can access loads from either side</li>
+        <li><strong>Ground-level loading:</strong> Freight can sometimes be loaded from ground level with appropriate equipment</li>
+    </ul>
+
+    <p>However, flatbeds require loading equipment that can reach 5 feet off the ground. Confirm loading capabilities before booking flatbed loads.</p>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when booking flatbed loads:</p>
+
+    <ul>
+        <li><strong>"What are the exact dimensions of each piece?"</strong> Length, width, and height determine if it fits and what securement is needed.</li>
+        <li><strong>"Does this freight require tarping?"</strong> If unsure, ask what happens if it gets wet.</li>
+        <li><strong>"How will this be loaded and unloaded?"</strong> Confirm crane, forklift, or other equipment availability.</li>
+        <li><strong>"What securement is required?"</strong> Chains for steel, straps for lighter loads, blocking for machinery.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Recognizing flatbed freight:</strong> If it's too tall, too wide, or needs side/top loading, it probably needs flatbed.</li>
+        <li><strong>Tarping requirements:</strong> Always ask. The $75-150 tarping charge is much cheaper than a damaged load claim.</li>
+        <li><strong>Height calculations:</strong> Remember the 5-foot deck plus freight height must stay under 13.5-14 feet total.</li>
+    </ul>
+
+    <p>Flatbed freight often has better margins than <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry van<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a> because it requires more expertise. Develop flatbed knowledge to access this profitable segment.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

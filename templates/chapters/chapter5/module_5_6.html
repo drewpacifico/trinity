@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}Module 5.6: Hazardous Materials (Hazmat) - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 5.6</span>
+        <h1 class="module-title">Hazardous Materials (Hazmat)</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?fm=jpg&q=80&w=1200"
+             alt="Hazmat warning placards and safety signage"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Hazardous materials are substances posing risks to health, safety, property, or the environment during transportation. They're heavily regulated and require specialized knowledge.</p>
+
+    <h2>The Nine <a href="{{ url_for('glossary') }}#dot-department-of-transportation" class="glossary-term-link" target="_blank">DOT<span class="glossary-tooltip"><span class="glossary-tooltip-term">DOT (Department of Transportation)</span><span class="glossary-tooltip-definition">The federal parent agency overseeing transportation policy, including FMCSA and other modal administrations.</span></span></a> Hazmat Classes</h2>
+
+    <p>The Department of Transportation classifies hazardous materials into nine classes:</p>
+
+    <h3>Class 1 - Explosives</h3>
+    <ul>
+        <li>Division 1.1: Mass explosion hazard (dynamite, TNT)</li>
+        <li>Division 1.2: Projection hazard (aerial flares, torpedoes)</li>
+        <li>Division 1.3: Fire hazard (liquid fuel ammunition)</li>
+        <li>Division 1.4: Minor explosion hazard (small arms ammunition)</li>
+        <li>Division 1.5: Very insensitive explosives</li>
+        <li>Division 1.6: Extremely insensitive detonating substances</li>
+    </ul>
+
+    <h3>Class 2 - Gases</h3>
+    <ul>
+        <li>Division 2.1: Flammable gases (propane, butane, hydrogen)</li>
+        <li>Division 2.2: Non-flammable, non-toxic gases (nitrogen, carbon dioxide)</li>
+        <li>Division 2.3: Toxic gases (chlorine, ammonia, hydrogen sulfide)</li>
+    </ul>
+
+    <h3>Class 3 - Flammable Liquids</h3>
+    <ul>
+        <li>Gasoline, diesel fuel, paint, alcohols, acetone</li>
+    </ul>
+
+    <h3>Class 4 - Flammable Solids</h3>
+    <ul>
+        <li>Division 4.1: Flammable solids (matches, sulfur)</li>
+        <li>Division 4.2: Spontaneously combustible materials (phosphorus, activated carbon)</li>
+        <li>Division 4.3: Dangerous when wet (sodium, calcium carbide)</li>
+    </ul>
+
+    <h3>Class 5 - Oxidizers and Organic Peroxides</h3>
+    <ul>
+        <li>Division 5.1: Oxidizers (ammonium nitrate, hydrogen peroxide)</li>
+        <li>Division 5.2: Organic peroxides (benzoyl peroxide)</li>
+    </ul>
+
+    <h3>Class 6 - Toxic and Infectious Substances</h3>
+    <ul>
+        <li>Division 6.1: Toxic substances (pesticides, cyanides)</li>
+        <li>Division 6.2: Infectious substances (medical waste, clinical specimens)</li>
+    </ul>
+
+    <h3>Class 7 - Radioactive Materials</h3>
+    <ul>
+        <li>Medical isotopes, industrial radiography sources, uranium</li>
+    </ul>
+
+    <h3>Class 8 - Corrosive Substances</h3>
+    <ul>
+        <li>Acids, bases, battery fluid, mercury</li>
+    </ul>
+
+    <h3>Class 9 - Miscellaneous Dangerous Substances</h3>
+    <ul>
+        <li>Materials not fitting other classes (lithium batteries, dry ice, asbestos)</li>
+    </ul>
+
+    <p>Understanding these classes helps you recognize hazmat when customers describe freight and ask appropriate questions.</p>
+
+    <h2>Hazmat Requirements</h2>
+
+    <p>Transporting hazardous materials requires compliance with extensive regulations:</p>
+
+    <h3>Driver Endorsement</h3>
+    <p>Drivers must have a hazmat endorsement on their CDL, which requires background checks, fingerprinting, and additional testing. Not all drivers have this endorsement.</p>
+
+    <h3>Shipping Papers</h3>
+    <p>Hazmat shipments require detailed documentation including:</p>
+    <ul>
+        <li>Proper shipping name</li>
+        <li>Hazard class</li>
+        <li>UN/NA identification number</li>
+        <li>Packing group</li>
+        <li>Emergency response information</li>
+    </ul>
+
+    <h3>Placarding</h3>
+    <p>Vehicles carrying hazmat must display diamond-shaped placards indicating the hazard class. Placard requirements depend on quantity and hazard class.</p>
+
+    <h3>Insurance</h3>
+    <p>Hazmat transportation requires higher insurance minimums—typically $5 million versus $750,000 for general freight.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Hazmat rates are typically 15-30% higher than non-hazmat rates due to the specialized requirements, reduced <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> pool, and higher insurance costs. Common hazmat items include paint, aerosols, cleaning chemicals, and batteries.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to ask when hazmat might be involved:</p>
+
+    <ul>
+        <li><strong>"Is any of this freight classified as hazardous?"</strong> Customers don't always volunteer this information.</li>
+        <li><strong>"Do you have the UN/NA number and proper shipping name?"</strong> Required for all hazmat shipments.</li>
+        <li><strong>"What class and division is this?"</strong> Determines placarding and handling requirements.</li>
+        <li><strong>"Do you have the shipping papers prepared?"</strong> Hazmat requires specific documentation.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Recognition:</strong> Learn to identify common hazmat products (paint, aerosols, batteries, cleaning chemicals, flammable liquids).</li>
+        <li><strong>Ask the question:</strong> Always ask if freight is hazardous. Customers sometimes forget to mention it.</li>
+        <li><strong>Know your limits:</strong> Complex hazmat shipments require expertise. Ask for help when needed.</li>
+    </ul>
+
+    <p>Hazmat adds 15-30% to rates but requires carriers with proper endorsements and equipment. Not all carriers can handle hazmat.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

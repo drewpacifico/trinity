@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Module 6.8: Hours of Service Exemptions and Special Cases - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 6.8</span>
+        <h1 class="module-title">Hours of Service Exemptions and Special Cases</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?fm=jpg&q=80&w=1200"
+             alt="Agricultural harvest field representing exemption situations"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>While standard HOS rules apply to most freight operations, several exemptions exist for specific situations.</p>
+
+    <h2>Short-Haul Exemption</h2>
+
+    <p>Drivers operating within 150 air-miles of their starting location and returning to the starting point within 14 hours may be exempt from certain HOS requirements including:</p>
+    <ul>
+        <li>Electronic Logging Device (<a href="{{ url_for('glossary') }}#electronic-logging-device-eld" class="glossary-term-link" target="_blank">ELD<span class="glossary-tooltip"><span class="glossary-tooltip-term">Electronic Logging Device (ELD)</span><span class="glossary-tooltip-definition">Devices that automatically record driving hours, engine status, and vehicle movement, mandated since 2017 to ensure HOS compliance.</span></span></a>) requirements</li>
+        <li>30-minute break requirement</li>
+        <li>Detailed logs (though they must maintain time records)</li>
+    </ul>
+
+    <p>This exemption primarily affects local drivers, not long-haul operations you'll typically book. However, understanding it helps explain why some local <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carriers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> operate differently than over-the-road carriers.</p>
+
+    <h2>Adverse Driving Conditions Exception</h2>
+
+    <p>When drivers encounter adverse driving conditions not apparent when the trip began (snow storms, fog, accidents causing traffic), they may extend the 11-hour driving limit by up to 2 hours to reach a safe location.</p>
+
+    <p>"Adverse conditions" must be:</p>
+    <ul>
+        <li>Unexpected at trip start (checking weather forecasts means anticipated snow isn't "adverse conditions")</li>
+        <li>Creating danger or significantly slowing progress</li>
+        <li>Legitimate reasons to extend driving time</li>
+    </ul>
+
+    <p>This exception provides some flexibility for genuine emergencies but cannot be planned around or used routinely.</p>
+
+    <h2>Agricultural Commodity Exemptions</h2>
+
+    <p>During planting and harvest seasons, drivers transporting agricultural commodities within 150 air-miles of the source may operate under relaxed HOS rules.</p>
+
+    <p>This exemption recognizes the time-sensitive nature of agricultural products during harvest when delays can cause spoilage or lost crops.</p>
+
+    <p>If you work with agricultural customers, understand these exemptions allow greater flexibility during peak seasons but don't apply to all agricultural freight—only commodities transported from source during planting/harvest periods.</p>
+
+    <h2>Emergency Exemptions</h2>
+
+    <p>During declared emergencies (natural disasters, public health crises, civil emergencies), <a href="{{ url_for('glossary') }}#fmcsa-federal-motor-carrier-safety-administration" class="glossary-term-link" target="_blank">FMCSA<span class="glossary-tooltip"><span class="glossary-tooltip-term">FMCSA (Federal Motor Carrier Safety Administration)</span><span class="glossary-tooltip-definition">The primary regulatory body for trucking, issuing operating authority, enforcing safety regulations, and maintaining carrier safety ratings.</span></span></a> may grant temporary HOS exemptions allowing:</p>
+    <ul>
+        <li>Extended driving hours</li>
+        <li>Relaxed rest requirements</li>
+        <li>Expedited operations for emergency relief</li>
+    </ul>
+
+    <p>These exemptions are temporary and apply only to freight directly supporting emergency relief efforts.</p>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Takeaway
+        </div>
+        <div class="callout-content">
+            Exemptions exist for specific situations but shouldn't be assumed or planned around. Most freight moves under standard HOS rules. When exemptions might apply, carriers and drivers determine eligibility—not <a href="{{ url_for('glossary') }}#brokerage" class="glossary-term-link" target="_blank">brokers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Brokerage</span><span class="glossary-tooltip-definition">A company holding FMCSA authority to arrange transportation as a property broker, providing legal authority, technology, back-office functions, and credit resources to agents.</span></span></a> or agents.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions to consider when exemptions might apply:</p>
+
+    <ul>
+        <li><strong>"Is this local or over-the-road?"</strong> Short-haul exemptions apply within 150 air-miles of the starting point.</li>
+        <li><strong>"Is this agricultural product during harvest season?"</strong> Agricultural exemptions may allow more flexibility.</li>
+        <li><strong>"Is there a declared emergency affecting this route?"</strong> Emergency exemptions may temporarily relax HOS for relief freight.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Standard rules first:</strong> Most freight moves under standard HOS rules. Exemptions are the exception, not the norm.</li>
+        <li><strong>Don't assume exemptions:</strong> Carriers and drivers determine eligibility, not brokers or agents.</li>
+        <li><strong>Ask when relevant:</strong> If a customer mentions agricultural or emergency freight, ask if exemptions might apply.</li>
+    </ul>
+
+    <p>Understanding exemptions helps you recognize when special circumstances might allow more flexibility, but don't plan around exemptions you can't guarantee.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

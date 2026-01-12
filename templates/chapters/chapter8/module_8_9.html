@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Module 8.9: Upselling and Cross-Selling - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 8.9</span>
+        <h1 class="module-title">Upselling and Cross-Selling</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fm=jpg&q=80&w=1200"
+             alt="Business growth and expanding relationships"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Once you've established trust and delivered value, look for opportunities to expand your relationship by offering additional services.</p>
+
+    <h2>Upselling Opportunities</h2>
+
+    <p>Upselling means increasing the value or volume of services customers already purchase from you.</p>
+
+    <h3>Additional Lanes</h3>
+    <p>Customer ships Chicago-to-Atlanta with you and is satisfied. You notice they also ship to Florida with another provider.</p>
+    <p><em>"You've been happy with our Chicago-to-Atlanta service. Would you like us to quote your Florida shipments as well? We have strong <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> relationships on that corridor."</em></p>
+
+    <h3>Increased Frequency</h3>
+    <p>Customer ships twice monthly but their business is growing.</p>
+    <p><em>"If your shipping frequency increased to weekly, we could likely negotiate better rates due to higher volume. Would that fit your production schedule?"</em></p>
+
+    <h3>Premium Services</h3>
+    <p>Customer uses standard service but occasionally has urgent needs.</p>
+    <p><em>"For your most time-sensitive shipments, we offer <a href="{{ url_for('glossary') }}#expedited-freight" class="glossary-term-link" target="_blank">expedited<span class="glossary-tooltip"><span class="glossary-tooltip-term">Expedited Freight</span><span class="glossary-tooltip-definition">Shipments requiring faster-than-normal transit, often using team drivers to cover 1,000-1,500 miles in 24 hours.</span></span></a> team service guaranteeing delivery in half the transit time. Would having that option for emergencies be valuable?"</em></p>
+
+    <h3>Volume Commitments</h3>
+    <p>Customer provides variable volume, sometimes using you, sometimes competitors.</p>
+    <p><em>"If you committed to 10 loads monthly for six months, I could offer 8-10% better rates. The volume commitment allows me to negotiate better carrier contracts."</em></p>
+
+    <h2>Cross-Selling Opportunities</h2>
+
+    <p>Cross-selling means offering different services or equipment types than what customers currently purchase.</p>
+
+    <h3>Additional Equipment Types</h3>
+    <p>Customer ships <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry van<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a> but also has <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a> shipments.</p>
+    <p><em>"I know we handle your dry van freight. We also have excellent flatbed carrier relationships. May I quote those loads as well?"</em></p>
+
+    <h3>Different Service Levels</h3>
+    <p>Customer uses truckload but some shipments might work better as <a href="{{ url_for('glossary') }}#less-than-truckload-ltl" class="glossary-term-link" target="_blank">LTL<span class="glossary-tooltip"><span class="glossary-tooltip-term">Less-Than-Truckload (LTL)</span><span class="glossary-tooltip-definition">Freight service consolidating shipments from multiple shippers (typically 150-10,000 pounds), priced by freight class based on density, stowability, handling, and liability.</span></span></a>.</p>
+    <p><em>"Looking at your smaller shipments, you might save money using LTL consolidation. On shipments under 5,000 pounds, LTL could reduce costs 20-30%. Would you like me to analyze which shipments might benefit?"</em></p>
+
+    <h3>Different Divisions or Locations</h3>
+    <p>Customer has multiple facilities. You currently serve one.</p>
+    <p><em>"You mentioned your Phoenix facility. Are their shipping needs similar? I'd be happy to support them as well if you'd be comfortable making an introduction."</em></p>
+
+    <h2>Keys to Successful Upselling and Cross-Selling</h2>
+
+    <ul>
+        <li><strong>Only suggest genuinely beneficial services:</strong> Don't recommend what they don't need just to increase revenue</li>
+        <li><strong>Time suggestions appropriately:</strong> Wait until you've proven value before suggesting additions</li>
+        <li><strong>Frame as opportunities, not pressure:</strong> "Would this be valuable?" beats "You need to do this"</li>
+        <li><strong>Connect to stated needs:</strong> When customers mention challenges, connect your additional services to solutions</li>
+        <li><strong>Make it easy to try:</strong> Suggest pilot programs rather than major commitments</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            The best upselling and cross-selling happens naturally when you're genuinely focused on solving customer problems. If you're paying attention to their operations and challenges, opportunities to provide additional value become obvious.
+        </div>
+    </div>
+
+    <h2>Practical application</h2>
+
+    <p>Questions that uncover expansion opportunities:</p>
+
+    <ul>
+        <li><strong>"What other lanes do you ship that we're not currently handling?"</strong> Identifies additional lane opportunities.</li>
+        <li><strong>"Do you have other facilities or divisions with shipping needs?"</strong> Opens doors to new locations.</li>
+        <li><strong>"Are there services you wish you had that we haven't discussed?"</strong> Reveals unmet needs.</li>
+        <li><strong>"If your volume increased, what rate improvements would make a difference?"</strong> Explores volume commitments.</li>
+    </ul>
+
+    <h2>Where to focus</h2>
+
+    <p>For new agents, prioritize:</p>
+
+    <ul>
+        <li><strong>Earn the right first:</strong> Prove yourself on initial business before suggesting expansion.</li>
+        <li><strong>Only suggest genuine value:</strong> Don't recommend services they don't need.</li>
+        <li><strong>Make it easy to try:</strong> Suggest pilots rather than major commitments.</li>
+    </ul>
+
+    <p>The best upselling happens naturally when you're focused on solving customer problems. Pay attention to their operations and opportunities become obvious.</p>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

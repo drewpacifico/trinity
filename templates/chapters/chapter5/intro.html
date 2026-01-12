@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 5: Load Types and Cargo Categories - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 5</span>
+        <h1 class="module-title">Load Types and Cargo Categories</h1>
+    </div>
+
+    <div class="module-image">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?fm=jpg&q=80&w=1200"
+             alt="Warehouse with various cargo types and palletized freight"
+             style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
+    </div>
+
+    <p>Understanding different load types and cargo categories helps you communicate effectively with customers, select appropriate equipment, and anticipate challenges before they arise. Every commodity has unique characteristics affecting how it ships: density, fragility, value, regulatory requirements, and handling needs all vary dramatically.</p>
+
+    <p>In this chapter, you'll learn:</p>
+
+    <ul>
+        <li><strong>Freight classification:</strong> How commodities are categorized and why it matters</li>
+        <li><strong>General freight (FAK):</strong> The bread and butter of the industry—palletized goods and consumer products</li>
+        <li><strong>Food and beverage:</strong> Temperature requirements, food safety regulations, and seasonal patterns</li>
+        <li><strong>Building materials:</strong> Lumber, drywall, steel, and construction product requirements</li>
+        <li><strong>Machinery and equipment:</strong> Heavy industrial loads, securing requirements, and loading challenges</li>
+        <li><strong>Hazardous materials:</strong> The nine <a href="{{ url_for('glossary') }}#dot-department-of-transportation" class="glossary-term-link" target="_blank">DOT<span class="glossary-tooltip"><span class="glossary-tooltip-term">DOT (Department of Transportation)</span><span class="glossary-tooltip-definition">The federal parent agency overseeing transportation policy, including FMCSA and other modal administrations.</span></span></a> classes, endorsements, and special requirements</li>
+        <li><strong>High-value cargo:</strong> Security protocols, insurance requirements, and <a href="{{ url_for('glossary') }}#carrier" class="glossary-term-link" target="_blank">carrier<span class="glossary-tooltip"><span class="glossary-tooltip-term">Carrier</span><span class="glossary-tooltip-definition">A company or individual that transports goods from one place to another, including asset-based carriers, owner-operators, and fleet owners.</span></span></a> vetting</li>
+        <li><strong>Time-sensitive freight:</strong> <a href="{{ url_for('glossary') }}#expedited-freight" class="glossary-term-link" target="_blank">Expedited<span class="glossary-tooltip"><span class="glossary-tooltip-term">Expedited Freight</span><span class="glossary-tooltip-definition">Shipments requiring faster-than-normal transit, often using team drivers to cover 1,000-1,500 miles in 24 hours.</span></span></a> services, <a href="{{ url_for('glossary') }}#team-drivers" class="glossary-term-link" target="_blank">team drivers<span class="glossary-tooltip"><span class="glossary-tooltip-term">Team Drivers</span><span class="glossary-tooltip-definition">Two qualified drivers alternating driving and resting, allowing near-continuous movement covering 1,000-1,200+ miles in 24 hours at 50-75% premium rates.</span></span></a>, and <a href="{{ url_for('glossary') }}#just-in-time-jit" class="glossary-term-link" target="_blank">JIT<span class="glossary-tooltip"><span class="glossary-tooltip-term">Just-In-Time (JIT)</span><span class="glossary-tooltip-definition">Manufacturing strategy using minimal inventory with precise delivery timing, where late deliveries can cause production shutdowns costing thousands per hour.</span></span></a> deliveries</li>
+        <li><strong>Oversized loads:</strong> Permits, escorts, and route planning for exceptional freight</li>
+        <li><strong>Partial loads and <a href="{{ url_for('glossary') }}#less-than-truckload-ltl" class="glossary-term-link" target="_blank">LTL<span class="glossary-tooltip"><span class="glossary-tooltip-term">Less-Than-Truckload (LTL)</span><span class="glossary-tooltip-definition">Freight service consolidating shipments from multiple shippers (typically 150-10,000 pounds), priced by freight class based on density, stowability, handling, and liability.</span></span></a>:</strong> Options for freight that doesn't fill a truck</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Key Point
+        </div>
+        <div class="callout-content">
+            You don't need to become an expert in every commodity type, but understanding the basics helps you ask intelligent questions, provide accurate quotes, and avoid costly mistakes. Each freight category has unique equipment needs, regulatory requirements, and potential challenges.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('module', module_id='5.1') }}" class="btn btn-accent btn-lg">
+            Begin Module 5.1 &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}

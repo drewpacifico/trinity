@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Module 9.8: Knowing When to Stop Following Up - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Module 9.8</span>
+        <h1 class="module-title">Knowing When to Stop Following Up</h1>
+    </div>
+
+    <p>Not every prospect deserves indefinite follow-up. Recognize when to move on so you can focus energy on better opportunities.</p>
+
+    <h2>Clear Signals to Stop</h2>
+
+    <h3>Direct Request</h3>
+    <p><em>"Please don't contact me again"</em> or <em>"Remove me from your list."</em></p>
+    <p>Respect this immediately. Document it in your <a href="{{ url_for('glossary') }}#crm" class="glossary-term-link" target="_blank">CRM<span class="glossary-tooltip"><span class="glossary-tooltip-term">CRM (Customer Relationship Management)</span><span class="glossary-tooltip-definition">A database tracking all prospect and customer information, interactions, and scheduled activities. It's the foundation of systematic follow-up.</span></span></a> with a "Do Not Contact" flag.</p>
+    <p>Continuing to contact someone after they've requested you stop is unprofessional, annoying, and potentially illegal (depending on jurisdiction and medium).</p>
+
+    <h3>Multiple No-Shows</h3>
+    <p>Prospect schedules three phone appointments and no-shows all three without rescheduling or apologizing.</p>
+    <p>This signals they're not serious or respectful of your time. Send final email: <em>"I understand you're busy. I'll stop scheduling calls, but I'm here if your situation changes. Feel free to reach out anytime."</em></p>
+    <p>Move to annual-only contact or remove from active follow-up entirely.</p>
+
+    <h3>Consistent Non-Response</h3>
+    <p>After 8-10 attempts over 90 days with zero responses—not even email opens or acknowledgments—they're signaling lack of interest through silence.</p>
+    <p>Send final breakup email (covered below) and either move to annual contact only or remove from active follow-up.</p>
+
+    <h3>Business Closed or Changed</h3>
+    <p>Prospect's business closes, gets acquired, or fundamentally changes operations making them unsuitable for your services.</p>
+    <p>Note the change in CRM and stop active follow-up. If acquired by a larger company, research whether the parent company becomes a new prospect.</p>
+
+    <h3>Bad Fit Revealed</h3>
+    <p>Through follow-up conversations, you discover they ship volumes too small to be profitable, have unrealistic expectations you can't meet, or require services you don't provide.</p>
+    <p>Politely exit: <em>"Based on our conversations, I don't think we're the right fit for your needs. I'd rather be honest than waste your time. However, I'm happy to refer you to [alternative] who might serve you better."</em></p>
+
+    <h2>Decision Matrix for Long-Term Follow-Up</h2>
+
+    <p>After 90 days of follow-up without progress, evaluate each prospect:</p>
+
+    <h3>High Potential (Good Fit, Large Opportunity)</h3>
+    <ul>
+        <li>Continue monthly contact indefinitely</li>
+        <li>These are worth long-term investment even without immediate returns</li>
+        <li>Many eventually convert when timing improves or circumstances change</li>
+    </ul>
+
+    <h3>Medium Potential (Decent Fit, Moderate Opportunity)</h3>
+    <ul>
+        <li>Move to quarterly contact (check in four times yearly)</li>
+        <li>Provide value occasionally but don't invest heavily</li>
+        <li>Maintain visibility for when opportunities arise</li>
+    </ul>
+
+    <h3>Low Potential (Poor Fit or Small Opportunity)</h3>
+    <ul>
+        <li>Move to annual contact only or remove from active follow-up entirely</li>
+        <li>Focus your limited time on better prospects</li>
+        <li>You can always resume contact if circumstances change dramatically</li>
+    </ul>
+
+    <h2>The Final Breakup Email</h2>
+
+    <p>Before removing a prospect from active follow-up, send one last professional email:</p>
+
+    <div class="callout callout-example">
+        <div class="callout-title">
+            <span class="callout-icon">&#128221;</span>
+            Example
+        </div>
+        <div class="callout-content">
+            <p><em>"Hi [Name],</em></p>
+            <p><em>I've reached out several times over the past few months regarding your freight needs, but I haven't heard back. I don't want to be a pest, so I'll stop regular contact.</em></p>
+            <p><em>However, I'm always here if your situation changes or you need logistics support in the future. Feel free to reach out anytime—my contact information is below.</em></p>
+            <p><em>I wish you continued success with your business.</em></p>
+            <p><em>Best regards,<br>[Your Name]<br>[Phone]<br>[Email]"</em></p>
+        </div>
+    </div>
+
+    <p>This breakup email:</p>
+    <ul>
+        <li>Acknowledges your previous attempts professionally</li>
+        <li>Removes pressure by stating you'll stop contacting them</li>
+        <li>Leaves the door open for future contact if they initiate</li>
+        <li>Ends on a positive, professional note</li>
+    </ul>
+
+    <div class="callout callout-tip">
+        <div class="callout-title">
+            <span class="callout-icon">&#128161;</span>
+            Pro Tip
+        </div>
+        <div class="callout-content">
+            Surprisingly, breakup emails often generate responses. The prospect realizes they're about to lose access to you and suddenly responds. Even if they don't respond, you've left a professional final impression that might lead to contact months or years later.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter 4 Summary - Trinity Training Guide{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="module-header">
+        <span class="module-number">Chapter 4</span>
+        <h1 class="module-title">Summary Sheet</h1>
+    </div>
+
+    <h2>Dry Vans</h2>
+    <ul>
+        <li><strong>Dimensions:</strong> 53' × 8.5' × 9' interior, ~43-45K lbs <a href="{{ url_for('glossary') }}#capacity" class="glossary-term-link" target="_blank">capacity<span class="glossary-tooltip"><span class="glossary-tooltip-term">Capacity</span><span class="glossary-tooltip-definition">The availability of trucks relative to loads needing transport; tight capacity (more loads than trucks) increases rates, loose capacity (more trucks than loads) decreases rates.</span></span></a>, 4,000 cu ft</li>
+        <li><strong>Best for:</strong> General palletized freight, manufactured products, retail merchandise</li>
+        <li><strong>Key concept:</strong> Cubing out (filling space before weight) vs. weighing out (reaching weight before filling space)</li>
+        <li><strong>Requirements:</strong> Dock-height loading or <a href="{{ url_for('glossary') }}#liftgate" class="glossary-term-link" target="_blank">liftgate<span class="glossary-tooltip"><span class="glossary-tooltip-term">Liftgate</span><span class="glossary-tooltip-definition">Hydraulic platform attached to trailers that raises and lowers freight at locations lacking loading docks, with 3,000-5,000 pound capacity limits.</span></span></a> service</li>
+    </ul>
+
+    <h2>Reefers (<a href="{{ url_for('glossary') }}#refrigerated-trailer-reefer" class="glossary-term-link" target="_blank">Refrigerated Trailers<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/reefer.jpeg" alt="Refrigerated trailer"></span><span class="glossary-tooltip-term">Refrigerated Trailer (Reefer)</span><span class="glossary-tooltip-definition">Insulated trailers with refrigeration units maintaining temperatures from -20°F to +70°F. Essential for produce, dairy, meat, and temperature-sensitive goods.</span></span></a>)</h2>
+    <ul>
+        <li><strong>Temperature range:</strong> -20°F to +70°F</li>
+        <li><strong>Capacity:</strong> 40-42K lbs (less than <a href="{{ url_for('glossary') }}#dry-van-trailer" class="glossary-term-link" target="_blank">dry vans<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/dry_van.jpeg" alt="Dry van trailer"></span><span class="glossary-tooltip-term">Dry Van Trailer</span><span class="glossary-tooltip-definition">The most common trailer type: an enclosed rectangular box (53'×8.5'×9' interior) with 43,000-45,000 lb capacity, used for general freight not requiring temperature control.</span></span></a> due to heavier equipment)</li>
+        <li><strong>Fuel:</strong> Separate tank for refrigeration unit (0.5-1.0 gal/hour)</li>
+        <li><strong>Rates:</strong> Typically 20-40% higher than dry van</li>
+        <li><strong>Critical:</strong> <a href="{{ url_for('glossary') }}#pre-cooling" class="glossary-term-link" target="_blank">Pre-cooling<span class="glossary-tooltip"><span class="glossary-tooltip-term">Pre-Cooling</span><span class="glossary-tooltip-definition">Bringing a refrigerated trailer to required temperature before loading begins, essential since reefer units maintain temperature but don't rapidly cool warm freight.</span></span></a> required before loading; specific temperature requirements vary by product</li>
+    </ul>
+
+    <h2>Flatbeds</h2>
+    <ul>
+        <li><strong>Dimensions:</strong> 48' or 53' × 8.5' wide, deck height ~5' off ground</li>
+        <li><strong>Capacity:</strong> 45-48K lbs</li>
+        <li><strong>Height limit:</strong> 13.5-14' total (load + deck) without permits</li>
+        <li><strong>Securing:</strong> Chains, straps, blocking, bracing required</li>
+        <li><strong>Tarping:</strong> $50-150 additional when needed</li>
+        <li><strong>Best for:</strong> Steel, lumber, machinery, construction materials, oversized items</li>
+    </ul>
+
+    <h2>Specialized <a href="{{ url_for('glossary') }}#flatbed-trailer" class="glossary-term-link" target="_blank">Flatbed<span class="glossary-tooltip"><span class="glossary-tooltip-image"><img src="/static/images/flatbed.jpeg" alt="Flatbed trailer"></span><span class="glossary-tooltip-term">Flatbed Trailer</span><span class="glossary-tooltip-definition">An open platform trailer (48' or 53' long) without sides or roof, used for freight requiring top/side loading or exceeding enclosed trailer dimensions.</span></span></a> Variants</h2>
+    <ul>
+        <li><strong>Step Deck:</strong> Lower deck ~3.5' off ground, carries 10-11' tall freight</li>
+        <li><strong>Double Drop (<a href="{{ url_for('glossary') }}#double-drop-lowboy-trailer" class="glossary-term-link" target="_blank">Lowboy<span class="glossary-tooltip"><span class="glossary-tooltip-term">Double Drop (Lowboy) Trailer</span><span class="glossary-tooltip-definition">A flatbed with three deck levels including a very low center section (18-24 inches off ground), allowing 12-15+ foot tall freight.</span></span></a>):</strong> 18-24" well section, carries 12-15'+ tall freight, 50K+ lbs capacity</li>
+        <li><strong>RGN:</strong> Detachable front creates ramp for wheeled equipment</li>
+        <li><strong>Conestoga:</strong> Rolling tarp system, $100-300 premium over standard flatbed</li>
+    </ul>
+
+    <h2>Weight Regulations</h2>
+    <ul>
+        <li><strong>Federal maximum:</strong> 80,000 lbs gross</li>
+        <li><strong>Axle limits:</strong> 12K steer, 34K drive axles, 34K trailer axles</li>
+        <li><strong>Key point:</strong> Distribution matters—not just total weight</li>
+    </ul>
+
+    <h2>Equipment Selection Process (8 Steps)</h2>
+    <ol>
+        <li>Check physical dimensions (length, width, height, door openings)</li>
+        <li>Verify weight capacity</li>
+        <li>Determine temperature control needs</li>
+        <li>Confirm loading/unloading method</li>
+        <li>Assess weather protection requirements</li>
+        <li>Check special regulations (<a href="{{ url_for('glossary') }}#hazmat-hazardous-materials" class="glossary-term-link" target="_blank">hazmat<span class="glossary-tooltip"><span class="glossary-tooltip-term">Hazmat (Hazardous Materials)</span><span class="glossary-tooltip-definition">Regulated substances posing risks to health, safety, property, or environment, classified into nine DOT classes and requiring special handling.</span></span></a>, food-grade, permits)</li>
+        <li>Consider customer preferences</li>
+        <li>Select economically appropriate equipment</li>
+    </ol>
+
+    <h2>Common Equipment Selection Mistakes</h2>
+    <ul>
+        <li>Quoting dry van for oversized freight</li>
+        <li>Quoting reefer when temperature control unnecessary</li>
+        <li>Forgetting liftgate requirements</li>
+        <li>Not accounting for all weight components (pallets, packaging)</li>
+        <li>Assuming all trailers have same capacity</li>
+        <li>Missing permit requirements for <a href="{{ url_for('glossary') }}#oversize-overweight-os-ow" class="glossary-term-link" target="_blank">oversize<span class="glossary-tooltip"><span class="glossary-tooltip-term">Oversize/Overweight (OS/OW)</span><span class="glossary-tooltip-definition">Freight exceeding legal dimensions (8.5' wide, 13.5-14' tall, 53' long) or weight (80,000 lbs), requiring special permits and possibly escorts.</span></span></a> loads</li>
+    </ul>
+
+    <div class="callout callout-key">
+        <div class="callout-title">
+            <span class="callout-icon">&#9733;</span>
+            Remember
+        </div>
+        <div class="callout-content">
+            Equipment knowledge is foundational to your success. You'll use this information every day—sometimes dozens of times per day. The difference between a professional agent and an amateur is often knowing which equipment type a load actually requires.
+        </div>
+    </div>
+
+    {% include 'pagination.html' %}
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="{{ url_for('chapter', chapter_num=4, page='action_items') }}" class="btn btn-accent btn-lg">
+            View Action Items &rarr;
+        </a>
+    </div>
+</div>
+{% endblock %}
