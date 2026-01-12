@@ -1,0 +1,178 @@
+[
+  {
+    "id": 0,
+    "username": "trinitytest002",
+    "first_name": null,
+    "last_name": null,
+    "employee_id": null,
+    "email": null,
+    "is_preview_mode": false,
+    "created_at": "2025-11-19T23:05:34",
+    "last_login": null
+  },
+  {
+    "id": 1,
+    "username": "test_user",
+    "first_name": "User",
+    "last_name": "test_user",
+    "employee_id": "EMP1",
+    "email": "test@example.com",
+    "is_preview_mode": false,
+    "created_at": "2025-11-04T01:31:29.468199",
+    "last_login": null
+  },
+  {
+    "id": 2,
+    "username": "preview",
+    "first_name": "User",
+    "last_name": "preview",
+    "employee_id": "EMP2",
+    "email": "preview@example.com",
+    "is_preview_mode": true,
+    "created_at": "2025-11-04T01:31:29.468199",
+    "last_login": "2025-11-19T22:59:17.087646"
+  },
+  {
+    "id": 3,
+    "username": "anonymous_user",
+    "first_name": "User",
+    "last_name": "anonymous_user",
+    "employee_id": "EMP3",
+    "email": null,
+    "is_preview_mode": false,
+    "created_at": "2025-11-04T01:53:06.732341",
+    "last_login": null
+  },
+  {
+    "id": 4,
+    "username": "drew",
+    "first_name": "User",
+    "last_name": "drew",
+    "employee_id": "EMP4",
+    "email": null,
+    "is_preview_mode": false,
+    "created_at": "2025-11-04T03:09:40.875738",
+    "last_login": "2026-01-10T19:23:27.851602"
+  },
+  {
+    "id": 5,
+    "username": "preview_user",
+    "first_name": "User",
+    "last_name": "preview_user",
+    "employee_id": "EMP5",
+    "email": null,
+    "is_preview_mode": true,
+    "created_at": "2025-11-07T02:21:07.684334",
+    "last_login": null
+  },
+  {
+    "id": 6,
+    "username": "drewpacifico",
+    "first_name": "User",
+    "last_name": "drewpacifico",
+    "employee_id": "EMP6",
+    "email": null,
+    "is_preview_mode": false,
+    "created_at": "2025-11-09T09:19:39.308477",
+    "last_login": null
+  },
+  {
+    "id": 7,
+    "username": "drewpac",
+    "first_name": "Drew",
+    "last_name": "Pac",
+    "employee_id": "000001",
+    "email": "drewpac@aol.com",
+    "is_preview_mode": false,
+    "created_at": "2025-11-09T09:41:57.856501",
+    "last_login": "2025-11-09T09:42:23.097436"
+  },
+  {
+    "id": 8,
+    "username": "freepacifico@gmail.com",
+    "first_name": null,
+    "last_name": null,
+    "employee_id": null,
+    "email": null,
+    "is_preview_mode": true,
+    "created_at": "2025-11-19T19:06:10.746239",
+    "last_login": "2026-01-12T01:15:44.357553"
+  },
+  {
+    "id": 9,
+    "username": "alan 1",
+    "first_name": null,
+    "last_name": null,
+    "employee_id": null,
+    "email": null,
+    "is_preview_mode": false,
+    "created_at": "2025-11-19T22:50:01.968288",
+    "last_login": "2025-11-20T18:13:44.966769"
+  },
+  {
+    "id": 10,
+    "username": "trinitytest001",
+    "first_name": null,
+    "last_name": null,
+    "employee_id": null,
+    "email": null,
+    "is_preview_mode": false,
+    "created_at": "2025-11-19T23:05:17",
+    "last_login": null
+  },
+  {
+    "id": 11,
+    "username": "trinitytest003",
+    "first_name": null,
+    "last_name": null,
+    "employee_id": null,
+    "email": null,
+    "is_preview_mode": false,
+    "created_at": "2025-11-19T23:05:54",
+    "last_login": null
+  },
+  {
+    "id": 12,
+    "username": "trinityunlock001",
+    "first_name": null,
+    "last_name": null,
+    "employee_id": null,
+    "email": null,
+    "is_preview_mode": true,
+    "created_at": "2025-11-19T23:06:47",
+    "last_login": null
+  },
+  {
+    "id": 13,
+    "username": "trinityunlock002",
+    "first_name": null,
+    "last_name": null,
+    "employee_id": null,
+    "email": null,
+    "is_preview_mode": true,
+    "created_at": "2025-11-19T23:07:08",
+    "last_login": null
+  },
+  {
+    "id": 14,
+    "username": "alan 2",
+    "first_name": null,
+    "last_name": null,
+    "employee_id": null,
+    "email": null,
+    "is_preview_mode": false,
+    "created_at": "2025-11-19T23:24:09.689824",
+    "last_login": null
+  },
+  {
+    "id": 15,
+    "username": "bob",
+    "first_name": null,
+    "last_name": null,
+    "employee_id": null,
+    "email": null,
+    "is_preview_mode": false,
+    "created_at": "2025-11-20T02:14:38.174384",
+    "last_login": null
+  }
+]
