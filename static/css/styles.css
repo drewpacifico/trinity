@@ -1070,8 +1070,9 @@ strong, b {
   background: var(--bg);
 }
 
-/* Step deck image works better with cover due to its aspect ratio */
-.glossary-tooltip-image img[src*="step_deck"] {
+/* Step deck and Conestoga images work better with cover due to their aspect ratio */
+.glossary-tooltip-image img[src*="step_deck"],
+.glossary-tooltip-image img[src*="conestoga"] {
   object-fit: cover;
 }
 

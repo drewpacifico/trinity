@@ -18,9 +18,13 @@
 
     <div class="trucks-grid">
         {% for truck in trucks %}
-        <div class="truck-card" id="{{ truck.id }}">
+        <div class="truck-card{% if truck.image2 %} has-two-images{% endif %}" id="{{ truck.id }}">
             <div class="truck-image">
-                <img src="{{ truck.image }}" alt="{{ truck.name }}">
+                <img src="{{ truck.image }}" alt="{{ truck.name }}" class="truck-img-primary">
+                {% if truck.image2 %}
+                <img src="{{ truck.image2 }}" alt="{{ truck.name }} - alternate view" class="truck-img-secondary">
+                <span class="hover-hint">Hover to open</span>
+                {% endif %}
             </div>
             <div class="truck-info">
                 <div class="truck-header">
@@ -78,6 +82,50 @@
     height: auto;
     object-fit: contain;
     object-position: center center;
+}
+
+/* Two-image hover swap for Conestoga and similar */
+.truck-card.has-two-images .truck-image {
+    position: relative;
+    cursor: pointer;
+}
+
+.truck-card.has-two-images .truck-img-primary,
+.truck-card.has-two-images .truck-img-secondary {
+    transition: opacity 0.4s ease;
+}
+
+.truck-card.has-two-images .truck-img-secondary {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.truck-card.has-two-images:hover .truck-img-primary {
+    opacity: 0;
+}
+
+.truck-card.has-two-images:hover .truck-img-secondary {
+    opacity: 1;
+}
+
+.hover-hint {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.truck-card.has-two-images:hover .hover-hint {
+    opacity: 0;
 }
 
 

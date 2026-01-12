@@ -1934,6 +1934,21 @@ def trucks():
             'module': 'Mod 4.2',
             'image': '/static/images/box_truck.jpeg',
             'definition': "A medium-duty truck with an integrated cargo box (typically 12-26 feet long), also called a straight truck or cube van. The cab and cargo area are one unit. Used for local deliveries, LTL consolidation, last-mile delivery, and moving services. Highly maneuverable for urban and residential access."
+        },
+        {
+            'id': 'sprinter-van',
+            'name': 'Sprinter Van',
+            'module': 'Mod 5.8',
+            'image': '/static/images/sprinter_van.jpeg',
+            'definition': "A cargo van (typically 12-15 feet long with 3,000-5,000 lb capacity) used for expedited hot shot deliveries, small urgent shipments, and last-mile service. Drivers don't need a CDL since these are Class 2-3 vehicles under 10,000 lbs GVWR. Faster and more economical than full trucks for small time-critical freight."
+        },
+        {
+            'id': 'conestoga-trailer',
+            'name': 'Conestoga Trailer',
+            'module': 'Mod 4.5',
+            'image': '/static/images/conestoga1.jpg',
+            'image2': '/static/images/conestoga2.jpg',
+            'definition': "A flatbed trailer with a retractable rolling tarp system that slides open for side loading, then closes for weather protection. Combines flatbed accessibility with enclosed trailer protection. Ideal for freight needing forklift side-loading but also requiring protection from weather. Premium of $100-300 over standard flatbed."
         }
     ]
 
