@@ -19,6 +19,11 @@
         margin-right: 0.25rem;
         font-size: 0.85em;
     }
+    .toc-chapter-locked {
+        opacity: 0.6;
+        color: var(--text-secondary);
+        cursor: not-allowed;
+    }
 
     /* Collapsible styles */
     .collapsible-header {
@@ -153,10 +158,18 @@
                 <div class="toc-chapter-wrapper" data-chapter="ch2">
                     <div class="toc-chapter-header">
                         <div class="toc-chapter-link">
+                            {% if chapter_locked.get(2, False) %}
+                            <span class="toc-chapter-title toc-chapter-locked">
+                                <span class="lock-icon">🔒</span>
+                                <span class="toc-chapter-number">2</span>
+                                Understanding the Industry Landscape
+                            </span>
+                            {% else %}
                             <a href="{{ url_for('chapter', chapter_num=2, page='intro') }}" class="toc-chapter-title">
                                 <span class="toc-chapter-number">2</span>
                                 Understanding the Industry Landscape
                             </a>
+                            {% endif %}
                         </div>
                         <span class="collapse-icon collapsible-header" onclick="event.preventDefault(); toggleCollapse('ch2')"></span>
                     </div>
@@ -215,10 +228,18 @@
                 <div class="toc-chapter-wrapper" data-chapter="ch3">
                     <div class="toc-chapter-header">
                         <div class="toc-chapter-link">
+                            {% if chapter_locked.get(3, False) %}
+                            <span class="toc-chapter-title toc-chapter-locked">
+                                <span class="lock-icon">🔒</span>
+                                <span class="toc-chapter-number">3</span>
+                                The Role of a Freight Agent
+                            </span>
+                            {% else %}
                             <a href="{{ url_for('chapter', chapter_num=3, page='intro') }}" class="toc-chapter-title">
                                 <span class="toc-chapter-number">3</span>
                                 The Role of a Freight Agent
                             </a>
+                            {% endif %}
                         </div>
                         <span class="collapse-icon collapsible-header" onclick="event.preventDefault(); toggleCollapse('ch3')"></span>
                     </div>
@@ -286,10 +307,18 @@
                 <div class="toc-chapter-wrapper" data-chapter="ch4">
                     <div class="toc-chapter-header">
                         <div class="toc-chapter-link">
+                            {% if chapter_locked.get(4, False) %}
+                            <span class="toc-chapter-title toc-chapter-locked">
+                                <span class="lock-icon">🔒</span>
+                                <span class="toc-chapter-number">4</span>
+                                Truck Types and Specifications
+                            </span>
+                            {% else %}
                             <a href="{{ url_for('chapter', chapter_num=4, page='intro') }}" class="toc-chapter-title">
                                 <span class="toc-chapter-number">4</span>
                                 Truck Types and Specifications
                             </a>
+                            {% endif %}
                         </div>
                         <span class="collapse-icon collapsible-header" onclick="event.preventDefault(); toggleCollapse('ch4')"></span>
                     </div>
@@ -358,10 +387,18 @@
                 <div class="toc-chapter-wrapper" data-chapter="ch5">
                     <div class="toc-chapter-header">
                         <div class="toc-chapter-link">
+                            {% if chapter_locked.get(5, False) %}
+                            <span class="toc-chapter-title toc-chapter-locked">
+                                <span class="lock-icon">🔒</span>
+                                <span class="toc-chapter-number">5</span>
+                                Load Types and Cargo Categories
+                            </span>
+                            {% else %}
                             <a href="{{ url_for('chapter', chapter_num=5, page='intro') }}" class="toc-chapter-title">
                                 <span class="toc-chapter-number">5</span>
                                 Load Types and Cargo Categories
                             </a>
+                            {% endif %}
                         </div>
                         <span class="collapse-icon collapsible-header" onclick="event.preventDefault(); toggleCollapse('ch5')"></span>
                     </div>
@@ -425,10 +462,18 @@
                 <div class="toc-chapter-wrapper" data-chapter="ch6">
                     <div class="toc-chapter-header">
                         <div class="toc-chapter-link">
+                            {% if chapter_locked.get(6, False) %}
+                            <span class="toc-chapter-title toc-chapter-locked">
+                                <span class="lock-icon">🔒</span>
+                                <span class="toc-chapter-number">6</span>
+                                Load Restrictions and Regulations
+                            </span>
+                            {% else %}
                             <a href="{{ url_for('chapter', chapter_num=6, page='intro') }}" class="toc-chapter-title">
                                 <span class="toc-chapter-number">6</span>
                                 Load Restrictions and Regulations
                             </a>
+                            {% endif %}
                         </div>
                         <span class="collapse-icon collapsible-header" onclick="event.preventDefault(); toggleCollapse('ch6')"></span>
                     </div>
@@ -506,10 +551,18 @@
                 <div class="toc-chapter-wrapper" data-chapter="ch7">
                     <div class="toc-chapter-header">
                         <div class="toc-chapter-link">
+                            {% if chapter_locked.get(7, False) %}
+                            <span class="toc-chapter-title toc-chapter-locked">
+                                <span class="lock-icon">🔒</span>
+                                <span class="toc-chapter-number">7</span>
+                                Building Your Customer Base
+                            </span>
+                            {% else %}
                             <a href="{{ url_for('chapter', chapter_num=7, page='intro') }}" class="toc-chapter-title">
                                 <span class="toc-chapter-number">7</span>
                                 Building Your Customer Base
                             </a>
+                            {% endif %}
                         </div>
                         <span class="collapse-icon collapsible-header" onclick="event.preventDefault(); toggleCollapse('ch7')"></span>
                     </div>
@@ -548,10 +601,18 @@
                 <div class="toc-chapter-wrapper" data-chapter="ch8">
                     <div class="toc-chapter-header">
                         <div class="toc-chapter-link">
+                            {% if chapter_locked.get(8, False) %}
+                            <span class="toc-chapter-title toc-chapter-locked">
+                                <span class="lock-icon">🔒</span>
+                                <span class="toc-chapter-number">8</span>
+                                Sales Strategies for Freight Agents
+                            </span>
+                            {% else %}
                             <a href="{{ url_for('chapter', chapter_num=8, page='intro') }}" class="toc-chapter-title">
                                 <span class="toc-chapter-number">8</span>
                                 Sales Strategies for Freight Agents
                             </a>
+                            {% endif %}
                         </div>
                         <span class="collapse-icon collapsible-header" onclick="event.preventDefault(); toggleCollapse('ch8')"></span>
                     </div>
@@ -610,10 +671,18 @@
                 <div class="toc-chapter-wrapper" data-chapter="ch9">
                     <div class="toc-chapter-header">
                         <div class="toc-chapter-link">
+                            {% if chapter_locked.get(9, False) %}
+                            <span class="toc-chapter-title toc-chapter-locked">
+                                <span class="lock-icon">🔒</span>
+                                <span class="toc-chapter-number">9</span>
+                                Effective Follow-Up Systems
+                            </span>
+                            {% else %}
                             <a href="{{ url_for('chapter', chapter_num=9, page='intro') }}" class="toc-chapter-title">
                                 <span class="toc-chapter-number">9</span>
                                 Effective Follow-Up Systems
                             </a>
+                            {% endif %}
                         </div>
                         <span class="collapse-icon collapsible-header" onclick="event.preventDefault(); toggleCollapse('ch9')"></span>
                     </div>

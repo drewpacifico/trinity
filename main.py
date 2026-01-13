@@ -1256,11 +1256,21 @@ def toc():
                     prev_mod_id = modules[i - 1]
                     module_locked[mod_id] = not module_completion.get(prev_mod_id, False)
 
+    # Build chapter_locked dictionary
+    chapter_locked = {}
+    if not preview_mode:
+        for ch_num in range(1, 10):
+            if ch_num == 1:
+                chapter_locked[ch_num] = False
+            else:
+                chapter_locked[ch_num] = not chapter_complete.get(ch_num - 1, False)
+
     return render_template(
         "pages/toc.html",
         preview_mode=preview_mode,
         module_completion=module_completion,
         module_locked=module_locked,
+        chapter_locked=chapter_locked,
         chapter_complete=chapter_complete
     )
 
@@ -1272,6 +1282,17 @@ def chapter(chapter_num, page):
     """
     if not session.get('logged_in') and not session.get('preview_mode'):
         return redirect(url_for("login"))
+
+    # Check if chapter is locked for non-preview users
+    user = get_current_user()
+    preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
+
+    if not preview_mode and user and chapter_num > 1:
+        # Check if previous chapter is complete
+        prev_chapter_complete = get_chapter_completion_status(user.id, chapter_num - 1)
+        if not prev_chapter_complete:
+            flash("This chapter is locked. Please complete the previous chapter first.", "warning")
+            return redirect(url_for("toc"))
 
     # Chapter titles for progress bar
     chapter_titles = {
