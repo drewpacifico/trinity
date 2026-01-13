@@ -7,6 +7,20 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    .toc-module-locked {
+        opacity: 0.6;
+    }
+    .toc-module-locked .locked-module {
+        color: var(--text-secondary);
+        cursor: not-allowed;
+    }
+    .lock-icon {
+        margin-right: 0.25rem;
+        font-size: 0.85em;
+    }
+</style>
+
 <div class="content-card">
     <h1>Table of Contents</h1>
 
@@ -24,12 +38,36 @@
                     Welcome to Freight Brokerage
                 </a>
                 <ul class="toc-modules">
+                    {% if module_locked.get('1.1', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>1.1 Introduction to Your New Career</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='1.1') }}">1.1 Introduction to Your New Career</a></li>
+                    {% endif %}
+                    {% if module_locked.get('1.2', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>1.2 The Economic Impact of Trucking</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='1.2') }}">1.2 The Economic Impact of Trucking</a></li>
+                    {% endif %}
+                    {% if module_locked.get('1.3', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>1.3 Understanding Your Value Proposition</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='1.3') }}">1.3 Understanding Your Value Proposition</a></li>
+                    {% endif %}
+                    {% if module_locked.get('1.4', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>1.4 The Agent Business Model</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='1.4') }}">1.4 The Agent Business Model</a></li>
+                    {% endif %}
+                    {% if module_locked.get('1.5', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>1.5 Setting Realistic Expectations</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='1.5') }}">1.5 Setting Realistic Expectations</a></li>
+                    {% endif %}
+                    {% if module_locked.get('1.6', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>1.6 Your Commitment to Professionalism</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='1.6') }}">1.6 Your Commitment to Professionalism</a></li>
+                    {% endif %}
                 </ul>
             </li>
 
@@ -40,15 +78,51 @@
                     Understanding the Industry Landscape
                 </a>
                 <ul class="toc-modules">
+                    {% if module_locked.get('2.1', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>2.1 The Freight Ecosystem</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='2.1') }}">2.1 The Freight Ecosystem</a></li>
+                    {% endif %}
+                    {% if module_locked.get('2.2', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>2.2 Shippers (Your Customers)</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='2.2') }}">2.2 Shippers (Your Customers)</a></li>
+                    {% endif %}
+                    {% if module_locked.get('2.3', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>2.3 Motor Carriers (Your Service Providers)</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='2.3') }}">2.3 Motor Carriers (Your Service Providers)</a></li>
+                    {% endif %}
+                    {% if module_locked.get('2.4', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>2.4 Freight Brokerages and Industry Intermediaries</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='2.4') }}">2.4 Freight Brokerages and Industry Intermediaries</a></li>
+                    {% endif %}
+                    {% if module_locked.get('2.5', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>2.5 Regulatory Bodies</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='2.5') }}">2.5 Regulatory Bodies</a></li>
+                    {% endif %}
+                    {% if module_locked.get('2.6', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>2.6 How Money Flows Through the Industry</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='2.6') }}">2.6 How Money Flows Through the Industry</a></li>
+                    {% endif %}
+                    {% if module_locked.get('2.7', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>2.7 Market Dynamics and Rate Fluctuations</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='2.7') }}">2.7 Market Dynamics and Rate Fluctuations</a></li>
+                    {% endif %}
+                    {% if module_locked.get('2.8', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>2.8 The Competitive Landscape</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='2.8') }}">2.8 The Competitive Landscape</a></li>
+                    {% endif %}
+                    {% if module_locked.get('2.9', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>2.9 Finding Your Niche in the Market</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='2.9') }}">2.9 Finding Your Niche in the Market</a></li>
+                    {% endif %}
                 </ul>
             </li>
 
@@ -59,15 +133,51 @@
                     The Role of a Freight Agent
                 </a>
                 <ul class="toc-modules">
+                    {% if module_locked.get('3.1', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>3.1 Your Core Responsibilities Overview</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='3.1') }}">3.1 Your Core Responsibilities Overview</a></li>
+                    {% endif %}
+                    {% if module_locked.get('3.2', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>3.2 Sales and Business Development</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='3.2') }}">3.2 Sales and Business Development</a></li>
+                    {% endif %}
+                    {% if module_locked.get('3.3', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>3.3 Load Booking and Coordination</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='3.3') }}">3.3 Load Booking and Coordination</a></li>
+                    {% endif %}
+                    {% if module_locked.get('3.4', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>3.4 Operational Execution</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='3.4') }}">3.4 Operational Execution</a></li>
+                    {% endif %}
+                    {% if module_locked.get('3.5', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>3.5 Financial Management</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='3.5') }}">3.5 Financial Management</a></li>
+                    {% endif %}
+                    {% if module_locked.get('3.6', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>3.6 Administrative and Compliance Tasks</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='3.6') }}">3.6 Administrative and Compliance Tasks</a></li>
+                    {% endif %}
+                    {% if module_locked.get('3.7', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>3.7 Continuous Learning and Improvement</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='3.7') }}">3.7 Continuous Learning and Improvement</a></li>
+                    {% endif %}
+                    {% if module_locked.get('3.8', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>3.8 Time Management and Prioritization</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='3.8') }}">3.8 Time Management and Prioritization</a></li>
+                    {% endif %}
+                    {% if module_locked.get('3.9', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>3.9 The Mindset of a Successful Agent</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='3.9') }}">3.9 The Mindset of a Successful Agent</a></li>
+                    {% endif %}
                 </ul>
             </li>
         </li>
@@ -85,17 +195,61 @@
                     Truck Types and Specifications
                 </a>
                 <ul class="toc-modules">
+                    {% if module_locked.get('4.1', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.1 Introduction to Equipment Knowledge</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.1') }}">4.1 Introduction to Equipment Knowledge</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.2', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.2 Dry Van Trailers</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.2') }}">4.2 Dry Van Trailers</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.3', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.3 Refrigerated Trailers (Reefers)</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.3') }}">4.3 Refrigerated Trailers (Reefers)</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.4', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.4 Flatbed Trailers</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.4') }}">4.4 Flatbed Trailers</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.5', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.5 Specialized Flatbed Variants</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.5') }}">4.5 Specialized Flatbed Variants</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.6', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.6 Power Only Operations</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.6') }}">4.6 Power Only Operations</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.7', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.7 Specialized Equipment Types</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.7') }}">4.7 Specialized Equipment Types</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.8', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.8 Truck Classifications and Weight Ratings</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.8') }}">4.8 Truck Classifications and Weight Ratings</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.9', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.9 Axle Configurations and Weight Distribution</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.9') }}">4.9 Axle Configurations and Weight Distribution</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.10', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.10 Matching Equipment to Freight</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.10') }}">4.10 Matching Equipment to Freight</a></li>
+                    {% endif %}
+                    {% if module_locked.get('4.11', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>4.11 Communicating Equipment Needs to Carriers</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='4.11') }}">4.11 Communicating Equipment Needs to Carriers</a></li>
+                    {% endif %}
                 </ul>
             </li>
 
@@ -106,16 +260,56 @@
                     Load Types and Cargo Categories
                 </a>
                 <ul class="toc-modules">
+                    {% if module_locked.get('5.1', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.1 Introduction to Freight Classification</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.1') }}">5.1 Introduction to Freight Classification</a></li>
+                    {% endif %}
+                    {% if module_locked.get('5.2', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.2 General Freight (FAK - Freight All Kinds)</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.2') }}">5.2 General Freight (FAK - Freight All Kinds)</a></li>
+                    {% endif %}
+                    {% if module_locked.get('5.3', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.3 Food and Beverage Products</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.3') }}">5.3 Food and Beverage Products</a></li>
+                    {% endif %}
+                    {% if module_locked.get('5.4', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.4 Building Materials and Construction Products</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.4') }}">5.4 Building Materials and Construction Products</a></li>
+                    {% endif %}
+                    {% if module_locked.get('5.5', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.5 Machinery and Industrial Equipment</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.5') }}">5.5 Machinery and Industrial Equipment</a></li>
+                    {% endif %}
+                    {% if module_locked.get('5.6', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.6 Hazardous Materials (Hazmat)</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.6') }}">5.6 Hazardous Materials (Hazmat)</a></li>
+                    {% endif %}
+                    {% if module_locked.get('5.7', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.7 High-Value Cargo</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.7') }}">5.7 High-Value Cargo</a></li>
+                    {% endif %}
+                    {% if module_locked.get('5.8', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.8 Time-Sensitive and Expedited Freight</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.8') }}">5.8 Time-Sensitive and Expedited Freight</a></li>
+                    {% endif %}
+                    {% if module_locked.get('5.9', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.9 Oversized and Overweight Loads</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.9') }}">5.9 Oversized and Overweight Loads</a></li>
+                    {% endif %}
+                    {% if module_locked.get('5.10', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>5.10 Partial Loads and LTL Considerations</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='5.10') }}">5.10 Partial Loads and LTL Considerations</a></li>
+                    {% endif %}
                 </ul>
             </li>
 
@@ -126,17 +320,61 @@
                     Load Restrictions and Regulations
                 </a>
                 <ul class="toc-modules">
+                    {% if module_locked.get('6.1', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.1 Introduction to Freight Regulations</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.1') }}">6.1 Introduction to Freight Regulations</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.2', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.2 Hours of Service (HOS) Regulations</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.2') }}">6.2 Hours of Service (HOS) Regulations</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.3', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.3 Detention and Its Impact on Hours of Service</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.3') }}">6.3 Detention and Its Impact on Hours of Service</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.4', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.4 Weight Regulations and Bridge Laws</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.4') }}">6.4 Weight Regulations and Bridge Laws</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.5', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.5 Dimensional Restrictions</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.5') }}">6.5 Dimensional Restrictions</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.6', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.6 Hazardous Materials (Hazmat) Regulations</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.6') }}">6.6 Hazardous Materials (Hazmat) Regulations</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.7', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.7 Food Safety Regulations (FSMA)</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.7') }}">6.7 Food Safety Regulations (FSMA)</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.8', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.8 Hours of Service Exemptions and Special Cases</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.8') }}">6.8 Hours of Service Exemptions and Special Cases</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.9', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.9 Liability and Insurance Requirements</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.9') }}">6.9 Liability and Insurance Requirements</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.10', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.10 Accessibility and Special Delivery Requirements</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.10') }}">6.10 Accessibility and Special Delivery Requirements</a></li>
+                    {% endif %}
+                    {% if module_locked.get('6.11', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>6.11 Cross-Border Considerations (U.S.-Canada/U.S.-Mexico)</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='6.11') }}">6.11 Cross-Border Considerations (U.S.-Canada/U.S.-Mexico)</a></li>
+                    {% endif %}
                 </ul>
             </li>
         </li>
@@ -154,11 +392,31 @@
                     Building Your Customer Base
                 </a>
                 <ul class="toc-modules">
+                    {% if module_locked.get('7.1', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>7.1 Identifying Target Customers</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='7.1') }}">7.1 Identifying Target Customers</a></li>
+                    {% endif %}
+                    {% if module_locked.get('7.2', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>7.2 Customer Types by Business Model</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='7.2') }}">7.2 Customer Types by Business Model</a></li>
+                    {% endif %}
+                    {% if module_locked.get('7.3', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>7.3 Research and Prospecting Methods</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='7.3') }}">7.3 Research and Prospecting Methods</a></li>
+                    {% endif %}
+                    {% if module_locked.get('7.4', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>7.4 Initial Contact Strategies</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='7.4') }}">7.4 Initial Contact Strategies</a></li>
+                    {% endif %}
+                    {% if module_locked.get('7.5', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>7.5 Building Credibility and Trust</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='7.5') }}">7.5 Building Credibility and Trust</a></li>
+                    {% endif %}
                 </ul>
             </li>
 
@@ -169,15 +427,51 @@
                     Sales Strategies for Freight Agents
                 </a>
                 <ul class="toc-modules">
+                    {% if module_locked.get('8.1', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>8.1 Consultative Selling Approach</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='8.1') }}">8.1 Consultative Selling Approach</a></li>
+                    {% endif %}
+                    {% if module_locked.get('8.2', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>8.2 Value-Based Selling vs. Price-Based Selling</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='8.2') }}">8.2 Value-Based Selling vs. Price-Based Selling</a></li>
+                    {% endif %}
+                    {% if module_locked.get('8.3', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>8.3 Understanding Customer Buying Motivations</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='8.3') }}">8.3 Understanding Customer Buying Motivations</a></li>
+                    {% endif %}
+                    {% if module_locked.get('8.4', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>8.4 Effective Sales Presentation Structure</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='8.4') }}">8.4 Effective Sales Presentation Structure</a></li>
+                    {% endif %}
+                    {% if module_locked.get('8.5', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>8.5 Handling Objections Professionally</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='8.5') }}">8.5 Handling Objections Professionally</a></li>
+                    {% endif %}
+                    {% if module_locked.get('8.6', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>8.6 Storytelling and Social Proof</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='8.6') }}">8.6 Storytelling and Social Proof</a></li>
+                    {% endif %}
+                    {% if module_locked.get('8.7', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>8.7 Negotiation Tactics</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='8.7') }}">8.7 Negotiation Tactics</a></li>
+                    {% endif %}
+                    {% if module_locked.get('8.8', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>8.8 Building Long-Term Customer Relationships</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='8.8') }}">8.8 Building Long-Term Customer Relationships</a></li>
+                    {% endif %}
+                    {% if module_locked.get('8.9', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>8.9 Upselling and Cross-Selling</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='8.9') }}">8.9 Upselling and Cross-Selling</a></li>
+                    {% endif %}
                 </ul>
             </li>
 
@@ -188,15 +482,51 @@
                     Effective Follow-Up Systems
                 </a>
                 <ul class="toc-modules">
+                    {% if module_locked.get('9.1', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>9.1 The Importance of Systematic Follow-Up</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='9.1') }}">9.1 The Importance of Systematic Follow-Up</a></li>
+                    {% endif %}
+                    {% if module_locked.get('9.2', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>9.2 Creating a Follow-Up Schedule</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='9.2') }}">9.2 Creating a Follow-Up Schedule</a></li>
+                    {% endif %}
+                    {% if module_locked.get('9.3', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>9.3 Long-Term Nurture Strategy</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='9.3') }}">9.3 Long-Term Nurture Strategy</a></li>
+                    {% endif %}
+                    {% if module_locked.get('9.4', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>9.4 Follow-Up After Quotes</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='9.4') }}">9.4 Follow-Up After Quotes</a></li>
+                    {% endif %}
+                    {% if module_locked.get('9.5', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>9.5 Technology Tools for Follow-Up Management</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='9.5') }}">9.5 Technology Tools for Follow-Up Management</a></li>
+                    {% endif %}
+                    {% if module_locked.get('9.6', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>9.6 Tracking Follow-Up Effectiveness</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='9.6') }}">9.6 Tracking Follow-Up Effectiveness</a></li>
+                    {% endif %}
+                    {% if module_locked.get('9.7', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>9.7 Organizing Your Follow-Up Workflow</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='9.7') }}">9.7 Organizing Your Follow-Up Workflow</a></li>
+                    {% endif %}
+                    {% if module_locked.get('9.8', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>9.8 Knowing When to Stop Following Up</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='9.8') }}">9.8 Knowing When to Stop Following Up</a></li>
+                    {% endif %}
+                    {% if module_locked.get('9.9', False) %}
+                    <li class="toc-module toc-module-locked"><span class="locked-module"><span class="lock-icon">🔒</span>9.9 Follow-Up with Existing Customers</span></li>
+                    {% else %}
                     <li class="toc-module"><a href="{{ url_for('module', module_id='9.9') }}">9.9 Follow-Up with Existing Customers</a></li>
+                    {% endif %}
                 </ul>
             </li>
         </li>

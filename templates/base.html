@@ -38,6 +38,15 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
         <div class="content-container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}" style="background: var(--accent); color: var(--bg); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: center;">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             {% block content %}{% endblock %}
         </div>
     </main>

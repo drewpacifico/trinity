@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session, jsonify
+from flask import Flask, render_template, redirect, url_for, request, session, jsonify, flash
 import re
 import json
 from pathlib import Path
@@ -1214,7 +1214,55 @@ def toc():
     """Table of contents page"""
     if not session.get('logged_in') and not session.get('preview_mode'):
         return redirect(url_for("login"))
-    return render_template("pages/toc.html")
+
+    user = get_current_user()
+    preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
+
+    # Build module completion status
+    module_completion = {}
+    all_modules = Module.query.order_by(Module.id).all()
+    for mod in all_modules:
+        module_completion[mod.id] = get_module_completion_status(user.id, mod.id) if user else False
+
+    # Get chapter completion status
+    chapter_complete = {}
+    for ch_num in range(1, 10):
+        chapter_complete[ch_num] = get_chapter_completion_status(user.id, ch_num) if user else False
+
+    # Build module_locked dictionary
+    module_locked = {}
+    if not preview_mode:
+        # Define module order for each chapter
+        chapter_modules = {
+            1: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"],
+            2: ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"],
+            3: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"],
+            4: ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"],
+            5: ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"],
+            6: ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "6.11"],
+            7: ["7.1", "7.2", "7.3", "7.4", "7.5"],
+            8: ["8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9"],
+            9: ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "9.8", "9.9"],
+        }
+
+        for ch_num, modules in chapter_modules.items():
+            prev_chapter_complete = chapter_complete.get(ch_num - 1, True) if ch_num > 1 else True
+            for i, mod_id in enumerate(modules):
+                if i == 0:
+                    # First module of chapter - locked if previous chapter not complete
+                    module_locked[mod_id] = not prev_chapter_complete
+                else:
+                    # Other modules - locked if previous module not complete
+                    prev_mod_id = modules[i - 1]
+                    module_locked[mod_id] = not module_completion.get(prev_mod_id, False)
+
+    return render_template(
+        "pages/toc.html",
+        preview_mode=preview_mode,
+        module_completion=module_completion,
+        module_locked=module_locked,
+        chapter_complete=chapter_complete
+    )
 
 
 @app.route("/chapter/<int:chapter_num>/<page>")
@@ -1289,6 +1337,54 @@ def module(module_id):
         sub_module_num = int(parts[2]) if len(parts) > 2 else None
     except (ValueError, IndexError):
         return redirect(url_for("toc"))
+
+    # Check if module is locked for non-preview users
+    user = get_current_user()
+    preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
+
+    if not preview_mode and user:
+        # Build chapter_modules mapping
+        chapter_modules = {
+            1: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"],
+            2: ["2.1", "2.2", "2.2.1", "2.2.2", "2.2.3", "2.2.4", "2.2.5", "2.2.6", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"],
+            3: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9"],
+            4: ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11"],
+            5: ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"],
+            6: ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10", "6.11"],
+            7: ["7.1", "7.2", "7.3", "7.4", "7.5"],
+            8: ["8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9"],
+            9: ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "9.8", "9.9"],
+        }
+
+        # Get chapter completion status
+        chapter_complete = {}
+        for ch_num in range(1, 10):
+            chapter_complete[ch_num] = get_chapter_completion_status(user.id, ch_num)
+
+        # Get module completion status
+        module_completion = {}
+        all_modules = Module.query.order_by(Module.id).all()
+        for mod in all_modules:
+            module_completion[mod.id] = get_module_completion_status(user.id, mod.id)
+
+        # Check if current module is locked
+        is_locked = False
+        modules_in_chapter = chapter_modules.get(chapter_num, [])
+
+        if module_id in modules_in_chapter:
+            idx = modules_in_chapter.index(module_id)
+            if idx == 0:
+                # First module of chapter - locked if previous chapter not complete
+                prev_chapter_complete = chapter_complete.get(chapter_num - 1, True) if chapter_num > 1 else True
+                is_locked = not prev_chapter_complete
+            else:
+                # Not first module - locked if previous module not complete
+                prev_mod_id = modules_in_chapter[idx - 1]
+                is_locked = not module_completion.get(prev_mod_id, False)
+
+        if is_locked:
+            flash("This module is locked. Please complete the previous modules first.", "warning")
+            return redirect(url_for("toc"))
 
     # Chapter titles for progress bar
     chapter_titles = {
