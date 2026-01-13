@@ -1892,6 +1892,83 @@ def page(page_num: int):
     )
 
 
+@app.route("/debug_locks")
+def debug_locks():
+    """Debug endpoint to see locking state - REMOVE IN PRODUCTION"""
+    from models import User
+
+    user_id = session.get('user_id')
+    username = session.get('username', 'not set')
+    logged_in = session.get('logged_in', False)
+    session_preview = session.get('preview_mode', 'not set')
+
+    user = User.query.get(user_id) if user_id else None
+    db_preview = user.is_preview_mode if user else 'no user'
+
+    # Calculate preview_mode the same way the page route does
+    preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
+
+    # Get module completion for chapter 1
+    ch1_completion = {}
+    ch1_modules = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"]
+    for mod_id in ch1_modules:
+        ch1_completion[mod_id] = get_module_completion_status(user.id, mod_id) if user else False
+
+    # Build module_locked the same way
+    module_locked = {}
+    if not preview_mode:
+        for i, mod_id in enumerate(ch1_modules):
+            if i == 0:
+                module_locked[mod_id] = False
+            else:
+                prev_mod_id = ch1_modules[i-1]
+                module_locked[mod_id] = not ch1_completion.get(prev_mod_id, False)
+
+    debug_info = f"""
+    <h1>Lock Debug Info</h1>
+    <h2>Session State</h2>
+    <ul>
+        <li><b>user_id:</b> {user_id}</li>
+        <li><b>username:</b> {username}</li>
+        <li><b>logged_in:</b> {logged_in}</li>
+        <li><b>session preview_mode:</b> {session_preview}</li>
+    </ul>
+
+    <h2>Database State</h2>
+    <ul>
+        <li><b>User found:</b> {user is not None}</li>
+        <li><b>DB is_preview_mode:</b> {db_preview}</li>
+    </ul>
+
+    <h2>Calculated Values</h2>
+    <ul>
+        <li><b>Final preview_mode:</b> {preview_mode}</li>
+    </ul>
+
+    <h2>Chapter 1 Module Completion</h2>
+    <ul>
+    """
+    for mod_id, complete in ch1_completion.items():
+        debug_info += f"<li><b>{mod_id}:</b> {complete}</li>"
+
+    debug_info += """
+    </ul>
+
+    <h2>Chapter 1 Module Locked State</h2>
+    <ul>
+    """
+    for mod_id, locked in module_locked.items():
+        debug_info += f"<li><b>{mod_id}:</b> {'🔒 LOCKED' if locked else '🔓 UNLOCKED'}</li>"
+
+    debug_info += """
+    </ul>
+
+    <p><a href="/page/1">Go to TOC</a></p>
+    """
+
+    return debug_info
+
+
 @app.route("/glossary")
 def glossary():
     # Require login
