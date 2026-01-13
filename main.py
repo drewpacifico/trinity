@@ -1976,10 +1976,14 @@ def login():
         user = User.query.filter_by(username=username).first()
 
         if user and user.password_hash and user.check_password(password):
-            # Successful login
+            # Successful login - clear any stale session data first
+            session.clear()
+
             session['user_id'] = user.id
             session['username'] = user.username
             session['logged_in'] = True
+            session['preview_mode'] = user.is_preview_mode  # Explicitly sync from database
+            session['quiz_answers'] = {}
 
             # Update last login
             user.last_login = datetime.utcnow()
@@ -2019,12 +2023,15 @@ def register():
             
             db.session.add(new_user)
             db.session.commit()
-            
-            # Auto-login after registration
+
+            # Auto-login after registration - clear any stale session first
+            session.clear()
             session['user_id'] = new_user.id
             session['username'] = new_user.username
             session['logged_in'] = True
-            
+            session['preview_mode'] = False  # New users never have preview mode
+            session['quiz_answers'] = {}
+
             return redirect(url_for("page", page_num=1))
             
         except Exception as e:
