@@ -51,20 +51,6 @@
         </div>
     </main>
 
-    <!-- SIDE NAVIGATION ARROWS -->
-    {% block navigation %}
-    {% if prev_url %}
-    <a href="{{ prev_url }}" class="side-nav side-nav-prev" title="Previous">
-        <span class="side-nav-arrow">&larr;</span>
-    </a>
-    {% endif %}
-
-    {% if next_url %}
-    <a href="{{ next_url }}" class="side-nav side-nav-next" title="Next">
-        <span class="side-nav-arrow">&rarr;</span>
-    </a>
-    {% endif %}
-    {% endblock %}
 
     <!-- PROGRESS BAR -->
     {% block progress %}
