@@ -2526,5 +2526,76 @@ def cli_user_delete(username):
     click.echo(f"User '{username}' deleted.")
 
 
+@app.cli.command("user-preview")
+@click.argument("username")
+@click.option("--on", "enable", flag_value=True, help="Enable preview mode (full access)")
+@click.option("--off", "enable", flag_value=False, help="Disable preview mode (locked progression)")
+def cli_user_preview(username, enable):
+    """Enable or disable preview mode for a user (full access to all content)."""
+    from models import User
+    username = username.strip().lower()
+
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        click.echo(f"Error: User '{username}' not found.")
+        return
+
+    if enable is None:
+        # No flag provided, show current status
+        status = "enabled" if user.is_preview_mode else "disabled"
+        click.echo(f"User '{username}' preview mode is currently {status}.")
+        click.echo("Use --on or --off to change.")
+        return
+
+    user.is_preview_mode = enable
+    db.session.commit()
+
+    status = "enabled" if enable else "disabled"
+    click.echo(f"Preview mode {status} for user '{username}'.")
+    if enable:
+        click.echo("User now has full access to all chapters and modules.")
+    else:
+        click.echo("User must complete quizzes to unlock chapters.")
+
+
+@app.cli.command("user-reset")
+@click.argument("username")
+@click.option("--confirm", is_flag=True, help="Confirm the reset without prompting")
+def cli_user_reset(username, confirm):
+    """Reset all progress for a user (quiz answers and module completion)."""
+    from models import User, UserProgress, UserQuizAnswer
+    username = username.strip().lower()
+
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        click.echo(f"Error: User '{username}' not found.")
+        return
+
+    # Count existing progress
+    quiz_count = UserQuizAnswer.query.filter_by(user_id=user.id).count()
+    progress_count = UserProgress.query.filter_by(user_id=user.id).count()
+
+    if quiz_count == 0 and progress_count == 0:
+        click.echo(f"User '{username}' has no progress to reset.")
+        return
+
+    click.echo(f"User '{username}' has:")
+    click.echo(f"  - {quiz_count} quiz answers")
+    click.echo(f"  - {progress_count} module progress records")
+
+    if not confirm:
+        if not click.confirm("Are you sure you want to delete all progress?"):
+            click.echo("Cancelled.")
+            return
+
+    # Delete all progress
+    UserQuizAnswer.query.filter_by(user_id=user.id).delete()
+    UserProgress.query.filter_by(user_id=user.id).delete()
+    db.session.commit()
+
+    click.echo(f"All progress reset for user '{username}'.")
+    click.echo("User will need to log out and back in for changes to take effect.")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
