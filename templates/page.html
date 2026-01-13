@@ -1014,7 +1014,15 @@ h3 {
           <strong style="color: var(--highlight);">🔓 Preview Mode Active</strong> - All content unlocked for review
         </div>
       {% endif %}
-      
+
+      <!-- DEBUG: Remove this block after testing -->
+      <div style="background: #333; padding: 10px; margin-bottom: 20px; font-size: 12px; border-radius: 8px;">
+        <strong>DEBUG:</strong> preview_mode={{ preview_mode }},
+        module_locked keys={{ module_locked.keys()|list if module_locked else 'EMPTY' }},
+        module_locked 1.2={{ module_locked.get('1.2', 'NOT FOUND') }}
+      </div>
+      <!-- END DEBUG -->
+
       <ul class="toc-list">
         {% for ch in page.chapters %}
           {% if ch.id == 'glossary' %}
