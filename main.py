@@ -1765,8 +1765,8 @@ def page(page_num: int):
             user_id=user.id,
             quiz_question_id=quiz_id
         ).first()
-        if user_answer and user_answer.is_correct is not None:
-            quiz_answered = bool(user_answer.is_correct)  # Explicit bool for template consistency
+        if user_answer and user_answer.selected_choice is not None:
+            quiz_answered = True  # User has answered - allow progression regardless of correctness
         # Update session for backward compatibility
         session['quiz_answers'][quiz_id] = quiz_answered
     

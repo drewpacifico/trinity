@@ -367,21 +367,21 @@ def get_or_create_user(username, is_preview=False):
 
 
 def get_module_completion_status(user_id, module_id):
-    """Check if a user has completed a module (all quizzes correct)"""
+    """Check if a user has completed a module (all quizzes answered, regardless of correctness)"""
     module = Module.query.get(module_id)
     if not module or not module.quiz_questions:
         return False
-    
+
     for quiz in module.quiz_questions:
         answer = UserQuizAnswer.query.filter_by(
             user_id=user_id,
             quiz_question_id=quiz.id
         ).first()
-        
-        if not answer or not answer.is_correct:
+
+        if not answer or answer.selected_choice is None:
             return False
-    
-    # All quizzes answered correctly - ensure progress record exists
+
+    # All quizzes answered - ensure progress record exists
     progress = UserProgress.query.filter_by(
         user_id=user_id,
         module_id=module_id
