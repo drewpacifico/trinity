@@ -1254,7 +1254,8 @@ def toc():
                 else:
                     # Other modules - locked if previous module not complete
                     prev_mod_id = modules[i - 1]
-                    module_locked[mod_id] = not module_completion.get(prev_mod_id, False)
+                    # Default to True (complete) if not in dict - allows progression for modules without quizzes
+                    module_locked[mod_id] = not module_completion.get(prev_mod_id, True)
 
     # Build chapter_locked dictionary
     chapter_locked = {}
@@ -1401,7 +1402,8 @@ def module(module_id):
             else:
                 # Not first module - locked if previous module not complete
                 prev_mod_id = modules_in_chapter[idx - 1]
-                is_locked = not module_completion.get(prev_mod_id, False)
+                # Default to True (unlocked) if module not in dict - allows progression for modules without quizzes
+                is_locked = not module_completion.get(prev_mod_id, True)
 
         if is_locked:
             flash("This module is locked. Please complete the previous modules first.", "warning")
@@ -1947,7 +1949,8 @@ def page(page_num: int):
                 module_locked[mod["id"]] = False  # First module always unlocked
             else:
                 prev_mod_id = ch1_modules[i-1]["id"]
-                module_locked[mod["id"]] = not module_completion.get(prev_mod_id, False)
+                # Default to True (complete) if not in dict - allows progression for modules without quizzes
+                module_locked[mod["id"]] = not module_completion.get(prev_mod_id, True)
 
         # Chapter 2+: First module requires previous chapter complete, rest sequential
         def lock_chapter_modules(chapter_modules, prev_chapter_complete):
@@ -1956,7 +1959,8 @@ def page(page_num: int):
                     module_locked[mod["id"]] = not prev_chapter_complete
                 else:
                     prev_mod_id = chapter_modules[i-1]["id"]
-                    module_locked[mod["id"]] = not module_completion.get(prev_mod_id, False)
+                    # Default to True (complete) if not in dict - allows progression for modules without quizzes
+                    module_locked[mod["id"]] = not module_completion.get(prev_mod_id, True)
 
         lock_chapter_modules(ch2_modules, all_ch1_modules_complete)
         lock_chapter_modules(ch3_modules, all_ch2_modules_complete)
@@ -2039,7 +2043,7 @@ def debug_locks():
                 module_locked[mod_id] = False
             else:
                 prev_mod_id = ch1_modules[i-1]
-                module_locked[mod_id] = not ch1_completion.get(prev_mod_id, False)
+                module_locked[mod_id] = not ch1_completion.get(prev_mod_id, True)
 
     debug_info = f"""
     <h1>Lock Debug Info</h1>
