@@ -12,7 +12,8 @@
       "Bash(find:*)",
       "Bash(done)",
       "WebFetch(domain:www.dreamstime.com)",
-      "WebFetch(domain:commons.wikimedia.org)"
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:pixabay.com)"
     ]
   }
 }
