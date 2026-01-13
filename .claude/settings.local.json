@@ -13,7 +13,8 @@
       "Bash(done)",
       "WebFetch(domain:www.dreamstime.com)",
       "WebFetch(domain:commons.wikimedia.org)",
-      "WebFetch(domain:pixabay.com)"
+      "WebFetch(domain:pixabay.com)",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\trinity\\\\static\\\\images\\\\step_deck*'' | Select-Object Name, Length, LastWriteTime | Format-Table -AutoSize\")"
     ]
   }
 }

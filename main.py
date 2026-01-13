@@ -2150,7 +2150,7 @@ def trucks():
             'id': 'step-deck-drop-deck-trailer',
             'name': 'Step Deck (Drop Deck) Trailer',
             'module': 'Mod 4.4',
-            'image': '/static/images/step_deck_original.jpeg',
+            'image': '/static/images/step_deck.jpeg',
             'definition': "A flatbed with two deck levels: the front section sits at standard 5' height for about 10 feet, then 'steps down' to approximately 3.5' off ground for the remaining 43 feet. This design allows freight 10-11 feet tall to stay under the 13.5-14' highway height limit."
         },
         {
