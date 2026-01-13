@@ -1026,32 +1026,27 @@ h3 {
               <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
                 {% for mod in page.ch1_modules %}
                   {% set is_complete = module_completion.get(mod.id, False) %}
-                  {% set prev_index = loop.index0 - 1 %}
-                  {% set is_locked = False %}
-                  {% if not preview_mode %}
-                    {% if loop.index0 > 0 %}
-                      {% set prev_mod_id = page.ch1_modules[prev_index].id %}
-                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                    {% endif %}
-                  {% endif %}
-                  
+                  {% set is_locked = module_locked.get(mod.id, False) %}
+
                   <div style="margin: 6px 0; display: flex; align-items: center;">
                     {% if is_complete %}
                       <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
                     {% elif preview_mode %}
                       <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_locked %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">🔒</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
-                    
-                    {% if is_locked and not preview_mode %}
+
+                    {% if is_locked %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
-                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                        Module {{ mod.id }}: {{ mod.title }}
                       </span>
                     {% else %}
-                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
-                         onmouseover="this.style.color='var(--accent)'" 
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}"
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;"
+                         onmouseover="this.style.color='var(--accent)'"
                          onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
@@ -1139,35 +1134,27 @@ h3 {
               <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
                 {% for mod in page.ch2_modules %}
                   {% set is_complete = module_completion.get(mod.id, False) %}
-                  {% set prev_index = loop.index0 - 1 %}
-                  {% set is_locked = False %}
-                  {% if not preview_mode %}
-                    {% if loop.index0 > 0 %}
-                      {% set prev_mod_id = page.ch2_modules[prev_index].id %}
-                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                    {% elif loop.index0 == 0 %}
-                      {# First module of Chapter 2 requires Chapter 1 completion #}
-                      {% set is_locked = not all_ch1_modules_complete %}
-                    {% endif %}
-                  {% endif %}
-                  
+                  {% set is_locked = module_locked.get(mod.id, False) %}
+
                   <div style="margin: 6px 0; display: flex; align-items: center;">
                     {% if is_complete %}
                       <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
                     {% elif preview_mode %}
                       <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_locked %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">🔒</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
-                    
-                    {% if is_locked and not preview_mode %}
+
+                    {% if is_locked %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
-                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                        Module {{ mod.id }}: {{ mod.title }}
                       </span>
                     {% else %}
-                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
-                         onmouseover="this.style.color='var(--accent)'" 
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}"
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;"
+                         onmouseover="this.style.color='var(--accent)'"
                          onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
@@ -1255,35 +1242,27 @@ h3 {
               <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
                 {% for mod in page.ch3_modules %}
                   {% set is_complete = module_completion.get(mod.id, False) %}
-                  {% set prev_index = loop.index0 - 1 %}
-                  {% set is_locked = False %}
-                  {% if not preview_mode %}
-                    {% if loop.index0 > 0 %}
-                      {% set prev_mod_id = page.ch3_modules[prev_index].id %}
-                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                    {% elif loop.index0 == 0 %}
-                      {# First module of Chapter 3 requires Chapter 2 completion #}
-                      {% set is_locked = not all_ch2_modules_complete %}
-                    {% endif %}
-                  {% endif %}
-                  
+                  {% set is_locked = module_locked.get(mod.id, False) %}
+
                   <div style="margin: 6px 0; display: flex; align-items: center;">
                     {% if is_complete %}
                       <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
                     {% elif preview_mode %}
                       <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_locked %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">🔒</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
-                    
-                    {% if is_locked and not preview_mode %}
+
+                    {% if is_locked %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
-                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                        Module {{ mod.id }}: {{ mod.title }}
                       </span>
                     {% else %}
-                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
-                         onmouseover="this.style.color='var(--accent)'" 
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}"
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;"
+                         onmouseover="this.style.color='var(--accent)'"
                          onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
@@ -1371,36 +1350,28 @@ h3 {
               <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
                 {% for mod in page.ch4_modules %}
                   {% set is_complete = module_completion.get(mod.id, False) %}
-                  {% set prev_index = loop.index0 - 1 %}
-                  {% set is_locked = False %}
-                  {% if not preview_mode %}
-                    {% if loop.index0 > 0 %}
-                      {% set prev_mod_id = page.ch4_modules[prev_index].id %}
-                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                    {% elif loop.index0 == 0 %}
-                      {# First module of Chapter 4 requires Chapter 3 completion #}
-                      {% set is_locked = not all_ch3_modules_complete %}
-                    {% endif %}
-                  {% endif %}
-                  
+                  {% set is_locked = module_locked.get(mod.id, False) %}
+
                   <div style="margin: 6px 0; display: flex; align-items: center;">
-                    {% if preview_mode %}
-                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
-                    {% elif is_complete %}
+                    {% if is_complete %}
                       <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_locked %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">🔒</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
-                    
-                    {% if is_locked and not preview_mode %}
+
+                    {% if is_locked %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
-                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                        Module {{ mod.id }}: {{ mod.title }}
                       </span>
                     {% else %}
-                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
-                         onmouseover="this.style.color='var(--accent)'" 
-                         onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}"
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;"
+                         onmouseover="this.style.color='var(--accent)'"
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
                     {% endif %}
@@ -1487,36 +1458,28 @@ h3 {
               <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
                 {% for mod in page.ch5_modules %}
                   {% set is_complete = module_completion.get(mod.id, False) %}
-                  {% set prev_index = loop.index0 - 1 %}
-                  {% set is_locked = False %}
-                  {% if not preview_mode %}
-                    {% if loop.index0 > 0 %}
-                      {% set prev_mod_id = page.ch5_modules[prev_index].id %}
-                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                    {% elif loop.index0 == 0 %}
-                      {# First module of Chapter 5 requires Chapter 4 completion #}
-                      {% set is_locked = not all_ch4_modules_complete %}
-                    {% endif %}
-                  {% endif %}
-                  
+                  {% set is_locked = module_locked.get(mod.id, False) %}
+
                   <div style="margin: 6px 0; display: flex; align-items: center;">
-                    {% if preview_mode %}
-                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
-                    {% elif is_complete %}
+                    {% if is_complete %}
                       <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
+                      <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
+                    {% elif is_locked %}
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">🔒</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
-                    
-                    {% if is_locked and not preview_mode %}
+
+                    {% if is_locked %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
-                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                        Module {{ mod.id }}: {{ mod.title }}
                       </span>
                     {% else %}
-                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
-                         onmouseover="this.style.color='var(--accent)'" 
-                         onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}"
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;"
+                         onmouseover="this.style.color='var(--accent)'"
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
                     {% endif %}
@@ -1603,38 +1566,28 @@ h3 {
               <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
                 {% for mod in page.ch6_modules %}
                   {% set is_complete = module_completion.get(mod.id, False) %}
-                  {% set prev_index = loop.index0 - 1 %}
-                  {% set is_locked = False %}
-                  {% if not preview_mode %}
-                    {# All Chapter 6 modules require Chapter 5 completion #}
-                    {% if not all_ch5_modules_complete %}
-                      {% set is_locked = True %}
-                    {% elif loop.index0 > 0 %}
-                      {% set prev_mod_id = page.ch6_modules[prev_index].id %}
-                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                    {% endif %}
-                  {% endif %}
-                  
+                  {% set is_locked = module_locked.get(mod.id, False) %}
+
                   <div style="margin: 6px 0; display: flex; align-items: center;">
-                    {% if preview_mode %}
+                    {% if is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
                       <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
                     {% elif is_locked %}
-                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
-                    {% elif is_complete %}
-                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">🔒</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
-                    
-                    {% if is_locked and not preview_mode %}
+
+                    {% if is_locked %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
-                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                        Module {{ mod.id }}: {{ mod.title }}
                       </span>
                     {% else %}
-                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
-                         onmouseover="this.style.color='var(--accent)'" 
-                         onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}"
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;"
+                         onmouseover="this.style.color='var(--accent)'"
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
                     {% endif %}
@@ -1721,38 +1674,28 @@ h3 {
               <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
                 {% for mod in page.ch7_modules %}
                   {% set is_complete = module_completion.get(mod.id, False) %}
-                  {% set prev_index = loop.index0 - 1 %}
-                  {% set is_locked = False %}
-                  {% if not preview_mode %}
-                    {# All Chapter 7 modules require Chapter 6 completion #}
-                    {% if not all_ch6_modules_complete %}
-                      {% set is_locked = True %}
-                    {% elif loop.index0 > 0 %}
-                      {% set prev_mod_id = page.ch7_modules[prev_index].id %}
-                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                    {% endif %}
-                  {% endif %}
-                  
+                  {% set is_locked = module_locked.get(mod.id, False) %}
+
                   <div style="margin: 6px 0; display: flex; align-items: center;">
-                    {% if preview_mode %}
+                    {% if is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
                       <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
                     {% elif is_locked %}
-                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
-                    {% elif is_complete %}
-                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">🔒</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
-                    
-                    {% if is_locked and not preview_mode %}
+
+                    {% if is_locked %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
-                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                        Module {{ mod.id }}: {{ mod.title }}
                       </span>
                     {% else %}
-                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
-                         onmouseover="this.style.color='var(--accent)'" 
-                         onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}"
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;"
+                         onmouseover="this.style.color='var(--accent)'"
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
                     {% endif %}
@@ -1843,38 +1786,28 @@ h3 {
               <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
                 {% for mod in page.ch8_modules %}
                   {% set is_complete = module_completion.get(mod.id, False) %}
-                  {% set prev_index = loop.index0 - 1 %}
-                  {% set is_locked = False %}
-                  {% if not preview_mode %}
-                    {# All Chapter 8 modules require Chapter 7 completion #}
-                    {% if not all_ch7_modules_complete %}
-                      {% set is_locked = True %}
-                    {% elif loop.index0 > 0 %}
-                      {% set prev_mod_id = page.ch8_modules[prev_index].id %}
-                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                    {% endif %}
-                  {% endif %}
-                  
+                  {% set is_locked = module_locked.get(mod.id, False) %}
+
                   <div style="margin: 6px 0; display: flex; align-items: center;">
-                    {% if preview_mode %}
+                    {% if is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
                       <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
                     {% elif is_locked %}
-                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
-                    {% elif is_complete %}
-                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">🔒</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
-                    
-                    {% if is_locked and not preview_mode %}
+
+                    {% if is_locked %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
-                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                        Module {{ mod.id }}: {{ mod.title }}
                       </span>
                     {% else %}
-                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
-                         onmouseover="this.style.color='var(--accent)'" 
-                         onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}"
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;"
+                         onmouseover="this.style.color='var(--accent)'"
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
                     {% endif %}
@@ -1965,38 +1898,28 @@ h3 {
               <div style="margin-left: 30px; margin-top: 12px; font-size: 14px; line-height: 2.0;">
                 {% for mod in page.ch9_modules %}
                   {% set is_complete = module_completion.get(mod.id, False) %}
-                  {% set prev_index = loop.index0 - 1 %}
-                  {% set is_locked = False %}
-                  {% if not preview_mode %}
-                    {# All Chapter 9 modules require Chapter 8 completion #}
-                    {% if not all_ch8_modules_complete %}
-                      {% set is_locked = True %}
-                    {% elif loop.index0 > 0 %}
-                      {% set prev_mod_id = page.ch9_modules[prev_index].id %}
-                      {% set is_locked = not module_completion.get(prev_mod_id, False) %}
-                    {% endif %}
-                  {% endif %}
-                  
+                  {% set is_locked = module_locked.get(mod.id, False) %}
+
                   <div style="margin: 6px 0; display: flex; align-items: center;">
-                    {% if preview_mode %}
+                    {% if is_complete %}
+                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                    {% elif preview_mode %}
                       <span style="color: var(--highlight); margin-right: 8px; font-size: 16px;">🔓</span>
                     {% elif is_locked %}
-                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
-                    {% elif is_complete %}
-                      <span style="color: #10b981; margin-right: 8px; font-size: 16px;">✓</span>
+                      <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">🔒</span>
                     {% else %}
                       <span style="color: var(--muted); margin-right: 8px; font-size: 16px;">☐</span>
                     {% endif %}
-                    
-                    {% if is_locked and not preview_mode %}
+
+                    {% if is_locked %}
                       <span style="color: var(--muted); opacity: 0.5; cursor: not-allowed;">
-                        🔒 Module {{ mod.id }}: {{ mod.title }}
+                        Module {{ mod.id }}: {{ mod.title }}
                       </span>
                     {% else %}
-                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}" 
-                         style="color: {% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;" 
-                         onmouseover="this.style.color='var(--accent)'" 
-                         onmouseout="this.style.color='{% if preview_mode %}var(--highlight){% elif is_complete %}#10b981{% else %}var(--muted){% endif %}'">
+                      <a href="{{ url_for('page', page_num=page.module_page_map[mod.id]) }}"
+                         style="color: {% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}; text-decoration: none; transition: color 0.2s;"
+                         onmouseover="this.style.color='var(--accent)'"
+                         onmouseout="this.style.color='{% if is_complete %}#10b981{% elif preview_mode %}var(--highlight){% else %}var(--muted){% endif %}'">
                         Module {{ mod.id }}: {{ mod.title }}
                       </a>
                     {% endif %}

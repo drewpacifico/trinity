@@ -1819,7 +1819,44 @@ def page(page_num: int):
         for mod in ch9_modules:
             module_completion[mod["id"]] = get_module_completion_status(user.id, mod["id"])
         all_ch9_modules_complete = get_chapter_completion_status(user.id, 9)
-    
+
+    # Build module_locked dictionary - determines which modules are locked for this user
+    # Admin/preview users have nothing locked; regular users have sequential unlocking
+    module_locked = {}
+    if not preview_mode and pages:
+        # Chapter 1: First module always unlocked, rest depend on previous module completion
+        for i, mod in enumerate(ch1_modules):
+            if i == 0:
+                module_locked[mod["id"]] = False  # First module always unlocked
+            else:
+                prev_mod_id = ch1_modules[i-1]["id"]
+                module_locked[mod["id"]] = not module_completion.get(prev_mod_id, False)
+
+        # Chapter 2+: First module requires previous chapter complete, rest sequential
+        def lock_chapter_modules(chapter_modules, prev_chapter_complete):
+            for i, mod in enumerate(chapter_modules):
+                if i == 0:
+                    module_locked[mod["id"]] = not prev_chapter_complete
+                else:
+                    prev_mod_id = chapter_modules[i-1]["id"]
+                    module_locked[mod["id"]] = not module_completion.get(prev_mod_id, False)
+
+        lock_chapter_modules(ch2_modules, all_ch1_modules_complete)
+        lock_chapter_modules(ch3_modules, all_ch2_modules_complete)
+        lock_chapter_modules(ch4_modules, all_ch3_modules_complete)
+        lock_chapter_modules(ch5_modules, all_ch4_modules_complete)
+        lock_chapter_modules(ch6_modules, all_ch5_modules_complete)
+        lock_chapter_modules(ch7_modules, all_ch6_modules_complete)
+        lock_chapter_modules(ch8_modules, all_ch7_modules_complete)
+        lock_chapter_modules(ch9_modules, all_ch8_modules_complete)
+
+    # BACKEND ENFORCEMENT: Redirect if user tries to access a locked module directly
+    if current_page.get("type") == "module":
+        current_module_id = current_page.get("module_id")
+        if current_module_id and module_locked.get(current_module_id, False):
+            # User is trying to access a locked module - redirect to TOC
+            return redirect(url_for("page", page_num=1))
+
     # Quiz map for TOC dropdown display (now from database)
     quiz_map = {}
     # Dynamically build quiz map from all modules
@@ -1849,6 +1886,7 @@ def page(page_num: int):
         all_ch8_modules_complete=all_ch8_modules_complete,
         all_ch9_modules_complete=all_ch9_modules_complete,
         preview_mode=preview_mode,
+        module_locked=module_locked,
         quiz_map=quiz_map,
         quiz_answers=session.get('quiz_answers', {})
     )
