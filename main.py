@@ -1252,10 +1252,31 @@ def toc():
                     # First module of chapter - locked if previous chapter not complete
                     module_locked[mod_id] = not prev_chapter_complete
                 else:
-                    # Other modules - locked if previous module not complete
-                    prev_mod_id = modules[i - 1]
-                    # Default to True (complete) if not in dict - allows progression for modules without quizzes
-                    module_locked[mod_id] = not module_completion.get(prev_mod_id, True)
+                    # Check if this is a sub-module (e.g., 2.2.1)
+                    is_sub_module = len(mod_id.split('.')) == 3
+
+                    if is_sub_module:
+                        # For sub-modules, check if the module BEFORE the parent is complete
+                        # e.g., for 2.2.1, check if 2.1 is complete (not 2.2)
+                        # Sub-modules are content within the parent module - quiz comes AFTER sub-modules
+                        parent_id = '.'.join(mod_id.split('.')[:2])  # "2.2.1" -> "2.2"
+                        parent_idx = modules.index(parent_id) if parent_id in modules else 0
+                        if parent_idx == 0:
+                            # Parent is first module of chapter
+                            module_locked[mod_id] = not prev_chapter_complete
+                        else:
+                            # Check module before the parent
+                            prev_mod_id = modules[parent_idx - 1]
+                            # Skip any sub-modules when looking for the previous main module
+                            while len(prev_mod_id.split('.')) == 3 and parent_idx > 1:
+                                parent_idx -= 1
+                                prev_mod_id = modules[parent_idx - 1]
+                            module_locked[mod_id] = not module_completion.get(prev_mod_id, True)
+                    else:
+                        # Other modules - locked if previous module not complete
+                        prev_mod_id = modules[i - 1]
+                        # Default to True (complete) if not in dict - allows progression for modules without quizzes
+                        module_locked[mod_id] = not module_completion.get(prev_mod_id, True)
 
     # Build chapter_locked dictionary
     chapter_locked = {}
@@ -1400,10 +1421,32 @@ def module(module_id):
                 prev_chapter_complete = chapter_complete.get(chapter_num - 1, True) if chapter_num > 1 else True
                 is_locked = not prev_chapter_complete
             else:
-                # Not first module - locked if previous module not complete
-                prev_mod_id = modules_in_chapter[idx - 1]
-                # Default to True (unlocked) if module not in dict - allows progression for modules without quizzes
-                is_locked = not module_completion.get(prev_mod_id, True)
+                # Check if this is a sub-module (e.g., 2.2.1)
+                is_sub_module = len(module_id.split('.')) == 3
+
+                if is_sub_module:
+                    # For sub-modules, check if the module BEFORE the parent is complete
+                    # e.g., for 2.2.1, check if 2.1 is complete (not 2.2)
+                    # Sub-modules are content within the parent module - quiz comes AFTER sub-modules
+                    parent_id = '.'.join(module_id.split('.')[:2])  # "2.2.1" -> "2.2"
+                    parent_idx = modules_in_chapter.index(parent_id) if parent_id in modules_in_chapter else 0
+                    if parent_idx == 0:
+                        # Parent is first module of chapter
+                        prev_chapter_complete = chapter_complete.get(chapter_num - 1, True) if chapter_num > 1 else True
+                        is_locked = not prev_chapter_complete
+                    else:
+                        # Check module before the parent
+                        prev_mod_id = modules_in_chapter[parent_idx - 1]
+                        # Skip any sub-modules when looking for the previous main module
+                        while len(prev_mod_id.split('.')) == 3 and parent_idx > 1:
+                            parent_idx -= 1
+                            prev_mod_id = modules_in_chapter[parent_idx - 1]
+                        is_locked = not module_completion.get(prev_mod_id, True)
+                else:
+                    # Not first module - locked if previous module not complete
+                    prev_mod_id = modules_in_chapter[idx - 1]
+                    # Default to True (unlocked) if module not in dict - allows progression for modules without quizzes
+                    is_locked = not module_completion.get(prev_mod_id, True)
 
         if is_locked:
             flash("This module is locked. Please complete the previous modules first.", "warning")
@@ -1943,10 +1986,32 @@ def page(page_num: int):
     # Admin/preview users have nothing locked; regular users have sequential unlocking
     module_locked = {}
     if not preview_mode and pages:
+        # Helper to check if a module ID is a sub-module (3 parts like 2.2.1)
+        def is_sub_module(mod_id):
+            return len(mod_id.split('.')) == 3
+
+        # Helper to find the module before the parent for sub-modules
+        def get_prev_for_sub_module(mod_id, modules):
+            parent_id = '.'.join(mod_id.split('.')[:2])  # "2.2.1" -> "2.2"
+            parent_idx = next((i for i, m in enumerate(modules) if m["id"] == parent_id), 0)
+            if parent_idx == 0:
+                return None  # Parent is first, so check prev chapter
+            # Find prev main module (skip any sub-modules)
+            for j in range(parent_idx - 1, -1, -1):
+                if not is_sub_module(modules[j]["id"]):
+                    return modules[j]["id"]
+            return None
+
         # Chapter 1: First module always unlocked, rest depend on previous module completion
         for i, mod in enumerate(ch1_modules):
             if i == 0:
                 module_locked[mod["id"]] = False  # First module always unlocked
+            elif is_sub_module(mod["id"]):
+                prev_mod_id = get_prev_for_sub_module(mod["id"], ch1_modules)
+                if prev_mod_id:
+                    module_locked[mod["id"]] = not module_completion.get(prev_mod_id, True)
+                else:
+                    module_locked[mod["id"]] = False
             else:
                 prev_mod_id = ch1_modules[i-1]["id"]
                 # Default to True (complete) if not in dict - allows progression for modules without quizzes
@@ -1957,6 +2022,14 @@ def page(page_num: int):
             for i, mod in enumerate(chapter_modules):
                 if i == 0:
                     module_locked[mod["id"]] = not prev_chapter_complete
+                elif is_sub_module(mod["id"]):
+                    # For sub-modules, check if the module BEFORE the parent is complete
+                    prev_mod_id = get_prev_for_sub_module(mod["id"], chapter_modules)
+                    if prev_mod_id:
+                        module_locked[mod["id"]] = not module_completion.get(prev_mod_id, True)
+                    else:
+                        # Parent is first module, check prev chapter
+                        module_locked[mod["id"]] = not prev_chapter_complete
                 else:
                     prev_mod_id = chapter_modules[i-1]["id"]
                     # Default to True (complete) if not in dict - allows progression for modules without quizzes
