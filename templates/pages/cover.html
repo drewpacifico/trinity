@@ -7,6 +7,15 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    /* Background image for outer area */
+    .main-content {
+        background: linear-gradient(rgba(26, 32, 44, 0.7), rgba(26, 32, 44, 0.8)), url('{{ url_for('static', filename='images/trinity_transport_truck.jpg') }}');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+</style>
 <div class="content-card">
     <div class="cover-page">
         <div class="cover-logo">

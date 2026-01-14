@@ -8,6 +8,14 @@
 
 {% block content %}
 <style>
+    /* Background image for outer area */
+    .main-content {
+        background: linear-gradient(rgba(26, 32, 44, 0.7), rgba(26, 32, 44, 0.8)), url('{{ url_for('static', filename='images/trucking_map.jpg') }}');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
     .toc-module-locked {
         opacity: 0.6;
     }
