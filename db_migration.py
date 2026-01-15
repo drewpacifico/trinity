@@ -93,7 +93,7 @@ class ContentMigrator:
         """
         chapter_pattern = re.compile(rf"^CHAPTER\s+{chapter_id}:\s*(.+)$", re.MULTILINE)
         next_chapter_pattern = re.compile(r"^CHAPTER\s+\d+:\s*", re.MULTILINE)
-        module_pattern = re.compile(r"^Module\s+(\d+\.\d+):\s*(.+)$", re.MULTILINE)
+        module_pattern = re.compile(r"^Module\s+(\d+\.\d+(?:\.\d+)?):\s*(.+)$", re.MULTILINE)
         summary_pattern = re.compile(rf"^CHAPTER\s+{chapter_id}\s+SUMMARY", re.IGNORECASE | re.MULTILINE)
         action_items_pattern = re.compile(rf"^ACTION\s+ITEMS\s+FOR\s+CHAPTER\s+{chapter_id}", re.IGNORECASE | re.MULTILINE)
         
