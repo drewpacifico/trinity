@@ -182,6 +182,8 @@ Module 2.2: Shippers (Your Customers)
 
 Shippers are businesses that need to move goods from one location to another. They're your customers, and understanding the different types helps you tailor your approach to their specific needs.
 
+Module 2.2.1: Manufacturers
+
 **Manufacturers**
 
 Manufacturers produce goods that need regular shipment to distributors, retailers, or other facilities. A furniture manufacturer ships finished products to retail stores. An automotive parts producer sends components to assembly plants. A food processor moves packaged goods to distribution centers.
@@ -199,6 +201,8 @@ Many manufacturers have established carrier relationships built over years. They
 **Your best approach:**
 
 Position yourself as a capacity supplement rather than trying to replace their primary carriers. During peak seasons, when regular carriers are full, they need backup options. Emphasize reliability and service quality over rock-bottom pricing. Demonstrate expertise in their specific product type and shipping requirements.
+
+Module 2.2.2: Distributors and Wholesalers
 
 **Distributors and Wholesalers**
 
@@ -218,6 +222,8 @@ Price sensitivity can be intense because freight is a major expense category. Th
 
 Demonstrate your ability to handle volume efficiently. Show you can provide consistent service across multiple lanes simultaneously. Emphasize your capacity to scale up or down as their needs fluctuate. Build relationships with the logistics team and understand their key performance metrics so you can help them succeed.
 
+Module 2.2.3: Retailers
+
 **Retailers**
 
 Retailers sell products to consumers through physical stores or online platforms. They need regular inbound shipments from suppliers and sometimes outbound shipments between their own locations.
@@ -233,6 +239,8 @@ Smaller retailers may have lower per-shipment volumes, requiring partial trucklo
 **Your best approach:**
 
 Focus on small to mid-sized retailers who lack dedicated logistics teams. Understand their receiving constraints and find carriers willing to work within those parameters. Offer value-added services like tracking updates and proactive problem resolution. Position yourself as their logistics department rather than just a freight provider.
+
+Module 2.2.4: Construction Companies
 
 **Construction Companies**
 
@@ -251,6 +259,9 @@ Shipping patterns are irregular and project-based rather than consistently sched
 **Your best approach:**
 
 Emphasize your equipment expertise and ability to handle difficult deliveries. Build relationships with flatbed and specialized equipment carriers who can navigate challenging situations. Be responsive because construction delays are expensive. Consider focusing on a specific construction niche (commercial, residential, civil engineering) to develop specialized expertise.
+
+Module 2.2.5: Agricultural Businesses
+
 **Agricultural Businesses**
 
 Farms, cooperatives, and agricultural processors need to move crops, livestock, feed, equipment, and supplies. This sector has unique characteristics driven by seasonal production cycles.
@@ -266,6 +277,8 @@ Extreme seasonality means feast or famine—intense activity during planting and
 **Your best approach:**
 
 Build relationships before peak season and maintain them year-round despite slow periods. Develop a network of carriers willing to serve rural areas. Understand agricultural calendars and market dynamics for the crops your customers produce. Be flexible with timing because weather often disrupts schedules.
+
+Module 2.2.6: E-commerce Businesses
 
 **E-commerce Businesses**
 
