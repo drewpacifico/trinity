@@ -291,6 +291,14 @@ def chapter(chapter_num, page):
     if not session.get('logged_in') and not session.get('preview_mode'):
         return redirect(url_for("login"))
 
+    # Mark chapter intro as seen when user views it
+    if page == 'intro':
+        seen_intros = session.get('seen_intros', [])
+        if chapter_num not in seen_intros:
+            seen_intros.append(chapter_num)
+            session['seen_intros'] = seen_intros
+            session.modified = True
+
     # Check if chapter is locked for non-preview users
     user = get_current_user()
     preview_mode = session.get('preview_mode', False) or (user.is_preview_mode if user else False)
@@ -366,6 +374,12 @@ def module(module_id):
         sub_module_num = int(parts[2]) if len(parts) > 2 else None
     except (ValueError, IndexError):
         return redirect(url_for("toc"))
+
+    # If this is the first module (X.1) and user hasn't seen the chapter intro, redirect to intro
+    if module_num == 1 and sub_module_num is None:
+        seen_intros = session.get('seen_intros', [])
+        if chapter_num not in seen_intros:
+            return redirect(url_for('chapter', chapter_num=chapter_num, page='intro'))
 
     # Check if module is locked for non-preview users
     user = get_current_user()
